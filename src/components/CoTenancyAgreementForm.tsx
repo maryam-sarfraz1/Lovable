@@ -280,56 +280,72 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
-function boldHeading(doc: jsPDF, text: string, x: number, y: number): void {
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(11);
-  doc.text(text, x, y);
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-}
-
-function wrappedText(
-  doc: jsPDF,
-  text: string,
-  x: number,
-  y: number,
-  maxWidth: number,
-  lineHeight: number
-): number {
-  const lines = doc.splitTextToSize(text, maxWidth);
-  doc.text(lines, x, y);
-  return y + lines.length * lineHeight;
-}
-
-function bulletItem(
-  doc: jsPDF,
-  text: string,
-  x: number,
-  y: number,
-  maxWidth: number,
-  lineHeight: number
-): number {
-  doc.text("\u2022", x, y);
-  const lines = doc.splitTextToSize(text, maxWidth - 6);
-  doc.text(lines, x + 6, y);
-  return y + lines.length * lineHeight;
-}
+const LM = 20;
+const PW = 170;
+const LH = 5.5;
+const PAGE_BOTTOM = 275;
 
 function checkPageBreak(doc: jsPDF, y: number, needed = 20): number {
-  if (y + needed > 275) {
+  if (y + needed > PAGE_BOTTOM) {
     doc.addPage();
     return 20;
   }
   return y;
 }
 
+function addHeading(doc: jsPDF, text: string, y: number): number {
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text(text, LM, y);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  return y + LH + 1;
+}
+
+function addBody(doc: jsPDF, text: string, y: number, indent = 0): number {
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  const lines = doc.splitTextToSize(text, PW - indent);
+  lines.forEach((line: string) => {
+    doc.text(line, LM + indent, y);
+    y += LH;
+  });
+  return y;
+}
+
+function addBullet(doc: jsPDF, text: string, y: number): number {
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  const lines = doc.splitTextToSize(text, PW - 8);
+  doc.text("\u2022", LM + 2, y);
+  lines.forEach((line: string, i: number) => {
+    doc.text(line, LM + 8, y);
+    if (i < lines.length - 1) y += LH;
+  });
+  return y + LH;
+}
+
+/**
+ * Bold label + normal value on the SAME baseline — no overwrite.
+ */
+function addLabelValue(doc: jsPDF, label: string, value: string, y: number): number {
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(10);
+  const lw = doc.getTextWidth(label);
+  doc.text(label, LM, y);
+  doc.setFont("helvetica", "normal");
+  const valLines = doc.splitTextToSize(value, PW - lw - 1);
+  valLines.forEach((line: string, i: number) => {
+    doc.text(line, LM + lw + 1, y);
+    if (i < valLines.length - 1) y += LH;
+  });
+  return y + LH;
+}
+
 // ── PDF generator ─────────────────────────────────────────────────────────────
 
 const generatePDF = (values: Record<string, string>) => {
   const doc = new jsPDF();
-  const LM = 20;
-  const PW = 170;
-  const LH = 5.5;
   let y = 22;
 
   // ── TITLE ─────────────────────────────────────────────────────────────────
@@ -345,28 +361,27 @@ const generatePDF = (values: Record<string, string>) => {
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
 
-  y = wrappedText(
+  y = addBody(
     doc,
     `This Co-Tenancy Agreement (the "Agreement") is made and entered into on ${values.effectiveDate || "[Insert Date]"} (the "Effective Date"), by and among the following individuals:`,
-    LM, y, PW, LH
+    y
   );
   y += 3;
 
-  // Co-Tenants list
   const coTenants = [values.party1Name, values.party2Name].filter(Boolean);
   const tenantLine = coTenants.length > 0
     ? coTenants.join(", ")
     : "[Insert Co-Tenant Names]";
-  y = wrappedText(
+  y = addBody(
     doc,
     `${tenantLine}, each individually referred to as a "Co-Tenant" and collectively referred to as the "Co-Tenants."`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
   // ── RECITALS ──────────────────────────────────────────────────────────────
-  boldHeading(doc, "RECITALS", LM, y);
-  y += LH + 2;
+  y = checkPageBreak(doc, y);
+  y = addHeading(doc, "RECITALS", y);
 
   const recitals = [
     `WHEREAS, the Co-Tenants have entered into a lease agreement dated ${values.leaseDate || "[Insert Date]"} (the "Lease") with ${values.landlordName || "[Insert Landlord Name]"} (the "Landlord") for the residential property located at ${values.dwellingAddress || "[Insert Dwelling Address]"} (the "Dwelling"), for a term commencing on ${values.leaseStartDate || "[Insert Start Date]"} and expiring on ${values.leaseEndDate || "[Insert End Date]"};`,
@@ -376,35 +391,29 @@ const generatePDF = (values: Record<string, string>) => {
   ];
   for (const r of recitals) {
     y = checkPageBreak(doc, y);
-    y = wrappedText(doc, r, LM, y, PW, LH);
+    y = addBody(doc, r, y);
     y += 3;
   }
   y += 4;
 
-  // ── SECTION 1: COMPLIANCE WITH LEASE AND RULES ───────────────────────────
+  // ── SECTION 1 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "1.  COMPLIANCE WITH LEASE AND RULES", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "1.  COMPLIANCE WITH LEASE AND RULES", y);
+  y = addBody(
     doc,
     `Each Co-Tenant agrees to comply fully with all terms, conditions, rules, and obligations set forth in the Lease, any related agreements executed with the Landlord, and all applicable local laws, ordinances, and regulations governing the Dwelling.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
-  // ── SECTION 2: ALLOCATION OF RENT ────────────────────────────────────────
+  // ── SECTION 2 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "2.  ALLOCATION OF RENT", LM, y);
-  y += LH + 1;
-  y = wrappedText(
-    doc,
-    `The Co-Tenants agree to share responsibility for rent as follows:`,
-    LM, y, PW, LH
-  );
+  y = addHeading(doc, "2.  ALLOCATION OF RENT", y);
+  y = addBody(doc, `The Co-Tenants agree to share responsibility for rent as follows:`, y);
   y += 2;
-  y = bulletItem(doc, `${values.party1Name || "Co-Tenant 1"} shall be responsible for ${values.tenant1RentShare || "$0.00"} per month;`, LM + 2, y, PW - 2, LH);
+  y = addBullet(doc, `${values.party1Name || "Co-Tenant 1"} shall be responsible for ${values.tenant1RentShare || "$0.00"} per month;`, y);
   y += 1;
-  y = bulletItem(doc, `${values.party2Name || "Co-Tenant 2"} shall be responsible for ${values.tenant2RentShare || "$0.00"} per month.`, LM + 2, y, PW - 2, LH);
+  y = addBullet(doc, `${values.party2Name || "Co-Tenant 2"} shall be responsible for ${values.tenant2RentShare || "$0.00"} per month.`, y);
   y += 3;
 
   const rentBullets = [
@@ -413,53 +422,42 @@ const generatePDF = (values: Record<string, string>) => {
   ];
   for (const b of rentBullets) {
     y = checkPageBreak(doc, y);
-    y = bulletItem(doc, b, LM + 2, y, PW - 2, LH);
+    y = addBullet(doc, b, y);
     y += 2;
   }
   y += 5;
 
-  // ── SECTION 3: UTILITIES AND SERVICES ────────────────────────────────────
+  // ── SECTION 3 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "3.  UTILITIES AND SERVICES", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "3.  UTILITIES AND SERVICES", y);
+  y = addBody(
     doc,
     `The Co-Tenants shall be responsible for payment of the following utilities and services associated with the Dwelling:`,
-    LM, y, PW, LH
+    y
   );
   y += 2;
 
   const utilities = [
-    "Electricity",
-    "Water and sewer",
-    "Gas",
-    "Heating",
-    "Garbage and trash disposal",
-    "Janitorial services",
-    "Telephone service",
+    "Electricity", "Water and sewer", "Gas", "Heating",
+    "Garbage and trash disposal", "Janitorial services", "Telephone service",
   ];
   for (const u of utilities) {
     y = checkPageBreak(doc, y);
-    y = bulletItem(doc, u, LM + 2, y, PW - 2, LH);
+    y = addBullet(doc, u, y);
     y += 1;
   }
   y += 3;
-  y = wrappedText(
+  y = addBody(
     doc,
     `The Co-Tenants acknowledge that certain utilities or services may be billed directly by service providers or through the Landlord. Any agreement regarding utility allocation under this Agreement shall be subordinate to the Lease and shall not bind the Landlord.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
-  // ── SECTION 4: OTHER SHARED EXPENSES ─────────────────────────────────────
+  // ── SECTION 4 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "4.  OTHER SHARED EXPENSES", LM, y);
-  y += LH + 1;
-  y = wrappedText(
-    doc,
-    `The Co-Tenants agree to allocate the following expenses as set forth below:`,
-    LM, y, PW, LH
-  );
+  y = addHeading(doc, "4.  OTHER SHARED EXPENSES", y);
+  y = addBody(doc, `The Co-Tenants agree to allocate the following expenses as set forth below:`, y);
   y += 2;
 
   const expenses = [
@@ -469,19 +467,18 @@ const generatePDF = (values: Record<string, string>) => {
   ];
   for (const e of expenses) {
     y = checkPageBreak(doc, y);
-    y = bulletItem(doc, e, LM + 2, y, PW - 2, LH);
+    y = addBullet(doc, e, y);
     y += 2;
   }
   y += 5;
 
-  // ── SECTION 5: TERMINATION OF CO-TENANCY ─────────────────────────────────
+  // ── SECTION 5 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "5.  TERMINATION OF CO-TENANCY", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "5.  TERMINATION OF CO-TENANCY", y);
+  y = addBody(
     doc,
     `Each Co-Tenant agrees to remain in occupancy for the full Lease term and to continue paying his or her obligations under this Agreement unless one of the following occurs:`,
-    LM, y, PW, LH
+    y
   );
   y += 2;
 
@@ -491,26 +488,24 @@ const generatePDF = (values: Record<string, string>) => {
   ];
   for (const b of termBullets) {
     y = checkPageBreak(doc, y);
-    y = bulletItem(doc, b, LM + 2, y, PW - 2, LH);
+    y = addBullet(doc, b, y);
     y += 2;
   }
   y += 5;
 
-  // ── SECTION 6: SECURITY DEPOSIT ──────────────────────────────────────────
+  // ── SECTION 6 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "6.  SECURITY DEPOSIT", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "6.  SECURITY DEPOSIT", y);
+  y = addBody(
     doc,
     `Any refund of the security deposit received from the Landlord shall be divided among the Co-Tenants on a pro rata basis, unless otherwise agreed in writing.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
-  // ── SECTION 7: JOINT AND SEVERAL LIABILITY; INDEMNIFICATION ──────────────
+  // ── SECTION 7 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "7.  JOINT AND SEVERAL LIABILITY; INDEMNIFICATION", LM, y);
-  y += LH + 1;
+  y = addHeading(doc, "7.  JOINT AND SEVERAL LIABILITY; INDEMNIFICATION", y);
 
   const liabilityBullets = [
     `The Co-Tenants acknowledge that they are jointly and severally liable to the Landlord under the Lease. Accordingly, the Landlord may pursue any or all Co-Tenants for unpaid rent, damages, or other charges.`,
@@ -518,37 +513,34 @@ const generatePDF = (values: Record<string, string>) => {
   ];
   for (const b of liabilityBullets) {
     y = checkPageBreak(doc, y);
-    y = bulletItem(doc, b, LM + 2, y, PW - 2, LH);
+    y = addBullet(doc, b, y);
     y += 2;
   }
   y += 5;
 
-  // ── SECTION 8: LONG-DISTANCE TELEPHONE CHARGES ───────────────────────────
+  // ── SECTION 8 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "8.  LONG-DISTANCE TELEPHONE CHARGES", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "8.  LONG-DISTANCE TELEPHONE CHARGES", y);
+  y = addBody(
     doc,
     `Each Co-Tenant shall be solely responsible for his or her own long-distance telephone charges.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
-  // ── SECTION 9: REPAIRS AND IMPROVEMENTS ──────────────────────────────────
+  // ── SECTION 9 ─────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "9.  REPAIRS AND IMPROVEMENTS", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "9.  REPAIRS AND IMPROVEMENTS", y);
+  y = addBody(
     doc,
     `No repairs, alterations, or improvements exceeding ${values.repairThreshold || "$0.00"} shall be undertaken without the prior written consent of all Co-Tenants.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
-  // ── SECTION 10: PETS ──────────────────────────────────────────────────────
+  // ── SECTION 10 ────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "10.  PETS", LM, y);
-  y += LH + 1;
+  y = addHeading(doc, "10.  PETS", y);
 
   const petBullets = [
     `All Co-Tenants shall comply with the pet policies established by the Landlord and applicable law.`,
@@ -556,37 +548,34 @@ const generatePDF = (values: Record<string, string>) => {
   ];
   for (const b of petBullets) {
     y = checkPageBreak(doc, y);
-    y = bulletItem(doc, b, LM + 2, y, PW - 2, LH);
+    y = addBullet(doc, b, y);
     y += 2;
   }
   y += 5;
 
-  // ── SECTION 11: RELATIONSHIP TO LEASE ────────────────────────────────────
+  // ── SECTION 11 ────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "11.  RELATIONSHIP TO LEASE", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "11.  RELATIONSHIP TO LEASE", y);
+  y = addBody(
     doc,
     `This Agreement does not modify or amend the Lease and is intended solely to govern the rights and obligations among the Co-Tenants.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
-  // ── SECTION 12: PAYMENTS AND REIMBURSEMENT ───────────────────────────────
+  // ── SECTION 12 ────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "12.  PAYMENTS AND REIMBURSEMENT", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "12.  PAYMENTS AND REIMBURSEMENT", y);
+  y = addBody(
     doc,
     `If a Co-Tenant pays more than his or her allocated share of any expense under this Agreement, such Co-Tenant shall be entitled to reimbursement from the other Co-Tenants.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
-  // ── SECTION 13: SURVIVAL AND AMENDMENT ───────────────────────────────────
+  // ── SECTION 13 ────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "13.  SURVIVAL AND AMENDMENT", LM, y);
-  y += LH + 1;
+  y = addHeading(doc, "13.  SURVIVAL AND AMENDMENT", y);
 
   const survivalBullets = [
     `This Agreement shall remain in effect notwithstanding a breach by any Co-Tenant unless terminated in accordance with this Agreement.`,
@@ -595,97 +584,127 @@ const generatePDF = (values: Record<string, string>) => {
   ];
   for (const b of survivalBullets) {
     y = checkPageBreak(doc, y);
-    y = bulletItem(doc, b, LM + 2, y, PW - 2, LH);
+    y = addBullet(doc, b, y);
     y += 2;
   }
   y += 5;
 
-  // ── SECTION 14: GOVERNING LAW ─────────────────────────────────────────────
+  // ── SECTION 14 ────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "14.  GOVERNING LAW", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "14.  GOVERNING LAW", y);
+  y = addBody(
     doc,
     `This Agreement shall be governed by and construed in accordance with the laws of the State of ${values.state || "[Insert State]"}.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
-  // ── SECTION 15: PRIOR AGREEMENTS ─────────────────────────────────────────
+  // ── SECTION 15 ────────────────────────────────────────────────────────────
   y = checkPageBreak(doc, y);
-  boldHeading(doc, "15.  PRIOR AGREEMENTS", LM, y);
-  y += LH + 1;
-  y = wrappedText(
+  y = addHeading(doc, "15.  PRIOR AGREEMENTS", y);
+  y = addBody(
     doc,
     `All prior co-tenancy agreements between the Co-Tenants are hereby superseded; however, any outstanding financial obligations under such agreements shall remain enforceable.`,
-    LM, y, PW, LH
+    y
   );
   y += 7;
 
   // ── ADDITIONAL TERMS ──────────────────────────────────────────────────────
   if (values.additionalTerms) {
     y = checkPageBreak(doc, y);
-    boldHeading(doc, "ADDITIONAL TERMS", LM, y);
-    y += LH + 1;
-    y = wrappedText(doc, values.additionalTerms, LM, y, PW, LH);
+    y = addHeading(doc, "ADDITIONAL TERMS", y);
+    y = addBody(doc, values.additionalTerms, y);
     y += 7;
   }
 
   // ── SIGNATURES ────────────────────────────────────────────────────────────
-  y = checkPageBreak(doc, y, 55);
-  boldHeading(doc, "SIGNATURES", LM, y);
-  y += LH + 2;
-  y = wrappedText(
+  y = checkPageBreak(doc, y, 75);
+  y = addHeading(doc, "SIGNATURES", y);
+  y = addBody(
     doc,
     `IN WITNESS WHEREOF, the Co-Tenants have executed this Agreement as of the Effective Date first written above.`,
-    LM, y, PW, LH
+    y
   );
   y += 8;
 
   const col1 = LM;
-  const col2 = 110;
+  const col2 = LM + 90;
+  const sigLineLen = 75;
 
-  // Co-Tenant 1
+  const sigStartY = y;
+
+  // ── Column headers ────────────────────────────────────────────────────────
   doc.setFont("helvetica", "bold");
-  doc.text("CO-TENANT 1:", col1, y);
-  doc.text("CO-TENANT 2:", col2, y);
-  doc.setFont("helvetica", "normal");
-  y += 7;
-
-  doc.text("Name:", col1, y);
-  doc.text(values.party1Name || "", col1 + 14, y);
-  doc.text("Name:", col2, y);
-  doc.text(values.party2Name || "", col2 + 14, y);
-  y += 7;
-
-  doc.text("Signature:", col1, y);
-  doc.line(col1 + 22, y + 1, col1 + 75, y + 1);
-  doc.text("Signature:", col2, y);
-  doc.line(col2 + 22, y + 1, col2 + 75, y + 1);
-  y += 2;
-  doc.setFontSize(9);
-  doc.text(values.party1Signature || "", col1 + 22, y);
-  doc.text(values.party2Signature || "", col2 + 22, y);
   doc.setFontSize(10);
-  y += 8;
+  doc.text("CO-TENANT 1:", col1, sigStartY);
+  doc.text("CO-TENANT 2:", col2, sigStartY);
+  doc.setFont("helvetica", "normal");
 
-  doc.text("Date:", col1, y);
-  doc.line(col1 + 14, y + 1, col1 + 75, y + 1);
-  doc.text("Date:", col2, y);
-  doc.line(col2 + 14, y + 1, col2 + 75, y + 1);
-  y += 10;
+  // ── Name row ──────────────────────────────────────────────────────────────
+  const nameLabel = "Name: ";
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(10);
+  const nameLW = doc.getTextWidth(nameLabel);
+  const nameY = sigStartY + 8;
+  doc.text(nameLabel, col1, nameY);
+  doc.text(nameLabel, col2, nameY);
+  doc.setFont("helvetica", "normal");
+  const p1Name = doc.splitTextToSize(values.party1Name || "", sigLineLen - nameLW)[0] || "";
+  const p2Name = doc.splitTextToSize(values.party2Name || "", sigLineLen - nameLW)[0] || "";
+  doc.text(p1Name, col1 + nameLW, nameY);
+  doc.text(p2Name, col2 + nameLW, nameY);
 
-  // Optional Witness
+  // ── Signature label row ───────────────────────────────────────────────────
+  const sigLabelY = nameY + 9;
+  doc.setFont("helvetica", "bold");
+  doc.text("Signature:", col1, sigLabelY);
+  doc.text("Signature:", col2, sigLabelY);
+  doc.setFont("helvetica", "normal");
+
+  // ── Signature line with typed name sitting ON the line ────────────────────
+  const typedSigY = sigLabelY + 8;
+  doc.setLineWidth(0.3);
+  doc.line(col1, typedSigY, col1 + sigLineLen, typedSigY);
+  doc.line(col2, typedSigY, col2 + sigLineLen, typedSigY);
+  doc.setFont("helvetica", "italic");
+  doc.setFontSize(9);
+  const p1Sig = doc.splitTextToSize(values.party1Signature || "", sigLineLen - 2)[0] || "";
+  const p2Sig = doc.splitTextToSize(values.party2Signature || "", sigLineLen - 2)[0] || "";
+  doc.text(p1Sig, col1 + 2, typedSigY);
+  doc.text(p2Sig, col2 + 2, typedSigY);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+
+  // ── Date row ──────────────────────────────────────────────────────────────
+  const dateY = typedSigY + 10;
+  const dateLabelW = doc.getTextWidth("Date: ");
+  doc.setFont("helvetica", "bold");
+  doc.text("Date: ", col1, dateY);
+  doc.text("Date: ", col2, dateY);
+  doc.setFont("helvetica", "normal");
+  doc.line(col1 + dateLabelW, dateY, col1 + sigLineLen, dateY);
+  doc.line(col2 + dateLabelW, dateY, col2 + sigLineLen, dateY);
+
+  y = dateY + 12;
+
+  // ── Optional Witness ──────────────────────────────────────────────────────
   if (values.witnessName) {
-    y = checkPageBreak(doc, y, 20);
+    y = checkPageBreak(doc, y, 35);
     doc.setFont("helvetica", "bold");
+    doc.setFontSize(10);
     doc.text("WITNESS:", col1, y);
     doc.setFont("helvetica", "normal");
-    y += 6;
-    doc.text("Name: " + values.witnessName, col1, y);
-    y += 7;
-    doc.text("Signature:", col1, y);
-    doc.line(col1 + 22, y + 1, col1 + 75, y + 1);
+    y += 8;
+    const wNameLW = doc.getTextWidth("Name: ");
+    doc.setFont("helvetica", "bold");
+    doc.text("Name: ", col1, y);
+    doc.setFont("helvetica", "normal");
+    doc.text(values.witnessName, col1 + wNameLW, y);
+    y += 9;
+    doc.setFont("helvetica", "bold"); doc.text("Signature:", col1, y); doc.setFont("helvetica", "normal");
+    y += 8;
+    doc.setLineWidth(0.3);
+    doc.line(col1, y, col1 + sigLineLen, y);
   }
 
   doc.save("co_tenancy_agreement.pdf");

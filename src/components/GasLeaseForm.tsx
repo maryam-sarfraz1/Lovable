@@ -793,7 +793,7 @@ const generatePDF = (values: Record<string, string>) => {
   doc.text("LESSEE:", 20, y);
   y += 8;
   doc.setFont("helvetica", "normal");
-  doc.text("Signature: _______________________________", 20, y);
+ 
   y += 7;
   doc.text(`Name: ${values.party2Name || ""}`, 20, y);
   y += 7;

@@ -325,40 +325,52 @@ const generatePDF = (values: Record<string, string>) => {
   y += LH + 3;
 
   const col1 = LM;
-  const col2 = 110;
+  const col2 = LM + 90;
+  const sigLineLen = 75;
+  const nameLW = doc.getTextWidth("Name:  ");
+  const dateLW = doc.getTextWidth("Date:  ");
 
-  // Row: labels
+  // ── Column headers ──────────────────────────────────────────────────────
   doc.setFont("helvetica", "bold");
   doc.text("RELEASING ROOMMATE:", col1, y);
   doc.text("REMAINING ROOMMATE:", col2, y);
   doc.setFont("helvetica", "normal");
-  y += 7;
-
-  // Name row
-  doc.text("Name:", col1, y);
-  doc.text(values.releasingRoommate || "", col1 + 14, y);
-  doc.text("Name:", col2, y);
-  const remainingFirst = (values.remainingRoommates || "").split("\n")[0];
-  doc.text(remainingFirst, col2 + 14, y);
-  y += 7;
-
-  // Signature row
-  doc.text("Signature:", col1, y);
-  doc.line(col1 + 22, y + 1, col1 + 75, y + 1);
-  doc.text("Signature:", col2, y);
-  doc.line(col2 + 22, y + 1, col2 + 75, y + 1);
-  y += 2;
-  doc.setFontSize(9);
-  doc.text(values.releasingSignature || "", col1 + 22, y);
-  doc.text(values.remainingSignature || "", col2 + 22, y);
-  doc.setFontSize(10);
   y += 8;
 
-  // Date row
-  doc.text("Date:", col1, y);
-  doc.text(values.releasingSignDate || "", col1 + 14, y);
-  doc.text("Date:", col2, y);
-  doc.text(values.remainingSignDate || "", col2 + 14, y);
+  // ── Name row ─────────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold"); doc.text("Name:", col1, y); doc.setFont("helvetica", "normal");
+  doc.text(values.releasingRoommate || "", col1 + nameLW, y);
+  doc.setFont("helvetica", "bold"); doc.text("Name:", col2, y); doc.setFont("helvetica", "normal");
+  const remainingFirst = (values.remainingRoommates || "").split("\n")[0];
+  doc.text(remainingFirst, col2 + nameLW, y);
+  y += 9;
+
+  // ── Signature label row ───────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold");
+  doc.text("Signature:", col1, y);
+  doc.text("Signature:", col2, y);
+  doc.setFont("helvetica", "normal");
+  y += 8;
+
+  // ── Signature line with typed name sitting ON the line ────────────────────
+  doc.setLineWidth(0.3);
+  doc.line(col1, y, col1 + sigLineLen, y);
+  doc.line(col2, y, col2 + sigLineLen, y);
+  doc.setFont("helvetica", "italic");
+  doc.setFontSize(9);
+  const relSigText = doc.splitTextToSize(values.releasingSignature || "", sigLineLen - 2)[0] || "";
+  const remSigText = doc.splitTextToSize(values.remainingSignature || "", sigLineLen - 2)[0] || "";
+  doc.text(relSigText, col1 + 2, y);
+  doc.text(remSigText, col2 + 2, y);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  y += 10;
+
+  // ── Date row ─────────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold"); doc.text("Date:", col1, y); doc.setFont("helvetica", "normal");
+  doc.text(values.releasingSignDate || "", col1 + dateLW, y);
+  doc.setFont("helvetica", "bold"); doc.text("Date:", col2, y); doc.setFont("helvetica", "normal");
+  doc.text(values.remainingSignDate || "", col2 + dateLW, y);
   y += 12;
 
   // Checklist footer

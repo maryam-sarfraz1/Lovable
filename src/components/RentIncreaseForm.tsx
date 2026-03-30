@@ -1,126 +1,488 @@
-import { FormWizard, FieldDef } from "./FormWizard";
+import { FormWizard } from "./FormWizard";
+import { FieldDef } from "./FormWizard";
 import { jsPDF } from "jspdf";
 
 const steps: Array<{ label: string; fields: FieldDef[] }> = [
   {
-    label: "Step 1: Agreement Date",
+    label: "Jurisdiction",
     fields: [
-      { name: "agreementDay", label: "Agreement Day", type: "text", required: true },
-      { name: "agreementMonth", label: "Agreement Month", type: "text", required: true },
-      { name: "agreementYear", label: "Agreement Year", type: "text", required: true },
+      {
+        name: "country",
+        label: "Which country's laws will govern this document?",
+        type: "select",
+        required: true,
+        options: [
+          { value: "us", label: "United States" },
+          { value: "ca", label: "Canada" },
+          { value: "uk", label: "United Kingdom" },
+          { value: "au", label: "Australia" },
+          { value: "other", label: "Other" },
+        ],
+      },
     ],
   },
   {
-    label: "Step 2: Landlord Details",
+    label: "State/Province",
     fields: [
-      { name: "landlordName", label: "Landlord Full Legal Name", type: "text", required: true },
-      { name: "landlordAddress", label: "Landlord Address", type: "textarea", required: true },
-      { name: "landlordEmail", label: "Landlord Email", type: "email", required: false },
-      { name: "landlordPhone", label: "Landlord Phone", type: "text", required: false },
+      {
+        name: "state",
+        label: "Which state or province?",
+        type: "select",
+        required: true,
+        dependsOn: "country",
+        getOptions: (values) => {
+          if (values.country === "us") {
+            return [
+              { value: "AL", label: "Alabama" }, { value: "AK", label: "Alaska" },
+              { value: "AZ", label: "Arizona" }, { value: "AR", label: "Arkansas" },
+              { value: "CA", label: "California" }, { value: "CO", label: "Colorado" },
+              { value: "CT", label: "Connecticut" }, { value: "DE", label: "Delaware" },
+              { value: "FL", label: "Florida" }, { value: "GA", label: "Georgia" },
+              { value: "HI", label: "Hawaii" }, { value: "ID", label: "Idaho" },
+              { value: "IL", label: "Illinois" }, { value: "IN", label: "Indiana" },
+              { value: "IA", label: "Iowa" }, { value: "KS", label: "Kansas" },
+              { value: "KY", label: "Kentucky" }, { value: "LA", label: "Louisiana" },
+              { value: "ME", label: "Maine" }, { value: "MD", label: "Maryland" },
+              { value: "MA", label: "Massachusetts" }, { value: "MI", label: "Michigan" },
+              { value: "MN", label: "Minnesota" }, { value: "MS", label: "Mississippi" },
+              { value: "MO", label: "Missouri" }, { value: "MT", label: "Montana" },
+              { value: "NE", label: "Nebraska" }, { value: "NV", label: "Nevada" },
+              { value: "NH", label: "New Hampshire" }, { value: "NJ", label: "New Jersey" },
+              { value: "NM", label: "New Mexico" }, { value: "NY", label: "New York" },
+              { value: "NC", label: "North Carolina" }, { value: "ND", label: "North Dakota" },
+              { value: "OH", label: "Ohio" }, { value: "OK", label: "Oklahoma" },
+              { value: "OR", label: "Oregon" }, { value: "PA", label: "Pennsylvania" },
+              { value: "RI", label: "Rhode Island" }, { value: "SC", label: "South Carolina" },
+              { value: "SD", label: "South Dakota" }, { value: "TN", label: "Tennessee" },
+              { value: "TX", label: "Texas" }, { value: "UT", label: "Utah" },
+              { value: "VT", label: "Vermont" }, { value: "VA", label: "Virginia" },
+              { value: "WA", label: "Washington" }, { value: "WV", label: "West Virginia" },
+              { value: "WI", label: "Wisconsin" }, { value: "WY", label: "Wyoming" },
+              { value: "DC", label: "District of Columbia" },
+            ];
+          } else if (values.country === "ca") {
+            return [
+              { value: "AB", label: "Alberta" }, { value: "BC", label: "British Columbia" },
+              { value: "MB", label: "Manitoba" }, { value: "NB", label: "New Brunswick" },
+              { value: "NL", label: "Newfoundland and Labrador" }, { value: "NS", label: "Nova Scotia" },
+              { value: "ON", label: "Ontario" }, { value: "PE", label: "Prince Edward Island" },
+              { value: "QC", label: "Quebec" }, { value: "SK", label: "Saskatchewan" },
+              { value: "NT", label: "Northwest Territories" }, { value: "NU", label: "Nunavut" },
+              { value: "YT", label: "Yukon" },
+            ];
+          } else if (values.country === "uk") {
+            return [
+              { value: "ENG", label: "England" }, { value: "SCT", label: "Scotland" },
+              { value: "WLS", label: "Wales" }, { value: "NIR", label: "Northern Ireland" },
+            ];
+          } else if (values.country === "au") {
+            return [
+              { value: "NSW", label: "New South Wales" }, { value: "VIC", label: "Victoria" },
+              { value: "QLD", label: "Queensland" }, { value: "WA", label: "Western Australia" },
+              { value: "SA", label: "South Australia" }, { value: "TAS", label: "Tasmania" },
+              { value: "ACT", label: "Australian Capital Territory" }, { value: "NT", label: "Northern Territory" },
+            ];
+          }
+          return [{ value: "other", label: "Other Region" }];
+        },
+      },
     ],
   },
   {
-    label: "Step 3: Tenant and Premises",
+    label: "Agreement Date",
     fields: [
-      { name: "tenantName", label: "Tenant Full Legal Name", type: "text", required: true },
-      { name: "premisesAddress", label: "Premises Address", type: "textarea", required: true },
-      { name: "leaseDate", label: "Original Lease Date", type: "date", required: true },
+      {
+        name: "effectiveDate",
+        label: "Effective date of this agreement",
+        type: "date",
+        required: true,
+      },
     ],
   },
   {
-    label: "Step 4: Rent Terms",
+    label: "Landlord",
     fields: [
-      { name: "currentRent", label: "Current Monthly Rent", type: "text", required: true },
-      { name: "newRent", label: "New Monthly Rent", type: "text", required: true },
-      { name: "effectiveDate", label: "Rent Increase Effective Date", type: "date", required: true },
-      { name: "dueDay", label: "Rent Due Day of Month", type: "text", required: true },
+      { name: "party1Name",   label: "Landlord Full Legal Name",  type: "text",  required: true,  placeholder: "Enter full legal name" },
+      { name: "party1Street", label: "Landlord Street Address",   type: "text",  required: true,  placeholder: "123 Main Street" },
+      { name: "party1City",   label: "Landlord City",             type: "text",  required: true,  placeholder: "City" },
+      { name: "party1Zip",    label: "Landlord ZIP/Postal Code",  type: "text",  required: true,  placeholder: "ZIP Code" },
+      { name: "party1Email",  label: "Landlord Email",            type: "email", required: true,  placeholder: "email@example.com" },
+      { name: "party1Phone",  label: "Landlord Phone",            type: "tel",   required: false, placeholder: "(555) 123-4567" },
     ],
   },
   {
-    label: "Step 5: Governing Law",
-    fields: [{ name: "governingState", label: "Governing State", type: "text", required: true }],
-  },
-  {
-    label: "Step 6: Signatures",
+    label: "Tenant",
     fields: [
-      { name: "landlordSign", label: "Landlord Signature Name", type: "text", required: true },
-      { name: "landlordSignDate", label: "Landlord Signature Date", type: "date", required: true },
-      { name: "tenantSign1", label: "Tenant Signature Name", type: "text", required: true },
-      { name: "tenantSign1Date", label: "Tenant Signature Date", type: "date", required: true },
+      { name: "party2Name",   label: "Tenant Full Legal Name(s)", type: "text",  required: true,  placeholder: "Enter full legal name(s)" },
+      { name: "party2Street", label: "Premises Street Address",   type: "text",  required: true,  placeholder: "123 Main Street" },
+      { name: "party2City",   label: "Premises City",             type: "text",  required: true,  placeholder: "City" },
+      { name: "party2Zip",    label: "Premises ZIP Code",         type: "text",  required: true,  placeholder: "ZIP Code" },
+      { name: "party2Email",  label: "Tenant Email",              type: "email", required: true,  placeholder: "email@example.com" },
+      { name: "party2Phone",  label: "Tenant Phone",              type: "tel",   required: false, placeholder: "(555) 123-4567" },
     ],
   },
   {
-    label: "Step 7: Additional Tenant (Optional)",
+    label: "Original Lease",
     fields: [
-      { name: "tenantSign2", label: "Second Tenant Signature Name", type: "text", required: false },
-      { name: "tenantSign2Date", label: "Second Tenant Signature Date", type: "date", required: false },
+      { name: "leaseDate",    label: "Date of the original Lease Agreement",   type: "date", required: true },
+      { name: "rentDueDay",   label: "Day of month rent is currently due",     type: "text", required: true, placeholder: "e.g. 1st" },
+      { name: "currentRent",  label: "Current monthly rent amount",            type: "text", required: true, placeholder: "$0.00" },
     ],
   },
-];
+  {
+    label: "Rent Increase",
+    fields: [
+      { name: "newRent",         label: "New monthly rent amount",              type: "text", required: true, placeholder: "$0.00" },
+      { name: "increaseEffDate", label: "Date the new rent takes effect",       type: "date", required: true },
+      { name: "newRentDueDay",   label: "Day of month new rent is due",         type: "text", required: true, placeholder: "e.g. 1st" },
+    ],
+  },
+  {
+    label: "Additional Terms",
+    fields: [
+      {
+        name: "additionalTerms",
+        label: "Any additional terms or special conditions?",
+        type: "textarea",
+        required: false,
+        placeholder: "Enter any additional terms, conditions, or special provisions...",
+      },
+    ],
+  },
+  {
+    label: "Review & Sign",
+    fields: [
+      { name: "party1Signature", label: "Landlord Signature (type full legal name)",   type: "text", required: true,  placeholder: "Type your full legal name" },
+      { name: "party2Signature", label: "Tenant Signature (type full legal name)",     type: "text", required: true,  placeholder: "Type your full legal name" },
+      { name: "witnessName",     label: "Witness Name (Optional)",                     type: "text", required: false, placeholder: "Witness full legal name" },
+    ],
+  },
+] as Array<{ label: string; fields: FieldDef[] }>;
 
-const generatePDF = (v: Record<string, string>) => {
-  const doc = new jsPDF({ unit: "mm", format: "a4" });
-  const m = 16;
-  const tw = 178;
-  const lh = 5.2;
-  let y = 18;
-  const u = (val?: string, n = 12) => ((val || "").trim() ? (val || "").trim() : "_".repeat(n));
-  const p = (text: string, bold = false, gap = 1.5) => {
-    const lines = doc.splitTextToSize(text, tw);
-    if (y + lines.length * lh + gap > 286) {
-      doc.addPage();
-      y = 18;
-    }
-    doc.setFont("times", bold ? "bold" : "normal");
-    doc.setFontSize(10.5);
-    doc.text(lines, m, y);
-    y += lines.length * lh + gap;
-  };
+// ── helpers ──────────────────────────────────────────────────────────────────
 
-  doc.setFont("times", "bold");
-  doc.setFontSize(13);
-  const title = "RENT INCREASE AGREEMENT";
-  doc.text(title, 105, y, { align: "center" });
-  const tW = doc.getTextWidth(title);
-  doc.line(105 - tW / 2, y + 1, 105 + tW / 2, y + 1);
+function boldHeading(doc: jsPDF, text: string, x: number, y: number): void {
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text(text, x, y);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+}
+
+function wrappedText(
+  doc: jsPDF,
+  text: string,
+  x: number,
+  y: number,
+  maxWidth: number,
+  lineHeight: number
+): number {
+  const lines = doc.splitTextToSize(text, maxWidth);
+  doc.text(lines, x, y);
+  return y + lines.length * lineHeight;
+}
+
+function bulletItem(
+  doc: jsPDF,
+  text: string,
+  x: number,
+  y: number,
+  maxWidth: number,
+  lineHeight: number
+): number {
+  doc.text("\u2022", x, y);
+  const lines = doc.splitTextToSize(text, maxWidth - 6);
+  doc.text(lines, x + 6, y);
+  return y + lines.length * lineHeight;
+}
+
+function checkPageBreak(doc: jsPDF, y: number, needed = 20): number {
+  if (y + needed > 275) {
+    doc.addPage();
+    return 20;
+  }
+  return y;
+}
+
+function sectionHead(
+  doc: jsPDF,
+  num: number,
+  title: string,
+  x: number,
+  y: number
+): number {
+  y = checkPageBreak(doc, y);
+  boldHeading(doc, `${num}.  ${title}`, x, y);
+  return y + 6.5;
+}
+
+// ── PDF generator ─────────────────────────────────────────────────────────────
+
+const generatePDF = (values: Record<string, string>) => {
+  const doc = new jsPDF();
+  const LM = 20;
+  const PW = 170;
+  const LH = 5.5;
+  let y = 22;
+
+  // ── TITLE ─────────────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(15);
+  doc.text("RENT INCREASE AGREEMENT", 105, y, { align: "center" });
+  const titleW = doc.getTextWidth("RENT INCREASE AGREEMENT");
+  doc.setLineWidth(0.4);
+  doc.line(105 - titleW / 2, y + 1.2, 105 + titleW / 2, y + 1.2);
+  y += 12;
+
+  // ── PREAMBLE ──────────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+
+  y = wrappedText(
+    doc,
+    `This Rent Increase Agreement ("Agreement") is entered into and made effective as of ` +
+    `${values.effectiveDate || "[Insert Effective Date]"},`,
+    LM, y, PW, LH
+  );
+  y += 3;
+
+  doc.text("By and Between:", LM, y);
+  y += LH + 3;
+
+  // Landlord block
+  const landlordAddr = [values.party1Street, values.party1City, values.party1Zip]
+    .filter(Boolean).join(", ") || "[Landlord's Address]";
+
+  doc.setFont("helvetica", "bold");
+  doc.text("Landlord:", LM, y);
+  doc.setFont("helvetica", "normal");
+  y += LH;
+  const landlordDetails = [
+    `${values.party1Name || "[Full Legal Name of Landlord]"}`,
+    `Address: ${landlordAddr}`,
+    values.party1Email ? `Email: ${values.party1Email}` : null,
+    values.party1Phone ? `Phone: ${values.party1Phone}` : null,
+  ].filter(Boolean) as string[];
+  for (const line of landlordDetails) {
+    doc.text(line, LM + 4, y);
+    y += LH;
+  }
+  y += 3;
+
+  doc.setFont("helvetica", "bold");
+  doc.text("AND", LM, y);
+  doc.setFont("helvetica", "normal");
+  y += LH + 3;
+
+  // Tenant block
+  const premisesAddr = [values.party2Street, values.party2City, values.party2Zip]
+    .filter(Boolean).join(", ") || "[Premises Address]";
+
+  doc.setFont("helvetica", "bold");
+  doc.text("Tenant:", LM, y);
+  doc.setFont("helvetica", "normal");
+  y += LH;
+  const tenantDetails = [
+    `${values.party2Name || "[Full Legal Name of Tenant(s)]"}`,
+    `Premises Address: ${premisesAddr}`,
+  ];
+  for (const line of tenantDetails) {
+    doc.text(line, LM + 4, y);
+    y += LH;
+  }
+  y += 3;
+
+  y = wrappedText(doc, `Collectively referred to as the "Parties."`, LM, y, PW, LH);
+  y += 7;
+
+  // ── RECITALS ──────────────────────────────────────────────────────────────
+  boldHeading(doc, "RECITALS", LM, y);
+  y += LH + 2;
+
+  const recitals = [
+    `WHEREAS, the Parties entered into a Lease Agreement dated ` +
+    `${values.leaseDate || "[Insert Lease Date]"} (the "Lease") regarding the rental of the ` +
+    `premises located at ${premisesAddr} (the "Premises");`,
+
+    `WHEREAS, pursuant to the Lease, the Tenant is currently paying a monthly rent of ` +
+    `${values.currentRent || "$0.00"}, payable on or before the ` +
+    `${values.rentDueDay || "[Insert Day]"} day of each month;`,
+
+    `WHEREAS, the Landlord now wishes to increase the rent, and the Tenant agrees to such ` +
+    `increase, under the terms set forth herein;`,
+
+    `NOW, THEREFORE, in consideration of the mutual covenants contained herein, the Parties ` +
+    `agree as follows:`,
+  ];
+  for (const r of recitals) {
+    y = checkPageBreak(doc, y);
+    y = wrappedText(doc, r, LM, y, PW, LH);
+    y += 3;
+  }
+  y += 5;
+
+  // ── 1. RENT INCREASE ──────────────────────────────────────────────────────
+  y = sectionHead(doc, 1, "RENT INCREASE", LM, y);
+  const rentBullets = [
+    `Effective as of ${values.increaseEffDate || "[Insert Effective Date]"}, the monthly rent due from the Tenant to the Landlord shall be increased to ${values.newRent || "$0.00"} per month.`,
+    `This replaces the previous monthly rent amount of ${values.currentRent || "$0.00"} established under the original Lease.`,
+  ];
+  for (const b of rentBullets) {
+    y = checkPageBreak(doc, y);
+    y = bulletItem(doc, b, LM + 2, y, PW - 2, LH);
+    y += 2;
+  }
+  y += 5;
+
+  // ── 2. PAYMENT TERMS ──────────────────────────────────────────────────────
+  y = sectionHead(doc, 2, "PAYMENT TERMS", LM, y);
+  const payBullets = [
+    `The increased rent amount of ${values.newRent || "$0.00"} shall be payable in advance on or before the ${values.newRentDueDay || "[Insert Day]"} day of each calendar month.`,
+    `All payment terms shall remain in accordance with the original Lease unless otherwise modified by this Agreement.`,
+  ];
+  for (const b of payBullets) {
+    y = checkPageBreak(doc, y);
+    y = bulletItem(doc, b, LM + 2, y, PW - 2, LH);
+    y += 2;
+  }
+  y += 5;
+
+  // ── 3. NO OTHER MODIFICATIONS ─────────────────────────────────────────────
+  y = sectionHead(doc, 3, "NO OTHER MODIFICATIONS", LM, y);
+  const noModBullets = [
+    `Except as expressly amended herein, all other terms, covenants, and conditions of the original Lease shall remain in full force and effect.`,
+    `All unmodified provisions are hereby ratified and confirmed by the Parties.`,
+  ];
+  for (const b of noModBullets) {
+    y = checkPageBreak(doc, y);
+    y = bulletItem(doc, b, LM + 2, y, PW - 2, LH);
+    y += 2;
+  }
+  y += 5;
+
+  // ── 4. BINDING EFFECT ─────────────────────────────────────────────────────
+  y = sectionHead(doc, 4, "BINDING EFFECT", LM, y);
+  y = wrappedText(
+    doc,
+    `This Agreement shall be binding upon and inure to the benefit of the Parties hereto and their respective heirs, legal representatives, successors, and permitted assigns.`,
+    LM, y, PW, LH
+  );
+  y += 7;
+
+  // ── 5. ENTIRE AGREEMENT ───────────────────────────────────────────────────
+  y = sectionHead(doc, 5, "ENTIRE AGREEMENT", LM, y);
+  y = wrappedText(
+    doc,
+    `This Agreement constitutes the entire understanding between the Parties with respect to the subject matter hereof and supersedes any prior negotiations, discussions, or agreements relating to the rent increase described herein.`,
+    LM, y, PW, LH
+  );
+  y += 7;
+
+  // ── 6. GOVERNING LAW ──────────────────────────────────────────────────────
+  y = sectionHead(doc, 6, "GOVERNING LAW", LM, y);
+  y = wrappedText(
+    doc,
+    `This Agreement shall be governed by and construed in accordance with the laws of the State of ${values.state || "[Insert State]"}.`,
+    LM, y, PW, LH
+  );
+  y += 7;
+
+  // ── ADDITIONAL TERMS ──────────────────────────────────────────────────────
+  if (values.additionalTerms) {
+    y = checkPageBreak(doc, y);
+    boldHeading(doc, "ADDITIONAL TERMS", LM, y);
+    y += LH + 2;
+    y = wrappedText(doc, values.additionalTerms, LM, y, PW, LH);
+    y += 7;
+  }
+
+  // ── SIGNATURES ────────────────────────────────────────────────────────────
+  y = checkPageBreak(doc, y, 60);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(10);
+  y = wrappedText(
+    doc,
+    `IN WITNESS WHEREOF, the Parties have executed this Agreement as of the date first above written.`,
+    LM, y, PW, LH
+  );
+  doc.setFont("helvetica", "normal");
   y += 8;
 
-  p(
-    `This Rent Increase Agreement ("Agreement") is entered into and made effective as of the ${u(v.agreementDay, 2)} day of ${u(v.agreementMonth)}, ${u(v.agreementYear, 4)}, by and between Landlord ${u(v.landlordName)} at ${u(v.landlordAddress)}${v.landlordEmail ? `, Email: ${v.landlordEmail}` : ""}${v.landlordPhone ? `, Phone: ${v.landlordPhone}` : ""} and Tenant ${u(v.tenantName)} for premises at ${u(v.premisesAddress)}.`
-  );
-  p("RECITALS", true);
-  p(`WHEREAS, Parties entered into a Lease dated ${u(v.leaseDate, 10)} regarding the premises; WHEREAS Tenant currently pays monthly rent of $${u(v.currentRent, 4)} due on or before day ${u(v.dueDay, 1)}; and WHEREAS Landlord wishes to increase rent and Tenant agrees under the terms below.`);
-  p("1. RENT INCREASE", true);
-  p(`Effective ${u(v.effectiveDate, 10)}, monthly rent due from Tenant to Landlord is increased to $${u(v.newRent, 4)} per month.`);
-  p("2. PAYMENT TERMS", true);
-  p(`Increased rent is payable in advance on or before day ${u(v.dueDay, 1)} of each calendar month, in accordance with original Lease terms.`);
-  p("3. NO OTHER MODIFICATIONS", true);
-  p("Except as expressly amended in this Agreement, all other Lease terms, covenants, and conditions remain in full force and effect and are ratified by the Parties.");
-  p("4. BINDING EFFECT", true);
-  p("This Agreement binds and inures to the benefit of the Parties and their heirs, legal representatives, successors, and permitted assigns.");
-  p("5. ENTIRE AGREEMENT", true);
-  p("This Agreement is the entire understanding regarding rent increase and supersedes prior negotiations/discussions on this subject.");
-  p("6. GOVERNING LAW", true);
-  p(`This Agreement is governed by and construed in accordance with the laws of the State of ${u(v.governingState)}.`);
-  p("IN WITNESS WHEREOF", true);
-  p(`LANDLORD: Signature ${u(v.landlordSign)}   Date: ${u(v.landlordSignDate, 10)}`);
-  p(`TENANT(S): Signature ${u(v.tenantSign1)}   Date: ${u(v.tenantSign1Date, 10)}`);
-  if ((v.tenantSign2 || "").trim()) {
-    p(`TENANT(S): Signature ${u(v.tenantSign2)}   Date: ${u(v.tenantSign2Date, 10)}`);
+  const col1 = LM;
+  const col2 = LM + 90;
+  const sigLineLen = 75;
+  const nameLW = doc.getTextWidth("Name:  ");
+  const dateLW = doc.getTextWidth("Date:  ");
+
+  // ── Column headers ──────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold");
+  doc.text("LANDLORD:", col1, y);
+  doc.text("TENANT(S):", col2, y);
+  doc.setFont("helvetica", "normal");
+  y += 8;
+
+  // ── Name row ─────────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold"); doc.text("Name:", col1, y); doc.setFont("helvetica", "normal");
+  doc.text(values.party1Name || "", col1 + nameLW, y);
+  doc.setFont("helvetica", "bold"); doc.text("Name:", col2, y); doc.setFont("helvetica", "normal");
+  doc.text(values.party2Name || "", col2 + nameLW, y);
+  y += 9;
+
+  // ── Signature label row ───────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold");
+  doc.text("Signature:", col1, y);
+  doc.text("Signature:", col2, y);
+  doc.setFont("helvetica", "normal");
+  y += 8;
+
+  // ── Signature line with typed name sitting ON the line ────────────────────
+  doc.setLineWidth(0.3);
+  doc.line(col1, y, col1 + sigLineLen, y);
+  doc.line(col2, y, col2 + sigLineLen, y);
+  doc.setFont("helvetica", "italic");
+  doc.setFontSize(9);
+  const p1SigText = doc.splitTextToSize(values.party1Signature || "", sigLineLen - 2)[0] || "";
+  const p2SigText = doc.splitTextToSize(values.party2Signature || "", sigLineLen - 2)[0] || "";
+  doc.text(p1SigText, col1 + 2, y);
+  doc.text(p2SigText, col2 + 2, y);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  y += 10;
+
+  // ── Date row ─────────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold"); doc.text("Date:", col1, y); doc.setFont("helvetica", "normal");
+  doc.line(col1 + dateLW, y, col1 + sigLineLen, y);
+  doc.setFont("helvetica", "bold"); doc.text("Date:", col2, y); doc.setFont("helvetica", "normal");
+  doc.line(col2 + dateLW, y, col2 + sigLineLen, y);
+  y += 12;
+
+  // ── Optional witness ──────────────────────────────────────────────────────
+  if (values.witnessName) {
+    y = checkPageBreak(doc, y, 28);
+    doc.setFont("helvetica", "bold");
+    doc.text("WITNESS:", col1, y);
+    doc.setFont("helvetica", "normal");
+    y += 8;
+    doc.setFont("helvetica", "bold"); doc.text("Name:", col1, y); doc.setFont("helvetica", "normal");
+    doc.text(values.witnessName, col1 + nameLW, y);
+    y += 9;
+    doc.setFont("helvetica", "bold"); doc.text("Signature:", col1, y); doc.setFont("helvetica", "normal");
+    y += 8;
+    doc.setLineWidth(0.3);
+    doc.line(col1, y, col1 + sigLineLen, y);
   }
 
   doc.save("rent_increase_agreement.pdf");
 };
 
-export default function RentIncreaseForm() {
+export default function RentIncrease() {
   return (
     <FormWizard
       steps={steps}
       title="Rent Increase Agreement"
-      subtitle="Complete each step to generate your document"
+      subtitle="Complete each step to generate your Rent Increase Agreement"
       onGenerate={generatePDF}
       documentType="rentincrease"
-      preserveStepLayout
     />
   );
 }

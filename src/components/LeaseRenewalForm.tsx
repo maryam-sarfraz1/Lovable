@@ -410,52 +410,67 @@ const generatePDF = (values: Record<string, string>) => {
   y += 8;
 
   const col1 = LM;
-  const col2 = 110;
+  const col2 = LM + 90;
+  const sigLineLen = 75;
+  const nameLW = doc.getTextWidth("Name:  ");
+  const dateLW = doc.getTextWidth("Date:  ");
 
-  // Labels
+  // ── Column headers ──────────────────────────────────────────────────────
   doc.setFont("helvetica", "bold");
   doc.text("LANDLORD:", col1, y);
   doc.text("TENANT:", col2, y);
   doc.setFont("helvetica", "normal");
-  y += 7;
-
-  // Name row
-  doc.text("Name:", col1, y);
-  doc.text(values.party1Name || "", col1 + 14, y);
-  doc.text("Name:", col2, y);
-  doc.text(values.party2Name || "", col2 + 14, y);
-  y += 7;
-
-  // Signature row
-  doc.text("Signature:", col1, y);
-  doc.line(col1 + 22, y + 1, col1 + 78, y + 1);
-  doc.text("Signature:", col2, y);
-  doc.line(col2 + 22, y + 1, col2 + 78, y + 1);
-  y += 2;
-  doc.setFontSize(9);
-  doc.text(values.party1Signature || "", col1 + 22, y);
-  doc.text(values.party2Signature || "", col2 + 22, y);
-  doc.setFontSize(10);
   y += 8;
 
-  // Date row
-  doc.text("Date:", col1, y);
-  doc.line(col1 + 14, y + 1, col1 + 78, y + 1);
-  doc.text("Date:", col2, y);
-  doc.line(col2 + 14, y + 1, col2 + 78, y + 1);
+  // ── Name row ─────────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold"); doc.text("Name:", col1, y); doc.setFont("helvetica", "normal");
+  doc.text(values.party1Name || "", col1 + nameLW, y);
+  doc.setFont("helvetica", "bold"); doc.text("Name:", col2, y); doc.setFont("helvetica", "normal");
+  doc.text(values.party2Name || "", col2 + nameLW, y);
+  y += 9;
+
+  // ── Signature label row ───────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold");
+  doc.text("Signature:", col1, y);
+  doc.text("Signature:", col2, y);
+  doc.setFont("helvetica", "normal");
+  y += 8;
+
+  // ── Signature line with typed name sitting ON the line ────────────────────
+  doc.setLineWidth(0.3);
+  doc.line(col1, y, col1 + sigLineLen, y);
+  doc.line(col2, y, col2 + sigLineLen, y);
+  doc.setFont("helvetica", "italic");
+  doc.setFontSize(9);
+  const p1SigText = doc.splitTextToSize(values.party1Signature || "", sigLineLen - 2)[0] || "";
+  const p2SigText = doc.splitTextToSize(values.party2Signature || "", sigLineLen - 2)[0] || "";
+  doc.text(p1SigText, col1 + 2, y);
+  doc.text(p2SigText, col2 + 2, y);
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  y += 10;
+
+  // ── Date row ─────────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold"); doc.text("Date:", col1, y); doc.setFont("helvetica", "normal");
+  doc.line(col1 + dateLW, y, col1 + sigLineLen, y);
+  doc.setFont("helvetica", "bold"); doc.text("Date:", col2, y); doc.setFont("helvetica", "normal");
+  doc.line(col2 + dateLW, y, col2 + sigLineLen, y);
   y += 12;
 
-  // Optional witness
+  // ── Optional witness ──────────────────────────────────────────────────────
   if (values.witnessName) {
     y = checkPageBreak(doc, y, 22);
     doc.setFont("helvetica", "bold");
     doc.text("WITNESS:", col1, y);
     doc.setFont("helvetica", "normal");
-    y += 6;
-    doc.text("Name: " + values.witnessName, col1, y);
-    y += 6;
-    doc.text("Signature:", col1, y);
-    doc.line(col1 + 22, y + 1, col1 + 78, y + 1);
+    y += 8;
+    doc.setFont("helvetica", "bold"); doc.text("Name:", col1, y); doc.setFont("helvetica", "normal");
+    doc.text(values.witnessName, col1 + nameLW, y);
+    y += 9;
+    doc.setFont("helvetica", "bold"); doc.text("Signature:", col1, y); doc.setFont("helvetica", "normal");
+    y += 8;
+    doc.setLineWidth(0.3);
+    doc.line(col1, y, col1 + sigLineLen, y);
   }
 
   doc.save("lease_renewal_agreement.pdf");

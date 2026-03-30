@@ -614,7 +614,7 @@ const generatePDF = (values: Record<string, string>) => {
   doc.text("LANDLORD:", MARGIN, y);
   y += 6;
   doc.setFont("helvetica", "normal");
-  doc.text("Signature: _______________________________", MARGIN, y); y += 6;
+ 
   doc.text(`Name:  ${landlord}`, MARGIN, y); y += 6;
   doc.text(`Signed as: ${values.party1Signature || ""}`, MARGIN, y); y += 6;
   doc.text(`Address: ${values.party1Street || ""}, ${values.party1City || ""} ${values.party1Zip || ""}`, MARGIN, y); y += 6;
@@ -627,7 +627,7 @@ const generatePDF = (values: Record<string, string>) => {
   doc.text("TENANT:", MARGIN, y);
   y += 6;
   doc.setFont("helvetica", "normal");
-  doc.text("Signature: _______________________________", MARGIN, y); y += 6;
+
   doc.text(`Name:  ${tenant}`, MARGIN, y); y += 6;
   doc.text(`Signed as: ${values.party2Signature || ""}`, MARGIN, y); y += 6;
   doc.text(`Address: ${values.party2Street || ""}, ${values.party2City || ""} ${values.party2Zip || ""}`, MARGIN, y); y += 6;
