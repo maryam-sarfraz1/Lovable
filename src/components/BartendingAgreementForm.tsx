@@ -228,16 +228,22 @@ const generatePDF = (values: Record<string, string>) => {
     `which may include but are not limited to:`
   );
 
-  const scopeLines = values.scopeDetails
-    ? values.scopeDetails.split(/\n|,/).map((s) => s.trim()).filter(Boolean)
-    : [
-        "Preparation and service of alcoholic and non-alcoholic beverages",
-        "Setup and breakdown of the bar area",
-        "Preparation of garnishes and beverage components",
-        "Maintenance of cleanliness and safety at the bar",
-        "Monitoring alcohol consumption and guest conduct",
-        "Any additional bartending-related services agreed upon in writing",
-      ];
+  // Always include all draft default bullets, then append any extra user-entered items
+  const defaultScopeLines = [
+    "Preparation and service of alcoholic and non-alcoholic beverages",
+    "Setup and breakdown of the bar area",
+    "Preparation of garnishes and beverage components",
+    "Maintenance of cleanliness and safety at the bar",
+    "Monitoring alcohol consumption and guest conduct",
+    "Any additional bartending-related services agreed upon in writing",
+  ];
+  const userScopeLines = values.scopeDetails
+    ? values.scopeDetails.split(/\n|,/).map((s: string) => s.trim()).filter(Boolean)
+    : [];
+  const scopeLines = [
+    ...defaultScopeLines,
+    ...userScopeLines.filter((l: string) => !defaultScopeLines.includes(l)),
+  ];
   scopeLines.forEach(addBullet);
   gap(3);
 
@@ -248,14 +254,20 @@ const generatePDF = (values: Record<string, string>) => {
 
   addBody("Unless expressly agreed in writing, the Provider shall not be responsible for:");
 
-  const exclusionLines = values.exclusions
-    ? values.exclusions.split(/\n|,/).map((s) => s.trim()).filter(Boolean)
-    : [
-        "Purchasing alcohol or supplies",
-        "Providing bar equipment not specifically agreed upon",
-        "Managing guest behavior beyond alcohol service",
-        "Obtaining event permits or licenses",
-      ];
+  // Always include all draft default exclusion bullets, then append any extra user-entered items
+  const defaultExclusionLines = [
+    "Purchasing alcohol or supplies",
+    "Providing bar equipment not specifically agreed upon",
+    "Managing guest behavior beyond alcohol service",
+    "Obtaining event permits or licenses",
+  ];
+  const userExclusionLines = values.exclusions
+    ? values.exclusions.split(/\n|,/).map((s: string) => s.trim()).filter(Boolean)
+    : [];
+  const exclusionLines = [
+    ...defaultExclusionLines,
+    ...userExclusionLines.filter((l: string) => !defaultExclusionLines.includes(l)),
+  ];
   exclusionLines.forEach(addBullet);
   gap(4);
 
@@ -327,7 +339,7 @@ const generatePDF = (values: Record<string, string>) => {
   doc.text("5.3 Additional Hours", margin, y);
   y += 6;
   addBody(
-    `Any services requested beyond the contracted time shall be billed at ${values.additionalHourRate || "$________"} ` +
+    `Any services requested beyond the contracted time shall be billed at a rate of ${values.additionalHourRate || "$________"} ` +
     "per hour, subject to Provider availability."
   );
 
@@ -336,7 +348,7 @@ const generatePDF = (values: Record<string, string>) => {
   doc.text("5.4 Late Payments", margin, y);
   y += 6;
   addBody(
-    `Any unpaid balance shall accrue interest at ${values.lateInterestRate || "____"}% per annum or the maximum ` +
+    `Any unpaid balance shall accrue interest at a rate of ${values.lateInterestRate || "____"}% per annum or the maximum ` +
     "rate permitted by law, whichever is less."
   );
 
