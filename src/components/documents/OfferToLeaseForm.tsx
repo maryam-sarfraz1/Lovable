@@ -1,746 +1,621 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowLeft, ArrowRight, FileText, Plus, Trash2 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import UserInfoStep from '@/components/UserInfoStep';
-import CountryStateAPI from 'countries-states-cities';
-import jsPDF from 'jspdf';
+import { useState, useEffect } from "react";
 
-interface CountryData {
-  id: number;
-  name: string;
-  iso2?: string;
-  iso3?: string;
-  phone_code?: string;
-  capital?: string;
-  currency?: string;
-  native?: string;
-  emoji?: string;
-  emojiU?: string;
-}
-
-interface StateData {
-  id: number;
-  name: string;
-  country_id: number;
-  country_code?: string;
-  country_name?: string;
-  state_code?: string;
-}
-
-// Helper functions
-const getAllCountries = (): CountryData[] => {
-  return CountryStateAPI.getAllCountries();
-};
-
-const getStatesByCountry = (countryId: number): StateData[] => {
-  return CountryStateAPI.getStatesOfCountry(countryId);
-};
-
-const getCountryName = (countryId: number): string => {
-  const countries = getAllCountries();
-  const country = countries.find(c => c.id === countryId);
-  return country ? country.name : '';
-};
-
-const getStateName = (countryId: number, stateId: number): string => {
-  const states = getStatesByCountry(countryId);
-  const state = states.find(s => s.id === stateId);
-  return state ? state.name : '';
-};
-
-interface OfferToLeaseFormProps {
-  onBack?: () => void;
-}
-
-const OfferToLeaseForm: React.FC<OfferToLeaseFormProps> = ({ onBack }) => {
-  const [step, setStep] = useState(1);
-  const [isGenerating, setIsGenerating] = useState(false);
-  const [countries, setCountries] = useState<CountryData[]>([]);
-  const [states, setStates] = useState<StateData[]>([]);
-
-  const [formData, setFormData] = useState({
-    // Location
-    country: '',
-    state: '',
-    
-    // Tenant Information
-    tenantName: '',
-    tenantAddress: '',
-    tenantCity: '',
-    tenantState: '',
-    tenantZip: '',
-    
-    // Landlord Information
-    landlordName: '',
-    landlordAddress: '',
-    landlordCity: '',
-    landlordState: '',
-    landlordZip: '',
-    
-    // Premises Information
-    premisesAddress: '',
-    premisesCity: '',
-    premisesState: '',
-    premisesDescription: '',
-    permittedUse: '',
-    
-    // Lease Terms
-    offerDate: '',
-    commencementDate: '',
-    expirationDate: '',
-    monthlyRent: '',
-    securityDeposit: '',
-    
-    // Irrevocability
-    irrevocableTime: '',
-    irrevocableDate: '',
-    
-    // Conditions for Lease Execution
-    conditions: [''],
-    
-    // Signage Rights
-    signageRights: 'yes',
-    
-    // Additional Terms
-    additionalTerms: '',
+const loadJsPDF = () =>
+  new Promise((resolve, reject) => {
+    if (window.jspdf) return resolve(window.jspdf.jsPDF);
+    const script = document.createElement("script");
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+    script.onload = () => resolve(window.jspdf.jsPDF);
+    script.onerror = reject;
+    document.head.appendChild(script);
   });
 
-  useEffect(() => {
-    const allCountries = getAllCountries();
-    setCountries(allCountries);
-  }, []);
+// ── Types & Steps ─────────────────────────────────────────────────────────────
+const steps = [
+  {
+    label: "Parties",
+    fields: [
+      { name: "offerDate", label: "Offer Date", type: "date", required: true },
+      { name: "tenantName", label: "Tenant Name", type: "text", required: true, placeholder: "Full legal name of tenant" },
+      { name: "tenantStreet", label: "Tenant Street Address", type: "text", required: true, placeholder: "Street" },
+      { name: "tenantCity", label: "Tenant City", type: "text", required: true, placeholder: "City" },
+      { name: "tenantState", label: "Tenant State/Province", type: "text", required: true, placeholder: "State or Province" },
+      { name: "tenantZip", label: "Tenant ZIP/Postal Code", type: "text", required: true, placeholder: "ZIP / Postal Code" },
+      { name: "landlordName", label: "Landlord Name", type: "text", required: true, placeholder: "Full legal name of landlord" },
+      { name: "landlordStreet", label: "Landlord Street Address", type: "text", required: true, placeholder: "Street" },
+      { name: "landlordCity", label: "Landlord City", type: "text", required: true, placeholder: "City" },
+      { name: "landlordState", label: "Landlord State/Province", type: "text", required: true, placeholder: "State or Province" },
+      { name: "landlordZip", label: "Landlord ZIP/Postal Code", type: "text", required: true, placeholder: "ZIP / Postal Code" },
+    ],
+  },
+  {
+    label: "Premises & Term",
+    fields: [
+      { name: "premisesAddress", label: "Premises Address", type: "text", required: true, placeholder: "Street address of leased premises" },
+      { name: "premisesCity", label: "Premises City", type: "text", required: true, placeholder: "City" },
+      { name: "premisesState", label: "Premises State/Province", type: "text", required: true, placeholder: "State or Province" },
+      { name: "premisesDescription", label: "Description of Premises", type: "textarea", required: true, placeholder: "Describe the space, floor, unit, square footage, improvements, etc." },
+      { name: "termStart", label: "Lease Term Commencement Date", type: "date", required: true },
+      { name: "termEnd", label: "Lease Term Expiry Date", type: "date", required: true },
+    ],
+  },
+  {
+    label: "Rent & Deposit",
+    fields: [
+      { name: "baseRent", label: "Monthly Base Rent ($)", type: "text", required: true, placeholder: "e.g. 2500.00" },
+      { name: "securityDeposit", label: "Security Deposit ($)", type: "text", required: true, placeholder: "e.g. 5000.00" },
+    ],
+  },
+  {
+    label: "Use & Conditions",
+    fields: [
+      { name: "permittedUse", label: "Permitted Use of Premises", type: "text", required: true, placeholder: "e.g. retail clothing store, office space, restaurant" },
+      { name: "formalLeaseConditions", label: "Conditions Before Tenant Must Execute Formal Lease", type: "textarea", required: true, placeholder: "List any conditions that must be satisfied before the Tenant is obligated to sign the formal lease" },
+      { name: "alterationsAllowed", label: "Alterations/Improvements Allowed (with Landlord consent)?", type: "select", required: true, options: [{ value: "yes", label: "Yes" }, { value: "no", label: "No" }] },
+      { name: "sublettingAllowed", label: "Assignment / Subletting Allowed (with Landlord consent)?", type: "select", required: true, options: [{ value: "yes", label: "Yes" }, { value: "no", label: "No" }] },
+    ],
+  },
+  {
+    label: "Irrevocability",
+    fields: [
+      { name: "irrevocableTime", label: "Irrevocable Until (Time)", type: "text", required: true, placeholder: "e.g. 5:00 PM" },
+      { name: "irrevocableDate", label: "Irrevocable Until (Date)", type: "date", required: true },
+      { name: "signageAllowed", label: "Tenant Signage Rights Included?", type: "select", required: true, options: [{ value: "yes", label: "Yes" }, { value: "no", label: "No" }] },
+    ],
+  },
+  {
+    label: "Signature",
+    fields: [
+      { name: "tenantSignature", label: "Tenant Signature (typed)", type: "text", required: true },
+      { name: "tenantSignDate", label: "Tenant Signature Date", type: "date", required: true },
+      { name: "finalConfirm", label: "Confirm final review", type: "select", required: true, options: [{ value: "yes", label: "Yes" }, { value: "no", label: "No" }] },
+    ],
+  },
+];
 
-  useEffect(() => {
-    if (formData.country) {
-      const countryStates = getStatesByCountry(parseInt(formData.country));
-      setStates(countryStates);
-    } else {
-      setStates([]);
-    }
-  }, [formData.country]);
+// ── PDF Generator ─────────────────────────────────────────────────────────────
+const generatePDF = async (values) => {
+  const JsPDF = await loadJsPDF();
+  const doc = new JsPDF();
+  const margin = 20;
+  const width = doc.internal.pageSize.getWidth() - margin * 2;
+  const pageHeight = doc.internal.pageSize.getHeight();
+  let y = 24;
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  // ── Helpers ──
+  const checkPage = (needed = 12) => {
+    if (y + needed > pageHeight - 20) { doc.addPage(); y = 24; }
   };
 
-  const handleConditionChange = (index: number, value: string) => {
-    const newConditions = [...formData.conditions];
-    newConditions[index] = value;
-    setFormData(prev => ({ ...prev, conditions: newConditions }));
+  const addTitle = (text) => {
+    checkPage(14);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+    const lines = doc.splitTextToSize(text, width);
+    doc.text(lines, margin, y);
+    y += lines.length * 7 + 6;
   };
 
-  const addCondition = () => {
-    setFormData(prev => ({ ...prev, conditions: [...prev.conditions, ''] }));
+  const addSectionHeading = (text) => {
+    checkPage(14);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    const lines = doc.splitTextToSize(text, width);
+    doc.text(lines, margin, y);
+    y += lines.length * 6 + 2;
   };
 
-  const removeCondition = (index: number) => {
-    if (formData.conditions.length > 1) {
-      const newConditions = formData.conditions.filter((_, i) => i !== index);
-      setFormData(prev => ({ ...prev, conditions: newConditions }));
-    }
+  const addBody = (text, extra = 5) => {
+    checkPage(10);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10.5);
+    const lines = doc.splitTextToSize(text, width);
+    if (y + lines.length * 5.2 > pageHeight - 20) { doc.addPage(); y = 24; }
+    doc.text(lines, margin, y);
+    y += lines.length * 5.2 + extra;
   };
 
-  const nextStep = () => setStep(prev => Math.min(prev + 1, 5));
-  const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
+  const addBoldInline = (boldText, normalText) => {
+    checkPage(10);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10.5);
+    const bLines = doc.splitTextToSize(boldText, width);
+    doc.text(bLines, margin, y);
+    y += bLines.length * 5.2;
+    doc.setFont("helvetica", "normal");
+    const nLines = doc.splitTextToSize(normalText, width);
+    if (y + nLines.length * 5.2 > pageHeight - 20) { doc.addPage(); y = 24; }
+    doc.text(nLines, margin, y);
+    y += nLines.length * 5.2 + 4;
+  };
 
-  const generatePDF = () => {
-    setIsGenerating(true);
-    
-    try {
-      const doc = new jsPDF();
-      const pageWidth = doc.internal.pageSize.width;
-      const margin = 20;
-      const maxWidth = pageWidth - 2 * margin;
-      let y = 20;
+  const gap = (px = 4) => { y += px; };
 
-      const addText = (text: string, fontSize: number = 11, isBold: boolean = false, centered: boolean = false, indent: number = 0) => {
-        doc.setFontSize(fontSize);
-        doc.setFont('helvetica', isBold ? 'bold' : 'normal');
-        
-        const lines = doc.splitTextToSize(text, maxWidth - indent);
-        lines.forEach((line: string) => {
-          if (y > 270) {
-            doc.addPage();
-            y = 20;
-          }
-          if (centered) {
-            doc.text(line, pageWidth / 2, y, { align: 'center' });
-          } else {
-            doc.text(line, margin + indent, y);
-          }
-          y += fontSize * 0.5;
-        });
-        y += 2;
-      };
+  const v = (field, fallback = "___") => values[field]?.trim() || fallback;
 
-      const countryName = getCountryName(parseInt(formData.country));
-      const stateName = getStateName(parseInt(formData.country), parseInt(formData.state));
+  // ── DOCUMENT TITLE ──
+  addTitle("OFFER TO LEASE");
+  gap(2);
 
-      // Title
-      addText('OFFER TO LEASE', 16, true, true);
-      y += 5;
+  // ── PREAMBLE ──
+  addBody(
+    `This Offer to Lease (the "Offer") is made as of ${v("offerDate", "__________")} (the "Offer Date"), by`
+  );
+  gap(2);
 
-      // Introduction
-      addText(`This Offer to Lease (the "Offer") is made as of ${formData.offerDate} (the "Offer Date"), by ${formData.tenantName}, having an address at ${formData.tenantAddress}, ${formData.tenantCity}, ${formData.tenantState} ${formData.tenantZip} (the "Tenant"),`);
-      y += 3;
+  // Tenant block
+  doc.setFont("helvetica", "bold"); doc.setFontSize(10.5);
+  const tenantLine = doc.splitTextToSize(
+    `${v("tenantName", "__________________________")}, having an address at`,
+    width
+  );
+  doc.text(tenantLine, margin, y); y += tenantLine.length * 5.5;
+  doc.setFont("helvetica", "normal");
+  const tenantAddr = doc.splitTextToSize(
+    `${v("tenantStreet")}, ${v("tenantCity")}, ${v("tenantState")}, ${v("tenantZip")} (the "Tenant"),`,
+    width
+  );
+  doc.text(tenantAddr, margin, y); y += tenantAddr.length * 5.5 + 4;
 
-      addText(`And ${formData.landlordName}, having an address at ${formData.landlordAddress}, ${formData.landlordCity}, ${formData.landlordState} ${formData.landlordZip} (the "Landlord").`);
-      y += 3;
+  addBody("And");
+  gap(2);
 
-      addText('The Tenant and the Landlord are hereinafter collectively referred to as the "Parties."');
-      y += 5;
+  // Landlord block
+  doc.setFont("helvetica", "bold"); doc.setFontSize(10.5);
+  const landlordLine = doc.splitTextToSize(
+    `${v("landlordName", "__________________________")}, having an address at`,
+    width
+  );
+  doc.text(landlordLine, margin, y); y += landlordLine.length * 5.5;
+  doc.setFont("helvetica", "normal");
+  const landlordAddr = doc.splitTextToSize(
+    `${v("landlordStreet")}, ${v("landlordCity")}, ${v("landlordState")}, ${v("landlordZip")} (the "Landlord").`,
+    width
+  );
+  doc.text(landlordAddr, margin, y); y += landlordAddr.length * 5.5 + 6;
 
-      // Recitals
-      addText('Recitals', 12, true);
-      addText('WHEREAS, the Landlord is the owner and/or authorized property manager of certain commercial real property available for lease; and');
-      addText(`WHEREAS, the Tenant hereby offers to lease from the Landlord the commercial premises located at ${formData.premisesAddress}, ${formData.premisesCity}, ${formData.premisesState} (the "Premises"), subject to the terms and conditions set forth herein.`);
-      addText('NOW, THEREFORE, in consideration of the foregoing recitals, which are incorporated herein by reference, and the mutual covenants and agreements contained herein, the Parties agree as follows:');
-      y += 5;
+  addBody(`The Tenant and the Landlord are hereinafter collectively referred to as the "Parties."`);
+  gap(6);
 
-      // 1. Description of Premises
-      addText('1. Description of Premises', 12, true);
-      addText(`The Premises shall consist of the following space and improvements: ${formData.premisesDescription}.`);
-      y += 3;
+  // ── RECITALS ──
+  addSectionHeading("Recitals");
+  addBody(
+    "WHEREAS, the Landlord is the owner and/or authorized property manager of certain commercial real property available for lease; and"
+  );
+  addBody(
+    `WHEREAS, the Tenant hereby offers to lease from the Landlord the commercial premises located at ` +
+    `${v("premisesAddress")}, ${v("premisesCity")}, ${v("premisesState")} (the "Premises"), ` +
+    `subject to the terms and conditions set forth herein.`
+  );
+  gap(3);
+  addBody(
+    `NOW, THEREFORE, in consideration of the foregoing recitals, which are incorporated herein by reference, ` +
+    `and the mutual covenants and agreements contained herein, the Parties agree as follows:`
+  );
+  gap(6);
 
-      // 2. Term
-      addText('2. Term', 12, true);
-      addText(`The term of the lease (the "Term") shall commence on ${formData.commencementDate} and shall expire on ${formData.expirationDate}, unless earlier terminated in accordance with the terms of the lease.`);
-      y += 3;
+  // ── 1. DESCRIPTION OF PREMISES ──
+  addSectionHeading("1. Description of Premises");
+  addBody("The Premises shall consist of the following space and improvements:");
+  addBody(v("premisesDescription", "__________________________") + ".");
+  gap(5);
 
-      // 3. Rent
-      addText('3. Rent', 12, true);
-      addText(`As consideration for leasing the Premises, the Tenant shall pay to the Landlord a monthly base rent (the "Base Rent") in the amount of $${formData.monthlyRent}, payable in advance on such dates and in such manner as shall be specified in the lease.`);
-      y += 3;
+  // ── 2. TERM ──
+  addSectionHeading("2. Term");
+  addBody(
+    `The term of the lease (the "Term") shall commence on ${v("termStart", "__________")} and shall expire on ` +
+    `${v("termEnd", "__________")}, unless earlier terminated in accordance with the terms of the lease.`
+  );
+  gap(5);
 
-      // 4. Signage
-      if (formData.signageRights === 'yes') {
-        addText('4. Signage', 12, true);
-        addText('The Tenant shall have the right, at its sole cost and expense, to install, maintain, and display signage identifying the Tenant and its business operations on the Premises, subject to compliance with all applicable municipal by-laws, zoning regulations, and governmental requirements. Upon termination or expiration of the lease, the Tenant may remove such signage, provided that any damage caused by such removal shall be promptly repaired by the Tenant at its own expense.');
-        y += 3;
+  // ── 3. RENT ──
+  addSectionHeading("3. Rent");
+  addBody(
+    `As consideration for leasing the Premises, the Tenant shall pay to the Landlord a monthly base rent ` +
+    `(the "Base Rent") in the amount of $${v("baseRent", "__________")}, payable in advance on such dates ` +
+    `and in such manner as shall be specified in the lease.`
+  );
+  gap(5);
+
+  // ── 4. SIGNAGE ──
+  addSectionHeading("4. Signage");
+  if (values.signageAllowed === "yes") {
+    addBody(
+      `The Tenant shall have the right, at its sole cost and expense, to install, maintain, and display signage ` +
+      `identifying the Tenant and its business operations on the Premises, subject to compliance with all applicable ` +
+      `municipal by-laws, zoning regulations, and governmental requirements. Upon termination or expiration of the lease, ` +
+      `the Tenant may remove such signage, provided that any damage caused by such removal shall be promptly repaired ` +
+      `by the Tenant at its own expense.`
+    );
+  } else {
+    addBody(
+      `The Tenant shall not install, maintain, or display any signage on the Premises without the prior written ` +
+      `consent of the Landlord.`
+    );
+  }
+  gap(5);
+
+  // ── 5. SEVERABILITY ──
+  addSectionHeading("5. Severability");
+  addBody(
+    `If any provision of this Offer is held by a court of competent jurisdiction to be invalid or unenforceable, ` +
+    `and such determination is final and non-appealable, such provision shall be severed, and the remaining provisions ` +
+    `of this Offer shall remain in full force and effect and shall be construed so as to best give effect to the intent of the Parties.`
+  );
+  gap(5);
+
+  // ── 6. BINDING EFFECT ──
+  addSectionHeading("6. Binding Effect");
+  addBody(
+    `Upon written acceptance of this Offer by the Landlord, this Offer shall constitute a legally binding agreement ` +
+    `between the Parties, enforceable in accordance with its terms.`
+  );
+  gap(5);
+
+  // ── 7. IRREVOCABILITY ──
+  addSectionHeading("7. Irrevocability");
+  addBody(
+    `This Offer shall be irrevocable until ${v("irrevocableTime", "____")} on ${v("irrevocableDate", "__________")}, ` +
+    `after which time, if not accepted by the Landlord, it shall automatically lapse and become null and void ` +
+    `without further action by either Party.`
+  );
+  gap(5);
+
+  // ── 8. SECURITY DEPOSIT ──
+  addSectionHeading("8. Security Deposit");
+  addBody(
+    `Upon execution of the formal lease, the Tenant shall pay to the Landlord a security deposit ` +
+    `(the "Security Deposit") in the amount of $${v("securityDeposit", "__________")}. ` +
+    `The Security Deposit shall be held by the Landlord in accordance with the lease and shall be refundable ` +
+    `at the end of the tenancy, less any lawful deductions. The Security Deposit shall not be applied toward ` +
+    `payment of Base Rent.`
+  );
+  gap(5);
+
+  // ── 9. FORMAL LEASE ──
+  addSectionHeading("9. Formal Lease");
+  addBody(
+    `A formal lease agreement shall be prepared by the Landlord and executed by both Parties promptly following ` +
+    `acceptance of this Offer. The lease shall incorporate all material terms and conditions contained herein and ` +
+    `shall be subject to the Tenant's approval and review by the Tenant's legal counsel. The Tenant shall not be ` +
+    `obligated to execute the lease unless and until the following conditions have been satisfied:`
+  );
+  addBody(v("formalLeaseConditions", "__________________________") + ".");
+  gap(5);
+
+  // ── 10. USE OF PREMISES ──
+  addSectionHeading("10. Use of Premises");
+  addBody(
+    `The Premises shall be used solely for ${v("permittedUse", "__________________________")} ` +
+    `(the "Permitted Use") and for no other purpose without the prior written consent of the Landlord.`
+  );
+  gap(5);
+
+  // ── 11. POSSESSION AND OCCUPANCY ──
+  addSectionHeading("11. Possession and Occupancy");
+  addBody(
+    `The Landlord shall deliver vacant possession of the Premises to the Tenant on or before the commencement ` +
+    `date of the Term. The Landlord represents and warrants that, as of such date, the Premises shall be free ` +
+    `from any existing leases, options, rights of renewal, or other leasehold interests.`
+  );
+  gap(5);
+
+  // ── 12. ALTERATIONS AND IMPROVEMENTS ──
+  addSectionHeading("12. Alterations and Improvements");
+  if (values.alterationsAllowed === "no") {
+    addBody(
+      `The Tenant shall not make any alterations, renovations, or improvements to the Premises without the ` +
+      `prior written consent of the Landlord.`
+    );
+  } else {
+    addBody(
+      `The Tenant shall have the right to make alterations, renovations, or improvements to the Premises, ` +
+      `subject to the prior written consent of the Landlord, which consent shall not be unreasonably withheld ` +
+      `or delayed. All work shall comply with applicable municipal by-laws, building codes, and governmental regulations.`
+    );
+  }
+  gap(5);
+
+  // ── 13. ASSIGNMENT AND SUBLETTING ──
+  addSectionHeading("13. Assignment and Subletting");
+  if (values.sublettingAllowed === "no") {
+    addBody(
+      `The Tenant shall not assign the lease or sublet all or any portion of the Premises without the prior ` +
+      `written consent of the Landlord.`
+    );
+  } else {
+    addBody(
+      `The Tenant may assign the lease or sublet all or any portion of the Premises with the prior written consent ` +
+      `of the Landlord, such consent not to be unreasonably withheld, conditioned, or delayed.`
+    );
+  }
+  gap(5);
+
+  // ── 14. COMPLIANCE WITH LAWS ──
+  addSectionHeading("14. Compliance With Laws");
+  addBody(
+    `The Landlord represents and warrants that the building and the Premises have been constructed and maintained ` +
+    `in compliance with all applicable zoning regulations, building codes, and requirements of all governmental ` +
+    `authorities having jurisdiction.`
+  );
+  gap(8);
+
+  // ── EXECUTION ──
+  addSectionHeading("Execution");
+  addBody(
+    `IN WITNESS WHEREOF, the Tenant has executed this Offer in accordance with applicable law as of the Offer Date first written above.`
+  );
+  gap(6);
+
+  checkPage(40);
+  doc.setFont("helvetica", "bold"); doc.setFontSize(10.5);
+  doc.text("TENANT:", margin, y); y += 10;
+
+  doc.setFont("helvetica", "normal"); doc.setFontSize(10.5);
+  doc.text(`Name: ${v("tenantName", "__________________________")}`, margin, y); y += 8;
+  doc.text(`Signature: ${v("tenantSignature", "__________________________")}`, margin, y); y += 8;
+  doc.text(`Date: ${v("tenantSignDate", "__________")}`, margin, y); y += 12;
+
+  // Signature line
+  checkPage(20);
+  doc.setDrawColor(0); doc.setLineWidth(0.3);
+  doc.line(margin, y, margin + 80, y);
+  y += 4;
+  doc.setFontSize(9); doc.setFont("helvetica", "normal");
+  doc.text("Authorized Signature", margin, y);
+  y += 12;
+
+  doc.save("offer_to_lease.pdf");
+};
+
+// ── Main Component ─────────────────────────────────────────────────────────────
+export default function OfferToLeaseForm() {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [values, setValues] = useState({});
+  const [errors, setErrors] = useState({});
+  const [generating, setGenerating] = useState(false);
+
+  const step = steps[currentStep];
+  const isFirst = currentStep === 0;
+  const isLast = currentStep === steps.length - 1;
+  const progress = Math.round(((currentStep) / (steps.length - 1)) * 100);
+  const nextStepLabel = !isLast ? steps[currentStep + 1]?.label : null;
+
+  const handleChange = (name, value) => {
+    setValues((prev) => ({ ...prev, [name]: value }));
+    if (errors[name]) setErrors((prev) => { const e = { ...prev }; delete e[name]; return e; });
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    for (const field of step.fields) {
+      if (field.required && !values[field.name]?.trim()) {
+        newErrors[field.name] = `${field.label} is required`;
       }
-
-      // 5. Severability
-      addText('5. Severability', 12, true);
-      addText('If any provision of this Offer is held by a court of competent jurisdiction to be invalid or unenforceable, and such determination is final and non-appealable, such provision shall be severed, and the remaining provisions of this Offer shall remain in full force and effect and shall be construed so as to best give effect to the intent of the Parties.');
-      y += 3;
-
-      // 6. Binding Effect
-      addText('6. Binding Effect', 12, true);
-      addText('Upon written acceptance of this Offer by the Landlord, this Offer shall constitute a legally binding agreement between the Parties, enforceable in accordance with its terms.');
-      y += 3;
-
-      // 7. Irrevocability
-      addText('7. Irrevocability', 12, true);
-      addText(`This Offer shall be irrevocable until ${formData.irrevocableTime} on ${formData.irrevocableDate}, after which time, if not accepted by the Landlord, it shall automatically lapse and become null and void without further action by either Party.`);
-      y += 3;
-
-      // 8. Security Deposit
-      addText('8. Security Deposit', 12, true);
-      addText(`Upon execution of the formal lease, the Tenant shall pay to the Landlord a security deposit (the "Security Deposit") in the amount of $${formData.securityDeposit}. The Security Deposit shall be held by the Landlord in accordance with the lease and shall be refundable at the end of the tenancy, less any lawful deductions. The Security Deposit shall not be applied toward payment of Base Rent.`);
-      y += 3;
-
-      // 9. Formal Lease
-      addText('9. Formal Lease', 12, true);
-      addText('A formal lease agreement shall be prepared by the Landlord and executed by both Parties promptly following acceptance of this Offer. The lease shall incorporate all material terms and conditions contained herein and shall be subject to the Tenant\'s approval and review by the Tenant\'s legal counsel. The Tenant shall not be obligated to execute the lease unless and until the following conditions have been satisfied:');
-      const validConditions = formData.conditions.filter(c => c.trim());
-      validConditions.forEach((condition, index) => {
-        addText(`${index + 1}. ${condition}`, 11, false, false, 10);
-      });
-      y += 3;
-
-      // 10. Use of Premises
-      addText('10. Use of Premises', 12, true);
-      addText(`The Premises shall be used solely for ${formData.permittedUse} (the "Permitted Use") and for no other purpose without the prior written consent of the Landlord.`);
-      y += 3;
-
-      // 11. Possession and Occupancy
-      addText('11. Possession and Occupancy', 12, true);
-      addText('The Landlord shall deliver vacant possession of the Premises to the Tenant on or before the commencement date of the Term. The Landlord represents and warrants that, as of such date, the Premises shall be free from any existing leases, options, rights of renewal, or other leasehold interests.');
-      y += 3;
-
-      // 12. Alterations and Improvements
-      addText('12. Alterations and Improvements', 12, true);
-      addText('The Tenant shall have the right to make alterations, renovations, or improvements to the Premises, subject to the prior written consent of the Landlord, which consent shall not be unreasonably withheld or delayed. All work shall comply with applicable municipal by-laws, building codes, and governmental regulations.');
-      y += 3;
-
-      // 13. Assignment and Subletting
-      addText('13. Assignment and Subletting', 12, true);
-      addText('The Tenant may assign the lease or sublet all or any portion of the Premises with the prior written consent of the Landlord, such consent not to be unreasonably withheld, conditioned, or delayed.');
-      y += 3;
-
-      // 14. Compliance With Laws
-      addText('14. Compliance With Laws', 12, true);
-      addText('The Landlord represents and warrants that the building and the Premises have been constructed and maintained in compliance with all applicable zoning regulations, building codes, and requirements of all governmental authorities having jurisdiction.');
-      y += 3;
-
-      // Additional Terms
-      if (formData.additionalTerms) {
-        addText('15. Additional Terms', 12, true);
-        addText(formData.additionalTerms);
-        y += 3;
-      }
-
-      // Execution
-      y += 10;
-      addText('Execution', 12, true);
-      addText('IN WITNESS WHEREOF, the Tenant has executed this Offer in accordance with applicable law as of the Offer Date first written above.');
-      y += 10;
-
-      addText('TENANT:', 11, true);
-      y += 5;
-      addText(`Name: ${formData.tenantName}`);
-      addText(`Date: ${formData.offerDate}`);
-      y += 3;
-      addText('Signature: _______________________________');
-      y += 15;
-
-      addText('LANDLORD ACCEPTANCE:', 11, true);
-      y += 5;
-      addText(`Name: ${formData.landlordName}`);
-      addText('Date: _______________________________');
-      y += 3;
-      addText('Signature: _______________________________');
-
-      doc.save('offer-to-lease.pdf');
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-    } finally {
-      setIsGenerating(false);
     }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
   };
 
-  const renderStepContent = () => {
-    switch(step) {
-      case 1:
-        return (
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-gray-800">Location Information</h2>
-            <p className="text-gray-600">Select the jurisdiction for this Offer to Lease.</p>
-            
-            <div className="space-y-4">
-              <div>
-                <Label htmlFor="country">Country *</Label>
-                <Select value={formData.country} onValueChange={(value) => handleInputChange('country', value)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select country" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {countries.map((country) => (
-                      <SelectItem key={country.id} value={country.id.toString()}>
-                        {country.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="state">State/Province *</Label>
-                <Select value={formData.state} onValueChange={(value) => handleInputChange('state', value)}>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select state/province" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {states.map((state) => (
-                      <SelectItem key={state.id} value={state.id.toString()}>
-                        {state.name}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 2:
-        return (
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-gray-800">Party Information</h2>
-            <p className="text-gray-600">Enter the tenant and landlord details.</p>
-            
-            <div className="space-y-4">
-              <h3 className="font-medium text-gray-700">Tenant Information</h3>
-              
-              <div>
-                <Label htmlFor="tenantName">Tenant Name *</Label>
-                <Input
-                  id="tenantName"
-                  value={formData.tenantName}
-                  onChange={(e) => handleInputChange('tenantName', e.target.value)}
-                  placeholder="Enter tenant name (individual or company)"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="tenantAddress">Street Address *</Label>
-                <Input
-                  id="tenantAddress"
-                  value={formData.tenantAddress}
-                  onChange={(e) => handleInputChange('tenantAddress', e.target.value)}
-                  placeholder="Enter street address"
-                />
-              </div>
-
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <Label htmlFor="tenantCity">City *</Label>
-                  <Input
-                    id="tenantCity"
-                    value={formData.tenantCity}
-                    onChange={(e) => handleInputChange('tenantCity', e.target.value)}
-                    placeholder="City"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="tenantState">State *</Label>
-                  <Input
-                    id="tenantState"
-                    value={formData.tenantState}
-                    onChange={(e) => handleInputChange('tenantState', e.target.value)}
-                    placeholder="State"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="tenantZip">ZIP Code *</Label>
-                  <Input
-                    id="tenantZip"
-                    value={formData.tenantZip}
-                    onChange={(e) => handleInputChange('tenantZip', e.target.value)}
-                    placeholder="ZIP"
-                  />
-                </div>
-              </div>
-
-              <h3 className="font-medium text-gray-700 pt-4">Landlord Information</h3>
-
-              <div>
-                <Label htmlFor="landlordName">Landlord Name *</Label>
-                <Input
-                  id="landlordName"
-                  value={formData.landlordName}
-                  onChange={(e) => handleInputChange('landlordName', e.target.value)}
-                  placeholder="Enter landlord name"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="landlordAddress">Street Address *</Label>
-                <Input
-                  id="landlordAddress"
-                  value={formData.landlordAddress}
-                  onChange={(e) => handleInputChange('landlordAddress', e.target.value)}
-                  placeholder="Enter street address"
-                />
-              </div>
-
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <Label htmlFor="landlordCity">City *</Label>
-                  <Input
-                    id="landlordCity"
-                    value={formData.landlordCity}
-                    onChange={(e) => handleInputChange('landlordCity', e.target.value)}
-                    placeholder="City"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="landlordState">State *</Label>
-                  <Input
-                    id="landlordState"
-                    value={formData.landlordState}
-                    onChange={(e) => handleInputChange('landlordState', e.target.value)}
-                    placeholder="State"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="landlordZip">ZIP Code *</Label>
-                  <Input
-                    id="landlordZip"
-                    value={formData.landlordZip}
-                    onChange={(e) => handleInputChange('landlordZip', e.target.value)}
-                    placeholder="ZIP"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 3:
-        return (
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-gray-800">Premises & Lease Details</h2>
-            <p className="text-gray-600">Enter premises information and lease terms.</p>
-            
-            <div className="space-y-4">
-              <h3 className="font-medium text-gray-700">Premises Information</h3>
-
-              <div>
-                <Label htmlFor="premisesAddress">Premises Address *</Label>
-                <Input
-                  id="premisesAddress"
-                  value={formData.premisesAddress}
-                  onChange={(e) => handleInputChange('premisesAddress', e.target.value)}
-                  placeholder="Enter premises street address"
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="premisesCity">City *</Label>
-                  <Input
-                    id="premisesCity"
-                    value={formData.premisesCity}
-                    onChange={(e) => handleInputChange('premisesCity', e.target.value)}
-                    placeholder="City"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="premisesState">State *</Label>
-                  <Input
-                    id="premisesState"
-                    value={formData.premisesState}
-                    onChange={(e) => handleInputChange('premisesState', e.target.value)}
-                    placeholder="State"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <Label htmlFor="premisesDescription">Premises Description *</Label>
-                <Textarea
-                  id="premisesDescription"
-                  value={formData.premisesDescription}
-                  onChange={(e) => handleInputChange('premisesDescription', e.target.value)}
-                  placeholder="Describe the space and improvements (e.g., 'approximately 2,500 sq ft of retail space on the ground floor')"
-                  rows={3}
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="permittedUse">Permitted Use *</Label>
-                <Input
-                  id="permittedUse"
-                  value={formData.permittedUse}
-                  onChange={(e) => handleInputChange('permittedUse', e.target.value)}
-                  placeholder="e.g., retail sales of clothing and accessories"
-                />
-              </div>
-
-              <h3 className="font-medium text-gray-700 pt-4">Lease Term</h3>
-
-              <div>
-                <Label htmlFor="offerDate">Offer Date *</Label>
-                <Input
-                  id="offerDate"
-                  type="date"
-                  value={formData.offerDate}
-                  onChange={(e) => handleInputChange('offerDate', e.target.value)}
-                />
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="commencementDate">Lease Commencement Date *</Label>
-                  <Input
-                    id="commencementDate"
-                    type="date"
-                    value={formData.commencementDate}
-                    onChange={(e) => handleInputChange('commencementDate', e.target.value)}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="expirationDate">Lease Expiration Date *</Label>
-                  <Input
-                    id="expirationDate"
-                    type="date"
-                    value={formData.expirationDate}
-                    onChange={(e) => handleInputChange('expirationDate', e.target.value)}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <Label htmlFor="signageRights">Signage Rights</Label>
-                <Select value={formData.signageRights} onValueChange={(value) => handleInputChange('signageRights', value)}>
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="yes">Yes - Tenant has signage rights</SelectItem>
-                    <SelectItem value="no">No - No signage rights included</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 4:
-        return (
-          <div className="space-y-6">
-            <h2 className="text-xl font-semibold text-gray-800">Financial Terms & Conditions</h2>
-            <p className="text-gray-600">Enter rent, deposit, and conditions for lease execution.</p>
-            
-            <div className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="monthlyRent">Monthly Base Rent ($) *</Label>
-                  <Input
-                    id="monthlyRent"
-                    type="number"
-                    value={formData.monthlyRent}
-                    onChange={(e) => handleInputChange('monthlyRent', e.target.value)}
-                    placeholder="0.00"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="securityDeposit">Security Deposit ($) *</Label>
-                  <Input
-                    id="securityDeposit"
-                    type="number"
-                    value={formData.securityDeposit}
-                    onChange={(e) => handleInputChange('securityDeposit', e.target.value)}
-                    placeholder="0.00"
-                  />
-                </div>
-              </div>
-
-              <h3 className="font-medium text-gray-700 pt-4">Offer Irrevocability</h3>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <Label htmlFor="irrevocableTime">Irrevocable Until (Time) *</Label>
-                  <Input
-                    id="irrevocableTime"
-                    type="time"
-                    value={formData.irrevocableTime}
-                    onChange={(e) => handleInputChange('irrevocableTime', e.target.value)}
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="irrevocableDate">Irrevocable Until (Date) *</Label>
-                  <Input
-                    id="irrevocableDate"
-                    type="date"
-                    value={formData.irrevocableDate}
-                    onChange={(e) => handleInputChange('irrevocableDate', e.target.value)}
-                  />
-                </div>
-              </div>
-
-              <h3 className="font-medium text-gray-700 pt-4">Conditions for Lease Execution</h3>
-              <p className="text-sm text-gray-500">Conditions that must be satisfied before tenant is obligated to execute the formal lease.</p>
-
-              {formData.conditions.map((condition, index) => (
-                <div key={index} className="flex gap-2">
-                  <Input
-                    value={condition}
-                    onChange={(e) => handleConditionChange(index, e.target.value)}
-                    placeholder={`Condition ${index + 1} (e.g., "Satisfactory inspection of premises")`}
-                  />
-                  {formData.conditions.length > 1 && (
-                    <Button type="button" variant="outline" size="icon" onClick={() => removeCondition(index)}>
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  )}
-                </div>
-              ))}
-              
-              <Button type="button" variant="outline" onClick={addCondition} className="w-full">
-                <Plus className="h-4 w-4 mr-2" /> Add Condition
-              </Button>
-
-              <div className="pt-4">
-                <Label htmlFor="additionalTerms">Additional Terms (Optional)</Label>
-                <Textarea
-                  id="additionalTerms"
-                  value={formData.additionalTerms}
-                  onChange={(e) => handleInputChange('additionalTerms', e.target.value)}
-                  placeholder="Enter any additional terms or conditions..."
-                  rows={4}
-                />
-              </div>
-            </div>
-          </div>
-        );
-
-      case 5:
-        return (
-          <UserInfoStep
-            onBack={prevStep}
-            onGenerate={generatePDF}
-            documentType="Offer to Lease"
-            isGenerating={isGenerating}
-          />
-        );
-
-      default:
-        return null;
-    }
+  const handleNext = () => { if (validate()) setCurrentStep((s) => s + 1); };
+  const handleBack = () => { setCurrentStep((s) => s - 1); setErrors({}); };
+  const handleGenerate = async () => {
+    if (!validate()) return;
+    setGenerating(true);
+    try { await generatePDF(values); } catch (e) { alert("PDF generation failed. Please try again."); }
+    setGenerating(false);
   };
+
+  const inputBase = `w-full px-3 py-2.5 border rounded-lg text-sm bg-white text-gray-800 outline-none transition-all focus:ring-2 focus:ring-orange-300 focus:border-orange-400 placeholder-gray-400`;
+  const inputNormal = `border-gray-300`;
+  const inputError = `border-red-400 bg-red-50`;
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
-      <div className="mb-8">
-        <Button variant="ghost" onClick={onBack} className="mb-4">
-          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Documents
-        </Button>
-        
-        <div className="flex items-center gap-3 mb-6">
-          <div className="p-2 bg-blue-100 rounded-lg">
-            <FileText className="h-6 w-6 text-blue-600" />
-          </div>
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Offer to Lease</h1>
-            <p className="text-gray-600">Create a formal offer to lease commercial premises</p>
-          </div>
+    <div style={{ fontFamily: "'Segoe UI', system-ui, sans-serif", background: "#f5f5f5", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      {/* Top bar */}
+      <div style={{ background: "#fff", borderBottom: "1px solid #e5e7eb", padding: "0 24px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 56 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#374151" strokeWidth={1.8}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          <span style={{ fontWeight: 600, fontSize: 16, color: "#111827" }}>Offer to Lease</span>
         </div>
-
-        {/* Progress Bar */}
-        <div className="flex items-center justify-between mb-8">
-          {[1, 2, 3, 4, 5].map((stepNum) => (
-            <div key={stepNum} className="flex items-center">
-              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                step >= stepNum ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600'
-              }`}>
-                {stepNum}
-              </div>
-              {stepNum < 5 && (
-                <div className={`w-16 h-1 mx-2 ${step > stepNum ? 'bg-blue-600' : 'bg-gray-200'}`} />
-              )}
-            </div>
-          ))}
+        <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 14 }}>
+          <span style={{ color: "#6b7280" }}>Step {currentStep + 1} of {steps.length}</span>
+          <span style={{ color: "#ea580c", fontWeight: 700 }}>{progress}% Complete</span>
         </div>
       </div>
 
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        {renderStepContent()}
+      {/* Orange progress bar */}
+      <div style={{ height: 5, background: "#e5e7eb" }}>
+        <div style={{ height: "100%", width: `${progress}%`, background: "#ea580c", transition: "width 0.4s ease" }} />
+      </div>
 
-        {step < 5 && (
-          <div className="flex justify-between mt-8 pt-6 border-t">
-            <Button variant="outline" onClick={prevStep} disabled={step === 1}>
-              <ArrowLeft className="mr-2 h-4 w-4" /> Previous
-            </Button>
-            <Button onClick={nextStep}>
-              Next <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
+      {/* Body */}
+      <div style={{ display: "flex", flex: 1, overflow: "hidden" }}>
+        {/* Sidebar */}
+        <div style={{ width: 240, background: "#fff", borderRight: "1px solid #e5e7eb", padding: "20px 12px", display: "flex", flexDirection: "column", gap: 4, flexShrink: 0 }}>
+          {steps.map((s, i) => {
+            const isActive = i === currentStep;
+            const isDone = i < currentStep;
+            return (
+              <div key={i} style={{
+                display: "flex", alignItems: "center", gap: 10, padding: "9px 12px",
+                borderRadius: 8, cursor: "default",
+                background: isActive ? "#fff7ed" : "transparent",
+              }}>
+                <div style={{
+                  width: 20, height: 20, borderRadius: "50%", flexShrink: 0,
+                  border: isActive ? "2px solid #ea580c" : isDone ? "2px solid #ea580c" : "2px solid #d1d5db",
+                  background: isDone ? "#ea580c" : "#fff",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  {isDone ? (
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                      <path d="M2 5l2 2 4-4" stroke="#fff" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  ) : isActive ? (
+                    <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#ea580c" }} />
+                  ) : null}
+                </div>
+                <span style={{ fontSize: 14, fontWeight: isActive ? 600 : 400, color: isActive ? "#ea580c" : isDone ? "#374151" : "#9ca3af" }}>
+                  {s.label}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Main content */}
+        <div style={{ flex: 1, overflowY: "auto", padding: "32px 40px" }}>
+          {/* Step header */}
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+              <span style={{ background: "#1f2937", color: "#fff", fontWeight: 700, fontSize: 13, padding: "2px 10px", borderRadius: 4 }}>
+                Step {currentStep + 1}
+              </span>
+              {nextStepLabel && (
+                <span style={{ color: "#9ca3af", fontSize: 13 }}>→ Next: {nextStepLabel}</span>
+              )}
+            </div>
+            <h1 style={{ fontSize: 28, fontWeight: 700, color: "#111827", margin: 0 }}>{step.label}</h1>
           </div>
+
+          {/* Form card */}
+          <div style={{ background: "#fff", border: "1px solid #e5e7eb", borderRadius: 12, padding: "28px 28px", maxWidth: 720 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+              {step.fields.map((field) => (
+                <div key={field.name}>
+                  <label style={{ display: "block", fontSize: 14, fontWeight: 500, color: "#374151", marginBottom: 6 }}>
+                    {field.label}
+                    {field.required && <span style={{ color: "#ef4444", marginLeft: 4 }}>*</span>}
+                  </label>
+
+                  {field.type === "select" ? (
+                    <select
+                      value={values[field.name] || ""}
+                      onChange={(e) => handleChange(field.name, e.target.value)}
+                      style={{
+                        width: "100%", padding: "10px 12px", border: `1px solid ${errors[field.name] ? "#f87171" : "#d1d5db"}`,
+                        borderRadius: 8, fontSize: 14, background: "#fff", color: values[field.name] ? "#111827" : "#9ca3af",
+                        outline: "none", cursor: "pointer", appearance: "auto"
+                      }}
+                    >
+                      <option value="">Select {field.label}…</option>
+                      {field.options?.map((o) => (
+                        <option key={o.value} value={o.value}>{o.label}</option>
+                      ))}
+                    </select>
+                  ) : field.type === "textarea" ? (
+                    <textarea
+                      rows={3}
+                      placeholder={field.placeholder}
+                      value={values[field.name] || ""}
+                      onChange={(e) => handleChange(field.name, e.target.value)}
+                      style={{
+                        width: "100%", padding: "10px 12px", border: `1px solid ${errors[field.name] ? "#f87171" : "#d1d5db"}`,
+                        borderRadius: 8, fontSize: 14, background: "#fff", color: "#111827",
+                        outline: "none", resize: "vertical", fontFamily: "inherit",
+                        boxSizing: "border-box"
+                      }}
+                    />
+                  ) : (
+                    <input
+                      type={field.type}
+                      placeholder={field.placeholder}
+                      value={values[field.name] || ""}
+                      onChange={(e) => handleChange(field.name, e.target.value)}
+                      style={{
+                        width: "100%", padding: "10px 12px", border: `1px solid ${errors[field.name] ? "#f87171" : "#d1d5db"}`,
+                        borderRadius: 8, fontSize: 14, background: "#fff", color: "#111827",
+                        outline: "none", boxSizing: "border-box"
+                      }}
+                    />
+                  )}
+
+                  {errors[field.name] && (
+                    <p style={{ color: "#ef4444", fontSize: 12, marginTop: 4, display: "flex", alignItems: "center", gap: 4 }}>
+                      <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                      </svg>
+                      {errors[field.name]}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom bar */}
+      <div style={{ background: "#fff", borderTop: "1px solid #e5e7eb", padding: "14px 32px", display: "flex", alignItems: "center", justifyContent: "space-between", flexShrink: 0 }}>
+        {/* Back */}
+        <button
+          onClick={handleBack}
+          disabled={isFirst}
+          style={{
+            display: "flex", alignItems: "center", gap: 6, padding: "10px 20px",
+            border: "none", background: "none", cursor: isFirst ? "not-allowed" : "pointer",
+            fontSize: 14, fontWeight: 500, color: isFirst ? "#d1d5db" : "#374151"
+          }}
+        >
+          <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back
+        </button>
+
+        {/* Dot indicators */}
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <span style={{ fontSize: 13, color: "#6b7280" }}>{currentStep} of {steps.length} steps completed</span>
+          <div style={{ display: "flex", gap: 6 }}>
+            {steps.map((_, i) => (
+              <div key={i} style={{
+                width: 10, height: 10, borderRadius: "50%",
+                background: i < currentStep ? "#ea580c" : i === currentStep ? "#ea580c" : "#d1d5db",
+                opacity: i === currentStep ? 1 : i < currentStep ? 0.5 : 1
+              }} />
+            ))}
+          </div>
+        </div>
+
+        {/* Continue / Generate */}
+        {isLast ? (
+          <button
+            onClick={handleGenerate}
+            disabled={generating}
+            style={{
+              display: "flex", alignItems: "center", gap: 8, padding: "11px 28px",
+              borderRadius: 8, border: "none", cursor: generating ? "wait" : "pointer",
+              background: "#ea580c", color: "#fff", fontWeight: 600, fontSize: 14
+            }}
+          >
+            {generating ? "Generating…" : (
+              <>
+                Generate PDF
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </>
+            )}
+          </button>
+        ) : (
+          <button
+            onClick={handleNext}
+            style={{
+              display: "flex", alignItems: "center", gap: 8, padding: "11px 28px",
+              borderRadius: 8, border: "none", cursor: "pointer",
+              background: "#ea580c", color: "#fff", fontWeight: 600, fontSize: 14
+            }}
+          >
+            Continue
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         )}
       </div>
     </div>
   );
-};
-
-export default OfferToLeaseForm;
+}
