@@ -1,53 +1,109 @@
 import { FormWizard, FieldDef } from "./FormWizard";
 import { jsPDF } from "jspdf";
 
+// ==================== STEPS ====================
 const steps: Array<{ label: string; fields: FieldDef[] }> = [
+  // ── STEP 1: Agreement Info ────────────────────────────────────────────
   {
-    label: "Agreement Date & Parties",
+    label: "Agreement Date & Order",
     fields: [
-      { name: "agreementDate", label: "Agreement date", type: "date", required: true },
-      { name: "sellerName", label: "Seller / Party 1 name", type: "text", required: true },
-      { name: "buyerName", label: "Buyer / Party 2 name", type: "text", required: true },
+      { name: "orderNumber", label: "Order Number", type: "text", required: true, placeholder: "e.g. ORD-2024-001" },
+      { name: "agreementDate", label: "Effective Date of Agreement", type: "date", required: true },
     ],
   },
+  // ── STEP 2: Seller ────────────────────────────────────────────────────
   {
-    label: "Business Details",
+    label: "Seller Information",
     fields: [
-      { name: "businessName", label: "Business name being sold", type: "text", required: true },
-      { name: "salePrice", label: "Sale price (amount)", type: "text", required: true },
+      { name: "sellerName", label: "Seller Full Legal Name", type: "text", required: true, placeholder: "Full legal name or company name" },
+      { name: "sellerAddress", label: "Seller Principal Place of Business Address", type: "text", required: true, placeholder: "Full address" },
     ],
   },
+  // ── STEP 3: Buyer ─────────────────────────────────────────────────────
+  {
+    label: "Buyer Information",
+    fields: [
+      { name: "buyerName", label: "Buyer Full Legal Name", type: "text", required: true, placeholder: "Full legal name or company name" },
+      { name: "buyerAddress", label: "Buyer Principal Place of Business Address", type: "text", required: true, placeholder: "Full address" },
+    ],
+  },
+  // ── STEP 4: Goods / Products ──────────────────────────────────────────
+  {
+    label: "Goods / Products",
+    fields: [
+      { name: "goodsDescription", label: "Description of Goods", type: "textarea", required: true, placeholder: "Describe the goods being sold..." },
+      { name: "quantity", label: "Quantity", type: "text", required: true, placeholder: "e.g. 100 units" },
+      { name: "unitPrice", label: "Unit Price ($)", type: "text", required: true, placeholder: "e.g. 50.00" },
+      { name: "totalPrice", label: "Total Price ($)", type: "text", required: true, placeholder: "e.g. 5000.00" },
+    ],
+  },
+  // ── STEP 5: Product Standards ─────────────────────────────────────────
+  {
+    label: "Product Standards",
+    fields: [
+      { name: "quotationDate", label: "Seller's Quotation Date (for product standards reference)", type: "date", required: true },
+    ],
+  },
+  // ── STEP 6: Payment Terms ─────────────────────────────────────────────
+  {
+    label: "Payment Terms",
+    fields: [
+      { name: "paymentRecipient", label: "Payment to be Made to (Name)", type: "text", required: true, placeholder: "Payee name" },
+      { name: "paymentAddress", label: "Payment Address", type: "text", required: true, placeholder: "Address for payment" },
+      { name: "discountPercent", label: "Early Payment Discount (%)", type: "text", required: false, placeholder: "e.g. 2" },
+      { name: "discountDays", label: "Discount if Paid Within (Days)", type: "text", required: false, placeholder: "e.g. 10" },
+      { name: "interestRate", label: "Interest Rate on Late Payment (% per annum)", type: "text", required: false, placeholder: "e.g. 5" },
+    ],
+  },
+  // ── STEP 7: Delivery ──────────────────────────────────────────────────
+  {
+    label: "Delivery",
+    fields: [
+      { name: "deliveryArrangedBy", label: "Delivery Arranged By", type: "text", required: true, placeholder: "Seller or Buyer name" },
+      { name: "carrierSelectedBy", label: "Carrier Selected By", type: "text", required: true, placeholder: "Seller or Buyer name" },
+      { name: "deliveryDate", label: "Delivery Deadline Date", type: "date", required: true },
+    ],
+  },
+  // ── STEP 8: Inspection & Acceptance ──────────────────────────────────
+  {
+    label: "Inspection & Acceptance",
+    fields: [
+      { name: "cureDays", label: "Days for Seller to Cure Defects After Return", type: "text", required: true, placeholder: "e.g. 30" },
+    ],
+  },
+  // ── STEP 9: Remedies on Default ───────────────────────────────────────
+  {
+    label: "Remedies on Default",
+    fields: [
+      { name: "defaultCureDays", label: "Days to Cure Default After Notice", type: "text", required: true, placeholder: "e.g. 30" },
+    ],
+  },
+  // ── STEP 10: Governing Law ────────────────────────────────────────────
   {
     label: "Governing Law",
     fields: [
-      { name: "governingLaw", label: "Governing law / applicable laws jurisdiction", type: "text", required: false },
+      { name: "governingLaw", label: "Governing Law / Jurisdiction", type: "text", required: true, placeholder: "e.g. State of California" },
     ],
   },
+  // ── STEP 11: Seller Signature ─────────────────────────────────────────
   {
     label: "Seller Signature",
     fields: [
-      { name: "sellerSignName", label: "Seller — Name", type: "text", required: false },
-      { name: "sellerCnic", label: "Seller — CNIC", type: "text", required: false },
+      { name: "sellerSignName", label: "Seller — Name", type: "text", required: true, placeholder: "Full legal name" },
+      { name: "sellerSignDate", label: "Seller — Signature Date", type: "date", required: true },
     ],
   },
+  // ── STEP 12: Buyer Signature ──────────────────────────────────────────
   {
     label: "Buyer Signature",
     fields: [
-      { name: "buyerSignName", label: "Buyer — Name", type: "text", required: false },
-      { name: "buyerCnic", label: "Buyer — CNIC", type: "text", required: false },
+      { name: "buyerSignName", label: "Buyer — Name", type: "text", required: true, placeholder: "Full legal name" },
+      { name: "buyerSignDate", label: "Buyer — Signature Date", type: "date", required: true },
     ],
   },
-  {
-    label: "Witnesses",
-    fields: [
-      { name: "witness1Name", label: "Witness 1 — Name", type: "text", required: false },
-      { name: "witness1Cnic", label: "Witness 1 — CNIC", type: "text", required: false },
-      { name: "witness2Name", label: "Witness 2 — Name", type: "text", required: false },
-      { name: "witness2Cnic", label: "Witness 2 — CNIC", type: "text", required: false },
-    ],
-  },
-];
+] as Array<{ label: string; fields: FieldDef[] }>;
 
+// ==================== PDF GENERATOR ====================
 const generatePDF = (values: Record<string, string>) => {
   const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
   const w = 210;
@@ -67,209 +123,289 @@ const generatePDF = (values: Record<string, string>) => {
     const lines = doc.splitTextToSize(text, tw);
     checkBreak(lines.length * lh + gap);
     doc.setFont("helvetica", bold ? "bold" : "normal");
+    doc.setFontSize(10.5);
     doc.text(lines, m, y);
     y += lines.length * lh + gap;
   };
 
+  // Section heading — bold, NO underline/separator line
   const heading = (text: string) => {
-    checkBreak(lh + 2);
+    checkBreak(lh + 4);
     doc.setFont("helvetica", "bold");
     doc.setFontSize(10.5);
     doc.text(text, m, y);
-    y += lh + 2;
-  };
-
-  const numbered = (num: string, text: string) => {
-    const full = `${num}  ${text}`;
-    const lines = doc.splitTextToSize(full, tw);
-    checkBreak(lines.length * lh + 2);
-    doc.setFont("helvetica", "normal");
-    doc.text(lines, m, y);
-    y += lines.length * lh + 2;
+    y += lh + 3;
   };
 
   const bullet = (text: string) => {
     const lines = doc.splitTextToSize("\u2022  " + text, tw - 6);
     checkBreak(lines.length * lh + 2);
     doc.setFont("helvetica", "normal");
+    doc.setFontSize(10.5);
     doc.text(lines, m + 6, y);
     y += lines.length * lh + 2;
   };
 
-  const sigLine = (label: string, val?: string, minChars = 26, gap = 2.5) => {
-    const shown = (val || "").trim();
-    const labelText = `${label}: `;
-    checkBreak(lh + gap);
+  // Underlined signature/field line
+  const sigLine = (label: string, val?: string, lineWidth = 55) => {
+    checkBreak(lh + 3);
     doc.setFont("helvetica", "normal");
-    doc.text(labelText, m, y);
-    const x = m + doc.getTextWidth(labelText);
-    const lineEnd = shown ? x + Math.max(10, doc.getTextWidth(shown)) : x + doc.getTextWidth("_".repeat(minChars));
-    if (shown) doc.text(shown, x, y);
-    doc.setLineWidth(0.22);
-    doc.line(x, y + 1.1, lineEnd, y + 1.1);
-    y += lh + gap;
+    doc.setFontSize(10.5);
+    const lt = `${label}: `;
+    doc.text(lt, m, y);
+    const x = m + doc.getTextWidth(lt);
+    const shown = (val || "").trim();
+    if (shown) {
+      doc.text(shown, x, y);
+      doc.setLineWidth(0.22);
+      doc.line(x, y + 1.1, x + Math.max(lineWidth, doc.getTextWidth(shown)), y + 1.1);
+    } else {
+      doc.setLineWidth(0.22);
+      doc.line(x, y + 1.1, x + lineWidth, y + 1.1);
+    }
+    y += lh + 3;
   };
 
   // ── TITLE ──────────────────────────────────────────────────────────────
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(13);
-  const title = "SALE AGREEMENT";
-  doc.text(title, w / 2, y, { align: "center" });
-  const tW = doc.getTextWidth(title);
-  doc.setLineWidth(0.35);
-  doc.line(w / 2 - tW / 2, y + 1.3, w / 2 + tW / 2, y + 1.3);
-  y += 10;
+  doc.setFontSize(14);
+  doc.text("SALES AGREEMENT FOR PRODUCTS", w / 2, y, { align: "center" });
+  y += 11;
   doc.setFontSize(10.5);
 
-  // ── PREAMBLE ────────────────────────────────────────────────────────────
+  // ── ORDER NUMBER ───────────────────────────────────────────────────────
+  p(`Order Number: ${u(values.orderNumber, 12)}`);
+  y += 1;
+
+  // ── PREAMBLE ───────────────────────────────────────────────────────────
   p(
-    `This SALE AGREEMENT ("Agreement") is made at Islamabad on this ${u(values.agreementDate, 14)} ("Effective Date").`
+    `This Sales Agreement for Products (the "Agreement") is made and entered into as of ${u(values.agreementDate, 12)} (the "Effective Date"),`
   );
   y += 1;
   p("BY AND BETWEEN", true);
   y += 1;
   p(
-    `${u(values.sellerName, 22)} (hereinafter referred to as the "Seller", which expression shall, where the context so admits, shall include their respective legal heirs, agents, successors-in-interest and permitted assigns);`
+    ` ${u(values.sellerName, 22)}, having its principal place of business at ${u(values.sellerAddress, 22)} (hereinafter referred to as the "Seller"),`
   );
   y += 1;
   p("AND");
   y += 1;
   p(
-    `${u(values.buyerName, 22)} (hereinafter referred to as the "Buyer", which expression shall, where the context so admits, shall include their respective legal heirs, agents, successors-in-interest and permitted assigns).`
+    ` ${u(values.buyerName, 22)}, having its principal place of business at ${u(values.buyerAddress, 22)} (hereinafter referred to as the "Buyer").`
   );
   y += 1;
+  p('The Seller and the Buyer may be referred to individually as a "Party" and collectively as the "Parties."');
+  y += 3;
+
+  // ── 1. SALE OF GOODS ───────────────────────────────────────────────────
+  heading("1. Sale of Goods");
+  p('The Seller hereby agrees to sell, and the Buyer agrees to purchase, the following goods (the "Goods") in accordance with the terms and conditions set forth in this Agreement:');
+  bullet(`Description of Goods: ${u(values.goodsDescription)}`);
+  bullet(`Quantity: ${u(values.quantity)}`);
+  bullet(`Unit Price: $${u(values.unitPrice)}`);
+  bullet(`Total Price: $${u(values.totalPrice)}`);
+  p(`Total Purchase Price: $${u(values.totalPrice)}`);
+  y += 1;
+
+  // ── 2. PRODUCT STANDARDS ───────────────────────────────────────────────
+  heading("2. Product Standards");
   p(
-    '(The Seller and Buyers may individually be referred to as "Party" or collectively as "Parties").'
+    `The Goods shall conform strictly to the specifications, standards, and requirements set forth in the Seller's quotation dated ${u(values.quotationDate, 12)}, which is hereby incorporated into and forms an integral part of this Agreement.`
   );
-  y += 2;
+  y += 1;
 
-  // ── RECITALS ────────────────────────────────────────────────────────────
-  heading("RECITALS");
+  // ── 3. TITLE AND RISK OF LOSS ──────────────────────────────────────────
+  heading("3. Title and Risk of Loss");
   p(
-    `I.\tWHEREAS, the Seller hereby warrants and represents that he is the absolute, rightful and lawful owner of business named as "${u(values.businessName, 20)}" hereinafter referred as ("Business") plus all amenities, laboratories, pharmacies, appurtenances and/or other articles attached to the Sold Business;`
-  );
-  p(
-    "II.\tWHEREAS, the Seller is desirous of selling the Business to the Buyers and the Buyers is desirous of purchasing the Business, free from and/or any and all Encumbrances, mortgages, charges, liens, pledges, tenancies and or other restraints likely to impede the transfer of title from Seller to Buyers;"
+    "The Buyer shall bear all reasonable shipping costs in accordance with its designated shipping instructions. Notwithstanding the foregoing, the Seller shall be responsible for proper packaging, shipment, and safe delivery of the Goods, and shall bear all risk of loss or damage to the Goods until delivery has been completed and accepted by the Buyer."
   );
   p(
-    "III.\tAND WHEREAS, the Parties have agreed to the terms and conditions on which the sale of Business from Seller to Buyers shall take place, and each of them wishes to reduce the same in writing."
-  );
-  y += 2;
-  p("NOW, THEREFORE, THIS SALE DEED WITNESSTH AS FOLLOWS:", true);
-  y += 1;
-
-  // ── THE SALE TRANSACTION ────────────────────────────────────────────────
-  heading("THE SALE TRANSACTION");
-  numbered(
-    "1.1.",
-    `The Sold Business is valued ${u(values.salePrice, 14)} ("Sale Price") being the full and final Sale Price of the Business;`
-  );
-  numbered(
-    "1.2.",
-    "The Buyers under this Sale Deed, hereby affirms that, Pursuant to this sale Agreement the Seller has made payment of Sale Price for abovementioned Business in kind vide the execution of this Sale Deed, and the Seller acknowledges the same."
-  );
-  numbered(
-    "1.3.",
-    "In consideration of the Sale Price paid by the Buyers to the Seller, the Seller hereby grants, conveys and assigns by way of absolute sale unto the Buyers the Sold Business."
+    "Title to the Goods shall pass to the Buyer upon full payment and delivery, unless otherwise agreed in writing."
   );
   y += 1;
 
-  // ── REPRESENTATIONS AND WARRANTIES ─────────────────────────────────────
-  heading("REPRESENTATIONS AND WARRANTIES");
-  p("1.4.\tOf Seller: in addition to applicable undertakings under Sale Agreement, the Seller hereby represents and warrants that:");
-  numbered("1.4.1.", "The Seller has all requisite power and authority to execute and deliver the Sale Deed, and to perform its obligations under its terms and conditions;");
-  numbered("1.4.2.", "The Seller has good, valid, complete and marketable title and goodwill therein, and no one other than the Seller possesses any title, right, share or interest in or relating to the Sold Business, whether paramount, competing or otherwise, and that the Sold Business is free from all or any Encumbrances, mortgages, charges, liens, pledges, tenancies or other restraints (including the ability of the Buyers to further sell the Sold Business without any Encumbrances) whatsoever, including without limitation, claims, litigation, attachments, taxes, cesses, rates, bills for amenities or any other levy, duty or charge or dues payable to any government authority, banking or financial institution or any other person;");
-  numbered("1.4.3.", "The Seller hereby sells, transfers and conveys all of the estate, title, rights and interests free from Encumbrances in favour of the Buyers against Sale Price to be received from the Buyers;");
-  numbered("1.4.4.", "The Seller is the only owner having undisputed absolute lawful ownership-in-possession of the Sold Business;");
-  numbered("1.4.5.", "The Seller has the lawful power, authority and right to alienate, transfer, sell and convey the Sold Business fully and completely to and/or in favour of the Buyers;");
-  numbered("1.4.6.", "The Sold Business is freehold in nature and the Seller is the only lawful owner of the Sold Business hereby conveyed, sold and transferred and the Seller has not done anything or caused to be done any act or thing (covertly, overtly, directly or indirectly or through any agent or representative or anyone claiming authority on their behalf) whereby the title of the Seller in the Sold Business and/or anything in derogation of the right of the Seller to transfer the Sold Business and/or any act or thing whereby the right of the Seller to sell, transfer, assign and/or convey the Sold Business has been hindered, impaired or prejudiced in any way whatsoever;");
-  numbered("1.4.7.", "The Seller shall not claim any sort of right to or upon or in relation to the Sold Business and shall not interfere, disturb and interrupt the Sold Business;");
-  numbered("1.4.8.", "The Seller has paid or will pay up to the date of this Sale Deed, all rates, taxes, cesses, charges, dues, development charges, assessments by way of business tax or otherwise and any action, claim, loan or liability whatsoever in respect of the Sold Business due and payable to, inter alia, any Government department/agency, or any other local authority or body up to the complete satisfaction of the Buyers;");
-  numbered("1.4.9.", "The Seller hereby indemnifies and shall keep the Buyers indemnified, secured and harmless from and against all losses, claims, and demands, that may be made by the Seller or any other person/persons claiming through the Seller and/or their successor-in-interest. Any fine, penalty or liability imposed or determined by any local body or authority relating to or concerning the Sold Business up to the date of this Sale Deed shall be paid and borne by the Seller;");
-  numbered("1.4.10.", "The Seller shall, at the time of registration of this Sale Deed and thereafter, execute all such documents and papers and do every other reasonable act, deed or thing whatsoever necessary or required by the Buyers to completely and/or more perfectly and effectively secure, assign, transfer and convey the Sold Business and/or electricity, gas, telephone and water connection etc. thereon to the Buyers and shall, in this regard, sign all necessary papers/applications for mutation/transfer of the same in all Government departments/agencies or local bodies or authorities as may be required by the Buyers along with the absolute power of attorney that may be required by the Buyers;");
-  numbered("1.4.11.", "The Seller has handed over quiet, peaceful, vacant physical possession of the Sold Business to the Buyers on the date of this Sale Deed;");
-  numbered("1.4.12.", "From the date of this Sale Deed, the Buyers shall be the sole and exclusive lawful and legal owner of the Sold Business and the Buyers shall enjoy quiet and peaceful possession of the Sold Business and enjoy all its rights, appurtenances, benefits without any let, hindrance, disturbance or interruption of any kind or nature whatsoever by/from the Seller or any other person claiming through them and that the Buyers shall be at liberty to, inter alia, deal with, sell, mortgage, deal with and/or dispose of the Sold Business in any manner desired;");
-  numbered("1.4.13.", "From the date of these presents, the Buyers shall hold, occupy and possess the Sold Business and shall be the sole, absolute, rightful, lawful and exclusive owner of the Sold Business and every part thereof and shall enjoy all profits, emoluments, assessments, privileges without eviction, let, hindrance etc. made or preferred by the Seller or any other person claiming through or under trust of the Seller and that whenever asked by the Buyers or Buyers\u2019s successors or representatives, the Seller shall, do, cause, or procure to be done all acts, matters, deeds and things for better assuring and more perfectly assigning the Sold Business to the Buyers, at the cost of the Seller;");
-  numbered("1.4.14.", "The Seller has handed over to the Buyers any and all original title documents, papers and things whatsoever relating to the Business including receipts of evidencing payment of all dues, charges, cesses, rates, assessments, development charges and ground rent up to the date of registration of this Sale Deed and the Parties have executed a separate receipt in this behalf;");
-  numbered("1.4.15.", "The Seller shall always keep the Buyers secured, harmless and indemnified against all losses and detriments occasioned and or suffered by the Buyers or the Buyers\u2019s successors or representative owing to any claim, suit, objection, dispute or demand made or preferred by any person, bank, financial institution, local or municipal authority or any government institution concerning the Sold Business or any portion thereof, including pertaining to or in connection with:");
-  bullet("the Sold Business;");
-  bullet("sale of the Sold Business to the Buyers; and");
-  bullet("the original documents of title of the Sold Business up to the date of these presents, and shall make good the same at the cost of the Seller.");
-  numbered("1.4.16.", "The Seller undertakes to have read all terms and conditions of this Sale Deed and explicitly confirms their acceptance of all terms and conditions without any reservation and or confusion.");
-  y += 1;
-  p("1.5.\tOf Buyers: in addition to applicable undertakings under Sale Agreement, the Buyers hereby represents and warrants that:");
-  numbered("1.5.1.", "The Buyers have all requisite power and authority to execute and deliver the Sale Deed, and to perform its obligations under its terms and conditions;");
-  numbered("1.5.2.", "The Buyers shall conclude all its payments and/or obligations, whether in cash or in kind, due towards the Sale Price of the Sold Business under this Agreement;");
-  numbered("1.5.3.", "The Buyers undertakes to have read all terms and conditions of this Sale Deed and explicitly confirms their acceptance of all terms and conditions without any reservation and or confusion.");
-  numbered("1.5.4.", "The Parties do hereby declare that they signed this Sale Deed after compliance with laws of state.");
-  y += 1;
-
-  // ── GOVERNING LAW AND JURISDICTION ─────────────────────────────────────
-  heading("GOVERNING LAW AND JURISDICTION");
-  numbered(
-    "1.1.",
-    `This Sale Agreement shall be construed in accordance with and governed by ${u(values.governingLaw, 16)} Applicable Laws and the Parties shall ensure compliance thereof.`
+  // ── 4. PAYMENT TERMS ───────────────────────────────────────────────────
+  heading("4. Payment Terms");
+  p(
+    `Payment shall be made to ${u(values.paymentRecipient)}, at ${u(values.paymentAddress)}, in the total amount of $${u(values.totalPrice)}, upon delivery of all Goods described herein, unless otherwise agreed in writing.`
   );
-  y += 2;
+  p(
+    `A discount of ${u(values.discountPercent, 3)}% shall apply if full payment is received within ${u(values.discountDays, 3)} days from the date of invoice.`
+  );
+  p(
+    `Any amount not paid when due shall accrue interest at the rate of ${u(values.interestRate, 3)}% per annum, or the maximum rate permitted by applicable law, whichever is lower. The Buyer shall be responsible for all costs of collection incurred by the Seller, including, without limitation, reasonable attorneys' fees.`
+  );
+  p(
+    "Failure by the Buyer to make payment when due shall constitute a material breach of this Agreement, entitling the Seller, at its sole discretion, to terminate this Agreement and/or pursue all available legal remedies, including those set forth under Section 10 (Remedies on Default)."
+  );
+  y += 1;
 
-  // ── IN WITNESS WHEREOF ──────────────────────────────────────────────────
-  p("IN WITNESS WHEREOF, the Parties hereto have executed this Sale Agreement at the place and on the date hereinabove indicated.");
+  // ── 5. DELIVERY ────────────────────────────────────────────────────────
+  heading("5. Delivery");
+  p(
+    `Time is of the essence in the performance of this Agreement. Delivery of the Goods shall be arranged by ${u(values.deliveryArrangedBy)} through a carrier selected by ${u(values.carrierSelectedBy)}. The Goods shall be delivered no later than ${u(values.deliveryDate, 12)}, unless otherwise agreed in writing.`
+  );
+  y += 1;
+
+  // ── 6. TAXES ───────────────────────────────────────────────────────────
+  heading("6. Taxes");
+  p(
+    "The Buyer shall be responsible for the payment of all applicable taxes, duties, levies, and charges of any kind arising from or related to the sale of the Goods under this Agreement, excluding any taxes based on the Seller's net income."
+  );
+  y += 1;
+
+  // ── 7. WARRANTIES AND LIMITATION OF LIABILITY ──────────────────────────
+  heading("7. Warranties and Limitation of Liability");
+  p(
+    "The Seller warrants that the Goods shall be free from material defects in workmanship and materials and shall conform to the agreed specifications."
+  );
+  p(
+    "Except as expressly provided herein, the Seller disclaims all other warranties, whether express or implied, including but not limited to warranties of merchantability or fitness for a particular purpose."
+  );
+  p(
+    "In no event shall the Seller be liable for any indirect, incidental, special, or consequential damages, including loss of profits or business interruption, even if advised of the possibility of such damages."
+  );
+  y += 1;
+
+  // ── 8. INSPECTION AND ACCEPTANCE ──────────────────────────────────────
+  heading("8. Inspection and Acceptance");
+  p(
+    "Upon receipt of the Goods, the Buyer shall have a reasonable opportunity to inspect and verify conformity with this Agreement."
+  );
+  p(
+    "If the Buyer, acting in good faith, determines that any portion of the Goods is non-conforming, the Buyer may reject and return such Goods at the Seller's expense, provided that written notice specifying the reasons for rejection is given promptly."
+  );
+  p(
+    `The Seller shall have ${u(values.cureDays, 3)} days from receipt of the returned Goods to cure any defects or replace the non-conforming Goods.`
+  );
+  y += 1;
+
+  // ── 9. EVENTS OF DEFAULT ───────────────────────────────────────────────
+  heading("9. Events of Default");
+  p("Each of the following events shall constitute a material default under this Agreement:");
+  p("(a) Failure of either Party to make any required payment when due;");
+  p("(b) Insolvency, bankruptcy, or assignment for the benefit of creditors by either Party;");
+  p("(c) Seizure, levy, or attachment of a Party's assets by any creditor or governmental authority;");
+  p("(d) Failure to deliver or perform obligations in accordance with the terms of this Agreement.");
+  y += 1;
+
+  // ── 10. REMEDIES ON DEFAULT ────────────────────────────────────────────
+  heading("10. Remedies on Default");
+  p(
+    "Upon the occurrence of a material default, the non-defaulting Party may, in addition to any other remedies available under applicable law, terminate this Agreement by providing written notice specifying the nature of the default."
+  );
+  p(
+    `The defaulting Party shall have ${u(values.defaultCureDays, 3)} days from receipt of such notice to cure the default. Failure to cure within the specified period shall entitle the non-defaulting Party to pursue all available legal and equitable remedies.`
+  );
+  y += 1;
+
+  // ── 11. FORCE MAJEURE ──────────────────────────────────────────────────
+  heading("11. Force Majeure");
+  p(
+    'Neither Party shall be liable for any failure or delay in performance due to events beyond its reasonable control ("Force Majeure Event"), provided that prompt written notice is given.'
+  );
+  p(
+    "Force Majeure Events include, but are not limited to, acts of God, epidemics, pandemics, governmental actions, natural disasters, war, riots, strikes, lockouts, or other labor disputes."
+  );
+  p(
+    "The affected Party shall use commercially reasonable efforts to mitigate the impact of such events and resume performance as soon as practicable."
+  );
+  y += 1;
+
+  // ── 12. DISPUTE RESOLUTION ────────────────────────────────────────────
+  heading("12. Dispute Resolution");
+  p(
+    "The Parties shall first attempt to resolve any dispute arising out of or relating to this Agreement through good faith negotiations."
+  );
+  p(
+    "If such dispute is not resolved, the Parties agree to submit the matter to alternative dispute resolution, including mediation, in accordance with applicable laws and procedures."
+  );
+  y += 1;
+
+  // ── 13. CONFIDENTIALITY ───────────────────────────────────────────────
+  heading("13. Confidentiality");
+  p(
+    "Each Party agrees to maintain the confidentiality of all non-public, proprietary, or confidential information obtained in connection with this Agreement and shall not disclose such information to any third party without prior written consent."
+  );
+  p(
+    "Upon termination of this Agreement, each Party shall promptly return or destroy all confidential materials belonging to the other Party."
+  );
+  y += 1;
+
+  // ── 14. NOTICES ───────────────────────────────────────────────────────
+  heading("14. Notices");
+  p(
+    "All notices required or permitted under this Agreement shall be in writing and shall be deemed duly given when delivered personally or sent by certified mail, return receipt requested, to the addresses set forth above, or to such other address as may be designated in writing."
+  );
+  y += 1;
+
+  // ── 15. ENTIRE AGREEMENT ──────────────────────────────────────────────
+  heading("15. Entire Agreement");
+  p(
+    "This Agreement constitutes the entire agreement between the Parties with respect to the subject matter hereof and supersedes all prior or contemporaneous agreements, negotiations, or understandings, whether written or oral."
+  );
+  y += 1;
+
+  // ── 16. SEVERABILITY ──────────────────────────────────────────────────
+  heading("16. Severability");
+  p(
+    "If any provision of this Agreement is held to be invalid, illegal, or unenforceable, the remaining provisions shall remain in full force and effect."
+  );
+  y += 1;
+
+  // ── 17. AMENDMENTS ────────────────────────────────────────────────────
+  heading("17. Amendments");
+  p(
+    "This Agreement may be amended or modified only by a written instrument duly executed by both Parties."
+  );
+  y += 1;
+
+  // ── 18. WAIVER ────────────────────────────────────────────────────────
+  heading("18. Waiver");
+  p(
+    "The failure of either Party to enforce any provision of this Agreement shall not constitute a waiver of such provision or of the right to enforce it at any later time."
+  );
+  y += 1;
+
+  // ── 19. GOVERNING LAW ─────────────────────────────────────────────────
+  heading("19. Governing Law");
+  p(
+    `This Agreement shall be governed by and construed in accordance with the laws of ${u(values.governingLaw)}.`
+  );
+  y += 1;
+
+  // ── 20. EXECUTION ─────────────────────────────────────────────────────
+  heading("20. Execution");
+  p(
+    "This Agreement may be executed in counterparts and shall become effective as of the Effective Date first written above."
+  );
+  y += 3;
+  p("IN WITNESS WHEREOF, the Parties have executed this Agreement as of the date first written above.");
+  y += 6;
+
+  // ── SIGNATURES (vertical blocks per draft) ────────────────────────────
+  checkBreak(55);
+
+  p("SELLER:", true);
+  sigLine("Name", values.sellerSignName || values.sellerName);
+  sigLine("Signature");
+  sigLine("Date", values.sellerSignDate);
   y += 4;
 
-  // Two-column Seller / Buyer
-  const col1 = m;
-  const col2 = w / 2 + 6;
-  checkBreak(40);
-  doc.setFont("helvetica", "bold");
-  doc.text("SELLER:", col1, y);
-  doc.text("BUYER:", col2, y);
-  y += 7;
+  p("BUYER:", true);
+  sigLine("Name", values.buyerSignName || values.buyerName);
+  sigLine("Signature");
+  sigLine("Date", values.buyerSignDate);
 
-  const twoLine = (leftLabel: string, leftVal: string, rightLabel: string, rightVal: string) => {
-    checkBreak(lh + 3);
-    const lt = `${leftLabel}: `;
-    const rt = `${rightLabel}: `;
-    doc.setFont("helvetica", "normal");
-    doc.text(lt, col1, y);
-    const lx = col1 + doc.getTextWidth(lt);
-    const ls = (leftVal || "").trim();
-    if (ls) { doc.text(ls, lx, y); doc.setLineWidth(0.22); doc.line(lx, y + 1.1, lx + Math.max(10, doc.getTextWidth(ls)), y + 1.1); }
-    else { doc.setLineWidth(0.22); doc.line(lx, y + 1.1, lx + 38, y + 1.1); }
-    doc.text(rt, col2, y);
-    const rx = col2 + doc.getTextWidth(rt);
-    const rs = (rightVal || "").trim();
-    if (rs) { doc.text(rs, rx, y); doc.line(rx, y + 1.1, rx + Math.max(10, doc.getTextWidth(rs)), y + 1.1); }
-    else { doc.line(rx, y + 1.1, rx + 38, y + 1.1); }
-    y += lh + 3;
-  };
-
-  twoLine("Name", values.sellerSignName || u(values.sellerName, 20), "Name", values.buyerSignName || u(values.buyerName, 20));
-  twoLine("CNIC", values.sellerCnic, "CNIC", values.buyerCnic);
-
-  y += 5;
-  checkBreak(30);
-  doc.setFont("helvetica", "bold");
-  doc.text("Witness 1", col1, y);
-  doc.text("Witness 2", col2, y);
-  y += 5;
-
-  // Witness lines
-  doc.setFont("helvetica", "normal");
-  doc.line(col1, y, col1 + 50, y);
-  doc.line(col2, y, col2 + 50, y);
-  y += 7;
-
-  twoLine("Name", values.witness1Name, "Name", values.witness2Name);
-  twoLine("CNIC", values.witness1Cnic, "CNIC", values.witness2Cnic);
-
-  doc.save("sale_agreement.pdf");
+  doc.save("sales_agreement_products.pdf");
 };
 
+// ==================== COMPONENT ====================
 export default function SaleAgreement() {
   return (
     <FormWizard
       steps={steps}
-      title="Sale Agreement"
+      title="Sales Agreement for Products"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
       documentType="saleagreement"

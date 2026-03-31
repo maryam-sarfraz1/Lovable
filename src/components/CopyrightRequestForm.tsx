@@ -91,18 +91,19 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
   {
     label: "Agreement Date",
     fields: [
-      { name: "effectiveDate", label: "What is the effective date of this agreement?", type: "date", required: true },
+      { name: "effectiveDate", label: "What is the effective date of this request?", type: "date", required: true },
     ],
   },
+  // ── Requester (Party 1) Contact Info ──
   {
-    label: "First Party Name",
+    label: "Requester Name",
     fields: [
-      { name: "party1Name", label: "What is the full legal name of the first party?", type: "text", required: true, placeholder: "Enter full legal name" },
+      { name: "party1Name", label: "Full Legal Name of Requester", type: "text", required: true, placeholder: "Enter full legal name" },
       { name: "party1Type", label: "Is this party an individual or a business?", type: "select", required: true, options: [{ value: "individual", label: "Individual" }, { value: "business", label: "Business/Company" }] },
     ],
   },
   {
-    label: "First Party Address",
+    label: "Requester Address",
     fields: [
       { name: "party1Street", label: "Street Address", type: "text", required: true, placeholder: "123 Main Street" },
       { name: "party1City", label: "City", type: "text", required: true, placeholder: "City" },
@@ -110,21 +111,23 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "First Party Contact",
+    label: "Requester Contact",
     fields: [
       { name: "party1Email", label: "Email Address", type: "email", required: true, placeholder: "email@example.com" },
       { name: "party1Phone", label: "Phone Number", type: "tel", required: false, placeholder: "(555) 123-4567" },
+      { name: "party1Fax", label: "Fax Number", type: "text", required: false, placeholder: "(555) 123-4567" },
     ],
   },
+  // ── Rights Holder (Party 2) ──
   {
-    label: "Second Party Name",
+    label: "Rights Holder Name",
     fields: [
-      { name: "party2Name", label: "What is the full legal name of the second party?", type: "text", required: true, placeholder: "Enter full legal name" },
+      { name: "party2Name", label: "Full Legal Name of Rights Holder / Copyright Owner", type: "text", required: true, placeholder: "Enter full legal name" },
       { name: "party2Type", label: "Is this party an individual or a business?", type: "select", required: true, options: [{ value: "individual", label: "Individual" }, { value: "business", label: "Business/Company" }] },
     ],
   },
   {
-    label: "Second Party Address",
+    label: "Rights Holder Address",
     fields: [
       { name: "party2Street", label: "Street Address", type: "text", required: true, placeholder: "123 Main Street" },
       { name: "party2City", label: "City", type: "text", required: true, placeholder: "City" },
@@ -132,16 +135,26 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "Second Party Contact",
+    label: "Rights Holder Contact",
     fields: [
       { name: "party2Email", label: "Email Address", type: "email", required: true, placeholder: "email@example.com" },
       { name: "party2Phone", label: "Phone Number", type: "tel", required: false, placeholder: "(555) 123-4567" },
     ],
   },
+  // ── Copyrighted Work Details ──
+  {
+    label: "Work Details",
+    fields: [
+      { name: "workTitle", label: "Title / Description of the Copyrighted Work", type: "text", required: true, placeholder: "e.g. Book title, article name, image description" },
+      { name: "specificPortion", label: "Specific Portion Requested (e.g. pages, chapters, images)", type: "textarea", required: true, placeholder: "Describe the specific excerpt or portion you wish to reproduce..." },
+      { name: "proposedUse", label: "Proposed Use of Material", type: "textarea", required: true, placeholder: "Describe how you intend to use the material (purpose, audience, medium)..." },
+    ],
+  },
+  // ── Agreement Details ──
   {
     label: "Agreement Details",
     fields: [
-      { name: "description", label: "Describe the purpose and scope of this agreement", type: "textarea", required: true, placeholder: "Provide a detailed description of the agreement terms..." },
+      { name: "description", label: "Additional description / purpose and scope of this request", type: "textarea", required: false, placeholder: "Any further context about this permission request..." },
     ],
   },
   {
@@ -154,7 +167,7 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
   {
     label: "Financial Terms",
     fields: [
-      { name: "paymentAmount", label: "What is the payment amount (if applicable)?", type: "text", required: false, placeholder: "$0.00" },
+      { name: "paymentAmount", label: "What is the payment amount / consideration offered (if applicable)?", type: "text", required: false, placeholder: "$0.00" },
       { name: "paymentSchedule", label: "Payment Schedule", type: "select", required: false, options: [{ value: "onetime", label: "One-time Payment" }, { value: "weekly", label: "Weekly" }, { value: "biweekly", label: "Bi-weekly" }, { value: "monthly", label: "Monthly" }, { value: "quarterly", label: "Quarterly" }, { value: "annually", label: "Annually" }, { value: "milestone", label: "Milestone-based" }] },
     ],
   },
@@ -174,8 +187,8 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
   {
     label: "Review & Sign",
     fields: [
-      { name: "party1Signature", label: "First Party Signature (Type full legal name)", type: "text", required: true, placeholder: "Type your full legal name as signature" },
-      { name: "party2Signature", label: "Second Party Signature (Type full legal name)", type: "text", required: true, placeholder: "Type your full legal name as signature" },
+      { name: "party1Signature", label: "Requester Signature (Type full legal name)", type: "text", required: true, placeholder: "Type your full legal name as signature" },
+      { name: "party2Signature", label: "Rights Holder Signature (Type full legal name)", type: "text", required: true, placeholder: "Type full legal name as signature" },
       { name: "witnessName", label: "Witness Name (Optional)", type: "text", required: false, placeholder: "Witness full legal name" },
     ],
   },
@@ -184,6 +197,7 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
 const generatePDF = (values: Record<string, string>) => {
   const doc = new jsPDF({ unit: "mm", format: "letter" });
   const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
   const margin = 25;
   const contentWidth = pageWidth - margin * 2;
   let y = 20;
@@ -197,7 +211,12 @@ const generatePDF = (values: Record<string, string>) => {
   const disputeMap: Record<string, string> = { "mediation": "Mediation", "arbitration": "Binding Arbitration", "litigation": "Court Litigation", "negotiation": "Good Faith Negotiation" };
   const scheduleMap: Record<string, string> = { "onetime": "one-time", "weekly": "weekly", "biweekly": "bi-weekly", "monthly": "monthly", "quarterly": "quarterly", "annually": "annual", "milestone": "milestone-based" };
 
+  const checkPageBreak = (needed = 8) => {
+    if (y + needed > pageHeight - margin) { doc.addPage(); y = margin; }
+  };
+
   const field = (label: string, value: string) => {
+    checkPageBreak(8);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.text(label, margin, y);
@@ -209,30 +228,40 @@ const generatePDF = (values: Record<string, string>) => {
     y += 6;
   };
 
-  const para = (text: string) => {
-    doc.setFont("helvetica", "normal");
+  const para = (text: string, bold = false) => {
+    checkPageBreak(10);
+    doc.setFont("helvetica", bold ? "bold" : "normal");
     doc.setFontSize(10);
     const lines = doc.splitTextToSize(text, contentWidth);
     doc.text(lines, margin, y);
     y += lines.length * 5 + 3;
   };
 
-  const underlined = (label: string, value: string) => {
+  const underlined = (label: string, value: string, minWidth = 40) => {
+    checkPageBreak(8);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.text(label, margin, y);
     const lw = doc.getTextWidth(label);
-    const val = value || "N/A";
-    doc.text(val, margin + lw, y);
+    const val = value || "";
+    if (val) doc.text(val, margin + lw, y);
     doc.setLineWidth(0.3);
-    doc.line(margin + lw, y + 1.2, margin + lw + Math.max(doc.getTextWidth(val), 40), y + 1.2);
+    doc.line(margin + lw, y + 1.2, margin + lw + Math.max(doc.getTextWidth(val || ""), minWidth), y + 1.2);
     y += 6;
   };
 
-  // TITLE
+  const sectionHeading = (text: string) => {
+    checkPageBreak(8);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10);
+    doc.text(text, margin, y);
+    y += 7;
+  };
+
+  // ── TITLE ──────────────────────────────────────────────────────────────
   doc.setFont("helvetica", "bold");
   doc.setFontSize(13);
-  const title = "COPYRIGHT REQUEST";
+  const title = "COPYRIGHT REQUEST LETTER";
   const titleWidth = doc.getTextWidth(title);
   const titleX = (pageWidth - titleWidth) / 2;
   doc.text(title, titleX, y);
@@ -240,73 +269,149 @@ const generatePDF = (values: Record<string, string>) => {
   doc.line(titleX, y + 1.5, titleX + titleWidth, y + 1.5);
   y += 11;
 
-  field("Date:  ", values.effectiveDate || "N/A");
-  field("To:  ", values.party2Name || "N/A");
-  field("Address:  ", party2Address || "N/A");
-  field("State/Province:  ", jurisdiction || "N/A");
+  // ── CONTACT INFORMATION OF REQUESTER ──────────────────────────────────
+  sectionHeading("CONTACT INFORMATION OF REQUESTER");
+  field("Address:  ", party1Address || "");
+  field("Phone:  ", values.party1Phone || "");
+  field("Fax:  ", values.party1Fax || "");
+  field("Email:  ", values.party1Email || "");
   y += 3;
 
+  // ── DATE ──────────────────────────────────────────────────────────────
+  field("Date:  ", values.effectiveDate || "");
+  y += 2;
+
+  // ── TO / RIGHTS HOLDER ───────────────────────────────────────────────
+  field("To:  ", values.party2Name || "");
+  field("Address:  ", party2Address || "");
+  y += 4;
+
+  // ── SUBJECT ──────────────────────────────────────────────────────────
   doc.setFont("helvetica", "bold");
   doc.setFontSize(10);
-  doc.text("Subject: Copyright Permission Request", margin, y);
+  doc.text("Re: Request for Permission to Use Copyrighted Material", margin, y);
+  y += 8;
+
+  // ── SALUTATION ───────────────────────────────────────────────────────
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text(`Dear Sir/Madam,`, margin, y);
   y += 7;
 
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  doc.text(`Dear ${values.party2Name || "Sir or Madam"},`, margin, y);
-  y += 6;
+  // ── BODY PARAGRAPH 1 ─────────────────────────────────────────────────
+  para(`I write to formally request your permission to reproduce and use an excerpt from the following copyrighted work:`);
+  y += 1;
 
-  underlined("Requestor:  ", values.party1Name || "N/A");
-  underlined("Requestor Address:  ", party1Address || "N/A");
-  underlined("Requestor Email:  ", values.party1Email || "N/A");
-  underlined("Rights Holder:  ", values.party2Name || "N/A");
-  underlined("Rights Holder Address:  ", party2Address || "N/A");
-  underlined("Rights Holder Email:  ", values.party2Email || "N/A");
-  y += 2;
+  underlined("Title / Description of Work:  ", values.workTitle || "", 60);
+  y += 3;
 
-  para(`I am writing to formally submit a Copyright Permission Request as of ${values.effectiveDate || "N/A"}, from ${values.party1Name || "the Requestor"} to ${values.party2Name || "the Rights Holder"}, governed by the laws of ${jurisdiction || "the applicable jurisdiction"}.`);
-
-  para(`${values.description || "The Requestor hereby requests permission to use the copyrighted material(s) owned by the Rights Holder for the purpose(s) described herein. The Requestor agrees to use the material only as specified, to credit the Rights Holder appropriately, and to comply with any additional conditions set by the Rights Holder."}`);
-
-  para(`This request covers a period of ${durationMap[values.duration] || values.duration || "the agreed duration"}. The Requestor agrees that any permission granted may be revoked upon ${terminationMap[values.terminationNotice] || values.terminationNotice || "the agreed notice"} written notice. Disputes shall be resolved by ${disputeMap[values.disputeResolution] || values.disputeResolution || "the agreed method"}.${values.paymentAmount ? ` The Requestor offers consideration of ${values.paymentAmount} payable on a ${scheduleMap[values.paymentSchedule] || values.paymentSchedule || "mutually agreed"} basis.` : ""}`);
-
-  if (values.additionalTerms?.trim()) para(values.additionalTerms.trim());
-
-  para(`Please retain a signed copy of this request for your records. Approval of this request by the Rights Holder constitutes a binding agreement on both parties from the effective date.`);
-
-  y += 2;
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  doc.text("Thank you for your cooperation.", margin, y);
-  y += 8;
-  doc.text("Sincerely,", margin, y);
-  y += 12;
-
+  // ── SPECIFIC PORTION ─────────────────────────────────────────────────
   doc.setFont("helvetica", "bold");
   doc.setFontSize(10);
-  const senderName = values.party1Name || "Requestor";
+  doc.text("Specific Portion Requested:", margin, y);
+  y += 6;
+  doc.setFont("helvetica", "normal");
+  if (values.specificPortion) {
+    const lines = doc.splitTextToSize(values.specificPortion, contentWidth);
+    checkPageBreak(lines.length * 5 + 5);
+    doc.text(lines, margin, y);
+    y += lines.length * 5 + 3;
+  } else {
+    doc.line(margin, y + 1, margin + contentWidth, y + 1);
+    y += 6;
+    doc.line(margin, y + 1, margin + contentWidth, y + 1);
+    y += 7;
+  }
+
+  // ── PROPOSED USE ─────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(10);
+  doc.text("Proposed Use of Material:", margin, y);
+  y += 6;
+  doc.setFont("helvetica", "normal");
+  if (values.proposedUse) {
+    const lines = doc.splitTextToSize(values.proposedUse, contentWidth);
+    checkPageBreak(lines.length * 5 + 5);
+    doc.text(lines, margin, y);
+    y += lines.length * 5 + 3;
+  } else {
+    doc.line(margin, y + 1, margin + contentWidth, y + 1);
+    y += 6;
+    doc.line(margin, y + 1, margin + contentWidth, y + 1);
+    y += 7;
+  }
+  y += 2;
+
+  // ── ACKNOWLEDGEMENT PARAGRAPH ────────────────────────────────────────
+  para(`I acknowledge that all rights in the above-referenced work remain vested in you as the copyright owner. The permission sought herein is limited solely to the use described above and does not constitute any transfer or assignment of ownership rights.`);
+
+  para(`Should you so require, an appropriate copyright notice, in wording specified by you, will be prominently displayed alongside the material in all instances of its use.`);
+
+  // ── ADDITIONAL DETAILS ───────────────────────────────────────────────
+  if (values.description?.trim()) {
+    para(values.description.trim());
+  }
+
+  // ── TERMS SUMMARY ────────────────────────────────────────────────────
+  para(`This request covers a period of ${durationMap[values.duration] || values.duration || "the agreed duration"}. The Requester agrees that any permission granted may be revoked upon ${terminationMap[values.terminationNotice] || values.terminationNotice || "the agreed notice"} written notice. Disputes shall be resolved by ${disputeMap[values.disputeResolution] || values.disputeResolution || "the agreed method"}.${values.paymentAmount ? ` The Requester offers consideration of ${values.paymentAmount} payable on a ${scheduleMap[values.paymentSchedule] || values.paymentSchedule || "mutually agreed"} basis.` : ""}`);
+
+  // ── CONFIDENTIALITY ──────────────────────────────────────────────────
+  if (values.confidentiality === "yes") {
+    para(`Both parties agree to maintain the confidentiality of all proprietary information, trade secrets, and sensitive data disclosed in connection with this request. This obligation shall survive the termination of any permission granted.`);
+  }
+
+  // ── ADDITIONAL TERMS ─────────────────────────────────────────────────
+  if (values.additionalTerms?.trim()) {
+    sectionHeading("ADDITIONAL TERMS:");
+    para(values.additionalTerms.trim());
+  }
+
+  // ── CLOSING PARAGRAPH ────────────────────────────────────────────────
+  para(`I would be grateful if you could confirm your consent to the above request, together with any terms or conditions you may wish to impose.`);
+
+  para(`Please retain a signed copy of this Letter and any related correspondence for your records. Approval of this request by the Rights Holder constitutes a binding agreement on both parties from the effective date.`);
+
+  para(`Thank you for your time and consideration.`);
+
+  y += 3;
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text("Yours faithfully,", margin, y);
+  y += 12;
+
+  // ── REQUESTER SIGNATURE ───────────────────────────────────────────────
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(10);
+  const senderName = values.party1Name || "Requester";
   doc.text(senderName, margin, y);
   doc.setLineWidth(0.3);
   doc.line(margin, y + 1.2, margin + doc.getTextWidth(senderName), y + 1.2);
   y += 6;
   doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
-  if (party1Address)      { doc.text(party1Address,                  margin, y); y += 5; }
-  if (values.party1Email) { doc.text(`Email: ${values.party1Email}`, margin, y); y += 5; }
-  if (values.party1Phone) { doc.text(`Phone: ${values.party1Phone}`, margin, y); y += 5; }
+  if (party1Address)       { doc.text(party1Address,                   margin, y); y += 5; }
+  if (values.party1Email)  { doc.text(`Email: ${values.party1Email}`,  margin, y); y += 5; }
+  if (values.party1Phone)  { doc.text(`Phone: ${values.party1Phone}`,  margin, y); y += 5; }
+  if (values.party1Fax)    { doc.text(`Fax: ${values.party1Fax}`,      margin, y); y += 5; }
 
   y += 5;
+
+  // ── SIGNATURE BLOCK ───────────────────────────────────────────────────
+  checkPageBreak(40);
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(10);
-  doc.text("Requestor Signature:", margin, y);
+  doc.text("Requester Signature:", margin, y);
   doc.setFont("helvetica", "normal");
-  doc.text(values.party1Signature || "________________________", margin + doc.getTextWidth("Requestor Signature:  "), y);
+  const sig1 = values.party1Signature || "________________________";
+  doc.text(sig1, margin + doc.getTextWidth("Requester Signature:  "), y);
   y += 7;
+
   doc.setFont("helvetica", "bold");
   doc.text("Rights Holder Signature:", margin, y);
   doc.setFont("helvetica", "normal");
-  doc.text(values.party2Signature || "________________________", margin + doc.getTextWidth("Rights Holder Signature:  "), y);
+  const sig2 = values.party2Signature || "________________________";
+  doc.text(sig2, margin + doc.getTextWidth("Rights Holder Signature:  "), y);
   y += 7;
+
   if (values.witnessName) {
     doc.setFont("helvetica", "bold");
     doc.text("Witness:", margin, y);
@@ -315,7 +420,59 @@ const generatePDF = (values: Record<string, string>) => {
     doc.text(values.witnessName, wx, y);
     doc.setLineWidth(0.3);
     doc.line(wx, y + 1.2, wx + doc.getTextWidth(values.witnessName), y + 1.2);
+    y += 7;
   }
+
+  // ── JURISDICTION NOTE ─────────────────────────────────────────────────
+  y += 4;
+  checkPageBreak(10);
+  doc.setFont("helvetica", "italic");
+  doc.setFontSize(9);
+  doc.text(`Jurisdiction: ${jurisdiction || "N/A"} | Rights Holder: ${values.party2Name || "N/A"} | Email: ${values.party2Email || "N/A"}`, margin, y);
+
+  // ── FINAL CHECKLIST (new page) ────────────────────────────────────────
+  doc.addPage();
+  y = 20;
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(13);
+  const clTitle = "FINAL CHECKLIST FOR COPYRIGHT REQUEST LETTER";
+  const clWidth = doc.getTextWidth(clTitle);
+  const clX = (pageWidth - clWidth) / 2;
+  doc.text(clTitle, clX, y);
+  doc.setLineWidth(0.5);
+  doc.line(clX, y + 1.5, clX + clWidth, y + 1.5);
+  y += 12;
+
+  const checkItem = (text: string) => {
+    checkPageBreak(8);
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(10);
+    // Draw checkbox
+    doc.rect(margin, y - 3.5, 3.5, 3.5);
+    const lines = doc.splitTextToSize(text, contentWidth - 7);
+    doc.text(lines, margin + 6, y);
+    y += lines.length * 5 + 2;
+  };
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text("Review and Execution", margin, y);
+  y += 7;
+
+  checkItem("Carefully review this Copyright Request Letter to ensure that it accurately reflects your intentions and the scope of permission sought.");
+  checkItem("Make any necessary amendments prior to execution.");
+  checkItem("Once signed, this Letter should be duly sent to the copyright owner for consideration and approval.");
+
+  y += 4;
+
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text("Record Keeping", margin, y);
+  y += 7;
+
+  checkItem("Retain a complete copy of this Letter and any related correspondence for your records.");
+  checkItem("Ensure proper documentation is maintained for future reference in the event of any legal or compliance requirements.");
 
   doc.save("copyright_request.pdf");
 };
@@ -324,8 +481,8 @@ export default function CopyrightRequest() {
   return (
     <FormWizard
       steps={steps}
-      title="Copyright Request"
-      subtitle="Complete each step to generate your document"
+      title="Copyright Request Letter"
+      subtitle="Complete each step to generate your professional copyright request document"
       onGenerate={generatePDF}
       documentType="copyrightrequest"
     />
