@@ -100,11 +100,11 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "First Party Name",
+    label: "Disclosing Party",
     fields: [
       {
         name: "party1Name",
-        label: "What is the full legal name of the first party?",
+        label: "What is the full legal name of the Disclosing Party?",
         type: "text",
         required: true,
         placeholder: "Enter full legal name",
@@ -122,7 +122,7 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "First Party Address",
+    label: "Disclosing Party Address",
     fields: [
       {
         name: "party1Street",
@@ -148,7 +148,7 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "First Party Contact",
+    label: "Disclosing Party Contact",
     fields: [
       {
         name: "party1Email",
@@ -167,11 +167,11 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "Second Party Name",
+    label: "Recipient",
     fields: [
       {
         name: "party2Name",
-        label: "What is the full legal name of the second party?",
+        label: "What is the full legal name of the Recipient?",
         type: "text",
         required: true,
         placeholder: "Enter full legal name",
@@ -189,7 +189,7 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "Second Party Address",
+    label: "Recipient Address",
     fields: [
       {
         name: "party2Street",
@@ -215,7 +215,7 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "Second Party Contact",
+    label: "Recipient Contact",
     fields: [
       {
         name: "party2Email",
@@ -234,14 +234,32 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "Agreement Details",
+    label: "Business Opportunity",
     fields: [
       {
         name: "description",
-        label: "Describe the purpose and scope of this agreement",
+        label: "Describe the potential business opportunity this agreement covers",
         type: "textarea",
         required: true,
-        placeholder: "Provide a detailed description of the agreement terms...",
+        placeholder: "Describe the business opportunity, e.g. joint venture in real estate acquisition...",
+      },
+    ],
+  },
+  {
+    label: "Non-Solicitation Period",
+    fields: [
+      {
+        name: "nonSolicitationPeriod",
+        label: "Non-solicitation period after termination",
+        type: "select",
+        required: true,
+        options: [
+          { value: "6 months", label: "6 Months" },
+          { value: "1 year", label: "1 Year" },
+          { value: "2 years", label: "2 Years" },
+          { value: "3 years", label: "3 Years" },
+          { value: "5 years", label: "5 Years" },
+        ],
       },
     ],
   },
@@ -308,17 +326,14 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "Legal Protections",
+    label: "Arbitration",
     fields: [
       {
-        name: "confidentiality",
-        label: "Include confidentiality clause?",
-        type: "select",
+        name: "arbitrationCity",
+        label: "City/Location where arbitration shall take place",
+        type: "text",
         required: true,
-        options: [
-          { value: "yes", label: "Yes - Include confidentiality provisions" },
-          { value: "no", label: "No - Not needed" },
-        ],
+        placeholder: "e.g. New York, NY",
       },
       {
         name: "disputeResolution",
@@ -351,14 +366,14 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     fields: [
       {
         name: "party1Signature",
-        label: "First Party Signature (Type full legal name)",
+        label: "Disclosing Party Signature (Type full legal name)",
         type: "text",
         required: true,
         placeholder: "Type your full legal name as signature",
       },
       {
         name: "party2Signature",
-        label: "Second Party Signature (Type full legal name)",
+        label: "Recipient Signature (Type full legal name)",
         type: "text",
         required: true,
         placeholder: "Type your full legal name as signature",
@@ -374,130 +389,285 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
   },
 ] as Array<{ label: string; fields: FieldDef[] }>;
 
+// ─── PDF Helpers ──────────────────────────────────────────────────────────────
+
+const addPage = (doc: jsPDF, y: number, margin: number): number => {
+  if (y > 270) {
+    doc.addPage();
+    return margin;
+  }
+  return y;
+};
+
+const writeWrapped = (doc: jsPDF, text: string, x: number, y: number, maxWidth: number, lineHeight: number, margin: number): number => {
+  const lines: string[] = doc.splitTextToSize(text, maxWidth);
+  lines.forEach((line: string) => {
+    y = addPage(doc, y, margin);
+    doc.text(line, x, y);
+    y += lineHeight;
+  });
+  return y;
+};
+
+const sectionTitle = (doc: jsPDF, text: string, x: number, y: number): number => {
+  doc.setFontSize(10);
+  doc.setFont("helvetica", "bold");
+  doc.text(text, x, y);
+  return y + 5;
+};
+
+const bodyText = (doc: jsPDF, text: string, x: number, y: number, maxWidth: number, lh: number, margin: number): number => {
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "normal");
+  return writeWrapped(doc, text, x, y, maxWidth, lh, margin);
+};
+
+const bulletText = (doc: jsPDF, text: string, x: number, y: number, maxWidth: number, lh: number, margin: number): number => {
+  doc.setFontSize(9);
+  doc.setFont("helvetica", "normal");
+  return writeWrapped(doc, `\u2022  ${text}`, x + 4, y, maxWidth - 4, lh, margin);
+};
+
+// ─── generatePDF ──────────────────────────────────────────────────────────────
 const generatePDF = (values: Record<string, string>) => {
-  const doc = new jsPDF();
-  let y = 20;
-  
-  doc.setFontSize(18);
+  const doc = new jsPDF({ unit: "mm", format: "a4" });
+  const L = 20;
+  const R = 190;
+  const W = R - L;
+  const lh = 5;
+  let y = 18;
+
+  const durMap: Record<string, string> = {
+    "1month": "1 Month", "3months": "3 Months", "6months": "6 Months",
+    "1year": "1 Year", "2years": "2 Years", "5years": "5 Years",
+    "indefinite": "Indefinite/Ongoing", "custom": "Custom Duration",
+  };
+
+  const p1name  = values.party1Name  || "Disclosing Party";
+  const p2name  = values.party2Name  || "Recipient";
+  const p1addr  = `${values.party1Street || ""}, ${values.party1City || ""} ${values.party1Zip || ""}`;
+  const p2addr  = `${values.party2Street || ""}, ${values.party2City || ""} ${values.party2Zip || ""}`;
+  const eDate   = values.effectiveDate || "___";
+  const juris   = `${values.state || "___"}, ${(values.country || "").toUpperCase()}`;
+  const dur     = durMap[values.duration] || values.duration || "___";
+  const nonSol  = values.nonSolicitationPeriod || "___";
+  const arbCity = values.arbitrationCity || "___";
+  const opportunity = values.description || "___";
+  const sig1    = values.party1Signature || p1name;
+  const sig2    = values.party2Signature || p2name;
+
+  // ── Title ──
+  doc.setFontSize(14);
   doc.setFont("helvetica", "bold");
-  doc.text("Non Circumvention", 105, y, { align: "center" });
-  y += 15;
-  
-  doc.setFontSize(10);
+  doc.text("NON-CIRCUMVENTION AGREEMENT", 105, y, { align: "center" });
+  y += 7;
+  doc.setLineWidth(0.5);
+  doc.line(L, y, R, y);
+  y += 6;
+
+  // ── Intro ──
+  doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
-  doc.text("Effective Date: " + (values.effectiveDate || "N/A"), 20, y);
-  doc.text("Jurisdiction: " + (values.state || "") + ", " + (values.country?.toUpperCase() || ""), 120, y);
-  y += 15;
-  
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "bold");
-  doc.text("PARTIES", 20, y);
-  y += 8;
-  
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("First Party: " + (values.party1Name || "N/A"), 20, y);
-  y += 6;
-  doc.text("Address: " + (values.party1Street || "") + ", " + (values.party1City || "") + " " + (values.party1Zip || ""), 20, y);
-  y += 6;
-  doc.text("Contact: " + (values.party1Email || "") + " | " + (values.party1Phone || ""), 20, y);
-  y += 10;
-  
-  doc.text("Second Party: " + (values.party2Name || "N/A"), 20, y);
-  y += 6;
-  doc.text("Address: " + (values.party2Street || "") + ", " + (values.party2City || "") + " " + (values.party2Zip || ""), 20, y);
-  y += 6;
-  doc.text("Contact: " + (values.party2Email || "") + " | " + (values.party2Phone || ""), 20, y);
-  y += 15;
-  
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "bold");
-  doc.text("AGREEMENT DETAILS", 20, y);
-  y += 8;
-  
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  const descLines = doc.splitTextToSize(values.description || "N/A", 170);
-  doc.text(descLines, 20, y);
-  y += descLines.length * 5 + 10;
-  
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "bold");
-  doc.text("TERMS", 20, y);
-  y += 8;
-  
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("Duration: " + (values.duration || "N/A"), 20, y);
-  y += 6;
-  doc.text("Termination Notice: " + (values.terminationNotice || "N/A"), 20, y);
-  y += 6;
-  doc.text("Confidentiality: " + (values.confidentiality === "yes" ? "Included" : "Not Included"), 20, y);
-  y += 6;
-  doc.text("Dispute Resolution: " + (values.disputeResolution || "N/A"), 20, y);
-  y += 15;
-  
-  if (values.paymentAmount) {
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "bold");
-    doc.text("FINANCIAL TERMS", 20, y);
-    y += 8;
-    
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    doc.text("Payment: " + values.paymentAmount, 20, y);
-    y += 6;
-    doc.text("Schedule: " + (values.paymentSchedule || "N/A"), 20, y);
-    y += 15;
-  }
-  
+  const intro = `This Non-Circumvention Agreement ("Agreement") is made and entered into as of ${eDate} ("Effective Date"), by and between ${p1name} of ${p1addr} (the "Disclosing Party") and ${p2name} of ${p2addr} (the "Recipient"). The Disclosing Party and the Recipient may hereinafter be referred to individually as a "Party" and collectively as the "Parties."`;
+  y = writeWrapped(doc, intro, L, y, W, lh, L);
+  y += 3;
+
+  // ── RECITALS ──
+  y = sectionTitle(doc, "RECITALS", L, y);
+  y = bodyText(doc, "WHEREAS, the Disclosing Party possesses certain business opportunities and related information which it desires to disclose to the Recipient, including any opportunities derived therefrom;", L, y, W, lh, L);
+  y = bodyText(doc, "WHEREAS, each Party maintains valuable and established business relationships with clients, partners, and other contacts, which are essential to the operation and profitability of its business;", L, y, W, lh, L);
+  y = bodyText(doc, "WHEREAS, the Parties acknowledge that mutual benefit may arise from introductions to third parties identified by either Party;", L, y, W, lh, L);
+  y = bodyText(doc, "WHEREAS, the Parties agree that such introductions, identifications, and related information constitute proprietary trade secrets and are the exclusive property of the Disclosing Party;", L, y, W, lh, L);
+  y = bodyText(doc, "WHEREAS, the Parties desire to protect the confidentiality, integrity, and value of such relationships and information; and", L, y, W, lh, L);
+  y = bodyText(doc, `WHEREAS, the Parties intend to explore a potential business opportunity involving: ${opportunity};`, L, y, W, lh, L);
+  y = bodyText(doc, "NOW, THEREFORE, in consideration of the mutual covenants, promises, and undertakings set forth herein, the Parties hereby agree as follows:", L, y, W, lh, L);
+  y += 2;
+
+  // ── 1. CONFIDENTIAL INFORMATION ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "1. CONFIDENTIAL INFORMATION AND TRADE SECRETS", L, y);
+  y = sectionTitle(doc, "1.1 Definition", L, y);
+  y = bodyText(doc, "All information disclosed, exchanged, or otherwise obtained in connection with the contemplated business relationship shall be deemed \"Confidential Information\" and shall be treated as trade secrets.", L, y, W, lh, L);
+  y = sectionTitle(doc, "1.2 Scope of Confidential Information", L, y);
+  y = bodyText(doc, "Confidential Information includes, without limitation:", L, y, W, lh, L);
+  y = bulletText(doc, "Financial data, projections, and information packages;", L, y, W, lh, L);
+  y = bulletText(doc, "Business plans, documents, and records;", L, y, W, lh, L);
+  y = bulletText(doc, "Identities of potential acquisitions, intermediaries, contacts, and sources of transactions;", L, y, W, lh, L);
+  y = bulletText(doc, "Transaction structures, strategies, and financial arrangements.", L, y, W, lh, L);
+  y = sectionTitle(doc, "1.3 Obligation of Confidentiality", L, y);
+  y = bodyText(doc, "Each Party agrees to maintain the strict confidentiality of all Confidential Information and shall not disclose, publish, or otherwise make such information available to any third party without the prior written consent of the Disclosing Party.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 2. PROTECTION OF CONTACTS ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "2. PROTECTION OF CONTACTS AND RELATIONSHIPS", L, y);
+  y = bodyText(doc, "2.1 The Parties agree to maintain in strict confidence:", L, y, W, lh, L);
+  y = bulletText(doc, "The identities and personal details of any contacts introduced; and", L, y, W, lh, L);
+  y = bulletText(doc, "All related business relationships.", L, y, W, lh, L);
+  y = bodyText(doc, "2.2 The Recipient agrees that neither it nor its affiliates, including but not limited to its employees, agents, consultants, or assigns, shall directly or indirectly:", L, y, W, lh, L);
+  y = bulletText(doc, "Contact, solicit, negotiate with, or enter into any transaction with such contacts;", L, y, W, lh, L);
+  y = bulletText(doc, "Without the prior written consent of the Disclosing Party.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 3. UNAUTHORIZED DISCLOSURE ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "3. UNAUTHORIZED DISCLOSURE AND INJUNCTIVE RELIEF", L, y);
+  y = bodyText(doc, "The Recipient acknowledges that any unauthorized disclosure or threatened disclosure of Confidential Information would cause irreparable harm to the Disclosing Party. Accordingly, the Disclosing Party shall be entitled to seek immediate injunctive or equitable relief, without the necessity of posting bond, in addition to any other remedies available at law or in equity.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 4. APPLICABILITY ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "4. APPLICABILITY", L, y);
+  y = bodyText(doc, "This Agreement shall be binding upon and applicable to the Parties and their respective employees, officers, directors, representatives, agents, and affiliates.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 5. RETURN OF CONFIDENTIAL INFORMATION ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "5. RETURN OF CONFIDENTIAL INFORMATION", L, y);
+  y = bodyText(doc, "Upon written request by the Disclosing Party:", L, y, W, lh, L);
+  y = bulletText(doc, "The Recipient shall promptly return or destroy all Confidential Information; and", L, y, W, lh, L);
+  y = bulletText(doc, "Provide written certification of such compliance within five (5) days of receipt of the request.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 6. NON-CIRCUMVENTION ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "6. NON-CIRCUMVENTION", L, y);
+  y = sectionTitle(doc, "6.1 Restriction", L, y);
+  y = bodyText(doc, "The Recipient agrees that, during the term of this Agreement, it shall not directly or indirectly contact, negotiate with, or engage in any business transaction with any party introduced by the Disclosing Party without prior written consent.", L, y, W, lh, L);
+  y = sectionTitle(doc, "6.2 Remedy for Circumvention", L, y);
+  y = bodyText(doc, "In the event of any circumvention resulting in loss of profit, fees, commissions, or other benefits to the Disclosing Party, the Recipient shall be liable to compensate the Disclosing Party for the full amount of such lost benefits.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 7. NON-SOLICITATION ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "7. NON-SOLICITATION", L, y);
+  y = bodyText(doc, `During the term of this Agreement and for a period of ${nonSol} thereafter, neither Party shall:`, L, y, W, lh, L);
+  y = bulletText(doc, "Solicit, hire, or engage any employee, consultant, or agent of the other Party; or", L, y, W, lh, L);
+  y = bulletText(doc, "Induce any client, customer, supplier, or business contact to terminate or alter its relationship with the other Party.", L, y, W, lh, L);
+  y = bodyText(doc, "Exceptions:", L, y, W, lh, L);
+  y = bulletText(doc, "General solicitations not specifically directed at the other Party;", L, y, W, lh, L);
+  y = bulletText(doc, "Ordinary business activities conducted in good faith and not intended to circumvent this Agreement.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 8. TERM AND TERMINATION ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "8. TERM AND TERMINATION", L, y);
+  y = bulletText(doc, "The non-circumvention and confidentiality obligations shall survive indefinitely unless otherwise agreed in writing.", L, y, W, lh, L);
+  y = bulletText(doc, "Either Party may terminate this Agreement upon written notice.", L, y, W, lh, L);
+  y = bulletText(doc, "Termination shall not affect any rights or obligations with respect to Confidential Information disclosed prior to termination.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 9. COMMISSIONS AND FEES ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "9. COMMISSIONS AND FEES", L, y);
+  y = bodyText(doc, "In the event of a breach of this Agreement, the Recipient shall be obligated to pay the Disclosing Party an amount equal to any commission, fee, or other compensation that the Disclosing Party would have earned had such breach not occurred.", L, y, W, lh, L);
+  y += 2;
+
+  // ── 10. MISCELLANEOUS ──
+  y = addPage(doc, y, L);
+  y = sectionTitle(doc, "10. MISCELLANEOUS", L, y);
+
+  y = sectionTitle(doc, "10.1 Relationship of the Parties", L, y);
+  y = bodyText(doc, "Nothing in this Agreement shall be construed to create a partnership, joint venture, or agency relationship between the Parties.", L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.2 No Warranty", L, y);
+  y = bodyText(doc, "All Confidential Information is provided \"AS IS.\" The Disclosing Party makes no representations or warranties, whether express or implied, including without limitation warranties of merchantability or fitness for a particular purpose. The Disclosing Party shall not be liable for any direct, indirect, incidental, or consequential damages.", L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.3 Attorney's Fees", L, y);
+  y = bodyText(doc, "In any legal proceeding arising out of or relating to this Agreement, the prevailing Party shall be entitled to recover its reasonable attorney's fees and legal costs.", L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.4 Arbitration", L, y);
+  y = bodyText(doc, `Any dispute, controversy, or claim arising out of or relating to this Agreement shall be resolved by binding arbitration in accordance with applicable arbitration rules. The arbitration shall take place in ${arbCity} and shall be governed by the laws of ${juris}.`, L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.5 Assignment", L, y);
+  y = bodyText(doc, "Neither Party may assign or transfer this Agreement, in whole or in part, without the prior written consent of the other Party.", L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.6 Amendment", L, y);
+  y = bodyText(doc, "This Agreement may only be amended or modified by a written instrument signed by both Parties.", L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.7 Waiver", L, y);
+  y = bodyText(doc, "The failure of either Party to enforce any provision of this Agreement shall not constitute a waiver of such provision or any other provision.", L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.8 Entire Agreement", L, y);
+  y = bodyText(doc, "This Agreement constitutes the entire understanding between the Parties and supersedes all prior negotiations, representations, or agreements, whether written or oral.", L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.9 Force Majeure", L, y);
+  y = bodyText(doc, "Neither Party shall be liable for any failure or delay in performance due to events beyond its reasonable control, including but not limited to acts of God, pandemics, war, riots, strikes, or governmental actions. Performance shall resume as soon as practicable after such event ceases.", L, y, W, lh, L);
+
+  y = sectionTitle(doc, "10.10 Governing Law", L, y);
+  y = bodyText(doc, `This Agreement shall be governed by and construed in accordance with the laws of ${juris}.`, L, y, W, lh, L);
+
   if (values.additionalTerms) {
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "bold");
-    doc.text("ADDITIONAL TERMS", 20, y);
-    y += 8;
-    
-    doc.setFontSize(10);
-    doc.setFont("helvetica", "normal");
-    const addLines = doc.splitTextToSize(values.additionalTerms, 170);
-    doc.text(addLines, 20, y);
-    y += addLines.length * 5 + 15;
+    y += 2;
+    y = addPage(doc, y, L);
+    y = sectionTitle(doc, "ADDITIONAL TERMS", L, y);
+    y = bodyText(doc, values.additionalTerms, L, y, W, lh, L);
   }
-  
-  doc.setFontSize(12);
+
+  // ── SIGNATURES ──
+  y += 4;
+  y = addPage(doc, y, L);
+  doc.setLineWidth(0.4);
+  doc.line(L, y, R, y);
+  y += 5;
+
+  doc.setFontSize(11);
   doc.setFont("helvetica", "bold");
-  doc.text("SIGNATURES", 20, y);
-  y += 12;
-  
-  doc.setFontSize(10);
+  doc.text("SIGNATURES", L, y);
+  y += 6;
+
+  doc.setFontSize(9);
   doc.setFont("helvetica", "normal");
-  doc.text("_______________________________", 20, y);
-  doc.text("_______________________________", 110, y);
-  y += 6;
-  doc.text(values.party1Name || "First Party", 20, y);
-  doc.text(values.party2Name || "Second Party", 110, y);
-  y += 6;
-  doc.text("Signature: " + (values.party1Signature || ""), 20, y);
-  doc.text("Signature: " + (values.party2Signature || ""), 110, y);
-  y += 10;
-  doc.text("Date: " + new Date().toLocaleDateString(), 20, y);
-  doc.text("Date: " + new Date().toLocaleDateString(), 110, y);
-  
+
+  // Left column – Disclosing Party
+  doc.setFont("helvetica", "bold");
+  doc.text("Disclosing Party:", L, y);
+  y += 5;
+  doc.setFont("helvetica", "normal");
+  doc.text("Name: " + p1name, L, y); y += 5;
+  doc.text("Address: " + p1addr, L, y); y += 5;
+  doc.text("Email: " + (values.party1Email || ""), L, y); y += 5;
+  if (values.party1Phone) { doc.text("Phone: " + values.party1Phone, L, y); y += 5; }
+  y += 4;
+  doc.text("Signature: ______________________________", L, y); y += 5;
+  doc.setFont("helvetica", "italic");
+  doc.text(sig1, L + 22, y); y += 5;
+  doc.setFont("helvetica", "normal");
+  doc.text("Date: ___________", L, y); y += 10;
+
+  // Recipient
+  doc.setFont("helvetica", "bold");
+  doc.text("Recipient:", L, y);
+  y += 5;
+  doc.setFont("helvetica", "normal");
+  doc.text("Name: " + p2name, L, y); y += 5;
+  doc.text("Address: " + p2addr, L, y); y += 5;
+  doc.text("Email: " + (values.party2Email || ""), L, y); y += 5;
+  if (values.party2Phone) { doc.text("Phone: " + values.party2Phone, L, y); y += 5; }
+  y += 4;
+  doc.text("Signature: ______________________________", L, y); y += 5;
+  doc.setFont("helvetica", "italic");
+  doc.text(sig2, L + 22, y); y += 5;
+  doc.setFont("helvetica", "normal");
+  doc.text("Date: ___________", L, y); y += 10;
+
   if (values.witnessName) {
-    y += 15;
-    doc.text("Witness: _______________________________", 20, y);
-    y += 6;
-    doc.text("Name: " + values.witnessName, 20, y);
+    doc.setFont("helvetica", "bold");
+    doc.text("Witness:", L, y); y += 5;
+    doc.setFont("helvetica", "normal");
+    doc.text("Name: " + values.witnessName, L, y); y += 5;
+    doc.text("Signature: ______________________________", L, y); y += 5;
+    doc.text("Date: ___________", L, y);
   }
-  
-  doc.save("non_circumvention.pdf");
+
+  doc.save("non_circumvention_agreement.pdf");
 };
 
 export default function NonCircumvention() {
   return (
     <FormWizard
       steps={steps}
-      title="Non Circumvention"
+      title="Non-Circumvention Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
       documentType="noncircumvention"

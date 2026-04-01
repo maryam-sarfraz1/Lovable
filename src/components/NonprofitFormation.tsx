@@ -100,11 +100,37 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
+    label: "Corporation Details",
+    fields: [
+      {
+        name: "corporationName",
+        label: "What is the full legal name of the Corporation?",
+        type: "text",
+        required: true,
+        placeholder: "Enter full legal name of the Corporation",
+      },
+      {
+        name: "numberOfDirectors",
+        label: "How many directors will be on the Board?",
+        type: "text",
+        required: true,
+        placeholder: "e.g. 3",
+      },
+      {
+        name: "directorTermYears",
+        label: "How many years will directors serve per term?",
+        type: "text",
+        required: true,
+        placeholder: "e.g. 1",
+      },
+    ],
+  },
+  {
     label: "First Party Name",
     fields: [
       {
         name: "party1Name",
-        label: "What is the full legal name of the first party?",
+        label: "What is the full legal name of the first party (Founder)?",
         type: "text",
         required: true,
         placeholder: "Enter full legal name",
@@ -141,7 +167,7 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     fields: [
       {
         name: "party2Name",
-        label: "What is the full legal name of the second party?",
+        label: "What is the full legal name of the second party (Organization)?",
         type: "text",
         required: true,
         placeholder: "Enter full legal name",
@@ -178,10 +204,10 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     fields: [
       {
         name: "description",
-        label: "Describe the purpose and details of this document",
+        label: "Describe the purpose and details of this nonprofit",
         type: "textarea",
         required: true,
-        placeholder: "Provide a detailed description...",
+        placeholder: "Describe the nonprofit's charitable, educational, or public benefit objectives...",
       },
     ],
   },
@@ -285,6 +311,8 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     fields: [
       { name: "party1Signature", label: "First Party Signature (Type full legal name)", type: "text", required: true, placeholder: "Type your full legal name as signature" },
       { name: "party2Signature", label: "Second Party Signature (Type full legal name)", type: "text", required: true, placeholder: "Type your full legal name as signature" },
+      { name: "secretaryName", label: "Secretary Name (for Certification)", type: "text", required: true, placeholder: "Secretary's full legal name" },
+      { name: "certificationDate", label: "Certification Date", type: "date", required: true },
       { name: "witnessName", label: "Witness Name (Optional)", type: "text", required: false, placeholder: "Witness full legal name" },
     ],
   },
@@ -293,13 +321,14 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
 const generatePDF = (values: Record<string, string>) => {
   const doc = new jsPDF({ unit: "mm", format: "letter" });
   const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
   const margin = 25;
   const contentWidth = pageWidth - margin * 2;
   let y = 20;
 
   const party1Address = [values.party1Street, values.party1City, values.party1Zip].filter(Boolean).join(", ");
   const party2Address = [values.party2Street, values.party2City, values.party2Zip].filter(Boolean).join(", ");
-  const jurisdiction  = [values.state, values.country?.toUpperCase()].filter(Boolean).join(", ");
+  const jurisdiction = [values.state, values.country?.toUpperCase()].filter(Boolean).join(", ");
 
   const durationMap: Record<string, string> = {
     "1month": "1 Month", "3months": "3 Months", "6months": "6 Months",
@@ -315,135 +344,379 @@ const generatePDF = (values: Record<string, string>) => {
     "litigation": "Court Litigation", "negotiation": "Good Faith Negotiation",
   };
 
-  const para = (text: string) => {
+  const checkNewPage = (neededSpace: number) => {
+    if (y + neededSpace > pageHeight - 20) {
+      doc.addPage();
+      y = 20;
+    }
+  };
+
+  const para = (text: string, indent = 0) => {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
-    const lines = doc.splitTextToSize(text, contentWidth);
-    doc.text(lines, margin, y);
+    const lines = doc.splitTextToSize(text, contentWidth - indent);
+    checkNewPage(lines.length * 5 + 5);
+    doc.text(lines, margin + indent, y);
     y += lines.length * 5 + 3;
   };
 
-  // ── TITLE ──
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(13);
-  const title = "NONPROFIT FORMATION AGREEMENT";
-  const titleWidth = doc.getTextWidth(title);
-  const titleX = (pageWidth - titleWidth) / 2;
-  doc.text(title, titleX, y);
-  doc.setLineWidth(0.5);
-  doc.line(titleX, y + 1.5, titleX + titleWidth, y + 1.5);
-  y += 11;
-
-  // ── HEADER FIELDS ──
-  const field = (label: string, value: string) => {
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-    doc.text(label, margin, y);
-    const lw = doc.getTextWidth(label);
-    const val = value || "N/A";
-    doc.text(val, margin + lw, y);
-    doc.setLineWidth(0.3);
-    doc.line(margin + lw, y + 1.2, margin + lw + Math.max(doc.getTextWidth(val), 35), y + 1.2);
-    y += 6;
+  const sectionTitle = (text: string) => {
+    checkNewPage(12);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.text(text, margin, y);
+    y += 7;
   };
 
-  field("Date:  ", values.effectiveDate || "N/A");
-  field("To:  ", values.party2Name || "N/A");
-  field("Address:  ", party2Address || "N/A");
-  field("State/Province:  ", [values.state, values.country?.toUpperCase()].filter(Boolean).join(", ") || "N/A");
-  y += 3;
+  const articleTitle = (text: string) => {
+    checkNewPage(14);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(12);
+    const tw = doc.getTextWidth(text);
+    doc.text(text, (pageWidth - tw) / 2, y);
+    y += 8;
+  };
 
-  // ── SUBJECT ──
+  const corpName = values.corporationName || "[CORPORATION NAME]";
+  const stateProvince = jurisdiction || "[STATE/PROVINCE]";
+  const numDirectors = values.numberOfDirectors || "[____]";
+  const directorTerm = values.directorTermYears || "[____]";
+
+  // ── TITLE ──
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(10);
-  doc.text("Subject: Notice of Nonprofit Formation and Agreement of Terms", margin, y);
-  y += 7;
-
-  // ── SALUTATION ──
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  doc.text(`Dear ${values.party2Name || "Sir or Madam"},`, margin, y);
-  y += 6;
-
-  // ── BODY PARAGRAPHS ──
-  para(
-    `I am writing to formally confirm the Nonprofit Formation Agreement entered into as of ${values.effectiveDate || "N/A"}, between ${values.party1Name || "the Founder"} (${values.party1Type === "business" ? "a business entity" : "an individual"}) and ${values.party2Name || "the Organization"}, governed by the laws of ${jurisdiction || "the applicable jurisdiction"}, effective immediately.`
-  );
-
-  para(
-    values.description ||
-    "Both parties agree to establish this nonprofit organization for the purpose of advancing charitable, educational, or public benefit objectives in accordance with applicable nonprofit laws and regulations. Each party acknowledges their respective roles and obligations as outlined herein."
-  );
-
-  para(
-    `This agreement shall remain in effect for ${durationMap[values.duration] || values.duration || "the agreed duration"} and may be terminated upon ${terminationMap[values.terminationNotice] || values.terminationNotice || "the agreed notice"} written notice to the other party. Disputes shall be resolved by ${disputeMap[values.disputeResolution] || values.disputeResolution || "the agreed method"}.${values.confidentiality === "yes" ? " A confidentiality clause is included and binding on both parties." : ""}${values.paymentAmount ? ` The agreed funding contribution is ${values.paymentAmount} on a ${values.paymentSchedule || "mutually agreed"} basis.` : ""}`
-  );
-
-  if (values.additionalTerms?.trim()) {
-    para(values.additionalTerms.trim());
-  }
-
-  para(
-    "Please retain a signed copy of this agreement for your records. Both parties are bound by the terms stated herein from the effective date."
-  );
-
-  y += 2;
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  doc.text("Thank you for your cooperation.", margin, y);
-  y += 8;
-  doc.text("Sincerely,", margin, y);
+  doc.setFontSize(16);
+  const title = "NON-PROFIT BY LAWS";
+  const titleW = doc.getTextWidth(title);
+  doc.text(title, (pageWidth - titleW) / 2, y);
+  doc.setLineWidth(0.5);
+  doc.line((pageWidth - titleW) / 2, y + 1.5, (pageWidth - titleW) / 2 + titleW, y + 1.5);
   y += 12;
 
-  // ── SENDER BLOCK ──
-  doc.setFont("helvetica", "bold");
+  doc.setFont("helvetica", "normal");
   doc.setFontSize(10);
-  const senderName = values.party1Name || "Founder";
-  doc.text(senderName, margin, y);
+  const subLine = `${corpName} | Effective: ${values.effectiveDate || "N/A"} | Jurisdiction: ${stateProvince}`;
+  const subW = doc.getTextWidth(subLine);
+  doc.text(subLine, (pageWidth - subW) / 2, y);
+  y += 12;
+
+  // ── ARTICLE I ──
+  articleTitle("ARTICLE I");
+  sectionTitle("OFFICES");
+
+  sectionTitle("Section 1. Registered Office");
+  para(
+    `The registered office of ${corpName} (the "Corporation") shall be situated at such place as may be specified in the Corporation's formation documents or as otherwise determined in accordance with applicable law.`
+  );
+
+  sectionTitle("Section 2. Other Offices");
+  para(
+    `The Corporation may maintain such additional offices, both within and outside ${stateProvince}, as the Board of Directors (the "Board") may from time to time determine or as the business of the Corporation may require.`
+  );
+  y += 4;
+
+  // ── ARTICLE II ──
+  articleTitle("ARTICLE II");
+  sectionTitle("SHAREHOLDERS");
+
+  sectionTitle("Section 1. Annual Meeting");
+  para(
+    `An annual meeting of the shareholders shall be held once in each calendar year for the purpose of electing directors and transacting such other business as may properly come before the meeting. The time and place of such meeting shall be determined by the Board.`
+  );
+
+  sectionTitle("Section 2. Special Meetings");
+  para(
+    `Special meetings of the shareholders may be called by the President, the Board, or by shareholders holding a majority of the outstanding voting shares.`
+  );
+
+  sectionTitle("Section 3. Notice of Meetings");
+  para(
+    `Written notice of all meetings of shareholders, whether annual or special, shall be given in accordance with applicable law. Such notice shall specify the place, date, and time of the meeting, and, in the case of a special meeting, the purpose or purposes thereof. Notice shall be delivered to each shareholder of record at least ten (10) days prior to the meeting and shall be deemed effective upon deposit in the ordinary mail, properly addressed, with postage prepaid.`
+  );
+
+  sectionTitle("Section 4. Place of Meetings");
+  para(
+    `Meetings of shareholders shall be held at the principal place of business of the Corporation unless otherwise specified in the notice. Shareholders may participate in meetings by means of remote communication, to the extent authorized by the Board, provided that appropriate procedures are adopted to verify participation and voting. Participation by such means shall constitute presence in person.`
+  );
+
+  sectionTitle("Section 5. Quorum");
+  para(
+    `A majority of the outstanding voting shares, present in person or represented by proxy, shall constitute a quorum for the transaction of business. In the absence of a quorum, a majority of the shares represented may adjourn the meeting. Any business may be transacted at a reconvened meeting provided a quorum is present.`
+  );
+
+  sectionTitle("Section 6. Action Without Meeting");
+  para(
+    `Any action required or permitted to be taken at a meeting of shareholders may be taken without a meeting and without prior notice if a written consent thereto is signed by shareholders holding all of the outstanding voting shares.`
+  );
+  y += 4;
+
+  // ── ARTICLE III ──
+  articleTitle("ARTICLE III");
+  sectionTitle("BOARD OF DIRECTORS");
+
+  sectionTitle("Section 1. Number");
+  para(
+    `The business and affairs of the Corporation shall be managed by a Board consisting of ${numDirectors} director(s).`
+  );
+
+  sectionTitle("Section 2. Election and Term");
+  para(
+    `Directors shall be elected at the annual meeting of shareholders and shall serve for a term of ${directorTerm} year(s), or until their successors have been duly elected and qualified.`
+  );
+
+  sectionTitle("Section 3. Quorum");
+  para(`A majority of the directors then in office shall constitute a quorum for the transaction of business.`);
+
+  sectionTitle("Section 4. Conflicts of Interest");
+  para(
+    `The disclosure of any actual or potential conflict of interest by a director shall not, in itself, invalidate any action taken by the Board, provided such disclosure is made in accordance with applicable law.`
+  );
+
+  sectionTitle("Section 5. Regular Meetings");
+  para(
+    `An annual meeting of the Board shall be held immediately following the annual meeting of shareholders, without the necessity of notice. Additional regular meetings may be scheduled by resolution of the Board.`
+  );
+
+  sectionTitle("Section 6. Special Meetings");
+  para(
+    `Special meetings of the Board may be called by the President, Vice-President, Secretary, or any two (2) directors upon not less than five (5) days' prior written notice.`
+  );
+
+  sectionTitle("Section 7. Voting and Procedures");
+  para(
+    `The act of a majority of the directors present at a meeting at which a quorum is present shall constitute the act of the Board, unless otherwise required by law or these Bylaws. A director who is present at a meeting shall be presumed to have assented to any action taken unless such director's dissent is entered into the minutes.`
+  );
+
+  sectionTitle("Section 8. Action Without Meeting");
+  para(`Any action required or permitted to be taken by the Board may be taken without a meeting if all directors consent thereto in writing.`);
+
+  sectionTitle("Section 9. Removal and Vacancies");
+  para(
+    `Any director may be removed, with or without cause, in accordance with applicable law. Vacancies on the Board may be filled by the remaining directors, and any director so elected shall serve for the unexpired term of their predecessor.`
+  );
+
+  sectionTitle("Section 10. Resignation");
+  para(
+    `A director may resign at any time by submitting written notice to the Corporation. Such resignation shall take effect upon receipt unless otherwise specified therein.`
+  );
+
+  sectionTitle("Section 11. Committees");
+  para(
+    `The Board may, by resolution, establish one or more committees and delegate to such committees such authority as permitted by law.`
+  );
+  y += 4;
+
+  // ── ARTICLE IV ──
+  articleTitle("ARTICLE IV");
+  sectionTitle("OFFICERS");
+
+  sectionTitle("Section 1. Officers");
+  para(
+    `The officers of the Corporation shall include a President, a Secretary, and a Treasurer. Two or more offices may be held by the same individual, except that the offices of President and Secretary shall not be held by the same person.`
+  );
+
+  sectionTitle("Section 2. President");
+  para(
+    `The President shall serve as the chief executive officer of the Corporation and shall preside at all meetings of shareholders and directors, and shall perform such other duties as may be assigned by the Board.`
+  );
+
+  sectionTitle("Section 3. Secretary");
+  para(
+    `The Secretary shall be responsible for giving notice of meetings, maintaining corporate records, certifying official documents, and recording the minutes of all meetings.`
+  );
+
+  sectionTitle("Section 4. Treasurer");
+  para(
+    `The Treasurer shall oversee the financial affairs of the Corporation, maintain accurate financial records, and provide regular reports to the Board.`
+  );
+
+  sectionTitle("Section 5. Election and Term");
+  para(
+    `Officers shall be elected annually by the Board and shall serve for a term of one (1) year or until their successors are duly elected and qualified.`
+  );
+
+  sectionTitle("Section 6. Removal and Vacancies");
+  para(`Any officer may be removed by the Board at any time, with or without cause. Vacancies in any office may be filled by the Board.`);
+  y += 4;
+
+  // ── ARTICLE V ──
+  articleTitle("ARTICLE V");
+  sectionTitle("CORPORATE SEAL AND EXECUTION OF INSTRUMENTS");
+  para(
+    `The Corporation shall not maintain a corporate seal. Instruments affecting real property shall be executed by the President or Vice-President together with the Secretary or Treasurer. All other instruments may be executed by such officers or agents as may be duly authorized by the Board.`
+  );
+  y += 4;
+
+  // ── ARTICLE VI ──
+  articleTitle("ARTICLE VI");
+  sectionTitle("STOCK CERTIFICATES");
+  para(
+    `The Corporation may issue shares with or without certificates, as permitted by law. In the absence of certificates, shareholders shall be provided with written statements evidencing their ownership. Certificates shall be issued upon request.`
+  );
+  y += 4;
+
+  // ── ARTICLE VII ──
+  articleTitle("ARTICLE VII");
+  sectionTitle("INDEMNIFICATION");
+  para(
+    `To the fullest extent permitted by applicable law, the Corporation shall indemnify and hold harmless any director or officer who is or was a party to any proceeding by reason of their position with the Corporation.`
+  );
+  y += 4;
+
+  // ── ARTICLE VIII ──
+  articleTitle("ARTICLE VIII");
+  sectionTitle("AMENDMENTS");
+  para(
+    `These Bylaws may be amended, altered, or repealed by a majority vote of the Board or the shareholders, provided that certain provisions may be reserved exclusively for amendment by shareholders where required by law or specified herein.`
+  );
+  y += 4;
+
+  // ── ARTICLE IX ──
+  articleTitle("ARTICLE IX");
+  sectionTitle("DISSOLUTION");
+  para(
+    `The Corporation may be dissolved upon authorization of the Board and approval by not less than two-thirds (2/3) of the shareholders, in accordance with applicable law.`
+  );
+  y += 4;
+
+  // ── Additional Terms from Form ──
+  if (values.description || values.additionalTerms || values.duration || values.disputeResolution) {
+    articleTitle("ADDITIONAL PROVISIONS");
+
+    if (values.description?.trim()) {
+      sectionTitle("Purpose and Objectives");
+      para(values.description.trim());
+    }
+
+    if (values.duration) {
+      sectionTitle("Duration");
+      para(`This agreement shall remain in effect for ${durationMap[values.duration] || values.duration} and may be terminated upon ${terminationMap[values.terminationNotice] || values.terminationNotice || "the agreed notice"} written notice to the other party.`);
+    }
+
+    if (values.disputeResolution) {
+      sectionTitle("Dispute Resolution");
+      para(`Disputes shall be resolved by ${disputeMap[values.disputeResolution] || values.disputeResolution}.`);
+    }
+
+    if (values.confidentiality === "yes") {
+      sectionTitle("Confidentiality");
+      para(`A confidentiality clause is included and binding on both parties.`);
+    }
+
+    if (values.paymentAmount) {
+      sectionTitle("Financial Contributions");
+      para(`The agreed funding contribution is ${values.paymentAmount} on a ${values.paymentSchedule || "mutually agreed"} basis.`);
+    }
+
+    if (values.additionalTerms?.trim()) {
+      sectionTitle("Special Conditions");
+      para(values.additionalTerms.trim());
+    }
+    y += 4;
+  }
+
+  // ── CERTIFICATION ──
+  checkNewPage(50);
+  articleTitle("CERTIFICATION");
+  para(
+    `I, ${values.secretaryName || "[__________]"}, Secretary of ${corpName}, hereby certify that the foregoing Bylaws constitute a true and correct copy of the Bylaws of the Corporation, duly adopted by the initial Board of Directors on ${values.certificationDate || values.effectiveDate || "[__________]"}.`
+  );
+  y += 8;
+
+  // Secretary Signature
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  const secSigVal = values.party1Signature || "________________________";
+  doc.text(secSigVal, margin, y);
   doc.setLineWidth(0.3);
-  doc.line(margin, y + 1.2, margin + doc.getTextWidth(senderName), y + 1.2);
+  doc.line(margin, y + 1.2, margin + Math.max(doc.getTextWidth(secSigVal), 60), y + 1.2);
+  y += 6;
+  doc.text("Secretary", margin, y);
+  y += 10;
+
+  const certDateVal = values.certificationDate || "________________________";
+  doc.text(certDateVal, margin, y);
+  doc.setLineWidth(0.3);
+  doc.line(margin, y + 1.2, margin + Math.max(doc.getTextWidth(certDateVal), 50), y + 1.2);
+  y += 6;
+  doc.text("Date", margin, y);
+  y += 12;
+
+  // ── FORMATION AGREEMENT SIGNATURES ──
+  checkNewPage(70);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(13);
+  const sigTitle = "NONPROFIT FORMATION AGREEMENT – EXECUTION";
+  const sigTW = doc.getTextWidth(sigTitle);
+  doc.text(sigTitle, (pageWidth - sigTW) / 2, y);
+  doc.setLineWidth(0.4);
+  doc.line((pageWidth - sigTW) / 2, y + 1.5, (pageWidth - sigTW) / 2 + sigTW, y + 1.5);
+  y += 10;
+
+  para(
+    `This Nonprofit Formation Agreement is entered into as of ${values.effectiveDate || "N/A"}, between ${values.party1Name || "the Founder"} (${values.party1Type === "business" ? "a business entity" : "an individual"}) and ${values.party2Name || "the Organization"}, governed by the laws of ${jurisdiction || "the applicable jurisdiction"}.`
+  );
+  y += 4;
+
+  // First Party Signature
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text("First Party Signature:", margin, y);
+  y += 7;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  const fp1Sig = values.party1Signature || "________________________";
+  doc.text(fp1Sig, margin, y);
+  doc.setLineWidth(0.3);
+  doc.line(margin, y + 1.2, margin + Math.max(doc.getTextWidth(fp1Sig), 70), y + 1.2);
+  y += 8;
+
+  doc.text(`Name: ${values.party1Name || "________________________"}`, margin, y); y += 6;
+  if (party1Address) { doc.text(`Address: ${party1Address}`, margin, y); y += 6; }
+  if (values.party1Email) { doc.text(`Email: ${values.party1Email}`, margin, y); y += 6; }
+  if (values.party1Phone) { doc.text(`Phone: ${values.party1Phone}`, margin, y); y += 6; }
   y += 6;
 
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  if (party1Address)      { doc.text(party1Address,                  margin, y); y += 5; }
-  if (values.party1Email) { doc.text(`Email: ${values.party1Email}`, margin, y); y += 5; }
-  if (values.party1Phone) { doc.text(`Phone: ${values.party1Phone}`, margin, y); y += 5; }
-
-  // ── SIGNATURES ──
-  y += 5;
+  // Second Party Signature
+  checkNewPage(40);
   doc.setFont("helvetica", "bold");
-  doc.setFontSize(10);
-  doc.text("First Party Signature:", margin, y);
-  doc.setFont("helvetica", "normal");
-  doc.text(values.party1Signature || "________________________", margin + doc.getTextWidth("First Party Signature:  "), y);
-  y += 7;
-
-  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
   doc.text("Second Party Signature:", margin, y);
-  doc.setFont("helvetica", "normal");
-  doc.text(values.party2Signature || "________________________", margin + doc.getTextWidth("Second Party Signature:  "), y);
   y += 7;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  const fp2Sig = values.party2Signature || "________________________";
+  doc.text(fp2Sig, margin, y);
+  doc.setLineWidth(0.3);
+  doc.line(margin, y + 1.2, margin + Math.max(doc.getTextWidth(fp2Sig), 70), y + 1.2);
+  y += 8;
+
+  doc.text(`Name: ${values.party2Name || "________________________"}`, margin, y); y += 6;
+  if (party2Address) { doc.text(`Address: ${party2Address}`, margin, y); y += 6; }
+  if (values.party2Email) { doc.text(`Email: ${values.party2Email}`, margin, y); y += 6; }
+  if (values.party2Phone) { doc.text(`Phone: ${values.party2Phone}`, margin, y); y += 6; }
 
   if (values.witnessName) {
+    y += 4;
     doc.setFont("helvetica", "bold");
     doc.text("Witness:", margin, y);
     doc.setFont("helvetica", "normal");
     const wx = margin + doc.getTextWidth("Witness:  ");
     doc.text(values.witnessName, wx, y);
     doc.setLineWidth(0.3);
-    doc.line(wx, y + 1.2, wx + doc.getTextWidth(values.witnessName), y + 1.2);
+    doc.line(wx, y + 1.2, wx + Math.max(doc.getTextWidth(values.witnessName), 40), y + 1.2);
   }
 
-  doc.save("nonprofit_formation.pdf");
+  doc.save("nonprofit_bylaws.pdf");
 };
 
 export default function NonprofitFormation() {
   return (
     <FormWizard
       steps={steps}
-      title="Nonprofit Formation"
-      subtitle="Complete each step to generate your document"
+      title="Non-Profit Bylaws & Formation"
+      subtitle="Complete each step to generate your Nonprofit Bylaws and Formation Agreement"
       onGenerate={generatePDF}
       documentType="nonprofitformation"
     />

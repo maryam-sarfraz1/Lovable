@@ -4,497 +4,456 @@ import { jsPDF } from "jspdf";
 
 const steps: Array<{ label: string; fields: FieldDef[] }> = [
   {
-    label: "Jurisdiction",
-    fields: [
-      {
-        name: "country",
-        label: "Which country's laws will govern this document?",
-        type: "select",
-        required: true,
-        options: [
-          { value: "us", label: "United States" },
-          { value: "ca", label: "Canada" },
-          { value: "uk", label: "United Kingdom" },
-          { value: "au", label: "Australia" },
-          { value: "other", label: "Other" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "State/Province",
-    fields: [
-      {
-        name: "state",
-        label: "Which state or province?",
-        type: "select",
-        required: true,
-        dependsOn: "country",
-        getOptions: (values) => {
-          if (values.country === "us") {
-            return [
-              { value: "AL", label: "Alabama" }, { value: "AK", label: "Alaska" },
-              { value: "AZ", label: "Arizona" }, { value: "AR", label: "Arkansas" },
-              { value: "CA", label: "California" }, { value: "CO", label: "Colorado" },
-              { value: "CT", label: "Connecticut" }, { value: "DE", label: "Delaware" },
-              { value: "FL", label: "Florida" }, { value: "GA", label: "Georgia" },
-              { value: "HI", label: "Hawaii" }, { value: "ID", label: "Idaho" },
-              { value: "IL", label: "Illinois" }, { value: "IN", label: "Indiana" },
-              { value: "IA", label: "Iowa" }, { value: "KS", label: "Kansas" },
-              { value: "KY", label: "Kentucky" }, { value: "LA", label: "Louisiana" },
-              { value: "ME", label: "Maine" }, { value: "MD", label: "Maryland" },
-              { value: "MA", label: "Massachusetts" }, { value: "MI", label: "Michigan" },
-              { value: "MN", label: "Minnesota" }, { value: "MS", label: "Mississippi" },
-              { value: "MO", label: "Missouri" }, { value: "MT", label: "Montana" },
-              { value: "NE", label: "Nebraska" }, { value: "NV", label: "Nevada" },
-              { value: "NH", label: "New Hampshire" }, { value: "NJ", label: "New Jersey" },
-              { value: "NM", label: "New Mexico" }, { value: "NY", label: "New York" },
-              { value: "NC", label: "North Carolina" }, { value: "ND", label: "North Dakota" },
-              { value: "OH", label: "Ohio" }, { value: "OK", label: "Oklahoma" },
-              { value: "OR", label: "Oregon" }, { value: "PA", label: "Pennsylvania" },
-              { value: "RI", label: "Rhode Island" }, { value: "SC", label: "South Carolina" },
-              { value: "SD", label: "South Dakota" }, { value: "TN", label: "Tennessee" },
-              { value: "TX", label: "Texas" }, { value: "UT", label: "Utah" },
-              { value: "VT", label: "Vermont" }, { value: "VA", label: "Virginia" },
-              { value: "WA", label: "Washington" }, { value: "WV", label: "West Virginia" },
-              { value: "WI", label: "Wisconsin" }, { value: "WY", label: "Wyoming" },
-              { value: "DC", label: "District of Columbia" },
-            ];
-          } else if (values.country === "ca") {
-            return [
-              { value: "AB", label: "Alberta" }, { value: "BC", label: "British Columbia" },
-              { value: "MB", label: "Manitoba" }, { value: "NB", label: "New Brunswick" },
-              { value: "NL", label: "Newfoundland and Labrador" }, { value: "NS", label: "Nova Scotia" },
-              { value: "ON", label: "Ontario" }, { value: "PE", label: "Prince Edward Island" },
-              { value: "QC", label: "Quebec" }, { value: "SK", label: "Saskatchewan" },
-              { value: "NT", label: "Northwest Territories" }, { value: "NU", label: "Nunavut" },
-              { value: "YT", label: "Yukon" },
-            ];
-          } else if (values.country === "uk") {
-            return [
-              { value: "ENG", label: "England" }, { value: "SCT", label: "Scotland" },
-              { value: "WLS", label: "Wales" }, { value: "NIR", label: "Northern Ireland" },
-            ];
-          } else if (values.country === "au") {
-            return [
-              { value: "NSW", label: "New South Wales" }, { value: "VIC", label: "Victoria" },
-              { value: "QLD", label: "Queensland" }, { value: "WA", label: "Western Australia" },
-              { value: "SA", label: "South Australia" }, { value: "TAS", label: "Tasmania" },
-              { value: "ACT", label: "Australian Capital Territory" }, { value: "NT", label: "Northern Territory" },
-            ];
-          }
-          return [{ value: "other", label: "Other Region" }];
-        },
-      },
-    ],
-  },
-  {
-    label: "Agreement Date",
+    label: "Effective Date",
     fields: [
       {
         name: "effectiveDate",
-        label: "What is the effective date of this agreement?",
+        label: "What is the effective date of this Agreement?",
         type: "date",
         required: true,
       },
     ],
   },
   {
-    label: "First Party Name",
+    label: "Grantor Information",
     fields: [
       {
-        name: "party1Name",
-        label: "What is the full legal name of the first party?",
+        name: "grantorName",
+        label: "Grantor full legal name / business name",
         type: "text",
         required: true,
-        placeholder: "Enter full legal name",
+        placeholder: "Enter full legal name or company name",
       },
       {
-        name: "party1Type",
-        label: "Is this party an individual or a business?",
-        type: "select",
+        name: "grantorAddress",
+        label: "Grantor principal place of business",
+        type: "text",
         required: true,
-        options: [
-          { value: "individual", label: "Individual" },
-          { value: "business", label: "Business/Company" },
-        ],
+        placeholder: "Full address",
       },
     ],
   },
   {
-    label: "First Party Address",
+    label: "Grantee Information",
     fields: [
       {
-        name: "party1Street",
-        label: "Street Address",
+        name: "granteeName",
+        label: "Grantee full legal name / business name",
         type: "text",
         required: true,
-        placeholder: "123 Main Street",
+        placeholder: "Enter full legal name or company name",
       },
       {
-        name: "party1City",
-        label: "City",
+        name: "granteeAddress",
+        label: "Grantee principal place of business",
         type: "text",
         required: true,
-        placeholder: "City",
-      },
-      {
-        name: "party1Zip",
-        label: "ZIP/Postal Code",
-        type: "text",
-        required: true,
-        placeholder: "ZIP Code",
+        placeholder: "Full address",
       },
     ],
   },
   {
-    label: "First Party Contact",
+    label: "Property & Rights",
     fields: [
       {
-        name: "party1Email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "email@example.com",
-      },
-      {
-        name: "party1Phone",
-        label: "Phone Number",
-        type: "tel",
-        required: false,
-        placeholder: "(555) 123-4567",
-      },
-    ],
-  },
-  {
-    label: "Second Party Name",
-    fields: [
-      {
-        name: "party2Name",
-        label: "What is the full legal name of the second party?",
-        type: "text",
-        required: true,
-        placeholder: "Enter full legal name",
-      },
-      {
-        name: "party2Type",
-        label: "Is this party an individual or a business?",
-        type: "select",
-        required: true,
-        options: [
-          { value: "individual", label: "Individual" },
-          { value: "business", label: "Business/Company" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Second Party Address",
-    fields: [
-      {
-        name: "party2Street",
-        label: "Street Address",
-        type: "text",
-        required: true,
-        placeholder: "123 Main Street",
-      },
-      {
-        name: "party2City",
-        label: "City",
-        type: "text",
-        required: true,
-        placeholder: "City",
-      },
-      {
-        name: "party2Zip",
-        label: "ZIP/Postal Code",
-        type: "text",
-        required: true,
-        placeholder: "ZIP Code",
-      },
-    ],
-  },
-  {
-    label: "Second Party Contact",
-    fields: [
-      {
-        name: "party2Email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "email@example.com",
-      },
-      {
-        name: "party2Phone",
-        label: "Phone Number",
-        type: "tel",
-        required: false,
-        placeholder: "(555) 123-4567",
-      },
-    ],
-  },
-  {
-    label: "Agreement Details",
-    fields: [
-      {
-        name: "description",
-        label: "Describe the purpose and scope of this agreement",
+        name: "propertyDescription",
+        label: "Description of the Property (the subject of the license)",
         type: "textarea",
         required: true,
-        placeholder: "Provide a detailed description of the agreement terms...",
+        placeholder: "Describe the intellectual property, work, or asset being licensed",
       },
-    ],
-  },
-  {
-    label: "Terms & Conditions",
-    fields: [
       {
-        name: "duration",
-        label: "What is the duration of this agreement?",
-        type: "select",
+        name: "propertyAcquiredDate",
+        label: "Date the Grantor's rights in the Property were issued/acquired",
+        type: "date",
         required: true,
-        options: [
-          { value: "1month", label: "1 Month" },
-          { value: "3months", label: "3 Months" },
-          { value: "6months", label: "6 Months" },
-          { value: "1year", label: "1 Year" },
-          { value: "2years", label: "2 Years" },
-          { value: "5years", label: "5 Years" },
-          { value: "indefinite", label: "Indefinite/Ongoing" },
-          { value: "custom", label: "Custom Duration" },
-        ],
       },
       {
-        name: "terminationNotice",
-        label: "How much notice is required to terminate?",
-        type: "select",
-        required: true,
-        options: [
-          { value: "immediate", label: "Immediate" },
-          { value: "7days", label: "7 Days" },
-          { value: "14days", label: "14 Days" },
-          { value: "30days", label: "30 Days" },
-          { value: "60days", label: "60 Days" },
-          { value: "90days", label: "90 Days" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Financial Terms",
-    fields: [
-      {
-        name: "paymentAmount",
-        label: "What is the payment amount (if applicable)?",
-        type: "text",
-        required: false,
-        placeholder: "$0.00",
-      },
-      {
-        name: "paymentSchedule",
-        label: "Payment Schedule",
-        type: "select",
-        required: false,
-        options: [
-          { value: "onetime", label: "One-time Payment" },
-          { value: "weekly", label: "Weekly" },
-          { value: "biweekly", label: "Bi-weekly" },
-          { value: "monthly", label: "Monthly" },
-          { value: "quarterly", label: "Quarterly" },
-          { value: "annually", label: "Annually" },
-          { value: "milestone", label: "Milestone-based" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Legal Protections",
-    fields: [
-      {
-        name: "confidentiality",
-        label: "Include confidentiality clause?",
-        type: "select",
-        required: true,
-        options: [
-          { value: "yes", label: "Yes - Include confidentiality provisions" },
-          { value: "no", label: "No - Not needed" },
-        ],
-      },
-      {
-        name: "disputeResolution",
-        label: "How should disputes be resolved?",
-        type: "select",
-        required: true,
-        options: [
-          { value: "mediation", label: "Mediation" },
-          { value: "arbitration", label: "Binding Arbitration" },
-          { value: "litigation", label: "Court Litigation" },
-          { value: "negotiation", label: "Good Faith Negotiation First" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Additional Terms",
-    fields: [
-      {
-        name: "additionalTerms",
-        label: "Any additional terms or special conditions?",
-        type: "textarea",
-        required: false,
-        placeholder: "Enter any additional terms, conditions, or special provisions...",
-      },
-    ],
-  },
-  {
-    label: "Review & Sign",
-    fields: [
-      {
-        name: "party1Signature",
-        label: "First Party Signature (Type full legal name)",
+        name: "propertyAcquiredFrom",
+        label: "From whom / by whom the rights were issued or acquired",
         type: "text",
         required: true,
-        placeholder: "Type your full legal name as signature",
+        placeholder: "e.g. USPTO, Author's own creation, Acquired from XYZ Corp",
       },
       {
-        name: "party2Signature",
-        label: "Second Party Signature (Type full legal name)",
-        type: "text",
+        name: "licenseTerm",
+        label: "Duration / Term of the license (Clause 1)",
+        type: "select",
         required: true,
-        placeholder: "Type your full legal name as signature",
+        options: [
+          { value: "1 year", label: "1 Year" },
+          { value: "2 years", label: "2 Years" },
+          { value: "3 years", label: "3 Years" },
+          { value: "5 years", label: "5 Years" },
+          { value: "10 years", label: "10 Years" },
+          { value: "indefinite", label: "Indefinite / Ongoing" },
+          { value: "custom", label: "Custom — specify below" },
+        ],
       },
       {
-        name: "witnessName",
-        label: "Witness Name (Optional)",
+        name: "licenseTermCustom",
+        label: "If custom, specify license term",
         type: "text",
         required: false,
-        placeholder: "Witness full legal name",
+        placeholder: "e.g. 18 months",
       },
     ],
   },
-] as Array<{ label: string; fields: FieldDef[] }>;
+  {
+    label: "Confidentiality",
+    fields: [
+      {
+        name: "confidentialityPeriod",
+        label: "Confidentiality obligation period for Grantee (Clause 3a)",
+        type: "text",
+        required: true,
+        placeholder: "e.g. 3 years, 5 years",
+      },
+    ],
+  },
+  {
+    label: "Consideration & Royalty",
+    fields: [
+      {
+        name: "lumpSum",
+        label: "Lump sum payment upon execution ($) (Clause 4a) — enter 0 if none",
+        type: "text",
+        required: true,
+        placeholder: "e.g. 0.00 or 5000.00",
+      },
+      {
+        name: "royaltyPercent",
+        label: "Royalty percentage of Net Profits (%) (Clause 4b) — enter 0 if none",
+        type: "text",
+        required: true,
+        placeholder: "e.g. 0 or 10",
+      },
+    ],
+  },
+  {
+    label: "Default — Minimum Royalty",
+    fields: [
+      {
+        name: "minimumRoyalty",
+        label: "Minimum royalty if Grantee ceases use for 1 year ($) (Clause 7b)",
+        type: "text",
+        required: true,
+        placeholder: "e.g. 0.00 or 500.00",
+      },
+    ],
+  },
+  {
+    label: "Governing Law",
+    fields: [
+      {
+        name: "governingState",
+        label: "Governing state / jurisdiction (Clause 14)",
+        type: "text",
+        required: true,
+        placeholder: "e.g. California",
+      },
+    ],
+  },
+  {
+    label: "Grantor Signature",
+    fields: [
+      {
+        name: "grantorSignName",
+        label: "Grantor — Authorized signatory name",
+        type: "text",
+        required: false,
+        placeholder: "Full legal name",
+      },
+      {
+        name: "grantorTitle",
+        label: "Grantor — Title / Designation",
+        type: "text",
+        required: false,
+        placeholder: "e.g. CEO, Director",
+      },
+      {
+        name: "grantorSignDate",
+        label: "Grantor — Date",
+        type: "date",
+        required: false,
+      },
+    ],
+  },
+  {
+    label: "Grantee Signature",
+    fields: [
+      {
+        name: "granteeSignName",
+        label: "Grantee — Authorized signatory name",
+        type: "text",
+        required: false,
+        placeholder: "Full legal name",
+      },
+      {
+        name: "granteeTitle",
+        label: "Grantee — Title / Designation",
+        type: "text",
+        required: false,
+        placeholder: "e.g. CEO, Director",
+      },
+      {
+        name: "granteeSignDate",
+        label: "Grantee — Date",
+        type: "date",
+        required: false,
+      },
+    ],
+  },
+];
 
 const generatePDF = (values: Record<string, string>) => {
-  const doc = new jsPDF({ unit: "mm", format: "letter" });
-  const pageWidth = doc.internal.pageSize.getWidth();
-  const margin = 25;
-  const contentWidth = pageWidth - margin * 2;
+  const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+  const pageW = 210;
+  const m = 18;
+  const tw = pageW - m * 2;
+  const lh = 5.6;
+  const limit = 277;
   let y = 20;
 
-  const party1Address = [values.party1Street, values.party1City, values.party1Zip].filter(Boolean).join(", ");
-  const party2Address = [values.party2Street, values.party2City, values.party2Zip].filter(Boolean).join(", ");
-  const jurisdiction  = [values.state, values.country?.toUpperCase()].filter(Boolean).join(", ");
+  const u = (v?: string, n = 18) => (v || "").trim() || "_".repeat(n);
+  const term = values.licenseTerm === "custom" ? u(values.licenseTermCustom, 10) : u(values.licenseTerm, 10);
 
-  const durationMap: Record<string, string> = { "1month": "1 Month", "3months": "3 Months", "6months": "6 Months", "1year": "1 Year", "2years": "2 Years", "5years": "5 Years", "indefinite": "Indefinite/Ongoing", "custom": "Custom" };
-  const terminationMap: Record<string, string> = { "immediate": "immediately", "7days": "7 days", "14days": "14 days", "30days": "30 days", "60days": "60 days", "90days": "90 days" };
-  const disputeMap: Record<string, string> = { "mediation": "Mediation", "arbitration": "Binding Arbitration", "litigation": "Court Litigation", "negotiation": "Good Faith Negotiation" };
-  const scheduleMap: Record<string, string> = { "onetime": "one-time", "weekly": "weekly", "biweekly": "bi-weekly", "monthly": "monthly", "quarterly": "quarterly", "annually": "annual", "milestone": "milestone-based" };
-
-  const para = (text: string) => {
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-    const lines = doc.splitTextToSize(text, contentWidth);
-    doc.text(lines, margin, y);
-    y += lines.length * 5 + 3;
+  const checkBreak = (needed = lh) => {
+    if (y + needed > limit) { doc.addPage(); y = 20; }
   };
 
-  // TITLE
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(13);
-  const title = "ROYALTY AGREEMENT";
-  const titleWidth = doc.getTextWidth(title);
-  const titleX = (pageWidth - titleWidth) / 2;
-  doc.text(title, titleX, y);
-  doc.setLineWidth(0.5);
-  doc.line(titleX, y + 1.5, titleX + titleWidth, y + 1.5);
-  y += 11;
-
-  // HEADER FIELDS
-  const field = (label: string, value: string) => {
-    doc.setFont("helvetica", "normal");
-    doc.setFontSize(10);
-    doc.text(label, margin, y);
-    const lw = doc.getTextWidth(label);
-    const val = value || "N/A";
-    doc.text(val, margin + lw, y);
-    doc.setLineWidth(0.3);
-    doc.line(margin + lw, y + 1.2, margin + lw + Math.max(doc.getTextWidth(val), 35), y + 1.2);
-    y += 6;
+  const p = (text: string, bold = false, gap = 2) => {
+    const lines = doc.splitTextToSize(text, tw);
+    checkBreak(lines.length * lh + gap);
+    doc.setFont("helvetica", bold ? "bold" : "normal");
+    doc.setFontSize(10.5);
+    doc.text(lines, m, y);
+    y += lines.length * lh + gap;
   };
 
-  field("Date:  ", values.effectiveDate || "N/A");
-  field("To:  ", values.party2Name || "N/A");
-  field("Address:  ", party2Address || "N/A");
-  field("State/Province:  ", jurisdiction || "N/A");
-  y += 3;
-
-  // SUBJECT
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(10);
-  doc.text("Subject: Notice of Royalty Agreement and Terms of Engagement", margin, y);
-  y += 7;
-
-  // SALUTATION
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  doc.text(`Dear ${values.party2Name || "Sir or Madam"},`, margin, y);
-  y += 6;
-
-  // BODY
-  para(`I am writing to formally confirm the Royalty Agreement entered into as of ${values.effectiveDate || "N/A"}, between ${values.party1Name || "the Licensor"} (${values.party1Type === "business" ? "a business entity" : "an individual"}) and ${values.party2Name || "the Licensee"} (${values.party2Type === "business" ? "a business entity" : "an individual"}), governed by the laws of ${jurisdiction || "the applicable jurisdiction"}, effective immediately.`);
-
-  para(values.description || "The Licensor grants to the Licensee a non-exclusive right to use, reproduce, and distribute the licensed work or intellectual property as described herein. The Licensee agrees to use the licensed property solely within the scope of this agreement and to provide accurate royalty reports and payments in accordance with the agreed schedule.");
-
-  para(`${values.paymentAmount ? `The agreed royalty rate or amount is ${values.paymentAmount}, payable on a ${scheduleMap[values.paymentSchedule] || values.paymentSchedule || "mutually agreed"} basis. ` : ""}This agreement shall remain in effect for ${durationMap[values.duration] || values.duration || "the agreed duration"} and may be terminated upon ${terminationMap[values.terminationNotice] || values.terminationNotice || "the agreed notice"} written notice to the other party. Disputes shall be resolved by ${disputeMap[values.disputeResolution] || values.disputeResolution || "the agreed method"}.${values.confidentiality === "yes" ? " A confidentiality clause is included and binding on both parties." : ""}`);
-
-  if (values.additionalTerms?.trim()) para(values.additionalTerms.trim());
-
-  para("Please retain a signed copy of this agreement for your records. Both parties are bound by the terms stated herein from the effective date.");
-
-  y += 2;
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  doc.text("Thank you for your cooperation.", margin, y);
-  y += 8;
-  doc.text("Sincerely,", margin, y);
-  y += 12;
-
-  // SENDER BLOCK
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(10);
-  const senderName = values.party1Name || "Licensor";
-  doc.text(senderName, margin, y);
-  doc.setLineWidth(0.3);
-  doc.line(margin, y + 1.2, margin + doc.getTextWidth(senderName), y + 1.2);
-  y += 6;
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(10);
-  if (party1Address)      { doc.text(party1Address,                  margin, y); y += 5; }
-  if (values.party1Email) { doc.text(`Email: ${values.party1Email}`, margin, y); y += 5; }
-  if (values.party1Phone) { doc.text(`Phone: ${values.party1Phone}`, margin, y); y += 5; }
-
-  // SIGNATURES
-  y += 5;
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(10);
-  doc.text("Licensor Signature:", margin, y);
-  doc.setFont("helvetica", "normal");
-  doc.text(values.party1Signature || "________________________", margin + doc.getTextWidth("Licensor Signature:  "), y);
-  y += 7;
-  doc.setFont("helvetica", "bold");
-  doc.text("Licensee Signature:", margin, y);
-  doc.setFont("helvetica", "normal");
-  doc.text(values.party2Signature || "________________________", margin + doc.getTextWidth("Licensee Signature:  "), y);
-  y += 7;
-  if (values.witnessName) {
+  const heading = (text: string) => {
+    checkBreak(lh + 3);
     doc.setFont("helvetica", "bold");
-    doc.text("Witness:", margin, y);
+    doc.setFontSize(10.5);
+    doc.text(text, m, y);
+    y += lh + 3;
+  };
+
+  // ── TITLE ──────────────────────────────────────────────────────────
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(14);
+  const title = "ROYALTY AGREEMENT";
+  doc.text(title, pageW / 2, y, { align: "center" });
+  const tW = doc.getTextWidth(title);
+  doc.setLineWidth(0.4);
+  doc.line(pageW / 2 - tW / 2, y + 1.5, pageW / 2 + tW / 2, y + 1.5);
+  y += 11;
+  doc.setFontSize(10.5);
+
+  // ── PREAMBLE ────────────────────────────────────────────────────────
+  p(
+    `This Royalty Agreement (the "Agreement") is made and entered into as of ${u(values.effectiveDate, 12)} (the "Effective Date"),`
+  );
+  p("BY AND BETWEEN", true);
+  p(
+    `${u(values.grantorName, 22)}, having its principal place of business at ${u(values.grantorAddress, 22)} (hereinafter referred to as the "Grantor"),`
+  );
+  p("AND", true);
+  p(
+    `${u(values.granteeName, 22)}, having its principal place of business at ${u(values.granteeAddress, 22)} (hereinafter referred to as the "Grantee").`
+  );
+  y += 2;
+
+  // ── RECITALS ────────────────────────────────────────────────────────
+  p("RECITALS", true);
+  p(
+    `WHEREAS, the Grantor is the lawful owner of, and possesses full rights, title, and interest in and to ${u(values.propertyDescription, 20)} (the "Property");`
+  );
+  p(
+    `WHEREAS, the Grantor's rights in the Property were duly issued or acquired on ${u(values.propertyAcquiredDate, 12)} by ${u(values.propertyAcquiredFrom, 18)};`
+  );
+  p(
+    `WHEREAS, the Grantee desires to obtain, and the Grantor is willing to grant, a license to use the Property for a specified period, in consideration of the payment of royalties based on a percentage of the Grantee's profits, in addition to any agreed lump sum payment;`
+  );
+  p(
+    `NOW, THEREFORE, in consideration of the mutual covenants and agreements contained herein, the parties hereby agree as follows:`
+  );
+  y += 2;
+
+  // ── 1. GRANT OF RIGHTS ──────────────────────────────────────────────
+  heading("1. GRANT OF RIGHTS");
+  p(
+    `Subject to the terms and conditions of this Agreement, the Grantor hereby grants to the Grantee a limited, non-exclusive, non-transferable license to use the Property within the United States of America and its territories for a period of ${term} (the "Term").`
+  );
+
+  // ── 2. REPRESENTATIONS AND WARRANTIES OF THE GRANTOR ────────────────
+  heading("2. REPRESENTATIONS AND WARRANTIES OF THE GRANTOR");
+  p(`a. The Grantor hereby represents and warrants that:`);
+  [
+    "it is the sole and lawful owner of the Property;",
+    "it possesses full authority and legal right to grant the license contemplated herein; and",
+    "it has full power and authority to enter into and perform its obligations under this Agreement.",
+  ].forEach((item) => {
+    checkBreak(lh + 1);
     doc.setFont("helvetica", "normal");
-    const wx = margin + doc.getTextWidth("Witness:  ");
-    doc.text(values.witnessName, wx, y);
-    doc.setLineWidth(0.3);
-    doc.line(wx, y + 1.2, wx + doc.getTextWidth(values.witnessName), y + 1.2);
-  }
+    doc.setFontSize(10.5);
+    doc.text(`\u2022  ${item}`, m + 4, y);
+    y += lh + 1;
+  });
+  y += 1;
+  p(
+    `b. The Grantor shall, contemporaneously with the execution of this Agreement, deliver to the Grantee all documents, materials, and information reasonably necessary to enable the Grantee to utilize the Property.`
+  );
+  p(
+    `c. The Grantor agrees to indemnify, defend, and hold harmless the Grantee from and against any and all losses, claims, damages, liabilities, and expenses arising out of or resulting from any breach of the Grantor's representations and warranties under this Agreement.`
+  );
+
+  // ── 3. REPRESENTATIONS AND WARRANTIES OF THE GRANTEE ────────────────
+  heading("3. REPRESENTATIONS AND WARRANTIES OF THE GRANTEE");
+  p(
+    `a. The Grantee shall maintain the confidentiality of the Property and all related proprietary information for a period of ${u(values.confidentialityPeriod, 10)} from the Effective Date, exercising at least the same degree of care as it uses to protect its own confidential information.`
+  );
+  p(
+    `b. In the event that the Grantee becomes aware of any circumstance that may compromise the confidentiality of the Property, including any legal or regulatory requirement to disclose such information, the Grantee shall promptly notify the Grantor and cooperate in good faith to mitigate such disclosure.`
+  );
+  p(
+    `c. The Grantee shall indemnify and hold harmless the Grantor from and against any claims, damages, or liabilities arising from personal injury or property damage caused by the negligence or willful misconduct of the Grantee.`
+  );
+
+  // ── 4. CONSIDERATION AND ROYALTY ────────────────────────────────────
+  heading("4. CONSIDERATION AND ROYALTY");
+  p(`In consideration for the rights granted herein, the Grantee shall pay to the Grantor:`);
+  p(`a. A lump sum payment of $${u(values.lumpSum, 6)} payable upon execution of this Agreement; and`);
+  p(`b. A royalty equal to ${u(values.royaltyPercent, 4)} percent (${u(values.royaltyPercent, 4)}%) of the Grantee's Net Profits derived from the use of the Property.`);
+
+  // ── 5. DEFINITION OF NET PROFITS ────────────────────────────────────
+  heading("5. DEFINITION OF NET PROFITS");
+  p(
+    `For the purposes of this Agreement, "Net Profits" shall mean the gross revenue actually received by the Grantee from the use of the Property, less the following:`
+  );
+  [
+    "a. Direct costs of manufacturing, production, and marketing, including commissions;",
+    "b. Direct overhead and administrative expenses, excluding taxes; and",
+    "c. Any other deductions expressly approved in writing by the Grantor.",
+  ].forEach((item) => p(item));
+
+  // ── 6. ROYALTY PAYMENTS AND ACCOUNTING ──────────────────────────────
+  heading("6. ROYALTY PAYMENTS AND ACCOUNTING");
+  p(`a. The Grantee shall maintain complete and accurate books and records relating to revenues and expenses associated with the use of the Property.`);
+  p(`b. Within thirty (30) days following the end of each calendar quarter, the Grantee shall provide the Grantor with a written statement detailing Net Profits and shall remit all royalties due for such period.`);
+  p(`c. The Grantor shall have the right, at its own expense, to appoint an independent certified public accountant to audit the Grantee's records. In the event that any underpayment is discovered, the Grantee shall bear the cost of such audit.`);
+
+  // ── 7. DEFAULT BY GRANTEE ────────────────────────────────────────────
+  heading("7. DEFAULT BY GRANTEE");
+  p(`a. In the event that the Grantee fails to submit required statements or make royalty payments when due, the Grantor may terminate this Agreement upon thirty (30) days' prior written notice, unless such default is cured within the notice period.`);
+  p(`b. If the Grantee ceases to use the Property for a continuous period of one (1) year and fails to pay a minimum royalty of $${u(values.minimumRoyalty, 6)}, the Grantor may terminate this Agreement upon thirty (30) days' written notice, unless such default is cured within that period.`);
+
+  // ── 8. LIMITATION OF LIABILITY ───────────────────────────────────────
+  heading("8. LIMITATION OF LIABILITY");
+  p(`Except in the case of a breach of this Agreement, neither party shall be liable to the other, or to any third party, for any personal injury or property damage arising out of activities conducted under this Agreement.`);
+
+  // ── 9. CONFIDENTIALITY ───────────────────────────────────────────────
+  heading("9. CONFIDENTIALITY");
+  p(`The Grantee and its employees, agents, and representatives shall not disclose, use, or exploit any confidential or proprietary information of the Grantor for any purpose other than as expressly permitted under this Agreement. This obligation shall survive the termination or expiration of this Agreement.`);
+
+  // ── 10. TERMINATION ──────────────────────────────────────────────────
+  heading("10. TERMINATION");
+  p(`The Grantee may terminate this Agreement upon written notice to the Grantor in the event that:`);
+  p(`a. The Grantor makes an assignment for the benefit of creditors;`);
+  p(`b. Bankruptcy or insolvency proceedings are initiated by or against the Grantor and are not dismissed within sixty (60) days; or`);
+  p(`c. The Grantor commits a material breach of this Agreement, subject to the following cure provisions:`);
+  p(`\u0009i. Any curable breach must be remedied within thirty (30) days of written notice;`);
+  p(`\u0009ii. Any non-curable breach must be diligently addressed and resolved within one hundred eighty (180) days.`);
+
+  // ── 11. ASSIGNMENT ───────────────────────────────────────────────────
+  heading("11. ASSIGNMENT");
+  p(`Neither party may assign, transfer, or delegate any of its rights or obligations under this Agreement without the prior written consent of the other party, which shall not be unreasonably withheld.`);
+
+  // ── 12. SEVERABILITY ─────────────────────────────────────────────────
+  heading("12. SEVERABILITY");
+  p(`If any provision of this Agreement is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect.`);
+
+  // ── 13. WAIVER ───────────────────────────────────────────────────────
+  heading("13. WAIVER");
+  p(`The failure of either party at any time to enforce any provision of this Agreement shall not be deemed a waiver of such provision or of the right thereafter to enforce it.`);
+
+  // ── 14. GOVERNING LAW ────────────────────────────────────────────────
+  heading("14. GOVERNING LAW");
+  p(`This Agreement shall be governed by and construed in accordance with the laws of the State of ${u(values.governingState, 14)}, without regard to its conflict of law principles.`);
+
+  // ── 15. NOTICES ──────────────────────────────────────────────────────
+  heading("15. NOTICES");
+  p(`All notices required or permitted under this Agreement shall be in writing and shall be deemed duly given when delivered personally or sent by registered or certified mail to the addresses of the parties set forth herein.`);
+
+  // ── 16. ENTIRE AGREEMENT ─────────────────────────────────────────────
+  heading("16. ENTIRE AGREEMENT");
+  p(`This Agreement constitutes the entire understanding between the parties with respect to the subject matter hereof and supersedes all prior or contemporaneous agreements, negotiations, and understandings.`);
+
+  // ── 17. RESERVATION OF RIGHTS ────────────────────────────────────────
+  heading("17. RESERVATION OF RIGHTS");
+  p(`Except as expressly provided herein, no rights or licenses are granted by either party under this Agreement.`);
+
+  // ── 18. ACCEPTANCE ───────────────────────────────────────────────────
+  heading("18. ACCEPTANCE");
+  p(`Each party acknowledges that it has read, understood, and agreed to be bound by the terms and conditions of this Agreement.`);
+
+  y += 3;
+  p(`IN WITNESS WHEREOF`);
+  p(`The parties have executed this Royalty Agreement as of the Effective Date first written above.`);
+  y += 4;
+
+  // ── SIGNATURES ───────────────────────────────────────────────────────
+  const sigBlock = (header: string, name: string, titleVal: string, dateVal: string, xStart: number) => {
+    checkBreak(35);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(10.5);
+    doc.text(header, xStart, y);
+    y += 7;
+
+    const lines2: [string, string][] = [
+      ["By:", ""],
+      ["Name:", name],
+      ["Title:", titleVal],
+      ["Date:", dateVal],
+    ];
+
+    lines2.forEach(([label, val]) => {
+      checkBreak(lh + 3);
+      const lt = `${label} `;
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10.5);
+      doc.text(lt, xStart, y);
+      const lx = xStart + doc.getTextWidth(lt);
+      const shown = (val || "").trim();
+      doc.setLineWidth(0.22);
+      if (shown) {
+        doc.text(shown, lx, y);
+        doc.line(lx, y + 1.1, lx + Math.max(10, doc.getTextWidth(shown)), y + 1.1);
+      } else {
+        doc.line(lx, y + 1.1, lx + 44, y + 1.1);
+      }
+      y += lh + 3;
+    });
+  };
+
+  const startY = y;
+  sigBlock(
+    "GRANTOR",
+    values.grantorSignName || "",
+    values.grantorTitle || "",
+    values.grantorSignDate || "",
+    m
+  );
+  const afterGrantor = y;
+  y = startY;
+  sigBlock(
+    "GRANTEE",
+    values.granteeSignName || "",
+    values.granteeTitle || "",
+    values.granteeSignDate || "",
+    pageW / 2 + 4
+  );
+  y = Math.max(afterGrantor, y);
 
   doc.save("royalty_agreement.pdf");
 };

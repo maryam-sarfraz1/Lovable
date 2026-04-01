@@ -100,18 +100,18 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "First Party Name",
+    label: "Disclosing Party",
     fields: [
       {
         name: "party1Name",
-        label: "What is the full legal name of the first party?",
+        label: "What is the full legal name of the Disclosing Party?",
         type: "text",
         required: true,
         placeholder: "Enter full legal name",
       },
       {
         name: "party1Type",
-        label: "Is this party an individual or a business?",
+        label: "Is the Disclosing Party an individual or a business?",
         type: "select",
         required: true,
         options: [
@@ -122,63 +122,33 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "First Party Address",
+    label: "Disclosing Party Address",
     fields: [
-      {
-        name: "party1Street",
-        label: "Street Address",
-        type: "text",
-        required: true,
-        placeholder: "123 Main Street",
-      },
-      {
-        name: "party1City",
-        label: "City",
-        type: "text",
-        required: true,
-        placeholder: "City",
-      },
-      {
-        name: "party1Zip",
-        label: "ZIP/Postal Code",
-        type: "text",
-        required: true,
-        placeholder: "ZIP Code",
-      },
+      { name: "party1Street", label: "Street Address", type: "text", required: true, placeholder: "123 Main Street" },
+      { name: "party1City", label: "City", type: "text", required: true, placeholder: "City" },
+      { name: "party1Zip", label: "ZIP/Postal Code", type: "text", required: true, placeholder: "ZIP Code" },
     ],
   },
   {
-    label: "First Party Contact",
+    label: "Disclosing Party Contact",
     fields: [
-      {
-        name: "party1Email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "email@example.com",
-      },
-      {
-        name: "party1Phone",
-        label: "Phone Number",
-        type: "tel",
-        required: false,
-        placeholder: "(555) 123-4567",
-      },
+      { name: "party1Email", label: "Email Address", type: "email", required: true, placeholder: "email@example.com" },
+      { name: "party1Phone", label: "Phone Number", type: "tel", required: false, placeholder: "(555) 123-4567" },
     ],
   },
   {
-    label: "Second Party Name",
+    label: "Recipient Party",
     fields: [
       {
         name: "party2Name",
-        label: "What is the full legal name of the second party?",
+        label: "What is the full legal name of the Recipient?",
         type: "text",
         required: true,
         placeholder: "Enter full legal name",
       },
       {
         name: "party2Type",
-        label: "Is this party an individual or a business?",
+        label: "Is the Recipient an individual or a business?",
         type: "select",
         required: true,
         options: [
@@ -189,48 +159,18 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     ],
   },
   {
-    label: "Second Party Address",
+    label: "Recipient Address",
     fields: [
-      {
-        name: "party2Street",
-        label: "Street Address",
-        type: "text",
-        required: true,
-        placeholder: "123 Main Street",
-      },
-      {
-        name: "party2City",
-        label: "City",
-        type: "text",
-        required: true,
-        placeholder: "City",
-      },
-      {
-        name: "party2Zip",
-        label: "ZIP/Postal Code",
-        type: "text",
-        required: true,
-        placeholder: "ZIP Code",
-      },
+      { name: "party2Street", label: "Street Address", type: "text", required: true, placeholder: "123 Main Street" },
+      { name: "party2City", label: "City", type: "text", required: true, placeholder: "City" },
+      { name: "party2Zip", label: "ZIP/Postal Code", type: "text", required: true, placeholder: "ZIP Code" },
     ],
   },
   {
-    label: "Second Party Contact",
+    label: "Recipient Contact",
     fields: [
-      {
-        name: "party2Email",
-        label: "Email Address",
-        type: "email",
-        required: true,
-        placeholder: "email@example.com",
-      },
-      {
-        name: "party2Phone",
-        label: "Phone Number",
-        type: "tel",
-        required: false,
-        placeholder: "(555) 123-4567",
-      },
+      { name: "party2Email", label: "Email Address", type: "email", required: true, placeholder: "email@example.com" },
+      { name: "party2Phone", label: "Phone Number", type: "tel", required: false, placeholder: "(555) 123-4567" },
     ],
   },
   {
@@ -241,7 +181,32 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
         label: "Describe the purpose and scope of this agreement",
         type: "textarea",
         required: true,
-        placeholder: "Provide a detailed description of the agreement terms...",
+        placeholder: "Describe what confidential information will be shared and the purpose for sharing it...",
+      },
+    ],
+  },
+  {
+    label: "Term & Termination",
+    fields: [
+      {
+        name: "terminationDate",
+        label: "What is the Termination Date of this Agreement?",
+        type: "date",
+        required: true,
+      },
+      {
+        name: "terminationNoticeDays",
+        label: "How many days' notice is required for Early Termination?",
+        type: "text",
+        required: true,
+        placeholder: "e.g. 30",
+      },
+      {
+        name: "nonCircumventPeriod",
+        label: "Non-Circumvention Period after termination (e.g. 1 year)",
+        type: "text",
+        required: false,
+        placeholder: "e.g. 1 year",
       },
     ],
   },
@@ -351,17 +316,31 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
     fields: [
       {
         name: "party1Signature",
-        label: "First Party Signature (Type full legal name)",
+        label: "Disclosing Party Signature (Type full legal name)",
         type: "text",
         required: true,
         placeholder: "Type your full legal name as signature",
       },
       {
         name: "party2Signature",
-        label: "Second Party Signature (Type full legal name)",
+        label: "Recipient Signature (Type full legal name)",
         type: "text",
         required: true,
         placeholder: "Type your full legal name as signature",
+      },
+      {
+        name: "executionRepresentative1",
+        label: "Executed by (on behalf of Disclosing Party)",
+        type: "text",
+        required: false,
+        placeholder: "Name of authorized representative",
+      },
+      {
+        name: "executionRepresentative2",
+        label: "Executed by (Recipient name)",
+        type: "text",
+        required: false,
+        placeholder: "Name of authorized representative",
       },
       {
         name: "witnessName",
@@ -375,130 +354,412 @@ const steps: Array<{ label: string; fields: FieldDef[] }> = [
 ] as Array<{ label: string; fields: FieldDef[] }>;
 
 const generatePDF = (values: Record<string, string>) => {
-  const doc = new jsPDF();
+  const doc = new jsPDF({ unit: "mm", format: "letter" });
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const pageHeight = doc.internal.pageSize.getHeight();
+  const margin = 25;
+  const contentWidth = pageWidth - margin * 2;
   let y = 20;
-  
-  doc.setFontSize(18);
-  doc.setFont("helvetica", "bold");
-  doc.text("N D A", 105, y, { align: "center" });
-  y += 15;
-  
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("Effective Date: " + (values.effectiveDate || "N/A"), 20, y);
-  doc.text("Jurisdiction: " + (values.state || "") + ", " + (values.country?.toUpperCase() || ""), 120, y);
-  y += 15;
-  
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "bold");
-  doc.text("PARTIES", 20, y);
-  y += 8;
-  
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("First Party: " + (values.party1Name || "N/A"), 20, y);
-  y += 6;
-  doc.text("Address: " + (values.party1Street || "") + ", " + (values.party1City || "") + " " + (values.party1Zip || ""), 20, y);
-  y += 6;
-  doc.text("Contact: " + (values.party1Email || "") + " | " + (values.party1Phone || ""), 20, y);
-  y += 10;
-  
-  doc.text("Second Party: " + (values.party2Name || "N/A"), 20, y);
-  y += 6;
-  doc.text("Address: " + (values.party2Street || "") + ", " + (values.party2City || "") + " " + (values.party2Zip || ""), 20, y);
-  y += 6;
-  doc.text("Contact: " + (values.party2Email || "") + " | " + (values.party2Phone || ""), 20, y);
-  y += 15;
-  
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "bold");
-  doc.text("AGREEMENT DETAILS", 20, y);
-  y += 8;
-  
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  const descLines = doc.splitTextToSize(values.description || "N/A", 170);
-  doc.text(descLines, 20, y);
-  y += descLines.length * 5 + 10;
-  
-  doc.setFontSize(12);
-  doc.setFont("helvetica", "bold");
-  doc.text("TERMS", 20, y);
-  y += 8;
-  
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("Duration: " + (values.duration || "N/A"), 20, y);
-  y += 6;
-  doc.text("Termination Notice: " + (values.terminationNotice || "N/A"), 20, y);
-  y += 6;
-  doc.text("Confidentiality: " + (values.confidentiality === "yes" ? "Included" : "Not Included"), 20, y);
-  y += 6;
-  doc.text("Dispute Resolution: " + (values.disputeResolution || "N/A"), 20, y);
-  y += 15;
-  
-  if (values.paymentAmount) {
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "bold");
-    doc.text("FINANCIAL TERMS", 20, y);
-    y += 8;
-    
-    doc.setFontSize(10);
+
+  const party1Address = [values.party1Street, values.party1City, values.party1Zip].filter(Boolean).join(", ");
+  const party2Address = [values.party2Street, values.party2City, values.party2Zip].filter(Boolean).join(", ");
+  const jurisdiction = [values.state, values.country?.toUpperCase()].filter(Boolean).join(", ");
+
+  const checkNewPage = (neededSpace: number) => {
+    if (y + neededSpace > pageHeight - 20) {
+      doc.addPage();
+      y = 20;
+    }
+  };
+
+  const para = (text: string, indent = 0) => {
     doc.setFont("helvetica", "normal");
-    doc.text("Payment: " + values.paymentAmount, 20, y);
-    y += 6;
-    doc.text("Schedule: " + (values.paymentSchedule || "N/A"), 20, y);
-    y += 15;
-  }
-  
-  if (values.additionalTerms) {
-    doc.setFontSize(12);
-    doc.setFont("helvetica", "bold");
-    doc.text("ADDITIONAL TERMS", 20, y);
-    y += 8;
-    
     doc.setFontSize(10);
+    const lines = doc.splitTextToSize(text, contentWidth - indent);
+    checkNewPage(lines.length * 5 + 5);
+    doc.text(lines, margin + indent, y);
+    y += lines.length * 5 + 3;
+  };
+
+  const sectionTitle = (text: string) => {
+    checkNewPage(12);
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(11);
+    doc.text(text, margin, y);
+    y += 7;
+  };
+
+  const bulletLine = (text: string) => {
     doc.setFont("helvetica", "normal");
-    const addLines = doc.splitTextToSize(values.additionalTerms, 170);
-    doc.text(addLines, 20, y);
-    y += addLines.length * 5 + 15;
-  }
-  
-  doc.setFontSize(12);
+    doc.setFontSize(10);
+    const lines = doc.splitTextToSize(text, contentWidth - 8);
+    checkNewPage(lines.length * 5 + 3);
+    doc.text("\u2022", margin + 2, y);
+    doc.text(lines, margin + 8, y);
+    y += lines.length * 5 + 2;
+  };
+
+  // ── TITLE ──
   doc.setFont("helvetica", "bold");
-  doc.text("SIGNATURES", 20, y);
+  doc.setFontSize(16);
+  const title = "NON-DISCLOSURE AGREEMENT (NDA)";
+  const titleW = doc.getTextWidth(title);
+  doc.text(title, (pageWidth - titleW) / 2, y);
+  doc.setLineWidth(0.5);
+  doc.line((pageWidth - titleW) / 2, y + 1.5, (pageWidth - titleW) / 2 + titleW, y + 1.5);
   y += 12;
-  
-  doc.setFontSize(10);
-  doc.setFont("helvetica", "normal");
-  doc.text("_______________________________", 20, y);
-  doc.text("_______________________________", 110, y);
-  y += 6;
-  doc.text(values.party1Name || "First Party", 20, y);
-  doc.text(values.party2Name || "Second Party", 110, y);
-  y += 6;
-  doc.text("Signature: " + (values.party1Signature || ""), 20, y);
-  doc.text("Signature: " + (values.party2Signature || ""), 110, y);
-  y += 10;
-  doc.text("Date: " + new Date().toLocaleDateString(), 20, y);
-  doc.text("Date: " + new Date().toLocaleDateString(), 110, y);
-  
-  if (values.witnessName) {
-    y += 15;
-    doc.text("Witness: _______________________________", 20, y);
-    y += 6;
-    doc.text("Name: " + values.witnessName, 20, y);
+
+  // ── OPENING ──
+  para(
+    `This Non-Disclosure Agreement ("Agreement") is made and entered into as of ${values.effectiveDate || "__"} ("Effective Date"), by and between ${values.party1Name || "__"} ("Disclosing Party") and ${values.party2Name || "__"} ("Recipient").`
+  );
+  para(`WHEREAS, the Disclosing Party intends to disclose certain confidential and proprietary information to the Recipient; and`);
+  para(`WHEREAS, the Recipient agrees to receive and safeguard such information under the terms set forth herein;`);
+  para(`NOW, THEREFORE, in consideration of the mutual covenants and undertakings contained herein, the parties agree as follows:`);
+  y += 4;
+
+  // ── I. Confidential Information ──
+  sectionTitle("I. Confidential Information");
+  para(
+    `"Confidential Information" means any and all non-public, proprietary, or confidential information disclosed by the Disclosing Party to the Recipient on or after the Effective Date, whether directly or indirectly, in any form, including but not limited to written, oral, electronic, visual, or observational disclosures.`
+  );
+  para(`Confidential Information includes, without limitation:`);
+  bulletLine("Trade secrets");
+  bulletLine("Financial and accounting data");
+  bulletLine("Budgets, forecasts, and projections");
+  bulletLine("Business plans, strategies, and operations");
+  bulletLine("Product and service information");
+  bulletLine("Product specifications, designs, and concepts");
+  bulletLine("Research and development data");
+  bulletLine("Systems, processes, techniques, and know-how");
+  bulletLine("Intellectual property and proprietary rights");
+  bulletLine("Software, code, and works of authorship");
+  bulletLine("Marketing and distribution strategies");
+  bulletLine("Pricing structures and market analyses");
+  bulletLine("Employee, client, and supplier information");
+  y += 2;
+  para(`Confidential Information shall be deemed protected if:`);
+  para(`(a) It is designated as confidential at the time of disclosure; or`, 4);
+  para(`(b) It is identified as confidential at the time of disclosure if not in written form.`, 4);
+  para(
+    `Notwithstanding the foregoing, information shall be considered confidential if a reasonable person would understand its nature to be confidential, whether or not expressly marked.`
+  );
+  y += 2;
+
+  // ── II. Term ──
+  sectionTitle("II. Term");
+  para(
+    `This Agreement shall commence on the Effective Date and shall continue in full force and effect until ${values.terminationDate || "__"} ("Termination Date"), unless earlier terminated in accordance with this Agreement.`
+  );
+  para(`The Termination Date may be amended by mutual written agreement of the parties.`);
+  para(`The Recipient's obligations with respect to Confidential Information shall survive the termination or expiration of this Agreement.`);
+  y += 2;
+
+  // ── III. Termination ──
+  sectionTitle("III. Termination");
+  para(
+    `Either party may terminate this Agreement, with or without cause, by providing ${values.terminationNoticeDays || "__"} days' prior written notice to the other party ("Early Termination").`
+  );
+  para(`Termination shall not relieve the Recipient of its continuing obligations to protect Confidential Information.`);
+  y += 2;
+
+  // ── IV. Protection of Confidential Information ──
+  sectionTitle("IV. Protection of Confidential Information");
+  para(`The Recipient acknowledges that the Confidential Information:`);
+  bulletLine("Has been developed through substantial effort and expense");
+  bulletLine("Is valuable, proprietary, and unique");
+  bulletLine("Provides the Disclosing Party with a competitive advantage");
+  y += 2;
+  para(`Accordingly, the Recipient agrees as follows:`);
+  y += 1;
+  para(`(a) Non-Disclosure`, 0);
+  para(`The Recipient shall not disclose any Confidential Information to any third party without the prior written consent of the Disclosing Party.`, 4);
+  y += 1;
+  para(`(b) No Copying or Modification`, 0);
+  para(`The Recipient shall not copy, reproduce, or modify Confidential Information without prior written authorization.`, 4);
+  y += 1;
+  para(`(c) Notification of Unauthorized Use`, 0);
+  para(`The Recipient shall promptly notify the Disclosing Party of any unauthorized access, use, or disclosure of Confidential Information.`, 4);
+  y += 1;
+  para(`(d) Disclosure to Employees`, 0);
+  para(`The Recipient may disclose Confidential Information only to those employees or representatives who:`, 4);
+  bulletLine("Have a legitimate need to know for permitted purposes; and");
+  bulletLine("Are bound by confidentiality obligations no less restrictive than those set forth herein.");
+  y += 2;
+
+  // ── V. Prohibition on Use with AI/ML ──
+  sectionTitle("V. Prohibition on Use with Artificial Intelligence and Machine Learning");
+  para(`The Recipient shall not, directly or indirectly:`);
+  para(
+    `(a) Input, upload, or disclose this Agreement or any Confidential Information to any artificial intelligence (AI), machine learning (ML), large language model (LLM), or similar system; or`,
+    4
+  );
+  para(
+    `(b) Use Confidential Information to train, develop, enhance, or validate any AI or machine learning models.`,
+    4
+  );
+  y += 2;
+  para(`Any permitted use of AI tools must strictly ensure:`);
+  bulletLine("Complete data isolation");
+  bulletLine("No retention or reuse of input data");
+  bulletLine("No use for training purposes");
+  bulletLine("Encryption and secure processing");
+  bulletLine("Full compliance with applicable data protection laws");
+  para(`These restrictions apply regardless of system ownership, control, or data anonymization.`);
+  y += 2;
+
+  // ── VI. Exclusions ──
+  sectionTitle("VI. Exclusions from Confidential Information");
+  para(`Confidential Information shall not include information that:`);
+  bulletLine("Is or becomes publicly available without breach of this Agreement");
+  bulletLine("Is lawfully obtained from a third party without restriction");
+  bulletLine("Is independently developed without use of Confidential Information");
+  bulletLine("Is required to be disclosed by law, regulation, or court order");
+  bulletLine("Is expressly designated in writing as non-confidential by the Disclosing Party");
+  y += 2;
+
+  // ── VII. Injunctive Relief ──
+  sectionTitle("VII. Unauthorized Disclosure – Injunctive Relief");
+  para(
+    `The Recipient acknowledges that any breach of this Agreement may result in irreparable harm to the Disclosing Party for which monetary damages alone may be insufficient.`
+  );
+  para(`Accordingly, the Disclosing Party shall be entitled to seek:`);
+  bulletLine("Immediate injunctive or equitable relief (temporary or permanent); and");
+  bulletLine("Any additional remedies available at law or in equity.");
+  y += 2;
+
+  // ── VIII. Remedies ──
+  sectionTitle("VIII. Remedies");
+  para(`The Recipient agrees that:`);
+  bulletLine("Monetary damages may be inadequate to remedy a breach; and");
+  bulletLine("The Disclosing Party shall have the right to pursue equitable relief in addition to any other remedies.");
+  para(`The Recipient shall immediately notify the Disclosing Party upon becoming aware of any breach or threatened breach.`);
+  y += 2;
+
+  // ── IX. Alternative Dispute Resolution ──
+  sectionTitle("IX. Alternative Dispute Resolution");
+  para(
+    `The parties agree to first attempt to resolve any dispute arising under this Agreement through good faith negotiations.`
+  );
+  para(`If such dispute remains unresolved, the parties shall proceed to mediation in accordance with applicable laws.`);
+  y += 2;
+
+  // ── X. Whistleblower Protection ──
+  sectionTitle("X. Whistleblower Protection");
+  para(
+    `Nothing in this Agreement shall prohibit or restrict disclosures protected under applicable trade secret or whistleblower laws, including disclosures:`
+  );
+  bulletLine("To government authorities or legal counsel for reporting violations of law; or");
+  bulletLine("Made in sealed court filings.");
+  y += 2;
+
+  // ── XI. Non-Circumvention ──
+  sectionTitle("XI. Non-Circumvention");
+  para(
+    `During the term of this Agreement and for a period of ${values.nonCircumventPeriod || "__"} thereafter, the Recipient shall not, directly or indirectly:`
+  );
+  bulletLine("Circumvent or bypass the Disclosing Party; or");
+  bulletLine(
+    "Engage in business with any clients, customers, or contacts introduced by the Disclosing Party without prior written consent."
+  );
+  y += 2;
+
+  // ── XII. Return or Destruction ──
+  sectionTitle("XII. Return or Destruction of Confidential Information");
+  para(
+    `Upon termination of this Agreement or upon written request by the Disclosing Party, the Recipient shall:`
+  );
+  bulletLine("Promptly return or destroy all Confidential Information;");
+  bulletLine("Include all documents, records, notes, data, materials, and equipment; and");
+  bulletLine("Permanently delete all copies in any form.");
+  y += 2;
+
+  // ── XIII. Relationship of Parties ──
+  sectionTitle("XIII. Relationship of the Parties");
+  para(`Nothing in this Agreement shall be deemed to create any:`);
+  bulletLine("Partnership");
+  bulletLine("Joint venture");
+  bulletLine("Agency or employment relationship");
+  para(`between the parties.`);
+  y += 2;
+
+  // ── XIV. No Warranty ──
+  sectionTitle("XIV. No Warranty");
+  para(`All Confidential Information is provided on an "AS IS" basis.`);
+  para(
+    `The Disclosing Party makes no representations or warranties, express or implied, regarding:`
+  );
+  bulletLine("Accuracy");
+  bulletLine("Completeness");
+  bulletLine("Reliability");
+  bulletLine("Fitness for a particular purpose");
+  para(`The Recipient assumes all risks associated with its use.`);
+  y += 2;
+
+  // ── XV. Limited License ──
+  sectionTitle("XV. Limited License");
+  para(`The Recipient is granted no rights of ownership in the Confidential Information.`);
+  para(`The Recipient may use such information solely for the purposes expressly permitted under this Agreement.`);
+  para(`All intellectual property rights shall remain the exclusive property of the Disclosing Party.`);
+  y += 2;
+
+  // ── XVI. Indemnification ──
+  sectionTitle("XVI. Indemnification");
+  para(
+    `The Recipient agrees to indemnify, defend, and hold harmless the Disclosing Party from and against any and all:`
+  );
+  bulletLine("Losses");
+  bulletLine("Damages");
+  bulletLine("Liabilities");
+  bulletLine("Costs and expenses (including legal fees)");
+  para(`arising out of or related to any breach or misuse of Confidential Information.`);
+  y += 2;
+
+  // ── XVII. Entire Agreement ──
+  sectionTitle("XVII. Entire Agreement");
+  para(
+    `This Agreement constitutes the entire understanding between the parties and supersedes all prior or contemporaneous agreements, whether written or oral, relating to its subject matter.`
+  );
+  y += 2;
+
+  // ── XVIII. Amendment ──
+  sectionTitle("XVIII. Amendment");
+  para(`This Agreement may be amended or modified only by a written instrument duly executed by both parties.`);
+  y += 2;
+
+  // ── XIX. Successors and Assigns ──
+  sectionTitle("XIX. Successors and Assigns");
+  para(
+    `This Agreement shall be binding upon and inure to the benefit of the parties and their respective successors and permitted assigns.`
+  );
+  y += 2;
+
+  // ── XX. Severability ──
+  sectionTitle("XX. Severability");
+  para(
+    `If any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.`
+  );
+  y += 2;
+
+  // ── XXI. Waiver ──
+  sectionTitle("XXI. Waiver");
+  para(
+    `The failure of either party to enforce any provision of this Agreement shall not constitute a waiver of future enforcement of that or any other provision.`
+  );
+  y += 2;
+
+  // ── XXII. Governing Law ──
+  sectionTitle("XXII. Governing Law");
+  para(
+    `This Agreement shall be governed by and construed in accordance with the laws of ${jurisdiction || "__"}.`
+  );
+  y += 2;
+
+  // ── XXIII. Execution ──
+  sectionTitle("XXIII. Execution");
+  para(
+    `This Agreement may be executed by ${values.executionRepresentative1 || "__"} on behalf of ${values.party1Name || "__"} and by ${values.executionRepresentative2 || values.party2Name || "__"}, in accordance with applicable law. Execution may be in counterparts and by electronic means.`
+  );
+  y += 2;
+
+  // ── Additional Terms from Form ──
+  if (values.description?.trim()) {
+    sectionTitle("XXIV. Purpose of Disclosure");
+    para(values.description.trim());
+    y += 2;
   }
-  
-  doc.save("n_d_a.pdf");
+
+  if (values.paymentAmount) {
+    sectionTitle("XXV. Financial Terms");
+    para(`Payment: ${values.paymentAmount}`);
+    if (values.paymentSchedule) para(`Payment Schedule: ${values.paymentSchedule}`);
+    y += 2;
+  }
+
+  if (values.additionalTerms?.trim()) {
+    sectionTitle("XXVI. Additional Terms");
+    para(values.additionalTerms.trim());
+    y += 2;
+  }
+
+  // ── SIGNATURES ──
+  checkNewPage(70);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(13);
+  const sigTitle = "SIGNATURES";
+  const sigTW = doc.getTextWidth(sigTitle);
+  doc.text(sigTitle, (pageWidth - sigTW) / 2, y);
+  doc.setLineWidth(0.4);
+  doc.line((pageWidth - sigTW) / 2, y + 1.5, (pageWidth - sigTW) / 2 + sigTW, y + 1.5);
+  y += 10;
+
+  // Disclosing Party Signature
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text("The Disclosing Party:", margin, y);
+  y += 7;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  const dp1Sig = values.party1Signature || "________________________________________";
+  doc.text(dp1Sig, margin, y);
+  doc.setLineWidth(0.3);
+  doc.line(margin, y + 1.2, margin + Math.max(doc.getTextWidth(dp1Sig), 80), y + 1.2);
+  y += 8;
+
+  doc.text(`Name: ${values.party1Name || "________________________"}`, margin, y); y += 6;
+  if (values.executionRepresentative1) {
+    doc.text(`Executed by: ${values.executionRepresentative1}`, margin, y); y += 6;
+  }
+  if (party1Address) { doc.text(`Address: ${party1Address}`, margin, y); y += 6; }
+  if (values.party1Email) { doc.text(`Email: ${values.party1Email}`, margin, y); y += 6; }
+  if (values.party1Phone) { doc.text(`Phone: ${values.party1Phone}`, margin, y); y += 6; }
+  doc.text(`Date: ${new Date().toLocaleDateString()}`, margin, y); y += 10;
+
+  // Recipient Signature
+  checkNewPage(40);
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(11);
+  doc.text("The Recipient:", margin, y);
+  y += 7;
+
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  const dp2Sig = values.party2Signature || "________________________________________";
+  doc.text(dp2Sig, margin, y);
+  doc.setLineWidth(0.3);
+  doc.line(margin, y + 1.2, margin + Math.max(doc.getTextWidth(dp2Sig), 80), y + 1.2);
+  y += 8;
+
+  doc.text(`Name: ${values.party2Name || "________________________"}`, margin, y); y += 6;
+  if (values.executionRepresentative2) {
+    doc.text(`Executed by: ${values.executionRepresentative2}`, margin, y); y += 6;
+  }
+  if (party2Address) { doc.text(`Address: ${party2Address}`, margin, y); y += 6; }
+  if (values.party2Email) { doc.text(`Email: ${values.party2Email}`, margin, y); y += 6; }
+  if (values.party2Phone) { doc.text(`Phone: ${values.party2Phone}`, margin, y); y += 6; }
+  doc.text(`Date: ${new Date().toLocaleDateString()}`, margin, y); y += 10;
+
+  if (values.witnessName) {
+    checkNewPage(20);
+    doc.setFont("helvetica", "bold");
+    doc.text("Witness:", margin, y);
+    doc.setFont("helvetica", "normal");
+    const wx = margin + doc.getTextWidth("Witness:  ");
+    doc.text(values.witnessName, wx, y);
+    doc.setLineWidth(0.3);
+    doc.line(wx, y + 1.2, wx + Math.max(doc.getTextWidth(values.witnessName), 40), y + 1.2);
+  }
+
+  doc.save("non_disclosure_agreement.pdf");
 };
 
 export default function NDA() {
   return (
     <FormWizard
       steps={steps}
-      title="N D A"
-      subtitle="Complete each step to generate your document"
+      title="Non-Disclosure Agreement (NDA)"
+      subtitle="Complete each step to generate your NDA"
       onGenerate={generatePDF}
       documentType="nda"
     />
