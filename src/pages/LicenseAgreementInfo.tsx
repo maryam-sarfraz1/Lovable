@@ -1,218 +1,190 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { FileText, Clock, Users, DollarSign, Scale, Shield, AlertCircle, ArrowLeft, Play } from "lucide-react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import Layout from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FileText, CheckCircle, AlertTriangle, ArrowRight } from "lucide-react";
 
 const LicenseAgreementInfo = () => {
   const navigate = useNavigate();
-
-  const features = [
-    {
-      icon: <FileText className="w-5 h-5" />,
-      title: "Intellectual Property Licensing",
-      description: "Grant or receive exclusive rights to use, reproduce, and distribute authored works"
-    },
-    {
-      icon: <DollarSign className="w-5 h-5" />,
-      title: "Royalty Management",
-      description: "Define payment terms, calculation methods, and reporting requirements"
-    },
-    {
-      icon: <Shield className="w-5 h-5" />,
-      title: "Confidentiality Protection",
-      description: "Comprehensive confidential information clauses to protect proprietary data"
-    },
-    {
-      icon: <Scale className="w-5 h-5" />,
-      title: "Dispute Resolution",
-      description: "Built-in arbitration clauses for efficient conflict resolution"
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
-      title: "Clear Party Definitions",
-      description: "Detailed identification of licensor and licensee responsibilities"
-    },
-    {
-      icon: <Clock className="w-5 h-5" />,
-      title: "Termination Terms",
-      description: "Specified termination dates and notice periods for agreement closure"
-    }
-  ];
-
-  const sections = [
-    "Grant of License",
-    "Payment of Royalty", 
-    "Modifications",
-    "Defaults",
-    "Confidential Information",
-    "Protection of Confidential Information",
-    "Arbitration",
-    "Warranties",
-    "No Joint Venture or Partnership",
-    "Transfer of Rights",
-    "Termination",
-    "Entire Agreement",
-    "Amendments",
-    "Severability",
-    "Waiver of Contractual Right",
-    "Applicable Law",
-    "Acknowledgment"
-  ];
+  const documentContent = {
+    title: "License Agreement",
+    otherNames: ["Licensing Agreement", "Software License Agreement", "Trademark License Agreement"],
+    whatIs: "A License Agreement is a legally binding contract under which one party (the licensor) grants permission to another party (the licensee) to use specific intellectual property, business concepts, software, trademarks, or products. This agreement defines scope, duration, territorial restrictions, and financial terms while the licensor retains ownership. License Agreements enable businesses to commercialize their intellectual property while maintaining control and receiving compensation.",
+    whenToUse: [
+      "To grant usage rights to intellectual property or business assets",
+      "To create exclusive or non-exclusive licensing arrangements",
+      "To define territorial or geographical usage restrictions",
+      "To establish royalty or payment terms",
+      "To authorize manufacturing or distribution of your product"
+    ],
+    faqs: [
+      { q: "What should be included in a License Agreement?", a: "A comprehensive agreement includes: term and duration, licensing fees and royalties, confidentiality provisions, permitted and prohibited uses, transfer and resale rights, warranties and indemnities, and termination clauses." },
+      { q: "What types of property can be licensed?", a: "You can license various types of intellectual property including trademarks, software and digital assets, copyrights, and patents. Each requires careful definition of scope and usage rights." },
+      { q: "Should I consult a lawyer?", a: "While you can download and customize a license agreement template, consulting a legal professional is advisable to ensure the agreement fully protects your interests and complies with applicable laws." },
+      { q: "What is an Unlimited License Agreement?", a: "An Unlimited License Agreement typically applies to software, allowing unrestricted usage or access. This is common for enterprise software solutions and internal business tool licensing." },
+      { q: "Can I grant exclusive or non-exclusive licenses?", a: "Yes. An exclusive license means only the licensee can use the property. A non-exclusive license allows the licensor to grant usage to multiple parties. Specify this clearly in your agreement." }
+    ]
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-        <Button
-          variant="outline"
-          onClick={() => navigate('/documents')}
-          className="mb-6"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Documents
-        </Button>
-
-        <div className="text-center mb-8">
-          <FileText className="w-16 h-16 mx-auto mb-4 text-blue-600" />
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">License Agreement</h1>
+    <Layout>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <div className="mx-auto w-20 h-20 bg-orange-100 rounded-full flex items-center justify-center mb-6">
+            <FileText className="w-10 h-10 text-orange-600" />
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+            License Agreement
+          </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Create a comprehensive license agreement for intellectual property rights, royalty payments, and confidentiality protection
+            Grant or receive rights to use intellectual property, software, trademarks, or business assets with clear terms, royalty structures, and legal protections
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <Card>
-            <CardHeader className="text-center">
-              <Clock className="w-8 h-8 mx-auto mb-2 text-blue-600" />
-              <CardTitle>Completion Time</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-2xl font-bold text-gray-900">8-12 minutes</p>
-              <p className="text-gray-600">Average completion time</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="text-center">
-              <FileText className="w-8 h-8 mx-auto mb-2 text-green-600" />
-              <CardTitle>Form Steps</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-2xl font-bold text-gray-900">4 Steps</p>
-              <p className="text-gray-600">Easy-to-follow process</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="text-center">
-              <Users className="w-8 h-8 mx-auto mb-2 text-purple-600" />
-              <CardTitle>Parties Involved</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-2xl font-bold text-gray-900">2 Parties</p>
-              <p className="text-gray-600">Licensor & Licensee</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <Card>
+        {/* Other Names Section */}
+        {documentContent.otherNames && documentContent.otherNames.length > 0 && (
+          <Card className="mb-8 bg-blue-50 border-blue-200">
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2" />
-                Key Features
-              </CardTitle>
-              <CardDescription>
-                What makes this license agreement comprehensive and effective
-              </CardDescription>
+              <CardTitle className="text-lg text-blue-900">Other Names for This Document</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="text-blue-600 mt-1">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">{feature.title}</h4>
-                      <p className="text-sm text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
+              <div className="flex flex-wrap gap-2">
+                {documentContent.otherNames.map((name) => (
+                  <span key={name} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                    {name}
+                  </span>
                 ))}
               </div>
             </CardContent>
           </Card>
+        )}
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Scale className="w-5 h-5 mr-2" />
-                Agreement Sections
-              </CardTitle>
-              <CardDescription>
-                Comprehensive clauses included in your license agreement
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 gap-2">
-                {sections.map((section, index) => (
-                  <Badge key={index} variant="outline" className="justify-start p-2">
-                    {section}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
+        {/* What Is */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle className="flex items-center">
-              <AlertCircle className="w-5 h-5 mr-2 text-amber-500" />
-              Important Information
-            </CardTitle>
+            <CardTitle className="text-2xl text-gray-900">What Is a License Agreement?</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-medium text-gray-900 mb-2">Before You Start</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Identify the specific work being licensed</li>
-                  <li>• Determine royalty rates and payment terms</li>
-                  <li>• Define geographic limitations</li>
-                  <li>• Set termination conditions</li>
-                  <li>• Choose governing law jurisdiction</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-900 mb-2">What You'll Need</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Complete contact information for both parties</li>
-                  <li>• Detailed description of the authored work</li>
-                  <li>• Royalty calculation methodology</li>
-                  <li>• Preferred arbitration location</li>
-                  <li>• Signature authority for both parties</li>
-                </ul>
-              </div>
+            <p className="text-gray-600 mb-4">
+              {documentContent.whatIs}
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Key Benefits */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <Card className="text-center">
+            <CardHeader>
+              <FileText className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+              <CardTitle className="text-lg">IP Commercial Protection</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600">
+                Generate revenue from intellectual property while maintaining ownership and controlling usage rights
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="text-center">
+            <CardHeader>
+              <CheckCircle className="w-8 h-8 text-green-600 mx-auto mb-2" />
+              <CardTitle className="text-lg">Clear Licensing Terms</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600">
+                Define scope, exclusivity, territory, royalties, and all terms to prevent misunderstandings and disputes
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="text-center">
+            <CardHeader>
+              <AlertTriangle className="w-8 h-8 text-purple-600 mx-auto mb-2" />
+              <CardTitle className="text-lg">Legal Enforcement</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600">
+                Protect against unauthorized use, establish remedies for breach, and ensure compliance with agreed terms
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* When to Use */}
+        <Card className="mb-12">
+          <CardHeader>
+            <CardTitle className="text-2xl text-gray-900">When to Use a License Agreement</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {documentContent.whenToUse && documentContent.whenToUse.map((item, idx) => (
+                <div key={idx} className="flex gap-3 items-start">
+                  <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>
 
-        <div className="text-center">
-          <Button 
-            onClick={() => navigate('/license-agreement-form')}
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
-          >
-            <Play className="w-5 h-5 mr-2" />
-            Start Creating License Agreement
-          </Button>
-          <p className="text-sm text-gray-500 mt-2">
-            Takes 8-12 minutes • Professional PDF output
+        {/* FAQs */}
+        <Card className="mb-12">
+          <CardHeader>
+            <CardTitle className="text-2xl text-gray-900">Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {documentContent.faqs && documentContent.faqs.map((faq, idx) => {
+                const colors = [
+                  { bg: "bg-blue-50", border: "border-blue-200", text: "text-blue-900" },
+                  { bg: "bg-green-50", border: "border-green-200", text: "text-green-900" },
+                  { bg: "bg-purple-50", border: "border-purple-200", text: "text-purple-900" },
+                  { bg: "bg-yellow-50", border: "border-yellow-200", text: "text-yellow-900" },
+                  { bg: "bg-red-50", border: "border-red-200", text: "text-red-900" }
+                ];
+                const color = colors[idx % colors.length];
+                return (
+                  <div key={idx} className={`${color.bg} border ${color.border} rounded-lg p-4`}>
+                    <p className={`font-semibold ${color.text} mb-2`}>{faq.q}</p>
+                    <p className={`${color.text}`}>{faq.a}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Important Notice */}
+        <div className="mb-12 bg-amber-50 border-l-4 border-amber-500 p-6 rounded">
+          <div className="flex gap-3">
+            <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 className="font-bold text-amber-900 mb-2">Important Notice</h3>
+              <p className="text-amber-800">
+                License Agreements must clearly specify the scope of rights granted, territorial limitations, and royalty or payment terms. Ensure the agreement protects your intellectual property interests and defines remedies for breach. Consider consulting a legal professional for complex licensing arrangements involving patents, trademarks, or software.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg p-8 text-white text-center">
+          <h2 className="text-2xl font-bold mb-2">Ready to Create Your License Agreement?</h2>
+          <p className="text-orange-100 mb-6">
+            Get started in 15–20 minutes with our step-by-step template
           </p>
+          <Button
+            size="lg"
+            className="bg-white text-orange-600 hover:bg-orange-50"
+            onClick={() => navigate("/documents/license-agreement")}
+          >
+            Create Agreement <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

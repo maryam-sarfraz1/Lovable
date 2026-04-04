@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Users, Shield, CheckCircle, ArrowRight, AlertTriangle, Scale, Clock, DollarSign } from "lucide-react";
+import { FileText, Users, Shield, CheckCircle, ArrowRight, AlertTriangle, Scale, Clock, DollarSign, HelpCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 
@@ -16,21 +16,40 @@ const CopyrightLicenseInfo = () => {
             <FileText className="w-10 h-10 text-purple-600" />
           </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Copyright License Agreement
+            Copyright License
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Grant or obtain rights to use copyrighted material while maintaining ownership with professional licensing agreements
+            Grant or obtain limited usage rights to copyrighted material while preserving ownership with clear, professional licensing terms
           </p>
         </div>
+
+        {/* Other Names Section */}
+        <Card className="mb-8 bg-blue-50 border-blue-200">
+          <CardHeader>
+            <CardTitle className="text-lg text-blue-900">Other Names for This Document</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {["Intellectual Property License", "Creative Work License", "Digital Rights License", "Licensing Agreement", "Intellectual Property Licensing Agreement"].map((name) => (
+                <span key={name} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                  {name}
+                </span>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* What Is Section */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle className="text-2xl text-gray-900">What Is a Copyright License Agreement?</CardTitle>
+            <CardTitle className="text-2xl text-gray-900">What Is a Copyright License?</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">
-              A Copyright License Agreement is a legal contract that allows a copyright owner (licensor) to grant permission to another party (licensee) to use their copyrighted material under specific terms and conditions. Unlike a copyright assignment that transfers ownership, a license agreement retains ownership with the original creator while providing controlled usage rights.
+              A Copyright License is a legally binding arrangement that allows one party (the licensee) to use copyrighted material owned by another party (the licensor), subject to defined terms and conditions. Unlike a copyright assignment that transfers ownership to the other party, a license agreement lets the original creator retain full ownership while granting controlled usage rights.
+            </p>
+            <p className="text-gray-600 mb-4">
+              The key distinction is that a license is a limited, revocable grant of rights. The licensor maintains ownership and can terminate the arrangement if the terms are violated or the agreement expires. The licensee receives permission to use the work within specified boundaries—whether geographic, temporal, or usage-based.
             </p>
             <p className="text-gray-600">
               This agreement is essential for creative professionals, businesses, and individuals who want to monetize their intellectual property or obtain legal permission to use copyrighted works. It provides clear boundaries for usage while protecting both parties' interests and ensuring proper compensation.
@@ -294,21 +313,25 @@ const CopyrightLicenseInfo = () => {
             <CardTitle className="text-2xl text-gray-900">Frequently Asked Questions</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div>
-              <h4 className="font-semibold mb-2">What's the difference between exclusive and non-exclusive licenses?</h4>
-              <p className="text-gray-600">An exclusive license grants rights to only one licensee, while a non-exclusive license allows multiple parties to use the same copyrighted work simultaneously.</p>
+            <div className="p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
+              <h4 className="font-semibold text-blue-900 mb-2">What's the difference between a copyright license and a copyright assignment?</h4>
+              <p className="text-blue-800">A copyright license grants limited, revocable usage rights while the licensor retains ownership. An assignment permanently transfers ownership to the other party. A license is more common when you want to monetize your work while maintaining control.</p>
             </div>
-            <div>
-              <h4 className="font-semibold mb-2">Can I modify the licensed work?</h4>
-              <p className="text-gray-600">Modification rights must be explicitly granted in the agreement. Most licenses restrict alterations without prior written consent from the copyright owner.</p>
+            <div className="p-4 bg-green-50 border-l-4 border-green-500 rounded">
+              <h4 className="font-semibold text-green-900 mb-2">Can I revoke a copyright license once granted?</h4>
+              <p className="text-green-800">Yes, copyright licenses can include termination provisions that allow revocation if the licensee violates the agreement terms or after a specified period. Most agreements include conditions under which the license can be terminated.</p>
             </div>
-            <div>
-              <h4 className="font-semibold mb-2">How are royalties typically calculated?</h4>
-              <p className="text-gray-600">Royalties can be calculated as a percentage of net sales, gross revenue, fixed amounts per unit, or other agreed-upon structures depending on the industry and type of work.</p>
+            <div className="p-4 bg-purple-50 border-l-4 border-purple-500 rounded">
+              <h4 className="font-semibold text-purple-900 mb-2">What types of content can be covered by a copyright license?</h4>
+              <p className="text-purple-800">Copyright licenses can cover music, photographs, artwork, written works, software code, designs, videos, and any other original creative work protected by copyright law. The license should clearly describe what specific material is being licensed.</p>
             </div>
-            <div>
-              <h4 className="font-semibold mb-2">What happens if the license is terminated?</h4>
-              <p className="text-gray-600">Upon termination, the licensee must cease all use of the copyrighted material, though they may have a period to sell existing inventory. All accrued royalties remain due.</p>
+            <div className="p-4 bg-yellow-50 border-l-4 border-yellow-500 rounded">
+              <h4 className="font-semibold text-yellow-900 mb-2">Is a copyright license required to be in writing?</h4>
+              <p className="text-yellow-800">While verbal agreements can exist, a written copyright license is strongly recommended for legal clarity and enforceability. Written agreements prevent misunderstandings and provide evidence of the agreed terms in case of disputes.</p>
+            </div>
+            <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded">
+              <h4 className="font-semibold text-red-900 mb-2">What's the difference between exclusive and non-exclusive licenses?</h4>
+              <p className="text-red-800">An exclusive license grants rights to only one licensee, preventing the licensor from licensing to others. A non-exclusive license allows multiple parties to use the same copyrighted material simultaneously. Exclusive licenses typically command higher fees.</p>
             </div>
           </CardContent>
         </Card>
@@ -316,9 +339,9 @@ const CopyrightLicenseInfo = () => {
         {/* CTA Section */}
         <Card className="text-center bg-gradient-to-r from-purple-50 to-indigo-50 border-purple-200">
           <CardHeader>
-            <CardTitle className="text-2xl text-gray-900">Ready to Create Your Copyright License Agreement?</CardTitle>
+            <CardTitle className="text-2xl text-gray-900">Ready to Create Your Copyright License?</CardTitle>
             <CardDescription className="text-lg">
-              Generate a professional copyright license agreement in minutes with our guided process
+              Generate a professional copyright license agreement in 10-15 minutes with our guided process
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -326,11 +349,11 @@ const CopyrightLicenseInfo = () => {
               <div className="flex justify-center space-x-8 text-sm text-gray-600 mb-6">
                 <div className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                  4-step guided process
+                  Clear licensing terms
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
-                  Comprehensive legal terms
+                  Customizable agreement
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-4 h-4 text-green-600 mr-2" />

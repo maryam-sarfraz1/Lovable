@@ -1,300 +1,182 @@
+import React from "react";
+import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Handshake, CheckCircle, AlertTriangle, ArrowRight, Shield, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, FileText, CheckCircle, AlertTriangle, Users, Handshake, Shield, Building } from "lucide-react";
 
 const MutualNDAInfo = () => {
   const navigate = useNavigate();
 
+  const documentContent = {
+    title: "Mutual Non-Disclosure Agreement",
+    otherNames: ["Mutual Confidentiality Agreement", "Mutual NDA", "MNDA", "Bilateral NDA"],
+    whatIs: "A Mutual Non-Disclosure Agreement (Mutual NDA) is a legally binding confidentiality agreement that enables two parties to share and receive sensitive or proprietary information securely. This agreement is ideal when both parties expect to exchange confidential data, such as trade secrets, business plans, financial details, or intellectual property. It clearly defines confidentiality obligations and protects information from unauthorized disclosure, giving both parties legal rights to take action in case of breach.",
+    whenToUse: [
+      "You are sharing confidential or proprietary information with another party",
+      "You will receive sensitive information from another individual or organization",
+      "You are entering into partnerships, vendor agreements, or consulting arrangements",
+      "Both parties need mutual confidentiality protection during negotiations or collaborations"
+    ],
+    faqs: [
+      {
+        question: "Where can I get a free Mutual NDA?",
+        answer: "You can download a Mutual Non-Disclosure Agreement template from legal document providers instantly. Simply customize your draft agreement with party information and protected details, and your document will be ready in minutes without expensive attorney fees."
+      },
+      {
+        question: "Do I need a lawyer to draft a Mutual NDA?",
+        answer: "Not necessarily. With professionally structured templates, you can create an enforceable Mutual NDA without high legal fees. However, consult a legal expert for particularly complex cases involving significant intellectual property or unique business situations."
+      },
+      {
+        question: "What is the cost of a Mutual NDA?",
+        answer: "Hiring a lawyer may cost between $200-$1,000. Using professionally drafted templates, you can enjoy a free or low-cost download and save significantly while still maintaining legal enforceability and comprehensive protection."
+      },
+      {
+        question: "What should I do after creating a Mutual NDA?",
+        answer: "After downloading your Mutual NDA, edit and review it for accuracy, then print or share it digitally with the other party. Both parties must sign the document electronically or physically, then each party should receive and securely store a signed copy for their records."
+      },
+      {
+        question: "Does a Mutual NDA require notarization?",
+        answer: "No, notarization is generally not required for a Mutual NDA to be legally enforceable. A properly signed agreement between parties is sufficient. However, notarization can add an extra layer of authenticity and may be helpful in certain circumstances or jurisdictions."
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-6">
-          <Button
-            variant="outline"
-            onClick={() => navigate('/documents')}
-            className="mb-4"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Documents
-          </Button>
-          
-          <div className="text-center mb-8">
-            <Handshake className="w-16 h-16 mx-auto mb-4 text-blue-600" />
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Mutual Non-Disclosure Agreement</h1>
-            <p className="text-lg text-gray-600">
-              Bilateral confidentiality protection for businesses sharing sensitive information
+    <Layout>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-rose-100 flex items-center justify-center">
+              <Handshake className="w-10 h-10 text-rose-600" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{documentContent.title}</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Bilateral confidentiality protection enabling secure information sharing between two parties
+          </p>
+        </div>
+
+        {/* Other Names */}
+        <Card className="mb-8 bg-blue-50 border-blue-200">
+          <CardHeader>
+            <CardTitle className="text-lg">Also Known As</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {documentContent.otherNames.map((name, index) => (
+                <span key={index} className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                  {name}
+                </span>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* What Is */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>What Is a Mutual Non-Disclosure Agreement?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-700 leading-relaxed">{documentContent.whatIs}</p>
+          </CardContent>
+        </Card>
+
+        {/* Key Benefits */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Handshake className="w-12 h-12 text-rose-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Bilateral Protection</h3>
+                <p className="text-sm text-gray-600">Both parties protect shared information with equal confidentiality obligations and reciprocal enforcement rights</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Lock className="w-12 h-12 text-rose-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Information Security</h3>
+                <p className="text-sm text-gray-600">Comprehensive protection for all shared confidential information including trade secrets and business plans</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Shield className="w-12 h-12 text-rose-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Legal Enforcement</h3>
+                <p className="text-sm text-gray-600">Clear remedies for breach including injunctive relief and damages recovery for both parties</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* When to Use */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>When to Use This Document</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {documentContent.whenToUse.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-rose-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">{item}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQs */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {documentContent.faqs.map((faq, index) => {
+                const colors = ["bg-blue-50", "bg-green-50", "bg-purple-50", "bg-yellow-50", "bg-red-50"];
+                const borderColors = ["border-l-4 border-blue-500", "border-l-4 border-green-500", "border-l-4 border-purple-500", "border-l-4 border-yellow-500", "border-l-4 border-red-500"];
+                return (
+                  <div key={index} className={`${colors[index]} ${borderColors[index]} rounded-lg p-4`}>
+                    <p className="font-semibold text-gray-900 mb-2">{faq.question}</p>
+                    <p className="text-gray-700 text-sm">{faq.answer}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Important Notice */}
+        <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-8 flex gap-4">
+          <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+          <div>
+            <h3 className="font-bold text-amber-900 mb-2">Important Notice</h3>
+            <p className="text-amber-800 text-sm">
+              Mutual NDAs involve important confidentiality and business considerations. Clearly identify both parties, describe all confidential information to be protected, specify permitted uses, define duration, and establish dispute resolution procedures. Consider consulting with a legal professional to ensure the agreement properly protects both parties' interests and complies with applicable state and local laws.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-6 mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-blue-600" />
-                What is a Mutual NDA?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-                A Mutual Non-Disclosure Agreement (Mutual NDA) is a bilateral contract where both parties 
-                agree to protect each other's confidential information. Unlike a one-way NDA, both parties 
-                are simultaneously the "Disclosing Party" and the "Receiving Party," making it ideal for 
-                business partnerships, joint ventures, or collaborations where sensitive information flows 
-                in both directions.
-              </p>
-              <p className="text-gray-700">
-                This type of agreement ensures that proprietary information, trade secrets, business plans, 
-                and other confidential materials shared during negotiations or partnerships remain protected, 
-                creating a foundation of trust for successful business relationships.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
-                Key Features of Mutual NDAs
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Bilateral Protection</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Both parties protect shared information</li>
-                    <li>• Equal confidentiality obligations</li>
-                    <li>• Reciprocal non-disclosure duties</li>
-                    <li>• Mutual enforcement rights</li>
-                    <li>• Balanced legal protections</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Comprehensive Coverage</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Trade secrets and proprietary data</li>
-                    <li>• Financial and operational information</li>
-                    <li>• Customer lists and pricing data</li>
-                    <li>• Technical specifications and processes</li>
-                    <li>• Business strategies and plans</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Users className="w-5 h-5 mr-2 text-purple-600" />
-                When to Use a Mutual NDA
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Business Partnerships</h4>
-                  <p className="text-sm text-gray-700">
-                    Strategic alliances, joint ventures, and collaborative projects requiring mutual information sharing
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Merger & Acquisition</h4>
-                  <p className="text-sm text-gray-700">
-                    Due diligence processes where both companies exchange sensitive financial and operational data
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Technology Licensing</h4>
-                  <p className="text-sm text-gray-700">
-                    Technology transfers, licensing agreements, and R&D collaborations between companies
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-orange-600" />
-                Confidentiality Obligations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 bg-yellow-50 border-l-4 border-yellow-400">
-                  <h4 className="font-semibold">Strict Confidentiality</h4>
-                  <p className="text-sm text-gray-700">Both parties must maintain all shared information in strict confidence using reasonable care</p>
-                </div>
-                <div className="p-3 bg-blue-50 border-l-4 border-blue-400">
-                  <h4 className="font-semibold">Limited Use Authorization</h4>
-                  <p className="text-sm text-gray-700">Information may only be used for the specific purpose outlined in the agreement</p>
-                </div>
-                <div className="p-3 bg-green-50 border-l-4 border-green-400">
-                  <h4 className="font-semibold">Third-Party Restrictions</h4>
-                  <p className="text-sm text-gray-700">No disclosure to third parties without prior written consent from the disclosing party</p>
-                </div>
-                <div className="p-3 bg-purple-50 border-l-4 border-purple-400">
-                  <h4 className="font-semibold">Employee Compliance</h4>
-                  <p className="text-sm text-gray-700">Responsibility for ensuring employees and agents comply with confidentiality obligations</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Building className="w-5 h-5 mr-2 text-indigo-600" />
-                Scope of Protected Information
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Business Information:</h4>
-                  <ul className="space-y-1 text-gray-700 text-sm">
-                    <li>• Internal operational data and processes</li>
-                    <li>• Financial and operational plans</li>
-                    <li>• Marketing strategies and customer data</li>
-                    <li>• Employee information and organization charts</li>
-                    <li>• Pricing models and cost structures</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Technical Information:</h4>
-                  <ul className="space-y-1 text-gray-700 text-sm">
-                    <li>• Product information and prototypes</li>
-                    <li>• Trade secrets and proprietary methods</li>
-                    <li>• Technical data and research findings</li>
-                    <li>• Inventions, designs, and processes</li>
-                    <li>• Software code and algorithms</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <AlertTriangle className="w-5 h-5 mr-2 text-red-600" />
-                Legal Protections & Remedies
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Injunctive Relief</h4>
-                  <p className="text-red-700 text-sm">
-                    Parties can seek immediate court intervention to prevent disclosure or misuse of 
-                    confidential information without posting bond.
-                  </p>
-                </div>
-                <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                  <h4 className="font-semibold text-yellow-800 mb-2">Damages & Legal Fees</h4>
-                  <p className="text-yellow-700 text-sm">
-                    Breaching parties may be liable for all damages, including attorney fees and 
-                    costs arising from the breach of confidentiality.
-                  </p>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Return of Materials</h4>
-                  <p className="text-blue-700 text-sm">
-                    Parties must return or destroy all physical and digital materials containing 
-                    confidential information upon request, with written certification.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-green-600" />
-                Exclusions from Confidentiality
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold">Pre-existing Knowledge</h4>
-                  <p className="text-sm text-gray-700">Information already in the receiving party's possession before disclosure</p>
-                </div>
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold">Public Information</h4>
-                  <p className="text-sm text-gray-700">Information that becomes publicly known through no fault of the receiving party</p>
-                </div>
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold">Independent Development</h4>
-                  <p className="text-sm text-gray-700">Information independently developed without reference to the disclosed information</p>
-                </div>
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold">Third-Party Disclosure</h4>
-                  <p className="text-sm text-gray-700">Information disclosed by a third party legally entitled to share it</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-purple-600" />
-                Benefits of Mutual NDAs
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Business Benefits:</h4>
-                  <ul className="space-y-1 text-blue-700 text-sm">
-                    <li>• Enables open communication in partnerships</li>
-                    <li>• Protects competitive advantages</li>
-                    <li>• Facilitates due diligence processes</li>
-                    <li>• Builds trust between organizations</li>
-                    <li>• Supports strategic collaborations</li>
-                  </ul>
-                </div>
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">Legal Benefits:</h4>
-                  <ul className="space-y-1 text-green-700 text-sm">
-                    <li>• Balanced legal protections for both parties</li>
-                    <li>• Clear enforcement mechanisms</li>
-                    <li>• Defined scope of confidential information</li>
-                    <li>• Established dispute resolution framework</li>
-                    <li>• Protection against misappropriation</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
+        {/* CTA Button */}
         <div className="text-center">
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200">
-            <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-2">Ready to Create Your Mutual NDA?</h3>
-              <p className="text-gray-600 mb-4">
-                Our comprehensive form will guide you through creating a professional mutual 
-                non-disclosure agreement that protects both parties' confidential information.
-              </p>
-              <Button 
-                onClick={() => navigate('/mutual-nda-form')}
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                Start Creating Your Mutual NDA
-              </Button>
-            </CardContent>
-          </Card>
+          <Button
+            onClick={() => navigate("/documents/mutual-non-disclosure-agreement")}
+            size="lg"
+            className="bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-700 hover:to-rose-800 text-white px-8 py-3"
+          >
+            Start Mutual Non-Disclosure Agreement
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+          <p className="text-sm text-gray-500 mt-3">
+            Estimated time: 15-20 minutes
+          </p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

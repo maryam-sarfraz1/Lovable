@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, FileText, CheckCircle, AlertTriangle, Users, Calendar, Building, DollarSign, Handshake } from "lucide-react";
+import { ArrowLeft, FileText, CheckCircle, AlertTriangle, Users, Calendar, Building, DollarSign, Handshake, Download, HelpCircle, TrendingUp } from "lucide-react";
 
 const BuySellAgreementInfo = () => {
   const navigate = useNavigate();
@@ -49,6 +49,124 @@ const BuySellAgreementInfo = () => {
                 and transfer restrictions, ensuring smooth transitions while protecting the interests of 
                 all parties involved.
               </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <FileText className="w-5 h-5 mr-2 text-blue-600" />
+                Alternative Names
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 mb-3">This agreement is also commonly known as:</p>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Buyout Agreement</li>
+                <li>• Business Buyout Agreement</li>
+                <li>• Business Will</li>
+                <li>• Business Prenup</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
+                Why Use a Buy-Sell Agreement?
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-gray-700">
+                A Buy-Sell Agreement ensures clarity, control, and continuity for your business. It helps you:
+              </p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Control who can become a shareholder or partner
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Avoid disputes by pre-defining valuation methods
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Protect the business from external or unwanted ownership
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Ensure smooth transfer of ownership in unforeseen events
+                </li>
+              </ul>
+              <p className="text-gray-600 text-sm mt-3">
+                Whether you run a corporation, LLC, or partnership, a Buy-Sell Agreement provides a structured and enforceable solution.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Calendar className="w-5 h-5 mr-2 text-orange-600" />
+                When Should You Use This Agreement?
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-700 mb-3">You should create a Buy-Sell Agreement if:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
+                  You want to restrict who can buy company shares
+                </li>
+                <li className="p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
+                  You need a clear plan for death, disability, or retirement
+                </li>
+                <li className="p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
+                  You want to fix a fair valuation method in advance
+                </li>
+                <li className="p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
+                  You wish to protect ownership interests during divorce or bankruptcy
+                </li>
+                <li className="p-3 bg-orange-50 border-l-4 border-orange-400 rounded">
+                  You want inherited shares to be sold back to the company
+                </li>
+              </ul>
+              <p className="mt-4 text-gray-600 italic text-sm">
+                This agreement is ideal for startups, partnerships, and established companies alike.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <TrendingUp className="w-5 h-5 mr-2 text-purple-600" />
+                Key Features
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Fully customizable agreement
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Legally binding and enforceable document
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Suitable for corporations, LLCs, and partnerships
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Frequently used and trusted format
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckCircle className="w-4 h-4 mt-0.5 text-green-500 shrink-0" />
+                  Comprehensive and professionally structured
+                </li>
+              </ul>
             </CardContent>
           </Card>
 
@@ -322,16 +440,71 @@ const BuySellAgreementInfo = () => {
               </div>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <HelpCircle className="w-5 h-5 mr-2 text-purple-600" />
+                Frequently Asked Questions
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <h4 className="font-semibold text-blue-800 mb-2">Is this Buy-Sell Agreement legally valid?</h4>
+                <p className="text-blue-700 text-sm">
+                  Yes. This agreement is designed to be legally binding when properly executed by all parties. Consider having it notarized for additional legal protection.
+                </p>
+              </div>
+              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
+                <h4 className="font-semibold text-green-800 mb-2">Can I customize the agreement?</h4>
+                <p className="text-green-700 text-sm">
+                  Absolutely. You can edit and tailor the agreement to suit your specific business structure and ownership requirements.
+                </p>
+              </div>
+              <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
+                <h4 className="font-semibold text-purple-800 mb-2">What happens if an owner dies?</h4>
+                <p className="text-purple-700 text-sm">
+                  The agreement specifies what occurs - typically the deceased owner's shares are purchased by the remaining owners or the company at a pre-determined price.
+                </p>
+              </div>
+              <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                <h4 className="font-semibold text-yellow-800 mb-2">Who should have a Buy-Sell Agreement?</h4>
+                <p className="text-yellow-700 text-sm">
+                  Any business with multiple owners - corporations, LLCs, partnerships, and S-Corps. It's especially important for businesses relying on the continued involvement of specific owners.
+                </p>
+              </div>
+              <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
+                <h4 className="font-semibold text-red-800 mb-2">Can this protect against unwanted ownership?</h4>
+                <p className="text-red-700 text-sm">
+                  Yes. It prevents ownership transfer to outsiders by defining who can purchase shares and establishing buyback provisions that trigger automatically.
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+
         </div>
 
         <div className="text-center">
           <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200">
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-2">Ready to Create Your Buy-Sell Agreement?</h3>
+              <h3 className="text-xl font-semibold mb-2">Protect Your Business Today</h3>
               <p className="text-gray-600 mb-4">
-                Our comprehensive form will guide you through creating a professional buy-sell agreement 
-                that protects your business and ensures smooth ownership transitions.
+                Create your own Buy-Sell Agreement in minutes by filling in your details and customizing the clauses for your specific situation.
               </p>
+              <p className="text-gray-600 mb-4">
+                Protect your business and avoid future disputes by using a professionally structured Buy-Sell Agreement designed for clarity, enforceability, and ease of use.
+              </p>
+              <p className="text-sm text-gray-500 mb-2">
+                Our guided form will walk you through creating a comprehensive agreement that covers all essential aspects of ownership transfers.
+              </p>
+              <p className="text-sm text-gray-500 mt-2">Takes 12-18 minutes • Professional format</p>
+              <Button
+                className="mt-6 bg-blue-600 hover:bg-blue-700 text-white"
+                onClick={() => navigate("/buy-sell-agreement-form")}
+              >
+                <FileText className="w-4 h-4 mr-2" />
+                Create Your Agreement
+              </Button>
             </CardContent>
           </Card>
         </div>

@@ -1,268 +1,183 @@
+import React from "react";
+import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Lightbulb, CheckCircle, AlertTriangle, ArrowRight, Lock, FileText } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, FileText, CheckCircle, AlertTriangle, Lightbulb, Scale, Shield, Building } from "lucide-react";
 
 const PatentAssignmentInfo = () => {
   const navigate = useNavigate();
 
+  const documentContent = {
+    title: "Patent Assignment",
+    otherNames: ["Patent Assignment Form", "Patent Assignment Contract", "Draft Patent Assignment Agreement", "Intellectual Property Assignment"],
+    whatIs: "A Patent Assignment is a legally binding agreement that facilitates the transfer of ownership rights in a patent or patent application from one party to another. This agreement serves as a formal 'bill of sale' for intellectual property, ensuring that all rights, title, and interest in the patent are properly assigned and recorded. A Patent Assignment ensures legal clarity, enforceability, and protection of ownership interests when transferring patent rights whether the patent is registered or pending.",
+    whenToUse: [
+      "You are buying or selling a patent or patent application",
+      "You need to add, remove, or update the name of a patent owner",
+      "You are transferring rights between individuals, businesses, or partners",
+      "You are formalizing ownership structure in a joint invention or business arrangement"
+    ],
+    faqs: [
+      {
+        question: "What is a Patent Assignment?",
+        answer: "A Patent Assignment is a formal legal document that transfers ownership rights in a patent or patent application from one party to another. It serves as a 'bill of sale' for intellectual property and ensures all rights, title, and interest are properly documented and recorded."
+      },
+      {
+        question: "Why do I need a Patent Assignment?",
+        answer: "A Patent Assignment is essential whenever intellectual property rights are transferred, sold, or reassigned. Similar to transferring tangible assets, this document ensures all legal formalities are fulfilled before the transfer becomes effective and protects both parties' interests."
+      },
+      {
+        question: "What rights are transferred in a Patent Assignment?",
+        answer: "A Patent Assignment can transfer all rights, title, and interest in the patent, including exclusive rights to use, sell, license, and enforce the patent. The assignment can be complete (full ownership transfer) or partial (retaining some rights)."
+      },
+      {
+        question: "Can I assign partial rights to a patent?",
+        answer: "Yes. A Patent Assignment can be structured to transfer complete ownership or partial rights. You can retain certain rights while assigning others, or share ownership with co-inventors or partners as defined in the agreement."
+      },
+      {
+        question: "Is a Patent Assignment recorded with the patent office?",
+        answer: "Patent assignments should be recorded with the appropriate patent office (USPTO in the US) to establish a clear chain of title and provide public notice of the ownership transfer. This recording provides legal protection and enforceability."
+      }
+    ]
+  };
+
+
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-6">
-          <Button
-            variant="outline"
-            onClick={() => navigate('/documents')}
-            className="mb-4"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Documents
-          </Button>
-          
-          <div className="text-center mb-8">
-            <Lightbulb className="w-16 h-16 mx-auto mb-4 text-blue-600" />
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Patent Assignment Agreement</h1>
-            <p className="text-lg text-gray-600">
-              Legal transfer of patent rights and ownership between parties
+    <Layout>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-indigo-100 flex items-center justify-center">
+              <Lightbulb className="w-10 h-10 text-indigo-600" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{documentContent.title}</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Legally transfer patent ownership and intellectual property rights between parties
+          </p>
+        </div>
+
+        {/* Other Names */}
+        <Card className="mb-8 bg-blue-50 border-blue-200">
+          <CardHeader>
+            <CardTitle className="text-lg">Also Known As</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {documentContent.otherNames.map((name, index) => (
+                <span key={index} className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                  {name}
+                </span>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* What Is */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>What Is a Patent Assignment?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-700 leading-relaxed">{documentContent.whatIs}</p>
+          </CardContent>
+        </Card>
+
+        {/* Key Benefits */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Lightbulb className="w-12 h-12 text-indigo-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Legal Ownership Transfer</h3>
+                <p className="text-sm text-gray-600">Formally and legally transfer complete patent ownership rights from assignor to assignee</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <FileText className="w-12 h-12 text-indigo-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Clear Ownership Documentation</h3>
+                <p className="text-sm text-gray-600">Professional documentation ensuring legal clarity and protection of ownership interests</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Lock className="w-12 h-12 text-indigo-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Intellectual Property Security</h3>
+                <p className="text-sm text-gray-600">Protect rights, title, and interest in patents and patent applications with enforceability</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* When to Use */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>When to Use This Document</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {documentContent.whenToUse.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-indigo-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">{item}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQs */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {documentContent.faqs.map((faq, index) => {
+                const colors = ["bg-blue-50", "bg-green-50", "bg-purple-50", "bg-yellow-50", "bg-red-50"];
+                const borderColors = ["border-l-4 border-blue-500", "border-l-4 border-green-500", "border-l-4 border-purple-500", "border-l-4 border-yellow-500", "border-l-4 border-red-500"];
+                return (
+                  <div key={index} className={`${colors[index]} ${borderColors[index]} rounded-lg p-4`}>
+                    <p className="font-semibold text-gray-900 mb-2">{faq.question}</p>
+                    <p className="text-gray-700 text-sm">{faq.answer}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Important Notice */}
+        <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-8 flex gap-4">
+          <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+          <div>
+            <h3 className="font-bold text-amber-900 mb-2">Important Notice</h3>
+            <p className="text-amber-800 text-sm">
+              Patent Assignments involve important intellectual property considerations. Clearly identify all parties, specify the patents or applications being transferred (include patent numbers), describe all rights being transferred, specify any consideration or compensation, and ensure proper execution and notarization. Record the assignment with the appropriate patent office (USPTO in the US) within 3 months for maximum protection. Consider consulting with an intellectual property attorney to ensure proper drafting and recording of your Patent Assignment.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-6 mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-blue-600" />
-                What is a Patent Assignment Agreement?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-                A Patent Assignment Agreement is a legal document that transfers ownership of patent rights 
-                from one party (the assignor) to another party (the assignee). This comprehensive transfer 
-                includes all rights, title, and interest in the specified patents, including the right to 
-                enforce, license, and commercialize the patents.
-              </p>
-              <p className="text-gray-700">
-                Unlike licensing agreements that grant limited usage rights, a patent assignment represents 
-                a complete transfer of ownership, similar to selling real estate. Once executed, the assignee 
-                becomes the new legal owner of the patents with full control over their use and enforcement.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
-                Key Components of Our Patent Assignment
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Rights Transfer</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Complete ownership transfer</li>
-                    <li>• Right to file and prosecute patents</li>
-                    <li>• Enforcement and litigation rights</li>
-                    <li>• Licensing and commercialization rights</li>
-                    <li>• Rights to collect damages</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Legal Protections</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Warranty of clear ownership</li>
-                    <li>• No liens or encumbrances</li>
-                    <li>• Cooperation in transfer process</li>
-                    <li>• Assistance with maintenance</li>
-                    <li>• Governing law provisions</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Building className="w-5 h-5 mr-2 text-purple-600" />
-                Who Needs a Patent Assignment Agreement?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Companies</h4>
-                  <p className="text-sm text-gray-700">
-                    Acquiring patent portfolios, mergers and acquisitions, or purchasing competitor patents
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Inventors</h4>
-                  <p className="text-sm text-gray-700">
-                    Selling patents to companies, transferring employee inventions, or monetizing IP assets
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Investors</h4>
-                  <p className="text-sm text-gray-700">
-                    Patent investment funds, technology transfer, or strategic IP acquisitions
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Scale className="w-5 h-5 mr-2 text-orange-600" />
-                Assignment vs. Licensing
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 bg-blue-50 border-l-4 border-blue-400">
-                  <h4 className="font-semibold">Patent Assignment</h4>
-                  <p className="text-sm text-gray-700">Complete transfer of ownership rights - like selling a house</p>
-                </div>
-                <div className="p-3 bg-green-50 border-l-4 border-green-400">
-                  <h4 className="font-semibold">Patent License</h4>
-                  <p className="text-sm text-gray-700">Permission to use the patent while owner retains ownership - like renting a house</p>
-                </div>
-                <div className="p-3 bg-yellow-50 border-l-4 border-yellow-400">
-                  <h4 className="font-semibold">Key Difference</h4>
-                  <p className="text-sm text-gray-700">Assignment = permanent ownership change; License = temporary usage rights</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-red-600" />
-                Legal Requirements & Considerations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Recording with USPTO</h4>
-                  <p className="text-red-700 text-sm">
-                    Patent assignments should be recorded with the USPTO within 3 months to maintain 
-                    priority and provide public notice of the ownership change.
-                  </p>
-                </div>
-                <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                  <h4 className="font-semibold text-yellow-800 mb-2">Due Diligence</h4>
-                  <p className="text-yellow-700 text-sm">
-                    Verify patent validity, conduct freedom-to-operate analysis, and ensure 
-                    the assignor has clear title before executing the assignment.
-                  </p>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">International Considerations</h4>
-                  <p className="text-blue-700 text-sm">
-                    For international patent families, separate assignments may be required 
-                    for patents in different jurisdictions.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-indigo-600" />
-                What's Included in the Assignment
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <h4 className="font-semibold">Patent Rights</h4>
-                    <p className="text-sm text-gray-700">All rights in issued patents, pending applications, and related intellectual property</p>
-                  </div>
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <h4 className="font-semibold">Enforcement Rights</h4>
-                    <p className="text-sm text-gray-700">Right to sue for infringement and collect past, present, and future damages</p>
-                  </div>
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <h4 className="font-semibold">Prosecution Rights</h4>
-                    <p className="text-sm text-gray-700">Authority to file continuations, divisionals, and maintain patent validity</p>
-                  </div>
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <h4 className="font-semibold">Commercial Rights</h4>
-                    <p className="text-sm text-gray-700">Freedom to license, sell, or commercialize the patented technology</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <AlertTriangle className="w-5 h-5 mr-2 text-red-600" />
-                Important Considerations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Irreversible Transfer</h4>
-                  <p className="text-red-700 text-sm">
-                    Unlike licenses, patent assignments are typically permanent. The assignor 
-                    gives up all rights and cannot reclaim ownership without a new agreement.
-                  </p>
-                </div>
-                <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                  <h4 className="font-semibold text-yellow-800 mb-2">Valuation Complexity</h4>
-                  <p className="text-yellow-700 text-sm">
-                    Patent valuation can be complex. Consider hiring IP valuation experts 
-                    for high-value patents or large portfolios.
-                  </p>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Tax Implications</h4>
-                  <p className="text-blue-700 text-sm">
-                    Patent sales may have significant tax consequences. Consult with tax 
-                    professionals regarding capital gains and other tax considerations.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
+        {/* CTA Button */}
         <div className="text-center">
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200">
-            <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-2">Ready to Create Your Patent Assignment Agreement?</h3>
-              <p className="text-gray-600 mb-4">
-                Our comprehensive 4-step form will guide you through creating a professional 
-                patent assignment agreement that properly transfers patent ownership.
-              </p>
-              <p className="text-sm text-gray-500 mt-2">
-                Takes 10-15 minutes • Professional PDF output
-              </p>
-              <Button 
-                className="mt-6 bg-blue-600 hover:bg-blue-700 text-white"
-                onClick={() => navigate('/patent-assignment-form')}
-              >
-                <FileText className="w-4 h-4 mr-2" />
-                Start Creating
-              </Button>
-            </CardContent>
-          </Card>
+          <Button
+            onClick={() => navigate("/documents/patent-assignment")}
+            size="lg"
+            className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white px-8 py-3"
+          >
+            Start Patent Assignment
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+          <p className="text-sm text-gray-500 mt-3">
+            Estimated time: 15-20 minutes
+          </p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

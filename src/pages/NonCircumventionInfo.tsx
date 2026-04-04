@@ -1,329 +1,184 @@
+import React from "react";
+import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Shield, CheckCircle, AlertTriangle, ArrowRight, Lock, Briefcase } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, FileText, CheckCircle, AlertTriangle, Shield, Users, Handshake, Scale, DollarSign, Clock } from "lucide-react";
 
 const NonCircumventionInfo = () => {
   const navigate = useNavigate();
 
+  const documentContent = {
+    title: "Non-Circumvention Agreement",
+    otherNames: ["Non-Circumvent Agreement", "Non-Compete Agreement", "Contact Protection Agreement", "Bypass Prevention Agreement"],
+    whatIs: "A Non-Circumvention Agreement is a legally binding contract that prevents one party from bypassing another to directly engage with shared business contacts. This agreement ensures that confidential business relationships remain protected, the receiving party cannot circumvent or bypass the disclosing party, and any unauthorized dealings result in financial penalties or compensation. Once you execute a Non-Circumvention Agreement, you secure your business against unfair competition and unauthorized dealings while protecting valuable client relationships and business contacts.",
+    whenToUse: [
+      "You are working with another business in the same or similar industry and sharing contacts",
+      "Your client list or business contacts are confidential and valuable",
+      "You want to prevent third parties from bypassing your business relationships",
+      "You are entering into partnerships, vendor agreements, or consulting relationships"
+    ],
+    faqs: [
+      {
+        question: "What is a Non-Circumvention, Non-Disclosure Agreement?",
+        answer: "It combines confidentiality and non-circumvention protections, ensuring that shared information and contacts are not disclosed or misused. It provides comprehensive protection for both confidential information and valuable business relationships."
+      },
+      {
+        question: "Is a Non-Circumvention Agreement enforceable?",
+        answer: "In most jurisdictions, yes. However, enforceability may vary by region (certain restrictions may apply in states like California). Always review local laws before executing your Non-Circumvention Agreement."
+      },
+      {
+        question: "What is a Non-Disclosure Clause?",
+        answer: "A non-disclosure clause prevents parties from sharing confidential information. It is often included within a Non-Circumvention Agreement for added protection of business secrets and contact information."
+      },
+      {
+        question: "Do I need a lawyer to draft this agreement?",
+        answer: "Our professionally structured templates allow you to create an enforceable Non-Circumvention Agreement without expensive legal fees. However, consult an attorney for complex situations or significant business relationships."
+      },
+      {
+        question: "How long should a Non-Circumvention period last?",
+        answer: "Typical periods range from 1-5 years after the business relationship ends, depending on industry standards and the sensitivity of the business contacts involved. Customize the duration based on your specific needs."
+      }
+    ]
+  };
+
+
+
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-6">
-          <Button
-            variant="outline"
-            onClick={() => navigate('/documents')}
-            className="mb-4"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Documents
-          </Button>
-          
-          <div className="text-center mb-8">
-            <Handshake className="w-16 h-16 mx-auto mb-4 text-blue-600" />
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Non-Circumvention Agreement</h1>
-            <p className="text-lg text-gray-600">
-              Protect your business relationships and prevent contact circumvention
+    <Layout>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center">
+              <Shield className="w-10 h-10 text-emerald-600" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{documentContent.title}</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Protect your business contacts and prevent unauthorized dealings with legally binding protection
+          </p>
+        </div>
+
+        {/* Other Names */}
+        <Card className="mb-8 bg-blue-50 border-blue-200">
+          <CardHeader>
+            <CardTitle className="text-lg">Also Known As</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {documentContent.otherNames.map((name, index) => (
+                <span key={index} className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                  {name}
+                </span>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* What Is */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>What Is a Non-Circumvention Agreement?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-700 leading-relaxed">{documentContent.whatIs}</p>
+          </CardContent>
+        </Card>
+
+        {/* Key Benefits */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Shield className="w-12 h-12 text-emerald-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Legal Protection</h3>
+                <p className="text-sm text-gray-600">Legally binding protection against unauthorized bypass of your business relationships and contacts</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Lock className="w-12 h-12 text-emerald-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Contact Security</h3>
+                <p className="text-sm text-gray-600">Secure your valuable client lists and business relationships from unauthorized access or circumvention</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Briefcase className="w-12 h-12 text-emerald-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Business Integrity</h3>
+                <p className="text-sm text-gray-600">Maintain fair competition and business ethics by preventing unfair circumvention practices in partnerships</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* When to Use */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>When to Use This Document</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {documentContent.whenToUse.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-emerald-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">{item}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQs */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {documentContent.faqs.map((faq, index) => {
+                const colors = ["bg-blue-50", "bg-green-50", "bg-purple-50", "bg-yellow-50", "bg-red-50"];
+                const borderColors = ["border-l-4 border-blue-500", "border-l-4 border-green-500", "border-l-4 border-purple-500", "border-l-4 border-yellow-500", "border-l-4 border-red-500"];
+                return (
+                  <div key={index} className={`${colors[index]} ${borderColors[index]} rounded-lg p-4`}>
+                    <p className="font-semibold text-gray-900 mb-2">{faq.question}</p>
+                    <p className="text-gray-700 text-sm">{faq.answer}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Important Notice */}
+        <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-8 flex gap-4">
+          <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+          <div>
+            <h3 className="font-bold text-amber-900 mb-2">Important Notice</h3>
+            <p className="text-amber-800 text-sm">
+              Non-Circumvention Agreements involve important business relationship protections. Clearly identify both parties, define protected contacts and relationships, specify what constitutes circumvention, establish penalties for violations, and define the duration of protection. Consider consulting with a legal professional to ensure the agreement properly protects your business interests and complies with applicable state and local laws, particularly regarding non-compete provisions.
             </p>
           </div>
         </div>
 
-        <div className="grid gap-6 mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-blue-600" />
-                What is a Non-Circumvention Agreement?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-4">
-                A Non-Circumvention Agreement (NCA) is a legal contract that prevents parties from 
-                bypassing each other to deal directly with contacts, clients, or business opportunities 
-                that were introduced through the relationship. This agreement protects valuable business 
-                relationships and ensures that parties honor introductions and referrals.
-              </p>
-              <p className="text-gray-700">
-                This type of agreement is essential in business partnerships, joint ventures, and 
-                networking relationships where one party introduces contacts, clients, or opportunities 
-                to another party. It ensures that the introducing party receives appropriate recognition 
-                and compensation for their contribution to the business relationship.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-green-600" />
-                Key Protections Provided
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Contact Protection:</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Client and customer relationships</li>
-                    <li>• Supplier and vendor contacts</li>
-                    <li>• Strategic business partners</li>
-                    <li>• Investment opportunities</li>
-                    <li>• Professional networks</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Business Interests:</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Commission and fee protection</li>
-                    <li>• Profit sharing agreements</li>
-                    <li>• Future business opportunities</li>
-                    <li>• Referral relationships</li>
-                    <li>• Strategic positioning</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Users className="w-5 h-5 mr-2 text-purple-600" />
-                When Do You Need This Agreement?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Business Introductions</h4>
-                  <p className="text-sm text-gray-700">
-                    When introducing valuable contacts, clients, or business opportunities to partners
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Joint Ventures</h4>
-                  <p className="text-sm text-gray-700">
-                    During partnerships where each party contributes valuable business relationships
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Investment Deals</h4>
-                  <p className="text-sm text-gray-700">
-                    When facilitating investment opportunities or real estate transactions
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-indigo-600" />
-                Core Agreement Provisions
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Non-Circumvention Clause</h4>
-                  <p className="text-blue-700 text-sm">
-                    Prevents the recipient from directly contacting, negotiating with, or contracting 
-                    any contacts introduced by the disclosing party without prior written consent.
-                  </p>
-                </div>
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">Commission Protection</h4>
-                  <p className="text-green-700 text-sm">
-                    Ensures the disclosing party receives agreed-upon commissions, profits, or benefits 
-                    from any transactions completed with their introduced contacts.
-                  </p>
-                </div>
-                <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
-                  <h4 className="font-semibold text-purple-800 mb-2">Confidentiality Requirements</h4>
-                  <p className="text-purple-700 text-sm">
-                    Protects confidential information including client lists, contact details, business 
-                    strategies, and proprietary information shared during the relationship.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <DollarSign className="w-5 h-5 mr-2 text-green-600" />
-                Financial Protections & Penalties
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 bg-yellow-50 border-l-4 border-yellow-400">
-                  <h4 className="font-semibold">Commission Recovery</h4>
-                  <p className="text-sm text-gray-700">Entitlement to commissions and profits from transactions completed in violation of the agreement</p>
-                </div>
-                <div className="p-3 bg-red-50 border-l-4 border-red-400">
-                  <h4 className="font-semibold">Monetary Penalties</h4>
-                  <p className="text-sm text-gray-700">Specified percentage penalties for agreement violations and unauthorized transactions</p>
-                </div>
-                <div className="p-3 bg-blue-50 border-l-4 border-blue-400">
-                  <h4 className="font-semibold">Injunctive Relief</h4>
-                  <p className="text-sm text-gray-700">Right to seek court orders preventing unauthorized disclosure or circumvention</p>
-                </div>
-                <div className="p-3 bg-green-50 border-l-4 border-green-400">
-                  <h4 className="font-semibold">Legal Fees Recovery</h4>
-                  <p className="text-sm text-gray-700">Prevailing party entitled to recover attorney's fees and court costs in legal proceedings</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Scale className="w-5 h-5 mr-2 text-red-600" />
-                Legal Framework & Enforcement
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Binding Arbitration</h4>
-                  <p className="text-red-700 text-sm">
-                    Disputes resolved through binding arbitration in a specified city, providing 
-                    efficient and final resolution of conflicts.
-                  </p>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Broad Applicability</h4>
-                  <p className="text-blue-700 text-sm">
-                    Agreement applies to all owners, partners, employees, contractors, and 
-                    representatives of both parties, including successors.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Clock className="w-5 h-5 mr-2 text-orange-600" />
-                Agreement Duration & Termination
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 bg-orange-50 border border-orange-200 rounded-lg">
-                  <h4 className="font-semibold text-orange-800">Indefinite Term</h4>
-                  <p className="text-sm text-orange-700">The agreement remains in effect indefinitely, providing ongoing protection for business relationships</p>
-                </div>
-                <div className="p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800">30-Day Notice Termination</h4>
-                  <p className="text-sm text-blue-700">Either party may terminate the agreement with thirty days' prior written notice</p>
-                </div>
-                <div className="p-3 bg-purple-50 border border-purple-200 rounded-lg">
-                  <h4 className="font-semibold text-purple-800">Survival of Obligations</h4>
-                  <p className="text-sm text-purple-700">Confidentiality and protection obligations continue even after termination for pre-existing information</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-teal-600" />
-                Confidential Information Protection
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 mb-3">
-                The agreement provides comprehensive protection for various types of confidential information:
-              </p>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <div className="p-2 bg-teal-50 border border-teal-200 rounded">
-                    <strong>Client Information:</strong> Customer lists and contact details
-                  </div>
-                  <div className="p-2 bg-blue-50 border border-blue-200 rounded">
-                    <strong>Business Strategy:</strong> Plans, strategies, and methodologies
-                  </div>
-                  <div className="p-2 bg-green-50 border border-green-200 rounded">
-                    <strong>Financial Data:</strong> Records, projections, and transaction details
-                  </div>
-                </div>
-                <div className="space-y-2">
-                  <div className="p-2 bg-purple-50 border border-purple-200 rounded">
-                    <strong>Acquisition Details:</strong> Investment and purchase opportunities
-                  </div>
-                  <div className="p-2 bg-yellow-50 border border-yellow-200 rounded">
-                    <strong>Marketing Plans:</strong> Campaigns, strategies, and target markets
-                  </div>
-                  <div className="p-2 bg-red-50 border border-red-200 rounded">
-                    <strong>Contract Terms:</strong> Agreements, negotiations, and deal structures
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <AlertTriangle className="w-5 h-5 mr-2 text-red-600" />
-                Important Considerations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Clear Contact Definition</h4>
-                  <p className="text-red-700 text-sm">
-                    Ensure all parties understand exactly which contacts and relationships are 
-                    protected under the agreement to prevent disputes.
-                  </p>
-                </div>
-                <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                  <h4 className="font-semibold text-yellow-800 mb-2">Commission Percentage</h4>
-                  <p className="text-yellow-700 text-sm">
-                    Carefully consider the penalty percentage for violations - it should be fair 
-                    but sufficient to deter circumvention attempts.
-                  </p>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Force Majeure Provisions</h4>
-                  <p className="text-blue-700 text-sm">
-                    The agreement includes protection for events beyond parties' control, such as 
-                    natural disasters, pandemics, or governmental restrictions.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
+        {/* CTA Button */}
         <div className="text-center">
-          <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200">
-            <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-2">Ready to Create Your Non-Circumvention Agreement?</h3>
-              <p className="text-gray-600 mb-4">
-                Our comprehensive 4-step form will guide you through creating a professional 
-                non-circumvention agreement to protect your valuable business relationships.
-              </p>
-              <Button 
-                onClick={() => navigate('/non-circumvention-form')}
-                className="bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                <FileText className="w-4 h-4 mr-2" />
-                Start Creating Agreement
-              </Button>
-            </CardContent>
-          </Card>
+          <Button
+            onClick={() => navigate("/documents/non-circumvention-agreement")}
+            size="lg"
+            className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-8 py-3"
+          >
+            Start Non-Circumvention Agreement
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+          <p className="text-sm text-gray-500 mt-3">
+            Estimated time: 15-20 minutes
+          </p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

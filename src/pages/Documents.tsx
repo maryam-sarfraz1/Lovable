@@ -393,7 +393,7 @@ export const businessSecurityDocs = [
   { id: "CopyrightRequestForm", title: "Copyright Request Form", description: "Submit a copyright request", icon: FileText, category: "Intellectual Property", component: CopyrightRequestForm },
   { id: "patent-assignment", title: "Patent Assignment Agreement", description: "Create a comprehensive patent assignment agreement", icon: Shield, category: "Intellectual Property", component: PatentAssignmentForm },
   { id: "license-agreement", title: "License Agreement", description: "Create a comprehensive license agreement", icon: Scale, category: "Intellectual Property", component: LicenseAgreementForm },
-  { id: "manufacturing-license", title: "Manufacturing License Agreement", description: "Create a manufacturing license agreement", icon: Factory, category: "Intellectual Property", component: ManufacturingLicenseForm },
+  { id: "manufacturing-contract", title: "Manufacturing Contract", description: "Create a manufacturing contract with clear production terms and quality control", icon: Factory, category: "Intellectual Property", component: ManufacturingLicenseForm },
 
   // === TECHNOLOGY ===
   { id: "software", title: "Software License Agreement", description: "Create a professional Software license agreement", icon: Computer, category: "Technology", component: Softwarelicense },

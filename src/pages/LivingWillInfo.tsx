@@ -1,222 +1,182 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, FileText, Heart, Shield, AlertTriangle } from "lucide-react";
+import { Heart, CheckCircle, AlertTriangle, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const LivingWillInfo = () => {
   const navigate = useNavigate();
 
+  const documentContent = {
+    title: "Living Will",
+    otherNames: ["Advance Directive", "Advance Healthcare Directive", "Medical Directive", "Advance Medical Directive", "Advance Health Care Directive"],
+    whatIs: "A Living Will is a legally binding document that outlines your medical wishes in advance, especially regarding life-sustaining treatments and end-of-life care. It allows you to clearly specify whether you accept or refuse particular medical treatments and permits you to designate a trusted healthcare agent to make medical decisions if you become incapacitated. This ensures your healthcare preferences are respected and reduces the burden on family members during critical situations.",
+    whenToUse: [
+      "Planning ahead for medical emergencies and ensuring your wishes are documented",
+      "Ensuring your healthcare preferences are followed during end-of-life care situations",
+      "Avoiding family disputes over healthcare decisions and treatment options",
+      "Communicating clearly with doctors and healthcare providers about your medical preferences"
+    ],
+    faqs: [
+      {
+        question: "How can I create a Living Will for free?",
+        answer: "You can download a Living Will template, fill in your personal and medical preferences, and sign it according to legal requirements. Most states require two witnesses or notarization for validity."
+      },
+      {
+        question: "Do I need a lawyer to draft a Living Will?",
+        answer: "No, you can use a professionally drafted template. However, legal advice is recommended for complex situations or if you have specific medical conditions requiring detailed provisions."
+      },
+      {
+        question: "Does a Living Will need to be notarized?",
+        answer: "While not always mandatory, notarization or witnesses significantly strengthen the validity and enforceability of your document. Check your state's specific requirements."
+      },
+      {
+        question: "What happens after I create a Living Will?",
+        answer: "Share copies with your healthcare agent, primary physician, and family members. Keep the original in a safe but accessible location, and inform loved ones about your decisions."
+      },
+      {
+        question: "What's the difference between a Living Will and a Power of Attorney?",
+        answer: "A Living Will focuses on medical decisions and life-support preferences. A Durable Power of Attorney grants broader authority including financial and legal matters. Both are important for a comprehensive legal plan."
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-
-
-        <Card className="mb-8">
-          <CardHeader className="text-center pb-6">
-            <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-              <FileText className="w-8 h-8 text-blue-600" />
+    <Layout>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center">
+              <Heart className="w-10 h-10 text-red-600" />
             </div>
-            <CardTitle className="text-3xl font-bold text-gray-900">
-              Living Will Information
-            </CardTitle>
-            <p className="text-lg text-gray-600 mt-2">
-              Understanding Your Living Will and Healthcare Directives
-            </p>
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{documentContent.title}</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Ensure your medical wishes are honored with a legally binding healthcare directive
+          </p>
+        </div>
+
+        {/* Other Names */}
+        <Card className="mb-8 bg-blue-50 border-blue-200">
+          <CardHeader>
+            <CardTitle className="text-lg">Also Known As</CardTitle>
           </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-2">
+              {documentContent.otherNames.map((name, index) => (
+                <span key={index} className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                  {name}
+                </span>
+              ))}
+            </div>
+          </CardContent>
         </Card>
 
-        <div className="space-y-8">
-          {/* What is a Living Will */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-xl text-blue-600">
-                <Heart className="w-6 h-6 mr-2" />
-                What is a Living Will?
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="prose max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-4">
-                A Living Will, also known as an Advance Healthcare Directive, is a legal document that allows you to express your wishes regarding medical treatment in situations where you are unable to communicate your decisions. This document ensures that your healthcare preferences are honored when you cannot speak for yourself.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Unlike a traditional will that takes effect after death, a Living Will is active while you are alive but incapacitated. It provides clear guidance to healthcare providers and family members about your treatment preferences during critical medical situations.
-              </p>
-            </CardContent>
-          </Card>
+        {/* What Is */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>What Is a Living Will?</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-700 leading-relaxed">{documentContent.whatIs}</p>
+          </CardContent>
+        </Card>
 
-          {/* Key Components */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-xl text-blue-600">
-                <Shield className="w-6 h-6 mr-2" />
-                Key Components of a Living Will
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">Healthcare Agent Designation</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Primary healthcare agent/proxy</li>
-                    <li>• Alternate agents as backups</li>
-                    <li>• Contact information and relationships</li>
-                    <li>• Specific powers and limitations</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">Treatment Preferences</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Life-sustaining treatment decisions</li>
-                    <li>• Artificial nutrition and hydration</li>
-                    <li>• Pain management preferences</li>
-                    <li>• Specific medical interventions</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Key Benefits */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Heart className="w-12 h-12 text-red-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Honored Wishes</h3>
+                <p className="text-sm text-gray-600">Ensure your healthcare preferences are respected when you cannot communicate your desires</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Clear Guidance</h3>
+                <p className="text-sm text-gray-600">Provide doctors and family with clear instructions about your medical treatment preferences</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <AlertTriangle className="w-12 h-12 text-purple-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Peace of Mind</h3>
+                <p className="text-sm text-gray-600">Reduce family burden during medical emergencies and avoid disputes over end-of-life care</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
 
-          {/* When It Takes Effect */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl text-blue-600">When Does a Living Will Take Effect?</CardTitle>
-            </CardHeader>
-            <CardContent className="prose max-w-none">
-              <p className="text-gray-700 leading-relaxed mb-4">
-                A Living Will becomes effective when you are unable to make healthcare decisions for yourself. This typically occurs when:
-              </p>
-              <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-4">
-                <li>You are unconscious or in a coma</li>
-                <li>You have a terminal illness and cannot communicate</li>
-                <li>You have severe dementia or cognitive impairment</li>
-                <li>You are in a persistent vegetative state</li>
-                <li>A physician determines you lack decision-making capacity</li>
-              </ul>
-              <p className="text-gray-700 leading-relaxed">
-                The document typically requires confirmation from one or more physicians that you are unable to make informed healthcare decisions before it becomes active.
-              </p>
-            </CardContent>
-          </Card>
+        {/* When to Use */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>When to Use This Document</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {documentContent.whenToUse.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">{item}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
-          {/* Legal Requirements */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl text-blue-600">Legal Requirements and Validity</CardTitle>
-            </CardHeader>
-            <CardContent className="prose max-w-none">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">Signing Requirements</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Must be signed by you (the declarant)</li>
-                    <li>• Requires two qualified witnesses</li>
-                    <li>• Witnesses cannot be relatives or heirs</li>
-                    <li>• Notarization may be required in some states</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">Mental Capacity</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• You must be of sound mind when signing</li>
-                    <li>• Age requirement (usually 18 or older)</li>
-                    <li>• Free from coercion or undue influence</li>
-                    <li>• Understanding of the document's purpose</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        {/* FAQs */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              {documentContent.faqs.map((faq, index) => {
+                const colors = ["bg-blue-50", "bg-green-50", "bg-purple-50", "bg-yellow-50", "bg-red-50"];
+                const borderColors = ["border-l-4 border-blue-500", "border-l-4 border-green-500", "border-l-4 border-purple-500", "border-l-4 border-yellow-500", "border-l-4 border-red-500"];
+                return (
+                  <div key={index} className={`${colors[index]} ${borderColors[index]} rounded-lg p-4`}>
+                    <p className="font-semibold text-gray-900 mb-2">{faq.question}</p>
+                    <p className="text-gray-700 text-sm">{faq.answer}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
 
-          {/* Benefits */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-xl text-blue-600">Benefits of Having a Living Will</CardTitle>
-            </CardHeader>
-            <CardContent className="prose max-w-none">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">For You</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Ensures your wishes are respected</li>
-                    <li>• Provides peace of mind</li>
-                    <li>• Maintains personal autonomy</li>
-                    <li>• Prevents unwanted medical treatment</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-3">For Your Family</h3>
-                  <ul className="space-y-2 text-gray-700">
-                    <li>• Reduces family conflict and stress</li>
-                    <li>• Provides clear guidance for decisions</li>
-                    <li>• Relieves burden of difficult choices</li>
-                    <li>• Prevents legal disputes</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Important Notice */}
+        <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-8 flex gap-4">
+          <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+          <div>
+            <h3 className="font-bold text-amber-900 mb-2">Important Notice</h3>
+            <p className="text-amber-800 text-sm">
+              A Living Will is an important healthcare planning document. Requirements vary by state regarding witnesses, notarization, and specific healthcare preferences. Consult with a qualified attorney to ensure your Living Will complies with your state's laws, clearly expresses your medical wishes, and properly designates your healthcare agent.
+            </p>
+          </div>
+        </div>
 
-          {/* Important Considerations */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center text-xl text-amber-600">
-                <AlertTriangle className="w-6 h-6 mr-2" />
-                Important Considerations
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="prose max-w-none">
-              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
-                <h3 className="font-semibold text-amber-800 mb-2">Review and Update Regularly</h3>
-                <p className="text-amber-700">
-                  Your Living Will should be reviewed and updated periodically, especially after major life events, changes in health status, or changes in your healthcare preferences.
-                </p>
-              </div>
-              
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Distribution of Copies</h3>
-                  <p className="text-gray-700">
-                    Provide copies to your healthcare agent, family members, primary physician, and keep the original in a safe but accessible location. Consider registering with your state's advance directive registry if available.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Communication is Key</h3>
-                  <p className="text-gray-700">
-                    Discuss your wishes with your healthcare agent and family members before a crisis occurs. Ensure they understand your values and preferences regarding medical care.
-                  </p>
-                </div>
-                
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Legal Consultation</h3>
-                  <p className="text-gray-700">
-                    While this form provides a comprehensive template, consider consulting with an attorney familiar with healthcare law in your state to ensure your Living Will meets all legal requirements and addresses your specific needs.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Call to Action */}
-          <Card className="bg-blue-50 border-blue-200">
-            <CardContent className="text-center py-8">
-              <h3 className="text-xl font-semibold text-blue-900 mb-4">
-                Ready to Create Your Living Will?
-              </h3>
-              <p className="text-blue-700 mb-6">
-                Take control of your healthcare decisions and provide peace of mind for yourself and your loved ones.
-              </p>
-              <Button
-                onClick={() => navigate('/living-will')}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2"
-              >
-                Start Your Living Will
-              </Button>
-            </CardContent>
-          </Card>
+        {/* CTA Button */}
+        <div className="text-center">
+          <Button
+            onClick={() => navigate("/documents/living-will")}
+            size="lg"
+            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-3"
+          >
+            Start Living Will
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
+          <p className="text-sm text-gray-500 mt-3">
+            Estimated time: 15-20 minutes
+          </p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

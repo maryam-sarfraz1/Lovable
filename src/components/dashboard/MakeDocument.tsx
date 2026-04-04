@@ -604,10 +604,10 @@ const MakeDocument = () => {
       component: LicenseAgreementForm
     },
     {
-      id: 'manufacturing-license',
-      title: 'Manufacturing License Agreement',
-      description: 'Manufacturing Rights',
-      content: 'Create a manufacturing license agreement with quality control and legal protection',
+      id: 'manufacturing-contract',
+      title: 'Manufacturing Contract',
+      description: 'Production Agreement',
+      content: 'Create a manufacturing contract with clear production terms, specifications, and quality control requirements',
       icon: Factory,
       component: ManufacturingLicenseForm
     },

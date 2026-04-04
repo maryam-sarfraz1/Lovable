@@ -1,321 +1,182 @@
+import React from "react";
+import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { FileText, Clock, Users, Music, Shield, Scale, AlertCircle, ArrowLeft, Play, DollarSign, Gavel } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Music, CheckCircle, AlertTriangle, ArrowRight, DollarSign, Shield } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const MusicLicenseInfo = () => {
   const navigate = useNavigate();
 
-  const features = [
-    {
-      icon: <Music className="w-5 h-5" />,
-      title: "Music Copyright Licensing",
-      description: "Grant non-exclusive rights to use copyrighted music for specific purposes and geographic areas"
-    },
-    {
-      icon: <DollarSign className="w-5 h-5" />,
-      title: "Flexible Royalty Structure",
-      description: "Define custom payment terms, calculation methods, and reporting requirements"
-    },
-    {
-      icon: <Shield className="w-5 h-5" />,
-      title: "Copyright Protection",
-      description: "Maintain ownership while controlling how your music is used and credited"
-    },
-    {
-      icon: <Scale className="w-5 h-5" />,
-      title: "Legal Compliance",
-      description: "Comprehensive warranties, indemnification, and dispute resolution clauses"
-    },
-    {
-      icon: <Gavel className="w-5 h-5" />,
-      title: "Professional Standards",
-      description: "Requirements for lawful usage, proper attribution, and modification controls"
-    },
-    {
-      icon: <FileText className="w-5 h-5" />,
-      title: "Confidentiality",
-      description: "Protect financial and proprietary information related to the licensing agreement"
-    }
-  ];
-
-  const useCases = [
-    "Film and TV Synchronization",
-    "Commercial Advertising",
-    "Video Game Background Music",
-    "Podcast Intro/Outro Music",
-    "YouTube Content Creation",
-    "Live Performance Rights",
-    "Radio Broadcasting",
-    "Streaming Platform Usage",
-    "Corporate Presentations",
-    "Educational Materials"
-  ];
-
-  const sections = [
-    "Grant of License",
-    "Payment of Royalty", 
-    "Rights and Obligations",
-    "Modifications",
-    "Defaults",
-    "Arbitration",
-    "Warranties",
-    "Indemnification",
-    "Transfer of Rights",
-    "Effect of Termination",
-    "Notice",
-    "Entire Agreement",
-    "Amendment",
-    "Severability",
-    "Section Headings",
-    "Waiver of Contractual Right",
-    "Confidentiality",
-    "Applicable Law",
-    "Signatories"
-  ];
+  const documentContent = {
+    title: "Music License Agreement",
+    otherNames: ["Music Licensing Agreement", "Music License Contract", "Music Rights Agreement", "Music Copyright License Agreement"],
+    whatIs: "A Music License Agreement is a legally binding contract that grants permission to use music under defined terms and conditions. This agreement ensures that both the music owner and the user clearly understand their rights and obligations. If you are a musician, this agreement guarantees that you receive fair compensation when your work is used. If you are a producer or business, it ensures that you are legally authorized to use copyrighted music. Without a proper Music License Agreement, you risk copyright infringement issues, making this essential for protecting your interests.",
+    whenToUse: [
+      "You own music, songs, or audio content and want to license it",
+      "You want legal permission to use music in films, ads, or media projects",
+      "You are entering into a commercial agreement involving copyrighted music",
+      "You need to define royalty payments and usage restrictions"
+    ],
+    faqs: [
+      {
+        question: "What is a Music License Agreement and why do I need one?",
+        answer: "A Music License Agreement is a legally binding contract that protects your music rights and defines usage terms. Without it, you risk copyright infringement issues. It ensures both parties understand their rights and obligations, preventing disputes and protecting fair compensation for music creators."
+      },
+      {
+        question: "What types of royalties can be defined in the agreement?",
+        answer: "Music License Agreements can specify percentage-based royalties, fixed fees, custom payment terms, minimum guarantees, or combination structures. The agreement should clearly define calculation methods, reporting requirements, and payment schedules to ensure transparency and fair compensation."
+      },
+      {
+        question: "How do I specify where and how the music can be used?",
+        answer: "Specify the permitted geographic territories, media formats (film, TV, streaming, radio, advertising, etc.), duration of use, and whether rights are exclusive or non-exclusive. You can also restrict modifications, sublicensing, and commercial or non-commercial use categories."
+      },
+      {
+        question: "What must happen after the Music License Agreement is signed?",
+        answer: "After execution, both parties receive signed copies. The licensee receives permission to use music under agreed terms. The licensor retains ownership and can monitor compliance with usage restrictions, royalty payments, and reporting requirements throughout the agreement term."
+      },
+      {
+        question: "Can licensing rights be transferred or sublicensed?",
+        answer: "This depends on agreement terms. Most licenses prohibit transfer or sublicensing without explicit licensor consent. If allowed, the agreement should specify approval procedures, whether the licensor receives additional fees, and that the original licensee remains responsible for sublicensee compliance."
+      }
+    ]
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-        <Button
-          variant="outline"
-          onClick={() => navigate('/documents')}
-          className="mb-6"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Documents
-        </Button>
-
-        <div className="text-center mb-8">
-          <Music className="w-16 h-16 mx-auto mb-4 text-blue-600" />
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Music License Agreement</h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Create a professional music licensing agreement for copyright protection, royalty management, and legal compliance
+    <Layout>
+      <div className="container mx-auto px-4 py-12 max-w-4xl">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <div className="w-20 h-20 rounded-full bg-teal-100 flex items-center justify-center">
+              <Music className="w-10 h-10 text-teal-600" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{documentContent.title}</h1>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Define music usage rights, royalty structures, and fair compensation with legally binding terms
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-          <Card>
-            <CardHeader className="text-center">
-              <Clock className="w-8 h-8 mx-auto mb-2 text-blue-600" />
-              <CardTitle>Completion Time</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-2xl font-bold text-gray-900">6-10 minutes</p>
-              <p className="text-gray-600">Average completion time</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="text-center">
-              <FileText className="w-8 h-8 mx-auto mb-2 text-green-600" />
-              <CardTitle>Form Steps</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-2xl font-bold text-gray-900">4 Steps</p>
-              <p className="text-gray-600">Easy-to-follow process</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader className="text-center">
-              <Users className="w-8 h-8 mx-auto mb-2 text-purple-600" />
-              <CardTitle>Parties Involved</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center">
-              <p className="text-2xl font-bold text-gray-900">2 Parties</p>
-              <p className="text-gray-600">Copyright Owner & Licensee</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2" />
-                Key Features
-              </CardTitle>
-              <CardDescription>
-                What makes this music license agreement comprehensive and protective
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {features.map((feature, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="text-blue-600 mt-1">
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">{feature.title}</h4>
-                      <p className="text-sm text-gray-600">{feature.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Music className="w-5 h-5 mr-2" />
-                Common Use Cases
-              </CardTitle>
-              <CardDescription>
-                Popular applications for music licensing agreements
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 gap-2">
-                {useCases.map((useCase, index) => (
-                  <Badge key={index} variant="outline" className="justify-start p-2">
-                    {useCase}
-                  </Badge>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <Card className="mb-8">
+        {/* Other Names */}
+        <Card className="mb-8 bg-blue-50 border-blue-200">
           <CardHeader>
-            <CardTitle className="flex items-center">
-              <Music className="w-5 h-5 mr-2 text-blue-600" />
-              Music Licensing Benefits
-            </CardTitle>
+            <CardTitle className="text-lg">Also Known As</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-medium text-gray-900 mb-2">For Copyright Owners (Musicians/Publishers)</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Generate revenue from your music catalog</li>
-                  <li>• Maintain copyright ownership and control</li>
-                  <li>• Expand reach through authorized usage</li>
-                  <li>• Ensure proper attribution and credit</li>
-                  <li>• Protect against unauthorized modifications</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-900 mb-2">For Licensees (Content Creators/Businesses)</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Legal access to high-quality music</li>
-                  <li>• Clear usage rights and limitations</li>
-                  <li>• Protection from copyright infringement claims</li>
-                  <li>• Professional licensing documentation</li>
-                  <li>• Defined geographic and usage scope</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="flex items-center">
-              <Scale className="w-5 h-5 mr-2" />
-              Agreement Sections
-            </CardTitle>
-            <CardDescription>
-              Comprehensive clauses included in your music license agreement
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-              {sections.map((section, index) => (
-                <Badge key={index} variant="outline" className="justify-start p-2 text-xs">
-                  {section}
-                </Badge>
+            <div className="flex flex-wrap gap-2">
+              {documentContent.otherNames.map((name, index) => (
+                <span key={index} className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
+                  {name}
+                </span>
               ))}
             </div>
           </CardContent>
         </Card>
 
+        {/* What Is */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle className="flex items-center">
-              <AlertCircle className="w-5 h-5 mr-2 text-amber-500" />
-              Important Information
-            </CardTitle>
+            <CardTitle>What Is a Music License Agreement?</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <h4 className="font-medium text-gray-900 mb-2">Before You Start</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Verify ownership of music copyrights</li>
-                  <li>• Define specific usage purposes and limitations</li>
-                  <li>• Determine appropriate royalty structure</li>
-                  <li>• Set geographic boundaries for usage</li>
-                  <li>• Choose governing law jurisdiction</li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-medium text-gray-900 mb-2">What You'll Need</h4>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Complete contact information for both parties</li>
-                  <li>• Music title and copyright details</li>
-                  <li>• Specific usage purposes and project details</li>
-                  <li>• Royalty calculation methodology</li>
-                  <li>• Authorized signatories for both parties</li>
-                </ul>
-              </div>
+            <p className="text-gray-700 leading-relaxed">{documentContent.whatIs}</p>
+          </CardContent>
+        </Card>
+
+        {/* Key Benefits */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <DollarSign className="w-12 h-12 text-teal-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Revenue Generation</h3>
+                <p className="text-sm text-gray-600">Earn fair compensation when your music is used in films, ads, streaming, and other media projects worldwide</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Music className="w-12 h-12 text-teal-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Copyright Ownership</h3>
+                <p className="text-sm text-gray-600">Maintain full ownership of your music while controlling how it is used, credited, and modified</p>
+              </CardContent>
+            </Card>
+            <Card className="text-center">
+              <CardContent className="pt-6">
+                <Shield className="w-12 h-12 text-teal-600 mx-auto mb-3" />
+                <h3 className="font-bold text-gray-900 mb-2">Legal Protection</h3>
+                <p className="text-sm text-gray-600">Prevent unauthorized usage, protect against copyright infringement, and enforce your music rights professionally</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* When to Use */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>When to Use This Document</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {documentContent.whenToUse.map((item, index) => (
+                <div key={index} className="flex items-start space-x-3">
+                  <CheckCircle className="w-5 h-5 text-teal-600 mt-1 flex-shrink-0" />
+                  <p className="text-gray-700">{item}</p>
+                </div>
+              ))}
             </div>
           </CardContent>
         </Card>
 
+        {/* FAQs */}
         <Card className="mb-8">
           <CardHeader>
-            <CardTitle className="flex items-center">
-              <Shield className="w-5 h-5 mr-2 text-green-600" />
-              Legal Protection & Compliance
-            </CardTitle>
+            <CardTitle>Frequently Asked Questions</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <h4 className="font-semibold text-blue-800 mb-2">Copyright Protection</h4>
-                <p className="text-blue-700 text-sm">
-                  Maintain full ownership of your music while granting specific usage rights. 
-                  Control how your work is used, modified, and credited.
-                </p>
-              </div>
-              <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                <h4 className="font-semibold text-green-800 mb-2">Professional Standards</h4>
-                <p className="text-green-700 text-sm">
-                  Requires licensees to use music professionally and lawfully, with proper 
-                  attribution and adherence to agreed terms.
-                </p>
-              </div>
-              <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
-                <h4 className="font-semibold text-purple-800 mb-2">Dispute Resolution</h4>
-                <p className="text-purple-700 text-sm">
-                  Built-in arbitration clauses provide professional dispute resolution through 
-                  the American Arbitration Association.
-                </p>
-              </div>
+              {documentContent.faqs.map((faq, index) => {
+                const colors = ["bg-blue-50", "bg-green-50", "bg-purple-50", "bg-yellow-50", "bg-red-50"];
+                const borderColors = ["border-l-4 border-blue-500", "border-l-4 border-green-500", "border-l-4 border-purple-500", "border-l-4 border-yellow-500", "border-l-4 border-red-500"];
+                return (
+                  <div key={index} className={`${colors[index]} ${borderColors[index]} rounded-lg p-4`}>
+                    <p className="font-semibold text-gray-900 mb-2">{faq.question}</p>
+                    <p className="text-gray-700 text-sm">{faq.answer}</p>
+                  </div>
+                );
+              })}
             </div>
           </CardContent>
         </Card>
 
+        {/* Important Notice */}
+        <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-8 flex gap-4">
+          <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
+          <div>
+            <h3 className="font-bold text-amber-900 mb-2">Important Notice</h3>
+            <p className="text-amber-800 text-sm">
+              Music License Agreements involve important copyright and financial considerations. Clearly identify the music, copyright holder, licensee, usage scope, compensation terms, territories, and approval requirements. Consider consulting with a music attorney or licensing expert to ensure the agreement properly protects all parties' rights and complies with music industry standards and local copyright laws.
+            </p>
+          </div>
+        </div>
+
+        {/* CTA Button */}
         <div className="text-center">
-          <Button 
-            onClick={() => navigate('/music-license-form')}
+          <Button
+            onClick={() => navigate("/documents/music-license-agreement")}
             size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
+            className="bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white px-8 py-3"
           >
-            <Play className="w-5 h-5 mr-2" />
-            Start Creating Music License Agreement
+            Start Music License Agreement
+            <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
-          <p className="text-sm text-gray-500 mt-2">
-            Takes 6-10 minutes • Professional PDF output
+          <p className="text-sm text-gray-500 mt-3">
+            Estimated time: 15-20 minutes
           </p>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
