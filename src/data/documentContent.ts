@@ -63,35 +63,38 @@ export const documentContent: Record<string, DocumentContent> = {
   // === SECURITY & FINANCIAL AGREEMENTS ===
   "Security Agreement": {
     title: "Security Agreement",
-    whatIs: "A contract that pledges specific personal property (collateral) to secure a loan. If the borrower defaults, the lender has the legal right to claim the assets. It protects the lender and ensures repayment security. This document creates a 'security interest' in the collateral, giving the secured party priority over other creditors. Common collateral includes vehicles, equipment, inventory, accounts receivable, and other business assets.",
+    otherNames: ["Collateral Agreement", "Vehicle Security Agreement", "Security Agreement Form"],
+    whatIs: "A legally binding contract that provides the lender with a secured interest in specified personal property (collateral) if the borrower fails to repay the loan. With a properly drafted Security Agreement, both parties gain clarity and protection. This Security Agreement ensures that the lender has a legal claim over the collateral in case of default, the borrower clearly defines the pledged assets, and the loan arrangement remains secure and enforceable.",
     whenToUse: [
-      "You are lending money and want collateral protection (e.g., machinery, equipment, jewelry).",
-      "You are borrowing money and the lender requires security to lower the interest rate.",
-      "You need a formal, enforceable loan structure.",
-      "You want to perfect your security interest by filing a UCC-1 statement.",
-      "You're financing equipment or inventory for a business."
+      "You are lending money and want collateral as protection.",
+      "You are borrowing funds and the lender requires security.",
+      "You want a clear, enforceable agreement outlining borrower obligations.",
+      "You need to establish priority over other creditors through proper documentation.",
+      "You're financing business equipment, inventory, vehicles, or other valuable personal property."
     ],
     faqs: [
-      { q: "Does this cover Real Estate?", a: "No. For land or homes, use a Mortgage or Deed of Trust. Security Agreements are specifically for personal property (movable assets), not real property." },
-      { q: "Do I need to notarize it?", a: "It is highly recommended for stronger legal protection, though not always strictly required by law. Notarization adds authenticity and can be crucial in disputes." },
-      { q: "What is 'perfecting' a security interest?", a: "Perfection establishes your priority over other creditors. This is typically done by filing a UCC-1 Financing Statement with the Secretary of State." },
-      { q: "What happens if the borrower defaults?", a: "The secured party can repossess the collateral, following state law procedures. They may then sell it to recover the debt, with any excess returned to the borrower." },
-      { q: "Can I use multiple items as collateral?", a: "Yes. The agreement can list multiple assets, and you can even use 'after-acquired property' clauses to include future assets." }
+      { q: "How do you write a Security Agreement?", a: "You can easily draft a Security Agreement by answering a few guided questions about the total loan amount, property being used as collateral, collateral location, and which jurisdiction's law applies. Our template automatically generates a tailored, legally enforceable document within minutes." },
+      { q: "Does a Security Agreement need to be notarized?", a: "A Security Agreement does not legally require notarization, but it is highly recommended to enhance authenticity and enforceability. Notarization provides additional legal weight and verification of signatures." },
+      { q: "What is collateral?", a: "Collateral refers to valuable personal property pledged against a loan, such as vehicles, jewelry, coin collections, artwork, equipment, or other valuable assets. For real estate, use a Mortgage or Deed of Trust instead." },
+      { q: "What happens if the borrower defaults?", a: "If the borrower fails to repay, the lender has the legal right to claim the collateral. The secured party can repossess the assets following state law procedures and sell them to recover the debt owed." },
+      { q: "Can the Security Agreement cover multiple items as collateral?", a: "Yes. The agreement can list multiple assets as collateral. You can even include 'after-acquired property' clauses to cover future assets acquired by the borrower during the loan term." }
     ],
     keyProtections: [
-      "Detailed description of collateral",
-      "Default event definitions",
-      "Remedies upon default",
-      "Rights to inspect collateral",
-      "Insurance requirements for collateral",
-      "UCC filing provisions"
+      "Lender's legal claim over collateral in case of default",
+      "Clearly defined pledged assets with detailed description",
+      "Secure and enforceable loan arrangement",
+      "Rights to inspect and take possession of collateral",
+      "Insurance and maintenance requirements for collateral",
+      "Priority over other creditors (with proper UCC filing)"
     ],
     whatYouNeed: [
-      "Debtor and secured party full legal information",
-      "Detailed collateral description (serial numbers, values)",
-      "Loan amount and repayment terms",
-      "Default conditions and cure periods",
-      "State where collateral is located"
+      "Total loan amount",
+      "Detailed collateral description (items, serial numbers, values)",
+      "Collateral location",
+      "Jurisdiction's governing law",
+      "Debtor and lender full legal information",
+      "Loan repayment terms",
+      "Default conditions and cure periods"
     ],
     estimatedTime: "12-18 minutes"
   },
@@ -133,19 +136,21 @@ export const documentContent: Record<string, DocumentContent> = {
   },
 
   "Affidavit of Ownership": {
-    title: "Affidavit of Ownership",
-    whatIs: "A sworn legal statement declaring that you are the rightful owner of a specific piece of property, typically a vehicle, boat, or other titled asset. It's commonly used when original title documents are lost or during transfers of ownership. This document is legally binding and made under penalty of perjury.",
+    title: "Affidavit of Ownership Agreement",
+    otherNames: ["Ownership Affidavit", "Affidavit of Property Ownership"],
+    whatIs: "An Affidavit of Ownership Agreement is a legally binding document used to formally declare and prove ownership of real estate or a vehicle. This affidavit is commonly relied upon when a Deed, Title Certificate, or similar ownership document is unavailable or insufficient on its own. The Affidavit of Ownership Agreement on Legalgram clearly explains how the property was purchased, transferred, or inherited, making it a crucial legal instrument for ownership verification. Banks, financial institutions, lenders, and county or land record offices frequently require this affidavit as additional proof of ownership. Note: Depending on applicable laws, supporting documents such as a Real Property Deed or Certificate of Title may still need to be attached to this affidavit.",
     whenToUse: [
-      "You need to prove ownership without a title document.",
-      "You're applying for a duplicate title at the DMV.",
-      "You're transferring ownership of untitled property.",
-      "Original ownership documents have been lost or destroyed.",
-      "You need to establish a chain of ownership."
+      "You need legal proof of ownership of real property or land.",
+      "You need to confirm ownership of a vehicle.",
+      "A bank, lender, or government authority requests ownership verification.",
+      "You are clarifying ownership in the absence of formal title documents."
     ],
     faqs: [
-      { q: "When is this typically required?", a: "DMVs often require this when applying for a duplicate title, registering a vehicle purchased without proper documentation, or transferring inherited property." },
-      { q: "Does it replace a title?", a: "No, but it supports your application for a new title and serves as evidence of ownership while obtaining proper documentation." },
-      { q: "Must it be notarized?", a: "Yes, notarization is required for the affidavit to be legally valid and accepted by government agencies." }
+      { q: "Can I get an Affidavit of Ownership Agreement online?", a: "Yes. You can easily download a free Affidavit of Ownership Agreement from Legalgram. Our professionally drafted templates are editable, printable, and legally reliable." },
+      { q: "Do I need a lawyer to review my Affidavit of Ownership?", a: "While the draft Affidavit of Ownership Agreement on Legalgram is legally structured, consulting a legal professional is recommended for complex ownership matters." },
+      { q: "What is the cost of making an Affidavit of Ownership?", a: "Hiring a lawyer can cost between $200 and $1,000, depending on jurisdiction. With Legalgram, you can access the best format of Affidavit of Ownership Agreement with a free download option." },
+      { q: "What should I do after completing the Affidavit?", a: "After completing your Affidavit of Ownership Agreement, you may: Edit and customize it, Download it in PDF or Word format, Print and sign it, Proceed with notarization." },
+      { q: "Does an Affidavit of Ownership need notarization?", a: "Yes. Notarization is mandatory for an Affidavit of Ownership Agreement. Witnesses are generally not required unless specified by law." }
     ],
     keyProtections: [
       "Legal declaration under penalty of perjury",
@@ -166,34 +171,47 @@ export const documentContent: Record<string, DocumentContent> = {
 
   "General Affidavit": {
     title: "General Affidavit",
-    whatIs: "A written sworn statement of fact that can be used as evidence in legal proceedings or to verify information for official purposes. The person making the statement (affiant) swears under penalty of perjury that the contents are true. This versatile document is admissible in court and can be used for countless purposes.",
+    otherNames: [
+      "Affidavit Letter",
+      "Sworn Affidavit",
+      "Sworn Statement",
+      "Notarized Statement",
+      "Statement Under Oath",
+      "Sworn Oath",
+      "Sworn Oath Statement",
+      "Affidavit Form",
+      "Statement of Fact"
+    ],
+    whatIs: "An Affidavit Agreement is a written and notarized sworn statement in which a person (the affiant) declares certain facts to be true under oath. By signing this agreement, the affiant confirms that the information provided is accurate to the best of their knowledge and belief, and understands that making a false statement may amount to perjury under law. The Affidavit Agreement is commonly used as legal evidence in courts, government offices, and contractual matters. It can confirm facts relating to birth, death, residence, identity, marital status, ownership, or any other factual declaration required by law. Think of an Affidavit Agreement as written courtroom testimony. Instead of verbally swearing before a judge, the statement is made in writing and authenticated by a notary public. You can now download the Affidavit Agreement in the best legal format from Legalgram, completely free and ready for use.",
     whenToUse: [
-      "You need to make a formal, sworn statement of fact for court.",
-      "You're verifying identity or personal information for an agency.",
-      "You need to document specific events or circumstances.",
-      "You're providing evidence for an insurance claim.",
-      "You need sworn testimony but cannot appear in person."
+      "You are required to make a declaration or statement of fact under oath.",
+      "A legal, contractual, or administrative process demands sworn confirmation.",
+      "A court, bank, school, or government authority requests a notarized statement.",
+      "You need someone else to provide a sworn statement in writing."
     ],
     faqs: [
-      { q: "What makes an affidavit different from a regular written statement?", a: "An affidavit is sworn under oath and notarized, making it legally binding. False statements are punishable as perjury." },
-      { q: "Can I write my own affidavit?", a: "Yes, but it must follow legal formatting requirements and be notarized to be valid." },
-      { q: "Is an affidavit admissible in court?", a: "Yes, affidavits are generally admissible as evidence, though the opposing party may have the right to cross-examine the affiant." }
+      { q: "What Does an Affidavit Agreement Do?", a: "A General Affidavit Agreement allows a person to swear to facts for legal or official purposes. It is flexible and suitable for most situations unless a specific affidavit is required." },
+      { q: "Who Can Sign an Affidavit Agreement?", a: "Any person who: Is at least 18 years old, Is of sound mind, Has personal knowledge of the facts, Is not signing under pressure or coercion." },
+      { q: "Is Notarization Mandatory?", a: "Yes. An Affidavit Agreement must be notarized to be legally enforceable, especially if it is to be used in court." },
+      { q: "Do I Need a Lawyer?", a: "Not necessarily. Most people can complete a draft Affidavit Agreement themselves. However, legal review is recommended in high-value or sensitive matters." }
     ],
     keyProtections: [
-      "Legally binding sworn statement",
-      "Admissible as evidence",
-      "Penalty of perjury clause",
-      "Notary verification",
-      "Clear factual statements"
+      "Written and notarized sworn statement",
+      "Legally binding under penalty of perjury",
+      "Verified by notary public",
+      "Admissible as legal evidence in courts",
+      "Suitable for multiple jurisdictions",
+      "Professionally drafted legal format"
     ],
     whatYouNeed: [
-      "Specific facts to be attested",
-      "Purpose of the affidavit",
-      "Your identification",
-      "Witness information (if required)",
-      "Notary public availability"
+      "State and County where the affidavit is executed",
+      "Name of the Affiant (person making the statement)",
+      "State of Residence",
+      "Statement of facts to be declared",
+      "Personal knowledge of the facts",
+      "Notary public contact information"
     ],
-    estimatedTime: "5-8 minutes"
+    estimatedTime: "10-20 minutes"
   },
 
   // === HEALTHCARE & POWER OF ATTORNEY ===
@@ -266,7 +284,8 @@ export const documentContent: Record<string, DocumentContent> = {
 
   "Living Will": {
     title: "Living Will",
-    whatIs: "A legal document that expresses your wishes regarding life-sustaining medical treatment if you become terminally ill or permanently unconscious. Unlike a Healthcare Power of Attorney (which appoints someone to decide for you), a Living Will directly states YOUR decisions about end-of-life care.",
+    otherNames: ["Advance Directive", "Advance Healthcare Directive", "Medical Directive", "Advance Medical Directive", "Advance Health Care Directive"],
+    whatIs: "A Living Will is a legally binding document that outlines your medical wishes in advance, especially regarding life-sustaining treatments and end-of-life care.\nWith the best format Living Will from Legalgram, you can clearly state whether you accept or refuse specific medical treatments. You may also appoint a trusted individual (known as an agent) to make healthcare decisions on your behalf if you become unable to communicate.\nDownload a free Living Will on Legalgram and ensure your healthcare preferences are respected.",
     whenToUse: [
       "You want to specify your end-of-life care preferences.",
       "You want to relieve family members of difficult decisions.",
@@ -1210,6 +1229,40 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "15-20 minutes"
   },
 
+  "Royalty Agreement": {
+    title: "Royalty Agreement",
+    otherNames: ["Royalty Contract", "Royalty Agreements"],
+    whatIs: "A Royalty Agreement is a formal legal contract that governs the licensed use of intellectual property such as patents, trademarks, copyrights, designs, logos, or proprietary processes. This agreement clearly outlines the terms under which the property may be used and the compensation payable to the owner. It structures financial terms including royalty rates, payment schedules, and duration of use. Whether you are licensing your intellectual property or acquiring rights to use someone else's work, this agreement ensures clarity, protection, and enforceability.",
+    whenToUse: [
+      "You own intellectual property and want to license it for a fee",
+      "You want to grant limited usage rights while retaining ownership",
+      "You intend to use intellectual property owned by another individual or company",
+      "You need a legally enforceable agreement to define payment and usage terms"
+    ],
+    faqs: [
+      { q: "What is a Royalty Agreement?", a: "A Royalty Agreement is a formal legal contract governing the licensed use of intellectual property such as patents, trademarks, copyrights, designs, and proprietary processes. It clearly outlines terms of use and compensation payable to the owner, ensuring clarity and enforceability." },
+      { q: "Why do I need a Royalty Agreement?", a: "If you own intellectual property, a Royalty Agreement ensures fair compensation whenever your work is used commercially. If using others' IP, it demonstrates professionalism and legal compliance, increasing credibility and chances of obtaining permission." },
+      { q: "What types of intellectual property can be licensed?", a: "You can license patents, trademarks, copyrights, designs, logos, proprietary processes, software, artistic works, and other creative or technical intellectual property." },
+      { q: "Can this template work for multiple industries?", a: "Yes. This Royalty Agreement template is suitable and adaptable for multiple industries including technology, entertainment, publishing, design, manufacturing, and creative services." },
+      { q: "Is this agreement legally binding?", a: "Yes. When properly executed by authorized representatives of both parties, a Royalty Agreement is legally binding and enforceable under applicable state and federal law." }
+    ],
+    keyProtections: [
+      "Clearly defines ownership and licensed rights",
+      "Establishes royalty payment structure and terms",
+      "Specifies duration and scope of use",
+      "Provides legal protection for both parties",
+      "Enables fair compensation for IP use"
+    ],
+    whatYouNeed: [
+      "Description of intellectual property being licensed",
+      "Names and information of licensor and licensee",
+      "Royalty rate and payment schedule",
+      "Duration and geographic scope of license",
+      "Permitted uses and restrictions"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
   "Patent Assignment Agreement": {
     title: "Patent Assignment",
     otherNames: ["Patent Assignment Form", "Patent Assignment Contract", "Draft Patent Assignment Agreement", "Intellectual Property Assignment"],
@@ -1244,6 +1297,205 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "15-20 minutes"
   },
 
+  // === COPYRIGHT & INTELLECTUAL PROPERTY ===
+  "Copyright Request": {
+    title: "Copyright Request",
+    otherNames: ["Permission Request", "Media Permission Letter", "Copyright Permission Request", "Usage Rights Request"],
+    whatIs: "A formal document used to obtain permission from a copyright owner to use their protected work. Whether requesting rights for blogs, research papers, websites, images, videos, or other publications, a professionally drafted Copyright Request ensures clarity, legal soundness, and proper documentation. This document creates a binding permission arrangement when accepted by the copyright holder.",
+    whenToUse: [
+      "You want to use copyrighted content in a blog, article, research paper, or website.",
+      "You intend to publish images, videos, or written material owned by someone else.",
+      "You need formal permission before distributing, reproducing, or displaying copyrighted content.",
+      "You want to establish a documented license agreement for future legal reference.",
+      "You need to avoid copyright disputes by securing written permission before use."
+    ],
+    faqs: [
+      { q: "Is a Copyright Request legally binding?", a: "Once accepted by the copyright owner, it creates a binding license agreement granting you permission to use the work under specified terms. The agreement defines scope, duration, and usage rights, making it enforceable." },
+      { q: "Does a Copyright Request need to be notarized?", a: "Notarization is not strictly required legally, but it is highly recommended to enhance authenticity, enforceability, and create stronger legal documentation for future reference and disputes." },
+      { q: "What should I include in my request?", a: "Include your full contact information, copyright owner details, title and description of the work, intended use (blog/website/publication), scope and duration of use, specific licensing terms, request date, and any additional conditions or restrictions." },
+      { q: "How long does the permission last?", a: "Duration depends on the terms negotiated between you and the copyright owner. This can be limited (e.g., one-time use, one year, indefinite) or perpetual. Always specify the duration clearly in your agreement." },
+      { q: "What if the copyright owner refuses?", a: "If permission is refused, you cannot legally use the copyrighted work without risking infringement claims, cease-and-desist letters, damages, or litigation. Always obtain written permission before use." }
+    ],
+    keyProtections: [
+      "Clear permission terms and scope of use",
+      "Defined duration and renewal conditions",
+      "Specific description of copyrighted work",
+      "Attribution and credit requirements",
+      "Usage limitations and restrictions",
+      "Dispute resolution and enforcement clauses"
+    ],
+    whatYouNeed: [
+      "Your full name, address, and contact information",
+      "Copyright owner's full name, business name, and contact details",
+      "Title and detailed description of the copyrighted work",
+      "Specific intended use (blog, website, publication, research, etc.)",
+      "Scope of use (one-time, limited, perpetual, etc.)",
+      "Desired duration of permission",
+      "Any specific licensing terms or restrictions",
+      "Attribution and credit requirements",
+      "Territory and exclusivity terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === REFERRAL & COMMISSION AGREEMENTS ===
+  "Referral Fee Agreement": {
+    title: "Referral Fee Agreement",
+    otherNames: ["Real Estate Referral Fee Agreement", "Business Referral Agreement", "Finder's Referral Agreement", "Commission Referral Agreement"],
+    whatIs: "A legally binding contract that sets out the terms under which one party receives compensation for referring clients, customers, or business opportunities to another party. With a properly drafted Referral Fee Agreement, you can clearly define how much will be paid, when payments are due, and under what conditions the referral fee becomes payable. This agreement is ideal for brokers, agents, consultants, and businesses who rely on networking and introductions. If you frequently connect buyers and sellers, employers and candidates, or clients and service providers, a Referral Fee Agreement ensures your efforts are properly rewarded.",
+    whenToUse: [
+      "You introduce a buyer and seller and expect a commission.",
+      "You refer clients, customers, or business leads for a fee.",
+      "You hire a broker or agent to bring in new business.",
+      "You need help finding specific goods, services, or clients.",
+      "You want to formalize referral arrangements in writing."
+    ],
+    faqs: [
+      { q: "What is the difference between a Referral Fee Agreement and a Finder's Fee Agreement?", a: "While both involve compensation for introductions, a Referral Fee Agreement typically applies to ongoing referral relationships, while a Finder's Fee Agreement is often used for one-time transactions. The structure and scope may differ based on your specific business requirements." },
+      { q: "How do I determine the referral fee amount?", a: "The referral fee amount can be a fixed dollar amount, a percentage of the transaction value, or based on other agreed-upon metrics. You can customize the terms to match your specific business arrangement and market conditions." },
+      { q: "When should referral payment be made?", a: "Payment timing varies based on your agreement. Common arrangements include payment upon referral, upon transaction completion, upon client first purchase, or within specified days of the transaction closing." },
+      { q: "Is a Referral Fee Agreement legally binding?", a: "Yes. When properly executed by both parties, a Referral Fee Agreement creates legally enforceable obligations. Both parties must fulfill their commitments regarding referrals, payments, and the conditions specified in the agreement." },
+      { q: "Can I customize the terms to fit my business needs?", a: "Yes. A Referral Fee Agreement is highly customizable. You can tailor commission rates, payment terms, referral conditions, territory, duration, and other provisions to match your specific business requirements and arrangement." }
+    ],
+    keyProtections: [
+      "Clearly defined referral commission and payment terms",
+      "Legal right to receive compensation for qualifying referrals",
+      "Established payment conditions and timing",
+      "Protection against misunderstandings and disputes",
+      "Professional and transparent business relationship",
+      "Enforceable obligations on both parties"
+    ],
+    whatYouNeed: [
+      "Referrer and referred party full legal information",
+      "Clear definition of referral fee (fixed amount or percentage)",
+      "Payment terms and conditions",
+      "Description of qualifying referrals",
+      "Payment timeline and methods",
+      "Definition of when fee becomes payable",
+      "Duration of referral relationship",
+      "Territory or scope of referrals covered",
+      "Termination conditions"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === REAL ESTATE & PROPERTY AGREEMENTS ===
+  "Warranty Deed Agreement": {
+    title: "Warranty Deed Agreement",
+    otherNames: ["General Warranty Deed", "Full Warranty Deed", "Grant Deed"],
+    whatIs: "A legal document used to transfer property ownership from a seller (grantor) to a buyer (grantee) with full legal guarantees. With a properly drafted Warranty Deed Agreement, the seller assures that the property is free from debts or liens, they have full legal authority to sell, and the buyer is protected from past ownership claims. This professional format includes all essential clauses for full legal compliance and can be easily customized for your specific property transfer.",
+    whenToUse: [
+      "You are buying or selling property.",
+      "You want legal protection against title issues.",
+      "You are transferring property to a trust.",
+      "You are finalizing a real estate transaction.",
+      "You want a secure draft property transfer agreement."
+    ],
+    faqs: [
+      { q: "Is the Warranty Deed legally binding?", a: "Yes, once signed and notarized, your Warranty Deed Agreement is fully enforceable. The deed must be properly recorded with the local authority to establish legal transfer of ownership." },
+      { q: "Do states have different formats?", a: "Yes, states have different requirements for warranty deeds. However, the core elements remain consistent. Ensure your deed complies with your state's specific statutory requirements and recording procedures." },
+      { q: "What is the difference between a General Warranty Deed and a Special Warranty Deed?", a: "A General Warranty Deed provides maximum protection to the buyer, with the seller guaranteeing the entire ownership history. A Special Warranty Deed covers only the seller's ownership period, limiting liability for past title issues." },
+      { q: "How do I create and file a Warranty Deed Agreement?", a: "Create your ownership transfer by clearly identifying both parties (grantor and grantee), describing the property with legal descriptions, stating the consideration amount, obtaining notarization, and filing with the county recorder or relevant local authority." },
+      { q: "What happens if there are title issues after the deed is recorded?", a: "With a General Warranty Deed, the grantor remains liable for title defects arising from any point in the ownership chain. Title insurance can provide additional protection against undiscovered claims." }
+    ],
+    keyProtections: [
+      "Clear transfer of full property ownership",
+      "Seller's legal guarantee of no liens or encumbrances",
+      "Protection against past and hidden ownership claims",
+      "Seller's warranty of legal authority to sell",
+      "Buyer protection through notarization and recording",
+      "Legally compliant state-specific format"
+    ],
+    whatYouNeed: [
+      "Property address and legal description",
+      "Names and addresses of buyer (grantee) and seller (grantor)",
+      "Sale consideration amount",
+      "State and county details",
+      "Parcel or tax identification number",
+      "Notary availability for signature verification",
+      "Recording information for local authority",
+      "Title verification and search results",
+      "Identification documents for both parties"
+    ],
+    estimatedTime: "15-25 minutes"
+  },
+
+  // === CHARACTER & REFERENCE DOCUMENTS ===
+  "Affidavit of Character Agreement": {
+    title: "Affidavit of Character Agreement",
+    otherNames: ["Character Affidavit Agreement", "Character Letter", "Character Reference Agreement", "Affidavit of Good Moral Character", "Moral Character Declaration"],
+    whatIs: "An Affidavit of Character Agreement is a formal legal document used to provide a character reference under oath. Through this agreement, the affiant declares—on the basis of personal knowledge—that a specific individual is of good moral character, integrity, and reputation. Also known as an Affidavit of Good Moral Character, this agreement carries legal significance because it is sworn and notarized. By signing the Affidavit of Character Agreement, the affiant confirms that the statements made are true and correct to the best of their knowledge and belief, and understands that any false or misleading statement may result in legal consequences, including perjury.",
+    whenToUse: [
+      "You are asked to provide a sworn declaration regarding another person's moral character.",
+      "A court, tribunal, or authority requires character verification.",
+      "The document is needed for child custody proceedings, adoption matters, immigration cases, or background verification.",
+      "A government body, employer, or licensing authority requests a character reference under oath."
+    ],
+    faqs: [
+      { q: "Can I Download an Affidavit of Character Agreement for Free?", a: "Yes. You can download the Affidavit of Character Agreement for free. Our templates are easy to customize and designed to meet standard legal requirements." },
+      { q: "Do I Need a Lawyer to Prepare an Affidavit of Character Agreement?", a: "In most cases, an Affidavit of Character Agreement is straightforward and does not require legal representation. However, legal advice may be helpful if the affidavit is being used in sensitive or high-stakes proceedings." },
+      { q: "How Much Does an Affidavit of Character Agreement Usually Cost?", a: "Legal drafting fees for such documents can be substantial when prepared by counsel. Our service offers a free download of the Affidavit of Character Agreement, saving both time and expense." },
+      { q: "What Should Be Included in an Affidavit of Character Agreement?", a: "The agreement should include: full details of the affiant, the relationship between the affiant and the individual concerned, duration of acquaintance, a clear statement affirming good moral character, and proper notarization." },
+      { q: "Does an Affidavit of Character Agreement Require Notarization?", a: "Yes. An Affidavit of Character Agreement must be notarized to be legally valid. Witnesses are generally not required unless mandated by local law." }
+    ],
+    keyProtections: [
+      "Legal sworn declaration of good moral character",
+      "Notarized statement with legal enforceability",
+      "Protection against perjury consequences for truthfulness",
+      "Recognition by courts and government authorities",
+      "Clear documentation of character assessment",
+      "Professional format compliant with legal standards"
+    ],
+    whatYouNeed: [
+      "Full details and identification of the affiant",
+      "Full details of the person being referenced",
+      "Relationship description and duration of acquaintance",
+      "Specific statements affirming good moral character",
+      "Notary public contact information",
+      "Accurate and truthful information",
+      "Signature authority confirmation"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === OWNERSHIP & PROPERTY DOCUMENTS ===
+  "Affidavit of Ownership Agreement": {
+    title: "Affidavit of Ownership Agreement",
+    otherNames: ["Ownership Affidavit", "Affidavit of Property Ownership"],
+    whatIs: "An Affidavit of Ownership Agreement is a legally binding document used to formally declare and prove ownership of real estate or a vehicle. This affidavit is commonly relied upon when a Deed, Title Certificate, or similar ownership document is unavailable or insufficient on its own. The Affidavit of Ownership Agreement on Legalgram clearly explains how the property was purchased, transferred, or inherited, making it a crucial legal instrument for ownership verification. Banks, financial institutions, lenders, and county or land record offices frequently require this affidavit as additional proof of ownership. Note: Depending on applicable laws, supporting documents such as a Real Property Deed or Certificate of Title may still need to be attached to this affidavit.",
+    whenToUse: [
+      "You need legal proof of ownership of real property or land.",
+      "You need to confirm ownership of a vehicle.",
+      "A bank, lender, or government authority requests ownership verification.",
+      "You are clarifying ownership in the absence of formal title documents."
+    ],
+    faqs: [
+      { q: "Can I get an Affidavit of Ownership Agreement online?", a: "Yes. You can easily download a free Affidavit of Ownership Agreement from Legalgram. Our professionally drafted templates are editable, printable, and legally reliable." },
+      { q: "Do I need a lawyer to review my Affidavit of Ownership?", a: "While the draft Affidavit of Ownership Agreement on Legalgram is legally structured, consulting a legal professional is recommended for complex ownership matters." },
+      { q: "What is the cost of making an Affidavit of Ownership?", a: "Hiring a lawyer can cost between $200 and $1,000, depending on jurisdiction. With Legalgram, you can access the best format of Affidavit of Ownership Agreement with a free download option." },
+      { q: "What should I do after completing the Affidavit?", a: "After completing your Affidavit of Ownership Agreement, you may: Edit and customize it, Download it in PDF or Word format, Print and sign it, Proceed with notarization." },
+      { q: "Does an Affidavit of Ownership need notarization?", a: "Yes. Notarization is mandatory for an Affidavit of Ownership Agreement. Witnesses are generally not required unless specified by law." }
+    ],
+    keyProtections: [
+      "Legally binding proof of property or vehicle ownership",
+      "Recognized by banks, lenders, and government authorities",
+      "Notarized document with legal enforceability",
+      "Clear ownership verification without formal title documents",
+      "Protection against ownership disputes and claims",
+      "Professional format compliant with legal standards"
+    ],
+    whatYouNeed: [
+      "Full legal name and identification of property owner",
+      "Property address and legal description",
+      "Vehicle identification number (VIN) if applicable",
+      "Details of how ownership was acquired (purchase, inheritance, transfer)",
+      "Purchase date and relevant transaction information",
+      "Current ownership status confirmation",
+      "Notary public contact information"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
   // === DEFAULT FALLBACK ===
   "default": {
     title: "Legal Document",
@@ -1270,6 +1522,355 @@ export const documentContent: Record<string, DocumentContent> = {
       "Specific terms of the agreement",
       "Signatures from all parties",
       "Witnesses or notarization (if required)"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === LEGAL SERVICES AGREEMENTS ===
+  "Attorney Engagement Letter": {
+    title: "Attorney Engagement Letter",
+    otherNames: ["Attorney Engagement Agreement", "Legal Services Agreement", "Engagement Agreement", "Legal Representation Agreement", "Retainer Agreement"],
+    whatIs: "An Attorney Engagement Letter is a formal agreement used by lawyers and law firms to confirm the terms under which legal services will be provided to a client. This document clearly explains the scope of legal services, the responsibilities of the attorney and client, billing terms and fee structure, duration of the engagement, termination rights, and legal protections for both parties. This agreement helps establish transparency and protects both sides from disputes or misunderstandings.\nUsing a properly drafted Attorney Engagement Agreement is considered best legal practice. Whether you are a lawyer or a client, this agreement ensures clarity and professionalism.\nDownload a free Attorney Engagement Letter on Legalgram and ensure both attorney and client are aligned on terms, fees, and expectations.",
+    whenToUse: [
+      "A lawyer is providing legal services to a client",
+      "A law firm is onboarding a new client",
+      "Legal services involve fees or retainers",
+      "The scope of work needs to be clearly defined",
+      "You want written proof of the attorney-client relationship"
+    ],
+    faqs: [
+      { q: "When Should You Use an Attorney Engagement Letter?", a: "You should use an Attorney Engagement Letter whenever a lawyer is providing legal services to a client, a law firm is onboarding a new client, legal services involve fees or retainers, the scope of work needs to be clearly defined, or you want written proof of the attorney-client relationship. Even in jurisdictions where engagement letters are not mandatory, they are strongly recommended as a best practice." },
+      { q: "What Does an Attorney Engagement Letter Include?", a: "A professionally drafted Attorney Engagement Agreement usually contains names and details of the attorney and client, description of legal services, fee structure (hourly, flat fee, or retainer), billing and payment terms, retainer information, governing law, term and termination, confidentiality obligations, dispute resolution clause, attorney responsibilities, and client obligations. The Legalgram Attorney Engagement Letter includes all these essential clauses in a clear and legally sound format." },
+      { q: "Why Download an Attorney Engagement Letter from Legalgram?", a: "Unlike generic templates, the Attorney Engagement Letter available on Legalgram is drafted in professional legal language, easy to customize, suitable for lawyers and law firms, SEO-optimized and legally structured, available for free download, and designed to reduce legal risk. You can download this Attorney Engagement Agreement, edit it as per your jurisdiction, and use it immediately." },
+      { q: "Who Prepares an Attorney Engagement Letter?", a: "Typically, the attorney prepares the engagement letter and presents it to the client for review and signature. The agreement ensures transparency regarding legal fees, scope of services, who will handle the case, client obligations, and termination terms. Using a standardized Attorney Engagement Letter format helps lawyers remain compliant with ethical and professional requirements." }
+    ],
+    keyProtections: [
+      "Clearly defines roles and responsibilities",
+      "Establishes billing terms and payment schedules",
+      "Prevents disputes over legal fees",
+      "Documents the scope of legal representation",
+      "Protects both attorney and client",
+      "Serves as legal evidence in case of conflict",
+      "Defines retainer and fee structures",
+      "Outlines confidentiality obligations",
+      "Specifies termination and exit procedures"
+    ],
+    whatYouNeed: [
+      "Names and details of attorney and client",
+      "Description of legal services",
+      "Fee structure (hourly, flat fee, or retainer)",
+      "Billing and payment terms",
+      "Retainer information",
+      "Governing law jurisdiction",
+      "Term and termination conditions",
+      "Confidentiality obligations",
+      "Dispute resolution clause",
+      "Attorney and client obligations"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === MUSIC & COMPOSITION AGREEMENTS ===
+  "Composer Agreement": {
+    title: "Composer Agreement",
+    otherNames: ["Composition Agreement", "Music Composition Contract", "Music Agreement", "Composer Contract", "Music Creation Agreement", "Composer Services Agreement"],
+    whatIs: "A Composer Agreement is a formal legal document that governs the relationship between a composer and a client for the creation of original music. It specifies the scope of musical services, payment terms and compensation, ownership of compositions, duration of the engagement, confidentiality and usage rights, and dispute resolution terms. This agreement protects both parties and ensures that the creative and financial aspects of the project are clearly defined.\nUsing a written agreement is essential—even when working with friends or acquaintances. Whether you are hiring a composer or offering professional composition services, a Composer Agreement prevents disputes over ownership or usage and provides legal protection if issues arise.\nDownload a professionally drafted Composer Agreement from Legalgram for free and ensure clear terms for your music project.",
+    whenToUse: [
+      "You are hiring a composer to create original music",
+      "You are a composer offering professional composition services",
+      "Music is being created for films, games, advertisements, or media",
+      "You want clear ownership and payment terms",
+      "You want legal protection in case of disputes"
+    ],
+    faqs: [
+      { q: "When Should You Use a Composer Agreement?", a: "You should use a Composer Agreement when you are hiring a composer to create original music, when you are a composer offering professional composition services, when music is being created for films, games, advertisements, or media, when you want clear ownership and payment terms, or when you want legal protection in case of disputes. Using a written agreement is essential—even when working with friends or acquaintances." },
+      { q: "What Should a Composer Agreement Include?", a: "A professionally drafted Composer Agreement includes full names and contact details of both parties, description of the music composition services, payment method and schedule, term and termination provisions, ownership and copyright terms, confidentiality obligations, independent contractor status, governing law and dispute resolution, and amendment and termination clauses. A properly drafted agreement is structured to meet industry standards and legal expectations." },
+      { q: "Why Download a Composer Agreement from Legalgram?", a: "When you download a Composer Agreement from Legalgram, you get a legally drafted document in easy-to-edit format with professional structure, clear and enforceable terms, free download option, and ready-to-use agreement. Unlike generic templates, the Legalgram Composer Agreement is designed for real-world use and legal reliability." },
+      { q: "How Much Does a Composer Agreement Cost?", a: "Hiring a lawyer to draft a composer contract can cost hundreds of dollars. With Legalgram, you can draft a Composer Agreement for free, customize it easily, download it instantly, and use it for professional projects. This saves time, money, and legal hassle." },
+      { q: "What Happens After You Create Your Composer Agreement?", a: "After drafting your Composer Agreement, you can edit or customize it, sign it electronically, download it as a PDF or Word file, share it with your client, and store it for future reference. As a best practice, always provide a signed copy to all parties." },
+      { q: "Can a Lawyer Review My Composer Agreement?", a: "Yes. While Legalgram provides professionally structured agreements, you may also choose to have your document reviewed by a lawyer for additional assurance. This is especially useful for high-value projects or long-term contracts." }
+    ],
+    keyProtections: [
+      "Defines the length of the engagement",
+      "Clarifies payment structure and deadlines",
+      "Protects intellectual property rights",
+      "Sets expectations for both parties",
+      "Prevents disputes over ownership or usage",
+      "Provides legal protection if issues arise",
+      "Establishes independent contractor status",
+      "Specifies confidentiality obligations",
+      "Defines copyright ownership and usage rights"
+    ],
+    whatYouNeed: [
+      "Full names and contact details of both parties",
+      "Description of the music composition services",
+      "Payment method and schedule",
+      "Term and termination provisions",
+      "Ownership and copyright terms",
+      "Confidentiality obligations",
+      "Independent contractor status",
+      "Governing law and dispute resolution",
+      "Amendment and termination clauses",
+      "Project specifications and delivery schedule"
+    ],
+    estimatedTime: "12-18 minutes"
+  },
+
+  // === BUSINESS VENUE AGREEMENTS ===
+  "Concession Agreement": {
+    title: "Concession Agreement",
+    otherNames: ["Concession Contract", "Rent out Concession Space", "Vendor Agreement", "Food Service Agreement", "Concession Operator Agreement", "Merchandise Stand Agreement"],
+    whatIs: "A Concession Agreement is a formal legal document used when a business or venue owner allows another party (the concessionaire) to sell food, beverages, or merchandise at a designated location. This agreement helps prevent disputes by clearly stating who may operate the concession, what can be sold, how much rent or revenue share is owed, the duration of the agreement, and rules for operation and compliance.\nUsing a written Concession Agreement ensures transparency and legal protection for both parties. This agreement is commonly used for stadiums, festivals, malls, fairs, schools, and event venues.\nDownload a professionally drafted Concession Agreement from Legalgram for free and ensure clear payment and operational terms for your venue or concession business.",
+    whenToUse: [
+      "You are a venue owner renting space to a concession operator",
+      "You are a vendor operating a food or merchandise stand",
+      "You are hosting an event with concession sales",
+      "You want clear payment and operational terms",
+      "You want to avoid disputes or misunderstandings"
+    ],
+    faqs: [
+      { q: "Why Use a Concession Agreement?", a: "A professionally drafted Concession Agreement clearly defines responsibilities, avoids disputes over payment or duties, establishes operating hours and space usage, sets expectations for both parties, includes legal protections and remedies, and helps enforce compliance with local laws. Without a written agreement, both parties risk confusion, non-payment, or legal conflict." },
+      { q: "What Does a Concession Agreement Include?", a: "A standard Concession Agreement includes names and addresses of the parties, description of the concession space, payment terms and revenue share, term and termination clauses, operating hours, maintenance and cleanliness duties, insurance and liability provisions, force majeure clause, dispute resolution method, and governing law. This ensures a legally sound and enforceable contract." },
+      { q: "Benefits of Using a Legalgram Concession Agreement?", a: "When you download a concession agreement from Legalgram, you get professionally drafted legal language, easy-to-edit document format, clear structure and clauses, free download option, suitability for businesses and vendors, and ready for immediate use. Our agreements are designed to be simple, clear, and legally reliable." },
+      { q: "How Much Does a Concession Agreement Cost?", a: "Hiring a lawyer to draft a concession contract may cost hundreds or even thousands of dollars. With Legalgram, you can draft a concession agreement for free, customize it online, download instantly, and save legal fees. This makes Legalgram a cost-effective solution for businesses and vendors." },
+      { q: "What Happens After You Create a Concession Agreement?", a: "Once your Concession Agreement is drafted, you should review all terms carefully, sign the agreement, have the other party sign, keep a copy for your records, and use it as legal proof if disputes arise. You may also print or save the agreement in PDF or Word format." },
+      { q: "Can a Lawyer Review My Concession Agreement?", a: "Yes. While Legalgram provides a professionally drafted agreement, you may also have it reviewed by a lawyer for additional peace of mind—especially for long-term or high-value arrangements." }
+    ],
+    keyProtections: [
+      "Clearly defines responsibilities of both parties",
+      "Avoids disputes over payment or duties",
+      "Establishes operating hours and space usage",
+      "Sets expectations for both parties",
+      "Includes legal protections and remedies",
+      "Helps enforce compliance with local laws",
+      "Specifies maintenance and cleanliness duties",
+      "Covers insurance and liability provisions",
+      "Includes force majeure clause for unforeseen events",
+      "Defines term and termination procedures"
+    ],
+    whatYouNeed: [
+      "Names and addresses of the parties",
+      "Description of the concession space (location, size, equipment)",
+      "Payment terms and revenue share percentage",
+      "Term and renewal conditions",
+      "Operating hours and days",
+      "Maintenance and cleanliness requirements",
+      "Insurance and liability coverage amounts",
+      "Local permits and compliance requirements",
+      "Prohibited items or products",
+      "Termination and dispute resolution procedures"
+    ],
+    estimatedTime: "12-18 minutes"
+  },
+
+  // === PROFESSIONAL SERVICES AGREEMENTS ===
+  "Consulting Agreement": {
+    title: "Consulting Agreement",
+    otherNames: ["Consulting Contract", "Consulting Services Agreement", "Business Consultant Contract", "Independent Contractor Agreement", "Consulting Services Contract"],
+    whatIs: "A Consulting Agreement is a legally binding contract between a business or individual and a consultant that clearly defines the scope of work, payment terms, confidentiality obligations, and legal responsibilities of both parties. Whether you are hiring a consultant or offering consulting services, a well-drafted Consulting Agreement helps protect your interests and prevents misunderstandings.\nA Consulting Agreement (also known as a Consulting Contract or Consulting Services Agreement) is used when a company hires an independent consultant to provide professional services for a specific period or project. Unlike employment contracts, a Consulting Agreement confirms that the consultant is not an employee, but an independent contractor, responsible for their own taxes, insurance, and business operations.\nDownload a professionally drafted Consulting Agreement from Legalgram and ensure clear terms for your consulting engagement.",
+    whenToUse: [
+      "You are hiring an external expert or consultant",
+      "You are offering consulting services to a business",
+      "You want to protect confidential business information",
+      "You need clear payment and termination terms",
+      "You want legal clarity between contractor and company"
+    ],
+    faqs: [
+      { q: "When Should You Use a Consulting Agreement?", a: "You should use a Consulting Agreement when you are hiring an external expert or consultant, offering consulting services to a business, wanting to protect confidential business information, needing clear payment and termination terms, or wanting legal clarity between contractor and company. This agreement is ideal for business consultants, marketing consultants, IT and software consultants, HR and management consultants, financial or tax consultants, and strategy and operations consultants." },
+      { q: "Why Use a Consulting Agreement?", a: "A properly drafted Consulting Agreement provides several key benefits: defines roles and responsibilities, protects confidential information, clarifies payment terms, prevents legal disputes, establishes independent contractor status, and sets expectations for both parties. Without a written agreement, businesses risk disputes over payment, intellectual property, or performance expectations." },
+      { q: "What Does a Consulting Agreement Include?", a: "A standard Consulting Agreement includes parties information, scope of services and deliverables, term and duration with start and end dates, payment terms (hourly, fixed, or milestone-based), expense handling and reimbursement policies, confidentiality clause for business data and trade secrets, intellectual property rights and work ownership, conflict of interest restrictions, insurance requirements, termination clause, and governing law jurisdiction." },
+      { q: "Why Choose a Consulting Agreement from Legalgram?", a: "When you download a Consulting Agreement from Legalgram, you get professionally drafted legal language, editable and customizable format, free download option, suitability for businesses and consultants, SEO-optimized and legally structured template, and ready for immediate use. Our agreements are designed to save you time and legal costs while ensuring compliance with standard contract practices." },
+      { q: "How Much Does a Consulting Contract Cost?", a: "Hiring a lawyer to draft a consulting contract can cost hundreds or even thousands of dollars. With Legalgram, you can draft a Consulting Agreement for free, customize it online, download it instantly, and use it for business or personal consulting work." },
+      { q: "What Should You Do After Creating a Consulting Agreement?", a: "After drafting your agreement, review all terms carefully, share it with the other party, sign the agreement, save a copy for your records, and begin work under clear legal terms. You can also download the agreement as a PDF or Word document." },
+      { q: "Can a Lawyer Review My Consulting Agreement?", a: "Yes. While Legalgram provides professionally drafted templates, you may also have your agreement reviewed by a lawyer for added security—especially for high-value or long-term consulting projects." }
+    ],
+    keyProtections: [
+      "Defines roles and responsibilities clearly",
+      "Protects confidential information",
+      "Clarifies payment terms and structure",
+      "Prevents legal disputes",
+      "Establishes independent contractor status",
+      "Sets expectations for both parties",
+      "Specifies scope of services and deliverables",
+      "Clarifies intellectual property ownership",
+      "Defines conflict of interest restrictions",
+      "Includes termination and exit procedures"
+    ],
+    whatYouNeed: [
+      "Names and details of consultant and hiring company",
+      "Description of services to be provided",
+      "Clear deliverables and expected outcomes",
+      "Start and end date of engagement",
+      "Payment structure (hourly, fixed, or milestone-based)",
+      "Expense reimbursement policy",
+      "Confidentiality and non-disclosure terms",
+      "Intellectual property and work product ownership",
+      "Conflict of interest and non-compete restrictions",
+      "Insurance requirements and coverage amounts",
+      "Termination conditions and notice requirements"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  // === ENTERTAINMENT AGREEMENTS ===
+  "DJ Contract": {
+    title: "DJ Contract",
+    otherNames: ["DJ Booking Agreement", "DJ Services Agreement", "DJ Performance Contract", "Entertainment Contract", "DJ Agreement"],
+    whatIs: "A DJ Contract is a legally binding agreement between a DJ and a client, event organizer, venue owner, or promoter that clearly defines the terms of a DJ performance. Whether you are booking a DJ for a wedding, birthday party, corporate function, or nightclub event, a professionally drafted DJ Agreement helps protect both parties and avoids misunderstandings.\nA DJ Contract, also known as a DJ Booking Agreement, is used when a DJ is hired to perform at an event. This agreement outlines essential details such as event date and time, DJ services to be provided, payment terms, equipment responsibilities, cancellation policies, and legal rights and obligations. A properly drafted DJ Agreement on Legalgram ensures transparency and legal protection for both the DJ and the client.\nDownload a DJ Contract from Legalgram for free, prepared in the best legal format, fully editable, and suitable for professional use.",
+    whenToUse: [
+      "You are a DJ booking a performance",
+      "You are an event organizer hiring a DJ",
+      "You are hosting a wedding, party, or corporate event",
+      "You operate a DJ or entertainment business",
+      "You want written proof of services and payment terms"
+    ],
+    faqs: [
+      { q: "When Should You Use a DJ Agreement?", a: "You should use a DJ Contract if you are a DJ booking a performance, an event organizer hiring a DJ, hosting a wedding, party, or corporate event, operating a DJ or entertainment business, or wanting written proof of services and payment terms. Using a DJ Agreement template helps prevent disputes related to cancellations, late payments, or performance expectations." },
+      { q: "Why Is a DJ Contract Important?", a: "A well-drafted DJ Booking Agreement provides several important benefits: clearly defines payment and deposit terms, specifies event time, location, and duration, confirms equipment and sound requirements, protects against last-minute cancellations, establishes professional expectations, and offers legal protection if disputes arise. Without a DJ contract, both parties risk confusion, unpaid fees, and legal complications." },
+      { q: "What Does a DJ Contract Include?", a: "A professionally drafted DJ Agreement typically covers parties information (name and address of DJ and event organizer), event details (date, location, duration, and type), services provided (DJ performance, music selection, sound system, lighting, setup), payment terms (total fees, deposits, balance due date, overtime charges), equipment and setup responsibilities, cancellation policy rules, legal clauses (independent contractor status, liability, confidentiality, dispute resolution), and governing law jurisdiction." },
+      { q: "Why Use a DJ Contract from Legalgram?", a: "When you download a DJ Agreement from Legalgram, you get professionally drafted legal format, SEO-optimized and legally compliant template, easy to edit and customize, free DJ Agreement download, suitability for DJs venues and event planners, and printable Word and PDF formats. Our templates are designed to save time and eliminate legal guesswork." },
+      { q: "How Much Does a DJ Contract Cost?", a: "Hiring a lawyer to draft a DJ contract can cost hundreds of dollars. With Legalgram, you can create a DJ Contract for free, customize it online, download instantly, and use it for multiple events." },
+      { q: "What to Do After Creating Your DJ Agreement?", a: "Once your DJ Contract is drafted, review all details carefully, share it with the client, get signatures from both parties, save a copy for records, and proceed with the event confidently. You may also download your DJ Agreement from Legalgram in Word or PDF format." },
+      { q: "Can a Lawyer Review My DJ Contract?", a: "Yes. While Legalgram provides professionally written templates, you can also have your DJ Agreement reviewed by a legal professional for additional assurance—especially for high-value events." }
+    ],
+    keyProtections: [
+      "Clearly defines payment and deposit terms",
+      "Specifies event time, location, and duration",
+      "Confirms equipment and sound requirements",
+      "Protects against last-minute cancellations",
+      "Establishes professional expectations",
+      "Offers legal protection if disputes arise",
+      "Defines overtime charges and additional fees",
+      "Specifies equipment and setup responsibilities",
+      "Clarifies cancellation policies and refunds",
+      "Establishes independent contractor status"
+    ],
+    whatYouNeed: [
+      "Name and contact information of the DJ",
+      "Name and contact information of event organizer or client",
+      "Event date, start time, and expected end time",
+      "Event location and venue address",
+      "Type of event (wedding, party, corporate, etc.)",
+      "DJ services and music selection details",
+      "Total fees, deposit amount, and balance due date",
+      "Overtime charges and additional service fees",
+      "Equipment provided (sound system, lighting, microphones)",
+      "Setup and breakdown time requirements",
+      "Cancellation policy and rescheduling terms",
+      "Travel fees or mileage charges (if applicable)"
+    ],
+    estimatedTime: "12-18 minutes"
+  },
+
+  // === DJ SERVICES ===
+  "DJ Services Agreement": {
+    title: "DJ Services Agreement",
+    otherNames: ["DJ Services Contract", "DJ Performance Agreement", "Music Entertainment Services", "DJ Services Contract", "Event DJ Agreement"],
+    whatIs: "This is a legal document that formalizes an agreement or declaration between parties. Legal documents provide clarity, establish rights and obligations, and serve as evidence in case of disputes. They are designed to protect all parties involved by clearly documenting terms and expectations.\nA DJ Services Agreement is used when a DJ is hired to provide music and entertainment services for an event. This agreement outlines the terms of service, payment, equipment, timing, and responsibilities of both the DJ and the client.\nDownload a professionally drafted DJ Services Agreement from Legalgram to ensure clear terms for your event.",
+    whenToUse: [
+      "You are hiring a DJ for an event",
+      "You are a DJ offering services for events",
+      "You want to clarify payment and timing terms",
+      "You need written proof of services and fees",
+      "You want legal protection against cancellations"
+    ],
+    faqs: [
+      { q: "What should be included in a DJ Services Agreement?", a: "A DJ Services Agreement should include event details (date, time, location), DJ services provided (music selection, equipment, lighting), payment terms and total fees, deposit and balance due dates, cancellation policy, setup and breakdown times, equipment responsibilities, and contact information for both parties." },
+      { q: "Why do I need a DJ Services Agreement?", a: "A DJ Services Agreement protects both the DJ and the client by clearly defining expectations, payment terms, cancellation policies, and service details. It prevents misunderstandings and provides legal recourse if disputes arise." },
+      { q: "Can I use this for different types of events?", a: "Yes. A DJ Services Agreement can be customized for weddings, corporate events, parties, nightclub performances, or any event requiring DJ services. Tailor the details to match your specific event." },
+      { q: "What happens if the event is cancelled?", a: "The DJ Services Agreement should specify what happens if either party cancels. This typically includes refund policies, cancellation fees, and rescheduling options depending on when the cancellation occurs." },
+      { q: "Do I need a lawyer to review the agreement?", a: "While Legalgram provides professionally drafted templates, having a lawyer review your agreement is recommended for high-value events or complex arrangements." }
+    ],
+    keyProtections: [
+      "Defines event date, time, and location clearly",
+      "Specifies DJ services and equipment provided",
+      "Establishes payment terms and deposit requirements",
+      "Protects against cancellation losses",
+      "Clarifies setup and breakdown responsibilities",
+      "Defines overtime charges and additional fees",
+      "Establishes independent contractor status",
+      "Includes liability and insurance provisions",
+      "Specifies contact and emergency procedures",
+      "Provides legal evidence of agreement"
+    ],
+    whatYouNeed: [
+      "DJ name and contact information",
+      "Client/event organizer name and contact",
+      "Event date, start time, and end time",
+      "Event location and venue address",
+      "Type of event and expected attendance",
+      "DJ services required (music genres, lighting, etc.)",
+      "Total fee and deposit amount",
+      "Balance due date",
+      "Equipment provided by DJ",
+      "Setup and breakdown time requirements",
+      "Cancellation policy and refund terms",
+      "Payment method and contact for issues"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+  "Food Service Contract": {
+    title: "Food Service Contract",
+    otherNames: ["Food Service Agreement"],
+    whatIs: "A Food Service Contract is a legally binding agreement between a food service provider (such as a caterer, restaurant, or food vendor) and a client. This agreement clearly outlines the responsibilities, payment terms, food preparation details, and service expectations between both parties.\n\nA Food Service Agreement is used when a business or individual hires a food service provider to supply meals, catering, or ongoing food services. This agreement defines:\n• The type of food services provided\n• Payment terms and invoicing\n• Duration of the service\n• Responsibilities of each party\n• Cleanup and equipment usage\n• Liability and dispute resolution\n\nA well-drafted Food Service Agreement on Legalgram helps prevent misunderstandings and protects both the service provider and the client.",
+    whenToUse: [
+      "You are hiring a caterer or food service provider",
+      "You operate a restaurant or food business offering catering services",
+      "You are providing food for corporate events, weddings, or parties",
+      "You want written terms for food preparation and service",
+      "Using a Food Service Agreement template ensures professionalism and legal protection"
+    ],
+    faqs: [
+      {
+        q: "Why Is a Food Service Agreement Important?",
+        a: "Creating a Food Service Contract provides the following benefits: Clear expectations for both parties, Defined payment terms and timelines, Protection against disputes and non-payment, Clearly assigned responsibilities, Legal enforceability. Without a proper agreement, disagreements over service quality, timing, or payment can easily arise. If you are looking for a Food Service Agreement in the best legal format, you can download a free Food Service Contract on Legalgram, professionally drafted and easy to customize for your needs."
+      },
+      {
+        q: "What Does a Food Service Contract Include?",
+        a: "A professionally drafted Food Service Agreement on Legalgram typically includes: Party Information - Names and addresses of the client and food service provider. Scope of Services - Details of food preparation, delivery, setup, and cleanup. Payment Terms - Service fees, payment schedules, deposits, and late fees. Duration of Agreement - Start and end date of the food service engagement. Legal Clauses - Independent contractor status, liability, indemnity, and dispute resolution. Governing Law - State law governing the agreement."
+      },
+      {
+        q: "Why Download a Food Service Agreement from Legalgram?",
+        a: "When you download a Food Service Agreement from Legalgram, you get: Professionally drafted legal format, SEO-optimized and legally structured, Editable Word & PDF formats, Free Food Service Agreement download, Suitable for caterers, restaurants, and vendors, Easy to customize and reuse. Our agreements are designed to meet business and legal standards while remaining simple to use."
+      },
+      {
+        q: "How Much Does a Food Service Contract Cost?",
+        a: "Hiring a lawyer to draft a Food Service Contract may cost hundreds of dollars. With Legalgram, you can: Draft a Food Service Agreement for free, Customize it online, Download instantly, Use it for multiple clients. This makes professional agreements accessible and affordable for all food service businesses."
+      },
+      {
+        q: "What to Do After Creating Your Food Service Agreement?",
+        a: "Once your Food Service Contract is ready: 1. Review the terms carefully, 2. Share it with the client, 3. Sign the agreement (digitally or manually), 4. Keep a copy for your records, 5. Begin services with confidence. You can also download the Food Service Agreement as a PDF or Word file."
+      },
+      {
+        q: "Can My Food Service Agreement Be Reviewed by a Lawyer?",
+        a: "Yes. If you want extra protection, you can have your Food Service Contract reviewed by a legal professional. Legalgram also offers access to legal guidance for business agreements to ensure your contract meets all local requirements and protects your interests."
+      }
+    ],
+    keyProtections: [
+      "Clear expectations for both parties",
+      "Defined payment terms and timelines",
+      "Protection against disputes and non-payment",
+      "Clearly assigned responsibilities",
+      "Legal enforceability",
+      "Scope of services clearly defined",
+      "Equipment and liability terms",
+      "Dispute resolution procedures",
+      "Professional service standards",
+      "Written agreement protection"
+    ],
+    whatYouNeed: [
+      "Names and addresses of both parties",
+      "Details of food services to be provided",
+      "Food preparation specifications and dietary requirements",
+      "Delivery and setup requirements",
+      "Service fees and payment terms",
+      "Payment schedule and invoice details",
+      "Duration of service contract",
+      "Cleanup and equipment usage terms",
+      "Liability and indemnification clauses",
+      "Dispute resolution procedures",
+      "Cancellation and refund policy",
+      "Governing law and jurisdiction"
     ],
     estimatedTime: "10-15 minutes"
   }

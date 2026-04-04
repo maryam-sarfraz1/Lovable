@@ -1,308 +1,201 @@
+import React from "react";
+import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Coins, CheckCircle, AlertTriangle, ArrowRight, Lock, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, FileText, CheckCircle, AlertTriangle, DollarSign, Scale, TrendingUp, Building } from "lucide-react";
+
 
 const RoyaltyAgreementInfo = () => {
   const navigate = useNavigate();
 
+  const documentContent = {
+    title: "Royalty Agreement",
+    otherNames: ["Royalty Contract", "Royalty Agreements"],
+    whatIs: "A Royalty Agreement is a formal legal contract that governs the licensed use of intellectual property such as patents, trademarks, copyrights, designs, logos, or proprietary processes. This agreement clearly outlines the terms under which the property may be used and the compensation payable to the owner. It structures financial terms including royalty rates, payment schedules, and duration of use. Whether you are licensing your intellectual property or acquiring rights to use someone else's work, this agreement ensures clarity, protection, and enforceability.",
+    whenToUse: [
+      "You own intellectual property and want to license it for a fee",
+      "You want to grant limited usage rights while retaining ownership",
+      "You intend to use intellectual property owned by another individual or company",
+      "You need a legally enforceable agreement to define payment and usage terms"
+    ],
+    faqs: [
+      {
+        question: "What is a Royalty Agreement?",
+        answer: "A Royalty Agreement is a formal legal contract governing the licensed use of intellectual property such as patents, trademarks, copyrights, designs, and proprietary processes. It clearly outlines terms of use and compensation payable to the owner, ensuring clarity and enforceability."
+      },
+      {
+        question: "Why do I need a Royalty Agreement?",
+        answer: "If you own intellectual property, a Royalty Agreement ensures fair compensation whenever your work is used commercially. If using others' IP, it demonstrates professionalism and legal compliance, increasing credibility and chances of obtaining permission."
+      },
+      {
+        question: "What types of intellectual property can be licensed?",
+        answer: "You can license patents, trademarks, copyrights, designs, logos, proprietary processes, software, artistic works, and other creative or technical intellectual property."
+      },
+      {
+        question: "Can this template work for multiple industries?",
+        answer: "Yes. This Royalty Agreement template is suitable and adaptable for multiple industries including technology, entertainment, publishing, design, manufacturing, and creative services."
+      },
+      {
+        question: "Is this agreement legally binding?",
+        answer: "Yes. When properly executed by authorized representatives of both parties, a Royalty Agreement is legally binding and enforceable under applicable state and federal law."
+      }
+    ]
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-6">
-          <Button
-            variant="outline"
-            onClick={() => navigate('/documents')}
-            className="mb-4"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Documents
-          </Button>
-          
-          <div className="text-center mb-8">
-            <DollarSign className="w-16 h-16 mx-auto mb-4 text-green-600" />
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Royalty Agreement</h1>
-            <p className="text-lg text-gray-600">
-              Licensing intellectual property in exchange for ongoing royalty payments
-            </p>
+    <Layout>
+      <div className="max-w-4xl mx-auto">
+        {/* Header with Icon */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-violet-100 rounded-full mb-6">
+            <Coins className="w-10 h-10 text-violet-600" />
           </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">{documentContent.title}</h1>
+          <p className="text-xl text-gray-600">License your intellectual property and ensure fair compensation</p>
         </div>
 
-        <div className="grid gap-6 mb-8">
-          <Card>
+        {/* Other Names Card */}
+        {documentContent.otherNames && documentContent.otherNames.length > 0 && (
+          <Card className="mb-8 border-l-4 border-blue-500">
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-blue-600" />
-                What is a Royalty Agreement?
+              <CardTitle className="text-lg text-blue-700">Also Known As</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2">
+                {documentContent.otherNames.map((name, idx) => (
+                  <span key={idx} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* What Is Card */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center text-gray-900">
+              <BookOpen className="w-5 h-5 mr-3 text-violet-600" />
+              What Is a {documentContent.title}?
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-700 text-lg leading-relaxed">{documentContent.whatIs}</p>
+          </CardContent>
+        </Card>
+
+        {/* Key Benefits Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <Card className="border-t-4 border-violet-500">
+            <CardHeader>
+              <CardTitle className="flex items-center text-base">
+                <Coins className="w-5 h-5 mr-2 text-violet-600" />
+                Fair Compensation
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-700 mb-4">
-                A Royalty Agreement is a legal contract that grants one party (the grantee) the right 
-                to use another party's (the grantor's) intellectual property in exchange for ongoing 
-                royalty payments. Unlike a lump-sum purchase, royalties provide continuous compensation 
-                based on the commercial success of the licensed property.
+              <p className="text-gray-600 text-sm">
+                Establishes clear royalty rates and payment schedules ensuring fair compensation whenever your intellectual property is used commercially.
               </p>
-              <p className="text-gray-700">
-                This arrangement allows IP owners to monetize their assets while maintaining ownership, 
-                and enables businesses to access valuable intellectual property without large upfront 
-                investments. Royalty agreements are common in industries like entertainment, technology, 
-                pharmaceuticals, and manufacturing.
+            </CardContent>
+          </Card>
+
+          <Card className="border-t-4 border-violet-500">
+            <CardHeader>
+              <CardTitle className="flex items-center text-base">
+                <BookOpen className="w-5 h-5 mr-2 text-violet-600" />
+                Clear Terms & Conditions
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 text-sm">
+                Defines ownership, licensed rights, permitted uses, restrictions, and duration of use with legal clarity and enforceability.
               </p>
             </CardContent>
           </Card>
 
-          <Card>
+          <Card className="border-t-4 border-violet-500">
             <CardHeader>
-              <CardTitle className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
-                Key Components of Our Royalty Agreement
+              <CardTitle className="flex items-center text-base">
+                <Lock className="w-5 h-5 mr-2 text-violet-600" />
+                Protection for Both Parties
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Rights & Territory</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Exclusive licensing rights</li>
-                    <li>• Geographic territory definition</li>
-                    <li>• Commercial use permissions</li>
-                    <li>• Distribution and promotion rights</li>
-                    <li>• Property protection obligations</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Payment Structure</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Flexible royalty calculation methods</li>
-                    <li>• Regular payment schedules</li>
-                    <li>• Detailed reporting requirements</li>
-                    <li>• Late payment consequences</li>
-                    <li>• Profit definition and deductions</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Building className="w-5 h-5 mr-2 text-purple-600" />
-                Who Uses Royalty Agreements?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">IP Owners</h4>
-                  <p className="text-sm text-gray-700">
-                    Inventors, artists, authors, and companies seeking to monetize their intellectual property
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Businesses</h4>
-                  <p className="text-sm text-gray-700">
-                    Companies wanting to use patented technology, trademarks, or copyrighted content
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Franchisors</h4>
-                  <p className="text-sm text-gray-700">
-                    Businesses licensing their brand, methods, and systems to franchisees
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <TrendingUp className="w-5 h-5 mr-2 text-orange-600" />
-                Types of Royalty Structures
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 bg-blue-50 border-l-4 border-blue-400">
-                  <h4 className="font-semibold">Percentage Royalty</h4>
-                  <p className="text-sm text-gray-700">Fixed percentage of gross or net revenue (e.g., 5% of sales)</p>
-                </div>
-                <div className="p-3 bg-green-50 border-l-4 border-green-400">
-                  <h4 className="font-semibold">Per-Unit Royalty</h4>
-                  <p className="text-sm text-gray-700">Fixed amount per unit sold (e.g., $2.50 per product)</p>
-                </div>
-                <div className="p-3 bg-yellow-50 border-l-4 border-yellow-400">
-                  <h4 className="font-semibold">Tiered Royalty</h4>
-                  <p className="text-sm text-gray-700">Rates change based on sales volume or time periods</p>
-                </div>
-                <div className="p-3 bg-purple-50 border-l-4 border-purple-400">
-                  <h4 className="font-semibold">Minimum Guarantees</h4>
-                  <p className="text-sm text-gray-700">Guaranteed minimum payments regardless of sales performance</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Scale className="w-5 h-5 mr-2 text-indigo-600" />
-                Common Industries & Applications
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <h4 className="font-semibold">Technology</h4>
-                    <p className="text-sm text-gray-700">Software licensing, patent licensing, technology transfer</p>
-                  </div>
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <h4 className="font-semibold">Entertainment</h4>
-                    <p className="text-sm text-gray-700">Music royalties, book publishing, film distribution</p>
-                  </div>
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <h4 className="font-semibold">Manufacturing</h4>
-                    <p className="text-sm text-gray-700">Product design licensing, manufacturing processes</p>
-                  </div>
-                  <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                    <h4 className="font-semibold">Franchising</h4>
-                    <p className="text-sm text-gray-700">Brand licensing, business model replication</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <DollarSign className="w-5 h-5 mr-2 text-green-600" />
-                Benefits of Royalty Agreements
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <h4 className="font-semibold text-green-800 mb-2">For IP Owners (Grantors):</h4>
-                  <ul className="space-y-1 text-green-700 text-sm">
-                    <li>• Ongoing revenue stream</li>
-                    <li>• Retained ownership of IP</li>
-                    <li>• Market expansion without investment</li>
-                    <li>• Risk sharing with licensees</li>
-                    <li>• Multiple licensing opportunities</li>
-                  </ul>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">For Licensees (Grantees):</h4>
-                  <ul className="space-y-1 text-blue-700 text-sm">
-                    <li>• Access to proven IP</li>
-                    <li>• Lower upfront costs</li>
-                    <li>• Reduced development time</li>
-                    <li>• Performance-based payments</li>
-                    <li>• Competitive advantage</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <AlertTriangle className="w-5 h-5 mr-2 text-red-600" />
-                Important Considerations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Valuation Challenges</h4>
-                  <p className="text-red-700 text-sm">
-                    Determining fair royalty rates can be complex. Consider market standards, 
-                    IP value, territory scope, and exclusivity when setting rates.
-                  </p>
-                </div>
-                <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                  <h4 className="font-semibold text-yellow-800 mb-2">Performance Monitoring</h4>
-                  <p className="text-yellow-700 text-sm">
-                    Establish clear reporting requirements and audit rights to ensure 
-                    accurate royalty calculations and payments.
-                  </p>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Territory & Exclusivity</h4>
-                  <p className="text-blue-700 text-sm">
-                    Clearly define geographic boundaries and exclusivity terms to avoid 
-                    conflicts and ensure proper market coverage.
-                  </p>
-                </div>
-                <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg">
-                  <h4 className="font-semibold text-purple-800 mb-2">Termination Provisions</h4>
-                  <p className="text-purple-700 text-sm">
-                    Include clear termination clauses for non-payment, breach of terms, 
-                    or failure to meet minimum performance standards.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
-                Legal Protections Included
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold">Warranties & Representations</h4>
-                  <p className="text-sm text-gray-700">Both parties provide assurances about their authority and compliance</p>
-                </div>
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold">Indemnification</h4>
-                  <p className="text-sm text-gray-700">Protection against claims arising from agreement breaches</p>
-                </div>
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold">Confidentiality</h4>
-                  <p className="text-sm text-gray-700">Protection of proprietary and business information</p>
-                </div>
-                <div className="p-3 bg-gray-50 border border-gray-200 rounded-lg">
-                  <h4 className="font-semibold">Termination Rights</h4>
-                  <p className="text-sm text-gray-700">Clear procedures for ending the agreement under various circumstances</p>
-                </div>
-              </div>
+              <p className="text-gray-600 text-sm">
+                Provides legal protection for both licensor and licensee, demonstrating professionalism and ensuring compliance with applicable laws.
+              </p>
             </CardContent>
           </Card>
         </div>
 
-        <div className="text-center">
-          <Card className="bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200">
-            <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-2">Ready to Create Your Royalty Agreement?</h3>
-              <p className="text-gray-600 mb-4">
-                Our comprehensive 5-step form will guide you through creating a professional 
-                royalty agreement that protects both parties and ensures fair compensation.
-              </p>
-              <p className="text-sm text-gray-500 mt-2">
-                Takes 10-15 minutes • Professional PDF output
-              </p>
-              <Button 
-                className="mt-6 bg-green-600 hover:bg-green-700 text-white"
-                onClick={() => navigate('/royalty-agreement-form')}
-              >
-                <FileText className="w-4 h-4 mr-2" />
-                Start Creating
-              </Button>
-            </CardContent>
-          </Card>
+        {/* When to Use Section */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>When to Use a {documentContent.title}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {documentContent.whenToUse.map((item, idx) => (
+                <div key={idx} className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-violet-600 mr-3 mt-0.5 flex-shrink-0" />
+                  <span className="text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* FAQs */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Frequently Asked Questions</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-6">
+              {documentContent.faqs.map((faq, idx) => {
+                const colors = ["bg-blue-50 border-blue-200", "bg-green-50 border-green-200", "bg-purple-50 border-purple-200", "bg-yellow-50 border-yellow-200", "bg-red-50 border-red-200"];
+                const color = colors[idx % colors.length];
+                return (
+                  <div key={idx} className={`p-4 border rounded-lg ${color}`}>
+                    <h4 className="font-semibold text-gray-900 mb-2">{faq.question}</h4>
+                    <p className="text-gray-700 text-sm">{faq.answer}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Important Notice */}
+        <Card className="mb-8 border-l-4 border-amber-500 bg-amber-50">
+          <CardHeader>
+            <CardTitle className="flex items-center text-amber-900">
+              <AlertTriangle className="w-5 h-5 mr-2 text-amber-600" />
+              Important Notice
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-amber-900 text-sm">
+              Royalty Agreements involve intellectual property licensing and financial arrangements. We strongly recommend consulting with an intellectual property attorney to ensure proper structure, fair royalty rates, tax compliance, and legal enforceability under applicable state and federal laws.
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* CTA Button */}
+        <div className="text-center mb-8">
+          <Button
+            className="bg-gradient-to-r from-violet-600 to-violet-700 hover:from-violet-700 hover:to-violet-800 text-white px-8 py-6 text-lg font-semibold"
+            onClick={() => navigate("/documents/royalty-agreement")}
+          >
+            Start Royalty Agreement
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Button>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

@@ -1,179 +1,142 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Heart, CheckCircle, AlertTriangle, ArrowRight } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { CheckCircle, BookOpen, Heart, Lock } from "lucide-react";
+import { documentContent } from "@/data/documentContent";
 
-const LivingWillInfo = () => {
+const LivingWillInfo: React.FC = () => {
   const navigate = useNavigate();
-
-  const documentContent = {
-    title: "Living Will",
-    otherNames: ["Advance Directive", "Advance Healthcare Directive", "Medical Directive", "Advance Medical Directive", "Advance Health Care Directive"],
-    whatIs: "A Living Will is a legally binding document that outlines your medical wishes in advance, especially regarding life-sustaining treatments and end-of-life care. It allows you to clearly specify whether you accept or refuse particular medical treatments and permits you to designate a trusted healthcare agent to make medical decisions if you become incapacitated. This ensures your healthcare preferences are respected and reduces the burden on family members during critical situations.",
-    whenToUse: [
-      "Planning ahead for medical emergencies and ensuring your wishes are documented",
-      "Ensuring your healthcare preferences are followed during end-of-life care situations",
-      "Avoiding family disputes over healthcare decisions and treatment options",
-      "Communicating clearly with doctors and healthcare providers about your medical preferences"
-    ],
-    faqs: [
-      {
-        question: "How can I create a Living Will for free?",
-        answer: "You can download a Living Will template, fill in your personal and medical preferences, and sign it according to legal requirements. Most states require two witnesses or notarization for validity."
-      },
-      {
-        question: "Do I need a lawyer to draft a Living Will?",
-        answer: "No, you can use a professionally drafted template. However, legal advice is recommended for complex situations or if you have specific medical conditions requiring detailed provisions."
-      },
-      {
-        question: "Does a Living Will need to be notarized?",
-        answer: "While not always mandatory, notarization or witnesses significantly strengthen the validity and enforceability of your document. Check your state's specific requirements."
-      },
-      {
-        question: "What happens after I create a Living Will?",
-        answer: "Share copies with your healthcare agent, primary physician, and family members. Keep the original in a safe but accessible location, and inform loved ones about your decisions."
-      },
-      {
-        question: "What's the difference between a Living Will and a Power of Attorney?",
-        answer: "A Living Will focuses on medical decisions and life-support preferences. A Durable Power of Attorney grants broader authority including financial and legal matters. Both are important for a comprehensive legal plan."
-      }
-    ]
-  };
+  const doc = documentContent["Living Will"] || documentContent["default"];
 
   return (
     <Layout>
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-4">
-            <div className="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center">
-              <Heart className="w-10 h-10 text-red-600" />
+      <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-pink-50 py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          {/* Header Section */}
+          <div className="mb-12">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="p-3 bg-red-100 rounded-lg">
+                <Heart className="w-8 h-8 text-red-600" />
+              </div>
+              <h1 className="text-4xl font-bold text-gray-900">{doc.title}</h1>
             </div>
+            <p className="text-lg text-gray-700 mb-6">{doc.whatIs}</p>
+
+            {/* Other Names / Aliases */}
+            {doc.otherNames && doc.otherNames.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-6">
+                {doc.otherNames.map((name) => (
+                  <span key={name} className="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full font-medium">
+                    {name}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{documentContent.title}</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ensure your medical wishes are honored with a legally binding healthcare directive
-          </p>
-        </div>
 
-        {/* Other Names */}
-        <Card className="mb-8 bg-blue-50 border-blue-200">
-          <CardHeader>
-            <CardTitle className="text-lg">Also Known As</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {documentContent.otherNames.map((name, index) => (
-                <span key={index} className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-                  {name}
-                </span>
-              ))}
+          {/* When to Use Section */}
+          {doc.whenToUse && doc.whenToUse.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <BookOpen className="w-6 h-6 text-red-600" />
+                When to Use
+              </h2>
+              <ul className="space-y-3">
+                {doc.whenToUse.map((use, idx) => (
+                  <li key={idx} className="flex gap-3 items-start">
+                    <CheckCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700">{use}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </CardContent>
-        </Card>
+          )}
 
-        {/* What Is */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>What Is a Living Will?</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-gray-700 leading-relaxed">{documentContent.whatIs}</p>
-          </CardContent>
-        </Card>
-
-        {/* Key Benefits */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Key Benefits</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Heart className="w-12 h-12 text-red-600 mx-auto mb-3" />
-                <h3 className="font-bold text-gray-900 mb-2">Honored Wishes</h3>
-                <p className="text-sm text-gray-600">Ensure your healthcare preferences are respected when you cannot communicate your desires</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <CheckCircle className="w-12 h-12 text-green-600 mx-auto mb-3" />
-                <h3 className="font-bold text-gray-900 mb-2">Clear Guidance</h3>
-                <p className="text-sm text-gray-600">Provide doctors and family with clear instructions about your medical treatment preferences</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <AlertTriangle className="w-12 h-12 text-purple-600 mx-auto mb-3" />
-                <h3 className="font-bold text-gray-900 mb-2">Peace of Mind</h3>
-                <p className="text-sm text-gray-600">Reduce family burden during medical emergencies and avoid disputes over end-of-life care</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* When to Use */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>When to Use This Document</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {documentContent.whenToUse.map((item, index) => (
-                <div key={index} className="flex items-start space-x-3">
-                  <CheckCircle className="w-5 h-5 text-green-600 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700">{item}</p>
-                </div>
-              ))}
+          {/* What You Need Section */}
+          {doc.whatYouNeed && doc.whatYouNeed.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <CheckCircle className="w-6 h-6 text-red-600" />
+                What You Need
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {doc.whatYouNeed.map((item, idx) => (
+                  <Card key={idx} className="border-red-100 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <p className="text-sm text-gray-700">{item}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
-          </CardContent>
-        </Card>
+          )}
 
-        {/* FAQs */}
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle>Frequently Asked Questions</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              {documentContent.faqs.map((faq, index) => {
-                const colors = ["bg-blue-50", "bg-green-50", "bg-purple-50", "bg-yellow-50", "bg-red-50"];
-                const borderColors = ["border-l-4 border-blue-500", "border-l-4 border-green-500", "border-l-4 border-purple-500", "border-l-4 border-yellow-500", "border-l-4 border-red-500"];
-                return (
-                  <div key={index} className={`${colors[index]} ${borderColors[index]} rounded-lg p-4`}>
-                    <p className="font-semibold text-gray-900 mb-2">{faq.question}</p>
-                    <p className="text-gray-700 text-sm">{faq.answer}</p>
-                  </div>
-                );
-              })}
+          {/* Key Protections Section */}
+          {doc.keyProtections && doc.keyProtections.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <Lock className="w-6 h-6 text-red-600" />
+                Key Protections
+              </h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {doc.keyProtections.map((protection, idx) => (
+                  <Card key={idx} className="border-red-100 bg-red-50 hover:shadow-lg transition-shadow">
+                    <CardContent className="p-4">
+                      <div className="flex gap-3 items-start">
+                        <CheckCircle className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                        <p className="text-sm text-gray-700">{protection}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
-          </CardContent>
-        </Card>
+          )}
 
-        {/* Important Notice */}
-        <div className="bg-amber-50 border-l-4 border-amber-500 rounded-lg p-6 mb-8 flex gap-4">
-          <AlertTriangle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-1" />
-          <div>
-            <h3 className="font-bold text-amber-900 mb-2">Important Notice</h3>
-            <p className="text-amber-800 text-sm">
-              A Living Will is an important healthcare planning document. Requirements vary by state regarding witnesses, notarization, and specific healthcare preferences. Consult with a qualified attorney to ensure your Living Will complies with your state's laws, clearly expresses your medical wishes, and properly designates your healthcare agent.
+          {/* FAQ Section */}
+          {doc.faqs && doc.faqs.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                {doc.faqs.map((faq, idx) => (
+                  <Card key={idx} className="border-red-100 hover:shadow-lg transition-shadow">
+                    <CardHeader className="pb-3">
+                      <CardTitle className="text-base text-red-700">{faq.q}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-sm text-gray-700">{faq.a}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Important Note */}
+          <div className="mb-12 p-6 bg-red-50 border-2 border-red-200 rounded-lg">
+            <p className="text-sm text-gray-700">
+              <strong>Important Note:</strong> A Living Will is a critical healthcare planning document. Requirements for witnesses, notarization, and specific healthcare preferences vary by state. Ensure all statements accurately reflect your medical wishes. Consult with a qualified attorney to ensure your Living Will complies with your state's laws and is properly executed. Share copies with your healthcare agent, primary physician, and family members.
             </p>
           </div>
-        </div>
 
-        {/* CTA Button */}
-        <div className="text-center">
-          <Button
-            onClick={() => navigate("/documents/living-will")}
-            size="lg"
-            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-8 py-3"
-          >
-            Start Living Will
-            <ArrowRight className="w-5 h-5 ml-2" />
-          </Button>
-          <p className="text-sm text-gray-500 mt-3">
-            Estimated time: 15-20 minutes
-          </p>
+          {/* CTA Buttons */}
+          <div className="flex gap-4 justify-center">
+            <Button
+              onClick={() => navigate("/")}
+              variant="outline"
+              className="px-6 py-2"
+            >
+              Back to Home
+            </Button>
+            <Button
+              onClick={() => navigate("/documents/living-will")}
+              className="px-6 py-2 bg-red-600 hover:bg-red-700 text-white"
+            >
+              Get Living Will
+            </Button>
+          </div>
         </div>
       </div>
     </Layout>

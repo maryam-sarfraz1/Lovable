@@ -141,7 +141,14 @@ import PromissoryNoteInfo from "./pages/PromissoryNoteInfo";
 import RequestCreditReferenceInfo from "./pages/RequestCreditReferenceInfo";
 import ComplaintLetterToCompanyInfo from "./pages/ComplaintLetterToCompanyInfo";
 import PromissoryNoteDueOnSpecificDateInfo from "./pages/PromissoryNoteDueOnSpecificDateInfo";
-
+import FoodServiceContractInfo from "./pages/FoodServiceContractInfo";
+import DJServicesAgreementInfo from "./pages/DJServicesAgreementInfo";
+import GeneralAffidavitInfo from "./pages/GeneralAffidavitInfo";
+import AttorneyEngagementLetterInfo from "./pages/AttorneyEngagementLetterInfo";
+import ComposerAgreementInfo from "./pages/ComposerAgreementInfo";
+import ConcessionAgreementInfo from "./pages/ConcessionAgreementInfo";
+import ConsultingAgreementInfo from "./pages/ConsultingAgreementInfo";
+import DJContractInfo from "./pages/DJContractInfo";
 
 
 // Loading component
@@ -378,6 +385,14 @@ const App = () => {
                 <Route path="/product-distribution-info" element={<ProductDistributionAgreementInfo />} />
                 <Route path="/referral-fee-agreement-info" element={<ReferralFeeAgreementInfo />} />
                 <Route path="/barter-agreement-info" element={<BarterAgreementInfo />} />
+                <Route path="/food-service-contract-info" element={<FoodServiceContractInfo />} />
+                <Route path="/dj-services-agreement-info" element={<DJServicesAgreementInfo />} />
+                <Route path="/general-affidavit-info" element={<GeneralAffidavitInfo />} />
+                <Route path="/attorney-engagement-letter-info" element={<AttorneyEngagementLetterInfo />} />
+                <Route path="/composer-agreement-info" element={<ComposerAgreementInfo />} />
+                <Route path="/concession-agreement-info" element={<ConcessionAgreementInfo />} />
+                <Route path="/consulting-agreement-info" element={<ConsultingAgreementInfo />} />
+                <Route path="/dj-contract-info" element={<DJContractInfo />} />
 
                 <Route path="*" element={<NotFound />} />
               </Routes>
