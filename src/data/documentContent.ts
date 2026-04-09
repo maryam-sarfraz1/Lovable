@@ -28,36 +28,55 @@ export const documentContent: Record<string, DocumentContent> = {
   // === VEHICLE & PROPERTY LEASES ===
   "Vehicle Lease Agreement": {
     title: "Vehicle Lease Agreement",
-    whatIs: "A legally binding contract between a vehicle owner (Lessor) and an individual or business (Lessee). It clearly defines rights, duties, and obligations, covering lease duration, payment structure, permitted use, insurance, and mileage limits. Unlike a sale, ownership does not transfer. This agreement protects both parties by establishing clear expectations for vehicle condition, maintenance responsibilities, and procedures for ending the lease.",
+    otherNames: [
+      "Car Lease Agreement",
+      "Auto Lease Agreement",
+      "Vehicle Rental Agreement"
+    ],
+    whatIs: "A Vehicle Lease Agreement is a legally binding contract between a vehicle owner or leasing company (the Lessor) and an individual or business (the Lessee) who leases the vehicle. This Vehicle Lease Agreement clearly defines the rights, duties, and obligations of both parties throughout the lease term, helping to prevent disputes and misunderstandings.\n\nThis draft Vehicle Lease Agreement sets out the essential terms of leasing a car, truck, or SUV, including lease duration, payment structure, permitted use, insurance requirements, mileage limits, and end-of-term responsibilities. Using the best format of Vehicle Lease Agreement ensures legal clarity and enforceability under applicable law.",
     whenToUse: [
-      "You want to lease a vehicle without going through a dealership.",
-      "You need a clear written record of lease terms and payments to prevent disputes.",
-      "You want legal protection for both lessor and lessee regarding damage and liability.",
-      "You're leasing your personal vehicle to generate income (e.g., rideshare, delivery services).",
-      "You need to establish mileage limits and overage penalties."
+      "You want to lease a vehicle without going through a dealership",
+      "You need a clear written record of lease terms and payments",
+      "You want legal protection for both lessor and lessee",
+      "You want a professional Vehicle Lease Agreement that is easy to download and use",
+      "You need to define insurance, taxes, fees, and maintenance obligations",
+      "You want to establish mileage limits and excessive wear terms"
     ],
     faqs: [
-      { q: "Is this legally binding?", a: "Yes. Like any contract, once signed by both parties, it is enforceable under state law. Both parties are legally obligated to follow the terms specified in the agreement." },
-      { q: "What happens if the vehicle is damaged?", a: "The agreement specifies insurance requirements and liability. Typically, the Lessee is responsible for repairs beyond normal wear and tear. Comprehensive and collision insurance is usually required." },
-      { q: "Can I end the lease early?", a: "Early termination is possible but usually involves penalties specified in the agreement. These may include paying remaining lease payments or a flat termination fee." },
-      { q: "What if the Lessee exceeds the mileage limit?", a: "Overage charges apply as specified in the agreement. These are typically calculated per mile over the limit and can add up quickly." },
-      { q: "Do I need to notarize this agreement?", a: "Notarization is not strictly required but is highly recommended for added legal protection and to verify the identities of both parties." }
+      { q: "What is a Vehicle Lease Agreement?", a: "A Vehicle Lease Agreement is a legally binding contract between a vehicle owner or leasing company (the Lessor) and an individual or business (the Lessee) who leases the vehicle. This agreement clearly defines the rights, duties, and obligations of both parties throughout the lease term, helping to prevent disputes and misunderstandings. It sets out essential terms including lease duration, payment structure, permitted use, insurance requirements, mileage limits, and end-of-term responsibilities." },
+      { q: "Why should I use a Vehicle Lease Agreement?", a: "Signing a properly drafted Vehicle Lease Agreement helps both parties avoid future conflicts by clearly recording the agreed terms in writing. Whether you are leasing a vehicle privately or outside a dealership, this agreement provides a simple, reliable, and professional legal framework. With a well-structured agreement, you can access a professional Vehicle Lease Agreement that is easy to customize and suitable for personal or business use." },
+      { q: "Is a Vehicle Lease Agreement legally binding?", a: "Yes. Like any contract, a Vehicle Lease Agreement becomes legally binding once all parties sign it. Using a well-structured draft Vehicle Lease Agreement helps ensure enforceability under state law and reduces legal risk. The agreement is suitable for online signing and provides legal protection for both lessor and lessee." },
+      { q: "What information is included in a Vehicle Lease Agreement?", a: "A comprehensive Vehicle Lease Agreement template typically includes: vehicle description and identification details; lease term and monthly payment amount; residual value and end-of-lease liability; insurance and maintenance requirements; default, termination, and dispute resolution clauses; mileage limits and excessive wear terms; and governing law, arbitration, and indemnification clauses. All essential legal provisions are included to ensure completeness." },
+      { q: "When should I use a Vehicle Lease Agreement?", a: "You should use a Vehicle Lease Agreement if you want to lease a vehicle without going through a dealership; need a clear written record of lease terms and payments; want legal protection for both lessor and lessee; or need a professional agreement that is easy to download and use. This agreement is suitable for personal or business vehicle leasing situations." },
+      { q: "What are the steps to create a Vehicle Lease Agreement?", a: "The process is simple: First, make the document by customizing your Vehicle Lease Agreement by answering simple questions and save anytime. Second, review the agreement to ensure terms accurately reflect your understanding before signing. Third, sign the agreement - both lessor and lessee must sign with electronic signing supported. Finally, download and share - everyone receives a copy and can securely download the agreement from your account." }
     ],
     keyProtections: [
-      "Clear liability assignment for accidents and damages",
-      "Defined mileage limits with overage penalties",
-      "Security deposit terms and return conditions",
-      "Insurance requirements and coverage specifications",
-      "Early termination clauses and penalties"
+      "Clearly identifies the leased vehicle and its specifications",
+      "Defines lease payments, lease term, and total lease cost",
+      "Covers insurance, taxes, fees, and maintenance obligations",
+      "Explains mileage limits, excessive wear, and early termination",
+      "Includes governing law, arbitration, and indemnification clauses",
+      "Legally binding and enforceable once signed",
+      "Professional format suitable for online signing",
+      "Customizable based on specific lease details",
+      "Provides legal protection for both lessor and lessee",
+      "Reduces legal risk and ensures enforceability under state law"
     ],
     whatYouNeed: [
-      "Vehicle information (VIN, make, model, year, color)",
-      "Lessor and Lessee full legal names and addresses",
-      "Lease duration and payment terms",
-      "Insurance policy details",
-      "Current odometer reading"
+      "Vehicle description and identification details (VIN, make, model, year)",
+      "Lessor information and contact details",
+      "Lessee information and contact details",
+      "Lease term duration (e.g., 24, 36, or 48 months)",
+      "Monthly lease payment amount",
+      "Residual value and end-of-lease liability terms",
+      "Insurance requirements and coverage limits",
+      "Maintenance and repair obligations",
+      "Mileage limits and excessive wear terms",
+      "Default and early termination conditions",
+      "Proof of insurance documentation",
+      "Dispute resolution and arbitration preferences"
     ],
-    estimatedTime: "10-15 minutes"
+    estimatedTime: "15-20 minutes"
   },
 
   // === SECURITY & FINANCIAL AGREEMENTS ===
@@ -214,72 +233,200 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-20 minutes"
   },
 
+  // === SPECIAL POWER OF ATTORNEY ===
+  "Special Power of Attorney": {
+    title: "Special Power of Attorney",
+    otherNames: ["Limited Power of Attorney", "Special POA", "Specific Power of Attorney", "Restricted Power of Attorney"],
+    whatIs: "A Special Power of Attorney (PoA) is a legally binding document that authorizes a specific individual—referred to as the 'agent' or 'attorney-in-fact'—to act on behalf of another person—the 'principal'—in handling clearly defined legal and financial responsibilities. These responsibilities may include signing contracts, managing bank transactions, or selling real estate.\n\nUnlike a General Power of Attorney which grants broad powers across multiple areas, a Special Power of Attorney focuses only on particular matters outlined in the document. This makes it ideal when you need representation for specific tasks but want to limit the scope of authority.\n\nA Special Power of Attorney acts as evidence to third parties (banks, government offices) of legal authority and can be customized to fit your specific situation and needs.",
+    whenToUse: [
+      "You need someone to handle a specific legal or financial matter",
+      "You are traveling out of the country and need representation for specific transactions",
+      "You want to authorize someone to sell or manage a particular piece of property",
+      "You need to delegate banking or financial transactions for a limited time",
+      "You are unable to attend court proceedings and need legal representation",
+      "You want to grant limited authority without giving broad powers"
+    ],
+    faqs: [
+      {
+        q: "What is the difference between a Special and General Power of Attorney?",
+        a: "A Special Power of Attorney focuses only on particular matters outlined in the document, while a General Power of Attorney grants broad powers across multiple areas. A Special POA is more restrictive and better suited when you need representation for specific tasks only."
+      },
+      {
+        q: "How specific must I be when defining the agent's powers?",
+        a: "The more specific you are, the better protected you are. Clearly outline exactly what transactions the agent can perform, any limitations on amounts, timeframes, and any matters they specifically cannot handle."
+      },
+      {
+        q: "Can I revoke a Special Power of Attorney?",
+        a: "Yes. You can revoke a Special Power of Attorney at any time while you are mentally competent. Provide written notice of revocation to your agent and any relevant third parties (banks, courts, etc.)."
+      },
+      {
+        q: "Do I need a lawyer to create a Special Power of Attorney?",
+        a: "While not mandatory, legal review is recommended, especially for high-value transactions or complex matters. Legalgram provides professionally drafted templates that meet legal standards."
+      },
+      {
+        q: "Is notarization required for a Special Power of Attorney?",
+        a: "Notarization requirements vary by jurisdiction and the type of transaction. However, having the document notarized is highly recommended to strengthen its validity and acceptance by third parties."
+      },
+      {
+        q: "What happens if my agent misuses the authority?",
+        a: "If an agent misuses their authority, you have legal recourse. You can revoke the power of attorney immediately and pursue legal action for damages. The agent has a fiduciary duty to act in your best interest."
+      }
+    ],
+    keyProtections: [
+      "Clearly defined scope of authority",
+      "Specific transaction limitations",
+      "Time period restrictions",
+      "Agent identification and authority",
+      "Specific powers granted and denied",
+      "Financial transaction limits",
+      "Property-specific instructions",
+      "Legal and court representation authority",
+      "Succession agent designation",
+      "Notarization for enforceability"
+    ],
+    whatYouNeed: [
+      "Principal's full legal name and address",
+      "Agent's full legal name, address, and contact information",
+      "Alternate agent information (recommended)",
+      "Specific description of powers granted",
+      "Any limitations or restrictions on authority",
+      "Timeframe for the power of attorney",
+      "Financial transaction limits (if applicable)",
+      "Property descriptions (if applicable)",
+      "Witness names and signatures",
+      "Notary public information"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
   // === HEALTHCARE & POWER OF ATTORNEY ===
   "Medical Power of Attorney": {
     title: "Medical Power of Attorney",
-    whatIs: "A legal document that authorizes a trusted person (Agent) to make healthcare decisions on your behalf if you are unable to communicate. It is 'durable', meaning it stays effective during incapacity. This document ensures your healthcare wishes are respected when you cannot speak for yourself and prevents family disputes about treatment decisions.",
+    otherNames: ["Healthcare POA", "Healthcare Power of Attorney", "Medical POA", "Healthcare Proxy"],
+    whatIs: "What is a Medical Power of Attorney (POA)?\n\nA Medical Power of Attorney Agreement is a legally binding document that authorizes a trusted person, known as an agent, to make healthcare and medical decisions on your behalf if you become incapacitated or otherwise unable to communicate your wishes.\n\nAlso referred to as a Healthcare POA or Medical POA, this agreement is generally a durable power of attorney, meaning it remains effective even if you lose mental capacity. With a properly drafted Medical Power of Attorney Agreement, your agent can lawfully interact with doctors, hospitals, and care facilities to protect your medical interests.\n\nUsing the best format of Medical Power of Attorney Agreement, you can specify whether your agent may:\n• Admit you to a medical or long-term care facility\n• Approve or refuse medical treatments\n• Consent to experimental procedures\n• Authorize life-sustaining measures\n\nAbout Medical Powers of Attorney\nA Medical Power of Attorney Agreement allows you to appoint someone to make healthcare decisions when you cannot. It covers a wide range of legal and medical issues, including but not limited to:\n\n• Appointment of Alternate Agents: You may designate one or more alternate agents in case your primary agent is unwilling or unable to act. Each alternate agent has the same authority as the original agent.\n• Organ Donation and Anatomical Gifts: The agreement allows you to clearly document your wishes regarding organ and tissue donation. You may authorize donation of specific organs, tissues, or your entire body for transplantation, therapy, research, or medical education.\n• Artificial Nutrition and Hydration: You may specify whether you wish to receive food and water through artificial means such as feeding tubes or intravenous methods.\n• Autopsy Authorization: Your agent may be granted authority to consent to or refuse an autopsy, subject to applicable law.\n• Choosing Your Agent: Your agent must be a trusted adult. In most jurisdictions, your healthcare provider cannot act as your agent unless closely related to you.\n• Scope of Agent's Authority: Your agent generally has broad authority to make healthcare decisions; however, you may limit or expand these powers within the agreement.\n\nMedical Power of Attorney vs Living Will vs Advance Directive\nA Medical Power of Attorney Agreement authorizes a person to make medical decisions on your behalf if you are incapacitated.\nA Living Will focuses specifically on end-of-life care preferences.\nAn Advance Health Care Directive combines both a Medical POA and a Living Will into a single document.\nIf you are unsure which document is appropriate, a Medical Power of Attorney Agreement offers broader protection and flexibility.",
     whenToUse: [
-      "Before undergoing major surgery.",
-      "If you are diagnosed with a progressive illness.",
-      "General emergency planning for all adults over 18.",
-      "You want to ensure specific treatment preferences are followed.",
-      "You need someone to communicate with doctors on your behalf."
+      "You want to ensure your medical wishes are honored",
+      "You anticipate surgery or hospitalization",
+      "You are managing declining health",
+      "You have been diagnosed with a serious or terminal illness",
+      "You want legal clarity during medical emergencies",
+      "This agreement is recommended for every adult, regardless of current health status"
     ],
     faqs: [
-      { q: "Is the Agent responsible for my bills?", a: "No. The agent makes medical decisions but is not personally liable for your medical costs. They only have authority over healthcare choices, not financial obligations." },
-      { q: "Can I revoke it?", a: "Yes, as long as you are mentally competent, you can cancel or update it at any time. Simply inform your agent in writing and destroy existing copies." },
-      { q: "Who should I choose as my agent?", a: "Choose someone you trust completely who knows your values and wishes. They should be able to make difficult decisions under pressure and advocate for you effectively." },
-      { q: "Does it cover mental health treatment?", a: "You can specifically include or exclude mental health treatment authority. Many people create separate mental health directives." },
-      { q: "What if my agent is unavailable?", a: "You should designate an alternate agent who can step in if your primary agent is unable or unwilling to serve." }
+      { 
+        q: "How can I get a Medical Power of Attorney Agreement?", 
+        a: "You can easily download a free Medical Power of Attorney Agreement from Legalgram. Our templates are professionally drafted, editable, and suitable for legal use." 
+      },
+      { 
+        q: "Who should have a Medical Power of Attorney?", 
+        a: "Every individual over the age of 18 should have a Healthcare or Medical Power of Attorney Agreement, regardless of health condition." 
+      },
+      { 
+        q: "Do I need a lawyer to make a Medical POA?", 
+        a: "While not mandatory, legal review is recommended for complex medical or estate situations. Legalgram provides a draft Medical Power of Attorney Agreement that meets standard legal requirements." 
+      },
+      { 
+        q: "Does a Medical Power of Attorney need notarization?", 
+        a: "Execution requirements vary by jurisdiction. However, notarization and witnesses are strongly recommended to strengthen enforceability." 
+      },
+      { 
+        q: "How long is a Medical Power of Attorney valid?", 
+        a: "The agreement remains effective for the period specified in the document or until revoked by the principal." 
+      },
+      { 
+        q: "Is an agent responsible for medical bills?", 
+        a: "No. An agent acts on your behalf and is not personally liable for medical expenses unless negligence or misuse of authority occurs." 
+      }
     ],
     keyProtections: [
-      "Clearly defined agent authority",
+      "Clearly defined agent authority for healthcare decisions",
       "HIPAA authorization for medical records access",
-      "End-of-life care preferences",
-      "Organ donation wishes",
-      "Mental health treatment directives",
-      "Agent succession planning"
+      "Alternative agent succession planning",
+      "Organ donation and anatomical gift authorization",
+      "Artificial nutrition and hydration specifications",
+      "Autopsy authorization authority",
+      "Life-sustaining treatment direction",
+      "Treatment approval or refusal authority",
+      "Experimental procedure consent authority",
+      "Long-term care facility admission authority"
     ],
     whatYouNeed: [
-      "Healthcare agent's full contact information",
-      "Alternate agent information",
-      "Your specific medical preferences",
-      "Witness signatures (two required in most states)",
-      "Notary (required in some states)"
+      "Healthcare agent's full legal name and contact information",
+      "Alternate agent's full legal name and contact information",
+      "Your specific medical preferences and values",
+      "Details on organ donation wishes",
+      "Artificial nutrition and hydration preferences",
+      "Witness names and signatures (typically two)",
+      "Notary information (if required in your jurisdiction)",
+      "Your state's execution requirements",
+      "Distribution plan for copies"
     ],
-    estimatedTime: "8-12 minutes"
+    estimatedTime: "10-15 minutes",
+    legalDisclaimer: "A Medical Power of Attorney is an important healthcare document that provides legal protection for both you and your appointed agent. Requirements and best practices vary by jurisdiction and individual health circumstances. This template is designed as a general reference. For complex medical situations or jurisdiction-specific concerns, consult with a qualified attorney to ensure the agreement complies with your state's healthcare laws and includes all necessary provisions for your specific medical needs and preferences."
   },
 
   "Healthcare Power of Attorney": {
-    title: "Healthcare Power of Attorney",
-    whatIs: "A legal document that authorizes a trusted person (your healthcare agent or proxy) to make medical decisions on your behalf if you become incapacitated and cannot communicate your wishes. This document is 'durable,' meaning it remains effective even when you are unconscious or mentally incapacitated.",
+    title: "Medical Power of Attorney",
+    otherNames: ["Healthcare POA", "Healthcare Power of Attorney", "Medical POA", "Healthcare Proxy"],
+    whatIs: "A Medical Power of Attorney Agreement is a legally binding document that authorizes a trusted person, known as an agent, to make healthcare and medical decisions on your behalf if you become incapacitated or otherwise unable to communicate your wishes.\n\nAlso referred to as a Healthcare POA or Medical POA, this agreement is generally a durable power of attorney, meaning it remains effective even if you lose mental capacity. With a properly drafted Medical Power of Attorney Agreement on Legalgram, your agent can lawfully interact with doctors, hospitals, and care facilities to protect your medical interests.\n\nUsing the best format of Medical Power of Attorney Agreement, you can specify whether your agent may:\n• Admit you to a medical or long-term care facility\n• Approve or refuse medical treatments\n• Consent to experimental procedures\n• Authorize life-sustaining measures",
     whenToUse: [
-      "Before undergoing major surgery or medical procedures.",
-      "When diagnosed with a serious or progressive illness.",
-      "As part of general estate and healthcare planning.",
-      "If you want someone specific to make medical decisions for you.",
-      "To ensure your treatment preferences are respected."
+      "You want to ensure your medical wishes are honored",
+      "You anticipate surgery or hospitalization",
+      "You are managing declining health",
+      "You have been diagnosed with a serious or terminal illness",
+      "You want legal clarity during medical emergencies",
+      "This agreement is recommended for every adult, regardless of current health status"
     ],
     faqs: [
-      { q: "What decisions can my agent make?", a: "Your agent can consent to or refuse treatment, choose doctors and hospitals, access your medical records, and make end-of-life decisions according to your wishes." },
-      { q: "Is this the same as a Living Will?", a: "No. A Living Will states your specific wishes; a Healthcare POA designates someone to make decisions. Many people have both." },
-      { q: "Can I limit my agent's authority?", a: "Yes. You can specify exactly what decisions they can and cannot make, or exclude certain treatments." }
+      {
+        q: "How can I get a Medical Power of Attorney Agreement?",
+        a: "You can easily download a free Medical Power of Attorney Agreement from Legalgram. Our templates are professionally drafted, editable, and suitable for legal use."
+      },
+      {
+        q: "Who should have a Medical Power of Attorney?",
+        a: "Every individual over the age of 18 should have a Healthcare or Medical Power of Attorney Agreement, regardless of health condition."
+      },
+      {
+        q: "Do I need a lawyer to make a Medical POA?",
+        a: "While not mandatory, legal review is recommended for complex medical or estate situations. Legalgram provides a draft Medical Power of Attorney Agreement that meets standard legal requirements."
+      },
+      {
+        q: "Does a Medical Power of Attorney need notarization?",
+        a: "Execution requirements vary by jurisdiction. However, notarization and witnesses are strongly recommended to strengthen enforceability."
+      },
+      {
+        q: "How long is a Medical Power of Attorney valid?",
+        a: "The agreement remains effective for the period specified in the document or until revoked by the principal."
+      },
+      {
+        q: "Is an agent responsible for medical bills?",
+        a: "No. An agent acts on your behalf and is not personally liable for medical expenses unless negligence or misuse of authority occurs."
+      }
     ],
     keyProtections: [
-      "Clearly defined agent authority",
-      "HIPAA authorization",
-      "End-of-life care preferences",
-      "Organ donation wishes",
-      "Agent succession planning"
+      "Clearly defined agent authority for healthcare decisions",
+      "HIPAA authorization for medical records access",
+      "Alternative agent succession planning",
+      "Organ donation and anatomical gift authorization",
+      "Artificial nutrition and hydration specifications",
+      "Autopsy authorization authority",
+      "Life-sustaining treatment direction",
+      "Treatment approval or refusal authority",
+      "Experimental procedure consent authority",
+      "Long-term care facility admission authority"
     ],
     whatYouNeed: [
-      "Healthcare agent's contact information",
-      "Alternate agent information",
-      "Your medical preferences",
-      "Witness signatures",
-      "Notary (in some states)"
+      "Healthcare agent's full legal name and contact information",
+      "Alternate agent's full legal name and contact information",
+      "Your specific medical preferences and values",
+      "Details on organ donation wishes",
+      "Artificial nutrition and hydration preferences",
+      "Witness names and signatures (typically two)",
+      "Notary information (if required in your jurisdiction)",
+      "Your state's execution requirements",
+      "Distribution plan for copies"
     ],
-    estimatedTime: "8-12 minutes"
+    estimatedTime: "10-15 minutes"
   },
 
   "Living Will": {
@@ -1496,6 +1643,73 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-15 minutes"
   },
 
+  // === OFFER TO LEASE ===
+  "Offer to Lease": {
+    title: "Offer to Lease Agreement",
+    otherNames: ["Offer to Lease Commercial Property", "Commercial Offer to Lease Agreement", "Offer to Lease Form"],
+    whatIs: "An Offer to Lease Agreement is a preliminary legal document used when a tenant proposes to lease commercial property from a landlord. This Offer to Lease Agreement outlines the essential terms that will later form part of the final commercial lease, helping both parties reach clarity before signing a formal tenancy contract.\n\nWhen your business is ready to move into a professional or commercial space, an Offer to Lease Commercial Property is the first and most important step. It establishes the foundation for the formal lease and ensures that the tenant and landlord are aligned on key issues such as rent, permitted use, possession, alterations, and compliance requirements.\n\nAn Offer to Lease Agreement is legally binding once accepted. That is why it is considered the best format of Offer to Lease Agreement for commercial negotiations.\n\nYou can access a free download Offer to Lease Agreement on Legalgram, professionally drafted for commercial use.",
+    whenToUse: [
+      "You want to make a formal offer to lease commercial property",
+      "You need to outline core lease terms before signing a final Commercial Lease",
+      "You are negotiating terms and making offers or counter-offers with a landlord or property manager",
+      "The Offer to Lease Agreement is fully customizable and terms automatically update based on your information",
+      "You want to establish clarity before entering into a full lease agreement"
+    ],
+    faqs: [
+      {
+        q: "Why Use an Offer to Lease Agreement?",
+        a: "A well-drafted Offer to Lease Agreement allows parties to define the commercial terms clearly before entering into a full lease. It provides flexibility to negotiate conditions and protects the tenant from unexpected obligations later.\n\nThis document typically works alongside a draft tenancy agreement and allows tenants to identify landlord responsibilities—such as repairs, compliance issues, or utility readiness—before any rent payments begin."
+      },
+      {
+        q: "When Should You Use an Offer to Lease Agreement?",
+        a: "You should use an Offer to Lease Agreement if:\n• You want to make a formal offer to lease commercial property\n• You need to outline core lease terms before signing a final Commercial Lease\n• You are negotiating terms and making offers or counter-offers with a landlord or property manager\n\nThe Offer to Lease Agreement available on Legalgram is fully customizable. The terms in your document automatically update based on the information you provide."
+      },
+      {
+        q: "Why Download an Offer to Lease Agreement from Legalgram?",
+        a: "When you download an Offer to Lease Agreement from Legalgram, you get:\n\n✅ Professionally drafted legal language\n✅ Easy to customize and execute\n✅ Suitable for all types of commercial property\n✅ Complements your download tenancy agreement\n✅ Trusted format for landlords and tenants\n\nThe Offer to Lease Agreement on Legalgram is designed to reduce disputes and streamline commercial lease negotiations."
+      },
+      {
+        q: "Is the Offer to Lease Agreement legally binding?",
+        a: "Yes. An Offer to Lease Agreement is legally binding once accepted by both parties. This makes it a critical document that outlines the preliminary terms and conditions for the commercial lease arrangement."
+      },
+      {
+        q: "What key terms should be included in the offer?",
+        a: "An Offer to Lease Agreement should include: property description, proposed rent amount and payment terms, lease commencement date, lease term duration, permitted use of the premises, maintenance responsibilities, compliance requirements, alterations allowed, and contact information for both parties."
+      },
+      {
+        q: "Can I modify the Offer to Lease Agreement terms?",
+        a: "Yes. The Offer to Lease Agreement is fully customizable. You can negotiate and modify any terms with the landlord or property manager before final acceptance. This flexibility is one of the key benefits of using a preliminary offer before entering into the full lease."
+      }
+    ],
+    keyProtections: [
+      "Clear definition of commercial property being leased",
+      "Specified rental amount and payment terms",
+      "Lease term duration and commencement date",
+      "Permitted use of the premises clearly outlined",
+      "Maintenance and repair responsibilities assigned",
+      "Compliance requirements and regulatory obligations",
+      "Alteration permissions and restrictions",
+      "Security deposit and rental increase terms",
+      "Tenant and landlord contact information",
+      "Legally binding acceptance mechanism"
+    ],
+    whatYouNeed: [
+      "Complete property address and legal description",
+      "Landlord or property manager information",
+      "Tenant company/individual information",
+      "Proposed monthly or annual rent amount",
+      "Lease commencement date",
+      "Proposed lease term duration (months/years)",
+      "Permitted use of the commercial space",
+      "Square footage or unit description",
+      "Maintenance responsibility allocation",
+      "Security deposit amount",
+      "Insurance and compliance requirements",
+      "Alteration and improvement policies"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
   // === DEFAULT FALLBACK ===
   "default": {
     title: "Legal Document",
@@ -1716,7 +1930,7 @@ export const documentContent: Record<string, DocumentContent> = {
   "DJ Contract": {
     title: "DJ Contract",
     otherNames: ["DJ Booking Agreement", "DJ Services Agreement", "DJ Performance Contract", "Entertainment Contract", "DJ Agreement"],
-    whatIs: "A DJ Contract is a legally binding agreement between a DJ and a client, event organizer, venue owner, or promoter that clearly defines the terms of a DJ performance. Whether you are booking a DJ for a wedding, birthday party, corporate function, or nightclub event, a professionally drafted DJ Agreement helps protect both parties and avoids misunderstandings.\nA DJ Contract, also known as a DJ Booking Agreement, is used when a DJ is hired to perform at an event. This agreement outlines essential details such as event date and time, DJ services to be provided, payment terms, equipment responsibilities, cancellation policies, and legal rights and obligations. A properly drafted DJ Agreement on Legalgram ensures transparency and legal protection for both the DJ and the client.\nDownload a DJ Contract from Legalgram for free, prepared in the best legal format, fully editable, and suitable for professional use.",
+    whatIs: "A DJ Contract is a legally binding agreement between a DJ and a client, event organizer, venue owner, or promoter that clearly defines the terms of a DJ performance. Whether you are booking a DJ for a wedding, birthday party, corporate function, or nightclub event, a professionally drafted DJ Agreement helps protect both parties and avoids misunderstandings.\n\nAt Legalgram, you can download a DJ Contract for free, prepared in the best legal format, fully editable, and suitable for professional use.",
     whenToUse: [
       "You are a DJ booking a performance",
       "You are an event organizer hiring a DJ",
@@ -1725,12 +1939,12 @@ export const documentContent: Record<string, DocumentContent> = {
       "You want written proof of services and payment terms"
     ],
     faqs: [
-      { q: "When Should You Use a DJ Agreement?", a: "You should use a DJ Contract if you are a DJ booking a performance, an event organizer hiring a DJ, hosting a wedding, party, or corporate event, operating a DJ or entertainment business, or wanting written proof of services and payment terms. Using a DJ Agreement template helps prevent disputes related to cancellations, late payments, or performance expectations." },
-      { q: "Why Is a DJ Contract Important?", a: "A well-drafted DJ Booking Agreement provides several important benefits: clearly defines payment and deposit terms, specifies event time, location, and duration, confirms equipment and sound requirements, protects against last-minute cancellations, establishes professional expectations, and offers legal protection if disputes arise. Without a DJ contract, both parties risk confusion, unpaid fees, and legal complications." },
-      { q: "What Does a DJ Contract Include?", a: "A professionally drafted DJ Agreement typically covers parties information (name and address of DJ and event organizer), event details (date, location, duration, and type), services provided (DJ performance, music selection, sound system, lighting, setup), payment terms (total fees, deposits, balance due date, overtime charges), equipment and setup responsibilities, cancellation policy rules, legal clauses (independent contractor status, liability, confidentiality, dispute resolution), and governing law jurisdiction." },
-      { q: "Why Use a DJ Contract from Legalgram?", a: "When you download a DJ Agreement from Legalgram, you get professionally drafted legal format, SEO-optimized and legally compliant template, easy to edit and customize, free DJ Agreement download, suitability for DJs venues and event planners, and printable Word and PDF formats. Our templates are designed to save time and eliminate legal guesswork." },
+      { q: "What Is a DJ Contract?", a: "A DJ Contract, also known as a DJ Booking Agreement, is used when a DJ is hired to perform at an event. This agreement outlines essential details such as event date and time, DJ services to be provided, payment terms, equipment responsibilities, cancellation policies, and legal rights and obligations." },
+      { q: "Why Is a DJ Contract Important?", a: "A well-drafted DJ Booking Agreement provides several important benefits: clearly defines payment and deposit terms, specifies event time, location, and duration, confirms equipment and sound requirements, protects against last-minute cancellations, establishes professional expectations, and offers legal protection if disputes arise." },
+      { q: "What Does a DJ Contract Include?", a: "A professionally drafted DJ Agreement typically covers Parties Information (name and address of the DJ and event organizer), Event Details (date, location, duration, and type), Services Provided (DJ performance, music selection, sound system, lighting, and setup), Payment Terms (total fees, deposits, balance due date, overtime charges), Equipment & Setup responsibilities, Cancellation Policy, Legal Clauses (independent contractor status, liability, confidentiality, and dispute resolution), and Governing Law." },
+      { q: "Why Use a DJ Contract from Legalgram?", a: "When you download a DJ Agreement from Legalgram, you get: Professionally drafted legal format, SEO-optimized and legally compliant templates, easy to edit and customize, free DJ Agreement download, printable Word & PDF formats, and suitability for DJs, venues, and event planners." },
       { q: "How Much Does a DJ Contract Cost?", a: "Hiring a lawyer to draft a DJ contract can cost hundreds of dollars. With Legalgram, you can create a DJ Contract for free, customize it online, download instantly, and use it for multiple events." },
-      { q: "What to Do After Creating Your DJ Agreement?", a: "Once your DJ Contract is drafted, review all details carefully, share it with the client, get signatures from both parties, save a copy for records, and proceed with the event confidently. You may also download your DJ Agreement from Legalgram in Word or PDF format." },
+      { q: "What to Do After Creating Your DJ Agreement?", a: "Once your DJ Contract is drafted: 1. Review all details carefully, 2. Share it with the client, 3. Get signatures from both parties, 4. Save a copy for records, 5. Proceed with the event confidently. You may also download your DJ Agreement from Legalgram in Word or PDF format." },
       { q: "Can a Lawyer Review My DJ Contract?", a: "Yes. While Legalgram provides professionally written templates, you can also have your DJ Agreement reviewed by a legal professional for additional assurance—especially for high-value events." }
     ],
     keyProtections: [
@@ -1812,7 +2026,7 @@ export const documentContent: Record<string, DocumentContent> = {
   "Food Service Contract": {
     title: "Food Service Contract",
     otherNames: ["Food Service Agreement"],
-    whatIs: "A Food Service Contract is a legally binding agreement between a food service provider (such as a caterer, restaurant, or food vendor) and a client. This agreement clearly outlines the responsibilities, payment terms, food preparation details, and service expectations between both parties.\n\nA Food Service Agreement is used when a business or individual hires a food service provider to supply meals, catering, or ongoing food services. This agreement defines:\n• The type of food services provided\n• Payment terms and invoicing\n• Duration of the service\n• Responsibilities of each party\n• Cleanup and equipment usage\n• Liability and dispute resolution\n\nA well-drafted Food Service Agreement on Legalgram helps prevent misunderstandings and protects both the service provider and the client.",
+    whatIs: "A Food Service Contract is a legally binding agreement between a food service provider (such as a caterer, restaurant, or food vendor) and a client. This agreement clearly outlines the responsibilities, payment terms, food preparation details, and service expectations between both parties.\n\nA Food Service Agreement is used when a business or individual hires a food service provider to supply meals, catering, or ongoing food services. This agreement defines:\n•\tThe type of food services provided\n•\tPayment terms and invoicing\n•\tDuration of the service\n•\tResponsibilities of each party\n•\tCleanup and equipment usage\n•\tLiability and dispute resolution\n\nA well-drafted Food Service Agreement on Legalgram helps prevent misunderstandings and protects both the service provider and the client.",
     whenToUse: [
       "You are hiring a caterer or food service provider",
       "You operate a restaurant or food business offering catering services",
@@ -1823,27 +2037,27 @@ export const documentContent: Record<string, DocumentContent> = {
     faqs: [
       {
         q: "Why Is a Food Service Agreement Important?",
-        a: "Creating a Food Service Contract provides the following benefits: Clear expectations for both parties, Defined payment terms and timelines, Protection against disputes and non-payment, Clearly assigned responsibilities, Legal enforceability. Without a proper agreement, disagreements over service quality, timing, or payment can easily arise. If you are looking for a Food Service Agreement in the best legal format, you can download a free Food Service Contract on Legalgram, professionally drafted and easy to customize for your needs."
+        a: "Creating a Food Service Contract provides the following benefits:\n✔ Clear expectations for both parties\n✔ Defined payment terms and timelines\n✔ Protection against disputes and non-payment\n✔ Clearly assigned responsibilities\n✔ Legal enforceability\nWithout a proper agreement, disagreements over service quality, timing, or payment can easily arise. If you are looking for a Food Service Agreement in the best legal format, you can download a free Food Service Contract on Legalgram, professionally drafted and easy to customize for your needs."
       },
       {
         q: "What Does a Food Service Contract Include?",
-        a: "A professionally drafted Food Service Agreement on Legalgram typically includes: Party Information - Names and addresses of the client and food service provider. Scope of Services - Details of food preparation, delivery, setup, and cleanup. Payment Terms - Service fees, payment schedules, deposits, and late fees. Duration of Agreement - Start and end date of the food service engagement. Legal Clauses - Independent contractor status, liability, indemnity, and dispute resolution. Governing Law - State law governing the agreement."
+        a: "A professionally drafted Food Service Agreement on Legalgram typically includes:\n🔹 Party Information\nNames and addresses of the client and food service provider.\n🔹 Scope of Services\nDetails of food preparation, delivery, setup, and cleanup.\n🔹 Payment Terms\nService fees, payment schedules, deposits, and late fees.\n🔹 Duration of Agreement\nStart and end date of the food service engagement.\n🔹 Legal Clauses\nIndependent contractor status, liability, indemnity, and dispute resolution.\n🔹 Governing Law\nState law governing the agreement."
       },
       {
         q: "Why Download a Food Service Agreement from Legalgram?",
-        a: "When you download a Food Service Agreement from Legalgram, you get: Professionally drafted legal format, SEO-optimized and legally structured, Editable Word & PDF formats, Free Food Service Agreement download, Suitable for caterers, restaurants, and vendors, Easy to customize and reuse. Our agreements are designed to meet business and legal standards while remaining simple to use."
+        a: "When you download a Food Service Agreement from Legalgram, you get:\n✅ Professionally drafted legal format\n✅ SEO-optimized and legally structured\n✅ Editable Word & PDF formats\n✅ Free Food Service Agreement download\n✅ Suitable for caterers, restaurants, and vendors\n✅ Easy to customize and reuse\nOur agreements are designed to meet business and legal standards while remaining simple to use."
       },
       {
         q: "How Much Does a Food Service Contract Cost?",
-        a: "Hiring a lawyer to draft a Food Service Contract may cost hundreds of dollars. With Legalgram, you can: Draft a Food Service Agreement for free, Customize it online, Download instantly, Use it for multiple clients. This makes professional agreements accessible and affordable for all food service businesses."
+        a: "Hiring a lawyer to draft a Food Service Contract may cost hundreds of dollars. With Legalgram, you can:\n✔ Draft a Food Service Agreement for free\n✔ Customize it online\n✔ Download instantly\n✔ Use it for multiple clients"
       },
       {
         q: "What to Do After Creating Your Food Service Agreement?",
-        a: "Once your Food Service Contract is ready: 1. Review the terms carefully, 2. Share it with the client, 3. Sign the agreement (digitally or manually), 4. Keep a copy for your records, 5. Begin services with confidence. You can also download the Food Service Agreement as a PDF or Word file."
+        a: "Once your Food Service Contract is ready:\n1.\tReview the terms carefully\n2.\tShare it with the client\n3.\tSign the agreement (digitally or manually)\n4.\tKeep a copy for your records\n5.\tBegin services with confidence\nYou can also download the Food Service Agreement as a PDF or Word file."
       },
       {
         q: "Can My Food Service Agreement Be Reviewed by a Lawyer?",
-        a: "Yes. If you want extra protection, you can have your Food Service Contract reviewed by a legal professional. Legalgram also offers access to legal guidance for business agreements to ensure your contract meets all local requirements and protects your interests."
+        a: "Yes. If you want extra protection, you can have your Food Service Contract reviewed by a legal professional. Legalgram also offers access to legal guidance for business agreements."
       }
     ],
     keyProtections: [
@@ -1871,6 +2085,180 @@ export const documentContent: Record<string, DocumentContent> = {
       "Dispute resolution procedures",
       "Cancellation and refund policy",
       "Governing law and jurisdiction"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === ALIAS FOR FOOD SERVICE AGREEMENT (same as Food Service Contract) ===
+  "Food Service Agreement": {
+    title: "Food Service Contract",
+    otherNames: ["Food Service Agreement"],
+    whatIs: "A Food Service Contract is a legally binding agreement between a food service provider (such as a caterer, restaurant, or food vendor) and a client. This agreement clearly outlines the responsibilities, payment terms, food preparation details, and service expectations between both parties.\n\nA Food Service Agreement is used when a business or individual hires a food service provider to supply meals, catering, or ongoing food services. This agreement defines:\n•\tThe type of food services provided\n•\tPayment terms and invoicing\n•\tDuration of the service\n•\tResponsibilities of each party\n•\tCleanup and equipment usage\n•\tLiability and dispute resolution\n\nA well-drafted Food Service Agreement on Legalgram helps prevent misunderstandings and protects both the service provider and the client.",
+    whenToUse: [
+      "You are hiring a caterer or food service provider",
+      "You operate a restaurant or food business offering catering services",
+      "You are providing food for corporate events, weddings, or parties",
+      "You want written terms for food preparation and service",
+      "Using a Food Service Agreement template ensures professionalism and legal protection"
+    ],
+    faqs: [
+      {
+        q: "Why Is a Food Service Agreement Important?",
+        a: "Creating a Food Service Contract provides the following benefits:\n✔ Clear expectations for both parties\n✔ Defined payment terms and timelines\n✔ Protection against disputes and non-payment\n✔ Clearly assigned responsibilities\n✔ Legal enforceability\n\nWithout a proper agreement, disagreements over service quality, timing, or payment can easily arise. If you are looking for a Food Service Agreement in the best legal format, you can download a free Food Service Contract on Legalgram, professionally drafted and easy to customize for your needs."
+      },
+      {
+        q: "What Does a Food Service Contract Include?",
+        a: "A professionally drafted Food Service Agreement on Legalgram typically includes:\n\n🔹 Party Information\nNames and addresses of the client and food service provider.\n\n🔹 Scope of Services\nDetails of food preparation, delivery, setup, and cleanup.\n\n🔹 Payment Terms\nService fees, payment schedules, deposits, and late fees.\n\n🔹 Duration of Agreement\nStart and end date of the food service engagement.\n\n🔹 Legal Clauses\nIndependent contractor status, liability, indemnity, and dispute resolution.\n\n🔹 Governing Law\nState law governing the agreement."
+      },
+      {
+        q: "Why Download a Food Service Agreement from Legalgram?",
+        a: "When you download a Food Service Agreement from Legalgram, you get:\n\n✅ Professionally drafted legal format\n✅ SEO-optimized and legally structured\n✅ Editable Word & PDF formats\n✅ Free Food Service Agreement download\n✅ Suitable for caterers, restaurants, and vendors\n✅ Easy to customize and reuse\n\nOur agreements are designed to meet business and legal standards while remaining simple to use."
+      },
+      {
+        q: "How Much Does a Food Service Contract Cost?",
+        a: "Hiring a lawyer to draft a Food Service Contract may cost hundreds of dollars.\n\nWith Legalgram, you can:\n\n✔ Draft a Food Service Agreement for free\n✔ Customize it online\n✔ Download instantly\n✔ Use it for multiple clients"
+      },
+      {
+        q: "What to Do After Creating Your Food Service Agreement?",
+        a: "Once your Food Service Contract is ready:\n\n1. Review the terms carefully\n2. Share it with the client\n3. Sign the agreement (digitally or manually)\n4. Keep a copy for your records\n5. Begin services with confidence\n\nYou can also download the Food Service Agreement as a PDF or Word file."
+      },
+      {
+        q: "Can My Food Service Agreement Be Reviewed by a Lawyer?",
+        a: "Yes. If you want extra protection, you can have your Food Service Contract reviewed by a legal professional. Legalgram also offers access to legal guidance for business agreements."
+      }
+    ],
+    keyProtections: [
+      "Clear expectations for both parties",
+      "Defined payment terms and timelines",
+      "Protection against disputes and non-payment",
+      "Clearly assigned responsibilities",
+      "Legal enforceability",
+      "Scope of services clearly defined",
+      "Equipment and liability terms",
+      "Dispute resolution procedures",
+      "Professional service standards",
+      "Written agreement protection"
+    ],
+    whatYouNeed: [
+      "Names and addresses of both parties",
+      "Details of food services to be provided",
+      "Food preparation specifications and dietary requirements",
+      "Delivery and setup requirements",
+      "Service fees and payment terms",
+      "Payment schedule and invoice details",
+      "Duration of service contract",
+      "Cleanup and equipment usage terms",
+      "Liability and indemnification clauses",
+      "Dispute resolution procedures",
+      "Cancellation and refund policy",
+      "Governing law and jurisdiction"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === FAMILY & RELATIONSHIPS ===
+  "Cohabitation Agreement": {
+    title: "Cohabitation Agreement",
+    otherNames: [
+      "Living Together Agreement",
+      "Domestic Partnership Agreement",
+      "Non-Marital Cohabitation Agreement"
+    ],
+    whatIs: "A Cohabitation Agreement is a legally binding contract entered into by two individuals who live together in a non-marital relationship. This Cohabitation Agreement clearly defines each party's rights, responsibilities, and financial arrangements while sharing a residence.\n\nIf you and your partner are also roommates, a Cohabitation Agreement is an effective way to protect your property, income, and assets. It ensures that living together does not create unintended legal rights similar to marriage. This agreement is especially useful where parties share expenses, household responsibilities, or a draft tenancy agreement.",
+    whenToUse: [
+      "You live with your significant other and want to remain legally recognized as cohabitants",
+      "You plan to move in together and want to define financial and property arrangements",
+      "You share rent, expenses, or assets and want legal certainty",
+      "You want to protect your property from future claims",
+      "You want to establish rules for property division if the relationship ends",
+      "You're in a long-term living arrangement and need legal protection"
+    ],
+    faqs: [
+      { q: "What is a Cohabitation Agreement?", a: "A Cohabitation Agreement is a legally binding contract entered into by two individuals who live together in a non-marital relationship. This agreement clearly defines each party's rights, responsibilities, and financial arrangements while sharing a residence. It ensures that living together does not create unintended legal rights similar to marriage and protects both parties' property, income, and assets." },
+      { q: "Why is a Cohabitation Agreement important?", a: "A properly drafted Cohabitation Agreement helps avoid disputes by setting clear expectations from the outset. It allows parties to preserve their legal status as cohabitants (not spouses), define ownership of property and assets, clarify financial contributions and household expenses, protect against liability for the other party's debts, and establish rules for property division if the relationship ends." },
+      { q: "When should I use a Cohabitation Agreement?", a: "You should use a Cohabitation Agreement if you live with your significant other and want to remain legally recognized as cohabitants; plan to move in together and want clear financial and property arrangements; share rent, expenses, or assets and want legal certainty; or want to protect your property from future claims. This agreement is suitable for both new and long-term living arrangements." },
+      { q: "What does a Cohabitation Agreement cover?", a: "A comprehensive Cohabitation Agreement typically addresses separate and jointly owned property; property acquired before and during cohabitation; earnings, income, and asset ownership; household expenses and responsibilities; gifts, inheritance, and property transfers; waiver of spousal rights and support; termination procedures and property division; and governing law and dispute resolution." },
+      { q: "Is a Cohabitation Agreement legally binding?", a: "Yes. A Cohabitation Agreement is legally binding and enforceable once signed by both parties. It provides court-ready legal protection and clarity about each party's rights and responsibilities. The agreement ensures that both parties have legal certainty regarding their living arrangement and property interests." },
+      { q: "Can I use a Cohabitation Agreement with a tenancy agreement?", a: "Yes. A Cohabitation Agreement works perfectly alongside a tenancy agreement or lease. While a tenancy agreement addresses landlord-tenant relationships, a Cohabitation Agreement defines the personal relationship, financial arrangements, and property ownership between cohabitants, providing comprehensive legal protection for your living situation." }
+    ],
+    keyProtections: [
+      "Preserve legal status as cohabitants, not spouses",
+      "Define ownership of property and assets",
+      "Clarify financial contributions and household expenses",
+      "Protect against liability for the other party's debts",
+      "Establish rules for property division if relationship ends",
+      "Court-ready legal drafting",
+      "Professional and enforceable legal language",
+      "Clear expectations from the outset",
+      "Compatible with tenancy agreements",
+      "Easy to customize and execute online"
+    ],
+    whatYouNeed: [
+      "Information about separate property owned before cohabitation",
+      "Details about jointly owned or acquired property",
+      "Income and earnings information for both parties",
+      "Breakdown of household expenses and contributions",
+      "Information on gifts and inheritance policies",
+      "Clarification on spousal rights waiver",
+      "Details on property division preferences",
+      "Information on termination and exit procedures",
+      "Preferred governing law and jurisdiction",
+      "Contact information for both parties",
+      "Asset and liability inventory",
+      "Household responsibility allocation details"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  // === CONTRACT MANAGEMENT ===
+  "Contract Extension Agreement": {
+    title: "Contract Extension Agreement",
+    otherNames: [
+      "Contract Extension Letter",
+      "Extension of Contract Agreement"
+    ],
+    whatIs: "A Contract Extension Agreement is a legally binding document used when the parties to an existing contract wish to continue their relationship beyond the original expiration date. Instead of drafting a completely new contract, this agreement allows the parties to extend the term of the original contract while keeping all other provisions in effect, unless specifically amended.\n\nUsing the best format of Contract Extension Agreement makes the extension process simple and efficient. A properly drafted Contract Extension Agreement allows the parties to move forward without interruption while maintaining legal certainty and clarity. This agreement is especially useful when the original contract is about to expire and the parties are satisfied with its terms, or when only limited changes—such as extending the termination date—are required.",
+    whenToUse: [
+      "When an existing contract is nearing its expiration and the parties wish to extend it beyond the original end date",
+      "When the parties want to set a new termination date and make limited revisions to the original agreement",
+      "When the parties are satisfied with the original contract terms and only need to extend the duration",
+      "When it's more practical than preparing a new contract or an additional amendment",
+      "When you want to maintain legal certainty and clarity in extending the relationship",
+      "When multiple parties need to formally document the extension of an existing agreement"
+    ],
+    faqs: [
+      { q: "What is a Contract Extension Agreement?", a: "A Contract Extension Agreement is a legally binding document used when the parties to an existing contract wish to continue their relationship beyond the original expiration date. Instead of drafting a completely new contract, this agreement allows the parties to extend the term of the original contract while keeping all other provisions in effect, unless specifically amended. It makes the extension process simple and efficient while maintaining legal certainty." },
+      { q: "What should a Contract Extension Agreement include?", a: "A well-structured Contract Extension Agreement should clearly set out: the effective date of the extension; the full names, addresses, and authorized signatories of all parties; the title and date of the original contract; the original end date of the contract; the new extended termination date; and any specific amendments to the original contract provisions, clearly identifying what is added, modified, or deleted. For clarity, parties may also attach a copy of the original contract." },
+      { q: "When should I use a Contract Extension Agreement?", a: "A Contract Extension Agreement should be used when an existing contract is nearing its expiration and the parties wish to extend it beyond the original end date; when the parties want to set a new termination date and make limited revisions; or when you want a more practical solution than preparing a new contract. Using the best format ensures the extension is legally enforceable and protects the interests of all parties." },
+      { q: "Is a Contract Extension Agreement legally binding?", a: "Yes. When properly completed and signed by all parties, a Contract Extension Agreement is legally binding and enforceable. This agreement has been customized over 60,700 times, demonstrating its reliability and practical value. Both parties are legally obligated to follow the extended terms specified in the agreement." },
+      { q: "What's the difference between a Contract Extension and an Amendment?", a: "A Contract Extension Agreement extends the term of an existing contract while keeping existing provisions intact (unless amended). An amendment, by contrast, modifies specific terms within the existing contract. An extension focuses on prolonging the relationship, while amendments focus on changing terms. Both documents serve different purposes and can be used independently or together." },
+      { q: "Can I download a Contract Extension Agreement template?", a: "Yes. You can download Contract Extension Agreement in a professional and customizable format. The Contract Extension Agreement can be signed online for free, making the process fast, secure, and convenient. This free download is suitable for businesses, professionals, and individuals seeking a reliable legal solution." }
+    ],
+    keyProtections: [
+      "Clearly identifies the original contract and all parties",
+      "Specifies the new extended termination date",
+      "Maintains all original contract provisions unless specifically amended",
+      "Outlines any amendments or changes to original terms",
+      "Ensures legal enforceability of the extension",
+      "Protects interests of all parties",
+      "Provides continuity and certainty in the business relationship",
+      "Includes authorized signatories and effective date",
+      "Documents all changes in context",
+      "Legally binding once signed by all parties"
+    ],
+    whatYouNeed: [
+      "Title and date of the original contract",
+      "Full names and addresses of all parties",
+      "Authorized signatories for each party",
+      "Original end date of the contract",
+      "New extended termination date",
+      "Any specific amendments to original provisions",
+      "Changes to be added, modified, or deleted",
+      "Effective date of the extension",
+      "Copy of the original contract (recommended)",
+      "Contact information for all parties",
+      "Details on dispute resolution procedures",
+      "Governing law and jurisdiction preferences"
     ],
     estimatedTime: "10-15 minutes"
   }

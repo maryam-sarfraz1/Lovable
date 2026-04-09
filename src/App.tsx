@@ -112,7 +112,7 @@ import ITServiceAgreementInfo from "./pages/ITServiceAgreementInfo";
 import MergerAgreementInfo from "./pages/MergerAgreementInfo";
 import AssetPurchaseAgreementInfo from "./pages/AssetPurchaseAgreementInfo";
 import MarketingAgreementInfo from "./pages/MarketingAgreementInfo";
-import ContractExtensionAgreementInfo from "./pages/ContractExtensionAgreementInfo";
+import ContractExtensionInfo from "./pages/ContractExtensionInfo";
 import ProductDistributionAgreementInfo from "./pages/ProductDistributionAgreementInfo";
 import ReferralFeeAgreementInfo from "./pages/ReferralFeeAgreementInfo";
 import BarterAgreementInfo from "./pages/BarterAgreementInfo";
@@ -142,6 +142,9 @@ import RequestCreditReferenceInfo from "./pages/RequestCreditReferenceInfo";
 import ComplaintLetterToCompanyInfo from "./pages/ComplaintLetterToCompanyInfo";
 import PromissoryNoteDueOnSpecificDateInfo from "./pages/PromissoryNoteDueOnSpecificDateInfo";
 import FoodServiceContractInfo from "./pages/FoodServiceContractInfo";
+import OfferToLeaseInfo from "./pages/OfferToLeaseInfo";
+import VehicleLeaseInfo from "./pages/VehicleLeaseInfo";
+import CohabitationInfo from "./pages/CohabitationInfo";
 import DJServicesAgreementInfo from "./pages/DJServicesAgreementInfo";
 import GeneralAffidavitInfo from "./pages/GeneralAffidavitInfo";
 import AttorneyEngagementLetterInfo from "./pages/AttorneyEngagementLetterInfo";
@@ -381,11 +384,14 @@ const App = () => {
                 <Route path="/merger-agreement-info" element={<MergerAgreementInfo />} />
                 <Route path="/asset-purchase-info" element={<AssetPurchaseAgreementInfo />} />
                 <Route path="/marketing-agreement-info" element={<MarketingAgreementInfo />} />
-                <Route path="/contract-extension-info" element={<ContractExtensionAgreementInfo />} />
+                <Route path="/contract-extension-info" element={<ContractExtensionInfo />} />
                 <Route path="/product-distribution-info" element={<ProductDistributionAgreementInfo />} />
                 <Route path="/referral-fee-agreement-info" element={<ReferralFeeAgreementInfo />} />
                 <Route path="/barter-agreement-info" element={<BarterAgreementInfo />} />
                 <Route path="/food-service-contract-info" element={<FoodServiceContractInfo />} />
+                <Route path="/offer-to-lease-info" element={<OfferToLeaseInfo />} />
+                <Route path="/vehicle-lease-info" element={<VehicleLeaseInfo />} />
+                <Route path="/cohabitation-agreement-info" element={<CohabitationInfo />} />
                 <Route path="/dj-services-agreement-info" element={<DJServicesAgreementInfo />} />
                 <Route path="/general-affidavit-info" element={<GeneralAffidavitInfo />} />
                 <Route path="/attorney-engagement-letter-info" element={<AttorneyEngagementLetterInfo />} />

@@ -3,13 +3,78 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { CheckCircle, BookOpen, UtensilsCrossed, Lock } from "lucide-react";
-import { documentContent } from "@/data/documentContent";
+
+// ============================================================
+// COMPLETE FOOD SERVICE CONTRACT DATA - HARDCODED DIRECTLY
+// ============================================================
+const doc = {
+  title: "Food Service Contract",
+  otherNames: ["Food Service Agreement"],
+  whatIs: "A Food Service Contract is a legally binding agreement between a food service provider (such as a caterer, restaurant, or food vendor) and a client. This agreement clearly outlines the responsibilities, payment terms, food preparation details, and service expectations between both parties.\n\nA Food Service Agreement is used when a business or individual hires a food service provider to supply meals, catering, or ongoing food services. This agreement defines:\n• The type of food services provided\n• Payment terms and invoicing\n• Duration of the service\n• Responsibilities of each party\n• Cleanup and equipment usage\n• Liability and dispute resolution\n\nA well-drafted Food Service Agreement on Legalgram helps prevent misunderstandings and protects both the service provider and the client.",
+  whenToUse: [
+    "You are hiring a caterer or food service provider",
+    "You operate a restaurant or food business offering catering services",
+    "You are providing food for corporate events, weddings, or parties",
+    "You want written terms for food preparation and service",
+    "Using a Food Service Agreement template ensures professionalism and legal protection"
+  ],
+  faqs: [
+    {
+      q: "Why Is a Food Service Agreement Important?",
+      a: "Creating a Food Service Contract provides the following benefits:\n✔ Clear expectations for both parties\n✔ Defined payment terms and timelines\n✔ Protection against disputes and non-payment\n✔ Clearly assigned responsibilities\n✔ Legal enforceability\n\nWithout a proper agreement, disagreements over service quality, timing, or payment can easily arise. If you are looking for a Food Service Agreement in the best legal format, you can download a free Food Service Contract on Legalgram, professionally drafted and easy to customize for your needs."
+    },
+    {
+      q: "What Does a Food Service Contract Include?",
+      a: "A professionally drafted Food Service Agreement on Legalgram typically includes:\n\n🔹 Party Information\nNames and addresses of the client and food service provider.\n\n🔹 Scope of Services\nDetails of food preparation, delivery, setup, and cleanup.\n\n🔹 Payment Terms\nService fees, payment schedules, deposits, and late fees.\n\n🔹 Duration of Agreement\nStart and end date of the food service engagement.\n\n🔹 Legal Clauses\nIndependent contractor status, liability, indemnity, and dispute resolution.\n\n🔹 Governing Law\nState law governing the agreement."
+    },
+    {
+      q: "Why Download a Food Service Agreement from Legalgram?",
+      a: "When you download a Food Service Agreement from Legalgram, you get:\n\n✅ Professionally drafted legal format\n✅ SEO-optimized and legally structured\n✅ Editable Word & PDF formats\n✅ Free Food Service Agreement download\n✅ Suitable for caterers, restaurants, and vendors\n✅ Easy to customize and reuse\n\nOur agreements are designed to meet business and legal standards while remaining simple to use."
+    },
+    {
+      q: "How Much Does a Food Service Contract Cost?",
+      a: "Hiring a lawyer to draft a Food Service Contract may cost hundreds of dollars.\n\nWith Legalgram, you can:\n\n✔ Draft a Food Service Agreement for free\n✔ Customize it online\n✔ Download instantly\n✔ Use it for multiple clients"
+    },
+    {
+      q: "What to Do After Creating Your Food Service Agreement?",
+      a: "Once your Food Service Contract is ready:\n\n1. Review the terms carefully\n2. Share it with the client\n3. Sign the agreement (digitally or manually)\n4. Keep a copy for your records\n5. Begin services with confidence\n\nYou can also download the Food Service Agreement as a PDF or Word file."
+    },
+    {
+      q: "Can My Food Service Agreement Be Reviewed by a Lawyer?",
+      a: "Yes. If you want extra protection, you can have your Food Service Contract reviewed by a legal professional. Legalgram also offers access to legal guidance for business agreements."
+    }
+  ],
+  keyProtections: [
+    "Clear expectations for both parties",
+    "Defined payment terms and timelines",
+    "Protection against disputes and non-payment",
+    "Clearly assigned responsibilities",
+    "Legal enforceability",
+    "Scope of services clearly defined",
+    "Equipment and liability terms",
+    "Dispute resolution procedures",
+    "Professional service standards",
+    "Written agreement protection"
+  ],
+  whatYouNeed: [
+    "Names and addresses of both parties",
+    "Details of food services to be provided",
+    "Food preparation specifications and dietary requirements",
+    "Delivery and setup requirements",
+    "Service fees and payment terms",
+    "Payment schedule and invoice details",
+    "Duration of service contract",
+    "Cleanup and equipment usage terms",
+    "Liability and indemnification clauses",
+    "Dispute resolution procedures",
+    "Cancellation and refund policy",
+    "Governing law and jurisdiction"
+  ],
+  estimatedTime: "10-15 minutes"
+};
 
 const FoodServiceContractInfo: React.FC = () => {
   const navigate = useNavigate();
-  
-  // Get the Food Service Contract from database
-  const doc = documentContent["Food Service Contract"] || documentContent["default"];
 
   return (
     <Layout>
