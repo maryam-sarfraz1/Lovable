@@ -180,6 +180,19 @@ const AssetPurchaseInfo = () => {
         </div>
       </div>
 
+      <div style={{ backgroundColor: '#e0f2fe', borderRadius: '8px', padding: '32px', marginBottom: '32px', border: '1px solid #bae6fd' }}>
+        <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: '#0c4a6e', marginBottom: '16px' }}>Download Asset Purchase Agreement</h2>
+        <p style={{ color: '#0369a1', lineHeight: '1.6', fontSize: '16px', marginBottom: '16px' }}>
+          You do not need to draft your agreement from scratch. You can download Asset Purchase Agreement templates directly from our platform. This free download Asset Purchase Agreement is prepared in a professional, legally sound format and is easy to customize for your transaction.
+        </p>
+        <p style={{ color: '#0369a1', lineHeight: '1.6', fontSize: '16px', marginBottom: '16px' }}>
+          The Asset Purchase Agreement template follows the best format and helps you save time and legal costs while ensuring compliance and accuracy. Simply customize the template with your specific transaction details and you're ready to go.
+        </p>
+        <div style={{ backgroundColor: '#ffffff', padding: '16px', borderRadius: '6px', border: '1px solid #7dd3fc' }}>
+          <p style={{ color: '#0369a1', margin: 0, fontWeight: 600 }}>👉 Ready to create your Asset Purchase Agreement? Click the button below to get started!</p>
+        </div>
+      </div>
+
       <div style={{ backgroundColor: '#fef3c7', borderRadius: '8px', padding: '24px', marginBottom: '32px', borderLeft: '4px solid #f59e0b' }}>
         <p style={{ fontSize: '14px', color: '#78350f', margin: 0 }}>
           <span style={{ fontWeight: 600 }}>Legal Disclaimer:</span> This information is provided for educational purposes only and should not be considered as legal advice. Asset Purchase Agreements may have different requirements based on jurisdiction and the nature of the assets. Please consult with a legal professional for guidance.

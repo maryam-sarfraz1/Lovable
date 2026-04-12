@@ -1,28 +1,14 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, FileText, Shield, Users, CheckCircle, Download, Store, BookOpen, DollarSign, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowLeft, FileText, Shield, Users, CheckCircle, Download, DollarSign, BookOpen, ChevronDown, ChevronUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { documentContent } from "@/data/documentContent";
 
-const InfoBadge = ({ icon: Icon, title, children, className = "" }) => (
-  <div className={`bg-white border border-gray-100 rounded-lg p-4 shadow-sm ${className}`}>
-    <div className="flex items-start">
-      <div className="flex-shrink-0 mr-3 mt-0.5">
-        <Icon className="w-6 h-6 text-indigo-600" />
-      </div>
-      <div>
-        <h4 className="font-semibold text-gray-900">{title}</h4>
-        <div className="text-gray-700 text-sm mt-1">{children}</div>
-      </div>
-    </div>
-  </div>
-);
-
-const FranchiseAgreementInfo = () => {
+const FeeAgreementInfo = () => {
   const navigate = useNavigate();
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
-  const doc = documentContent["Franchise Purchase Agreement"] || documentContent["default"];
+  const doc = documentContent["Fee Agreement"] || documentContent["default"];
 
   const toggleFAQ = (index: number) => {
     setExpandedFAQ(expandedFAQ === index ? null : index);
@@ -39,14 +25,14 @@ const FranchiseAgreementInfo = () => {
 
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <div className="bg-indigo-100 p-3 rounded-full">
-                <Store className="w-8 h-8 text-indigo-700" />
+              <div className="bg-amber-100 p-3 rounded-full">
+                <DollarSign className="w-8 h-8 text-amber-700" />
               </div>
             </div>
 
             <h1 className="text-3xl font-bold text-gray-900 mb-2">{doc.title}</h1>
             {doc.otherNames && doc.otherNames.length > 0 && (
-              <p className="text-lg text-gray-600">{doc.otherNames[0]}</p>
+              <p className="text-lg text-gray-600">{doc.otherNames.slice(1).join(" • ")}</p>
             )}
           </div>
         </div>
@@ -56,7 +42,7 @@ const FranchiseAgreementInfo = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Shield className="w-5 h-5 mr-2 text-sky-600" />
-                What Is a Franchise Purchase Agreement?
+                What Is a Fee Agreement?
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -68,7 +54,7 @@ const FranchiseAgreementInfo = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Users className="w-5 h-5 mr-2 text-green-600" />
-                When Should You Use a Franchise Purchase Agreement?
+                When Should You Use a Fee Agreement?
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -100,9 +86,9 @@ const FranchiseAgreementInfo = () => {
                     >
                       <span>{faq.q}</span>
                       {expandedFAQ === index ? (
-                        <ChevronUp className="w-5 h-5 text-indigo-600" />
+                        <ChevronUp className="w-5 h-5 text-amber-600" />
                       ) : (
-                        <ChevronDown className="w-5 h-5 text-indigo-600" />
+                        <ChevronDown className="w-5 h-5 text-amber-600" />
                       )}
                     </button>
                     {expandedFAQ === index && (
@@ -158,13 +144,13 @@ const FranchiseAgreementInfo = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Download className="w-5 h-5 mr-2 text-amber-600" />
-                Download Franchise Purchase Agreement
+                Download Fee Agreement
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div className="text-gray-700">
-                  <p className="mb-1">Download a professional, customizable Franchise Purchase Agreement ideal for franchisors and franchisees.</p>
+                  <p className="mb-1">Download a professional, customizable Fee Agreement ideal for freelancers, consultants, and service providers.</p>
                   <p className="text-sm text-gray-500">Estimated time to complete: {doc.estimatedTime}</p>
                 </div>
 
@@ -180,12 +166,46 @@ const FranchiseAgreementInfo = () => {
 
           <Card>
             <CardHeader>
+              <CardTitle>Important Tips</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3 text-gray-700">
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <p><strong>Be Specific:</strong> Clearly outline the exact services to be provided, leaving no room for ambiguity.</p>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <p><strong>Define Compensation:</strong> Specify the fee structure, whether it's a lump sum, hourly rate, or milestone-based payment.</p>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <p><strong>Set Clear Timeline:</strong> Include start and end dates, as well as any project milestones or deadlines.</p>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <p><strong>Payment Terms:</strong> Outline payment schedule, due dates, and accepted payment methods.</p>
+                </div>
+
+                <div className="flex items-start">
+                  <CheckCircle className="w-5 h-5 text-amber-600 mr-2 mt-0.5 flex-shrink-0" />
+                  <p><strong>Get Legal Advice:</strong> For significant service contracts, have a lawyer review the agreement before signing.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
               <CardTitle>Disclaimer</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                 <p className="text-gray-600 text-sm">
-                  This information is provided for educational purposes only and does not constitute legal advice. For complex franchising matters or jurisdiction-specific questions, consult a qualified franchise attorney to ensure the agreement complies with applicable laws and protects your interests.
+                  This information is provided for educational purposes only and does not constitute legal advice. For service agreements involving significant compensation or complex terms, consult a qualified attorney to ensure the agreement complies with applicable laws and protects your interests.
                 </p>
               </div>
             </CardContent>
@@ -197,4 +217,4 @@ const FranchiseAgreementInfo = () => {
   );
 };
 
-export default FranchiseAgreementInfo;
+export default FeeAgreementInfo;

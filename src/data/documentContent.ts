@@ -429,6 +429,52 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-15 minutes"
   },
 
+  // === CLINICAL TRIAL AGREEMENTS ===
+  "Clinical Trial Agreement": {
+    title: "Clinical Trial Agreement",
+    otherNames: ["Clinical Trial Agreement Form", "CTA", "Clinical Trial Contract", "Trial Agreement"],
+    whatIs: "A Clinical Trial Agreement (CTA) is a legally binding contract used when commercial products—such as pharmaceuticals, medical devices, or cosmetics—must be tested on human participants before being approved or sold. This agreement is entered into between the product developer or manufacturer (known as the sponsor) and a qualified institution, such as a research university, hospital, or clinical research organization.\n\nA properly drafted Clinical Trial Agreement addresses critical legal, regulatory, and ethical issues related to human subject research. These include the allocation of risk and liability, protection of participant rights, data ownership, confidentiality, and compliance with applicable laws and regulations. Using the best format of Clinical Trial Agreement helps ensure transparency and legal certainty for all parties involved.",
+    whenToUse: [
+      "When a company or sponsor commissions a clinical trial to test a product",
+      "When you work for or represent an institution that conducts clinical trials",
+      "When you have developed a product that must undergo clinical testing before commercialization",
+      "When you need to ensure regulatory compliance and risk management"
+    ],
+    faqs: [
+      { q: "When Should You Use a Clinical Trial Agreement?", a: "A Clinical Trial Agreement should be used when a company or sponsor commissions a clinical trial to test a product, when you work for or represent an institution that conducts clinical trials, or when you have developed a product that must undergo clinical testing before commercialization. In all such cases, using a professionally prepared draft Clinical Trial Agreement is essential for regulatory compliance and risk management." },
+      { q: "What Does a Draft Clinical Trial Agreement Cover?", a: "A comprehensive draft CTA clearly outlines the responsibilities of both the sponsor and the institution. It specifies the product or investigational drug/device to be supplied by the sponsor, any financial support or reimbursement provided, access to proprietary or confidential information, the institution's obligation to conduct the trial and deliver research data, and rights related to publication of results and future intellectual property development." },
+      { q: "Why Use the Best Format of Clinical Trial Agreement?", a: "This agreement has been customized over 2,800 times, demonstrating its reliability and practical value. A professionally drafted Clinical Trial Agreement ensures all critical legal and regulatory issues are addressed, protects both parties' interests, and when properly completed and signed, is legally binding and enforceable." },
+      { q: "What Parties Are Involved in a Clinical Trial Agreement?", a: "A Clinical Trial Agreement is entered into between the sponsor (product developer/manufacturer) and a qualified institution such as a research university, hospital, or clinical research organization. The agreement clearly defines the roles and responsibilities of both parties in conducting the clinical trial for human subject research." },
+      { q: "How Is Data Ownership and Publication Handled?", a: "Clinical Trial Agreements specify rights related to publication of results and future intellectual property development. The agreement details who owns the data, how it can be used, publication timelines, and the procedures for sharing research findings while protecting proprietary information and participant confidentiality." },
+      { q: "Should I Consult a Lawyer Before Signing a CTA?", a: "Yes. Because clinical trials are highly regulated and involve complex legal and ethical considerations, parties are strongly encouraged to consult a Legal Pro to review the agreement or address specific legal questions before execution. Legal review is essential to ensure compliance with applicable regulations and to protect all parties' interests." }
+    ],
+    keyProtections: [
+      "Allocation of risk and liability between parties",
+      "Protection of human subject research rights and ethics compliance",
+      "Data ownership and intellectual property rights",
+      "Confidentiality of proprietary and participant information",
+      "Financial terms, funding, and reimbursement provisions",
+      "Regulatory compliance and approval requirements",
+      "Publication rights and data sharing procedures",
+      "Insurance and indemnification provisions",
+      "Termination conditions and dispute resolution",
+      "Compliance with federal and state regulations"
+    ],
+    whatYouNeed: [
+      "Sponsor company name, address, and contact information",
+      "Research institution name, address, and contact information",
+      "Product or investigational drug/device description",
+      "Description of the clinical trial scope and objectives",
+      "Financial support, funding, or reimbursement amounts",
+      "Proprietary and confidential information to be shared",
+      "Data ownership and intellectual property rights allocation",
+      "Publication and results disclosure procedures",
+      "Insurance and liability coverage requirements",
+      "Regulatory compliance and approval timelines"
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+
   "Living Will": {
     title: "Living Will",
     otherNames: ["Advance Directive", "Advance Healthcare Directive", "Medical Directive", "Advance Medical Directive", "Advance Health Care Directive"],
@@ -816,6 +862,51 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "12-15 minutes"
   },
 
+  "Social Media Contract": {
+    title: "Social Media Contract",
+    otherNames: ["Social Media Agreement", "Social Media Policy", "Employee Social Media Agreement", "Social Media Guidelines"],
+    whatIs: "A Social Media Contract is a legally binding agreement that sets clear guidelines for how employees or designated representatives may use social media, both for company accounts and personal profiles. This agreement is not intended to micromanage every post or restrict healthy online engagement. Instead, it ensures that social media activity does not negatively impact the company's reputation or place the business in a legally or professionally sensitive position.\n\nEmployees who are active on social media can be a valuable asset to a growing business. They often help promote the brand, enhance credibility, and share positive workplace experiences. A properly drafted Social Media Contract supports this engagement while setting reasonable boundaries. For example, employees may be required to state that opinions shared on personal accounts are their own and do not represent the company.\n\nUsing the best format of Social Media Contract helps strike a balance between freedom of expression and professional responsibility.",
+    whenToUse: [
+      "When you want to establish rules for employee use of platforms such as Twitter (X), Facebook, Instagram, LinkedIn, or other social media",
+      "When you appoint an employee or team to manage your company's official social media accounts",
+      "When you need to protect your company's reputation and brand image",
+      "For any organization concerned with employee social media conduct"
+    ],
+    faqs: [
+      { q: "Why Create a Draft Social Media Contract?", a: "Even if your company is not actively marketing on social media, having a draft Social Media Contract is a smart preventative measure. Social media is everywhere, and employees are often perceived as reflections of a company's culture and values. A professionally prepared agreement clearly defines what employees can and cannot post, who has access to official company accounts, and how sensitive or confidential information should be handled." },
+      { q: "What Does a Social Media Contract Typically Cover?", a: "A professionally prepared Social Media Contract usually addresses acceptable and unacceptable social media conduct, use of company branding, logos, and confidential information, distinction between personal opinions and company views, access control for official social media accounts, and consequences of policy violations." },
+      { q: "How Should Employees Handle Company Information on Social Media?", a: "Your Social Media Contract should clearly prohibit sharing confidential or proprietary business information on personal or company social media accounts. This includes details about upcoming projects, financial information, trade secrets, client lists, and other sensitive data that could harm the company if disclosed." },
+      { q: "Can Employees Be Required to Disclose Personal Social Media Access?", a: "Many companies require employees with access to official company accounts to agree to periodic audits and oversight. Your agreement should clearly outline expectations for monitoring, retention of credentials, and procedures for handling account access when employees leave." },
+      { q: "What About Employee Personal Accounts?", a: "A Social Media Contract may address employee conduct on personal accounts, particularly if they identify as working for the company or discuss work-related matters. The key is balancing company reputation protection with employee privacy rights and freedom of expression." },
+      { q: "Should a Lawyer Review My Social Media Contract?", a: "Yes. Getting independent legal review can ensure your agreement complies with employment laws in your jurisdiction. Consider consulting with a Legal Pro to review your Social Media Contract or answer specific questions related to employee social media use." }
+    ],
+    keyProtections: [
+      "Clear guidelines for employee social media conduct",
+      "Distinction between personal opinions and company positions",
+      "Confidentiality and trade secret protection",
+      "Prohibition on disclosure of company secrets",
+      "Company branding and logo usage rules",
+      "Access control for official company social media accounts",
+      "Employee account monitoring and audit provisions",
+      "Consequences for policy violations",
+      "Protection of company reputation",
+      "Compliance with applicable social media platform terms"
+    ],
+    whatYouNeed: [
+      "List of social media platforms your company uses or employees may access",
+      "Description of company accounts and who manages them",
+      "Details about confidential or proprietary information to protect",
+      "Company branding guidelines and logo usage permissions",
+      "Consequences for violations (disciplinary actions)",
+      "Guidelines for personal account identification of company affiliation",
+      "Procedures for monitoring and auditing social media accounts",
+      "Provisions for account access upon employee departure",
+      "Employee acknowledgment and acceptance procedures",
+      "Statement regarding personal account disclaimers"
+    ],
+    estimatedTime: "12-18 minutes"
+  },
+
   // === SALES & TRANSACTIONS ===
   "Bill of Sale": {
     title: "Bill of Sale",
@@ -853,7 +944,8 @@ export const documentContent: Record<string, DocumentContent> = {
   // === IT SERVICE AGREEMENTS ===
   "IT Service Agreement": {
     title: "IT Service Agreement",
-    whatIs: "An IT Service Agreement is a legally binding contract that defines the terms, scope, and conditions under which IT services are provided between a service provider and a client. This contract ensures clarity in service delivery, payment terms, responsibilities, and legal protection for both parties. It establishes a professional framework by clearly defining expectations, minimizing disputes, and protecting both the service provider and client.",
+    otherNames: ["IT Service Contract", "IT Support Contract"],
+    whatIs: "An IT Service Agreement is a legally binding contract that defines the terms and conditions under which information technology services are provided by a service provider to a client. This agreement clearly outlines essential elements such as the scope of IT services, service levels, roles and responsibilities, pricing, payment terms, confidentiality, termination rights, and legal compliance. A properly drafted IT Service Agreement—also known as an IT Service Contract—helps reduce the risk of future disputes by protecting the rights and interests of both parties. Because many businesses rely on third-party IT professionals to manage and maintain their technology infrastructure, using the best format of IT Service Agreement is crucial for operational clarity and legal security. Unlike generic templates, a professional draft IT Service Agreement provides structured terms that reflect real-world IT engagements and ensures accountability from the start.",
     whenToUse: [
       "You are providing IT services to a client or company",
       "You are hiring an IT professional or support provider",
@@ -862,11 +954,12 @@ export const documentContent: Record<string, DocumentContent> = {
       "You require formal documentation of IT support arrangements"
     ],
     faqs: [
-      { q: "Should every IT provider create an IT Service Agreement?", a: "Yes. Every IT professional should use an agreement to clearly define expectations. This helps avoid payment disputes, clarify roles and responsibilities, set timelines and deliverables, and reduce legal risks. Without one, issues like underpayment, delays, and misunderstandings may arise." },
-      { q: "What is included in the best format of IT Service Agreement?", a: "You will need: client and service provider details, scope of IT services, payment terms and schedule, start and end dates, and confidentiality clauses. The agreement should include essential legal protections and be customizable to fit your needs." },
-      { q: "What is the cost of drafting an IT Service Agreement with a lawyer?", a: "Hiring a lawyer can cost $100 to $350+ per hour depending on experience and complexity. Using a professionally drafted template saves both time and cost while ensuring legal compliance and professional quality." },
-      { q: "What to do after downloading your IT Service Agreement?", a: "Review the document carefully, share it with the other party, make necessary edits, sign the agreement, and keep a copy for records. This ensures your agreement is legally enforceable and ready for use." },
-      { q: "Can I get my IT Service Agreement reviewed?", a: "Yes. After creating or downloading your agreement, it is recommended to have a legal expert review it. A professionally drafted template minimizes risks, but legal review adds an extra layer of protection." }
+      { q: "When Should You Use an IT Service Agreement?", a: "Use an IT Service Agreement in two situations: when you are providing IT services to another business, or when you are hiring an IT service provider or IT support professional. A written agreement defines your expectations and prevents misunderstandings between both parties." },
+      { q: "Should Every IT Provider Use a Draft IT Service Agreement?", a: "Yes, regardless of project size. Benefits include clear roles and responsibilities, defined engagement duration, and well-structured fees and payment terms. Without an agreement, you risk underpayment, incorrect assumptions about the project, unclear deadlines, and potential disputes." },
+      { q: "What Does a Draft IT Service Agreement Include?", a: "A comprehensive draft includes the client's full name and address, a detailed description of IT services, service start and end dates, fees and billing methods with payment due dates, and standard legal clauses covering contractor status, confidentiality, dispute resolution, and governing law. It should be customizable for your specific needs." },
+      { q: "Where Can I Download an IT Service Agreement?", a: "Download professionally drafted templates directly from our website. These templates are professionally created, easy to customize, and suitable for IT consultants, IT service providers, and businesses hiring IT support. They're available in the best formats and are editable and printable." },
+      { q: "What Happens After Creating an IT Service Agreement?", a: "After creating your agreement, you can access it on any device, edit as needed, download it as PDF or Word format, print it, sign it electronically, and share the signed copy with your client for record-keeping." },
+      { q: "Can a Lawyer Review My IT Service Agreement?", a: "Yes, although independent lawyer reviews can be time-consuming and costly, a practical solution is to use professional guidance through our legal support services. With appropriate membership, you can request a review or ask specific legal questions." }
     ],
     keyProtections: [
       "Detailed description of IT services",
@@ -937,6 +1030,429 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "15-20 minutes"
   },
 
+  // === ADMINISTRATIVE SERVICES AGREEMENT ===
+  "Administrative Services Agreement": {
+    title: "Administrative Services Agreement",
+    otherNames: ["Administrative Services Contract", "Administrative Professional Agreement", "Back-Office Services Agreement", "Administrative Support Agreement", "Professional Services Agreement", "Administrative Assistant Contract"],
+    whatIs: "An Administrative Services Agreement is a legally binding contract that governs the provision of administrative services between an administrative professional and a client. This agreement clearly defines the scope of services, duties, timelines, and payment terms, helping both parties establish expectations from the very beginning of their professional relationship. A properly drafted Administrative Services Agreement offers stronger legal protection than basic templates, safeguards the rights of both parties, and reduces the risk of disputes. If questions arise regarding performance or payment, the agreement serves as a reliable written record. Using the best format of Administrative Services Agreement ensures clarity, professionalism, and enforceability throughout the engagement.",
+    whenToUse: [
+      "When you are providing administrative services to a company as an independent contractor",
+      "When you are hiring an independent contractor to perform administrative or back-office services",
+      "When you need to clearly define responsibilities and protect both parties",
+      "When establishing payment terms, schedules, and service expectations",
+      "When you want to prevent misunderstandings and document the professional relationship"
+    ],
+    faqs: [
+      { q: "When should I use an Administrative Services Agreement?", a: "You should use an Administrative Services Agreement when providing administrative services as an independent contractor, or when hiring an independent contractor to perform administrative or back-office services. Having a written agreement is essential for defining responsibilities and protecting both parties." },
+      { q: "Do administrative professionals need an Administrative Services Agreement?", a: "Yes, even if administrative services are not your full-time profession, documenting your arrangement is crucial. A written agreement helps prevent misunderstandings by clearly defining roles and responsibilities, providing a transparent payment structure and schedule, and ensuring certainty regarding the duration of engagement." },
+      { q: "What should a draft Administrative Services Agreement include?", a: "A comprehensive agreement should cover: full contact information of the client, a clear description of the administrative services to be provided, the start date and end date of the engagement, agreed fees, payment method and payment schedule, independent contractor relationship clarification, confidentiality obligations, dispute resolution mechanisms, indemnification, limitation of liability, and the governing jurisdiction." },
+      { q: "Where can I create an Administrative Services Agreement for free?", a: "You can download Administrative Services Agreement templates from legal document platforms. These templates are prepared in professional and legally sound formats and guide you step-by-step through completion. A professionally drafted template saves you time and legal expense compared to hiring a lawyer, which often costs hundreds of dollars." },
+      { q: "What should I do after creating my Administrative Services Agreement?", a: "Once finalized, edit the document as needed, download it in PDF or Word format, print it, and sign it electronically. After execution, always share a fully signed copy with the client for record-keeping and future reference." },
+      { q: "Can a lawyer review my Administrative Services Agreement?", a: "Yes. While many lawyers prefer not to review documents they didn't draft, you can seek professional review through legal support services or law firm review programs. With appropriate memberships, you can consult an experienced lawyer to review your agreement or answer any related legal questions." }
+    ],
+    keyProtections: [
+      "Full contact information of client and service provider documented",
+      "Clear description of administrative services to be provided",
+      "Agreed fees, payment method, and payment schedule specified",
+      "Start date and end date of engagement clearly defined",
+      "Independent contractor relationship legally established",
+      "Confidentiality obligations and limitations specified",
+      "Dispute resolution mechanisms outlined",
+      "Indemnification and limitation of liability included",
+      "Termination conditions and notice requirements defined",
+      "Governing jurisdiction and applicable law established"
+    ],
+    whatYouNeed: [
+      "Client company name, address, and contact information",
+      "Administrative professional name, address, and contact information",
+      "Detailed description of administrative services to be provided",
+      "Specific deliverables and responsibilities",
+      "Project timeline and key milestones",
+      "Total project fee or hourly rates",
+      "Payment schedule and billing terms",
+      "Start and end dates of engagement",
+      "Confidentiality and non-disclosure requirements",
+      "Term renewal and termination conditions"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === ADVERTISING AGENCY AGREEMENT ===
+  "Advertising Agency Agreement": {
+    title: "Advertising Agency Agreement",
+    otherNames: ["Advertising Services Agreement", "Marketing Agency Contract", "Agency Agreement", "Services Agreement", "Advertising Contract", "Marketing Services Contract", "Creative Services Agreement"],
+    whatIs: "An Advertising Agency Agreement is a legally binding contract that defines the professional relationship between an advertising agency and its client. This agreement establishes the scope of advertising and marketing services, timelines, fees, compensation structure, and the responsibilities of both parties. A properly drafted Advertising Agency Agreement ensures clarity on service delivery, payment terms, intellectual property ownership, and dispute resolution. It protects both the agency and client by documenting expectations, minimizing misunderstandings, and providing legal recourse in case of disputes or non-performance.\n\nWhether you are the advertising agency providing services or a business hiring an agency to manage your marketing campaigns, this agreement creates a professional framework for the engagement. It covers the full scope of advertising services, from creative development and media planning to campaign execution and performance reporting.",
+    whenToUse: [
+      "When hiring an advertising agency to manage marketing campaigns and brand promotion.",
+      "When you are an advertising agency engaging with a new client.",
+      "When you need clear documentation of services, deliverables, timelines, and payment terms.",
+      "When you want to protect intellectual property and ownership of creative materials.",
+      "When you need to establish performance metrics, reporting requirements, and approval processes."
+    ],
+    faqs: [
+      { q: "Why use a draft Advertising Agency Agreement?", a: "A draft agreement ensures clear understanding of the engagement duration, defined roles and responsibilities, transparency on invoicing and payment terms, and established expectations for deliverables. It protects both parties by documenting the professional relationship in writing and providing legal recourse if disputes arise." },
+      { q: "What should an Advertising Agency Agreement include?", a: "A comprehensive agreement should include: full names and contact information of both parties, detailed description of advertising and marketing services, specific deliverables (ads, campaigns, social media, etc.), project timeline and milestones, fees, payment terms, and billing schedule, intellectual property and creative ownership rights, approval and revision processes, performance metrics and reporting requirements, confidentiality and non-disclosure provisions, term of agreement and termination conditions, and dispute resolution procedures." },
+      { q: "Where can I create an Advertising Agency Agreement for free?", a: "You can download professional Advertising Agency Agreement templates online from legal document platforms. These templates provide legally sound formats, are fully customizable to your specific needs, and save hundreds of dollars compared to hiring a lawyer. You can find free templates that include all necessary provisions and professional formatting." },
+      { q: "What happens after I create an Advertising Agency Agreement?", a: "After creating your agreement: Review it carefully to ensure accuracy, Share it with the other party for review and feedback, Make any necessary revisions, Download the document in PDF or Word format, Print and sign both copies (one for each party), Consider having it notarized for additional legal weight, Provide copies to both the agency and client, and keep signed copies in your records." },
+      { q: "How do I ensure the agreement is fair for both parties?", a: "Include clear performance metrics and deliverables, specify revision and approval rounds (e.g., 2 rounds of revisions included), define what constitutes scope creep, establish realistic timelines based on complexity, include payment terms favorable to both parties (e.g., 50% upfront, 50% upon delivery), address intellectual property ownership clearly, and include dispute resolution procedures. Both parties should review with counsel if significant budget or complex services are involved." },
+      { q: "Can I modify an Advertising Agency Agreement after it's signed?", a: "Yes. Any modifications to the original agreement should be documented in writing through an amendment or change order signed by both parties. This ensures both parties understand what has changed and maintain a clear record of the updated terms. Verbal modifications are not enforceable; all changes must be documented in writing." }
+    ],
+    keyProtections: [
+      "Clear definition of scope of services and deliverables",
+      "Specific timelines and project milestones",
+      "Fees and compensation structure clearly documented",
+      "Payment terms and billing schedule specified",
+      "Intellectual property and creative work ownership defined",
+      "Revision and approval process established",
+      "Performance metrics and reporting requirements",
+      "Confidentiality and data protection provisions",
+      "Termination conditions and notice requirements",
+      "Dispute resolution and governing law specified"
+    ],
+    whatYouNeed: [
+      "Advertising agency name, address, and contact information",
+      "Client company name, address, and contact information",
+      "Detailed description of advertising and marketing services",
+      "Specific deliverables (campaigns, ads, social media content, etc.)",
+      "Project timeline and key milestones",
+      "Total project fee or hourly rates",
+      "Payment schedule and billing terms",
+      "Intellectual property ownership preferences",
+      "Number of revision rounds included",
+      "Performance metrics and reporting frequency"
+    ],
+    estimatedTime: "12-18 minutes"
+  },
+
+  // === ASSET PURCHASE AGREEMENT ===
+  "Asset Purchase Agreement": {
+    title: "Asset Purchase Agreement",
+    otherNames: ["APA", "Asset Sale and Purchase Agreement", "Business Asset Purchase Agreement", "Asset Acquisition Agreement", "Assets Purchase Agreement", "Asset Purchase Contract", "Asset Acquisition Contract"],
+    whatIs: "An Asset Purchase Agreement (commonly referred to as an APA) is a legally binding contract used to record the terms and conditions under which one business purchases specific assets from another business. This agreement provides legal clarity for both parties by clearly identifying what is being sold, how much is being paid, and the conditions governing the transaction.\n\nA properly drafted Asset Purchase Agreement protects both buyers and sellers. Buyers gain certainty regarding the assets they are acquiring, while sellers retain a clear written record of the sale. Using the best format of Asset Purchase Agreement ensures the transaction is enforceable and minimizes the risk of disputes.\n\nA draft Asset Purchase Agreement typically covers the sale of both tangible assets, such as equipment, inventory, vehicles, furniture, or real estate, and intangible assets, including business names, customer databases, contracts, trademarks, goodwill, and other intellectual property.",
+    whenToUse: [
+      "When purchasing the assets of an existing business and you want all terms and conditions documented in writing",
+      "When selling business assets and you need a clear, legally sound agreement defining the sale",
+      "When you want transparency and accountability for both parties",
+      "When legal protection is necessary to prevent disputes and misunderstandings",
+      "When you need to define what assets are included in the transaction",
+      "When you want to specify the purchase price, payment terms, and closing date"
+    ],
+    faqs: [
+      { q: "What is an Asset Purchase Agreement?", a: "An Asset Purchase Agreement (APA) is a legally binding contract used to record the terms and conditions under which one business purchases specific assets from another business. It provides legal clarity by identifying what is being sold, how much is being paid, and the conditions governing the transaction. A properly drafted APA protects both buyers and sellers." },
+      { q: "When should I use an Asset Purchase Agreement?", a: "You should use an Asset Purchase Agreement when purchasing or selling business assets and want all terms and conditions documented in writing. It's essential when you need transparency, accountability, and legal protection for both parties. A written agreement ensures that disputes are minimized and both parties understand their obligations." },
+      { q: "What assets can be included in an Asset Purchase Agreement?", a: "An Asset Purchase Agreement can cover both tangible assets (machinery, equipment, inventory, vehicles, real estate) and intangible assets (business names, customer databases, contracts, trademarks, goodwill, and other intellectual property). The agreement includes a detailed inventory of all assets being transferred." },
+      { q: "What does the seller warrant in an Asset Purchase Agreement?", a: "The seller provides representations and warranties confirming ownership, condition, and legal compliance of the assets. These provisions disclose any known defects, liabilities, or issues related to the assets. The seller also guarantees that the books and accounts accurately reflect the financial affairs of the business." },
+      { q: "What happens at closing?", a: "At closing, ownership of the assets is transferred from the seller to the buyer. The agreed closing date and time are specified in the agreement, and time is of the essence. The parties may appoint a title company or escrow agent to facilitate the transaction. All required documents and contractual conditions must be satisfied prior to closing." },
+      { q: "Can I customize an Asset Purchase Agreement?", a: "Yes. You can download Asset Purchase Agreement templates from our platform and customize them for your specific transaction. The templates are prepared in a professional, legally sound format and are easy to modify. This allows you to save time and legal costs while ensuring compliance and accuracy." }
+    ],
+    keyProtections: [
+      "Identifies buyer, seller, and all assets included",
+      "Specifies the purchase price and payment terms",
+      "Defines closing date and transfer of ownership",
+      "Includes representations and warranties from seller",
+      "Discloses known defects and liabilities",
+      "Establishes governing law and jurisdiction",
+      "Allows buyer to inspect books and accounts",
+      "Protects both parties from legal disputes",
+      "Legally enforceable and binding",
+      "Minimizes transaction risk and misunderstandings"
+    ],
+    whatYouNeed: [
+      "Names and details of buyer and seller",
+      "Complete inventory of assets being sold",
+      "Purchase price and payment terms",
+      "Closing date and location",
+      "Asset condition and ownership confirmation",
+      "Any known defects or liabilities",
+      "Books and accounts documentation",
+      "Governing law jurisdiction",
+      "Representations and warranties",
+      "Escrow or title company information"
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+
+  // === STOCK PURCHASE AGREEMENT ===
+  "Stock Purchase Agreement": {
+    title: "Stock Purchase Agreement",
+    otherNames: ["Share Purchase Agreement", "Stock Purchase and Sale Agreement", "Stock Acquisition Agreement", "Equity Purchase Agreement", "Share Acquisition Agreement"],
+    whatIs: "A Stock Purchase Agreement is a legally binding contract that governs the sale and transfer of ownership in a company by selling its stock or shares to a buyer. This agreement formalizes the terms under which a buyer acquires equity ownership in a company from a seller or shareholders.\n\nA properly drafted Stock Purchase Agreement clearly defines the purchase price, payment terms, seller representations and warranties, buyer due diligence rights, closing conditions, and post-closing obligations. The agreement protects both the buyer and seller by establishing transparent terms, managing transaction risk, and ensuring regulatory compliance.\n\nStock Purchase Agreements are used in business acquisitions, private equity transactions, management buyouts, and exit transactions. With our comprehensive template supporting 15,800+ customizations, you can tailor the agreement to address your specific transaction structure, representations, indemnification provisions, and closing mechanics.",
+    whenToUse: [
+      "You are buying or selling company shares or equity in a private company.",
+      "You are negotiating a business acquisition or exit transaction.",
+      "You want to purchase a stake in a company and need legal protection.",
+      "You are engaged in a management buyout or investor transaction.",
+      "You need to establish all terms, conditions, and representations for stock transfer."
+    ],
+    faqs: [
+      { q: "What is the difference between a Stock Purchase Agreement and an Asset Purchase Agreement?", a: "A Stock Purchase Agreement involves the sale of company stock or shares, transferring equity ownership to the buyer. The company itself continues to exist with the new owner. An Asset Purchase Agreement involves the sale of specific business assets only. With a stock purchase, the buyer inherits all corporate liabilities and obligations; with an asset purchase, the buyer typically selects only desired assets." },
+      { q: "What representations and warranties should be included?", a: "Key representations and warranties include: company organization and good standing, capitalization and stock ownership, financial statements accuracy, contracts and liabilities, compliance with laws, intellectual property ownership, employee matters, litigation, environmental compliance, and material adverse changes. These protect the buyer from undisclosed liabilities." },
+      { q: "What is a Material Adverse Change (MAC) clause?", a: "A MAC clause permits the buyer to terminate or renegotiate if a material adverse change occurs between signing and closing. This includes significant operational deterioration, loss of key customers, environmental liabilities, or regulatory changes. MAC clauses protect buyers from unforeseen business deterioration." },
+      { q: "What are indemnification provisions?", a: "Indemnification clauses require the seller to compensate the buyer for breaches of representations and warranties that are discovered after closing. Typical indemnification provisions include: baskets (minimum claim thresholds), caps (maximum liability limits), escrow holdback provisions for claims, and survival periods for different representation categories." },
+      { q: "What is an escrow account in a stock purchase?", a: "An escrow account holds a portion of the purchase price (typically 10-20%) after closing, held in trust by a third party. Funds are released after a specified period (often 12-24 months) unless used to satisfy indemnification claims. Escrow protects buyers from seller misrepresentations or breach." },
+      { q: "Can I customize a Stock Purchase Agreement?", a: "Yes. Stock Purchase Agreements are highly customizable to address specific transaction structures, purchase price adjustments, earn-out provisions, management retention, and regulatory requirements. Our template supports 15,800+ customization options to accommodate your specific transaction needs and risk allocation preferences." }
+    ],
+    keyProtections: [
+      "Clear definition of stock being purchased and ownership transfer mechanism",
+      "Comprehensive seller representations and warranties about company condition",
+      "Buyer due diligence rights and information access before closing",
+      "Purchase price calculation, payment terms, and escrow provisions",
+      "Material Adverse Change (MAC) provisions protecting against deterioration",
+      "Indemnification rights for breaches and misrepresentations",
+      "Tax indemnification and regulatory compliance provisions",
+      "Closing conditions and post-closing adjustments",
+      "Non-compete, non-solicitation, and employee retention agreements",
+      "Dispute resolution and governing law provisions"
+    ],
+    whatYouNeed: [
+      "Seller's and buyer's full legal names and business details",
+      "Current capitalization table and all shareholder details",
+      "Number and type of shares or stock being purchased",
+      "Purchase price per share and total consideration",
+      "Payment terms, timing, and escrow arrangement details",
+      "Recent financial statements and balance sheet information",
+      "Details of all loans, liens, and encumbrances on shares",
+      "Material contracts and customer/vendor information",
+      "Employee and compensation information",
+      "Intellectual property, licenses, and regulatory compliance details"
+    ],
+    estimatedTime: "25-35 minutes"
+  },
+
+  // === PRODUCT DISTRIBUTION AGREEMENT ===
+  "Product Distribution Agreement": {
+    title: "Product Distribution Agreement",
+    otherNames: ["Distribution Agreement", "Product Distribution Contract", "Distributor Contract Agreement", "Supply and Distribution Agreement", "Reseller Agreement"],
+    whatIs: "A Product Distribution Agreement is a legally binding contract that governs the relationship between a product owner (manufacturer or supplier) and a distributor authorized to sell those products in the marketplace. Even the most innovative product cannot succeed without effective distribution, and this agreement provides the legal framework to get products to customers efficiently.\n\nA properly drafted Product Distribution Agreement clearly sets out how products will be marketed and sold, how commissions or margins will be calculated, and when payments will be made. Using the best format of Product Distribution Agreement ensures that both parties understand their rights, obligations, and expectations from the outset—so everyone gets paid fairly and on time.\n\nIn today's competitive and often global marketplace, distributor relationships can be complex. A professional draft Product Distribution Agreement helps align incentives and protect both product owners and distributors, which can be the difference between commercial growth and financial loss. With 45,800+ customization options available, you can tailor the agreement to your specific distribution model, territory, exclusivity terms, and performance requirements.",
+    whenToUse: [
+      "You own products and want to place them with another party to sell on commission.",
+      "You intend to sell another company's products in exchange for a commission or margin.",
+      "You need to establish clear sales territories and exclusivity arrangements.",
+      "You want to define sales targets, quotas, and performance expectations.",
+      "You need to formalize distributor relationships in writing for legal protection."
+    ],
+    faqs: [
+      { q: "What is the difference between exclusive and non-exclusive distribution?", a: "Exclusive distribution means the distributor has sole rights to sell products in a defined territory or market, preventing the supplier from using other distributors there. Non-exclusive distribution allows the supplier to appoint multiple distributors in the same territory or market. Exclusive arrangements typically command higher margins but limit the supplier's flexibility." },
+      { q: "How are commissions or margins calculated?", a: "Commission structures can vary based on your industry and market. Common arrangements include: percentage-based commissions (e.g., 15-30% of gross sales), volume-based tiered commissions (higher percentages at higher volumes), fixed wholesale pricing with distributor markups, or per-unit commission amounts. The agreement must specify exactly how payments are calculated and when they are due." },
+      { q: "What are sales quotas and underperformance consequences?", a: "Sales quotas establish minimum performance targets the distributor must achieve. The agreement should specify quotas (e.g., $X in annual sales or Y units per quarter), review periods, and consequences for missing quotas. Common consequences include loss of exclusivity, territory reduction, increased reporting requirements, or termination if targets consistently aren't met." },
+      { q: "Who handles product warranties, returns, and customer support?", a: "The agreement must clearly assign responsibility for warranty claims, product returns, defective merchandise, and customer support. Typically the supplier handles technical support and warranty issues, while the distributor handles customer service and logistics. The agreement should specify procedures for handling returns, stocktaking, obsolete inventory, and refund policies." },
+      { q: "What if the distributor needs to hire staff or handle inventory?", a: "The agreement should address employment matters if the distributor hires staff to handle distribution. It should clarify that distributor employees are not supplier employees, address insurance requirements, tax responsibilities, and who bears employment costs. It should also specify inventory handling, minimum stock levels, storage responsibilities, and procedures for unsold goods." },
+      { q: "Can I have multiple distributors or product lines?", a: "Yes. The agreement should address multi-product and multi-distributor arrangements. For exclusive distributors, specify which products they can distribute. For non-exclusive arrangements, define any territory limitations or market segment restrictions. Guidelines should clarify how the distributor accounts for different products and how commissions are calculated when handling multiple suppliers' products." }
+    ],
+    keyProtections: [
+      "Clear definition of products being distributed and authorized territory",
+      "Specified exclusivity terms or non-exclusivity provisions",
+      "Defined commission structure, margins, and payment terms",
+      "Sales targets, quotas, and performance expectations with review periods",
+      "Procedures for handling unsold inventory, returns, and refunds",
+      "Product warranty and customer support responsibility assignment",
+      "Employment, tax, and insurance obligations clarification",
+      "Term, renewal, and termination conditions with notice requirements",
+      "Confidentiality and non-compete restrictions during agreement term",
+      "Dispute resolution and legal compliance provisions"
+    ],
+    whatYouNeed: [
+      "Supplier's and distributor's full legal names and business details",
+      "Detailed description of products being distributed",
+      "Defined sales territory or market segment",
+      "Exclusivity terms (exclusive, non-exclusive, or territory-specific)",
+      "Commission rates, percentage calculations, or wholesale pricing structure",
+      "Payment terms and methods (e.g., net 30 days, monthly invoicing)",
+      "Sales targets, quotas, and minimum performance standards",
+      "Product warranty, support, and return procedures",
+      "Inventory requirements and unsold merchandise handling",
+      "Termination conditions and notice requirements"
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+
+  // === SALE OF GOODS AGREEMENT ===
+  "Sale of Goods Agreement": {
+    title: "Sale of Goods Agreement",
+    otherNames: ["General Sale of Goods", "General Contract for Goods", "Goods Purchase Agreement", "Sale of Merchandise Agreement", "Goods Transaction Agreement"],
+    whatIs: "A Sale of Goods Agreement is a legally binding contract used for the sale and purchase of tangible, movable items. This agreement does not apply to the sale of real estate, software, or intangible assets such as shares, stocks, or securities. Instead, it governs transactions involving physical products classified as \"goods.\"\n\nUnder the Uniform Commercial Code (UCC), goods are defined as items that are movable at the time they are identified in the contract. A properly drafted Sale of Goods Agreement helps clearly document the terms of the transaction and protects the rights of both the buyer and the seller.\n\nUsing the best format of Sale of Goods Agreement ensures clarity regarding the goods being sold, pricing, delivery terms, and obligations of each party. A professionally prepared draft Sale of Goods Agreement reduces disputes and provides a reliable written record of the transaction. With 6,100+ customization options available, you can tailor the agreement to your specific goods, pricing structure, and delivery requirements.",
+    whenToUse: [
+      "You frequently buy or sell physical goods and want a clear written contract.",
+      "You want to record the terms of a goods transaction in a clear and enforceable written contract.",
+      "You are selling goods and want to protect your interests regarding payment and delivery.",
+      "You are buying goods and want to establish quality standards, price, and delivery terms.",
+      "You need a legally binding document that establishes transparency and legal certainty."
+    ],
+    faqs: [
+      { q: "When Should You Use a Sale of Goods Agreement?", a: "A Sale of Goods Agreement should be used when you frequently buy or sell physical goods, or when you want to record the terms of a goods transaction in a clear and enforceable written contract. In all such cases, using a written agreement helps establish transparency and legal certainty about the goods, pricing, delivery, and obligations of each party." },
+      { q: "Why Use a Draft Sale of Goods Agreement?", a: "This agreement has been customized over 6,100 times, demonstrating its practical value and reliability. When properly completed and signed, it is legally binding and enforceable. It reduces disputes by clearly documenting all transaction terms and provides both parties with legal protection and a reliable written record." },
+      { q: "What is the UCC (Uniform Commercial Code) and how does it apply?", a: "The UCC is a standardized set of business laws governing commercial transactions across the United States. Under UCC Article 2, goods are defined as items that are movable at the time of identification in the contract. The UCC provides default rules for sales transactions, though parties can modify many provisions through their written agreement." },
+      { q: "What should be included in a Sale of Goods Agreement?", a: "A comprehensive agreement should include: complete description of the goods (type, quantity, specifications), price per unit and total purchase price, payment terms and methods, delivery date and location, shipping and risk of loss provisions, warranties of quality or fitness, inspection and acceptance procedures, remedies for breach, and dispute resolution methods." },
+      { q: "What is the difference between price and terms?", a: "Price is the amount of money the buyer will pay for the goods. Terms include payment conditions (e.g., net 30 days, COD, prepayment), delivery terms (FOB, CIF), inspection rights, and warranty provisions. A clear agreement should specify both price clearly and all material payment and delivery terms." },
+      { q: "Can I customize a Sale of Goods Agreement?", a: "Yes. Sale of Goods Agreements are highly customizable to address specific goods, quantities, pricing structures, delivery requirements, and special conditions. Our template supports 6,100+ customization options to accommodate different types of goods transactions, from simple one-time purchases to complex supply arrangements." }
+    ],
+    keyProtections: [
+      "Clear identification and description of goods being sold",
+      "Specified quantity and quality standards for the goods",
+      "Agreed purchase price and payment terms with clear conditions",
+      "Defined delivery date, location, and shipping responsibility",
+      "Risk of loss provisions clarifying when goods transfer to buyer",
+      "Warranty of merchantability and fitness for intended purpose",
+      "Inspection and acceptance procedures with dispute resolution",
+      "Remedies for breach including refund, replacement, or damages",
+      "Terms regarding defective goods and return procedures",
+      "State UCC compliance and governing law provisions"
+    ],
+    whatYouNeed: [
+      "Buyer's and seller's full legal names and business details",
+      "Complete description of goods (type, model, specifications)",
+      "Quantity in specific units (units, boxes, cartons, etc.)",
+      "Agreed purchase price per unit and total consideration",
+      "Payment terms and methods (e.g., net 30 days, wire transfer)",
+      "Delivery date, location, and shipping responsibility",
+      "Quality standards and warranty provisions",
+      "Inspection procedures and acceptance timeline",
+      "Procedures for handling defective or rejected goods",
+      "Dispute resolution method (negotiation, arbitration, litigation)"
+    ],
+    estimatedTime: "12-20 minutes"
+  },
+
+  // === BARTER AGREEMENT ===
+  "Barter Agreement": {
+    title: "Barter Agreement",
+    otherNames: ["Trade Agreement", "Exchange Contract", "Contra Deal Agreement", "Contra Dealing Agreement", "Reciprocal Exchange Agreement"],
+    whatIs: "A Barter Agreement is a legally recognized contract used when two parties agree to exchange goods, services, or both without involving money. Instead of cash payment, each party provides something of value in return. A properly drafted Barter Agreement ensures that the terms of the exchange are clear and legally enforceable.\n\nUsing the best format of Barter Agreement allows both parties to understand their duties and protects against misunderstandings. A draft Barter Agreement clearly identifies what is being traded, who is responsible for delivering it, and the timeframe for completion. When services are exchanged, the agreement specifies the nature of the work, the scope of services, or the number of hours required. When goods are involved, it outlines the quantity, condition, and quality of the items.\n\nAlthough many barter transactions are handled informally, failing to put the terms in writing can lead to disputes. A signed Barter Agreement works like any other contract—it legally binds both parties to honor their commitments. A written agreement also helps address tax considerations, as the exchange of goods or services may be considered taxable income in certain cases.",
+    whenToUse: [
+      "You want to trade goods or services with another party without using money",
+      "You or your business is exchanging goods or services in return for work performed",
+      "You need to establish clear terms for a non-monetary exchange",
+      "You want legal protection and a formal record of the transaction",
+      "Tax reporting clarity is needed for the exchange"
+    ],
+    faqs: [
+      { q: "When Should You Use a Barter Agreement?", a: "A Barter Agreement is ideal when you want to trade goods or services with another party without using money, or when you or your business is exchanging goods or services in return for work performed. In all such cases, using the best format of Barter Agreement ensures clarity, accountability, and legal protection." },
+      { q: "Why Use a Draft Barter Agreement?", a: "Although many barter transactions are handled informally, failing to put the terms in writing can lead to disputes. A signed Barter Agreement works like any other contract—it legally binds both parties to honor their commitments and provides a clear record for legal and accounting use." },
+      { q: "What about tax considerations in barter exchanges?", a: "In certain cases, the exchange of goods or services may be considered taxable income. For example, if a business trades inventory or services in return for work performed by a contractor, that exchange may legally qualify as payment. Both parties may be required to report the value of the transaction for tax purposes. A draft Barter Agreement provides a clear record of the exchange for legal and accounting use." },
+      { q: "What should be included in a Barter Agreement?", a: "A comprehensive agreement should include: clear description of goods or services being exchanged, estimated value of each party's contribution, delivery date and location, quality and condition standards, timeline for completion, tax ID information if applicable, dispute resolution procedures, and any special terms or conditions agreed upon." },
+      { q: "What is the difference between trading goods versus services?", a: "When goods are exchanged, the agreement outlines the quantity, condition, and quality of the items being traded. When services are exchanged, the agreement specifies the nature of the work, the scope of services, or the number of hours required. A clear Barter Agreement handles both types of exchanges or combinations thereof." },
+      { q: "Can a Barter Agreement include both goods and services?", a: "Yes. A Barter Agreement can involve the exchange of goods only, services only, or a combination of both. The agreement clearly specifies what each party is providing, its estimated value, and all delivery and performance terms." }
+    ],
+    keyProtections: [
+      "Clear definition of goods or services being exchanged",
+      "Estimated value and equivalent consideration for each party",
+      "Specified delivery date, location, and responsibility",
+      "Quality and condition standards for goods",
+      "Scope and timeline for services being provided",
+      "Tax reporting obligations and considerations",
+      "Representations and warranties of each party",
+      "Dispute resolution and remedies",
+      "Non-transferability of barter obligations",
+      "Termination and cancellation provisions"
+    ],
+    whatYouNeed: [
+      "Legal names and contact information of both parties",
+      "Detailed description of goods to be exchanged",
+      "Detailed description of services to be performed (if applicable)",
+      "Estimated fair market value of each party's contribution",
+      "Delivery date and location for goods",
+      "Timeline and deadline for service completion",
+      "Quality standards and specifications",
+      "Tax ID information for both parties (if applicable)",
+      "Any special terms or conditions of the exchange",
+      "Dispute resolution preferences and procedures"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  // === SUPPLIER AGREEMENT ===
+  "Supplier Agreement": {
+    title: "Supplier Agreement",
+    otherNames: ["Supplier Contract", "Supply Agreement", "Goods Supply Agreement", "Product Supply Agreement", "Vendor Agreement"],
+    whatIs: "A Supplier Agreement is a legally binding contract that defines the relationship between a supplier of goods and a business or merchant that purchases those goods. This agreement ensures that both parties are aligned on key commercial terms before any products are supplied, helping prevent misunderstandings and disputes.\n\nA properly drafted Supplier Agreement records essential details such as order numbers, product quantities, delivery schedules, pricing, and payment terms. Using the best format of Supplier Agreement creates clarity and accountability, ensuring that both the supplier and the buyer understand their obligations throughout the supply relationship.\n\nA professional draft Supplier Agreement is especially important for ongoing supply arrangements, bulk orders, and repeat transactions, where consistency and reliability are critical. With 37,300+ customization options available, this agreement can be tailored to your specific supply relationship and commercial requirements.",
+    whenToUse: [
+      "You are a supplier providing goods or products to another business",
+      "You are a business purchasing products from a supplier for resale or internal use",
+      "You need to establish clear terms for ongoing or bulk supply arrangements",
+      "You want to protect your interests regarding pricing, delivery, and quality",
+      "You require legal certainty and a formal record of the supply relationship"
+    ],
+    faqs: [
+      { q: "When Should You Use a Supplier Agreement?", a: "A Supplier Agreement should be used in any situation where a supplier provides goods or products to a buyer, whether for resale, internal use, or bulk orders. In both cases, a written agreement provides transparency and legal certainty. Using a draft Supplier Agreement helps both parties stay on the same page regarding orders, timelines, and responsibilities, reducing the risk of delays or disputes." },
+      { q: "Why Use a Draft Supplier Agreement?", a: "This agreement has been customized over 37,300 times, demonstrating its reliability and practical value. When properly completed and signed, it is legally binding and enforceable. A draft Supplier Agreement helps both parties establish clear expectations, maintain consistent service levels, and protect their commercial interests throughout the supply relationship." },
+      { q: "What is the difference between a one-time purchase and an ongoing supply arrangement?", a: "A one-time purchase typically covers a single transaction with defined quantities and delivery. An ongoing supply arrangement establishes terms for multiple purchases over time, including provisions for reorders, minimum quantities, pricing adjustments, and long-term expectations. The agreement should clearly specify which type of relationship applies." },
+      { q: "What should be included in a Supplier Agreement?", a: "A comprehensive agreement should include: supplier and buyer contact information, product descriptions and specifications, order procedures, pricing and payment terms, delivery schedule and location, quality standards and testing procedures, minimum order quantities if applicable, payment methods and terms, termination provisions, and dispute resolution procedures." },
+      { q: "How are prices typically handled in a Supplier Agreement?", a: "Prices can be fixed for the contract term, subject to periodic adjustment periods, or linked to market indices. The agreement should clearly specify the pricing structure, any volume discounts, payment terms (e.g., net 30 days), and procedures for price adjustments. It should also define what costs are included (shipping, packaging) and what are extra charges." },
+      { q: "Can a Supplier Agreement be terminated or modified?", a: "Yes. The agreement should include clear provisions regarding termination rights, notice periods required, and procedures for modifying terms. Both parties should understand the conditions under which either party can end or modify the agreement, and what obligations remain after termination (e.g., payment for delivered goods)." }
+    ],
+    keyProtections: [
+      "Clear definition of products and specifications being supplied",
+      "Fixed or formula-based pricing structure",
+      "Agreed delivery schedule and location",
+      "Quality standards, testing, and acceptance procedures",
+      "Minimum and maximum order quantities if applicable",
+      "Payment terms, methods, and timing",
+      "Warranty of product quality and fitness for purpose",
+      "Procedures for handling defective or non-conforming goods",
+      "Confidentiality and intellectual property protections",
+      "Termination provisions and dispute resolution procedures"
+    ],
+    whatYouNeed: [
+      "Supplier's legal name, business address, and contact information",
+      "Buyer's legal name, business address, and contact information",
+      "Detailed product descriptions and specifications",
+      "Agreed pricing per unit and total order amounts",
+      "Payment terms and preferred payment methods",
+      "Delivery schedule, location, and shipping responsibility",
+      "Minimum and maximum order quantities",
+      "Quality standards and inspection procedures",
+      "Warranty terms and product guarantees",
+      "Contract term duration and termination conditions"
+    ],
+    estimatedTime: "15-25 minutes"
+  },
+
+  // === FRANCHISE PURCHASE AGREEMENT ===
+  "Franchise Purchase Agreement": {
+    title: "Franchise Purchase Agreement",
+    otherNames: ["Franchise Purchase Contract", "Franchise Agreement", "Franchisor Agreement", "Franchisee Agreement", "Franchise Rights Agreement"],
+    whatIs: "A Franchise Purchase Agreement is a legally binding contract used when franchise rights are sold or acquired. Whether you are a business owner expanding your brand through franchising or an entrepreneur purchasing a franchise, this agreement clearly defines the relationship between the franchisor and the franchisee.\n\nA properly drafted Franchise Purchase Agreement sets out all essential terms governing the franchise relationship, ensuring clarity and legal certainty for both parties. For franchisors, it establishes operational standards, brand rules, and compliance requirements. For franchisees, it provides structured guidance on how the franchise must be operated. Although both parties share the same objective—the success of the franchise—achieving that goal requires well-defined contractual terms.\n\nUsing the best format of Franchise Purchase Agreement helps prevent misunderstandings, protects business interests, and ensures that expectations are aligned from the outset. A professional draft Franchise Purchase Agreement makes it easier to manage growth, maintain brand consistency, and support long-term success.",
+    whenToUse: [
+      "You own a successful business and are ready to expand by selling franchise rights",
+      "You want to purchase and operate a franchise under an established brand",
+      "You need to clearly define rights, responsibilities, and operational boundaries",
+      "You want a legally binding document that protects both franchisor and franchisee interests"
+    ],
+    faqs: [
+      { q: "What is a Franchise Purchase Agreement?", a: "A Franchise Purchase Agreement is a legally binding contract that defines the relationship between a franchisor (the business owner selling franchise rights) and a franchisee (the individual or business purchasing those rights). It outlines essential terms including operational standards, brand rules, compliance requirements, compensation, and the rights and responsibilities of each party." },
+      { q: "When should I use a Franchise Purchase Agreement?", a: "Use this agreement when you are either selling franchise rights to expand your brand, or when you are purchasing and operating a franchise under an established brand. In both cases, a written agreement is essential for defining rights, responsibilities, legal boundaries, and preventing future misunderstandings or disputes." },
+      { q: "Why is a professional Franchise Purchase Agreement important?", a: "A professionally drafted agreement has been customized over 12,200 times, demonstrating its reliability and practical value. It helps prevent misunderstandings, protects business interests of both parties, establishes operational standards and brand consistency, and provides a clear structure for managing the franchise relationship and supporting long-term success." },
+      { q: "What does a Franchise Purchase Agreement include?", a: "A comprehensive agreement typically includes: franchisor and franchisee details, franchise rights being granted, operational standards and brand rules, compensation and royalty structure, support and training provided, term and renewal conditions, termination provisions, territorial rights, confidentiality obligations, dispute resolution procedures, and compliance requirements." },
+      { q: "Can a lawyer review my Franchise Purchase Agreement?", a: "Yes. Because franchise relationships can be complex and involve significant investment, parties may consult a Legal Pro to ask questions or request a review of the agreement before finalizing it. Legal review adds an extra layer of protection and helps ensure all terms are clear and favorable." },
+      { q: "How do I use the agreement after downloading?", a: "Download the agreement in its professional, customizable format, review all sections carefully with both parties, customize terms specific to your franchise arrangement, sign the agreement electronically or in print, and keep signed copies for your records. The agreement can then be used as a reference document throughout the franchise relationship." }
+    ],
+    keyProtections: [
+      "Franchisor's brand, trademark, and intellectual property protection",
+      "Franchisee's investment and operational requirements clearly defined",
+      "Exclusive territorial rights or limitations specified",
+      "Compensation structure and royalty payment terms",
+      "Support, training, and ongoing assistance outlined",
+      "Compliance with brand standards and operational procedures",
+      "Term of franchise agreement and renewal conditions",
+      "Termination rights and conditions for both parties",
+      "Confidentiality and non-disclosure obligations",
+      "Dispute resolution and governing law provisions"
+    ],
+    whatYouNeed: [
+      "Franchisor company name, address, and contact information",
+      "Franchisee name, address, and contact information",
+      "Description of franchise rights being granted",
+      "Territorial coverage and exclusivity terms",
+      "Initial franchise fee amount",
+      "Ongoing royalty or service fee structure",
+      "Term of franchise (length and renewal options)",
+      "Training and support to be provided",
+      "Operational and brand compliance requirements",
+      "Termination and dispute resolution procedures"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
   // === BUY-SELL AGREEMENT ===
   "Buy-Sell Agreement": {
     title: "Buy-Sell Agreement",
@@ -980,6 +1496,54 @@ export const documentContent: Record<string, DocumentContent> = {
       "Key person information"
     ],
     estimatedTime: "12-18 minutes"
+  },
+
+  // === MERGER AGREEMENT ===
+  "Merger Agreement": {
+    title: "Merger Agreement",
+    otherNames: ["Agreement and Plan of Merger", "Merger Agreement Form", "Definitive Merger Agreement", "Plan of Merger", "Merger and Consolidation Agreement", "Corporate Merger Agreement"],
+    whatIs: "A Merger Agreement is a legally binding contract used when two companies decide to combine into a single business entity. Whether one company is absorbed into another or both businesses unite to form a new organization, this agreement defines the structure, process, and legal framework of the merger. A properly drafted Merger Agreement outlines how one company will be dissolved into the other and whether the surviving entity will continue under an existing name or adopt a new one. Mergers commonly occur between competing businesses seeking to strengthen market position, when one company acquires another, or when a financially struggling business merges with a more stable organization. Using the best format of Merger Agreement ensures clarity and legal certainty throughout the transition period.",
+    whenToUse: [
+      "When you intend to merge another company into your business as the surviving entity to enhance market position",
+      "When you have agreed to dissolve your business into another company through a merger",
+      "When you need to clearly define the structure, process, and legal framework of the merger",
+      "When you want protection for business interests and a seamless transition",
+      "When you need to account for assets, liabilities, and establish governance during the transition"
+    ],
+    faqs: [
+      { q: "What is a Merger Agreement?", a: "A Merger Agreement is a legally binding contract used when two companies decide to combine into a single business entity. It defines the structure, process, and legal framework of the merger, outlines how one company will be dissolved into the other, and specifies whether the surviving entity will continue under an existing name or adopt a new one." },
+      { q: "What does a draft Merger Agreement cover?", a: "A comprehensive Merger Agreement covers: a complete accounting of each company's assets and liabilities, valuation of shares and ownership interests under the new or surviving entity, rules governing daily business operations during the merger process, limitations on entering new contracts during the transition period, and procedures for forming a new board of directors and appointing its members." },
+      { q: "When should I use a Merger Agreement?", a: "You should use a Merger Agreement when you intend to merge another company into your business as the surviving entity, or when you have agreed to dissolve your business into another company through a merger. In both cases, using a written agreement is essential to protect business interests and ensure a seamless transition." },
+      { q: "Why use a draft Merger Agreement?", a: "A properly drafted Merger Agreement helps manage operational challenges and ensures smooth integration of both businesses. Given the complexity of mergers, having a well-structured agreement is essential. The agreement has been customized thousands of times, reflecting its reliability and widespread use. When properly completed and signed, it is legally binding and enforceable." },
+      { q: "Can I get professional review of my Merger Agreement?", a: "Yes. Given the complexity and high-value nature of mergers, parties may consult legal professionals to request a professional review of the agreement before finalizing it. Legal experts can ensure compliance with state laws and that all necessary provisions are included." },
+      { q: "How do I download and use a Merger Agreement?", a: "You can download a Merger Agreement in a professional and customizable format. The template follows the best format of Merger Agreement and can be edited, customized, printed, and signed online for convenience. Simply complete the agreement with your specific transaction details, review for accuracy, and execute with all parties." }
+    ],
+    keyProtections: [
+      "Complete accounting of each company's assets and liabilities",
+      "Valuation of shares and ownership interests in surviving entity",
+      "Rules governing daily business operations during merger",
+      "Limitations on entering new contracts during transition",
+      "Procedures for forming new board of directors",
+      "Clear definition of surviving entity",
+      "Tax consequences and treatment specification",
+      "Employee and contractor transition procedures",
+      "Representations and warranties of both parties",
+      "Dispute resolution and governing law provisions"
+    ],
+    whatYouNeed: [
+      "Names and details of both companies merging",
+      "Complete list of assets for each company",
+      "Complete list of liabilities for each company",
+      "Current business valuations",
+      "Ownership structure and share information",
+      "Details on surviving entity name",
+      "Plans for new board of directors",
+      "Employee transition and benefit plans",
+      "Contract continuation and assumption decisions",
+      "Closing conditions and timeline",
+      "Post-merger governance structure"
+    ],
+    estimatedTime: "20-30 minutes"
   },
 
   // === CONFIDENTIALITY AGREEMENT ===
@@ -1485,45 +2049,142 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-15 minutes"
   },
 
+  // === FEE AGREEMENTS ===
+  "Fee Agreement": {
+    title: "Fee Agreement",
+    otherNames: ["Fee Agreement", "Form Fee Agreement", "Letter Service Fee Agreement"],
+    whatIs: "A Fee Agreement is a legally binding contract that defines the terms under which services are provided between a client and a service provider. Whether you are hiring a professional for a specific assignment or offering services for a defined project, a Fee Agreement allows both parties to clearly agree on the terms before work begins.\n\nA properly drafted Fee Agreement outlines essential details such as the start date of services, scope of work, fee structure, and payment method. Payments may be agreed as a lump sum, installments, or another mutually acceptable arrangement. The agreement also typically covers termination conditions, confidentiality obligations, and whether the service provider guarantees the quality or outcome of the work.\n\nUsing the best format of Fee Agreement helps avoid misunderstandings and disputes by ensuring that both parties clearly understand what services will be delivered and how the service provider will be compensated. A written agreement promotes transparency, accountability, and professional clarity.",
+    whenToUse: [
+      "When you have engaged an individual or company to provide services and want to clearly define service terms and payment",
+      "When you have been contracted by a client to provide services and want the scope of work and fees documented in writing",
+      "When you need clarity on deliverables, timeline, and compensation structure",
+      "When you want to protect both parties' interests with a written legal record"
+    ],
+    faqs: [
+      { q: "When Should You Use a Fee Agreement?", a: "A Fee Agreement should be used when you have engaged an individual or company to provide services to your business and want to clearly define service terms and payment. Similarly, if you have been contracted by a client to provide services, a Fee Agreement ensures the scope of work and fees are documented in writing. In both cases, a written draft Fee Agreement helps protect the interests of both parties." },
+      { q: "What Is Included in a Fee Agreement?", a: "A comprehensive Fee Agreement typically includes: names and contact information of client and service provider, description of services to be provided, start and end dates (or duration), fee structure and payment terms, payment schedule (lump sum, installments, or other arrangement), termination conditions, confidentiality obligations, whether quality or outcome is guaranteed, and dispute resolution procedures." },
+      { q: "Why Use a Professional Fee Agreement Template?", a: "This agreement has been customized over 10,600 times, demonstrating its reliability and practical value. A professionally drafted Fee Agreement ensures all essential terms are covered, helps prevent disputes, protects both parties' interests, and provides a legally binding document that is enforceable. When properly completed and signed, it creates a clear understanding between service provider and client." },
+      { q: "Can I Customize the Payment Terms?", a: "Yes, absolutely. Fee Agreements are highly flexible and can accommodate various payment arrangements including lump sum payments, monthly installments, milestone-based payments, retainer fees, or any other mutually agreed arrangement. You can customize the payment schedule, due dates, late payment penalties, and other financial terms to fit your specific needs." },
+      { q: "What Happens After Signing the Fee Agreement?", a: "Once both parties sign the Fee Agreement, it becomes a legally binding contract. Both parties should keep signed copies for their records. The agreement serves as a reference document throughout the service engagement, helping resolve any questions about terms, scope, or payments. If disputes arise, the written agreement provides clear documentation of what was agreed upon." },
+      { q: "Can a Lawyer Review My Fee Agreement?", a: "Yes. Parties may consult a Legal Pro to ask questions or request a professional review of the agreement before finalizing it. Legal review is especially recommended for large service contracts or complex arrangements. A lawyer can ensure the agreement complies with applicable laws and protects your interests." }
+    ],
+    keyProtections: [
+      "Clearly defined scope of services",
+      "Specific fee structure and payment terms",
+      "Payment schedule and billing procedures",
+      "Service start and end dates",
+      "Confidentiality and non-disclosure obligations",
+      "Termination conditions and notice requirements",
+      "Quality and outcome expectations",
+      "Dispute resolution procedures",
+      "Governing law and jurisdiction",
+      "Insurance and liability coverage (if applicable)"
+    ],
+    whatYouNeed: [
+      "Client company name, address, and contact information",
+      "Service provider name, address, and contact information",
+      "Detailed description of services to be provided",
+      "Service commencement date and duration",
+      "Total fee and payment structure (lump sum, installments, etc.)",
+      "Payment schedule and due dates",
+      "Payment method (bank transfer, check, etc.)",
+      "Scope of work and deliverables",
+      "Termination conditions",
+      "Any special terms or conditions specific to the engagement"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
   // === REFERRAL & COMMISSION AGREEMENTS ===
   "Referral Fee Agreement": {
     title: "Referral Fee Agreement",
     otherNames: ["Real Estate Referral Fee Agreement", "Business Referral Agreement", "Finder's Referral Agreement", "Commission Referral Agreement"],
-    whatIs: "A legally binding contract that sets out the terms under which one party receives compensation for referring clients, customers, or business opportunities to another party. With a properly drafted Referral Fee Agreement, you can clearly define how much will be paid, when payments are due, and under what conditions the referral fee becomes payable. This agreement is ideal for brokers, agents, consultants, and businesses who rely on networking and introductions. If you frequently connect buyers and sellers, employers and candidates, or clients and service providers, a Referral Fee Agreement ensures your efforts are properly rewarded.",
+    whatIs: "A legally binding contract specifying compensation when one party refers clients, customers, or business opportunities to another. A properly drafted Referral Fee Agreement clearly defines the referral fee amount (fixed or percentage-based), payment timelines, and the conditions under which referral fees become payable. The agreement protects both parties by establishing transparent terms and preventing misunderstandings about commission structures.\n\nThis agreement is essential for brokers, real estate agents, business consultants, and professionals who rely on networking and valuable introductions. If you frequently connect buyers with sellers, employers with candidates, or clients with service providers—your expertise in identifying opportunities deserves proper compensation. A well-structured Referral Fee Agreement ensures your efforts are appropriately rewarded and legally protected.\n\nOur draft covers the complete referral relationship framework: what constitutes a qualifying referral, fee amounts and commission structures, payment timelines and methods, party responsibilities, territory or scope restrictions, agreement duration, and termination provisions. With 82,400+ customization options available, you can tailor every aspect of the referral arrangement to match your specific business model, industry standards, and financial objectives.",
     whenToUse: [
-      "You introduce a buyer and seller and expect a commission.",
-      "You refer clients, customers, or business leads for a fee.",
-      "You hire a broker or agent to bring in new business.",
-      "You need help finding specific goods, services, or clients.",
-      "You want to formalize referral arrangements in writing."
+      "You connect a buyer and seller and expect a sales commission.",
+      "You refer qualified leads to businesses for referral fees.",
+      "You bring in new clients or customers for compensation."
     ],
     faqs: [
-      { q: "What is the difference between a Referral Fee Agreement and a Finder's Fee Agreement?", a: "While both involve compensation for introductions, a Referral Fee Agreement typically applies to ongoing referral relationships, while a Finder's Fee Agreement is often used for one-time transactions. The structure and scope may differ based on your specific business requirements." },
-      { q: "How do I determine the referral fee amount?", a: "The referral fee amount can be a fixed dollar amount, a percentage of the transaction value, or based on other agreed-upon metrics. You can customize the terms to match your specific business arrangement and market conditions." },
-      { q: "When should referral payment be made?", a: "Payment timing varies based on your agreement. Common arrangements include payment upon referral, upon transaction completion, upon client first purchase, or within specified days of the transaction closing." },
-      { q: "Is a Referral Fee Agreement legally binding?", a: "Yes. When properly executed by both parties, a Referral Fee Agreement creates legally enforceable obligations. Both parties must fulfill their commitments regarding referrals, payments, and the conditions specified in the agreement." },
-      { q: "Can I customize the terms to fit my business needs?", a: "Yes. A Referral Fee Agreement is highly customizable. You can tailor commission rates, payment terms, referral conditions, territory, duration, and other provisions to match your specific business requirements and arrangement." }
+      { q: "What is the difference between a Referral Fee Agreement and a Finder's Fee Agreement?", a: "A Referral Fee Agreement typically formalizes ongoing referral arrangements with recurring commission opportunities, ideal for brokers, agents, and consultants who regularly provide introductions. A Finder's Fee Agreement is typically used for one-time or project-based finder services where a single finder locates a specific investment, opportunity, or solution. Referral agreements focus on sustained relationships; Finder's Fees focus on completing a specific objective." },
+      { q: "How do I determine the referral fee amount?", a: "The referral fee amount can be structured as: (1) a fixed dollar amount per referral, (2) a percentage of the transaction value, (3) a tiered commission structure based on transaction size, or (4) other metrics specific to your industry. Common real estate referrals use 1-3% commission; professional services may use fixed fees. Customize to match market conditions and the value of each referral." },
+      { q: "When should referral payment be made?", a: "Payment timing varies based on your specific agreement terms. Common arrangements include: payment upon referral acceptance, upon transaction completion, upon client's first purchase, within 30-60 days of transaction closing, or upon contract fulfillment. Specify exact payment conditions in your agreement to avoid disputes about payment obligations." },
+      { q: "Is a Referral Fee Agreement legally binding?", a: "Yes. When properly executed by both parties and signed, a Referral Fee Agreement creates legally enforceable obligations. Both parties must fulfill their commitments regarding referral sources, fee payments, and all conditions specified in the agreement. The agreement is enforceable in court if either party fails to meet their obligations." },
+      { q: "Can I customize the terms to fit my business needs?", a: "Yes. A Referral Fee Agreement is highly customizable. You can tailor commission rates, payment terms, referral conditions, territory restrictions, agreement duration, termination clauses, and other provisions to match your specific business requirements, industry norms, and arrangement type. Our template supports 82,400+ customization combinations." },
+      { q: "What if a referral doesn't result in a completed transaction?", a: "This should be clearly defined in your agreement. Common approaches: referral fee paid only upon successful completion, partial fee if referral is qualified but transaction unsuccessful, or no fee if deal doesn't close. Specify the exact conditions under which fees are and are not payable to prevent disputes." }
     ],
     keyProtections: [
-      "Clearly defined referral commission and payment terms",
+      "Clearly defined referral commission structure and payment terms",
       "Legal right to receive compensation for qualifying referrals",
-      "Established payment conditions and timing",
-      "Protection against misunderstandings and disputes",
-      "Professional and transparent business relationship",
-      "Enforceable obligations on both parties"
+      "Established payment conditions, timeline, and methods",
+      "Protection against misunderstandings and referral disputes",
+      "Transparent business relationship and professional standards",
+      "Enforceable obligations on both referrer and referred party",
+      "Defined territory or scope of referral coverage",
+      "Clear termination conditions and exit procedures",
+      "Protection of referral sources and confidentiality",
+      "Legal recourse for unpaid or disputed referral fees"
     ],
     whatYouNeed: [
-      "Referrer and referred party full legal information",
-      "Clear definition of referral fee (fixed amount or percentage)",
-      "Payment terms and conditions",
-      "Description of qualifying referrals",
-      "Payment timeline and methods",
-      "Definition of when fee becomes payable",
-      "Duration of referral relationship",
+      "Referrer's full legal name and business details",
+      "Referred party's full legal name and business details",
+      "Clear definition of qualifying referrals and conditions",
+      "Referral fee structure (fixed amount or percentage basis)",
+      "Payment timeline and methods (e.g., check, ACH, wire)",
       "Territory or scope of referrals covered",
-      "Termination conditions"
+      "Agreement duration and renewal terms",
+      "Termination conditions and notice requirements",
+      "Confidentiality and non-poaching clauses",
+      "Dispute resolution procedures"
     ],
-    estimatedTime: "10-15 minutes"
+    estimatedTime: "15-20 minutes"
+  },
+
+  // === SERVICE & BUSINESS AGREEMENTS ===
+  "Service Level Agreement": {
+    title: "Service Level Agreement",
+    otherNames: ["SLA", "Service Level Commitment", "Performance Agreement", "Service Guarantee"],
+    whatIs: "A Service Level Agreement (SLA) is a legally binding contract that defines the service standards, obligations, and expectations between a service provider and a client. This agreement establishes clear benchmarks for performance and ensures that services are delivered at the agreed level of quality.\n\nA properly drafted Service Level Agreement outlines key elements such as minimum service quality levels, uptime or availability commitments, incident response and resolution times, and service credits or remedies if performance standards are not met. It also includes Key Performance Indicators (KPIs), which serve as measurable benchmarks to confirm that services are being provided in accordance with the agreement.\n\nUsing the best format of Service Level Agreement helps both parties manage performance, accountability, and service quality with clarity and confidence. With 3,400+ customizations available, you can tailor the SLA to specify your exact service requirements, performance metrics, response times, escalation procedures, and remedies for service failures.",
+    whenToUse: [
+      "You want to establish clear benchmarks for service quality and performance standards.",
+      "You want to agree on guaranteed uptime or system availability commitments.",
+      "You want to define expectations for customer support response times and resolution timeframes.",
+      "You are engaging an IT provider, cloud hosting company, or managed services vendor.",
+      "You need to formalize service expectations and establish enforcement mechanisms."
+    ],
+    faqs: [
+      { q: "How Is a Draft Service Level Agreement Used?", a: "A draft Service Level Agreement may be used as a standalone contract or as a supporting document to a broader agreement, such as a Master Services Agreement (MSA) or a Statement of Work (SOW). In either case, the SLA plays a crucial role in setting enforceable service expectations. The Service Level Agreement ensures that service standards are clearly defined and legally enforceable on both the provider and client." },
+      { q: "When Should You Use a Service Level Agreement?", a: "A Service Level Agreement should be used when you want to establish clear benchmarks for service quality, agree on guaranteed uptime or system availability, or define expectations for customer support and response times. In all such cases, a written SLA provides transparency, accountability, and legal protection for both parties." },
+      { q: "Why Use a Draft Service Level Agreement?", a: "This agreement has been customized over 3,400 times, reflecting its reliability and practical value. When properly completed and signed, it is legally binding and enforceable. The SLA clearly defines performance expectations, remedies for non-compliance, and escalation procedures, protecting both the service provider and client." },
+      { q: "What Should Be Included in a Service Level Agreement?", a: "A comprehensive SLA should include: service description and scope, performance metrics and Key Performance Indicators (KPIs), uptime/availability guarantees, response and resolution times for incidents, service credits or remedies for non-compliance, escalation procedures, monitoring and reporting requirements, and governing law and dispute resolution clauses." },
+      { q: "How Do I Define KPIs and Performance Metrics?", a: "KPIs are measurable benchmarks that specify exactly what you expect from the service provider. Examples include: 99.9% uptime guarantee, 2-hour incident response time, 24-hour issue resolution, email response within 4 hours, or phone support availability 24/7. Define specific, measurable, achievable, relevant, and time-bound metrics that align with your business needs." },
+      { q: "What Happens If the Service Provider Fails to Meet SLA Terms?", a: "Service Level Agreements typically include remedies for non-compliance, such as service credits (monthly billing reductions), automatic refunds, expedited support, or termination rights. Define specific consequences for performance failures and escalation procedures to address breaches promptly." }
+    ],
+    keyProtections: [
+      "Clearly defined service standards and performance expectations",
+      "Specific uptime and availability guarantees with measurable commitments",
+      "Defined response and resolution times for incidents and support requests",
+      "Key Performance Indicators (KPIs) that serve as measurable benchmarks",
+      "Service credits or remedies if performance standards are not met",
+      "Escalation procedures for addressing service failures and disputes",
+      "Monitoring, reporting, and transparency requirements",
+      "Clear accountability and legal enforceability on service provider",
+      "Protection against service failures and unexpected downtime",
+      "Dispute resolution procedures and governing law provisions"
+    ],
+    whatYouNeed: [
+      "Detailed service description and scope of services",
+      "Specific performance metrics and Key Performance Indicators (KPIs)",
+      "Uptime and availability percentage guarantees",
+      "Incident response times and resolution timeframes",
+      "Service operating hours and support availability schedule",
+      "Service credit amounts for performance failures",
+      "Escalation procedures and contact information",
+      "Monitoring methods and reporting requirements",
+      "Exclusions and force majeure circumstances",
+      "Parties' contact details and escalation responsibilities"
+    ],
+    estimatedTime: "15-20 minutes"
   },
 
   // === REAL ESTATE & PROPERTY AGREEMENTS ===
@@ -2261,6 +2922,96 @@ export const documentContent: Record<string, DocumentContent> = {
       "Governing law and jurisdiction preferences"
     ],
     estimatedTime: "10-15 minutes"
+  },
+
+  "Marketing Agreement": {
+    title: "Marketing Agreement",
+    otherNames: ["Marketing Contract", "Promotion Agreement", "Marketing Services Agreement", "Digital Marketing Agreement", "Marketing Campaign Agreement"],
+    whatIs: "A Marketing Agreement is a legally binding contract that defines the terms of a marketing or promotional relationship between a business and a marketing professional or agency. This agreement ensures that all parties are aligned on co-promotion strategies, deliverables, timelines, compensation, and responsibilities before any marketing activity begins.\n\nA properly drafted Marketing Agreement goes beyond a basic template by providing clear legal protection and accountability. Using the best format of Marketing Agreement helps prevent misunderstandings, manage expectations, and protect the interests of both parties throughout the campaign.\n\nA professional draft Marketing Agreement is especially important for brand partnerships, influencer marketing, digital campaigns, and promotional services where clarity and compliance are essential.",
+    whenToUse: [
+      "When you are hiring a marketing professional or agency to promote your product or service",
+      "When you are a marketing professional being contracted to advertise or market a client's product or service",
+      "For brand partnerships and co-marketing arrangements",
+      "In both cases, a written agreement ensures transparency and legal certainty"
+    ],
+    faqs: [
+      { q: "Why Use a Draft Marketing Agreement?", a: "This agreement has been customized over 11,100 times, demonstrating its reliability and widespread use. When properly completed and signed, it is legally binding and enforceable. It ensures all parties understand their roles, responsibilities, deliverables, and compensation, reducing potential disputes and misunderstandings." },
+      { q: "What Should a Marketing Agreement Include?", a: "A comprehensive Marketing Agreement typically includes scope of services, deliverables and timeline, compensation and payment terms, intellectual property rights and ownership, confidentiality and non-disclosure provisions, performance metrics and reporting requirements, termination conditions, and dispute resolution procedures." },
+      { q: "What Are the Key Performance Metrics?", a: "Marketing Agreements should specify measurable objectives such as reach, engagement rates, conversion rates, sales targets, or brand awareness metrics. These metrics help both parties track success, evaluate ROI, and determine whether the marketing campaign is meeting agreed-upon goals." },
+      { q: "How Is Intellectual Property Handled?", a: "The Marketing Agreement should clearly define who owns the marketing materials, creative work, content, and any derivative works. Typically, the marketing professional retains ownership of generic templates and tools, while the client owns customized marketing content and brand-specific materials created for their campaign." },
+      { q: "What About Confidentiality and Data Privacy?", a: "Marketing Agreements must address how confidential business information, customer data, and proprietary strategies are protected. Modern agreements should include provisions for GDPR, CCPA, and other data privacy laws, especially for digital marketing campaigns involving customer data collection and analysis." },
+      { q: "Should a Lawyer Review My Marketing Agreement?", a: "Yes. Parties may consult a Legal Pro to ask questions or request a review of the agreement before finalizing it, helping reduce legal risk and ensure compliance with applicable laws and industry standards." }
+    ],
+    keyProtections: [
+      "Clear definition of scope and deliverables",
+      "Timeline and deadline specifications",
+      "Compensation and payment schedule",
+      "Intellectual property ownership clarification",
+      "Confidentiality and trade secret protection",
+      "Performance metrics and success criteria",
+      "Reporting and communication requirements",
+      "Termination conditions and exit procedures",
+      "Limitation of liability provisions",
+      "Dispute resolution and governing law"
+    ],
+    whatYouNeed: [
+      "Business and marketing professional/agency details",
+      "Detailed description of products or services to be marketed",
+      "Specific marketing channels and platforms (social media, email, etc.)",
+      "Target audience and market demographics",
+      "Campaign timeline and key milestones",
+      "Performance goals and success metrics",
+      "Budget and compensation structure",
+      "Intellectual property ownership preferences",
+      "Confidentiality and data handling requirements",
+      "Contact information for authorized signatories"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Warranty Agreement": {
+    title: "Warranty Agreement",
+    otherNames: ["Product Warranty Agreement", "Manufacturer's Warranty", "Warranty Certificate", "Product Guarantee"],
+    whatIs: "A Warranty Agreement is a legally binding document through which a manufacturer formally guarantees the quality and reliability of its product. By issuing a warranty, the manufacturer promises to repair or replace any defective part or product at no cost to the customer within a specified warranty period.\n\nA properly drafted Warranty Agreement provides assurance to buyers that the product meets acceptable standards and that the manufacturer stands behind its workmanship. Using the best format of Warranty Agreement reflects confidence in the product and strengthens customer trust.\n\nFor reliably priced or high-value purchases, a written warranty offers peace of mind. Buyers want clarity on what happens if a product fails, develops defects, or requires costly repairs shortly after purchase. A clear draft Warranty Agreement answers these concerns by setting out coverage terms in advance.",
+    whenToUse: [
+      "When a manufacturer wishes to provide warranty coverage for a product offered to customers",
+      "For high-value or complex products that require protection",
+      "To demonstrate manufacturer confidence in product quality",
+      "Using a written warranty agreement adds transparency and builds long-term customer confidence"
+    ],
+    faqs: [
+      { q: "What Is a Warranty Agreement?", a: "A Warranty Agreement is a legally binding document through which a manufacturer formally guarantees the quality and reliability of its product. It promises to repair or replace any defective part at no cost to the customer within a specified warranty period, providing assurance to buyers that the product meets acceptable standards." },
+      { q: "Why Is a Warranty Agreement Important?", a: "A Warranty Agreement benefits both manufacturers and buyers by clearly defining expectations. It demonstrates the manufacturer's confidence in product quality, encourages customers to proceed with important purchasing decisions, specifies repair and replacement obligations, reduces disputes and misunderstandings, and protects brand reputation and customer satisfaction." },
+      { q: "Why Use a Draft Warranty Agreement?", a: "This agreement has been customized over 44,400 times, demonstrating its reliability and practical value. When properly completed and executed, it is legally binding and enforceable. It clearly documents the manufacturer's promises and protects both parties with clear warranty terms and conditions." },
+      { q: "What Does a Warranty Agreement Typically Cover?", a: "A comprehensive Warranty Agreement covers the exact products or parts covered, warranty period duration and start date, specific defects included in coverage, repair or replacement procedures, any exclusions or limitations, customer responsibilities and care requirements, and claim procedures for warranty service." },
+      { q: "What Are Common Warranty Exclusions?", a: "Typical exclusions include damage from misuse or accident, normal wear and tear, damage from improper maintenance, use outside manufacturer specifications, modifications by unauthorized parties, and defects caused by external factors. Clear documentation of exclusions prevents disputes and sets customer expectations." },
+      { q: "Should a Manufacturer Consult a Lawyer?", a: "Yes. Manufacturers and sellers may consult a Legal Pro to review warranty terms and ensure compliance with applicable consumer protection laws, including state warranty laws, FTC regulations, and industry-specific requirements." }
+    ],
+    keyProtections: [
+      "Formal guarantee of product quality and reliability",
+      "Clear coverage period and warranty duration",
+      "Specific repair or replacement obligations",
+      "Customer assurance and confidence in purchase",
+      "Legal enforceability of warranty promises",
+      "Protection against quality disputes",
+      "Clearly defined included and excluded items",
+      "Claim procedures and warranty service processes",
+      "Limitation and exclusion clarity",
+      "Brand reputation and customer satisfaction protection"
+    ],
+    whatYouNeed: [
+      "Manufacturer or company name and contact information",
+      "Specific product name, model, and serial number information",
+      "Detailed product description and specifications",
+      "Warranty period duration and start date",
+      "Coverage details - what is and is not covered",
+      "Specific defects and issues included in warranty",
+      "Repair or replacement procedures and protocols",
+      "Customer responsibilities for warranty validity",
+      "Exclusions and limitations",
+      "Customer claim procedures and contact information"
+    ],
+    estimatedTime: "15-20 minutes"
   }
 };
 

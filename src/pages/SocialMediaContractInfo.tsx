@@ -10,7 +10,7 @@ import {
 import {
   FileText,
   Shield,
-  TrendingUp,
+  Share2,
   AlertCircle,
   CheckCircle,
   ChevronDown,
@@ -19,10 +19,10 @@ import {
 import { useNavigate } from "react-router-dom";
 import { documentContent } from "@/data/documentContent";
 
-const MarketingAgreementInfo = () => {
+const SocialMediaContractInfo = () => {
   const navigate = useNavigate();
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
-  const doc = documentContent["Marketing Agreement"];
+  const doc = documentContent["Social Media Contract"];
 
   if (!doc) {
     return (
@@ -48,16 +48,16 @@ const MarketingAgreementInfo = () => {
 
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <div className="bg-blue-100 p-3 rounded-full">
-                <FileText className="w-8 h-8 text-blue-700" />
+              <div className="bg-violet-100 p-3 rounded-full">
+                <FileText className="w-8 h-8 text-violet-700" />
               </div>
             </div>
 
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Marketing Agreement Information
+              Social Media Contract Information
             </h1>
             <p className="text-lg text-gray-600">
-              {doc.title} • {doc.otherNames?.[0] || "Professional Marketing Services"}
+              {doc.title} • {doc.otherNames?.[0] || "Employment Agreement"}
             </p>
           </div>
         </div>
@@ -67,8 +67,8 @@ const MarketingAgreementInfo = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-blue-600" />
-                What Is a Marketing Agreement?
+                <Shield className="w-5 h-5 mr-2 text-violet-600" />
+                What Is a Social Media Contract?
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -83,7 +83,7 @@ const MarketingAgreementInfo = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <AlertCircle className="w-5 h-5 mr-2 text-orange-600" />
-                When Should You Use a Marketing Agreement?
+                When Should You Use a Social Media Contract?
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -102,18 +102,18 @@ const MarketingAgreementInfo = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <TrendingUp className="w-5 h-5 mr-2 text-blue-600" />
+                <Share2 className="w-5 h-5 mr-2 text-blue-600" />
                 Frequently Asked Questions
               </CardTitle>
               <CardDescription>
-                Learn more about Marketing Agreements
+                Learn more about Social Media Contracts
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
               {doc.faqs?.map((faq, idx) => (
                 <div
                   key={idx}
-                  className="border rounded-lg overflow-hidden hover:border-blue-300 transition-colors"
+                  className="border rounded-lg overflow-hidden hover:border-violet-300 transition-colors"
                 >
                   <button
                     onClick={() =>
@@ -125,7 +125,7 @@ const MarketingAgreementInfo = () => {
                       {faq.q}
                     </span>
                     {expandedFAQ === idx ? (
-                      <ChevronUp className="w-5 h-5 text-blue-600" />
+                      <ChevronUp className="w-5 h-5 text-violet-600" />
                     ) : (
                       <ChevronDown className="w-5 h-5 text-gray-400" />
                     )}
@@ -144,18 +144,18 @@ const MarketingAgreementInfo = () => {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-blue-600" />
+                <Shield className="w-5 h-5 mr-2 text-violet-600" />
                 Key Protections
               </CardTitle>
               <CardDescription>
-                What your Marketing Agreement should include
+                What your Social Media Contract should include
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {doc.keyProtections?.map((protection, idx) => (
                   <li key={idx} className="flex items-start">
-                    <CheckCircle className="w-4 h-4 text-blue-600 mr-2 mt-1 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 text-violet-600 mr-2 mt-1 flex-shrink-0" />
                     <span className="text-gray-700 text-sm">{protection}</span>
                   </li>
                 ))}
@@ -184,19 +184,19 @@ const MarketingAgreementInfo = () => {
           </Card>
 
           {/* Important Tips Section */}
-          <Card className="bg-blue-50 border-blue-200">
+          <Card className="bg-violet-50 border-violet-200">
             <CardHeader>
-              <CardTitle className="text-blue-900">Important Tips</CardTitle>
+              <CardTitle className="text-violet-900">Important Tips</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-blue-900">
+            <CardContent className="space-y-3 text-violet-900">
               <p>
-                <strong>Estimated Time:</strong> {doc.estimatedTime} to complete your Marketing Agreement
+                <strong>Estimated Time:</strong> {doc.estimatedTime} to complete your Social Media Contract
               </p>
               <p>
-                A properly drafted Marketing Agreement ensures clear expectations around deliverables, compensation, intellectual property, and performance metrics for all parties involved in marketing activities.
+                A properly drafted Social Media Contract balances employee freedom of expression with professional responsibility and protects your company's reputation.
               </p>
               <p>
-                This agreement has been customized over 11,100 times, demonstrating its reliability and widespread use across businesses, agencies, and marketing consultants.
+                Consider having a legal professional review your agreement to ensure it complies with employment laws in your jurisdiction.
               </p>
             </CardContent>
           </Card>
@@ -205,9 +205,9 @@ const MarketingAgreementInfo = () => {
           <div className="flex justify-center pb-4">
             <Button
               onClick={() => navigate("/documents")}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg"
+              className="bg-violet-600 hover:bg-violet-700 text-white px-8 py-6 text-lg"
             >
-              Create Your Marketing Agreement Now
+              Create Your Social Media Contract Now
             </Button>
           </div>
         </div>
@@ -216,4 +216,4 @@ const MarketingAgreementInfo = () => {
   );
 };
 
-export default MarketingAgreementInfo;
+export default SocialMediaContractInfo;

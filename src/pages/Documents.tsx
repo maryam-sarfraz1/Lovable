@@ -443,7 +443,7 @@ export const businessSecurityDocs = [
   { id: "VendorAgreementForm", title: "Vendor Agreement", description: "Create a vendor services agreement", icon: FileText, category: "Distribution", component: VendorAgreementForm },
 
   // === ADMINISTRATIVE ===
-  { id: "AdministrativeServicesContractForm", title: "Administrative Services Contract", description: "Create a comprehensive administrative services contract", icon: Briefcase, category: "Administrative", component: AdministrativeServicesContractForm },
+  { id: "AdministrativeServicesContractForm", title: "Administrative Services Agreement", description: "Create a comprehensive administrative services agreement", icon: Briefcase, category: "Administrative", component: AdministrativeServicesContractForm },
 
   // === DISPUTE RESOLUTION ===
   { id: "ArbitrationAgreementForm", title: "Arbitration Agreement", description: "Create a comprehensive arbitration agreement", icon: Handshake, category: "Dispute Resolution", component: ArbitrationAgreementForm },

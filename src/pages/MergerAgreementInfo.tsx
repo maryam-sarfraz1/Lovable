@@ -1,8 +1,6 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, FileText, Shield, Users, CheckCircle, Download, Building, BookOpen, DollarSign } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const InfoBadge = ({ icon: Icon, title, children, className = "" }) => (
   <div className={`bg-white border border-gray-100 rounded-lg p-4 shadow-sm ${className}`}>

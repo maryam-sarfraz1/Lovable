@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronDown, ChevronUp, ShoppingCart, Clock, Info } from "lucide-react";
+import { ChevronDown, ChevronUp, Truck, Clock, Info } from "lucide-react";
 import { documentContent } from "@/data/documentContent";
 
 interface ExpandedFAQ {
   [key: number]: boolean;
 }
 
-const SaleOfGoodsInfo: React.FC = () => {
+const SupplierAgreementInfo: React.FC = () => {
   const navigate = useNavigate();
   const [expandedFAQ, setExpandedFAQ] = useState<ExpandedFAQ>({});
 
-  const data = documentContent["Sale of Goods Agreement"];
+  const data = documentContent["Supplier Agreement"];
 
   if (!data) {
     return (
@@ -31,12 +31,12 @@ const SaleOfGoodsInfo: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
       <div className="max-w-4xl mx-auto py-12 px-4">
         {/* Header Section */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <ShoppingCart className="h-8 w-8 text-orange-600" />
+            <Truck className="h-8 w-8 text-teal-600" />
             <h1 className="text-4xl font-bold text-gray-900">{data.title}</h1>
           </div>
           {data.otherNames && data.otherNames.length > 0 && (
@@ -47,9 +47,9 @@ const SaleOfGoodsInfo: React.FC = () => {
         </div>
 
         {/* What Is Section */}
-        <Card className="bg-white border-l-4 border-l-orange-600 mb-8 p-6">
+        <Card className="bg-white border-l-4 border-l-teal-600 mb-8 p-6">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
-            What Is a Sale of Goods Agreement?
+            What Is a Supplier Agreement?
           </h2>
           <p className="text-gray-700 whitespace-pre-line leading-relaxed">
             {data.whatIs}
@@ -57,14 +57,14 @@ const SaleOfGoodsInfo: React.FC = () => {
         </Card>
 
         {/* When to Use Section */}
-        <Card className="bg-orange-50 border border-orange-200 mb-8 p-6">
+        <Card className="bg-teal-50 border border-teal-200 mb-8 p-6">
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">
             When To Use This Agreement
           </h2>
           <ul className="space-y-3">
             {data.whenToUse?.map((item: string, index: number) => (
               <li key={index} className="flex gap-3">
-                <span className="flex-shrink-0 h-6 w-6 rounded-full bg-orange-600 text-white flex items-center justify-center text-sm font-semibold">
+                <span className="flex-shrink-0 h-6 w-6 rounded-full bg-teal-600 text-white flex items-center justify-center text-sm font-semibold">
                   {index + 1}
                 </span>
                 <span className="text-gray-700">{item}</span>
@@ -82,10 +82,10 @@ const SaleOfGoodsInfo: React.FC = () => {
             {data.keyProtections?.map((protection: string, index: number) => (
               <Card
                 key={index}
-                className="bg-gradient-to-br from-orange-50 to-white border border-orange-200 p-4"
+                className="bg-gradient-to-br from-teal-50 to-white border border-teal-200 p-4"
               >
                 <div className="flex gap-3">
-                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-orange-600 text-white flex items-center justify-center text-sm font-bold">
+                  <div className="flex-shrink-0 h-6 w-6 rounded-full bg-teal-600 text-white flex items-center justify-center text-sm font-bold">
                     ✓
                   </div>
                   <p className="text-gray-700">{protection}</p>
@@ -104,23 +104,23 @@ const SaleOfGoodsInfo: React.FC = () => {
             {data.faqs?.map((faq: { q: string; a: string }, index: number) => (
               <Card
                 key={index}
-                className="bg-white border border-gray-200 overflow-hidden hover:border-orange-300 transition-colors"
+                className="bg-white border border-gray-200 overflow-hidden hover:border-teal-300 transition-colors"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-orange-50 transition-colors"
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-teal-50 transition-colors"
                 >
                   <span className="text-left text-gray-900 font-medium">
                     {faq.q}
                   </span>
                   {expandedFAQ[index] ? (
-                    <ChevronUp className="h-5 w-5 text-orange-600 flex-shrink-0" />
+                    <ChevronUp className="h-5 w-5 text-teal-600 flex-shrink-0" />
                   ) : (
                     <ChevronDown className="h-5 w-5 text-gray-400 flex-shrink-0" />
                   )}
                 </button>
                 {expandedFAQ[index] && (
-                  <div className="px-6 py-4 bg-orange-50 border-t border-gray-100">
+                  <div className="px-6 py-4 bg-teal-50 border-t border-gray-100">
                     <p className="text-gray-700 whitespace-pre-line">
                       {faq.a}
                     </p>
@@ -132,14 +132,14 @@ const SaleOfGoodsInfo: React.FC = () => {
         </div>
 
         {/* What You Need Section */}
-        <Card className="bg-gradient-to-r from-orange-600 to-orange-700 text-white mb-8 p-6">
+        <Card className="bg-gradient-to-r from-teal-600 to-teal-700 text-white mb-8 p-6">
           <h2 className="text-2xl font-semibold mb-4">
             What You Need to Prepare
           </h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {data.whatYouNeed?.map((item: string, index: number) => (
               <li key={index} className="flex gap-3">
-                <span className="flex-shrink-0 h-6 w-6 rounded-full bg-orange-500 flex items-center justify-center text-sm font-bold">
+                <span className="flex-shrink-0 h-6 w-6 rounded-full bg-teal-500 flex items-center justify-center text-sm font-bold">
                   {index + 1}
                 </span>
                 <span>{item}</span>
@@ -157,10 +157,7 @@ const SaleOfGoodsInfo: React.FC = () => {
                 Important Note
               </h3>
               <p className="text-blue-800">
-                While this template provides a solid starting point, consider
-                having an attorney review your agreement, especially for
-                high-value transactions or when specific industry practices
-                apply.
+                For complex supply relationships or large-value agreements, consider consulting with an attorney to ensure all terms protect your interests and comply with relevant commercial law.
               </p>
             </div>
           </div>
@@ -175,9 +172,9 @@ const SaleOfGoodsInfo: React.FC = () => {
             </span>
           </div>
           <Button
-            onClick={() => navigate("/sale-of-goods-form")}
+            onClick={() => navigate("/supplier-agreement-form")}
             size="lg"
-            className="bg-orange-600 hover:bg-orange-700 text-white"
+            className="bg-teal-600 hover:bg-teal-700 text-white"
           >
             Create Agreement
           </Button>
@@ -187,4 +184,4 @@ const SaleOfGoodsInfo: React.FC = () => {
   );
 };
 
-export default SaleOfGoodsInfo;
+export default SupplierAgreementInfo;

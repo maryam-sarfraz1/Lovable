@@ -2,34 +2,34 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
-const AdministrativeServicesAgreementInfo = () => {
+const MergerAgreementInfo = () => {
   const navigate = useNavigate();
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   const faqs = [
     {
-      q: "When should I use an Administrative Services Agreement?",
-      a: "You should use an Administrative Services Agreement when providing administrative services as an independent contractor, or when hiring an independent contractor to perform administrative or back-office services. Having a written agreement is essential for defining responsibilities and protecting both parties."
+      q: "What is a Merger Agreement?",
+      a: "A Merger Agreement is a legally binding contract used when two companies decide to combine into a single business entity. It defines the structure, process, and legal framework of the merger, outlines how one company will be dissolved into the other, and specifies whether the surviving entity will continue under an existing name or adopt a new one."
     },
     {
-      q: "Do administrative professionals need an Administrative Services Agreement?",
-      a: "Yes, even if administrative services are not your full-time profession, documenting your arrangement is crucial. A written agreement helps prevent misunderstandings by clearly defining roles and responsibilities, providing a transparent payment structure and schedule, and ensuring certainty regarding the duration of engagement."
+      q: "What does a draft Merger Agreement cover?",
+      a: "A comprehensive Merger Agreement covers: a complete accounting of each company's assets and liabilities, valuation of shares and ownership interests under the new or surviving entity, rules governing daily business operations during the merger process, limitations on entering new contracts during the transition period, and procedures for forming a new board of directors and appointing its members."
     },
     {
-      q: "What should a draft Administrative Services Agreement include?",
-      a: "A comprehensive agreement should cover: full contact information of the client, a clear description of the administrative services to be provided, the start date and end date of the engagement, agreed fees, payment method and payment schedule, independent contractor relationship clarification, confidentiality obligations, dispute resolution mechanisms, indemnification, limitation of liability, and the governing jurisdiction."
+      q: "When should I use a Merger Agreement?",
+      a: "You should use a Merger Agreement when you intend to merge another company into your business as the surviving entity, or when you have agreed to dissolve your business into another company through a merger. In both cases, using a written agreement is essential to protect business interests and ensure a seamless transition."
     },
     {
-      q: "Where can I create an Administrative Services Agreement for free?",
-      a: "You can download Administrative Services Agreement templates from legal document platforms. These templates are prepared in professional and legally sound formats and guide you step-by-step through completion. A professionally drafted template saves you time and legal expense compared to hiring a lawyer, which often costs hundreds of dollars."
+      q: "Why use a draft Merger Agreement?",
+      a: "A properly drafted Merger Agreement helps manage operational challenges and ensures smooth integration of both businesses. Given the complexity of mergers, having a well-structured agreement is essential. The agreement has been customized thousands of times, reflecting its reliability and widespread use. When properly completed and signed, it is legally binding and enforceable."
     },
     {
-      q: "What should I do after creating my Administrative Services Agreement?",
-      a: "Once finalized, edit the document as needed, download it in PDF or Word format, print it, and sign it electronically. After execution, always share a fully signed copy with the client for record-keeping and future reference."
+      q: "Can I get professional review of my Merger Agreement?",
+      a: "Yes. Given the complexity and high-value nature of mergers, parties may consult legal professionals to request a professional review of the agreement before finalizing it. Legal experts can ensure compliance with state laws and that all necessary provisions are included."
     },
     {
-      q: "Can a lawyer review my Administrative Services Agreement?",
-      a: "Yes. While many lawyers prefer not to review documents they didn't draft, you can seek professional review through legal support services or law firm review programs. With appropriate memberships, you can consult an experienced lawyer to review your agreement or answer any related legal questions."
+      q: "How do I download and use a Merger Agreement?",
+      a: "You can download a Merger Agreement in a professional and customizable format. The template follows the best format of Merger Agreement and can be edited, customized, printed, and signed online for convenience. Simply complete the agreement with your specific transaction details, review for accuracy, and execute with all parties."
     }
   ];
 
@@ -47,7 +47,7 @@ const AdministrativeServicesAgreementInfo = () => {
           marginBottom: '12px',
           color: '#1f2937'
         }}>
-          Administrative Services Agreement
+          Merger Agreement
         </h1>
         <p style={{
           fontSize: '16px',
@@ -55,7 +55,7 @@ const AdministrativeServicesAgreementInfo = () => {
           marginBottom: '32px',
           lineHeight: '1.6'
         }}>
-          Professional relationship agreement covering administrative services provision
+          Legally binding contract for combining two companies into a single business entity
         </p>
 
         {/* Definition Section */}
@@ -71,14 +71,14 @@ const AdministrativeServicesAgreementInfo = () => {
             fontWeight: 'bold',
             marginBottom: '16px',
             color: '#1f2937'
-          }}>What Is an Administrative Services Agreement?</h2>
+          }}>What Is a Merger Agreement?</h2>
           <p style={{
             fontSize: '15px',
             color: '#4b5563',
             lineHeight: '1.7',
             marginBottom: '12px'
           }}>
-            An Administrative Services Agreement is a legally binding contract that governs the provision of administrative services between an administrative professional and a client. This agreement clearly defines the scope of services, duties, timelines, and payment terms, helping both parties establish expectations from the very beginning of their professional relationship.
+            A Merger Agreement is a legally binding contract used when two companies decide to combine into a single business entity. Whether one company is absorbed into another or both businesses unite to form a new organization, this agreement defines the structure, process, and legal framework of the merger.
           </p>
           <p style={{
             fontSize: '15px',
@@ -86,18 +86,18 @@ const AdministrativeServicesAgreementInfo = () => {
             lineHeight: '1.7',
             marginBottom: '12px'
           }}>
-            Unlike a basic administrative assistant template, a properly drafted Administrative Services Agreement offers stronger legal protection. A well-structured agreement safeguards the rights of both parties and reduces the risk of disputes. If questions arise regarding performance or payment, the agreement serves as a reliable written record.
+            A properly drafted Merger Agreement outlines how one company will be dissolved into the other and whether the surviving entity will continue under an existing name or adopt a new one. Mergers commonly occur between competing businesses seeking to strengthen market position, when one company acquires another, or when a financially struggling business merges with a more stable organization.
           </p>
           <p style={{
             fontSize: '15px',
             color: '#4b5563',
             lineHeight: '1.7'
           }}>
-            Using the best format of Administrative Services Agreement ensures clarity, professionalism, and enforceability throughout the engagement.
+            Using the best format of Merger Agreement ensures clarity and legal certainty throughout the transition period.
           </p>
         </div>
 
-        {/* When to Use */}
+        {/* What It Covers */}
         <div style={{
           backgroundColor: 'white',
           padding: '24px',
@@ -110,17 +110,22 @@ const AdministrativeServicesAgreementInfo = () => {
             fontWeight: 'bold',
             marginBottom: '16px',
             color: '#1f2937'
-          }}>When Should You Use This Agreement?</h2>
+          }}>What Does a Draft Merger Agreement Cover?</h2>
           <ul style={{
             listStyle: 'none',
             padding: 0
           }}>
             {[
-              'When you are providing administrative services to a company as an independent contractor',
-              'When you are hiring an independent contractor to perform administrative or back-office services',
-              'When you need to clearly define responsibilities and protect both parties',
-              'When establishing payment terms, schedules, and service expectations',
-              'When you want to prevent misunderstandings and document the professional relationship'
+              'Complete accounting of each company\'s assets and liabilities',
+              'Valuation of shares and ownership interests under the new or surviving entity',
+              'Rules governing daily business operations during the merger process',
+              'Limitations on entering new contracts during the transition period',
+              'Procedures for forming a new board of directors and appointing its members',
+              'Definition of surviving entity and post-merger structure',
+              'Tax consequences and treatment specification',
+              'Employee and contractor transition procedures',
+              'Representations and warranties of both parties',
+              'Dispute resolution and governing law provisions'
             ].map((item, index) => (
               <li key={index} style={{
                 fontSize: '15px',
@@ -139,9 +144,17 @@ const AdministrativeServicesAgreementInfo = () => {
               </li>
             ))}
           </ul>
+          <p style={{
+            fontSize: '15px',
+            color: '#4b5563',
+            lineHeight: '1.7',
+            marginTop: '16px'
+          }}>
+            Because no two mergers are the same, a well-structured Merger Agreement helps manage operational challenges and ensures a smooth integration of both businesses.
+          </p>
         </div>
 
-        {/* What It Covers */}
+        {/* When to Use */}
         <div style={{
           backgroundColor: 'white',
           padding: '24px',
@@ -154,33 +167,22 @@ const AdministrativeServicesAgreementInfo = () => {
             fontWeight: 'bold',
             marginBottom: '16px',
             color: '#1f2937'
-          }}>What Should It Include?</h2>
-          <p style={{
-            fontSize: '15px',
-            color: '#4b5563',
-            marginBottom: '12px',
-            lineHeight: '1.7'
-          }}>A comprehensive draft Administrative Services Agreement should cover:</p>
+          }}>When Should You Use a Merger Agreement?</h2>
           <ul style={{
             listStyle: 'none',
             padding: 0
           }}>
             {[
-              'Full contact information of the client and service provider',
-              'Clear description of administrative services to be provided',
-              'Start date and end date of the engagement',
-              'Agreed fees, payment method, and payment schedule',
-              'Independent contractor relationship clarification',
-              'Confidentiality obligations and limitations',
-              'Dispute resolution mechanisms',
-              'Indemnification and limitation of liability clauses',
-              'Termination conditions and notice requirements',
-              'Governing jurisdiction and applicable law'
+              'When you intend to merge another company into your business as the surviving entity to enhance market position',
+              'When you have agreed to dissolve your business into another company through a merger',
+              'When you need to clearly define the structure, process, and legal framework of the merger',
+              'When you want protection for business interests and a seamless transition',
+              'When you need to account for assets, liabilities, and establish governance during the transition'
             ].map((item, index) => (
               <li key={index} style={{
                 fontSize: '15px',
                 color: '#4b5563',
-                marginBottom: '10px',
+                marginBottom: '12px',
                 paddingLeft: '24px',
                 position: 'relative'
               }}>
@@ -196,7 +198,7 @@ const AdministrativeServicesAgreementInfo = () => {
           </ul>
         </div>
 
-        {/* Key Benefits */}
+        {/* Why Use It */}
         <div style={{
           backgroundColor: 'white',
           padding: '24px',
@@ -209,17 +211,17 @@ const AdministrativeServicesAgreementInfo = () => {
             fontWeight: 'bold',
             marginBottom: '16px',
             color: '#1f2937'
-          }}>Why Use an Administrative Services Agreement?</h2>
+          }}>Why Use a Draft Merger Agreement?</h2>
           <ul style={{
             listStyle: 'none',
             padding: 0
           }}>
             {[
-              'Clearly defined roles and responsibilities',
-              'Transparent payment structure and schedule',
-              'Certainty regarding the duration of the engagement',
-              'Prevention of disputes over deliverables and expectations',
-              'Professional documentation of the working relationship'
+              'Reliable and trusted - customized over 20,700 times reflecting widespread use',
+              'Manages complexity - addresses complex integration issues and allocates risk clearly',
+              'Clear valuation - ensures transparent methods and ownership allocations',
+              'Governance planning - documents board formation and post-merger structure',
+              'Legally binding - when properly executed, it is enforceable in court'
             ].map((item, index) => (
               <li key={index} style={{
                 fontSize: '15px',
@@ -315,17 +317,17 @@ const AdministrativeServicesAgreementInfo = () => {
             fontWeight: 'bold',
             marginBottom: '12px',
             color: '#92400e'
-          }}>Download Administrative Services Agreement</h2>
+          }}>Download Merger Agreement</h2>
           <p style={{
             fontSize: '14px',
             color: '#b45309',
             marginBottom: '16px',
             lineHeight: '1.6'
           }}>
-            Get your free Administrative Services Agreement template in professional format. Download in PDF or Word, customize to your needs, and start protecting your administrative services arrangement today. No hidden fees, no legal jargon—just straightforward legal protection.
+            Get your free Merger Agreement template in professional format. Download in PDF or Word, customize to your specific merger details, and start preparing for your transaction today. Professional format and legally sound template ready for immediate use.
           </p>
           <button
-            onClick={() => navigate('/administrative-services-form')}
+            onClick={() => navigate('/merger-agreement-form')}
             style={{
               backgroundColor: '#d97706',
               color: 'white',
@@ -353,7 +355,7 @@ const AdministrativeServicesAgreementInfo = () => {
         }}>
           <p style={{ margin: '0', fontWeight: '600', marginBottom: '8px' }}>Legal Disclaimer:</p>
           <p style={{ margin: '0' }}>
-            This template is provided for informational purposes. Requirements and best practices vary by jurisdiction and individual circumstances. For complex administrative arrangements or jurisdiction-specific concerns, consult with a qualified attorney to ensure the agreement complies with all applicable laws and includes necessary provisions for your specific situation.
+            This template is provided for informational purposes. Mergers involve complex legal, tax, and regulatory considerations. For complex transactions or jurisdiction-specific concerns, consult with qualified legal and financial professionals to ensure the agreement complies with all applicable laws and includes all necessary provisions for your specific situation.
           </p>
         </div>
 
@@ -366,7 +368,7 @@ const AdministrativeServicesAgreementInfo = () => {
           flexWrap: 'wrap'
         }}>
           <button
-            onClick={() => navigate('/administrative-services-form')}
+            onClick={() => navigate('/merger-agreement-form')}
             style={{
               backgroundColor: '#d97706',
               color: 'white',
@@ -401,4 +403,4 @@ const AdministrativeServicesAgreementInfo = () => {
   );
 };
 
-export default AdministrativeServicesAgreementInfo;
+export default MergerAgreementInfo;

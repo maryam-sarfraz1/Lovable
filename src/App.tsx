@@ -109,13 +109,18 @@ import FranchiseAgreementInfo from "./pages/FranchiseAgreementInfo";
 import AdministrativeServicesAgreementInfo from "./pages/AdministrativeServicesAgreementInfo";
 import AdvertisingAgencyAgreementInfo from "./pages/AdvertisingAgencyAgreementInfo";
 import ITServiceAgreementInfo from "./pages/ITServiceAgreementInfo";
+import FeeAgreementInfo from "./pages/FeeAgreementInfo";
+import SocialMediaContractInfo from "./pages/SocialMediaContractInfo";
 import MergerAgreementInfo from "./pages/MergerAgreementInfo";
 import AssetPurchaseAgreementInfo from "./pages/AssetPurchaseAgreementInfo";
 import MarketingAgreementInfo from "./pages/MarketingAgreementInfo";
 import ContractExtensionInfo from "./pages/ContractExtensionInfo";
 import ProductDistributionAgreementInfo from "./pages/ProductDistributionAgreementInfo";
 import ReferralFeeAgreementInfo from "./pages/ReferralFeeAgreementInfo";
+import ServiceLevelAgreementInfo from "./pages/ServiceLevelAgreementInfo";
+import StockPurchaseAgreementInfo from "./pages/StockPurchaseAgreementInfo";
 import BarterAgreementInfo from "./pages/BarterAgreementInfo";
+import SupplierAgreementInfo from "./pages/SupplierAgreementInfo";
 import DemandForDeliveryInfo from "./pages/DemandForDeliveryInfo";
 import DueOnDemandPromissoryNoteInfo from "./pages/DueOnDemandPromissoryNoteInfo";
 import ChangeOfBeneficiaryInfo from "./pages/ChangeOfBeneficiaryInfo";
@@ -381,13 +386,18 @@ const App = () => {
                 <Route path="/administrative-services-info" element={<AdministrativeServicesAgreementInfo />} />
                 <Route path="/advertising-agency-info" element={<AdvertisingAgencyAgreementInfo />} />
                 <Route path="/it-service-agreement-info" element={<ITServiceAgreementInfo />} />
+                <Route path="/fee-agreement-info" element={<FeeAgreementInfo />} />
+                <Route path="/social-media-contract-info" element={<SocialMediaContractInfo />} />
                 <Route path="/merger-agreement-info" element={<MergerAgreementInfo />} />
                 <Route path="/asset-purchase-info" element={<AssetPurchaseAgreementInfo />} />
                 <Route path="/marketing-agreement-info" element={<MarketingAgreementInfo />} />
                 <Route path="/contract-extension-info" element={<ContractExtensionInfo />} />
                 <Route path="/product-distribution-info" element={<ProductDistributionAgreementInfo />} />
                 <Route path="/referral-fee-agreement-info" element={<ReferralFeeAgreementInfo />} />
+                <Route path="/service-level-agreement-info" element={<ServiceLevelAgreementInfo />} />
+                <Route path="/stock-purchase-agreement-info" element={<StockPurchaseAgreementInfo />} />
                 <Route path="/barter-agreement-info" element={<BarterAgreementInfo />} />
+                <Route path="/supplier-agreement-info" element={<SupplierAgreementInfo />} />
                 <Route path="/food-service-contract-info" element={<FoodServiceContractInfo />} />
                 <Route path="/offer-to-lease-info" element={<OfferToLeaseInfo />} />
                 <Route path="/vehicle-lease-info" element={<VehicleLeaseInfo />} />
