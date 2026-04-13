@@ -321,7 +321,7 @@ export default function UnbundledLegalServicesAgreementForm() {
       title="Unbundled Legal Services Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="unbundledlegalservicesagreement"
+      documentType="unbundled-legal-services-agreement"
     />
   );
 }

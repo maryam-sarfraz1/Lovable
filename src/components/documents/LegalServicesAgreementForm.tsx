@@ -278,7 +278,7 @@ export default function LegalServicesAgreementForm() {
       title="Legal Services Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="legalservicesagreement"
+      documentType="legal-services-agreement"
     />
   );
 }

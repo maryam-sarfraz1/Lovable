@@ -781,7 +781,7 @@ export default function RoommateAgreementForm() {
       title="Roommate Agreement"
       subtitle="Complete each step to generate your Roommate Agreement"
       onGenerate={generatePDF}
-      documentType="roommateagreement"
+      documentType="roommate-agreement"
     />
   );
 }

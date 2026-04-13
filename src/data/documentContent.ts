@@ -2371,6 +2371,629 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "15-20 minutes"
   },
 
+  "Co-Tenancy Agreement": {
+    title: "Co-Tenancy Agreement",
+    whatIs: "A Co-Tenancy Agreement is a written contract used when two or more individuals rent the same property together. This agreement clearly defines the rights, duties, and responsibilities of each co-tenant, helping to prevent disputes and misunderstandings during the tenancy.\n\nIf you are sharing a rental property with roommates, a Co-Tenancy Agreement is an essential document. It supplements the main lease or draft tenancy agreement by setting out how rent, utilities, repairs, deposits, and household rules are handled between the co-tenants themselves.",
+    whenToUse: [
+      "You are about to rent a property with one or more people",
+      "You are adding a new roommate to an existing tenancy",
+      "You want to avoid disputes over rent, utilities, or damages",
+      "You want written rules to govern shared living"
+    ],
+    faqs: [
+      { q: "What is a Co-Tenancy Agreement?", a: "A Co-Tenancy Agreement is a written contract used when two or more individuals rent the same property together. This agreement clearly defines the rights, duties, and responsibilities of each co-tenant, helping to prevent disputes and misunderstandings during the tenancy." },
+      { q: "Why should I use a Co-Tenancy Agreement?", a: "While a lease or tenancy agreement governs the relationship between tenants and the landlord, a Co-Tenancy Agreement governs the relationship among the tenants. This agreement ensures that each co-tenant understands their financial and practical responsibilities." },
+      { q: "What does a Co-Tenancy Agreement cover?", a: "A standard Co-Tenancy Agreement typically includes: compliance with the lease agreement, division of rent and utilities, responsibility for repairs and damages, security deposit sharing, joint and several liability among co-tenants, rules for replacing or releasing a co-tenant, house rules and maintenance, and governing law and dispute resolution." },
+      { q: "Does it replace the main lease?", a: "No. A Co-Tenancy Agreement is designed to work alongside the main lease or tenancy agreement. It does not replace your landlord's lease agreement but supplements it with co-tenant-specific terms." },
+      { q: "What if a roommate wants to leave?", a: "Your Co-Tenancy Agreement should clarify procedures for releasing a co-tenant, including notice periods, deposit handling, and rules for adding a new roommate." }
+    ],
+    keyProtections: [
+      "Allocates rent and utility payments clearly between co-tenants",
+      "Defines responsibility for repairs and damages",
+      "Establishes household rules and shared obligations",
+      "Addresses security deposit contributions and refunds",
+      "Clarifies procedures when a co-tenant moves out",
+      "Reduces roommate and co-tenant disputes",
+      "Legally binding and enforceable once signed"
+    ],
+    whatYouNeed: [
+      "Names and contact information of all co-tenants",
+      "Address of the rental property",
+      "Total monthly rent amount",
+      "Rent split/allocation method between co-tenants",
+      "Utility payment responsibilities and split",
+      "Security deposit amount and allocation",
+      "Move-in and move-out dates",
+      "House rules and guest policies",
+      "Procedure for one co-tenant leaving",
+      "Dispute resolution preferences"
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+
+  "Legal Services Agreement": {
+    title: "Legal Services Agreement",
+    whatIs: "A Legal Services Agreement is a formal contract between a lawyer and a client that outlines the legal services to be provided, fees, timelines, and obligations of both parties. Unlike generic templates found online, a properly drafted agreement includes clauses that protect attorneys from non-payment, misunderstandings, and scope creep.",
+    whenToUse: [
+      "You are an attorney offering legal services to clients",
+      "You are a client hiring a lawyer or law firm",
+      "You manage a law firm and want standardized documentation",
+      "You want clarity on fees, scope of services, and responsibilities",
+      "You need to establish engagement terms in writing"
+    ],
+    faqs: [
+      { q: "Why Is a Legal Services Agreement Important?", a: "A properly drafted Legal Services Agreement helps define the duration of legal engagement, avoid confusion regarding billing and fees, clearly outline attorney-client responsibilities, prevent disputes and payment delays, and provide legal protection if conflicts arise. Without a written agreement, misunderstandings and unpaid invoices become far more likely." },
+      { q: "What Does a Legal Services Agreement Include?", a: "A standard Legal Services Agreement typically covers client and attorney details, scope of legal services, duration of engagement, fee structure and payment terms, confidentiality clause, independent contractor relationship, dispute resolution method, and governing law." },
+      { q: "Can I Download a Legal Services Agreement for Free?", a: "Yes! You can download a professionally drafted Legal Services Agreement template and customize it easily according to your legal practice or client needs, unlike hiring expensive law firms." },
+      { q: "How do I create a Legal Services Agreement?", a: "The process is simple: choose the template, enter your details, customize clauses as required based on your specific engagement, and download the agreement instantly in Word or PDF format." },
+      { q: "Can a Lawyer Review My Agreement?", a: "Yes. You can have your Legal Services Agreement reviewed by a legal professional to ensure compliance with applicable laws and best practices in your jurisdiction." }
+    ],
+    keyProtections: [
+      "Defines scope of legal services clearly",
+      "Establishes fee structure and payment terms",
+      "Protects attorney from scope creep",
+      "Prevents billing misunderstandings and disputes",
+      "Creates enforceable contract between parties",
+      "Includes confidentiality and privilege protections",
+      "Specifies dispute resolution procedures",
+      "Protects attorney from non-payment risk"
+    ],
+    whatYouNeed: [
+      "Attorney or law firm full name and contact information",
+      "Client full name and contact information",
+      "Specific legal services to be provided",
+      "Duration of legal engagement",
+      "Fee structure (hourly, flat fee, contingency, etc.)",
+      "Payment terms and billing frequency",
+      "Retainer amount (if applicable)",
+      "Scope of representation",
+      "Confidentiality expectations",
+      "Dispute resolution preferences",
+      "Governing law jurisdiction"
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+
+  "Limited Scope Representation Agreement": {
+    title: "Limited Scope Representation Agreement",
+    whatIs: "A Limited Scope Representation Agreement (also known as a Limited Legal Services Agreement) allows a lawyer and a client to clearly outline which legal services will be provided and which will not. This agreement helps avoid confusion, prevents disputes, and ensures transparency throughout the legal engagement. Unlike basic templates found online, a properly drafted agreement is designed to offer clarity, legal protection, and professional formatting suitable for attorneys and clients alike.",
+    whenToUse: [
+      "You are an attorney providing limited legal services",
+      "You want to clearly define the scope of representation",
+      "You are a client seeking help with only part of a legal matter",
+      "You want to avoid full-service legal fees",
+      "You want everything in writing before work begins"
+    ],
+    faqs: [
+      { q: "Why Is a Limited Scope Representation Agreement Important?", a: "A properly drafted Limited Scope Representation Agreement clearly defines responsibilities of both attorney and client, prevents misunderstandings and scope creep, establishes payment terms and timelines, reduces disputes over expectations, and provides legal clarity and protection. Without this agreement, lawyers and clients may face unpaid fees, unclear duties, and legal conflicts." },
+      { q: "What Should a Limited Scope Representation Agreement Include?", a: "A professional Limited Scope Representation Agreement template should include client and attorney information, scope of services with exclusions, fees and payment terms, duration of engagement, confidentiality clause, independent contractor status clarification, and governing law and dispute resolution methods." },
+      { q: "When Should You Use This Agreement?", a: "You should use this agreement when you are an attorney providing limited legal services, want to clearly define the scope of representation, are a client seeking help with only part of a legal matter, want to avoid full-service legal fees, or want everything in writing before work begins. It's especially useful for consultations, document review, legal drafting, or court preparation assistance." },
+      { q: "How Much Does a Limited Scope Representation Agreement Cost?", a: "Hiring a lawyer to draft this agreement can cost hundreds or even thousands of dollars. With Legalgram, you can create a free Limited Scope Representation Agreement and download it instantly." },
+      { q: "What to Do After Drafting the Agreement?", a: "After preparing your Limited Scope Representation Agreement, you should review all terms carefully, sign the agreement, share a signed copy with the other party, and store a copy for future reference. You can download the agreement, print it, or save it digitally." },
+      { q: "Can a Lawyer Review My Limited Scope Representation Agreement?", a: "Yes. If you want professional review, you can connect with legal professionals who can review your agreement before signing. This helps ensure accuracy and compliance with applicable laws." }
+    ],
+    keyProtections: [
+      "Clearly defines scope of legal services and exclusions",
+      "Prevents misunderstandings and scope creep",
+      "Establishes payment terms and timelines",
+      "Creates enforceable contract protecting both parties",
+      "Includes confidentiality clause for sensitive information",
+      "Clarifies independent contractor relationship",
+      "Specifies dispute resolution procedures",
+      "Reduces disputes over expectations and responsibilities"
+    ],
+    whatYouNeed: [
+      "Attorney or legal service provider full name and contact information",
+      "Client full name and contact information",
+      "Specific legal services to be provided",
+      "Legal services to be excluded from scope",
+      "Duration of legal engagement",
+      "Fee structure (hourly, flat fee, etc.)",
+      "Payment terms and billing frequency",
+      "Confidentiality expectations",
+      "Dispute resolution preferences",
+      "Governing law jurisdiction"
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+
+  "Personal Training Agreement": {
+    title: "Personal Training Agreement",
+    whatIs: "A Personal Training Agreement outlines the terms under which a personal trainer provides fitness services to a client. It helps avoid misunderstandings by clearly defining scope of training services, session duration and frequency, payment structure and deadlines, cancellation and refund policies, and liability and risk acknowledgment. Unlike generic templates found online, a properly drafted agreement is designed to be legally sound, easy to customize, and suitable for both trainers and clients.",
+    whenToUse: [
+      "You are a personal trainer onboarding a new client",
+      "You want legal protection for your training services",
+      "You are hiring a personal trainer for personal fitness",
+      "You want clear terms regarding payments and sessions"
+    ],
+    faqs: [
+      { q: "Why Is a Personal Training Agreement Important?", a: "Using a drafted Personal Training Agreement helps ensure clear expectations for both parties, prevents confusion about session length or fees, establishes defined payment schedules, provides protection against disputes or cancellations, and builds professional credibility. Without a written agreement, trainers may face late payments, cancellations, or disagreements over services." },
+      { q: "What Does a Personal Training Agreement Include?", a: "A properly drafted Personal Training Agreement typically covers client and trainer information, services provided, fees and payment terms, duration of agreement, cancellations and refunds, liability and risk disclaimer, and governing law. All these elements are included in the best format of Personal Training Agreement available on Legalgram." },
+      { q: "When Should You Use a Personal Training Agreement?", a: "You should use a Personal Training Agreement if you are a personal trainer onboarding a new client, want legal protection for your training services, are hiring a personal trainer for personal fitness, or want clear terms regarding payments and sessions. This agreement is essential for personal trainers, fitness coaches, gyms, and independent trainers." },
+      { q: "How Much Does a Personal Training Agreement Cost?", a: "Hiring a lawyer to draft a Personal Training Agreement can cost hundreds of dollars. With Legalgram, you can create a free Personal Training Agreement, customize it online, download it instantly, save it in Word or PDF format, and use it for personal or business purposes." },
+      { q: "What to Do After Creating Your Personal Training Agreement?", a: "Once your agreement is ready, review all terms carefully, sign electronically or in print, share a signed copy with your client, and store a copy for future reference. Legalgram also allows you to download your Personal Training Agreement anytime." },
+      { q: "Can a Lawyer Review My Personal Training Agreement?", a: "Yes. If you want extra assurance, you can consult a legal professional to review your agreement. This ensures compliance with applicable laws and protects your interests before signing." }
+    ],
+    keyProtections: [
+      "Clearly defines training services and frequency",
+      "Establishes session duration and payment terms",
+      "Specifies cancellation and rescheduling policies",
+      "Includes liability waivers and risk acknowledgment",
+      "Sets payment schedule and methods",
+      "Defines renewal terms and termination conditions",
+      "Protects trainer from payment disputes",
+      "Clarifies client fitness goals and expectations"
+    ],
+    whatYouNeed: [
+      "Personal trainer name, business name, and contact information",
+      "Client full name and contact information",
+      "Type of training services (1-on-1, group classes, online, etc.)",
+      "Session duration and frequency",
+      "Fee structure (per session, monthly package, etc.)",
+      "Payment methods and due dates",
+      "Cancellation and rescheduling policy",
+      "Client health and fitness goals",
+      "Liability waiver acknowledgment",
+      "Governing law jurisdiction"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Real Estate Agent Agreement": {
+    title: "Real Estate Agent Agreement",
+    whatIs: "A Real Estate Agent Agreement is used when a property owner hires a real estate agent to sell, lease, or manage real estate. This agreement defines the scope of services, commission or payment terms, duration of the agreement, and rights and obligations of both parties. Unlike generic templates, a professionally drafted Real Estate Agent Agreement meets professional legal standards and includes essential clauses required for enforceability.",
+    whenToUse: [
+      "You are selling property and hiring a real estate agent",
+      "You are a licensed agent offering services to a client",
+      "You want to clearly define commissions and timelines",
+      "You want to avoid disputes over responsibilities or payment"
+    ],
+    faqs: [
+      { q: "Why Is a Real Estate Agent Agreement Important?", a: "Using a draft Real Estate Agent Agreement clearly defines roles and responsibilities, prevents confusion regarding payment or commission, establishes the duration of the engagement, helps avoid legal disputes, and creates a professional working relationship. Without a written agreement, parties often face delayed payments, misunderstandings, or legal conflicts." },
+      { q: "What Does a Real Estate Agent Agreement Include?", a: "A professionally drafted Real Estate Agent Agreement typically contains party details, scope of services, term of agreement, compensation structure, independent contractor clause, confidentiality and liability provisions, and governing law. All of these clauses are included in the best format of Real Estate Agent Agreement available on Legalgram." },
+      { q: "When Should You Use a Real Estate Agent Agreement?", a: "You should use a Real Estate Agent Agreement if you are selling property and hiring a real estate agent, are a licensed agent offering services to a client, want to clearly define commissions and timelines, or want to avoid disputes over responsibilities or payment. This agreement protects both the property owner and the agent." },
+      { q: "How to Create a Real Estate Agent Agreement Online?", a: "With Legalgram, creating a legally sound agreement is simple: draft your Real Estate Agent Agreement online, customize it to your needs, download it in Word or PDF format, and use it immediately for business purposes. You can also request a professional legal review if needed." },
+      { q: "Is a Real Estate Agent Agreement Expensive to Draft?", a: "Hiring a lawyer to draft a contract can cost hundreds of dollars. With Legalgram, you can download a Real Estate Agent Agreement for free, get a professionally structured document, save time and legal costs, and use it for multiple transactions." },
+      { q: "What Should You Do After Creating the Agreement?", a: "Once your Real Estate Agent Agreement is ready, review all terms carefully, customize if needed, sign the document, provide a copy to the other party, and store it securely for future reference. You can also edit, print, or download the agreement anytime." },
+      { q: "Can a Lawyer Review My Real Estate Agent Agreement?", a: "Yes. Legalgram allows you to consult legal professionals who can review your agreement and ensure it complies with applicable laws. This is especially helpful for high-value property transactions." }
+    ],
+    keyProtections: [
+      "Clearly defines roles and responsibilities of agent and client",
+      "Establishes commission structure and payment terms",
+      "Specifies the duration of the engagement",
+      "Includes independent contractor clause",
+      "Protects sensitive property and client information",
+      "Prevents disputes over payment or responsibilities",
+      "Creates enforceable contract between parties",
+      "Defines dispute resolution procedures"
+    ],
+    whatYouNeed: [
+      "Property owner/client full name and contact information",
+      "Real estate agent name, license number, and contact information",
+      "Description of services (sales, leasing, management, etc.)",
+      "Property details and address",
+      "Commission or compensation structure",
+      "Term of agreement and renewal conditions",
+      "Payment schedule and method",
+      "Independent contractor acknowledgment",
+      "Confidentiality expectations",
+      "Governing law jurisdiction"
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+
+  "Retainer Agreement": {
+    title: "Retainer Agreement",
+    whatIs: "A Retainer Agreement is a work-for-hire contract where a client pays a service provider in advance for services that will be delivered over time. The agreement ensures clarity regarding payment terms, scope of work, duration of services, and rights and obligations of both parties. Unlike informal arrangements, a properly drafted Retainer Agreement protects both the client and the service provider from misunderstandings and disputes.",
+    whenToUse: [
+      "You are hiring a contractor or consultant on an ongoing basis",
+      "You want guaranteed availability of a service provider",
+      "You need predictable costs and professional accountability",
+      "You want all terms clearly recorded in writing"
+    ],
+    faqs: [
+      { q: "Why Is a Retainer Agreement Important?", a: "Using a draft Retainer Agreement ensures clarity regarding fees and services, creates predictable income for service providers, establishes professional boundaries, reduces risk of disputes, and protects both parties legally. Without a written agreement, misunderstandings regarding scope, payment, or timelines are common." },
+      { q: "What Should a Retainer Agreement Include?", a: "A properly drafted Retainer Agreement should cover parties involved (names and contact details), scope of services (clear description), payment terms (retainer amount, billing frequency, payment method), duration (start date and termination conditions), termination clause, independent contractor status, and confidentiality and legal protection provisions." },
+      { q: "When Should You Use a Retainer Agreement?", a: "You should use a Retainer Agreement if you are hiring a contractor or consultant on an ongoing basis, want guaranteed availability of a service provider, need predictable costs and professional accountability, or want all terms clearly recorded in writing. This agreement is ideal for legal professionals, consultants, designers, marketing agencies, IT providers, and freelancers." },
+      { q: "How to Create a Retainer Agreement Online?", a: "With Legalgram, creating a professional agreement is quick and easy: draft your Retainer Agreement online, customize it based on your needs, download the agreement instantly, and use it for business or legal purposes. You can also save your draft and complete it later." },
+      { q: "Is a Retainer Agreement Mandatory?", a: "A Retainer Agreement is not legally required, but it is highly recommended when advance payments are involved, services extend over time, or you want legal clarity and protection. Using a Retainer Agreement helps avoid confusion and ensures transparency." },
+      { q: "What Are the Benefits of a Retainer Agreement?", a: "Benefits include predictable income, priority service, clear expectations, better client relationships, customizable terms, and reduced legal risk. It allows both parties to focus on work rather than disputes." },
+      { q: "How to Download a Retainer Agreement?", a: "You can download a Retainer Agreement for free by clicking 'Download Retainer Agreement' and filling in basic details. Legalgram also allows you to edit, update, and reuse your agreement anytime." }
+    ],
+    keyProtections: [
+      "Ensures clarity regarding fees and services",
+      "Creates predictable income for service providers",
+      "Establishes professional boundaries",
+      "Protects both parties legally",
+      "Clearly defines scope of work and deliverables",
+      "Sets payment schedule and retainer amount",
+      "Specifies termination procedures",
+      "Includes confidentiality and IP protection clauses"
+    ],
+    whatYouNeed: [
+      "Client name, business name, and contact information",
+      "Service provider name, business name, and contact information",
+      "Detailed scope of services",
+      "Retainer amount and billing frequency",
+      "Payment method and due dates",
+      "Term duration and renewal conditions",
+      "Hours of availability or response time",
+      "Types of work included and excluded",
+      "Confidentiality requirements",
+      "Governing law jurisdiction"
+    ],
+    estimatedTime: "20-25 minutes"
+  },
+
+  "Roommate Agreement": {
+    title: "Roommate Agreement",
+    whatIs: "A Roommate Agreement is a legally structured document designed to clearly define the rights, duties, and responsibilities of individuals sharing a residential property. This agreement helps maintain harmony between co-habitants by setting clear expectations regarding rent, utilities, household duties, personal property, pets, and general conduct. Using a written roommate agreement is the best way to avoid misunderstandings and disputes.",
+    whenToUse: [
+      "You are moving in with a roommate for the first time",
+      "A new roommate is joining an existing household",
+      "Your university or housing authority requires a written agreement",
+      "You are sharing rented accommodation under a lease",
+      "You want a clear, enforceable written understanding"
+    ],
+    faqs: [
+      { q: "Why You Should Use a Roommate Agreement?", a: "Creating a Roommate Agreement before moving in together helps prevent future disputes over rent, bills, or chores, clarifies financial responsibilities, protects personal property, maintains peaceful shared living, and provides written proof of agreed terms." },
+      { q: "When Should You Use a Roommate Agreement?", a: "You should use a Roommate Agreement if you are moving in with a roommate for the first time, a new roommate is joining an existing household, your university or housing authority requires a written agreement, you are sharing rented accommodation under a lease, or you want a clear, enforceable written understanding." },
+      { q: "What Should Be Included in a Roommate Agreement?", a: "A complete Roommate Agreement should include address of the shared property, names and contact details of all roommates, landlord information, start and end date of occupancy, rent amounts and payment dates, cleaning responsibilities, utilities bills, parking arrangements, guest policies, and quiet hours." },
+      { q: "Roommate Agreement vs. Lease Agreement?", a: "A Lease Agreement is between tenants and the landlord. A Roommate Agreement is between the people living together. A Roommate Agreement goes further by addressing daily living issues, household responsibilities, guest policies, and personal matters not covered in a lease." },
+      { q: "What Happens If a Roommate Violates the Agreement?", a: "If a roommate breaches the Roommate Agreement, the other roommates may address the issue directly, seek mediation, or rely on the written agreement for legal enforcement. Having a written roommate contract significantly strengthens your position in resolving disputes." },
+      { q: "Is a Roommate Agreement Legally Binding?", a: "Yes, a properly drafted Roommate Agreement signed by all parties is a legally binding contract. It can be used as evidence in courts if disputes arise over the terms and conditions of shared living arrangements." }
+    ],
+    keyProtections: [
+      "Clearly defines rent payment responsibilities",
+      "Specifies utility and shared expense division",
+      "Establishes household cleanliness standards",
+      "Protects personal property rights",
+      "Sets guest policies and quiet hours",
+      "Defines pet policies and allergies",
+      "Specifies new roommate approval process",
+      "Creates enforceable agreement for all parties"
+    ],
+    whatYouNeed: [
+      "Names and contact details of all roommates",
+      "Address of the shared property",
+      "Landlord or property manager information",
+      "Lease start and end dates",
+      "Monthly rent amount and payment dates",
+      "Utility and shared expense split",
+      "Security deposit allocation",
+      "Cleaning and maintenance schedule",
+      "Guest policies and quiet hours",
+      "Pet policies and restrictions"
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+
+  "Roommate Release Agreement": {
+    title: "Roommate Release Agreement",
+    whatIs: "A Roommate Release Agreement is a legally binding document used when one roommate moves out of a shared rental property and the remaining roommate(s) agree to take over all responsibilities under the lease. This agreement ensures that the departing roommate is formally released from future financial obligations, including rent, utilities, and liability for property damage.\n\nWhen multiple tenants are listed on a lease, this agreement is especially important. Once executed, the remaining roommate(s) become solely responsible for complying with all lease terms.",
+    whenToUse: [
+      "You are a roommate moving out while other roommates continue occupying the property",
+      "One of your roommates is leaving and you've agreed to remove them from lease liability",
+      "You want a written, legally enforceable record protecting all parties",
+      "You need to formally release a departing roommate from financial obligations"
+    ],
+    faqs: [
+      { q: "What is a Roommate Release Agreement?", a: "A Roommate Release Agreement is a legally binding document used when one roommate moves out and the remaining roommate(s) take over all lease responsibilities. It ensures the departing roommate is no longer responsible for rent, utilities, or property damage after moving out." },
+      { q: "Does the landlord need to sign it?", a: "Generally, a Roommate Release Agreement governs obligations between roommates only. However, if the landlord does not sign or formally amend the original lease, the departing roommate may still remain liable to the landlord. It is strongly recommended to obtain the landlord's signature on the agreement or execute a lease amendment." },
+      { q: "What does the departing roommate stop being responsible for?", a: "Under the agreement, the departing roommate is no longer held responsible for rent payments due after moving out, property damage occurring after departure, or any other lease-related liabilities." },
+      { q: "What about the security deposit?", a: "The Roommate Release Agreement should specify how the security deposit will be handled between the departing and remaining roommates, including any deductions for damages or unpaid rent." },
+      { q: "Can it be used with any lease?", a: "Yes, the agreement complements existing tenancy agreements and is compatible with both residential and commercial leases." }
+    ],
+    keyProtections: [
+      "Releases departing roommate from future financial obligations",
+      "Transfers all lease responsibilities to remaining roommates",
+      "Creates legally enforceable record of roommate release",
+      "Prevents landlord from pursuing former tenant after departure",
+      "Clarifies security deposit division",
+      "Protects remaining roommates from inheriting departed roommate's liabilities"
+    ],
+    whatYouNeed: [
+      "Names and contact information of all roommates (departing and remaining)",
+      "Address of the rental property",
+      "Lease start and end dates",
+      "Move-out date of the departing roommate",
+      "Original lease document details",
+      "Security deposit amount and allocation",
+      "Landlord name and contact information",
+      "Confirmation of remaining roommates' financial capability",
+      "Details of any outstanding rent or damages"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Tutoring Agreement": {
+    title: "Tutoring Agreement",
+    whatIs: "A Tutoring Agreement is a legal contract between a tutor and student (or parent/guardian) that outlines the terms of tutoring services. This agreement clearly defines the scope of tutoring, payment terms, schedule, cancellation policies, and expectations for both parties to ensure a productive learning relationship.",
+    whenToUse: [
+      "You are offering tutoring services to students",
+      "You are hiring a tutor for academic instruction",
+      "You want to establish clear expectations and rates",
+      "You need protection against cancellation disputes",
+      "You want to formalize the tutoring arrangement in writing"
+    ],
+    faqs: [
+      { q: "What Is a Tutoring Agreement?", a: "A Tutoring Agreement is a legal contract between a tutor and student (or parent/guardian) that outlines the terms of tutoring services, including scope of services, payment terms, schedule, cancellation policies, and expectations for both parties." },
+      { q: "When Should You Use a Tutoring Agreement?", a: "You should use when offering tutoring services, hiring a tutor for academic instruction, wanting to establish clear expectations and rates, needing protection against cancellation disputes, or formalizing the arrangement in writing." },
+      { q: "What Should Be Included in a Tutoring Agreement?", a: "An effective Tutoring Agreement should include parties involved, tutoring services details, schedule and session information, fees and payment terms, cancellation policy, attendance expectations, academic goals, and termination conditions." },
+      { q: "How Much Should I Charge for Tutoring?", a: "Tutoring rates vary based on subject matter, tutor qualifications, location, and whether tutoring is in-person or online. Research local rates and consider your experience level when setting fees." },
+      { q: "What Happens If a Session Is Canceled?", a: "The cancellation policy should be clearly stated in the agreement, specifying notice requirements and whether deposits or prepaid sessions are refundable." },
+      { q: "Is a Tutoring Agreement Legally Binding?", a: "Yes, a properly drafted and signed Tutoring Agreement is a legally binding contract that can be enforced if either party breaches the terms." }
+    ],
+    keyProtections: [
+      "Clarifies the scope and type of tutoring services",
+      "Establishes payment rates and billing frequency",
+      "Sets attendance and cancellation expectations",
+      "Defines academic goals and learning objectives",
+      "Protects both tutor and student/parent relationship",
+      "Provides legal documentation of the arrangement"
+    ],
+    whatYouNeed: [
+      "Tutor name, qualifications, and contact information",
+      "Student name and grade level (or parent/guardian info)",
+      "Subject matter and type of tutoring (online, in-person, etc.)",
+      "Session frequency, duration, and schedule",
+      "Hourly rate or package pricing",
+      "Payment method and due dates",
+      "Cancellation policy and notice requirements",
+      "Academic goals and expected outcomes",
+      "Attendance expectations",
+      "Termination conditions"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Unbundled Legal Services Agreement": {
+    title: "Unbundled Legal Services Agreement",
+    whatIs: "An Unbundled Legal Services Agreement is a legally binding contract that clearly defines limited legal representation between an attorney and a client. This type of agreement allows lawyers to offer specific legal services without taking on full representation, while clients only pay for the services they actually need. Also known as a limited scope representation agreement, it clearly outlines what the lawyer will and will not do, helping both parties avoid misunderstandings.",
+    whenToUse: [
+      "You are an attorney offering limited legal services",
+      "You are a client seeking help with only part of a legal matter",
+      "You want to avoid full-service legal fees",
+      "You manage a law firm providing limited-scope representation",
+      "Providing consultations, document review, drafting services, or legal coaching"
+    ],
+    faqs: [
+      { q: "What is an Unbundled Legal Services Agreement?", a: "An Unbundled Legal Services Agreement is a contract that allows an attorney to provide only selected legal services rather than full representation. It clearly outlines what the lawyer will and will not do, helping both parties avoid misunderstandings about scope and cost." },
+      { q: "Why use an Unbundled Legal Services Agreement?", a: "This agreement clearly defines the scope of services, prevents misunderstandings and scope creep, establishes payment terms in advance, protects both lawyer and client, and helps avoid disputes and unpaid fees." },
+      { q: "What should the agreement include?", a: "A properly drafted agreement should include client and attorney details, scope of services, fees and payment terms, duration of engagement, confidentiality provisions, independent contractor clause, governing law, and termination conditions." },
+      { q: "What is the difference between unbundled services and full representation?", a: "Full representation means the attorney handles all aspects of the legal matter. Unbundled services mean the attorney handles only specific, pre-agreed services, with the client handling other aspects or seeking other representation." },
+      { q: "Can my agreement be reviewed by a lawyer?", a: "Yes. Many legal services platforms offer access to legal review services so you can have your agreement reviewed by a professional for additional assurance and compliance." },
+      { q: "Is this agreement valid in all states?", a: "Unbundled legal services agreements are recognized in all U.S. states, though specific requirements and ethical rules may vary by jurisdiction. Ensure compliance with your state bar's rules regarding limited scope representation." }
+    ],
+    keyProtections: [
+      "Clearly defines the scope of legal services",
+      "Prevents misunderstandings and scope creep",
+      "Establishes payment terms in advance",
+      "Protects both lawyer and client",
+      "Helps avoid disputes and unpaid fees",
+      "Reduces legal liability"
+    ],
+    whatYouNeed: [
+      "Attorney name, license number, and contact information",
+      "Client name and contact information",
+      "Specific legal services to be provided",
+      "Any services explicitly excluded from representation",
+      "Hourly rate, flat fee, or pricing structure",
+      "Payment deadline and method",
+      "Estimated duration of engagement",
+      "Start date and termination conditions",
+      "State or jurisdiction whose law governs the agreement",
+      "Dispute resolution method"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Valet Service Agreement": {
+    title: "Valet Service Agreement",
+    whatIs: "A Valet Service Agreement is a legally binding contract between a valet service provider and a client that outlines the terms of vehicle parking, handling, and protection services. This agreement clearly defines the scope of valet services, liability limitations, insurance coverage, payment terms, and responsibilities of both parties.",
+    whenToUse: [
+      "You operate a valet parking service",
+      "You are hiring a valet service for an event",
+      "You need ongoing valet services at a business",
+      "You operate a hotel, restaurant, or venue offering valet",
+      "You want to clearly define liability and insurance coverage"
+    ],
+    faqs: [
+      { q: "What is a Valet Service Agreement?", a: "A Valet Service Agreement is a contract between a valet service provider and a client that outlines the terms of vehicle parking, handling, and protection services. It clearly defines services, payment terms, liability limitations, and insurance coverage." },
+      { q: "What services does a valet agreement cover?", a: "Services typically include vehicle parking, car handling, storage during events, vehicle retrieval, and safekeeping of keys. The specific services should be clearly defined in the agreement." },
+      { q: "What liability limitations should be included?", a: "Liability limitations typically address vehicle damage, theft, personal items left in vehicle, landscaping damage, and natural disasters. Most agreements limit liability to the value of the vehicle or stated maximum amount." },
+      { q: "What insurance is required?", a: "Valet service providers typically need commercial general liability insurance and may need commercial auto insurance. The agreement should specify minimum coverage amounts required from both parties." },
+      { q: "What happens if the vehicle is damaged?", a: "The agreement should specify the damage reporting procedures, timeframe for reporting, insurance claim processes, and liability limitations. Most agreements limit provider liability to insurance coverage amounts." },
+      { q: "Can I limit personal items coverage?", a: "Yes. Many agreements exclude liability for personal items left in the vehicle, damaged audio equipment, or accessories. These exclusions should be clearly stated." }
+    ],
+    keyProtections: [
+      "Clearly defines scope of valet services",
+      "Establishes liability and damage limitations",
+      "Specifies insurance requirements and coverage",
+      "Protects both service provider and vehicle owner",
+      "Defines payment terms and pricing structure",
+      "Addresses vehicle damage and loss incidents"
+    ],
+    whatYouNeed: [
+      "Valet service company name and license information",
+      "Client/vehicle owner name and contact information",
+      "Detailed vehicle description (make, model, year, color, license plate)",
+      "Specific valet services being offered",
+      "Hourly or flat rate pricing",
+      "Insurance policy information and coverage amounts",
+      "Hours of operation and availability",
+      "Parking location and security details",
+      "Liability limitations and exclusions",
+      "Vehicle damage reporting and claims procedures"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Vendor Agreement": {
+    title: "Vendor Agreement",
+    whatIs: "A Vendor Agreement is a written contract between an event organizer and a vendor that outlines the terms under which the vendor may operate at an event or venue. It helps define expectations related to fees, space usage, timing, and responsibilities.",
+    whenToUse: [
+      "You are hosting an event and allowing vendors to sell products or services",
+      "You are a vendor participating in an exhibition, fair, or festival",
+      "You want to avoid disputes over fees, space, or responsibilities",
+      "You want a legally enforceable contract",
+      "You need clear terms for multiple vendors at an event"
+    ],
+    faqs: [
+      { q: "What is a Vendor Agreement?", a: "A Vendor Agreement is a written contract between an event organizer and a vendor that outlines the terms under which the vendor may operate at an event or venue. It helps define expectations related to fees, space usage, timing, and responsibilities." },
+      { q: "Why is a Vendor Agreement important?", a: "A well-drafted Vendor Agreement ensures clear roles and responsibilities, defined payment terms, no confusion regarding event duration, and legal protection for both parties." },
+      { q: "What should a Vendor Agreement include?", a: "A professional Vendor Agreement should include names and contact details, vendor fees and payment schedule, event dates and operating hours, space allocation and usage rules, insurance and indemnity clauses, force majeure provisions, and dispute resolution methods." },
+      { q: "What is a force majeure clause?", a: "A force majeure clause protects both parties by allowing cancellation or rescheduling if unforeseen circumstances occur, such as natural disasters, extreme weather, or government action beyond either party's control." },
+      { q: "What insurance should vendors carry?", a: "Most vendors should carry general liability insurance. The Vendor Agreement should clearly specify minimum insurance requirements based on the event type." },
+      { q: "Can a Vendor Agreement be modified after signing?", a: "Yes, but only if both parties agree to modifications in writing. Any amendments should be documented and signed by both parties to remain legally enforceable." }
+    ],
+    keyProtections: [
+      "Clearly defines roles and responsibilities",
+      "Establishes defined payment terms",
+      "Eliminates confusion regarding event duration",
+      "Provides legal protection for both parties",
+      "Prevents disputes over payments and services",
+      "Protects vendor and organizer interests"
+    ],
+    whatYouNeed: [
+      "Event organizer name and contact information",
+      "Vendor name, business name, and contact information",
+      "Event name, date, time, and location",
+      "Booth/space size and location within the event",
+      "Vendor fees and payment schedule",
+      "Types of products/services the vendor will offer",
+      "Insurance requirements and coverage amounts",
+      "Setup and breakdown times",
+      "Operating hours during the event",
+      "Cancellation and refund policies"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Videography Services Agreement": {
+    title: "Videography Services Agreement",
+    whatIs: "A Videography Services Agreement is a legally binding contract between a videography service provider and a client that outlines the terms of video production services. This agreement clearly defines the scope of services, deliverables, payment terms, usage rights, and responsibilities of both parties.",
+    whenToUse: [
+      "You are a videographer offering video production services",
+      "You are hiring a videographer for an event, wedding, or project",
+      "You need to establish clear deliverables and timelines",
+      "You want to define copyright and usage rights",
+      "You need protection for proprietary production techniques or content"
+    ],
+    faqs: [
+      { q: "What is a Videography Services Agreement?", a: "A Videography Services Agreement is a contract between a videographer and client that outlines video production services, deliverables, payment terms, timelines, and ownership rights. It establishes clear expectations and protects both parties." },
+      { q: "What should be included in the agreement?", a: "Include project description, scope of services, deliverables specifications, payment terms, project timeline, revision policies, equipment and location access, intellectual property rights, cancellation terms, and liability limitations." },
+      { q: "Who owns the video footage and copyright?", a: "Ownership and copyright should be clearly defined. Typically, the videographer retains copyright but grants the client specific usage rights. Custom agreements can provide full ownership transfer to the client." },
+      { q: "What happens if we need revisions?", a: "The agreement should specify how many revision rounds are included in the base price and what additional revisions cost. Revision policies should cover editing changes, color correction, and modifications." },
+      { q: "Can the videographer use the footage for portfolio purposes?", a: "Yes, unless specifically restricted. Videographers typically retain the right to use video clips in their portfolio and for marketing purposes, unless the client purchases exclusive rights." },
+      { q: "What if the event is cancelled or rescheduled?", a: "The agreement should specify cancellation policies, including deadlines, refund amounts, and rescheduling procedures. Deposits are typically non-refundable after a certain date." }
+    ],
+    keyProtections: [
+      "Clearly defines scope of videography services",
+      "Establishes deliverables and project timelines",
+      "Defines payment terms and pricing structure",
+      "Clarifies intellectual property and usage rights",
+      "Protects both videographer and client interests",
+      "Addresses revision and editing expectations"
+    ],
+    whatYouNeed: [
+      "Videographer or production company name and contact",
+      "Client name and contact information",
+      "Event or project name and location",
+      "Filming date(s) and time",
+      "Video project description and objectives",
+      "Specific equipment to be used",
+      "Deliverable specifications (format, resolution, duration)",
+      "Total cost and payment schedule",
+      "Number of revision rounds included",
+      "Final delivery date and method"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Wedding Planner Agreement": {
+    title: "Wedding Planner Agreement",
+    whatIs: "A Wedding Planner Agreement is a legally binding contract between a wedding planner and client that documents the agreed-upon services, fees, timelines, and responsibilities. This agreement ensures both parties understand expectations and provides protection in case of disputes or cancellations.",
+    whenToUse: [
+      "You are a bride or groom hiring a wedding planner",
+      "You are a wedding planner offering professional services",
+      "You want clarity on payments, timelines, and responsibilities",
+      "You want legal protection in case of disputes or cancellations",
+      "You need a professional contract for wedding planning services"
+    ],
+    faqs: [
+      { q: "What is a Wedding Planner Agreement?", a: "A Wedding Planner Agreement is a legally binding contract between a wedding planner and client that documents services, fees, timelines, and responsibilities. It ensures both parties understand expectations and provides protection in disputes or cancellations." },
+      { q: "Why is a Wedding Planner Agreement important?", a: "The agreement defines services clearly, avoids last-minute disputes, establishes payment schedules, sets expectations for both parties, and protects against cancellations or non-payment." },
+      { q: "What should be included in the agreement?", a: "Include client information, planner details, scope of services, payment terms and schedule, service timeline, deliverables, revision policies, cancellation policies, confidentiality clause, and dispute resolution method." },
+      { q: "How much should a wedding planner charge?", a: "Wedding planner fees vary based on services, location, and experience. Common models include flat fees (20-30% of budget), hourly rates ($50-$250/hour), or tiered packages with different service levels." },
+      { q: "What if the client needs to cancel or reschedule?", a: "The agreement should specify cancellation policies, including deadlines for cancellation, refund amounts, and how deposits are handled. Deposits are often non-refundable after a certain date." },
+      { q: "Can changes be made to the services after signing?", a: "Yes, but changes should be documented in writing and both parties must agree. The agreement should specify how changes affect the timeline and cost." }
+    ],
+    keyProtections: [
+      "Clearly defines all services and deliverables",
+      "Establishes payment schedules and terms",
+      "Prevents last-minute disputes and misunderstandings",
+      "Sets clear expectations for both parties",
+      "Protects against cancellations and non-payment",
+      "Provides legal documentation of the engagement"
+    ],
+    whatYouNeed: [
+      "Client names and contact information",
+      "Wedding planner or company name and contact",
+      "Wedding date and venue information",
+      "Specific services to be provided",
+      "Total cost and payment schedule",
+      "Service start date and end date",
+      "List of included deliverables",
+      "Cancellation and refund policy details",
+      "Number of planning meetings included",
+      "Revision and change procedures"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Bartending Services Agreement": {
+    title: "Bartending Services Agreement",
+    whatIs: "A Bartending Services Agreement is a formal legal document that protects both the bartender and the client by clearly defining services to be provided, payment structure and timelines, compliance with liquor and safety laws, responsibilities of both parties, event-specific requirements, and cancellation and liability terms.",
+    whenToUse: [
+      "Hiring a bartender for an event",
+      "Offering professional bartending services",
+      "Hosting weddings, parties, or corporate events",
+      "Serving alcohol at private or public venues",
+      "Working with freelance or mobile bartenders",
+      "Event organizers need legal bartending protection"
+    ],
+    faqs: [
+      { q: "What is a Bartending Agreement?", a: "A Bartending Agreement is a formal legal document protecting both bartender and client by clearly defining services, payment structure, compliance with liquor laws, responsibilities, event requirements, and cancellation and liability terms." },
+      { q: "Why is a Bartending Agreement important?", a: "The agreement defines roles and expectations clearly, establishes payment terms in writing, prevents disputes, ensures compliance with alcohol laws, protects both parties legally, and sets service timelines and responsibilities." },
+      { q: "When should you use a Bartending Agreement?", a: "Use when hiring a bartender for an event, offering professional bartending services, hosting weddings or corporate events, serving alcohol at venues, or working with freelance or mobile bartenders." },
+      { q: "What should be included in the agreement?", a: "Include party names and contact details, event date/time/location, description of services, payment terms, overtime charges, alcohol service rules, equipment responsibilities, insurance clauses, cancellation terms, and governing law." },
+      { q: "Who supplies the alcohol and bar equipment?", a: "The agreement should clearly specify who provides alcohol, bar equipment, glassware, and supplies. Options include bartender-provided, client-provided, or split responsibilities." },
+      { q: "What is the bartender's right to refuse service?", a: "The agreement should specify that the bartender has the right to refuse service to intoxicated guests, protecting both the bartender and event organizer from legal liability." }
+    ],
+    keyProtections: [
+      "Defines roles and expectations clearly",
+      "Establishes payment terms in writing",
+      "Prevents disputes and confusion",
+      "Ensures compliance with alcohol laws",
+      "Protects both parties legally",
+      "Sets service timelines and responsibilities"
+    ],
+    whatYouNeed: [
+      "Bartender name and contact information",
+      "Event organizer name and contact information",
+      "Event date, time, and location",
+      "Expected number of guests",
+      "Type of event (wedding, corporate, private party, etc.)",
+      "Bartending service description",
+      "Payment amount and payment schedule",
+      "Overtime rates and additional charges",
+      "Alcohol and equipment supplier details",
+      "Cancellation and refund policy terms"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
   // === DEFAULT FALLBACK ===
   "default": {
     title: "Legal Document",

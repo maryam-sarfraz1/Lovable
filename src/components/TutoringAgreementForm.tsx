@@ -685,7 +685,7 @@ export default function TutoringAgreement() {
       title="Tutoring Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="tutoringagreement"
+      documentType="tutoring-agreement"
     />
   );
 }

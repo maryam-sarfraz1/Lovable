@@ -269,16 +269,47 @@ export const documentInfoDatabase: Record<string, DocumentInfo> = {
     estimatedTime: "20-30 minutes"
   },
   "bartending-agreement": {
-    title: "Bartending Services Agreement",
-    shortDescription: "A contract for bartending services at events.",
-    fullDescription: "A Bartending Services Agreement establishes terms between an event host and bartender, covering duties, payment, alcohol liability, and service expectations for events.",
-    whenToUse: ["Hiring bartenders for weddings", "Corporate event services", "Private party bartending"],
-    keyTerms: [
-      { term: "Event Date", definition: "The scheduled date of bartending service." },
-      { term: "Service Fee", definition: "Compensation for bartending services." }
+    title: "Bartending Agreement",
+    shortDescription: "A contract between a bartender and event organizer outlining bartending services, payment, liability, and alcohol service rules.",
+    fullDescription: "A Bartending Agreement is a professionally structured contract that establishes the rights and obligations of a bartender and their client. This agreement clearly outlines what bartending services are included, payment terms and schedule, event details (date, time, location, number of guests), alcohol service rules, equipment and supply responsibilities, insurance and liability coverage, overtime and additional charges, cancellation policies, and dispute resolution procedures.",
+    whenToUse: [
+      "Hiring a bartender for an event",
+      "Offering professional bartending services",
+      "Hosting weddings, parties, or corporate events",
+      "Serving alcohol at private or public venues",
+      "Working with freelance or mobile bartenders"
     ],
-    tips: ["Specify hours of service", "Include alcohol liability provisions", "Define tip handling"],
-    warnings: ["Ensure proper licensing requirements are met", "Consider liquor liability insurance"],
+    keyTerms: [
+      { term: "Bartending Services", definition: "Professional services provided by a bartender, including mixing drinks, serving alcohol, and managing the bar." },
+      { term: "Right to Refuse Service", definition: "Bartender's legal authority to refuse service to intoxicated guests or those who violate terms." },
+      { term: "Open Bar vs. Limited Bar", definition: "Open bar means unlimited drinks; limited bar means specific drinks or quantity limits." },
+      { term: "Liquor Liability", definition: "Legal responsibility for injuries or damages caused by serving alcohol to intoxicated persons." },
+      { term: "Dram Shop Laws", definition: "Laws holding bartenders and establishments liable for damages caused by intoxicated individuals they served." }
+    ],
+    tips: [
+      "Clearly define what bartending services are included (mixing drinks, managing bar, setup/cleanup)",
+      "Specify who provides alcohol and bar equipment (bartender, host, or split)",
+      "Include minimum booking hours and any overtime rates",
+      "Define number of bartenders based on expected guest count",
+      "Specify setup and breakdown times",
+      "Address tipping policy (included, separate, percentage, or fixed)",
+      "Include provisions for weather contingencies, especially for outdoor events",
+      "Specify types of alcohol permitted and any restrictions"
+    ],
+    warnings: [
+      "Always have a written signed agreement before the event",
+      "Ensure bartender has proper liquor license and training",
+      "Include specific liability and insurance coverage requirements",
+      "Clearly define who is responsible if legal issues arise from alcohol service",
+      "Bartender must have right to refuse service to intoxicated guests",
+      "Include clear payment terms to avoid payment disputes",
+      "Address age verification procedures for alcohol service",
+      "Specify cancellation policies and deadlines clearly"
+    ],
+    relatedDocuments: [
+      { title: "Event Agreement", id: "event-agreement" },
+      { title: "Service Agreement", id: "service-agreement" }
+    ],
     estimatedTime: "15-20 minutes"
   },
   "dj-services-agreement": {
@@ -296,16 +327,47 @@ export const documentInfoDatabase: Record<string, DocumentInfo> = {
   },
   "wedding-planner-agreement": {
     title: "Wedding Planner Agreement",
-    shortDescription: "A contract for wedding planning services.",
-    fullDescription: "A Wedding Planner Agreement establishes the relationship between a couple and their wedding planner, defining services, payment, and responsibilities for planning and coordinating the wedding.",
-    whenToUse: ["Hiring a wedding planner", "Full or partial planning services", "Day-of coordination"],
-    keyTerms: [
-      { term: "Scope of Services", definition: "Specific planning tasks the planner will handle." },
-      { term: "Vendor Coordination", definition: "Managing relationships with other wedding vendors." }
+    shortDescription: "A contract between a wedding planner and client outlining services, fees, timelines, and responsibilities.",
+    fullDescription: "A Wedding Planner Agreement is a professionally structured contract that clearly outlines the services provided by a wedding planner and the obligations of both the planner and the client. This agreement defines the scope of planning services, payment terms and schedule, service commencement and completion dates, cancellation and refund policies, confidentiality provisions, and dispute resolution procedures. A comprehensive Wedding Planner Agreement protects both parties and ensures smooth wedding planning with clear expectations.",
+    whenToUse: [
+      "You are a bride or groom hiring a wedding planner",
+      "You are a wedding planner offering professional services",
+      "You want clarity on payments, timelines, and responsibilities",
+      "You want legal protection in case of disputes or cancellations",
+      "You need a professional contract for wedding planning services"
     ],
-    tips: ["Define which services are included", "Set clear communication expectations", "Include a timeline of deliverables"],
-    warnings: ["Ensure clear cancellation policies", "Define liability limits"],
-    estimatedTime: "25-35 minutes"
+    keyTerms: [
+      { term: "Scope of Services", definition: "The specific wedding planning services included, such as vendor selection, venue coordination, or full planning." },
+      { term: "Deliverables", definition: "Tangible items or outcomes provided by the wedding planner, such as vendor proposals, timelines, or design concepts." },
+      { term: "Revision Round", definition: "One complete set of changes or edits to plans, proposals, or designs based on client feedback." },
+      { term: "Independent Contractor", definition: "Status indicating the wedding planner is self-employed and not an employee of the client." },
+      { term: "Force Majeure", definition: "Unforeseen circumstances beyond parties' control, such as natural disasters, illness, or government restrictions." }
+    ],
+    tips: [
+      "Clearly define what services are included vs. additional services",
+      "Specify payment schedule (deposit, progress payments, final payment)",
+      "Include detailed timeline from contract date through wedding day",
+      "Define number of planning meetings and revision rounds included",
+      "Address communication preferences and response time expectations",
+      "Include cancellation deadlines with specific refund percentages",
+      "Clarify vendor selection process and planner's vendor relationships",
+      "Specify what happens if vendors cancel or services cannot be provided"
+    ],
+    warnings: [
+      "Always have a written signed contract before any work begins",
+      "Clearly define payment terms to avoid disputes",
+      "Specify cancellation policies with specific dates and refund amounts",
+      "Include provisions for planner incapacity or emergency situations",
+      "Address what happens if key vendors become unavailable",
+      "Define confidentiality obligations for both parties",
+      "Include dispute resolution procedures (mediation, arbitration)",
+      "Protect intellectual property rights to planning designs and concepts"
+    ],
+    relatedDocuments: [
+      { title: "Event Agreement", id: "event-agreement" },
+      { title: "Vendor Agreement", id: "vendor-agreement" }
+    ],
+    estimatedTime: "15-20 minutes"
   },
   "food-service-agreement": {
     title: "Food Service Agreement",
@@ -374,41 +436,444 @@ export const documentInfoDatabase: Record<string, DocumentInfo> = {
   },
   "legal-services-agreement": {
     title: "Legal Services Agreement",
-    shortDescription: "A contract between an attorney and client for legal representation.",
-    fullDescription: "A Legal Services Agreement formalizes the attorney-client relationship, defining scope of representation, fees, communication expectations, and ethical obligations.",
-    whenToUse: ["Hiring an attorney", "Starting a legal case", "Ongoing legal advice"],
-    keyTerms: [
-      { term: "Scope of Representation", definition: "The specific legal matters the attorney will handle." },
-      { term: "Attorney-Client Privilege", definition: "Confidentiality protection for communications." }
+    shortDescription: "A formal contract between a lawyer and client outlining legal services, fees, and obligations.",
+    fullDescription: "A Legal Services Agreement is a formal contract between a lawyer and a client that outlines the legal services to be provided, fees, timelines, and obligations of both parties. This agreement includes clauses that protect attorneys from non-payment, misunderstandings, and scope creep.",
+    whenToUse: [
+      "You are an attorney offering legal services to clients",
+      "You are a client hiring a lawyer or law firm",
+      "You manage a law firm and want standardized documentation",
+      "You want clarity on fees, scope of services, and responsibilities"
     ],
-    tips: ["Clarify billing methods (hourly vs. flat fee)", "Understand what's included", "Keep copies of all communications"],
-    warnings: ["Fee structures vary significantly", "Understand withdrawal procedures"],
+    keyTerms: [
+      { term: "Scope of Representation", definition: "The specific legal matters and services the attorney will handle." },
+      { term: "Attorney-Client Privilege", definition: "Confidentiality protection for sensitive communications between attorney and client." },
+      { term: "Fee Structure", definition: "How the attorney charges for services (hourly, flat fee, contingency, retainer)." },
+      { term: "Retainer", definition: "Upfront payment held by the attorney for legal services to be provided." }
+    ],
+    tips: [
+      "Clearly define the scope of legal services at the outset",
+      "Specify exact billing methods (hourly rates, flat fees, or contingency)",
+      "Include payment schedule and invoice frequency",
+      "Document all retainer amounts and how they will be applied",
+      "Define what services are and are not included",
+      "Set clear communication expectations",
+      "Establish procedures for fee disputes"
+    ],
+    warnings: [
+      "Fee structures vary significantly by attorney and jurisdiction",
+      "Understand withdrawal procedures if termination becomes necessary",
+      "Some agreements may include non-refundable retainers",
+      "Scope creep can lead to disputes without clear definitions",
+      "Attorney-client privilege may have exceptions",
+      "Different types of legal services have different fee arrangements"
+    ],
+    relatedDocuments: [
+      { title: "Retainer Agreement", id: "retainer-agreement" },
+      { title: "Unbundled Legal Services Agreement", id: "unbundled-legal-services-agreement" }
+    ],
     estimatedTime: "20-30 minutes"
+  },
+  "limited-scope-representation-agreement": {
+    title: "Limited Scope Representation Agreement",
+    shortDescription: "An agreement clearly outlining which legal services will be provided and which will not.",
+    fullDescription: "A Limited Scope Representation Agreement (also known as a Limited Legal Services Agreement) allows a lawyer and a client to clearly outline which legal services will be provided and which will not. This agreement helps avoid confusion, prevents disputes, and ensures transparency throughout the legal engagement.",
+    whenToUse: [
+      "You are an attorney providing limited legal services",
+      "You want to clearly define the scope of representation",
+      "You are a client seeking help with only part of a legal matter",
+      "You want to avoid full-service legal fees",
+      "You want everything in writing before work begins"
+    ],
+    keyTerms: [
+      { term: "Limited Scope of Services", definition: "The specific legal services the attorney will provide, with clear exclusions of services not included." },
+      { term: "Attorney-Client Privilege", definition: "Confidentiality protection for communications related to the limited legal services." },
+      { term: "Independent Contractor Status", definition: "Clarifies that the attorney is providing limited services only, not full legal representation." },
+      { term: "Scope Creep Prevention", definition: "Clear boundaries to prevent the agreement from expanding beyond the defined services." }
+    ],
+    tips: [
+      "Clearly define which legal services are included and excluded",
+      "Specify the duration of the limited engagement",
+      "Document fee structure (hourly, flat fee, or per-service)",
+      "Establish payment terms and conditions",
+      "Define communication protocols and availability",
+      "Clarify that this is not full-service legal representation",
+      "Include procedure for requesting additional services outside scope"
+    ],
+    warnings: [
+      "Limited scope may restrict attorney's ability to handle related matters",
+      "Client remains responsible for matters outside the defined scope",
+      "Clear written boundaries are essential to prevent disputes",
+      "Additional services may require a separate engagement",
+      "Scope creep can occur without clear documentation",
+      "Attorney may have limitations on providing certain advice outside scope"
+    ],
+    relatedDocuments: [
+      { title: "Legal Services Agreement", id: "legal-services-agreement" },
+      { title: "Unbundled Legal Services Agreement", id: "unbundled-legal-services-agreement" }
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+  "personal-training-agreement": {
+    title: "Personal Training Agreement",
+    shortDescription: "An agreement outlining the terms of fitness training services between a trainer and client.",
+    fullDescription: "A Personal Training Agreement outlines the terms under which a personal trainer provides fitness services to a client. It clearly defines scope of training services, session duration and frequency, payment structure and deadlines, cancellation and refund policies, and liability and risk acknowledgment to avoid misunderstandings.",
+    whenToUse: [
+      "You are a personal trainer onboarding a new client",
+      "You want legal protection for your training services",
+      "You are hiring a personal trainer for personal fitness",
+      "You want clear terms regarding payments and sessions"
+    ],
+    keyTerms: [
+      { term: "Training Services", definition: "The specific fitness training to be provided (personal training, group classes, online coaching, etc.)." },
+      { term: "Session Frequency", definition: "How often training sessions will occur (weekly, bi-weekly, etc.)" },
+      { term: "Liability Waiver", definition: "Client acknowledgment of physical risks involved in training activities." },
+      { term: "Cancellation Policy", definition: "Rules for canceling or rescheduling training sessions." }
+    ],
+    tips: [
+      "Clearly define the type and frequency of training sessions",
+      "Specify all fees, payment methods, and due dates",
+      "Include a clear cancellation and rescheduling policy",
+      "Document client fitness goals and current health status",
+      "Include liability waivers for physical training activities",
+      "Specify the duration of the training agreement",
+      "Define terms for renewal or termination of the agreement"
+    ],
+    warnings: [
+      "Training agreements should include liability waivers for injury protection",
+      "Cancellation policies vary by trainer and should be clearly stated",
+      "Understand refund policies before signing",
+      "Different training types (in-person, online, group) may require different terms",
+      "Health waivers may have limits depending on jurisdiction",
+      "Payment schedules should be specific to avoid disputes"
+    ],
+    relatedDocuments: [
+      { title: "Service Agreement", id: "service-agreement" },
+      { title: "Membership Agreement", id: "membership-agreement" }
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+  "real-estate-agent-agreement": {
+    title: "Real Estate Agent Agreement",
+    shortDescription: "An agreement between a property owner and a real estate agent for services.",
+    fullDescription: "A Real Estate Agent Agreement is used when a property owner hires a real estate agent to sell, lease, or manage real estate. This agreement defines the scope of services, commission or payment terms, duration of the agreement, and rights and obligations of both parties.",
+    whenToUse: [
+      "You are selling property and hiring a real estate agent",
+      "You are a licensed agent offering services to a client",
+      "You want to clearly define commissions and timelines",
+      "You want to avoid disputes over responsibilities or payment"
+    ],
+    keyTerms: [
+      { term: "Commission Structure", definition: "How the agent is compensated (percentage of sale price, flat fee, etc.)" },
+      { term: "Exclusive or Non-Exclusive", definition: "Whether the agent has exclusive rights to represent the property." },
+      { term: "Term of Agreement", definition: "The length of time the agent has authority to represent the property." },
+      { term: "Independent Contractor", definition: "Clarifies the agent's relationship status with the brokerage." }
+    ],
+    tips: [
+      "Clearly define the property or properties covered by the agreement",
+      "Specify the commission percentage or fee structure",
+      "Include the term duration and renewal conditions",
+      "Define marketing and showing procedures",
+      "Require regular communication schedules",
+      "Clarify responsibilities for inspections and appraisals",
+      "Include performance expectations and timelines"
+    ],
+    warnings: [
+      "Commission rates vary significantly by market and property type",
+      "Exclusive agreements may limit your options if the agent underperforms",
+      "Understand the agent's fiduciary duties and limitations",
+      "Review market conditions and comparable sales data",
+      "Clarify who handles earnest money and deposits",
+      "Be aware of termination clauses and penalties"
+    ],
+    relatedDocuments: [
+      { title: "Purchase Agreement", id: "purchase-agreement" },
+      { title: "Listing Agreement", id: "listing-agreement" }
+    ],
+    estimatedTime: "20-30 minutes"
+  },
+  "retainer-agreement": {
+    title: "Retainer Agreement",
+    shortDescription: "A work-for-hire contract where a client pays in advance for services over time.",
+    fullDescription: "A Retainer Agreement is a work-for-hire contract where a client pays a service provider in advance for services that will be delivered over time. The agreement ensures clarity regarding payment terms, scope of work, duration of services, and rights and obligations of both parties.",
+    whenToUse: [
+      "You are hiring a contractor or consultant on an ongoing basis",
+      "You want guaranteed availability of a service provider",
+      "You need predictable costs and professional accountability",
+      "You want all terms clearly recorded in writing"
+    ],
+    keyTerms: [
+      { term: "Retainer Amount", definition: "The fixed payment made in advance by the client to the service provider." },
+      { term: "Scope of Services", definition: "The specific services the provider will deliver under the retainer." },
+      { term: "Billing Frequency", definition: "How often the retainer is paid (monthly, quarterly, etc.)." },
+      { term: "Independent Contractor Status", definition: "Clarifies the provider is not an employee of the client." }
+    ],
+    tips: [
+      "Clearly define the scope of services included in the retainer",
+      "Specify the retainer amount and payment schedule",
+      "Include hours of availability or response time expectations",
+      "Detail what services are excluded from the retainer",
+      "Establish communication protocols and check-in schedules",
+      "Define how additional work outside scope is billed",
+      "Include confidentiality and non-compete clauses if applicable"
+    ],
+    warnings: [
+      "Retainers are typically non-refundable unless otherwise specified",
+      "Service providers should define what happens if retainer is unused",
+      "Term and termination conditions should be clearly stated",
+      "Payment method and late payment penalties should be specified",
+      "Consider including dispute resolution procedures",
+      "Different service types may require different retainer structures"
+    ],
+    relatedDocuments: [
+      { title: "Service Agreement", id: "service-agreement" },
+      { title: "Consulting Agreement", id: "consulting-agreement" }
+    ],
+    estimatedTime: "20-25 minutes"
+  },
+  "tutoring-agreement": {
+    title: "Tutoring Agreement",
+    shortDescription: "A contract between a tutor and student outlining tutoring services, schedule, and payment terms.",
+    fullDescription: "A Tutoring Agreement is a legal contract between a tutor and student (or parent/guardian) that outlines the terms of tutoring services. This agreement clearly defines the scope of tutoring, payment terms, schedule, cancellation policies, and expectations for both parties to ensure a productive learning relationship.",
+    whenToUse: [
+      "You are offering tutoring services to students",
+      "You are hiring a tutor for academic instruction",
+      "You want to establish clear expectations and rates",
+      "You need protection against cancellation disputes",
+      "You want to formalize the tutoring arrangement in writing"
+    ],
+    keyTerms: [
+      { term: "Tutor", definition: "The qualified individual providing academic instruction." },
+      { term: "Student", definition: "The individual receiving tutoring services." },
+      { term: "Session", definition: "A scheduled tutoring meeting of agreed-upon duration." },
+      { term: "Cancellation Policy", definition: "The terms and notice required to cancel scheduled sessions." }
+    ],
+    tips: [
+      "Clearly specify the subject matter and level",
+      "Set realistic academic goals and milestones",
+      "Define session format (in-person, online, hybrid)",
+      "Include progress reporting and assessment frequency",
+      "Specify materials and resources provided by each party",
+      "Include emergency contact information"
+    ],
+    warnings: [
+      "Clarify liability and parental responsibility",
+      "Include confidentiality and privacy provisions",
+      "Define what happens if goals are not met",
+      "Address missed sessions and makeup policies",
+      "Specify intellectual property rights for materials",
+      "Include payment terms and late fees"
+    ],
+    relatedDocuments: [
+      { title: "Service Agreement", id: "service-agreement" },
+      { title: "Independent Contractor Agreement", id: "independent-contractor-agreement" }
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+  "valet-service-agreement": {
+    title: "Valet Service Agreement",
+    shortDescription: "A contract between a valet service provider and client outlining vehicle parking, handling, and protection services.",
+    fullDescription: "A Valet Service Agreement is a professional contract that establishes the rights and obligations of a valet service provider and their client. It clearly outlines what services are included (parking, car handling, storage), payment terms, liability and damage protections, insurance requirements, and conditions under which the valet service operates. This agreement protects both the valet service provider and the vehicle owner.",
+    whenToUse: [
+      "You operate a valet parking service",
+      "You are hiring a valet service for an event",
+      "You need ongoing valet services at a business",
+      "You operate a hotel, restaurant, or venue offering valet",
+      "You want to clearly define liability and insurance coverage"
+    ],
+    keyTerms: [
+      { term: "Valet Service", definition: "Professional vehicle parking and handling services where an attendant parks and retrieves customer vehicles." },
+      { term: "Liability Waiver", definition: "Clause limiting the valet service provider's financial responsibility for vehicle damage or loss." },
+      { term: "Commercial General Liability", definition: "Insurance coverage protecting service providers against claims of bodily injury or property damage." },
+      { term: "Vehicle Damage Claims", definition: "Formal process for reporting and addressing damage to vehicles under valet service." },
+      { term: "Scope of Services", definition: "Specific services included in the valet agreement, such as parking, storage, or special handling." }
+    ],
+    tips: [
+      "Clearly define what services are included and what are additional charges",
+      "Specify all liability limitations and what is NOT covered by the service",
+      "Include detailed vehicle description to prevent damage claims",
+      "Require proof of adequate insurance coverage from service provider",
+      "Define clear procedures for reporting vehicle damage or loss",
+      "Include terms for vehicle retrieval and hours of operation",
+      "Specify payment terms, rates, and accepted payment methods",
+      "Address what happens to personal items left in vehicles"
+    ],
+    warnings: [
+      "Valet service providers face significant liability for vehicle damage and theft",
+      "Ensure adequate insurance coverage before operating valet services",
+      "Clearly limit liability in the agreement or face unlimited exposure",
+      "Photograph vehicles before accepting them for valet services",
+      "Maintain detailed vehicle keys and retrieval procedures",
+      "Address parking lot security and theft prevention measures",
+      "Include explicit exclusions for damage beyond provider control",
+      "Keep detailed records of all vehicles and services provided"
+    ],
+    relatedDocuments: [
+      { title: "Service Agreement", id: "service-agreement" },
+      { title: "Liability Waiver", id: "liability-waiver" }
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+  "videography-services-agreement": {
+    title: "Videography Services Agreement",
+    shortDescription: "A contract between a videographer and client outlining video production services, deliverables, and usage rights.",
+    fullDescription: "A Videography Services Agreement is a professional contract that establishes the rights and obligations of a videography service provider and their client. It clearly outlines what video services are included, deliverables (raw footage, edited video, final products), payment terms, project timeline, equipment and location access, intellectual property rights, editing and revision policies, and liability limitations. This agreement protects both the videographer and the client by establishing clear expectations.",
+    whenToUse: [
+      "You are a videographer offering video production services",
+      "You are hiring a videographer for an event, wedding, or project",
+      "You need to establish clear deliverables and timelines",
+      "You want to define copyright and usage rights",
+      "You need protection for proprietary production techniques or content"
+    ],
+    keyTerms: [
+      { term: "Deliverables", definition: "The final video products provided to the client, including edited videos, formats, and quantity." },
+      { term: "Intellectual Property Rights", definition: "Ownership and usage rights for the video footage and final products." },
+      { term: "Raw Footage", definition: "Unedited video material captured during production." },
+      { term: "Revision Round", definition: "One complete set of edits or changes made to the video based on client feedback." },
+      { term: "Production Timeline", definition: "Dates for filming, editing, and delivery of the final video product." }
+    ],
+    tips: [
+      "Clearly define what is included in the base price vs. additional services",
+      "Specify exact video format, resolution, and delivery method",
+      "Include detailed description of filming locations and required access",
+      "Define number of filming hours and revision rounds included",
+      "Clarify usage rights (exclusive, non-exclusive, portfolio use, etc.)",
+      "Include backup equipment and contingency plans for technical issues",
+      "Specify payment schedule (deposit, final payment dates)",
+      "Define timeline for editing and final delivery"
+    ],
+    warnings: [
+      "Always secure signed contracts before any work begins",
+      "Clearly define intellectual property ownership to avoid disputes",
+      "Specify editing and revision limits to prevent scope creep",
+      "Require deposits to secure booking dates",
+      "Include cancellation policies with specific deadlines",
+      "Address what happens if weather or technical issues prevent filming",
+      "Define payment terms clearly to avoid payment disputes",
+      "Require location permits or property owner permission in writing"
+    ],
+    relatedDocuments: [
+      { title: "Service Agreement", id: "service-agreement" },
+      { title: "Independent Contractor Agreement", id: "independent-contractor-agreement" }
+    ],
+    estimatedTime: "15-20 minutes"
   },
   "vendor-agreement": {
     title: "Vendor Agreement",
-    shortDescription: "A contract between a business and its suppliers.",
-    fullDescription: "A Vendor Agreement establishes terms for the supply of goods or services between a vendor and a business, including pricing, delivery, quality standards, and payment terms.",
-    whenToUse: ["Engaging new suppliers", "Formalizing existing vendor relationships", "Event vendor contracts"],
-    keyTerms: [
-      { term: "Vendor", definition: "The party supplying goods or services." },
-      { term: "Purchase Order", definition: "A document specifying items and quantities ordered." }
+    shortDescription: "A contract between an event organizer and vendor outlining terms for selling products or services at an event.",
+    fullDescription: "A Vendor Agreement is a legally binding contract designed to clearly establish the rights, obligations, and expectations between event organizers and vendors. This agreement defines vendor fees, space allocation, operating hours, insurance requirements, liability provisions, and dispute resolution procedures. A professionally drafted Vendor Agreement protects both parties from misunderstandings and provides legal enforceability for all agreed-upon terms.",
+    whenToUse: [
+      "You are hosting an event and allowing vendors to sell products or services",
+      "You are a vendor participating in an exhibition, fair, or festival",
+      "You want to avoid disputes over fees, space, or responsibilities",
+      "You want a legally enforceable contract",
+      "You need clear terms for multiple vendors at an event"
     ],
-    tips: ["Define quality standards", "Include delivery timelines", "Specify return and refund policies"],
-    warnings: ["Ensure proper insurance coverage", "Include termination provisions"],
-    estimatedTime: "20-25 minutes"
+    keyTerms: [
+      { term: "Vendor", definition: "The party providing products or services at the event." },
+      { term: "Event Organizer", definition: "The party responsible for hosting and managing the event." },
+      { term: "Vendor Fees", definition: "The amount charged to the vendor for participation rights and space." },
+      { term: "Indemnity Clause", definition: "A provision where one party agrees to protect the other from legal liability." },
+      { term: "Force Majeure", definition: "Unforeseen circumstances beyond parties' control that may prevent event execution." }
+    ],
+    tips: [
+      "Clearly define what products or services the vendor can offer at the event",
+      "Specify exact booth or space dimensions and location details",
+      "Include setup and breakdown times to avoid confusion",
+      "Define non-refundable vs. refundable portions of vendor fees",
+      "Require proof of liability insurance before event participation",
+      "Include clear payment terms and consequences for late payment",
+      "Specify rules for vendor conduct and dress code if applicable",
+      "Include provisions for vendor cancellation and refund policies"
+    ],
+    warnings: [
+      "Always require proof of adequate liability insurance from vendors",
+      "Clearly define what is NOT permitted to be sold or distributed",
+      "Include indemnity clauses to protect against vendor liability issues",
+      "Specify whether exclusive vendor categories are required",
+      "Address parking, loading, and unloading procedures clearly",
+      "Include provisions for removing non-compliant vendors",
+      "Specify what happens if vendor damages event property",
+      "Require vendors to comply with all local regulations and permits"
+    ],
+    relatedDocuments: [
+      { title: "Event Agreement", id: "event-agreement" },
+      { title: "Service Agreement", id: "service-agreement" }
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+  "roommate-agreement": {
+    title: "Roommate Agreement",
+    shortDescription: "A document that defines the rights, duties, and responsibilities of people sharing a residential property.",
+    fullDescription: "A Roommate Agreement is a legally structured document designed to clearly define the rights, duties, and responsibilities of individuals sharing a residential property. This agreement helps maintain harmony by setting clear expectations regarding rent, utilities, household duties, personal property, pets, and general conduct.",
+    whenToUse: [
+      "You are moving in with a roommate for the first time",
+      "A new roommate is joining an existing household",
+      "Your university or housing authority requires a written agreement",
+      "You are sharing rented accommodation under a lease",
+      "You want a clear, enforceable written understanding"
+    ],
+    keyTerms: [
+      { term: "Joint Liability", definition: "All roommates may be jointly responsible for rent and damages to the landlord." },
+      { term: "Security Deposit", definition: "Money held to cover damages or unpaid rent, usually refunded at lease end." },
+      { term: "Quiet Enjoyment", definition: "Each roommate's right to enjoy the property without excessive disturbance." },
+      { term: "Shared Expenses", definition: "Utilities, internet, and other costs split among roommates." }
+    ],
+    tips: [
+      "Address all roommates at the start of occupancy",
+      "Include detailed rent and utility payment division",
+      "Set clear cleaning schedules and standards",
+      "Define guest policies and quiet hours",
+      "Specify pet policies and restrictions",
+      "Include new roommate approval process",
+      "Document everything in writing and have all sign"
+    ],
+    warnings: [
+      "Joint liability may hold all roommates responsible for breaches",
+      "Define what happens if a roommate violates the agreement",
+      "Clarify security deposit allocation before moving in",
+      "Address parking and common area usage",
+      "Include procedures for handling disputes",
+      "Distinguish this from the main lease agreement"
+    ],
+    relatedDocuments: [
+      { title: "Roommate Release Agreement", id: "roommate-release-agreement" },
+      { title: "Co-Tenancy Agreement", id: "co-tenancy-agreement" }
+    ],
+    estimatedTime: "20-30 minutes"
   },
   "roommate-release-agreement": {
     title: "Roommate Release Agreement",
-    shortDescription: "A formal agreement to release a roommate from shared lease obligations.",
-    fullDescription: "A Roommate Release Agreement documents the termination of one roommate's obligations under a shared lease, including security deposit handling and liability release.",
-    whenToUse: ["When a roommate is moving out early", "Releasing someone from lease obligations", "Transferring responsibility to remaining tenants"],
-    keyTerms: [
-      { term: "Releasing Party", definition: "The roommate being released from the lease." },
-      { term: "Security Deposit", definition: "How the departing roommate's share is handled." }
+    shortDescription: "A legally binding document releasing a roommate from shared lease obligations when they move out.",
+    fullDescription: "A Roommate Release Agreement is a legally binding document used when one roommate moves out of a shared rental property and the remaining roommate(s) agree to take over all responsibilities under the lease. This agreement ensures that the departing roommate is formally released from future financial obligations, including rent, utilities, and liability for property damage.",
+    whenToUse: [
+      "You are a roommate moving out while other roommates continue occupying the property",
+      "One of your roommates is leaving and you've agreed to remove them from lease liability",
+      "You want a written, legally enforceable record protecting all parties",
+      "You need to formally release a departing roommate from financial obligations"
     ],
-    tips: ["Get landlord approval if required", "Document the condition of shared spaces", "Settle all outstanding bills before signing"],
-    warnings: ["May require landlord consent", "Remaining tenants assume full responsibility"],
+    keyTerms: [
+      { term: "Releasing Party", definition: "The roommate being released from the lease and all future obligations." },
+      { term: "Remaining Roommate(s)", definition: "Those who assume full responsibility for the lease." },
+      { term: "Security Deposit", definition: "How the departing roommate's share is divided or refunded." },
+      { term: "Landlord Approval", definition: "Often required to fully release the departing roommate from liability." }
+    ],
+    tips: [
+      "Get landlord approval to fully protect the departing roommate",
+      "Document the condition of shared spaces before departure",
+      "Settle all outstanding bills and damages before signing",
+      "Keep signed copies for all parties",
+      "Consider a lease amendment if required by the landlord"
+    ],
+    warnings: [
+      "May require landlord consent for full release",
+      "Without landlord signature, departing roommate may still be liable to landlord",
+      "Remaining tenants assume full responsibility for lease compliance",
+      "Departing roommate should ensure no unpaid rent or damages exist"
+    ],
+    relatedDocuments: [
+      { title: "Roommate Agreement", id: "roommate-agreement" },
+      { title: "Lease Agreement", id: "lease-agreement" }
+    ],
     estimatedTime: "15-20 minutes"
   },
   "offer-to-lease": {
@@ -465,16 +930,45 @@ export const documentInfoDatabase: Record<string, DocumentInfo> = {
   },
   "unbundled-legal-services-agreement": {
     title: "Unbundled Legal Services Agreement",
-    shortDescription: "A contract for specific, discrete legal services.",
-    fullDescription: "An Unbundled Legal Services Agreement defines terms for attorneys providing specific legal tasks rather than full representation, including automatic termination upon completion.",
-    whenToUse: ["Hiring an attorney for specific tasks", "Self-represented litigants needing limited help", "Cost-effective legal assistance"],
-    keyTerms: [
-      { term: "Discrete Task", definition: "A specific, defined legal service." },
-      { term: "Automatic Termination", definition: "Agreement ends when the specific task is completed." }
+    shortDescription: "A contract between an attorney and client outlining limited legal representation and specific services provided.",
+    fullDescription: "An Unbundled Legal Services Agreement (also known as a limited scope representation agreement) is a legally binding contract that clearly defines limited legal representation between an attorney and a client. This type of agreement allows lawyers to offer specific legal services without taking on full representation, while clients only pay for the services they actually need. It clearly outlines what the lawyer will and will not do, helping both parties avoid misunderstandings.",
+    whenToUse: [
+      "You are an attorney offering limited legal services",
+      "You are a client seeking help with only part of a legal matter",
+      "You want to avoid full-service legal fees",
+      "You manage a law firm providing limited-scope representation",
+      "Providing consultations, document review, drafting services, or legal coaching"
     ],
-    tips: ["Define the scope precisely", "Understand what's not covered", "Keep copies of all work product"],
-    warnings: ["Attorney relationship is limited", "No ongoing representation after task completion"],
-    estimatedTime: "15-25 minutes"
+    keyTerms: [
+      { term: "Limited Scope Representation", definition: "Legal services covering only specific aspects of a legal matter, with clearly defined boundaries." },
+      { term: "Scope of Services", definition: "The specific legal services the attorney agrees to provide as outlined in the contract." },
+      { term: "Unbundled Services", definition: "Breaking down legal services into component parts so clients pay only for what they need." },
+      { term: "Independent Contractor", definition: "Status clarifying the attorney is providing limited services, not full legal representation." },
+      { term: "Scope Creep", definition: "When services expand beyond the original agreement without additional compensation or approval." }
+    ],
+    tips: [
+      "Be extremely specific about what services are included and excluded",
+      "Define payment terms clearly, including rates and when payments are due",
+      "Establish clear communication expectations and response times",
+      "Include a termination clause specifying how either party can end the engagement",
+      "Address document retention and return of client materials",
+      "Include dispute resolution procedures to avoid costly litigation",
+      "Ensure compliance with your state bar's rules on limited scope representation",
+      "Document all changes or expansions to the original scope in writing"
+    ],
+    warnings: [
+      "Without this agreement, both parties risk unclear expectations, delayed work, and legal disputes",
+      "Clearly define what the attorney will NOT do to avoid implied full representation",
+      "Address conflicts of interest before engaging in limited representation",
+      "Include confidentiality and ethical provisions required by your state bar",
+      "Define the client's responsibilities and what they must handle independently",
+      "Document all communications regarding scope to prevent scope creep disputes"
+    ],
+    relatedDocuments: [
+      { title: "Legal Services Agreement", id: "legal-services-agreement" },
+      { title: "Independent Contractor Agreement", id: "independent-contractor-agreement" }
+    ],
+    estimatedTime: "15-20 minutes"
   },
   "attorney-engagement-letter": {
     title: "Attorney Engagement Letter",
@@ -715,6 +1209,38 @@ export const documentInfoDatabase: Record<string, DocumentInfo> = {
     ],
     tips: ["Document vehicle condition at start", "Verify insurance coverage", "Understand all fee structures", "Keep maintenance records"],
     warnings: ["Lessee is liable for damages", "Exceeding mileage incurs fees", "Early termination may have penalties"],
+    estimatedTime: "20-30 minutes"
+  },
+  "co-tenancy-agreement": {
+    title: "Co-Tenancy Agreement",
+    shortDescription: "A legally binding contract defining rights and responsibilities between co-tenants sharing a rental property.",
+    fullDescription: "A Co-Tenancy Agreement is a written contract used when two or more individuals rent the same property together. This agreement clearly defines the rights, duties, and responsibilities of each co-tenant, helping to prevent disputes and misunderstandings during the tenancy. It supplements the main lease by setting out how rent, utilities, repairs, deposits, and household rules are handled between the co-tenants themselves.",
+    whenToUse: ["You are about to rent a property with one or more people", "You are adding a new roommate to an existing tenancy", "You want to avoid disputes over rent, utilities, or damages", "You want written rules to govern shared living"],
+    keyTerms: [
+      { term: "Co-Tenant", definition: "Individuals sharing the same rental property." },
+      { term: "Joint and Several Liability", definition: "Each co-tenant is responsible for the full rent obligation." },
+      { term: "Security Deposit", definition: "Refundable amount held as guarantee against damages." },
+      { term: "Common Areas", definition: "Shared spaces like kitchen, bathroom, and living room." }
+    ],
+    tips: ["Clearly allocate rent and utility payments", "Define responsibility for repairs and damages", "Establish household rules in writing", "Address security deposit contributions upfront", "Specify procedures when a co-tenant moves out"],
+    warnings: ["Does not replace your landlord's lease agreement", "All co-tenants should sign the agreement", "Must comply with local landlord-tenant laws", "Joint liability means you can be held responsible for other co-tenants' failures"],
+    relatedDocuments: [{ title: "Roommate Agreement", id: "roommate-agreement" }, { title: "Lease Agreement", id: "lease-agreement" }],
+    estimatedTime: "20-30 minutes"
+  },
+  "cotenancyagreement": {
+    title: "Co-Tenancy Agreement",
+    shortDescription: "A legally binding contract defining rights and responsibilities between co-tenants sharing a rental property.",
+    fullDescription: "A Co-Tenancy Agreement is a written contract used when two or more individuals rent the same property together. This agreement clearly defines the rights, duties, and responsibilities of each co-tenant, helping to prevent disputes and misunderstandings during the tenancy. It supplements the main lease by setting out how rent, utilities, repairs, deposits, and household rules are handled between the co-tenants themselves.",
+    whenToUse: ["You are about to rent a property with one or more people", "You are adding a new roommate to an existing tenancy", "You want to avoid disputes over rent, utilities, or damages", "You want written rules to govern shared living"],
+    keyTerms: [
+      { term: "Co-Tenant", definition: "Individuals sharing the same rental property." },
+      { term: "Joint and Several Liability", definition: "Each co-tenant is responsible for the full rent obligation." },
+      { term: "Security Deposit", definition: "Refundable amount held as guarantee against damages." },
+      { term: "Common Areas", definition: "Shared spaces like kitchen, bathroom, and living room." }
+    ],
+    tips: ["Clearly allocate rent and utility payments", "Define responsibility for repairs and damages", "Establish household rules in writing", "Address security deposit contributions upfront", "Specify procedures when a co-tenant moves out"],
+    warnings: ["Does not replace your landlord's lease agreement", "All co-tenants should sign the agreement", "Must comply with local landlord-tenant laws", "Joint liability means you can be held responsible for other co-tenants' failures"],
+    relatedDocuments: [{ title: "Roommate Agreement", id: "roommate-agreement" }, { title: "Lease Agreement", id: "lease-agreement" }],
     estimatedTime: "20-30 minutes"
   }
 };

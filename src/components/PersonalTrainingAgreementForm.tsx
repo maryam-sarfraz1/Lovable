@@ -686,7 +686,7 @@ export default function PersonalTrainingAgreement() {
       title="Personal Training Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="personaltrainingagreement"
+      documentType="personal-training-agreement"
     />
   );
 }

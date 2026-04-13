@@ -806,7 +806,7 @@ export default function ValetServiceAgreement() {
       title="Valet Service Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="valetserviceagreement"
+      documentType="valet-service-agreement"
     />
   );
 }

@@ -121,7 +121,7 @@ export default function LimitedScopeRepresentationAgreementForm() {
       title="Limited Scope Representation Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="limitedscoperepresentationagreement"
+      documentType="limited-scope-representation-agreement"
     />
   );
 }

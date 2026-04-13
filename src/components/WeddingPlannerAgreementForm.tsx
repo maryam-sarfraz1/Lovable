@@ -886,7 +886,7 @@ export default function WeddingPlannerAgreement() {
       title="Wedding Planner Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="weddingplanneragreement"
+      documentType="wedding-planner-agreement"
     />
   );
 }

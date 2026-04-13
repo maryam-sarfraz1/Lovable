@@ -455,7 +455,7 @@ export default function RealEstateAgentAgreementForm() {
       title="Real Estate Agent Agreement"
       subtitle="Complete all 7 steps to generate your document"
       onGenerate={generatePDF}
-      documentType="realestateagentagreement"
+      documentType="real-estate-agent-agreement"
       preserveStepLayout
     />
   );

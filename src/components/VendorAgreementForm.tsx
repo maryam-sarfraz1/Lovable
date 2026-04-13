@@ -308,7 +308,7 @@ export default function VendorAgreement() {
       title="Vendor Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="vendoragreement"
+      documentType="vendor-agreement"
     />
   );
 }

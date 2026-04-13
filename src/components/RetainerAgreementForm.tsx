@@ -72,7 +72,7 @@ export default function RetainerAgreementForm() {
       title="Retainer Agreement"
       subtitle="Complete each step to generate your document"
       onGenerate={generatePDF}
-      documentType="retaineragreement"
+      documentType="retainer-agreement"
     />
   );
 }

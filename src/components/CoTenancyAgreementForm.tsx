@@ -717,7 +717,7 @@ export default function CoTenancyAgreement() {
       title="Co-Tenancy Agreement"
       subtitle="Complete each step to generate your Co-Tenancy Agreement"
       onGenerate={generatePDF}
-      documentType="cotenancyagreement"
+      documentType="co-tenancy-agreement"
     />
   );
 }
