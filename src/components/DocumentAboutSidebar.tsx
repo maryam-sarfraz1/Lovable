@@ -877,17 +877,48 @@ export const documentInfoDatabase: Record<string, DocumentInfo> = {
     estimatedTime: "15-20 minutes"
   },
   "offer-to-lease": {
-    title: "Offer to Lease",
-    shortDescription: "A formal proposal to lease commercial property with key terms.",
-    fullDescription: "An Offer to Lease outlines proposed lease terms for commercial property, including rent, term length, signage rights, and tenant improvements before a formal lease is drafted.",
-    whenToUse: ["Negotiating commercial lease terms", "Before signing a formal lease", "Proposing lease conditions to landlords"],
-    keyTerms: [
-      { term: "Base Rent", definition: "The primary monthly rent payment." },
-      { term: "Tenant Improvements", definition: "Modifications made to the property for the tenant's use." }
+    title: "Offer to Lease Agreement",
+    shortDescription: "A preliminary legal document outlining essential terms proposed by a tenant to lease commercial property from a landlord.",
+    fullDescription: "An Offer to Lease Agreement is a preliminary legal document used when a tenant proposes to lease commercial property from a landlord. This agreement outlines the essential terms that will later form part of the final commercial lease, helping both parties reach clarity before signing a formal tenancy contract. When your business is ready to move into professional or commercial space, an Offer to Lease is the first and most important step. It establishes the foundation for the formal lease and ensures that tenant and landlord are aligned on key issues such as rent, permitted use, possession, alterations, and compliance requirements. An Offer to Lease Agreement is legally binding once accepted, making it critical for commercial negotiations.",
+    whenToUse: [
+      "You want to make a formal offer to lease commercial property",
+      "You need to outline core lease terms before signing a final commercial lease",
+      "You are negotiating terms and making offers or counter-offers",
+      "You want to establish clarity before landlord responsibilities are finalized",
+      "You need to identify landlord obligations for repairs, compliance, or utilities"
     ],
-    tips: ["Negotiate all key terms upfront", "Include contingencies for due diligence", "Clarify who pays for improvements"],
-    warnings: ["May be binding once signed", "Consult a real estate attorney"],
-    estimatedTime: "25-35 minutes"
+    keyTerms: [
+      { term: "Base Rent", definition: "The primary monthly or annual rent payment for the commercial space." },
+      { term: "Tenant Improvements", definition: "Modifications and improvements made to the property specifically for the tenant's business use." },
+      { term: "Permitted Use", definition: "The specific business purposes and activities allowed in the commercial space." },
+      { term: "Lease Commencement Date", definition: "The date when the tenant can take possession and begin using the property." },
+      { term: "Security Deposit", definition: "Money held by landlord to cover damages or unpaid rent at lease end." }
+    ],
+    tips: [
+      "Negotiate all key commercial terms upfront to avoid disputes later",
+      "Clearly define permitted use to prevent future conflicts",
+      "Include specific contingencies for inspections and property condition",
+      "Clarify who pays for tenant improvements and any allowances provided",
+      "Define maintenance and repair responsibilities clearly",
+      "Outline compliance requirements relevant to your business",
+      "Specify how operating expenses and utilities will be handled",
+      "Include flexibility options such as renewal terms or expansion rights"
+    ],
+    warnings: [
+      "An Offer to Lease becomes legally binding once accepted by both parties",
+      "Carefully review all proposed terms before signing",
+      "Watch for vague permitted use language that may restrict operations",
+      "Clarify all financial obligations including rent and operating expenses",
+      "Understand maintenance responsibilities to avoid unexpected costs",
+      "Be aware of contingencies that could delay lease commencement",
+      "Confirm alteration permissions before planning improvements",
+      "Consult a commercial real estate attorney before signing"
+    ],
+    relatedDocuments: [
+      { title: "Commercial Lease Agreement", id: "commercial-lease-agreement" },
+      { title: "Co-Tenancy Agreement", id: "co-tenancy-agreement" }
+    ],
+    estimatedTime: "15-20 minutes"
   },
   "physician-services-agreement": {
     title: "Physician Services Agreement",
@@ -972,15 +1003,46 @@ export const documentInfoDatabase: Record<string, DocumentInfo> = {
   },
   "attorney-engagement-letter": {
     title: "Attorney Engagement Letter",
-    shortDescription: "A formal letter establishing the attorney-client relationship.",
-    fullDescription: "An Attorney Engagement Letter formalizes the representation agreement, outlining scope of work, fee structure (flat fee or hourly), and expectations for the attorney-client relationship.",
-    whenToUse: ["Hiring an attorney", "Starting a new legal matter", "Formalizing ongoing representation"],
-    keyTerms: [
-      { term: "Flat Fee", definition: "A fixed amount for the entire representation." },
-      { term: "Retainer", definition: "Advance payment against future services." }
+    shortDescription: "A formal agreement between attorney and client that establishes the terms of legal representation, including scope of services, fees, billing, and rights/obligations.",
+    fullDescription: "An Attorney Engagement Letter is a formal agreement used by lawyers and law firms to confirm the terms under which legal services will be provided to a client. This document clearly explains the scope of legal services, the responsibilities of the attorney and client, billing terms and fee structure, duration of the engagement, termination rights, and legal protections for both parties. Using a properly drafted Attorney Engagement Agreement is considered best legal practice, ensuring clarity and professionalism. This agreement helps establish transparency and protects both sides from disputes or misunderstandings.",
+    whenToUse: [
+      "A lawyer is providing legal services to a client",
+      "A law firm is onboarding a new client",
+      "Legal services involve fees or retainers",
+      "The scope of work needs to be clearly defined",
+      "You want written proof of the attorney-client relationship"
     ],
-    tips: ["Understand all fee structures", "Clarify communication expectations", "Keep a copy for your records"],
-    warnings: ["Read fee terms carefully", "Understand withdrawal procedures"],
+    keyTerms: [
+      { term: "Scope of Services", definition: "The specific legal services the attorney will provide, clearly outlined so there's no misunderstanding about what is and isn't included." },
+      { term: "Hourly Rate", definition: "The agreed-upon fee charged per hour of attorney work, typically ranging from $200-$500+ depending on experience and practice area." },
+      { term: "Flat Fee", definition: "A fixed amount charged for specific legal services or matters, regardless of how many hours are actually spent." },
+      { term: "Retainer", definition: "Advance payment made to the attorney, held in trust and drawn down as services are provided." },
+      { term: "Billing Terms", definition: "The agreed-upon schedule for billing and payment, such as monthly invoices or payment due upon receipt." }
+    ],
+    tips: [
+      "Read the engagement letter carefully before signing and ask questions about anything unclear",
+      "Understand the fee structure completely - know the hourly rate, what services are included, and estimated total costs",
+      "Clarify who will be handling your case and ask about communication methods and response times",
+      "Ask about billing practices - how often you'll be billed, what expenses are included, and when payment is due",
+      "Confirm what legal services are excluded or not covered by the engagement letter",
+      "Ask about the retainer - how much is required, how it's used, and what happens to unused retainer funds",
+      "Understand the term of the engagement - is it for a specific matter or ongoing representation?",
+      "Request estimates or range of total costs if possible to help with budgeting"
+    ],
+    warnings: [
+      "Always have a written signed engagement letter before starting legal representation",
+      "Never start representation without understanding the fee structure and total cost implications",
+      "Watch out for vague language about services - ensure scope is clearly defined and specific",
+      "Clarify all retainer requirements and restrictions before paying any money",
+      "Be aware of all potential costs beyond hourly rates - filing fees, court costs, and other expenses add up",
+      "Understand termination provisions - some agreements may have penalties for early termination",
+      "Confirm conflicts of interest - ensure the attorney can legally represent you",
+      "Be cautious about open-ended retainers - ensure there are limits on costs and regular billing"
+    ],
+    relatedDocuments: [
+      { title: "Power of Attorney", id: "power-of-attorney" },
+      { title: "Service Agreement", id: "service-agreement" }
+    ],
     estimatedTime: "15-20 minutes"
   },
   "child-care-auth": {

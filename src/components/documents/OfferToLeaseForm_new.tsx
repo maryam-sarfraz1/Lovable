@@ -12,7 +12,7 @@ const loadJsPDF = () =>
   });
 
 // ── Types & Steps ─────────────────────────────────────────────────────────────
-const steps = [
+const steps: Array<{ label: string; fields: FieldDef[] }> = [
   {
     label: "Parties",
     fields: [
@@ -75,7 +75,7 @@ const steps = [
 ];
 
 // ── PDF Generator ─────────────────────────────────────────────────────────────
-const generatePDF = async (values) => {
+const generatePDF = async (values: Record<string, any>) => {
   const JsPDF = await loadJsPDF();
   const doc = new JsPDF();
   const margin = 20;
@@ -88,7 +88,7 @@ const generatePDF = async (values) => {
     if (y + needed > pageHeight - 20) { doc.addPage(); y = 24; }
   };
 
-  const addTitle = (text) => {
+  const addTitle = (text: string) => {
     checkPage(14);
     doc.setFont("helvetica", "bold");
     doc.setFontSize(14);
@@ -97,7 +97,7 @@ const generatePDF = async (values) => {
     y += lines.length * 7 + 6;
   };
 
-  const addSectionHeading = (text) => {
+  const addSectionHeading = (text: string) => {
     checkPage(14);
     doc.setFont("helvetica", "bold");
     doc.setFontSize(11);
@@ -106,7 +106,7 @@ const generatePDF = async (values) => {
     y += lines.length * 6 + 2;
   };
 
-  const addBody = (text, extra = 5) => {
+  const addBody = (text: string, extra = 5) => {
     checkPage(10);
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10.5);
@@ -116,7 +116,7 @@ const generatePDF = async (values) => {
     y += lines.length * 5.2 + extra;
   };
 
-  const addBoldInline = (boldText, normalText) => {
+  const addBoldInline = (boldText: string, normalText: string) => {
     checkPage(10);
     doc.setFont("helvetica", "bold");
     doc.setFontSize(10.5);
@@ -132,7 +132,7 @@ const generatePDF = async (values) => {
 
   const gap = (px = 4) => { y += px; };
 
-  const v = (field, fallback = "___") => values[field]?.trim() || fallback;
+  const v = (field: string, fallback = "___") => values[field]?.toString().trim() || fallback;
 
   // ── DOCUMENT TITLE ──
   addTitle("OFFER TO LEASE");
@@ -199,174 +199,103 @@ const generatePDF = async (values) => {
   addSectionHeading("1. Description of Premises");
   addBody("The Premises shall consist of the following space and improvements:");
   addBody(v("premisesDescription", "__________________________") + ".");
-  gap(5);
+  gap(4);
 
-  // ── 2. TERM ──
-  addSectionHeading("2. Term");
+  // ── 2. LEASE TERM ──
+  addSectionHeading("2. Lease Term");
   addBody(
-    `The term of the lease (the "Term") shall commence on ${v("termStart", "__________")} and shall expire on ` +
-    `${v("termEnd", "__________")}, unless earlier terminated in accordance with the terms of the lease.`
+    `The lease term shall commence on ${v("termStart", "____________,")} (the "Commencement Date") and shall expire on ` +
+    `${v("termEnd", "_______________,")} (the "Expiration Date"), unless earlier terminated as provided herein.`
   );
-  gap(5);
+  gap(4);
 
   // ── 3. RENT ──
-  addSectionHeading("3. Rent");
+  addSectionHeading("3. Rental Payment");
   addBody(
-    `As consideration for leasing the Premises, the Tenant shall pay to the Landlord a monthly base rent ` +
-    `(the "Base Rent") in the amount of $${v("baseRent", "__________")}, payable in advance on such dates ` +
-    `and in such manner as shall be specified in the lease.`
+    `The Tenant shall pay to the Landlord monthly rent in the amount of $${v("baseRent", "0.00")} ` +
+    `per month, payable in advance on the first day of each month during the lease term.`
   );
-  gap(5);
+  gap(4);
 
-  // ── 4. SIGNAGE ──
-  addSectionHeading("4. Signage");
-  if (values.signageAllowed === "yes") {
-    addBody(
-      `The Tenant shall have the right, at its sole cost and expense, to install, maintain, and display signage ` +
-      `identifying the Tenant and its business operations on the Premises, subject to compliance with all applicable ` +
-      `municipal by-laws, zoning regulations, and governmental requirements. Upon termination or expiration of the lease, ` +
-      `the Tenant may remove such signage, provided that any damage caused by such removal shall be promptly repaired ` +
-      `by the Tenant at its own expense.`
-    );
-  } else {
-    addBody(
-      `The Tenant shall not install, maintain, or display any signage on the Premises without the prior written ` +
-      `consent of the Landlord.`
-    );
-  }
-  gap(5);
-
-  // ── 5. SEVERABILITY ──
-  addSectionHeading("5. Severability");
+  // ── 4. SECURITY DEPOSIT ──
+  addSectionHeading("4. Security     Deposit");
   addBody(
-    `If any provision of this Offer is held by a court of competent jurisdiction to be invalid or unenforceable, ` +
-    `and such determination is final and non-appealable, such provision shall be severed, and the remaining provisions ` +
-    `of this Offer shall remain in full force and effect and shall be construed so as to best give effect to the intent of the Parties.`
+    `Tenant shall provide a security deposit of $${v("securityDeposit", "0.00")}, ` +
+    `payable upon lease execution, to be held as security for the faithful performance of the lease.`
   );
-  gap(5);
+  gap(4);
 
-  // ── 6. BINDING EFFECT ──
-  addSectionHeading("6. Binding Effect");
+  // ── 5. PERMITTED USE ──
+  addSectionHeading("5. Permitted Use");
+  addBody(`The Premises shall be used solely for: ${v("permittedUse", "___________________________")}`);
+  gap(4);
+
+  // ── 6. CONDITIONS PRECEDENT ──
+  addSectionHeading("6. Conditions Precedent to Lease Execution");
+  addBody(`Before the Tenant is obligated to execute the formal lease, the following conditions must be satisfied:`);
+  gap(2);
+  addBody(v("formalLeaseConditions", "___________________________"));
+  gap(4);
+
+  // ── 7. ALTERATIONS ──
+  addSectionHeading("7. Alterations and Improvements");
   addBody(
-    `Upon written acceptance of this Offer by the Landlord, this Offer shall constitute a legally binding agreement ` +
-    `between the Parties, enforceable in accordance with its terms.`
+    `Tenant ${v("alterationsAllowed") === "yes" ? "may" : "shall not"} make alterations or improvements to the Premises ` +
+    `${v("alterationsAllowed") === "yes" ? "with Landlord's prior written consent." : "without Landlord's prior written consent."}`
   );
-  gap(5);
+  gap(4);
 
-  // ── 7. IRREVOCABILITY ──
-  addSectionHeading("7. Irrevocability");
+  // ── 8. ASSIGNMENT/SUBLETTING ──
+  addSectionHeading("8. Assignment and Subletting");
   addBody(
-    `This Offer shall be irrevocable until ${v("irrevocableTime", "____")} on ${v("irrevocableDate", "__________")}, ` +
-    `after which time, if not accepted by the Landlord, it shall automatically lapse and become null and void ` +
-    `without further action by either Party.`
+    `Tenant ${v("sublettingAllowed") === "yes" ? "may" : "shall not"} assign this lease or sublet the Premises ` +
+    `${v("sublettingAllowed") === "yes" ? "with Landlord's prior written consent." : "without Landlord's prior written consent."}`
   );
-  gap(5);
+  gap(4);
 
-  // ── 8. SECURITY DEPOSIT ──
-  addSectionHeading("8. Security Deposit");
+  // ── 9. IRREVOCABILITY ──
+  addSectionHeading("9. Irrevocability");
   addBody(
-    `Upon execution of the formal lease, the Tenant shall pay to the Landlord a security deposit ` +
-    `(the "Security Deposit") in the amount of $${v("securityDeposit", "__________")}. ` +
-    `The Security Deposit shall be held by the Landlord in accordance with the lease and shall be refundable ` +
-    `at the end of the tenancy, less any lawful deductions. The Security Deposit shall not be applied toward ` +
-    `payment of Base Rent.`
+    `This Offer shall be irrevocable by the Tenant until ${v("irrevocableTime", "5:00 PM")} on ` +
+    `${v("irrevocableDate", "______________")}.`
   );
-  gap(5);
+  gap(4);
 
-  // ── 9. FORMAL LEASE ──
-  addSectionHeading("9. Formal Lease");
+  // ── 10. SIGNAGE ──
+  addSectionHeading("10. Tenant Signage");
   addBody(
-    `A formal lease agreement shall be prepared by the Landlord and executed by both Parties promptly following ` +
-    `acceptance of this Offer. The lease shall incorporate all material terms and conditions contained herein and ` +
-    `shall be subject to the Tenant's approval and review by the Tenant's legal counsel. The Tenant shall not be ` +
-    `obligated to execute the lease unless and until the following conditions have been satisfied:`
-  );
-  addBody(v("formalLeaseConditions", "__________________________") + ".");
-  gap(5);
-
-  // ── 10. USE OF PREMISES ──
-  addSectionHeading("10. Use of Premises");
-  addBody(
-    `The Premises shall be used solely for ${v("permittedUse", "__________________________")} ` +
-    `(the "Permitted Use") and for no other purpose without the prior written consent of the Landlord.`
-  );
-  gap(5);
-
-  // ── 11. POSSESSION AND OCCUPANCY ──
-  addSectionHeading("11. Possession and Occupancy");
-  addBody(
-    `The Landlord shall deliver vacant possession of the Premises to the Tenant on or before the commencement ` +
-    `date of the Term. The Landlord represents and warrants that, as of such date, the Premises shall be free ` +
-    `from any existing leases, options, rights of renewal, or other leasehold interests.`
-  );
-  gap(5);
-
-  // ── 12. ALTERATIONS AND IMPROVEMENTS ──
-  addSectionHeading("12. Alterations and Improvements");
-  if (values.alterationsAllowed === "no") {
-    addBody(
-      `The Tenant shall not make any alterations, renovations, or improvements to the Premises without the ` +
-      `prior written consent of the Landlord.`
-    );
-  } else {
-    addBody(
-      `The Tenant shall have the right to make alterations, renovations, or improvements to the Premises, ` +
-      `subject to the prior written consent of the Landlord, which consent shall not be unreasonably withheld ` +
-      `or delayed. All work shall comply with applicable municipal by-laws, building codes, and governmental regulations.`
-    );
-  }
-  gap(5);
-
-  // ── 13. ASSIGNMENT AND SUBLETTING ──
-  addSectionHeading("13. Assignment and Subletting");
-  if (values.sublettingAllowed === "no") {
-    addBody(
-      `The Tenant shall not assign the lease or sublet all or any portion of the Premises without the prior ` +
-      `written consent of the Landlord.`
-    );
-  } else {
-    addBody(
-      `The Tenant may assign the lease or sublet all or any portion of the Premises with the prior written consent ` +
-      `of the Landlord, such consent not to be unreasonably withheld, conditioned, or delayed.`
-    );
-  }
-  gap(5);
-
-  // ── 14. COMPLIANCE WITH LAWS ──
-  addSectionHeading("14. Compliance With Laws");
-  addBody(
-    `The Landlord represents and warrants that the building and the Premises have been constructed and maintained ` +
-    `in compliance with all applicable zoning regulations, building codes, and requirements of all governmental ` +
-    `authorities having jurisdiction.`
-  );
-  gap(8);
-
-  // ── EXECUTION ──
-  addSectionHeading("Execution");
-  addBody(
-    `IN WITNESS WHEREOF, the Tenant has executed this Offer in accordance with applicable law as of the Offer Date first written above.`
+    `Signage rights are ${v("signageAllowed") === "yes" ? "included" : "not included"} in this Offer to Lease.`
   );
   gap(6);
 
-  checkPage(40);
-  doc.setFont("helvetica", "bold"); doc.setFontSize(10.5);
-  doc.text("TENANT:", margin, y); y += 10;
+  // ── SIGNATURE SECTION ──
+  addSectionHeading("Signature");
+  addBody("IN WITNESS WHEREOF, the Parties have executed this Offer to Lease as of the date first written above.");
+  gap(8);
 
-  doc.setFont("helvetica", "normal"); doc.setFontSize(10.5);
-  doc.text(`Name: ${v("tenantName", "__________________________")}`, margin, y); y += 8;
-  doc.text(`Signature: ${v("tenantSignature", "__________________________")}`, margin, y); y += 8;
-  doc.text(`Date: ${v("tenantSignDate", "__________")}`, margin, y); y += 12;
-
-  // Signature line
-  checkPage(20);
-  doc.setDrawColor(0); doc.setLineWidth(0.3);
-  doc.line(margin, y, margin + 80, y);
+  // Signature line for Tenant
+  doc.setFont("helvetica", "normal");
+  doc.setFontSize(10);
+  doc.text("TENANT:", margin, y);
+  y += 8;
+  doc.text("_".repeat(50), margin, y);
   y += 4;
-  doc.setFontSize(9); doc.setFont("helvetica", "normal");
-  doc.text("Authorized Signature", margin, y);
+  doc.text(v("tenantSignature", "Tenant Signature (typed)"), margin, y);
+  y += 8;
+  doc.text(`Date: ${v("tenantSignDate", "______________")}`, margin, y);
   y += 12;
 
-  doc.save("offer_to_lease.pdf");
+  // Signature line for Landlord
+  doc.text("LANDLORD:", margin, y);
+  y += 8;
+  doc.text("_".repeat(50), margin, y);
+  y += 4;
+  doc.text("Landlord Signature", margin, y);
+  y += 8;
+  doc.text("Date: ______________", margin, y);
+
+  // Download
+  doc.save("Offer_to_Lease.pdf");
 };
 
 // ── Main Component ─────────────────────────────────────────────────────────────

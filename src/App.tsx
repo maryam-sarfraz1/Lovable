@@ -50,7 +50,6 @@ import AffidavitOfResidenceInfo from "./pages/AffidavitOfResidenceInfo";
 import LLCOperatingAgreementInfo from "./pages/LLCOperatingAgreementInfo";
 import SpecialPowerOfAttorneyInfo from "./pages/SpecialPowerOfAttorneyInfo";
 import GeneralPowerOfAttorneyInfo from "./pages/GeneralPowerOfAttorneyInfo";
-import LeaseAgreementInfo from "./pages/LeaseAgreementInfo";
 import LeaseRenewalInfo from "./pages/LeaseRenewalInfo";
 import LeaseTerminationInfo from "./pages/LeaseTerminationInfo";
 import CondominiumLeaseInfo from "./pages/CondominiumLeaseInfo";
@@ -242,7 +241,7 @@ const App = () => {
                 <Route path="/child-care-authorization-info" element={<ChildCareAuthorizationInfo />} />
                 <Route path="/divorce-settlement-agreement-info" element={<DivorceSettlementAgreementInfo />} />
                 <Route path="/general-contract-info" element={<GeneralContractInfo />} />
-                <Route path="/lease-agreement-info" element={<LeaseAgreementInfo />} />
+                <Route path="/lease-agreement-info" element={<OfferToLeaseInfo />} />
                 <Route path="/lease-renewal-info" element={<LeaseRenewalInfo />} />
                 <Route path="/lease-termination-info" element={<LeaseTerminationInfo />} />
                 <Route path="/condominium-lease-info" element={<CondominiumLeaseInfo />} />
