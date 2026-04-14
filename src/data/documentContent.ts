@@ -3829,6 +3829,58 @@ export const documentContent: Record<string, DocumentContent> = {
       "Customer claim procedures and contact information"
     ],
     estimatedTime: "15-20 minutes"
+  },
+
+  // === BUSINESS SALE & PURCHASE AGREEMENTS ===
+  "Business Sale Agreement": {
+    title: "Business Sale Agreement",
+    otherNames: ["Sale Of Business Contract", "Contract For Sale Of Business", "Business Purchase Agreement", "Business Asset Purchase Agreement"],
+    whatIs: "A Business Sale Agreement is a legally enforceable contract that sets out the complete terms and conditions for the sale of a business. Whether you are selling your business or acquiring one, this agreement protects both the seller and buyer by clearly documenting the transaction structure, purchase price, conditions, and post-closing obligations.\n\nA comprehensive Business Sale Agreement defines what is being sold (assets, stock, or goodwill), how the purchase price is calculated and paid, what representations and warranties each party is making, and what happens if something goes wrong after closing. Professional preparation of this agreement is essential to prevent disputes and ensure a smooth transaction.\n\nBusiness sales can be complex, involving multiple assets, inventory, equipment, contracts, and potentially employees. This agreement provides the legal framework to organize all transaction terms in one enforceable document, protecting both parties' interests and clarifying financial responsibilities.\n\nA properly drafted Business Sale Agreement can be customized for asset sales, stock purchases, or goodwill acquisitions, and includes protective mechanisms like indemnification clauses, escrow arrangements, and earn-out provisions where needed.",
+    whenToUse: [
+      "You are negotiating the purchase or sale of a business",
+      "You want to clearly define the key terms and conditions of a business sale in writing",
+      "You need to establish the purchase price, payment terms, and any contingencies",
+      "You want to protect yourself with representations, warranties, and indemnification",
+      "You are transferring business assets, inventory, equipment, or customer lists",
+      "You need to address transitional support and seller obligations post-closing"
+    ],
+    faqs: [
+      { q: "What is a Business Sale Agreement?", a: "A Business Sale Agreement is a legally binding contract between a buyer and seller that outlines all terms and conditions for the sale of a business. It specifies what is being sold (assets, stock, or goodwill), the purchase price and payment terms, representations and warranties from each party, closing conditions, and post-closing obligations. A well-drafted agreement protects both parties and prevents misunderstandings." },
+      { q: "What is the difference between an asset sale and a stock sale?", a: "In an asset sale, the buyer purchases specific business assets (equipment, inventory, intellectual property, customer lists) but not the company itself. The company continues to exist, often to settle remaining liabilities. In a stock sale, the buyer purchases the company's stock, assuming all assets and liabilities. Asset sales offer buyers more protection; stock sales are typically simpler but carry more risk." },
+      { q: "What should be included in the purchase price?", a: "The purchase price should clearly specify: the total consideration amount, allocation of price among asset categories, adjustments for inventory and working capital, any seller financing or earn-out provisions, and payment timing (lump sum at closing or installments). The agreement should detail how adjustments are calculated and resolved." },
+      { q: "What are representations and warranties?", a: "Representations and warranties are statements by each party about the business's condition, ownership, legality, and financial accuracy. Seller warranties might include: clear title to assets, no undisclosed liabilities, compliance with laws, accuracy of financial statements, and absence of pending litigation. Buyer warranties typically confirm ability to pay and no conflicts with the purchase." },
+      { q: "What is an indemnification clause?", a: "An indemnification clause requires the seller to compensate the buyer if representations or warranties prove false after closing, or if undisclosed liabilities emerge. Typical provisions include holdback of a percentage of purchase price (in escrow) to cover indemnification claims, caps on liability, baskets for minimum claims, and survival periods specifying how long claims can be made." },
+      { q: "What should happen to employees and contracts?", a: "The agreement should specify: which employees the buyer intends to hire, whether the buyer or seller remains responsible for severance obligations, assumption or termination of existing contracts, customer notification procedures, and any non-compete or non-solicitation obligations for the seller. Employment liabilities should be clearly allocated." },
+      { q: "What are closing conditions?", a: "Closing conditions are requirements that must be satisfied before the sale completes. Common conditions include: obtaining necessary regulatory approvals, no material adverse changes in the business, third-party consents for contract transfers, satisfactory due diligence results, and financing approval (if applicable). Conditions protect the buyer from purchasing a damaged business." },
+      { q: "What is transitional support?", a: "Transitional support refers to post-closing assistance the seller provides to help the buyer operate the business. This might include: training on operations and systems, customer and vendor introductions, answering questions about business history, assistance transferring contracts, or consulting services for a defined period. The agreement should specify scope, duration, and any compensation." },
+      { q: "Do I need an accountant or lawyer for a business sale?", a: "Yes, consulting professionals is strongly recommended for business sales. An accountant can review financial statements, evaluate the purchase price, and assess tax implications. A lawyer can draft the agreement, conduct due diligence, identify risks, and represent your interests in negotiations. Professional guidance helps ensure the agreement is comprehensive and protective." },
+      { q: "Can payments be made over time?", a: "Yes. Many business sales include seller financing or earn-out provisions where the seller receives payments over time rather than a single lump sum. The agreement should specify: payment schedule and amounts, interest rates, security provisions (personal guarantee or asset lien), and consequences of missed payments. Security protections are important when financing is involved." }
+    ],
+    keyProtections: [
+      "Clear definition of which business assets or stock are being sold",
+      "Specified purchase price with detailed allocation among items",
+      "Seller representations warranting clear title and business condition",
+      "Working capital and inventory adjustment mechanisms",
+      "Indemnification provisions protecting against undisclosed liabilities",
+      "Escrow holdback for indemnification claim protection",
+      "Closing conditions that must be met before transaction completion",
+      "Employee and contract transfer or assumption terms",
+      "Non-compete and non-solicitation obligations",
+      "Transitional support and seller obligations specifications"
+    ],
+    whatYouNeed: [
+      "Detailed description of the business being sold (industry, operations, location)",
+      "Buyer's and seller's legal names and business entity information",
+      "List of all assets being included in the sale (equipment, inventory, intellectual property)",
+      "Recent financial statements (profit & loss, balance sheet, tax returns)",
+      "Business valuation or agreed purchase price",
+      "Payment terms and payment schedule if seller financing is involved",
+      "Employee information and benefits details",
+      "Current contracts affecting the business (leases, vendor agreements, customer contracts)",
+      "Permits, licenses, and regulatory compliance documentation",
+      "Intellectual property details (trademarks, patents, copyrights) and ownership evidence"
+    ],
+    estimatedTime: "20-30 minutes"
   }
 };
 

@@ -8,215 +8,212 @@ import {
 } from "@/components/ui/card";
 import {
   ArrowLeft,
-  FileText,
-  Users,
-  Shield,
   CheckCircle,
+  BookOpen,
+  Lock,
+  FileText,
   Download,
-  Handshake,
-  Box,
+  Briefcase,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
-const InfoBadge = ({ icon: Icon, title, children, className = "" }) => (
-  <div className={`bg-white border border-gray-100 rounded-lg p-4 shadow-sm ${className}`}>
-    <div className="flex items-start">
-      <div className="flex-shrink-0 mr-3 mt-0.5">
-        <Icon className="w-6 h-6 text-indigo-600" />
-      </div>
-      <div>
-        <h4 className="font-semibold text-gray-900">{title}</h4>
-        <div className="text-gray-700 text-sm mt-1">{children}</div>
-      </div>
-    </div>
-  </div>
-);
+import { getDocumentContent } from "@/data/documentContent";
 
 const BusinessSaleContractInfo = () => {
   const navigate = useNavigate();
+  const doc = getDocumentContent("Business Sale Agreement");
+
+  // Parse the "What Is" section into paragraphs
+  const whatIsParagraphs = doc.whatIs.split("\n\n").filter(p => p.trim());
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gradient-to-b from-fuchsia-50 to-pink-50 py-8">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="mb-6">
-          <Button
-            variant="outline"
-            onClick={() => navigate("/documents")}
-            className="mb-4"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Contracts
-          </Button>
+        {/* Back Button */}
+        <Button
+          variant="outline"
+          onClick={() => navigate("/documents")}
+          className="mb-6"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Documents
+        </Button>
 
-          <div className="text-center mb-8">
-            <div className="flex justify-center mb-4">
-              <div className="bg-indigo-100 p-3 rounded-full">
-                <Box className="w-8 h-8 text-indigo-700" />
-              </div>
+        {/* Header Section */}
+        <div className="text-center mb-8">
+          <div className="flex justify-center mb-4">
+            <div className="bg-gradient-to-br from-fuchsia-200 to-pink-200 p-4 rounded-full">
+              <Briefcase className="w-8 h-8 text-fuchsia-700" />
             </div>
-
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Business Sale Contract Information</h1>
-            <p className="text-lg text-gray-600">Business Sale Contract • Business Purchase Agreement • Contract for Sale of Business</p>
           </div>
+          
+          <h1 className="text-4xl font-bold text-gray-900 mb-3">{doc.title}</h1>
+          
+          {doc.otherNames && doc.otherNames.length > 0 && (
+            <div className="flex flex-wrap gap-2 justify-center">
+              {doc.otherNames.map((name) => (
+                <span
+                  key={name}
+                  className="inline-block px-3 py-1 bg-white text-fuchsia-700 text-sm font-medium rounded-full border border-fuchsia-200"
+                >
+                  {name}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
 
+        {/* Main Content */}
         <div className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Shield className="w-5 h-5 mr-2 text-sky-600" />
-                What Is a Business Sale Agreement?
+          {/* What Is Section */}
+          <Card className="border-0 shadow-lg">
+            <CardHeader className="bg-gradient-to-r from-fuchsia-100 to-pink-100 rounded-t-lg">
+              <CardTitle className="flex items-center text-gray-900">
+                <BookOpen className="w-5 h-5 mr-3 text-fuchsia-700" />
+                What Is a {doc.title}?
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-gray-700">
-                A <strong>Business Sale Agreement</strong> is a legally enforceable contract that sets out the complete
-                terms and conditions for the sale of a business. It formally records the understanding between the buyer
-                and the seller, ensuring clarity, transparency, and legal certainty.
-              </p>
-
-              <p className="text-gray-700">
-                Whether you are acquiring a new business or selling an existing one, a properly drafted agreement covers
-                essential elements such as purchase price, payment structure, assets and liabilities being transferred,
-                and closing details. Documenting these terms minimizes risk and supports a smooth transfer of ownership.
-              </p>
-
-              <p className="text-gray-700">
-                Using a professionally prepared draft Business Sale Agreement lets both parties finalize the sale with
-                confidence and helps the buyer operate the business efficiently after the transaction completes.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Handshake className="w-5 h-5 mr-2 text-green-600" />
-                Create a Business Sale Agreement Online
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700">
-                With Legalgram, you can prepare a Business Sale Agreement without drafting from scratch. Complete a few
-                guided steps to generate a complete, professional, and legally sound Business Sale Contract. This streamlined
-                process saves time, reduces complexity, and ensures accuracy.
-              </p>
-
-              <p className="text-gray-700">
-                The Legalgram template follows the best format for Business Sale Agreements and is suitable for both
-                small and large transactions.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Users className="w-5 h-5 mr-2 text-purple-600" />
-                When Should You Use a Business Sale Agreement?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3 text-gray-700">
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <p>
-                    <strong>Negotiating a Sale:</strong> When you are negotiating the purchase or sale of a business.
-                  </p>
-                </div>
-
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <p>
-                    <strong>Defining Key Terms:</strong> When you want to clearly define the key terms and conditions of a
-                    business sale in writing.
-                  </p>
-                </div>
-
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <p>
-                    <strong>Protect Interests:</strong> Using the best format of Business Sale Agreement protects both parties
-                    and helps ensure the transaction is legally enforceable.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Download className="w-5 h-5 mr-2 text-amber-600" />
-                Download Business Sale Agreement
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                <div className="text-gray-700">
-                  <p className="mb-1">Download a professional, fully customizable Business Sale Agreement ready for use by business owners, entrepreneurs, and investors.</p>
-                  <p className="text-sm text-gray-500">Ideal for both small and large transactions and built following best practices.</p>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <Button onClick={() => navigate('/documents')}>
-                    <FileText className="w-4 h-4 mr-2" />
-                    Sign Online
-                  </Button>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Best Practices</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3 text-gray-700">
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <p><strong>Be Thorough:</strong> Specify assets included, liabilities excluded, and exact closing mechanics.</p>
-                </div>
-
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <p><strong>Payment & Price:</strong> Clearly state purchase price, deposits, and payment schedule.</p>
-                </div>
-
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <p><strong>Due Diligence:</strong> Allow buyer access for inspections and confirm representations and warranties.</p>
-                </div>
-
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <p><strong>Transition Plan:</strong> Define post-closing support, employee transfers, and handover timelines.</p>
-                </div>
-
-                <div className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                  <p><strong>Legal Review:</strong> Have a qualified attorney review the agreement before signing.</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Disclaimer</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                <p className="text-gray-600 text-sm">
-                  This information is provided for educational purposes only and does not constitute legal advice. For
-                  complex sales or large transactions, consult a qualified attorney to ensure your agreement complies with
-                  applicable laws and protects your interests.
+            <CardContent className="pt-6 space-y-4">
+              {whatIsParagraphs.map((paragraph, idx) => (
+                <p key={idx} className="text-gray-700 leading-relaxed">
+                  {paragraph}
                 </p>
-              </div>
+              ))}
             </CardContent>
           </Card>
 
+          {/* When to Use Section */}
+          {doc.whenToUse && doc.whenToUse.length > 0 && (
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-fuchsia-100 to-pink-100 rounded-t-lg">
+                <CardTitle className="flex items-center text-gray-900">
+                  <CheckCircle className="w-5 h-5 mr-3 text-fuchsia-700" />
+                  When Should You Use This?
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-3">
+                  {doc.whenToUse.map((item, idx) => (
+                    <div key={idx} className="flex items-start">
+                      <div className="flex-shrink-0 mr-3 mt-1">
+                        <CheckCircle className="w-5 h-5 text-green-600" />
+                      </div>
+                      <p className="text-gray-700">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* What You Need Section */}
+          {doc.whatYouNeed && doc.whatYouNeed.length > 0 && (
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-fuchsia-100 to-pink-100 rounded-t-lg">
+                <CardTitle className="flex items-center text-gray-900">
+                  <FileText className="w-5 h-5 mr-3 text-fuchsia-700" />
+                  What You'll Need
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {doc.whatYouNeed.map((item, idx) => (
+                    <div key={idx} className="flex items-start">
+                      <div className="flex-shrink-0 mr-2 mt-1">
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-fuchsia-200 flex items-center justify-center">
+                          <span className="text-xs font-bold text-fuchsia-700">✓</span>
+                        </div>
+                      </div>
+                      <p className="text-gray-700 text-sm">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Key Protections Section */}
+          {doc.keyProtections && doc.keyProtections.length > 0 && (
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-fuchsia-100 to-pink-100 rounded-t-lg">
+                <CardTitle className="flex items-center text-gray-900">
+                  <Lock className="w-5 h-5 mr-3 text-fuchsia-700" />
+                  Key Protections
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-2">
+                  {doc.keyProtections.map((protection, idx) => (
+                    <div key={idx} className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-fuchsia-600 mr-3 mt-0.5 flex-shrink-0" />
+                      <span className="text-gray-700">{protection}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* FAQs Section */}
+          {doc.faqs && doc.faqs.length > 0 && (
+            <Card className="border-0 shadow-lg">
+              <CardHeader className="bg-gradient-to-r from-fuchsia-100 to-pink-100 rounded-t-lg">
+                <CardTitle className="text-gray-900">Frequently Asked Questions</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6 space-y-4">
+                {doc.faqs.map((faq, idx) => (
+                  <div key={idx} className="border-l-4 border-fuchsia-300 pl-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">{faq.q}</h4>
+                    <p className="text-gray-700">{faq.a}</p>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Information Section */}
+          <Card className="border-0 shadow-lg bg-white">
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Download className="w-5 h-5 mr-2 text-fuchsia-700" />
+                Ready to Create Your {doc.title}?
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <p className="text-gray-700">
+                Our online tool makes it easy to create a professional, legally sound {doc.title.toLowerCase()} in minutes. 
+                {doc.estimatedTime && ` Estimated time: ${doc.estimatedTime}.`}
+              </p>
+              <Button
+                onClick={() => navigate("/documents")}
+                className="w-full bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700"
+              >
+                <FileText className="w-4 h-4 mr-2" />
+                Start Creating Agreement
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Legal Disclaimer */}
+          {doc.legalDisclaimer && (
+            <Card className="border-0 shadow-lg border-t-4 border-t-amber-300 bg-amber-50">
+              <CardContent className="pt-6">
+                <p className="text-sm text-gray-600">
+                  <strong>Legal Disclaimer:</strong> {doc.legalDisclaimer}
+                </p>
+              </CardContent>
+            </Card>
+          )}
+
+          {!doc.legalDisclaimer && (
+            <Card className="border-0 shadow-lg border-t-4 border-t-amber-300 bg-amber-50">
+              <CardContent className="pt-6">
+                <p className="text-sm text-gray-600">
+                  <strong>Legal Disclaimer:</strong> This information is provided for educational purposes only and does not constitute legal advice. 
+                  For complex transactions, consult a qualified attorney to ensure your agreement complies with applicable laws and protects your interests.
+                </p>
+              </CardContent>
+            </Card>
+          )}
         </div>
       </div>
     </div>
