@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, BookOpen, Lock, FileText } from "lucide-react";
+import { CheckCircle, BookOpen, Lock, Handshake } from "lucide-react";
 import { documentContent } from "@/data/documentContent";
 
-const SecuredPromissoryNoteInfo: React.FC = () => {
+const DebtSettlementInfo: React.FC = () => {
   const navigate = useNavigate();
-  const doc = documentContent["Secured Promissory Note"] || documentContent["default"];
+  const doc = documentContent["Debt Settlement Agreement"] || documentContent["default"];
 
   return (
     <Layout>
@@ -18,7 +18,7 @@ const SecuredPromissoryNoteInfo: React.FC = () => {
           <div className="mb-12">
             <div className="flex items-center gap-4 mb-6">
               <div className="p-3 bg-pink-100 rounded-lg">
-                <FileText className="w-8 h-8 text-pink-600" />
+                <Handshake className="w-8 h-8 text-pink-600" />
               </div>
               <h1 className="text-4xl font-bold text-gray-900">{doc.title}</h1>
             </div>
@@ -133,4 +133,4 @@ const SecuredPromissoryNoteInfo: React.FC = () => {
   );
 };
 
-export default SecuredPromissoryNoteInfo;
+export default DebtSettlementInfo;

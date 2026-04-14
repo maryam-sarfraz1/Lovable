@@ -147,6 +147,91 @@ export const documentContent: Record<string, DocumentContent> = {
   },
 
   // === SECURITY & FINANCIAL AGREEMENTS ===
+  "Debt Settlement Agreement": {
+    title: "Debt Settlement Agreement",
+    otherNames: ["Debt Settlement Contract", "Debt Resolution Agreement", "Debt Settlement Arrangement", "Debt Negotiation Agreement"],
+    whatIs: "A Debt Settlement Agreement is a legally binding contract between a debtor and a creditor (or a debt settlement company acting on behalf of the debtor) that outlines the terms under which a debt will be resolved for less than the full amount owed. This agreement specifies the reduced settlement amount, payment schedule, and the conditions for releasing the debtor from further liability. Debt Settlement Agreements are commonly used to resolve credit card debt, medical bills, personal loans, and other unsecured debts when the debtor is unable to pay the full balance. By using a professionally drafted Debt Settlement Agreement, both parties gain clarity, avoid litigation, and ensure that the settlement is final and enforceable.",
+    whenToUse: [
+      "You are unable to pay the full amount of an outstanding debt and want to negotiate a reduced payoff.",
+      "A creditor is willing to accept less than the total amount owed in exchange for a lump-sum or structured payment.",
+      "You want to avoid bankruptcy or legal action by settling your debt through negotiation.",
+      "You are working with a debt settlement company to resolve multiple debts.",
+      "You need a clear, written record of the settlement terms and release of liability."
+    ],
+    faqs: [
+      { q: "What is a Debt Settlement Agreement?", a: "A Debt Settlement Agreement is a contract that allows a debtor to resolve a debt for less than the full amount owed. The creditor agrees to accept a reduced payment (either as a lump sum or in installments) and, upon completion, releases the debtor from further liability. This agreement provides legal protection for both parties and documents the terms of the settlement." },
+      { q: "When should I use a Debt Settlement Agreement?", a: "Use this agreement when you are unable to pay the full amount of a debt and have negotiated a reduced payoff with your creditor. It is also used when working with a debt settlement company to resolve multiple debts. The agreement ensures that the settlement is final and prevents future collection efforts on the settled debt." },
+      { q: "Is a Debt Settlement Agreement legally binding?", a: "Yes. Once signed by both parties, a Debt Settlement Agreement is legally binding and enforceable in court. It protects the debtor from further collection efforts and provides the creditor with assurance of payment according to the agreed terms." },
+      { q: "What should be included in a Debt Settlement Agreement?", a: "A comprehensive agreement should include: the original debt amount, the reduced settlement amount, payment schedule (lump sum or installments), deadlines, release of liability language, and signatures of both parties. It may also include provisions for reporting the settlement to credit bureaus and tax implications for forgiven debt." },
+      { q: "Are there risks to debt settlement?", a: "Yes. Debt settlement can impact your credit score, and forgiven debt may be considered taxable income by the IRS. It is important to understand the consequences and consult with a financial advisor or attorney before proceeding." }
+    ],
+    keyProtections: [
+      "Clearly defined reduced settlement amount and payment terms",
+      "Release of debtor from further liability upon completion",
+      "Protection from future collection efforts on settled debt",
+      "Written record of agreement for legal enforcement",
+      "Provisions for credit reporting and tax implications"
+    ],
+    whatYouNeed: [
+      "Original debt amount and account details",
+      "Debtor and creditor names and contact information",
+      "Negotiated settlement amount",
+      "Payment schedule and deadlines",
+      "Release of liability language",
+      "Reporting and tax considerations"
+    ],
+    estimatedTime: "8-15 minutes"
+  },
+
+  "Secured Promissory Note": {
+    title: "Secured Promissory Note",
+    otherNames: ["Secured Promissory Note Form", "Loan Security Agreement", "Secured Loan Agreement"],
+    whatIs: "A Secured Promissory Note Agreement is a legally binding document in which a borrower promises to repay a loan while offering personal property or real estate as collateral. This secured promissory note format protects the lender by allowing recovery of the pledged asset if the borrower fails to repay the loan as agreed.\n\nUsing a professionally prepared draft secured promissory note increases lender confidence and encourages timely repayment by the borrower. Because the loan is backed by collateral, this agreement is commonly used for higher-value or higher-risk lending arrangements.\n\nIf you do not require collateral, you may instead use a standard Promissory Note or an Installment Promissory Note. However, for added security and enforceability, the secured promissory note is the preferred option.",
+    whenToUse: [
+      "You want to borrow money and are willing to offer personal property or real estate as collateral.",
+      "You plan to lend money and want to secure the loan against assets.",
+      "You want stronger legal protection in case of default.",
+      "You are entering into a higher-value or higher-risk lending arrangement.",
+      "This secured promissory note draft is suitable for both personal and business lending."
+    ],
+    faqs: [
+      { q: "What Does 'Secured' Mean?", a: "The term 'secured' means that the loan is backed by collateral. If the borrower defaults, the lender has the legal right to take ownership of the pledged asset. A common example of a secured loan is a mortgage, where the property secures repayment." },
+      { q: "What Is the Difference Between a Secured and Unsecured Promissory Note?", a: "The primary difference is collateral. A secured promissory note agreement requires collateral, while an unsecured promissory note does not. If the borrower defaults on a secured note, the lender may keep or sell the collateral to recover the loan amount." },
+      { q: "Where Can I Write a Secured Promissory Note for Free?", a: "You can easily create and download a secured promissory note using a free secured promissory note template. The process typically includes:\n• Make the document – Answer a few simple questions\n• Review and share – Consult a legal professional if needed\n• Sign the agreement – Sign online to make it legally valid\n\nThis approach is far more cost-effective than hiring a traditional law firm." },
+      { q: "What Should Be Included in a Secured Promissory Note?", a: "A proper secured promissory note format should include:\n• Loan amount and method of disbursement\n• Names and contact details of all parties, including co-signers\n• Repayment schedule and due dates\n• Interest rate and payment terms\n• Detailed description and value of collateral\n• Terms covering late payments, default, and enforcement\n\nIncluding these elements ensures clarity and enforceability." },
+      { q: "Should I Hire a Lawyer for a Secured Promissory Note?", a: "While a secured promissory note agreement is generally straightforward, legal review can be helpful for complex transactions. Many users prefer prepared templates because they are faster, more affordable, and legally reliable. Legal review options remain available if needed." },
+      { q: "How Much Does It Usually Cost to Make a Secured Promissory Note?", a: "Hiring a law firm may cost anywhere from several hundred to over a thousand dollars. By contrast, using a free download secured promissory note significantly reduces costs while still providing a legally valid document." },
+      { q: "What Should I Do After Writing a Secured Promissory Note?", a: "Once completed, you can edit, print, sign, and download your secured promissory note in PDF or Word format. Keep signed copies for all parties and follow any recommended next steps related to collateral documentation." },
+      { q: "Does a Secured Promissory Note Need to Be Notarized?", a: "In most cases, notarization or witnesses are not legally required for a Secured Promissory Note Agreement. However, notarization may be recommended for additional evidentiary value." }
+    ],
+    keyProtections: [
+      "Clearly defined loan amount and repayment schedule",
+      "Collateral description and valuation documented",
+      "Interest rate and payment terms specified",
+      "Default and enforcement provisions",
+      "Lender's security interest in collateral protected",
+      "Borrower's repayment obligations clearly outlined",
+      "Late payment penalties and remedies defined",
+      "Co-signer obligations (if applicable)",
+      "Acceleration clause for full payment upon default",
+      "Legal enforceability and lender's recovery rights"
+    ],
+    whatYouNeed: [
+      "Loan amount and repayment terms",
+      "Borrower's full legal name and contact information",
+      "Lender's full legal name and contact information",
+      "Co-signer information (if applicable)",
+      "Interest rate and payment schedule",
+      "Detailed collateral description and estimated value",
+      "Collateral location and storage details",
+      "Repayment dates and payment method",
+      "Default conditions and consequences",
+      "Governing law and jurisdiction"
+    ],
+    estimatedTime: "10-18 minutes"
+  },
+
+  // === SECURITY & FINANCIAL AGREEMENTS ===
   "Security Agreement": {
     title: "Security Agreement",
     otherNames: ["Collateral Agreement", "Vehicle Security Agreement", "Security Agreement Form"],
@@ -188,7 +273,8 @@ export const documentContent: Record<string, DocumentContent> = {
   // === AFFIDAVITS ===
   "Affidavit of Character": {
     title: "Affidavit of Character",
-    whatIs: "A formal legal document used to provide a character reference under oath. The affiant declares—on the basis of personal knowledge—that a specific individual is of good moral character, integrity, and reputation. This sworn statement carries legal weight because false statements can result in perjury charges. Character affidavits are commonly used in court proceedings, immigration matters, and professional licensing applications.",
+    otherNames: ["Character Affidavit", "Character Reference", "Affidavit of Good Moral Character", "Moral Character Affidavit"],
+    whatIs: "An Affidavit of Character Agreement is a formal legal document used to provide a character reference under oath. Through this agreement, the affiant declares—on the basis of personal knowledge—that a specific individual is of good moral character, integrity, and reputation. Also known as an Affidavit of Good Moral Character, this agreement carries legal significance because it is sworn and notarized. By signing the Affidavit of Character Agreement, the affiant confirms that the statements made are true and correct to the best of their knowledge and belief, and understands that any false or misleading statement may result in legal consequences, including perjury. You can now access the best format of Affidavit of Character Agreement on Legalgram, professionally drafted and ready for immediate use.",
     whenToUse: [
       "Child custody proceedings where a parent's character is questioned.",
       "Immigration cases requiring proof of moral standing.",
@@ -682,6 +768,45 @@ export const documentContent: Record<string, DocumentContent> = {
       "Collateral description (if secured)"
     ],
     estimatedTime: "12-18 minutes"
+  },
+
+  "Payment Agreement": {
+    title: "Payment Agreement",
+    otherNames: ["Promissory Note", "Payment Plan Agreement", "Installment Agreement", "Repayment Agreement"],
+    whatIs: "A Payment Agreement is a formal legal document in which a borrower promises to repay a specific loan amount to a lender under agreed terms. It defines repayment schedules, interest, late charges, and remedies in the event of default, ensuring clarity and legal protection for both parties. A Payment Agreement serves as enforceable proof of the debt and helps prevent disputes by clearly defining each party's obligations.",
+    whenToUse: [
+      "Lending or borrowing money between parties",
+      "Setting installment-based repayments",
+      "Formalizing private or business loans",
+      "Protecting lender rights in case of default",
+      "Establishing legally enforceable repayment terms"
+    ],
+    faqs: [
+      { q: "What is a Payment Agreement?", a: "A Payment Agreement is a legally binding document where a borrower promises to repay a loan under agreed terms. It includes the loan amount, repayment schedule, interest rate, late charges, and default provisions." },
+      { q: "What should be included in a Payment Agreement?", a: "A comprehensive Payment Agreement should include: loan amount and repayment schedule, interest rate and late payment fees, acceleration and default provisions, names and signatures of borrower and lender, and the governing law." },
+      { q: "Is a Payment Agreement legally binding?", a: "Yes. When properly signed and executed by both parties, a Payment Agreement is legally binding and enforceable in court." },
+      { q: "Can I modify a Payment Agreement after signing?", a: "Yes, but any modifications must be documented in writing and signed by both parties. This creates an amendment to the original agreement." },
+      { q: "What happens if the borrower defaults?", a: "The Payment Agreement typically allows the lender to demand full payment immediately (acceleration clause) and pursue legal action to collect the debt." }
+    ],
+    keyProtections: [
+      "Clearly defined loan amount and repayment schedule",
+      "Specified interest rate and calculation method",
+      "Late payment fees and penalties",
+      "Default and acceleration provisions",
+      "Legally binding payment obligations",
+      "Enforcement mechanisms and remedies"
+    ],
+    whatYouNeed: [
+      "Loan amount and currency",
+      "Borrower's full name and contact information",
+      "Lender's full name and contact information",
+      "Repayment schedule and due dates",
+      "Interest rate (if applicable)",
+      "Late payment fees and charges",
+      "Default terms and conditions",
+      "Governing law and jurisdiction"
+    ],
+    estimatedTime: "10-15 minutes"
   },
 
   // === LICENSE AGREEMENTS ===
@@ -2299,7 +2424,7 @@ export const documentContent: Record<string, DocumentContent> = {
   "Affidavit of Character Agreement": {
     title: "Affidavit of Character Agreement",
     otherNames: ["Character Affidavit Agreement", "Character Letter", "Character Reference Agreement", "Affidavit of Good Moral Character", "Moral Character Declaration"],
-    whatIs: "An Affidavit of Character Agreement is a formal legal document used to provide a character reference under oath. Through this agreement, the affiant declares—on the basis of personal knowledge—that a specific individual is of good moral character, integrity, and reputation. Also known as an Affidavit of Good Moral Character, this agreement carries legal significance because it is sworn and notarized. By signing the Affidavit of Character Agreement, the affiant confirms that the statements made are true and correct to the best of their knowledge and belief, and understands that any false or misleading statement may result in legal consequences, including perjury.",
+    whatIs: "An Affidavit of Character Agreement is a formal legal document used to provide a character reference under oath. Through this agreement, the affiant declares—on the basis of personal knowledge—that a specific individual is of good moral character, integrity, and reputation.\n\nAlso known as an Affidavit of Good Moral Character, this agreement carries legal significance because it is sworn and notarized. By signing the Affidavit of Character Agreement, the affiant confirms that the statements made are true and correct to the best of their knowledge and belief, and understands that any false or misleading statement may result in legal consequences, including perjury.\n\nYou can now access the best format of Affidavit of Character Agreement on Legalgram, professionally drafted and ready for immediate use.",
     whenToUse: [
       "You are asked to provide a sworn declaration regarding another person's moral character.",
       "A court, tribunal, or authority requires character verification.",
@@ -3281,21 +3406,22 @@ export const documentContent: Record<string, DocumentContent> = {
   "DJ Contract": {
     title: "DJ Contract",
     otherNames: ["DJ Booking Agreement", "DJ Services Agreement", "DJ Performance Contract", "Entertainment Contract", "DJ Agreement"],
-    whatIs: "A DJ Contract is a legally binding agreement between a DJ and a client, event organizer, venue owner, or promoter that clearly defines the terms of a DJ performance. Whether you are booking a DJ for a wedding, birthday party, corporate function, or nightclub event, a professionally drafted DJ Agreement helps protect both parties and avoids misunderstandings.\n\nAt Legalgram, you can download a DJ Contract for free, prepared in the best legal format, fully editable, and suitable for professional use.",
+    whatIs: "A DJ Contract is a legally binding agreement between a DJ and a client, event organizer, venue owner, or promoter that clearly defines the terms of a DJ performance. Whether you are booking a DJ for a wedding, birthday party, corporate function, or nightclub event, a professionally drafted DJ Agreement helps protect both parties and avoids misunderstandings.\n\nAt Legalgram, you can download a DJ Contract for free, prepared in the best legal format, fully editable, and suitable for professional use.\n\nA DJ Contract, also known as a DJ Booking Agreement, is used when a DJ is hired to perform at an event. This agreement outlines essential details such as event date and time, DJ services to be provided, payment terms, equipment responsibilities, cancellation policies, and legal rights and obligations. A properly drafted DJ Agreement on Legalgram ensures transparency and legal protection for both the DJ and the client.",
     whenToUse: [
       "You are a DJ booking a performance",
       "You are an event organizer hiring a DJ",
       "You are hosting a wedding, party, or corporate event",
       "You operate a DJ or entertainment business",
-      "You want written proof of services and payment terms"
+      "You want written proof of services and payment terms",
+      "Using a DJ Agreement template helps prevent disputes related to cancellations, late payments, or performance expectations"
     ],
     faqs: [
-      { q: "What Is a DJ Contract?", a: "A DJ Contract, also known as a DJ Booking Agreement, is used when a DJ is hired to perform at an event. This agreement outlines essential details such as event date and time, DJ services to be provided, payment terms, equipment responsibilities, cancellation policies, and legal rights and obligations." },
-      { q: "Why Is a DJ Contract Important?", a: "A well-drafted DJ Booking Agreement provides several important benefits: clearly defines payment and deposit terms, specifies event time, location, and duration, confirms equipment and sound requirements, protects against last-minute cancellations, establishes professional expectations, and offers legal protection if disputes arise." },
-      { q: "What Does a DJ Contract Include?", a: "A professionally drafted DJ Agreement typically covers Parties Information (name and address of the DJ and event organizer), Event Details (date, location, duration, and type), Services Provided (DJ performance, music selection, sound system, lighting, and setup), Payment Terms (total fees, deposits, balance due date, overtime charges), Equipment & Setup responsibilities, Cancellation Policy, Legal Clauses (independent contractor status, liability, confidentiality, and dispute resolution), and Governing Law." },
-      { q: "Why Use a DJ Contract from Legalgram?", a: "When you download a DJ Agreement from Legalgram, you get: Professionally drafted legal format, SEO-optimized and legally compliant templates, easy to edit and customize, free DJ Agreement download, printable Word & PDF formats, and suitability for DJs, venues, and event planners." },
-      { q: "How Much Does a DJ Contract Cost?", a: "Hiring a lawyer to draft a DJ contract can cost hundreds of dollars. With Legalgram, you can create a DJ Contract for free, customize it online, download instantly, and use it for multiple events." },
-      { q: "What to Do After Creating Your DJ Agreement?", a: "Once your DJ Contract is drafted: 1. Review all details carefully, 2. Share it with the client, 3. Get signatures from both parties, 4. Save a copy for records, 5. Proceed with the event confidently. You may also download your DJ Agreement from Legalgram in Word or PDF format." },
+      { q: "What Is a DJ Contract?", a: "A DJ Contract, also known as a DJ Booking Agreement, is used when a DJ is hired to perform at an event. This agreement outlines essential details such as:\n• Event date and time\n• DJ services to be provided\n• Payment terms\n• Equipment responsibilities\n• Cancellation policies\n• Legal rights and obligations\n\nA properly drafted DJ Agreement on Legalgram ensures transparency and legal protection for both the DJ and the client." },
+      { q: "Why Is a DJ Contract Important?", a: "A well-drafted DJ Booking Agreement provides several important benefits:\n✔ Clearly defines payment and deposit terms\n✔ Specifies event time, location, and duration\n✔ Confirms equipment and sound requirements\n✔ Protects against last-minute cancellations\n✔ Establishes professional expectations\n✔ Offers legal protection if disputes arise\n\nWithout a DJ contract, both parties risk confusion, unpaid fees, and legal complications." },
+      { q: "What Does a DJ Contract Include?", a: "A professionally drafted DJ Agreement on Legalgram typically covers:\n🔹 Parties Information - Name and address of the DJ and event organizer\n🔹 Event Details - Event date, location, duration, and type of event\n🔹 Services Provided - DJ performance, music selection, sound system, lighting, and setup\n🔹 Payment Terms - Total fees, deposits, balance due date, and overtime charges\n🔹 Equipment & Setup - Who provides sound systems, lighting, and backup equipment\n🔹 Cancellation Policy - Rules for cancellations, refunds, and rescheduling\n🔹 Legal Clauses - Independent contractor status, liability, confidentiality, and dispute resolution\n🔹 Governing Law - State or jurisdiction governing the agreement" },
+      { q: "Why Use a DJ Contract from Legalgram?", a: "When you download a DJ Agreement from Legalgram, you get:\n✅ Professionally drafted legal format\n✅ SEO-optimized and legally compliant\n✅ Easy to edit and customize\n✅ Free DJ Agreement download\n✅ Suitable for DJs, venues, and event planners\n✅ Printable Word and PDF formats\n\nOur templates are designed to save time and eliminate legal guesswork." },
+      { q: "How Much Does a DJ Contract Cost?", a: "Hiring a lawyer to draft a DJ contract can cost hundreds of dollars.\n\nWith Legalgram, you can:\n✔ Create a DJ Contract for free\n✔ Customize it online\n✔ Download instantly\n✔ Use it for multiple events" },
+      { q: "What to Do After Creating Your DJ Agreement?", a: "Once your DJ Contract is drafted:\n1. Review all details carefully\n2. Share it with the client\n3. Get signatures from both parties\n4. Save a copy for records\n5. Proceed with the event confidently\n\nYou may also download your DJ Agreement from Legalgram in Word or PDF format." },
       { q: "Can a Lawyer Review My DJ Contract?", a: "Yes. While Legalgram provides professionally written templates, you can also have your DJ Agreement reviewed by a legal professional for additional assurance—especially for high-value events." }
     ],
     keyProtections: [
@@ -3308,7 +3434,8 @@ export const documentContent: Record<string, DocumentContent> = {
       "Defines overtime charges and additional fees",
       "Specifies equipment and setup responsibilities",
       "Clarifies cancellation policies and refunds",
-      "Establishes independent contractor status"
+      "Establishes independent contractor status",
+      "Prevents disputes related to cancellations and late payments"
     ],
     whatYouNeed: [
       "Name and contact information of the DJ",
@@ -3331,7 +3458,7 @@ export const documentContent: Record<string, DocumentContent> = {
   "DJ Services Agreement": {
     title: "DJ Services Agreement",
     otherNames: ["DJ Services Contract", "DJ Performance Agreement", "Music Entertainment Services", "DJ Services Contract", "Event DJ Agreement"],
-    whatIs: "This is a legal document that formalizes an agreement or declaration between parties. Legal documents provide clarity, establish rights and obligations, and serve as evidence in case of disputes. They are designed to protect all parties involved by clearly documenting terms and expectations.\nA DJ Services Agreement is used when a DJ is hired to provide music and entertainment services for an event. This agreement outlines the terms of service, payment, equipment, timing, and responsibilities of both the DJ and the client.\nDownload a professionally drafted DJ Services Agreement from Legalgram to ensure clear terms for your event.",
+    whatIs: "A DJ Contract is a legally binding agreement between a DJ and a client, event organizer, venue owner, or promoter that clearly defines the terms of a DJ performance. Whether you are booking a DJ for a wedding, birthday party, corporate function, or nightclub event, a professionally drafted DJ Agreement helps protect both parties and avoids misunderstandings.At Legalgram, you can download a DJ Contract for free, prepared in the best legal format, fully editable, and suitable for professional use.",
     whenToUse: [
       "You are hiring a DJ for an event",
       "You are a DJ offering services for events",
