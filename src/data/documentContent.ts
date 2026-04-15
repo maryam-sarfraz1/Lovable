@@ -661,35 +661,52 @@ export const documentContent: Record<string, DocumentContent> = {
 
   // === BUSINESS AGREEMENTS ===
   "Non-Disclosure Agreement": {
-    title: "Non-Disclosure Agreement (NDA)",
-    whatIs: "A legally binding contract that creates a confidential relationship between parties. The party receiving confidential information agrees not to disclose it to third parties. NDAs protect trade secrets, business strategies, client lists, and other proprietary information from being shared with competitors or the public.",
+    title: "Non-Disclosure Agreement",
+    otherNames: ["Mutual Confidentiality Agreement", "Mutual NDA", "MDNA", "Bilateral NDA", "Confidentiality Agreement"],
+    whatIs: "A Non-Disclosure Agreement (NDA) is a legally binding confidentiality agreement that enables two parties to share and receive sensitive or proprietary information securely. This agreement is ideal when both parties expect to exchange confidential data, such as trade secrets, business plans, financial details, or intellectual property. It clearly defines confidentiality obligations and protects information from unauthorized disclosure, giving both parties legal rights to take action in case of breach.",
     whenToUse: [
-      "Sharing business ideas with potential investors.",
-      "Hiring employees who will access sensitive information.",
-      "Discussing partnerships or joint ventures.",
-      "Working with contractors or consultants.",
-      "Before merger or acquisition negotiations."
+      "You are sharing confidential or proprietary information with another party",
+      "You will receive sensitive information from another individual or organization",
+      "You are entering into partnerships, vendor agreements, or consulting arrangements",
+      "Both parties need mutual confidentiality protection during negotiations or collaborations",
+      "You want to protect trade secrets, business plans, or financial details",
+      "You're collaborating with businesses, startups, freelancers, or consultants"
     ],
     faqs: [
-      { q: "How long does an NDA last?", a: "Typically 1-5 years, but trade secrets can be protected indefinitely. The duration depends on the nature of the information and industry standards." },
-      { q: "Can an NDA be broken?", a: "Yes, but the breaching party can be sued for damages, injunctive relief, and attorney's fees. Courts can order the return of confidential materials." },
-      { q: "What makes information 'confidential'?", a: "Generally, it must be identified as confidential, not publicly known, and provide competitive advantage." }
+      { q: "What is a Non-Disclosure Agreement?", a: "A Non-Disclosure Agreement (NDA) is a legally binding confidentiality agreement that enables parties to share sensitive or proprietary information securely. It means all parties are disclosing confidential information to each other and committing to keep that information confidential." },
+      { q: "When Should You Use a Non-Disclosure Agreement?", a: "Use an NDA when you are sharing confidential or proprietary information with another party and will receive sensitive information from them in return. Common situations include partnerships, vendor agreements, consulting arrangements, business negotiations, and joint ventures where both parties need to exchange confidential data." },
+      { q: "Where can I get a free NDA online?", a: "You can download a Non-Disclosure Agreement instantly from legal document providers. Simply customize your NDA agreement by answering simple questions, and your document will be ready in minutes. No expensive legal fees required." },
+      { q: "Do I need a lawyer to draft an NDA?", a: "Not necessarily. With professionally structured NDA templates, you can create a legally sound agreement without high legal fees. However, you may consult a legal expert for complex cases involving significant confidential information or unusual circumstances." },
+      { q: "What is the cost of an NDA?", a: "Hiring a lawyer may cost between $200–$1,000 or more. With professionally drafted templates, you can enjoy a free or low-cost download and save significantly while maintaining legal validity." },
+      { q: "Does an NDA require notarization?", a: "No, notarization is generally not required for an NDA to be legally enforceable. A properly signed NDA is legally binding as long as both parties have agreed to the terms and signed the document." },
+      { q: "What should I do after creating an NDA?", a: "After downloading your NDA, you can: Edit and review the document carefully, Print or share it digitally with the other party, Sign it electronically or physically, and Ensure both parties receive a signed copy for their records. Store the signed agreement securely." },
+      { q: "What information is included in an NDA?", a: "A comprehensive Non-Disclosure Agreement typically includes: Definition of confidential information, Obligations of both parties to maintain confidentiality, Permitted uses of the information, Duration of confidentiality obligations, Exclusions from confidentiality, Return or destruction of information upon termination, and Remedies for breach including injunctive relief and damages." }
     ],
     keyProtections: [
-      "Clear definition of confidential information",
-      "Permitted uses and disclosures",
-      "Duration of confidentiality obligations",
-      "Return or destruction of materials",
-      "Remedies for breach"
+      "Clear definition of what constitutes confidential information",
+      "Mutual confidentiality obligations for both parties",
+      "Specified duration of confidentiality requirements",
+      "Permitted uses and restrictions on disclosed information",
+      "Requirements for protection and secure handling of information",
+      "Exclusions for information already public or independently developed",
+      "Return or destruction of information upon request or termination",
+      "Legal remedies for breach including injunctive relief",
+      "Governing law and dispute resolution procedures",
+      "Protection of intellectual property and trade secrets"
     ],
     whatYouNeed: [
-      "Party names and addresses",
-      "Description of confidential information",
-      "Purpose of disclosure",
-      "Duration of agreement",
-      "Governing state law"
+      "Names and contact information for both parties",
+      "Description of the confidential information to be shared",
+      "Purpose of the disclosure and planned use",
+      "Duration of the confidentiality obligation",
+      "Permitted recipients of the information within each organization",
+      "Security measures and protection requirements",
+      "Any exclusions from confidentiality",
+      "Consequences for breach and remedies sought",
+      "Return or destruction provisions for information",
+      "Applicable jurisdiction and governing law"
     ],
-    estimatedTime: "8-10 minutes"
+    estimatedTime: "12-18 minutes"
   },
 
   "Independent Contractor Agreement": {
@@ -2049,51 +2066,6 @@ export const documentContent: Record<string, DocumentContent> = {
       "Payment schedule and reporting requirements",
       "Exclusive or non-exclusive rights preference",
       "Any modification or sublicensing restrictions"
-    ],
-    estimatedTime: "15-20 minutes"
-  },
-
-  // === MUTUAL NDA ===
-  "Mutual Non-Disclosure Agreement": {
-    title: "Mutual Non-Disclosure Agreement",
-    otherNames: ["Mutual Confidentiality Agreement", "Mutual NDA", "MNDA", "Bilateral NDA"],
-    whatIs: "A Mutual Non-Disclosure Agreement (Mutual NDA) is a legally binding confidentiality agreement that enables two parties to share and receive sensitive or proprietary information securely. This agreement is ideal when both parties expect to exchange confidential data, such as trade secrets, business plans, financial details, or intellectual property. It clearly defines confidentiality obligations and protects information from unauthorized disclosure, giving both parties legal rights to take action in case of breach.",
-    whenToUse: [
-      "You are sharing confidential or proprietary information with another party",
-      "You will receive sensitive information from another individual or organization",
-      "You are entering into partnerships, vendor agreements, or consulting arrangements",
-      "Both parties need mutual confidentiality protection during negotiations or collaborations"
-    ],
-    faqs: [
-      { q: "Where can I get a free Mutual NDA?", a: "You can download a Mutual Non-Disclosure Agreement template from legal document providers instantly. Simply customize your draft agreement with party information and protected details, and your document will be ready in minutes without expensive attorney fees." },
-      { q: "Do I need a lawyer to draft a Mutual NDA?", a: "Not necessarily. With professionally structured templates, you can create an enforceable Mutual NDA without high legal fees. However, consult a legal expert for particularly complex cases involving significant intellectual property or unique business situations." },
-      { q: "What is the cost of a Mutual NDA?", a: "Hiring a lawyer may cost between $200-$1,000. Using professionally drafted templates, you can enjoy a free or low-cost download and save significantly while still maintaining legal enforceability and comprehensive protection." },
-      { q: "What should I do after creating a Mutual NDA?", a: "After downloading your Mutual NDA, edit and review it for accuracy, then print or share it digitally with the other party. Both parties must sign the document electronically or physically, then each party should receive and securely store a signed copy for their records." },
-      { q: "Does a Mutual NDA require notarization?", a: "No, notarization is generally not required for a Mutual NDA to be legally enforceable. A properly signed agreement between parties is sufficient. However, notarization can add an extra layer of authenticity and may be helpful in certain circumstances or jurisdictions." }
-    ],
-    keyProtections: [
-      "Clear definition of confidential information by both parties",
-      "Bilateral confidentiality obligations and restrictions",
-      "Permitted and prohibited uses of shared information",
-      "Duration and term of confidentiality obligations",
-      "Exceptions to confidentiality (public domain, prior knowledge)",
-      "Return or destruction of confidential materials",
-      "Remedies for breach of confidentiality",
-      "Non-compete and non-solicitation provisions",
-      "Dispute resolution and governing law",
-      "Equal protection for both parties' information"
-    ],
-    whatYouNeed: [
-      "Names and legal information of both parties",
-      "Description of confidential information shared",
-      "Purpose of disclosure and information sharing",
-      "Duration of confidentiality obligations",
-      "Permitted business uses of shared information",
-      "Whether agreement is exclusive or non-exclusive",
-      "Return/destruction procedures for materials",
-      "Remedies and enforcement procedures",
-      "Authorized signatories for both parties",
-      "Governing law and dispute resolution methods"
     ],
     estimatedTime: "15-20 minutes"
   },
@@ -3881,6 +3853,108 @@ export const documentContent: Record<string, DocumentContent> = {
       "Intellectual property details (trademarks, patents, copyrights) and ownership evidence"
     ],
     estimatedTime: "20-30 minutes"
+  },
+
+  // === HEALTHCARE & MEDICAL AGREEMENTS ===
+  "Physician Services Agreement": {
+    title: "Physician Services Agreement",
+    otherNames: ["Medical Services Agreement", "Physician Employment Agreement", "Healthcare Provider Agreement", "Physician Service Contract"],
+    whatIs: "A Physician Services Agreement outlines the duties, responsibilities, compensation, and legal obligations between a healthcare provider and a physician. This agreement helps avoid misunderstandings by clearly defining the scope of medical services, payment terms and schedule, duration of engagement, legal responsibilities, and confidentiality and compliance requirements.\n\nUnlike generic templates found online, a professionally drafted Physician Services Agreement uses professional legal language and is structured for real-world medical practice. This agreement is essential for both short-term and long-term medical service arrangements, protecting both the healthcare provider and the physician by establishing clear expectations and avoiding disputes.",
+    whenToUse: [
+      "You are a hospital or clinic hiring a physician",
+      "You are a physician entering into a service arrangement",
+      "You want to define payment, duties, and timelines clearly",
+      "You want to avoid legal or billing disputes",
+      "You need to establish HIPAA compliance and patient information protection",
+      "You want to clarify independent contractor status or employment relationship"
+    ],
+    faqs: [
+      { q: "Why Is a Physician Services Agreement Important?", a: "Using a properly drafted Physician Services Agreement provides several key benefits: it clearly defines the duration of services, establishes payment terms and deadlines, protects both parties legally, prevents misunderstandings or disputes, and ensures compliance with healthcare laws. Without a written agreement, disputes over payment, responsibilities, or termination can easily arise." },
+      { q: "When Should You Use a Physician Services Agreement?", a: "You should use a Physician Services Agreement if you are a hospital or clinic hiring a physician, a physician entering into a service arrangement, wanting to define payment, duties, and timelines clearly, wanting to avoid legal or billing disputes, or need to ensure compliance with healthcare regulations. This agreement is essential for both short-term and long-term medical service arrangements." },
+      { q: "What Does a Physician Services Agreement Include?", a: "A properly drafted Physician Services Agreement typically includes: Parties' Details (full legal names and addresses), Scope of Services (details of medical services and responsibilities), Term of Agreement (fixed-term or ongoing), Compensation (payment method, frequency, and conditions), Confidentiality & Compliance (HIPAA compliance and patient information protection), Independent Contractor Status (clarifies physician is not an employee), Dispute Resolution (methods for resolving disagreements), and Governing Law (state laws under which agreement is governed)." },
+      { q: "How Much Does a Physician Services Agreement Cost?", a: "Hiring a lawyer to draft a custom agreement may cost hundreds or even thousands of dollars. Using a professionally drafted template from a legal service provider allows you to create a Physician Services Agreement for free or at significantly reduced cost while maintaining legal validity and professional quality." },
+      { q: "What to Do After Creating Your Physician Services Agreement?", a: "Once your agreement is prepared: Review all terms carefully, customize if needed, sign electronically or manually, share a signed copy with the physician or clinic, and store it safely for records. You can easily download the Physician Services Agreement anytime for your records and future reference." },
+      { q: "Can a Lawyer Review My Physician Services Agreement?", a: "Yes. You can consult with experienced legal professionals to review your agreement before signing. Legal review ensures accuracy, compliance with healthcare laws, and legal security. This additional step is recommended for complex arrangements or high-value contracts." }
+    ],
+    keyProtections: [
+      "Clear definition of scope of medical services and duties",
+      "Specified compensation terms, payment method, and frequency",
+      "Defined term of engagement with clear start and end dates",
+      "HIPAA compliance and patient confidentiality requirements",
+      "Independent contractor or employment status clarification",
+      "Dispute resolution procedures and mechanisms",
+      "Governing law and jurisdiction specification",
+      "Termination conditions and notice requirements",
+      "Protection of intellectual property and work product",
+      "Compliance with healthcare regulations and licensing requirements"
+    ],
+    whatYouNeed: [
+      "Healthcare provider name and address",
+      "Physician full legal name and contact information",
+      "Physician license information and state",
+      "Scope of medical services to be provided",
+      "Compensation amount and payment schedule",
+      "Start date and duration of agreement",
+      "Days written notice required for termination",
+      "Malpractice insurance requirements",
+      "Patient confidentiality and HIPAA compliance protocols",
+      "Employee status or independent contractor classification",
+      "Applicable state and local healthcare regulations"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  // === TRANSPORTATION & VEHICLE SERVICES ===
+  "Limousine Service Agreement": {
+    title: "Limousine Service Agreement",
+    otherNames: ["Limo Service Contract", "Limousine Rental Agreement", "Car Service Agreement", "Luxury Transportation Agreement"],
+    whatIs: "A Limousine Service Agreement outlines the responsibilities, payment terms, and expectations between a limousine service provider and a client. This agreement helps prevent disputes by clearly defining the services to be provided, payment terms, duration of service, liability and responsibilities, and cancellation and dispute resolution terms.\n\nUnlike generic templates, a professionally drafted Limousine Service Agreement is designed to meet legal standards while remaining simple and user-friendly, protecting both the service provider and the client.",
+    whenToUse: [
+      "You are hiring a limousine company for an event or business use",
+      "You operate a limo service and want legal protection",
+      "You want clear payment and service terms",
+      "You want to avoid disputes or last-minute cancellations",
+      "You need coverage for weddings, corporate transportation, or special events",
+      "You want to establish liability and insurance expectations"
+    ],
+    faqs: [
+      { q: "What is a Limousine Service Agreement?", a: "A Limousine Service Agreement is a legally binding contract that outlines the responsibilities, payment terms, and expectations between a limousine service provider and a client. It clearly defines the services to be provided, payment terms, duration of service, liability and responsibilities, and cancellation and dispute resolution terms." },
+      { q: "Why Is a Limousine Service Agreement Important?", a: "Using a properly drafted Limousine Service Agreement offers many benefits: it clearly defines roles and responsibilities, prevents misunderstandings over pricing, confirms service duration and expectations, reduces the risk of non-payment, and provides legal protection to both parties. Without a contract, disputes over payment, timing, or service quality can be difficult to resolve." },
+      { q: "What Does a Limousine Service Agreement Include?", a: "A professional Limousine Service Agreement typically includes: Client & Service Provider Details (names, addresses, contact information), Description of Services (type of vehicle, hours, purpose), Payment Terms (rates, deposits, overtime fees, payment deadlines), Term & Schedule (start and end dates), Liability & Insurance (coverage responsibilities), Cancellation & Refund Policy (conditions for cancellation), and Governing Law & Dispute Resolution (legal jurisdiction and dispute process)." },
+      { q: "When Should You Use a Limousine Service Agreement?", a: "You should use a Limousine Service Agreement if you are hiring a limousine company for an event or business use, operate a limo service and want legal protection, want clear payment and service terms, or want to avoid disputes or last-minute cancellations. This agreement is commonly used for weddings, corporate transportation, airport transfers, parties and special events, and VIP transportation services." },
+      { q: "How Much Does a Limousine Service Agreement Cost?", a: "With Legalgram, you can draft a Limousine Service Agreement online and download it for free using a professional template. There are no expensive lawyer fees required to create a comprehensive and legally sound agreement." },
+      { q: "What to Do After Creating Your Agreement?", a: "Once your Limousine Service Agreement is created: Review the document carefully for accuracy, Sign it digitally or manually, Share a copy with the client or service provider, and Keep a signed copy for your records. Store the agreement securely for future reference and dispute resolution if needed." },
+      { q: "Can a Lawyer Review My Limousine Service Agreement?", a: "Yes. If you want added peace of mind, you can consult a legal professional to review your agreement before signing. This ensures compliance with applicable laws and helps avoid future disputes or liability issues." }
+    ],
+    keyProtections: [
+      "Clear definition of services and vehicle specifications",
+      "Specified payment terms, rates, and deposit requirements",
+      "Overtime and additional service charges clearly defined",
+      "Cancellation policy with advance notice requirements",
+      "Liability limitations and insurance coverage responsibilities",
+      "Damage liability and responsibility allocation",
+      "Service duration and scheduling confirmation",
+      "Non-payment and late cancellation penalties",
+      "Dispute resolution and governing law provisions",
+      "Professional conduct and service quality expectations"
+    ],
+    whatYouNeed: [
+      "Client name and contact information",
+      "Service provider/limousine company name and details",
+      "Vehicle specifications and type of limousine",
+      "Service date, time, and duration",
+      "Pickup and drop-off locations",
+      "Purpose of service (wedding, corporate event, etc.)",
+      "Hourly rate or flat fee for service",
+      "Deposit amount and payment due date",
+      "Overtime rates and additional service fees",
+      "Cancellation policy and refund terms",
+      "Insurance and liability information",
+      "Special requests or requirements",
+      "Driver and passenger conduct expectations",
+      "Damage responsibility and liability limits"
+    ],
+    estimatedTime: "12-15 minutes"
   }
 };
 
