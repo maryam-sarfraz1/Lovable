@@ -85,6 +85,10 @@ import RoyaltyAgreementInfo from "./pages/RoyaltyAgreementInfo";
 import BillboardLeaseInfo from "./pages/BillboardLeaseInfo";
 import RestaurantLeaseInfo from "./pages/RestaurantLeaseInfo";
 import GasLeaseInfo from "./pages/GasLeaseInfo";
+import HomeImprovementInfo from "./pages/HomeImprovementInfo";
+import HomeRemodellingInfo from "./pages/HomeRemodellingInfo";
+import InteriorDesignInfo from "./pages/InteriorDesignInfo";
+import JanitorialInfo from "./pages/JanitorialInfo";
 import AccountingContractInfo from "./pages/AccountingContractInfo";
 import BusinessSaleAgreementInfo from "./pages/BusinessSaleContractInfo";
 import ClinicalTrialAgreementInfo from "./pages/ClinicalTrialContractInfo";
@@ -352,6 +356,14 @@ const App = () => {
                 <Route path="/warehouse-lease-form" element={<Documents />} />
                 <Route path="/gas-lease-info" element={<GasLeaseInfo />} />
                 <Route path="/gas-lease-form" element={<Documents />} />
+                <Route path="/home-improvement-contract-info" element={<HomeImprovementInfo />} />
+                <Route path="/home-improvement-contract-form" element={<Documents />} />
+                <Route path="/home-remodelling-agreement-info" element={<HomeRemodellingInfo />} />
+                <Route path="/home-remodelling-agreement-form" element={<Documents />} />
+                <Route path="/interior-design-agreement-info" element={<InteriorDesignInfo />} />
+                <Route path="/interior-design-agreement-form" element={<Documents />} />
+                <Route path="/janitorial-services-agreement-info" element={<JanitorialInfo />} />
+                <Route path="/janitorial-services-agreement-form" element={<Documents />} />
                 <Route path="/security-deposit-return-letter" element={<Documents />} />
                 <Route path="/lease-termination-letter" element={<Documents />} />
                 <Route path="/late-rent-payment-agreement" element={<Documents />} />

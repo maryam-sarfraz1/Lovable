@@ -2,102 +2,113 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, CheckCircle, FileText, Hammer, Shield, Users } from "lucide-react";
+import { ArrowLeft, CheckCircle, FileText, Shield, Wrench } from "lucide-react";
 
-export default function FlooringServicesAgreementInfo() {
+const DrywallContractInfo = () => {
   const navigate = useNavigate();
 
   const whyYouNeed = [
-    "Clearly define scope of flooring services",
-    "Avoid disputes over pricing and materials",
-    "Establish timelines and expectations",
+    "Clearly define work scope and responsibilities",
+    "Avoid confusion about pricing and payments",
+    "Set timelines and project expectations",
     "Protect both contractor and client legally",
     "Ensure smooth project execution",
   ];
 
   const whenToUse = [
-    "You are hiring a contractor for flooring installation or repair",
-    "You are providing flooring services to a client",
-    "You want to define materials, scope, and deadlines",
-    "You need clear payment terms and schedules",
+    "You are hiring a drywall contractor for a project",
+    "You are providing drywall services as a contractor",
+    "You want to define work scope and deliverables",
+    "You need clear payment terms and deadlines",
     "You want legal protection before starting work",
   ];
 
   const keyFeatures = [
-    { title: "1. Parties Details", body: "Identifies contractor and property owner" },
-    { title: "2. Scope of Work", body: "Defines flooring tasks such as installation or repair" },
-    { title: "3. Materials & Specifications", body: "Details type of flooring materials and quality" },
-    { title: "4. Project Timeline", body: "Specifies start date and completion schedule" },
-    { title: "5. Fees & Payment Terms", body: "Outlines cost, deposits, and payment schedule" },
-    { title: "6. Liability & Warranty", body: "Covers workmanship guarantees and dispute resolution" },
+    {
+      title: "1. Parties Details",
+      body: "Clearly identifies the contractor and client",
+    },
+    {
+      title: "2. Scope of Work",
+      body: "Defines all drywall tasks and deliverables",
+    },
+    {
+      title: "3. Project Timeline",
+      body: "Specifies start date, duration, and completion",
+    },
+    {
+      title: "4. Fees & Payment Terms",
+      body: "Outlines cost, payment schedule, and method",
+    },
+    {
+      title: "5. Independent Contractor Clause",
+      body: "Clarifies non-employment relationship",
+    },
+    {
+      title: "6. Liability & Dispute Resolution",
+      body: "Protects both parties legally",
+    },
   ];
 
   const faqs = [
     {
-      q: "Should I use a Flooring Contract for every project?",
-      a: "Yes. A Flooring Contract from Legalgram ensures clarity and protection for all projects.",
+      q: "Should I use a Drywall Contract for small jobs?",
+      a: "Yes. Even for small projects, a Drywall Contract from Legalgram helps avoid misunderstandings.",
     },
     {
-      q: "What should be included in a Flooring Contract?",
-      a: "A draft Flooring Contract should include scope, materials, cost, and timeline.",
+      q: "What should be included in a Drywall Contract?",
+      a: "A draft Drywall Contract should include scope of work, payment terms, and timelines.",
     },
     {
-      q: "Is a Flooring Contract legally binding?",
-      a: "Yes. Once signed, the Flooring Contract on Legalgram is enforceable.",
+      q: "Is a Drywall Contract legally binding?",
+      a: "Yes. Once signed, the Drywall Contract on Legalgram is enforceable.",
     },
     {
-      q: "Can I customize the Flooring Contract?",
-      a: "Yes. You can easily download and customize Flooring Contract from Legalgram.",
+      q: "Can I customize the Drywall Contract?",
+      a: "Yes. You can easily download and customize Drywall Contract from Legalgram.",
     },
-  ];
-
-  const contractTypes = [
-    "Installation projects",
-    "Repair and replacement work",
-    "Maintenance agreements",
-    "Residential or commercial flooring jobs",
   ];
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-4xl mx-auto px-4">
         <Button variant="outline" onClick={() => navigate("/documents")} className="mb-6">
-          <ArrowLeft className="mr-2 h-4 w-4" />
+          <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Documents
         </Button>
 
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="bg-yellow-100 p-3 rounded-full">
-              <Hammer className="h-8 w-8 text-yellow-700" />
+            <div className="bg-blue-100 p-3 rounded-full">
+              <Wrench className="w-8 h-8 text-blue-700" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Flooring Contract Information</h1>
-          <p className="text-lg text-gray-600">Flooring Services Agreement • Flooring Contract • Flooring Agreement</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Drywall Contract Information</h1>
+          <p className="text-lg text-gray-600">Drywall Services Agreement • Drywall Contract • Drywall Agreement</p>
         </div>
 
         <div className="space-y-6">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <FileText className="w-5 h-5 mr-2 text-yellow-600" />
-                What is a Flooring Contract?
+                <FileText className="w-5 h-5 mr-2 text-blue-600" />
+                What is a Drywall Contract?
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-gray-700">
               <p>
-                A Flooring Contract is a legal agreement that defines the terms under which flooring services are provided.
+                A Drywall Contract is a legal agreement used when drywall installation, repair, or finishing services are provided.
               </p>
-              <p>This draft Flooring Contract from Legalgram includes:</p>
+              <p>This draft Drywall Contract from Legalgram includes:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Details of contractor and client</li>
-                <li>Scope of flooring work (installation, repair, maintenance)</li>
-                <li>Materials and specifications</li>
-                <li>Project timeline and deadlines</li>
-                <li>Cost and payment schedule</li>
+                <li>Details of the contractor and client</li>
+                <li>Scope of drywall work</li>
+                <li>Project duration and deadlines</li>
+                <li>Fees and payment schedule</li>
+                <li>Liability and dispute resolution terms</li>
               </ul>
               <p>
-                The best format Flooring Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.
+                The best format Drywall Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.
               </p>
             </CardContent>
           </Card>
@@ -106,12 +117,12 @@ export default function FlooringServicesAgreementInfo() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Shield className="w-5 h-5 mr-2 text-emerald-600" />
-                Why You Need a Flooring Contract
+                Why You Need a Drywall Contract
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-gray-700">
               <p>
-                Creating a draft Flooring Contract is essential for avoiding misunderstandings and ensuring project success. With Legalgram, you can:
+                Creating a draft Drywall Contract is crucial for avoiding misunderstandings and disputes. With Legalgram, you can:
               </p>
               <ul className="list-disc list-inside space-y-1">
                 {whyYouNeed.map((item) => (
@@ -119,7 +130,7 @@ export default function FlooringServicesAgreementInfo() {
                 ))}
               </ul>
               <p>
-                Get your free download Flooring Contract from Legalgram today and secure your project.
+                Get your free download Drywall Contract from Legalgram today and secure your work.
               </p>
             </CardContent>
           </Card>
@@ -127,19 +138,19 @@ export default function FlooringServicesAgreementInfo() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-yellow-600" />
-                When to Use a Flooring Contract
+                <CheckCircle className="w-5 h-5 mr-2 text-blue-600" />
+                When to Use a Drywall Contract
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-gray-700">
-              <p>You should download and draft a Flooring Contract when:</p>
+              <p>You should download and draft a Drywall Contract when:</p>
               <ul className="list-disc list-inside space-y-1">
                 {whenToUse.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
               <p>
-                The Flooring Contract on Legalgram is ideal for contractors, homeowners, and businesses.
+                The Drywall Contract on Legalgram is ideal for both professionals and clients.
               </p>
             </CardContent>
           </Card>
@@ -147,8 +158,8 @@ export default function FlooringServicesAgreementInfo() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Users className="w-5 h-5 mr-2 text-purple-600" />
-                Key Features of the Best Flooring Contract Format
+                <Wrench className="w-5 h-5 mr-2 text-purple-600" />
+                Key Features of the Best Drywall Contract Format
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -167,43 +178,28 @@ export default function FlooringServicesAgreementInfo() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <FileText className="w-5 h-5 mr-2 text-indigo-600" />
-                How Does a Flooring Contract Work?
+                How Does a Drywall Contract Work?
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 text-gray-700">
               <p>
-                A draft Flooring Contract from Legalgram works by clearly documenting all agreed terms before the project begins.
+                A draft Drywall Contract from Legalgram works by documenting all agreed terms before the project begins.
               </p>
               <p>It ensures:</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Clear communication between contractor and client</li>
-                <li>Proper execution of flooring work</li>
+                <li>Transparency between contractor and client</li>
+                <li>Clear expectations and deliverables</li>
                 <li>Legal protection in case of disputes</li>
               </ul>
               <p>
-                Download Flooring Contract from Legalgram to manage your flooring project professionally and efficiently.
+                Download Drywall Contract from Legalgram to ensure your drywall project runs smoothly and professionally.
               </p>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Types of Flooring Contracts</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-3">
-                {contractTypes.map((item) => (
-                  <div key={item} className="rounded-lg border p-4 bg-gray-50 text-gray-700">
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Flooring Contract FAQs</CardTitle>
+              <CardTitle>Drywall Contract FAQs</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               {faqs.map((faq) => (
@@ -217,7 +213,7 @@ export default function FlooringServicesAgreementInfo() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Download Flooring Contract - Legalgram</CardTitle>
+              <CardTitle>Download Drywall Contract - Legalgram</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
@@ -238,13 +234,13 @@ export default function FlooringServicesAgreementInfo() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Ready to Create Your Flooring Contract?</CardTitle>
+              <CardTitle>Ready to Create Your Drywall Contract?</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 mb-4">
-                Start the guided form to build a flooring contract tailored to your project scope, materials, deadlines, and payment terms.
+                Start the guided form to build a drywall services agreement tailored to your project scope, duration, and payment terms.
               </p>
-              <Button onClick={() => navigate("/flooring-services-agreement-form")} className="bg-yellow-600 hover:bg-yellow-700">
+              <Button onClick={() => navigate("/documents") }>
                 <FileText className="w-4 h-4 mr-2" />
                 Start Creating Your Agreement
               </Button>
@@ -254,4 +250,6 @@ export default function FlooringServicesAgreementInfo() {
       </div>
     </div>
   );
-}
+};
+
+export default DrywallContractInfo;

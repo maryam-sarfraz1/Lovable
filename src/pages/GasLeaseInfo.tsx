@@ -1,135 +1,129 @@
 import React from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Fuel, FileText, Shield, DollarSign, Users, CheckCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const GasLeaseInfo = () => {
   const navigate = useNavigate();
 
+  const whyYouNeed = [
+    "Clearly define drilling and development rights",
+    "Avoid disputes over royalties and rental payments",
+    "Set surface-use, environmental, and access terms",
+    "Document obligations for both lessor and lessee",
+    "Protect property owners and operators legally",
+  ];
+
+  const whenToUse = [
+    "Leasing land for oil and gas exploration",
+    "Mineral rights development",
+    "Hydrocarbon extraction operations",
+    "Energy development projects",
+    "Natural gas drilling and production",
+  ];
+
+  const keyFeatures = [
+    { title: "Exclusive Drilling Rights", body: "Complete exploration, drilling, and extraction rights for oil, gas, and hydrocarbons" },
+    { title: "Royalty Provisions", body: "Detailed oil, gas, and casinghead gasoline royalty terms" },
+    { title: "Development Obligations", body: "Clear drilling and development requirements with offset well provisions" },
+    { title: "Payment Terms", body: "Structured rental and royalty payment schedules" },
+    { title: "Surface Use Rights", body: "Balanced rights for surface use by both lessor and lessee" },
+    { title: "Tax Allocation", body: "Clear division of tax responsibilities between parties" },
+  ];
+
+  const faqs = [
+    {
+      q: "What does a Gas Lease Agreement cover?",
+      a: "It covers the leased premises, drilling and production rights, royalty rates, rental payments, development obligations, surface-use rights, assignment rules, and default or termination procedures.",
+    },
+    {
+      q: "Is a Gas Lease Agreement different from an Oil Lease?",
+      a: "Yes. A Gas Lease Agreement is tailored to natural gas rights and may address gas-specific production, royalty, and operational terms.",
+    },
+    {
+      q: "Why is a written Gas Lease Agreement important?",
+      a: "It prevents disputes by documenting who may develop the property, how compensation is calculated, what obligations the lessee must follow, and how the agreement can end or be transferred.",
+    },
+    {
+      q: "Can I customize a Gas Lease Agreement?",
+      a: "Yes. You can customize the agreement to fit the property, royalty structure, drilling rights, environmental obligations, and negotiated special terms.",
+    },
+  ];
+
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8 max-w-4xl">
-        {/* Header Section */}
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
             <div className="p-3 bg-blue-100 rounded-full">
               <Fuel className="h-8 w-8 text-blue-600" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
-            Gas Lease Agreement
-          </h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Gas Lease Agreement Information</h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Create a comprehensive gas lease agreement for oil and gas exploration, drilling, and mineral rights with professional legal protection
+            Gas Lease Agreement • Natural Gas Lease Agreement • Oil and Gas Lease Agreement
           </p>
         </div>
 
-        {/* Key Features */}
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-600" />
-              What's Included in Your Gas Lease Agreement
+              <FileText className="h-5 w-5 text-blue-600" />
+              What is a Gas Lease Agreement?
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold">Exclusive Drilling Rights</h4>
-                    <p className="text-sm text-gray-600">Complete exploration, drilling, and extraction rights for oil, gas, and hydrocarbons</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold">Royalty Provisions</h4>
-                    <p className="text-sm text-gray-600">Detailed oil, gas, and casinghead gasoline royalty terms</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold">Development Obligations</h4>
-                    <p className="text-sm text-gray-600">Clear drilling and development requirements with offset well provisions</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold">Payment Terms</h4>
-                    <p className="text-sm text-gray-600">Structured rental and royalty payment schedules</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold">Surface Use Rights</h4>
-                    <p className="text-sm text-gray-600">Balanced rights for surface use by both lessor and lessee</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold">Assignment Provisions</h4>
-                    <p className="text-sm text-gray-600">Rules for transferring lease rights and interests</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold">Default & Termination</h4>
-                    <p className="text-sm text-gray-600">Clear procedures for addressing lease violations and termination</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <div>
-                    <h4 className="font-semibold">Tax Allocation</h4>
-                    <p className="text-sm text-gray-600">Clear division of tax responsibilities between parties</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <CardContent className="space-y-3 text-gray-700">
+            <p>
+              A Gas Lease Agreement is a legally binding contract that grants a lessee the right to explore, drill, produce, and develop natural gas or related hydrocarbon resources on a property owned by the lessor.
+            </p>
+            <p>
+              It defines the scope of the gas rights being leased, royalty and rental terms, operational obligations, and the conditions under which the lease may continue, renew, or terminate.
+            </p>
+            <p>
+              A properly drafted Gas Lease Agreement gives both parties clarity on compensation, land use, and compliance obligations before any development begins.
+            </p>
           </CardContent>
         </Card>
 
-        {/* When to Use */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Shield className="h-5 w-5 text-green-600" />
+              Why You Need a Gas Lease Agreement
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-gray-700">
+              Creating a draft Gas Lease Agreement is essential for preventing disputes and documenting the rights and obligations of both parties.
+            </p>
+            <ul className="space-y-2">
+              {whyYouNeed.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                  <span className="text-sm text-gray-700">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <FileText className="h-5 w-5 text-blue-600" />
+                <Users className="h-5 w-5 text-blue-600" />
                 When to Use This Agreement
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Leasing land for oil and gas exploration</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Mineral rights development</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Hydrocarbon extraction operations</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Energy development projects</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Natural gas drilling and production</span>
-              </div>
+              {whenToUse.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
+                  <span className="text-sm text-gray-700">{item}</span>
+                </div>
+              ))}
             </CardContent>
           </Card>
 
@@ -143,29 +137,47 @@ const GasLeaseInfo = () => {
             <CardContent className="space-y-3">
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Comprehensive royalty protection</span>
+                <span className="text-sm text-gray-700">Royalty protection and payment clarity</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Environmental compliance provisions</span>
+                <span className="text-sm text-gray-700">Environmental compliance provisions</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Operational standards requirements</span>
+                <span className="text-sm text-gray-700">Operational standards requirements</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Property restoration obligations</span>
+                <span className="text-sm text-gray-700">Property restoration obligations</span>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle className="h-4 w-4 text-green-600 mt-1 flex-shrink-0" />
-                <span className="text-sm">Default cure procedures</span>
+                <span className="text-sm text-gray-700">Default cure procedures</span>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Key Terms */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <CheckCircle className="h-5 w-5 text-purple-600" />
+              Key Features of the Best Gas Lease Agreement Format
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-2 gap-4">
+              {keyFeatures.map((feature) => (
+                <div key={feature.title} className="rounded-lg border p-4 bg-white">
+                  <h4 className="font-semibold text-gray-900 mb-1">{feature.title}</h4>
+                  <p className="text-sm text-gray-700">{feature.body}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -209,7 +221,6 @@ const GasLeaseInfo = () => {
           </CardContent>
         </Card>
 
-        {/* Process */}
         <Card className="mb-8">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -243,10 +254,23 @@ const GasLeaseInfo = () => {
           </CardContent>
         </Card>
 
-        {/* CTA */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle>Gas Lease Agreement FAQs</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="rounded-lg border p-4 bg-white">
+                <h4 className="font-semibold text-gray-900">{faq.q}</h4>
+                <p className="text-gray-700 mt-1">{faq.a}</p>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+
         <div className="text-center">
-          <Button 
-            onClick={() => navigate('/gas-lease-form')} 
+          <Button
+            onClick={() => navigate('/gas-lease-form')}
             size="lg"
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3"
           >

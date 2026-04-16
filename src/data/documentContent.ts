@@ -1013,6 +1013,245 @@ export const documentContent: Record<string, DocumentContent> = {
     ],
     estimatedTime: "10-15 minutes"
   },
+  "Home Improvement Contract": {
+    title: "Home Improvement Contract",
+    otherNames: ["Renovation Agreement", "Remodeling Contract", "Home Renovation Contract"],
+    whatIs: "A Home Improvement Contract is a legal agreement that outlines the terms under which home improvement services are provided. This draft Home Improvement Contract from Legalgram includes details of contractor and property owner, scope of work (renovation, repair, remodeling), project timeline and deadlines, cost and payment schedule, and liability, confidentiality, and dispute resolution clauses. The best format Home Improvement Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are hiring a contractor for renovation or remodeling",
+      "You are providing home improvement services",
+      "You want to define tasks, materials, and deadlines",
+      "You need clear payment terms",
+      "You want legal protection before starting work"
+    ],
+    faqs: [
+      {
+        q: "Do I need a Home Improvement Contract for small projects?",
+        a: "Yes. A Home Improvement Contract from Legalgram helps avoid misunderstandings even for small jobs."
+      },
+      {
+        q: "What should be included in a Home Improvement Contract?",
+        a: "A draft Home Improvement Contract should include scope, cost, timeline, and legal clauses."
+      },
+      {
+        q: "Is a Home Improvement Contract legally binding?",
+        a: "Yes. Once signed, the Home Improvement Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Home Improvement Contract?",
+        a: "Yes. You can easily download and customize the Home Improvement Contract from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly define scope of work and responsibilities",
+      "Avoid confusion about costs and payments",
+      "Establish timelines and expectations",
+      "Protect both contractor and client legally",
+      "Ensure smooth execution of the project",
+      "Supports dispute resolution and accountability"
+    ],
+    whatYouNeed: [
+      "Contractor and property owner legal names and contact details",
+      "Project location and work description",
+      "Project timeline and completion deadline",
+      "Cost, deposit, and payment schedule",
+      "Materials and specifications",
+      "Liability and dispute resolution terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Interior Design Agreement": {
+    title: "Interior Design Agreement",
+    otherNames: ["Interior Design Contract", "Design Services Agreement", "Interior Decorating Agreement"],
+    whatIs: "An Interior Design Contract is a legal agreement that outlines the terms and conditions under which interior design services are provided. This draft Interior Design Contract from Legalgram includes details of the interior designer and client, scope of design services (residential or commercial), project timeline and milestones, fees and payment schedule, and responsibilities, liabilities, and dispute resolution clauses. The best format Interior Design Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are providing interior design services to a client",
+      "You are hiring an interior designer for your home or office",
+      "You want to define scope, deliverables, and timelines",
+      "You need clear payment terms",
+      "You want legal protection before starting work"
+    ],
+    faqs: [
+      {
+        q: "Why is an Interior Design Contract important?",
+        a: "An Interior Design Contract from Legalgram helps avoid disputes, defines responsibilities, and ensures smooth project execution."
+      },
+      {
+        q: "What should be included in an Interior Design Contract?",
+        a: "A draft Interior Design Contract should include scope, cost, timeline, and legal clauses."
+      },
+      {
+        q: "Is an Interior Design Contract legally binding?",
+        a: "Yes. Once signed, the Interior Design Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Interior Design Contract?",
+        a: "Yes. You can easily download and customize Interior Design Contract from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly define scope of design services",
+      "Avoid disputes over pricing and deliverables",
+      "Establish timelines and expectations",
+      "Protect both designer and client legally",
+      "Ensure smooth execution of the project",
+      "Includes confidentiality and liability protections"
+    ],
+    whatYouNeed: [
+      "Interior designer and client legal names and contact details",
+      "Project location and design brief",
+      "Project timeline and milestones",
+      "Fees, deposits, and payment schedule",
+      "Responsibilities and deliverables",
+      "Liability and dispute resolution terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Home Remodelling Agreement": {
+    title: "Home Remodelling Agreement",
+    otherNames: ["Remodelling Contract", "Home Renovation Contract", "Remodeling Contract"],
+    whatIs: "A Remodelling Contract is a legal agreement that sets out the terms under which remodelling services are provided. This draft Remodelling Contract from Legalgram includes details of contractor and client, scope of remodelling work (renovation, upgrades, repairs), project timeline and deadlines, cost and payment schedule, and liability, confidentiality, and dispute resolution clauses. The best format Remodelling Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are hiring a contractor for renovation or remodelling",
+      "You are providing remodelling services to a client",
+      "You want to define project scope and deliverables",
+      "You need clear payment terms and deadlines",
+      "You want legal protection before starting work"
+    ],
+    faqs: [
+      {
+        q: "Why is a Remodelling Contract important?",
+        a: "A Remodelling Contract from Legalgram helps avoid disputes, defines responsibilities, and ensures timely completion."
+      },
+      {
+        q: "What should be included in a Remodelling Contract?",
+        a: "A draft Remodelling Contract should include scope, cost, timeline, and legal clauses."
+      },
+      {
+        q: "Is a Remodelling Contract legally binding?",
+        a: "Yes. Once signed, the Remodelling Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Remodelling Contract?",
+        a: "Yes. You can easily download and customize the Remodelling Contract from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly define scope of work and expectations",
+      "Avoid confusion about pricing and payments",
+      "Establish timelines and milestones",
+      "Protect both contractor and client legally",
+      "Ensure smooth execution of remodelling work",
+      "Supports dispute resolution and accountability"
+    ],
+    whatYouNeed: [
+      "Contractor and client legal names and contact details",
+      "Project scope and deliverables",
+      "Project timeline and milestones",
+      "Cost, deposit, and payment schedule",
+      "Materials and specifications",
+      "Liability and dispute resolution terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Janitorial Services Agreement": {
+    title: "Janitorial Services Agreement",
+    otherNames: ["Janitorial Contract", "Cleaning Services Agreement", "Cleaning Contract"],
+    whatIs: "A Janitorial Contract is a comprehensive agreement that defines the scope and terms of cleaning services between a service provider and a client. This draft Janitorial Contract from Legalgram includes details of the service provider and client, scope of cleaning services (floors, windows, bathrooms, etc.), frequency of services (one-time or recurring), payment terms and schedule, and liability, confidentiality, and dispute resolution clauses. The best format Janitorial Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are providing janitorial or cleaning services",
+      "You are hiring a cleaning company for your property",
+      "You need recurring or one-time cleaning services",
+      "You want to define scope, schedule, and payment terms",
+      "You want legal protection before starting services"
+    ],
+    faqs: [
+      {
+        q: "Do I need a Janitorial Contract for small cleaning jobs?",
+        a: "Yes. A Janitorial Contract from Legalgram helps avoid misunderstandings even for one-time services."
+      },
+      {
+        q: "What should be included in a Janitorial Contract?",
+        a: "A draft Janitorial Contract should include scope, schedule, cost, and legal clauses."
+      },
+      {
+        q: "Is a Janitorial Contract legally binding?",
+        a: "Yes. Once signed, the Janitorial Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Janitorial Contract?",
+        a: "Yes. You can easily download and customize Janitorial Contract from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly define cleaning tasks and responsibilities",
+      "Avoid disputes over payment and scheduling",
+      "Establish service timelines and expectations",
+      "Protect both service provider and client legally",
+      "Ensure consistent and professional cleaning services",
+      "Supports confidentiality and dispute resolution"
+    ],
+    whatYouNeed: [
+      "Service provider and client legal names and contact details",
+      "Property address and cleaning location details",
+      "Scope of cleaning services and frequency",
+      "Payment terms, fees, and schedule",
+      "Liability, confidentiality, and dispute terms",
+      "Start date and service timeline"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Gas Lease Agreement": {
+    title: "Gas Lease Agreement",
+    otherNames: ["Gas Lease", "Oil and Gas Lease Agreement", "Natural Gas Lease Agreement"],
+    whatIs: "A Gas Lease Agreement is a legally binding contract that grants a lessee the right to explore, drill, produce, and develop natural gas or related hydrocarbon resources on a property owned by the lessor. It defines the scope of the gas rights being leased, royalty and rental terms, operational obligations, and the conditions under which the lease may continue, renew, or terminate. A properly drafted Gas Lease Agreement gives both parties clarity on compensation, land use, and compliance obligations before any development begins.",
+    whenToUse: [
+      "You are leasing land for natural gas exploration or production",
+      "You need to define royalty payments and rental terms for gas rights",
+      "You want to document drilling, development, and surface-use permissions",
+      "You are negotiating mineral rights or hydrocarbon extraction rights",
+      "You want a written agreement before any energy development begins"
+    ],
+    faqs: [
+      {
+        q: "What does a Gas Lease Agreement cover?",
+        a: "A Gas Lease Agreement typically covers the leased premises, drilling and production rights, royalty rates, rental payments, development obligations, surface-use rights, assignment rules, and default or termination procedures."
+      },
+      {
+        q: "Is a Gas Lease Agreement different from an Oil Lease?",
+        a: "Yes. While they are similar, a Gas Lease Agreement is tailored to natural gas rights and may address gas-specific production, royalty, and operational terms, while an Oil Lease may focus more broadly on petroleum extraction."
+      },
+      {
+        q: "Why is a written Gas Lease Agreement important?",
+        a: "A written Gas Lease Agreement helps prevent disputes by documenting who may develop the property, how compensation is calculated, what obligations the lessee must follow, and how the agreement can end or be transferred."
+      },
+      {
+        q: "Can I customize a Gas Lease Agreement?",
+        a: "Yes. You can customize the agreement to fit the property, royalty structure, drilling rights, environmental obligations, and any special terms negotiated by the parties."
+      }
+    ],
+    keyProtections: [
+      "Clearly defined drilling and production rights",
+      "Royalty and rental payment terms",
+      "Surface-use and access permissions",
+      "Development and maintenance obligations",
+      "Assignment, default, and termination terms",
+      "Compensation and tax allocation clarity"
+    ],
+    whatYouNeed: [
+      "Lessor and lessee legal names and contact details",
+      "Property address and legal description",
+      "Royalty rate and rental payment terms",
+      "Drilling, production, and surface-use permissions",
+      "Lease term, renewal, and termination conditions",
+      "Assignment and default provisions"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
 
   // === FAMILY & PERSONAL ===
   "Prenuptial Agreement": {
@@ -3232,6 +3471,578 @@ export const documentContent: Record<string, DocumentContent> = {
       "Cancellation and refund policy terms"
     ],
     estimatedTime: "15-20 minutes"
+  },
+
+  "Architectural Services Agreement": {
+    title: "Architectural Services Agreement",
+    otherNames: [
+      "Architect Contract",
+      "Architectural Contract",
+      "Architecture Services Contract"
+    ],
+    whatIs: "An Architect Contract is a legally binding agreement that sets out the terms between an architect and a client for architectural services. This draft Architect Contract from Legalgram includes details of the client and architect, scope of architectural services, project timelines and milestones, fees and payment schedule, and confidentiality and liability clauses. The best format Architect Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are providing architectural services to a client",
+      "You are hiring an architect for a construction project",
+      "You want to define project scope and deliverables",
+      "You need to set payment terms and timelines",
+      "You want legal protection before starting work"
+    ],
+    faqs: [
+      {
+        q: "Do I need an Architect Contract for every project?",
+        a: "Yes. A written Architect Contract from Legalgram ensures clarity and protection, even for small projects."
+      },
+      {
+        q: "What should be included in an Architect Contract?",
+        a: "A draft Architect Contract should include services, fees, timelines, and legal clauses."
+      },
+      {
+        q: "Is an Architect Contract legally binding?",
+        a: "Yes. Once signed, the Architect Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Architect Contract?",
+        a: "Yes. You can download and customize the Architect Contract from Legalgram based on your project needs."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines roles and responsibilities",
+      "Sets expectations for deliverables and timelines",
+      "Establishes payment terms and invoicing schedules",
+      "Protects sensitive project information through confidentiality terms",
+      "Defines liability and dispute resolution mechanisms",
+      "Reduces risk of misunderstandings and legal disputes"
+    ],
+    whatYouNeed: [
+      "Architect and client full legal names and contact information",
+      "Project scope, design deliverables, and service description",
+      "Project timeline with start date, milestones, and completion target",
+      "Fee structure, payment schedule, and invoicing terms",
+      "Confidentiality obligations",
+      "Liability and dispute resolution terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Billboard Lease Agreement": {
+    title: "Billboard Lease Agreement",
+    otherNames: [
+      "Billboard Lease Contract",
+      "Outdoor Advertising Lease",
+      "Billboard Site Lease"
+    ],
+    whatIs: "A Billboard Lease Agreement is a legally binding contract between a property owner (lessor) and an advertiser or billboard company (lessee), allowing the placement of a billboard on a specific property. This draft Billboard Lease Agreement from Legalgram includes property description and location, details of the lessor and lessee, lease duration and renewal terms, rental amount and payment schedule, and maintenance and utility responsibilities. The best format Billboard Lease Agreement from Legalgram ensures clarity, transparency, and legal protection for both parties.",
+    whenToUse: [
+      "You want to lease your land for billboard advertising",
+      "You need permission to place a billboard on someone else's property",
+      "You want to define lease duration and payment terms",
+      "You want legal protection for both parties",
+      "You want to avoid disputes regarding usage and access"
+    ],
+    faqs: [
+      {
+        q: "Is a Billboard Lease Agreement legally binding?",
+        a: "Yes. A properly signed Billboard Lease Agreement from Legalgram is enforceable by law."
+      },
+      {
+        q: "What happens if I do not use a Billboard Lease Agreement?",
+        a: "Without a draft Billboard Lease Agreement, you risk payment disputes, unclear terms, and legal issues."
+      },
+      {
+        q: "What should be included in a Billboard Lease Agreement?",
+        a: "A Billboard Lease Agreement draft should include property details, rent, duration, and responsibilities."
+      },
+      {
+        q: "Can I customize the Billboard Lease Agreement?",
+        a: "Yes. You can download and customize Billboard Lease Agreement from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines rental income and payment terms",
+      "Establishes responsibilities for maintenance and utilities",
+      "Prevents misunderstandings between owner and advertiser",
+      "Protects property rights and access rights",
+      "Supports long-term lease stability and enforceability",
+      "Provides legal protection in case of disputes"
+    ],
+    whatYouNeed: [
+      "Property description and precise location of billboard site",
+      "Lessor and lessee legal names and contact details",
+      "Lease start date, term length, renewal terms, and termination conditions",
+      "Rent amount, due dates, and payment method",
+      "Access rights, utilities, and installation responsibilities",
+      "Maintenance obligations, liability terms, and damage procedures"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Carpentry Contract": {
+    title: "Carpentry Contract",
+    otherNames: [
+      "Carpentry Services Agreement",
+      "Woodwork Contract",
+      "Carpenter Agreement"
+    ],
+    whatIs: "A Carpentry Contract is a legally binding agreement used when carpentry or woodwork services are provided. This draft Carpentry Contract from Legalgram includes details of the carpenter and client, scope of carpentry work, project duration and deadlines, fees and payment schedule, and liability and dispute resolution terms. The best format Carpentry Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are hiring a carpenter for a project",
+      "You are providing carpentry services as an independent contractor",
+      "You want to define work scope and deliverables",
+      "You need clear payment terms and deadlines",
+      "You want legal protection before starting work"
+    ],
+    faqs: [
+      {
+        q: "Should I use a Carpentry Contract for small jobs?",
+        a: "Yes. Even for small projects, a Carpentry Contract from Legalgram helps avoid misunderstandings."
+      },
+      {
+        q: "What should be included in a Carpentry Contract?",
+        a: "A draft Carpentry Contract should include scope of work, payment terms, and timelines."
+      },
+      {
+        q: "Is a Carpentry Contract legally binding?",
+        a: "Yes. Once signed, the Carpentry Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Carpentry Contract?",
+        a: "Yes. You can easily download and customize Carpentry Contract from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines scope of work and responsibilities",
+      "Avoids confusion about pricing and payment terms",
+      "Sets timelines and project expectations",
+      "Clarifies independent contractor status",
+      "Protects both carpenter and client legally",
+      "Provides dispute resolution and liability safeguards"
+    ],
+    whatYouNeed: [
+      "Carpenter and client full legal names and contact details",
+      "Detailed scope of carpentry work and deliverables",
+      "Project start date, duration, and completion deadline",
+      "Total fee, payment schedule, and payment method",
+      "Independent contractor and liability terms",
+      "Dispute resolution terms and governing law details"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Catering Agreement": {
+    title: "Catering Agreement",
+    otherNames: [
+      "Catering Contract",
+      "Event Catering Agreement",
+      "Catering Services Contract"
+    ],
+    whatIs: "A Catering Contract is a legally binding agreement between a caterer and a client that sets out all details related to food services for an event. This draft Catering Contract from Legalgram includes event details (date, venue, number of guests), menu selection and food services, pricing and payment schedule, responsibilities of caterer and client, and liability, insurance, and cancellation terms. The best format Catering Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are hiring a caterer for a wedding, party, or corporate event",
+      "You run a catering business and need a client agreement",
+      "You are an event planner managing catering services",
+      "You own a restaurant offering catering services",
+      "You want to define menu, pricing, and service terms"
+    ],
+    faqs: [
+      {
+        q: "Do I need a Catering Contract for small events?",
+        a: "Yes. A Catering Contract from Legalgram helps avoid misunderstandings, even for small gatherings."
+      },
+      {
+        q: "What should a Catering Contract include?",
+        a: "A draft Catering Contract should include menu, pricing, event details, and legal terms."
+      },
+      {
+        q: "Is a Catering Contract legally binding?",
+        a: "Yes. Once signed, the Catering Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Catering Contract?",
+        a: "Yes. You can easily download and customize Catering Contract from Legalgram to fit your needs."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines catering services and expectations",
+      "Avoids disputes over pricing and menu items",
+      "Establishes timelines and service standards",
+      "Protects both caterer and client legally",
+      "Supports smooth coordination on event day",
+      "Includes cancellation, liability, and insurance terms"
+    ],
+    whatYouNeed: [
+      "Caterer and client legal names with contact details",
+      "Event date, venue, duration, and expected number of guests",
+      "Menu items, dietary requirements, and service type",
+      "Total price, deposit amount, payment schedule, and payment method",
+      "Cancellation, refund, and change-request terms",
+      "Liability, food safety, insurance, and dispute resolution terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Co-Signer Agreement": {
+    title: "Co-Signer Agreement",
+    otherNames: [
+      "Cosigner Agreement",
+      "Guarantor Agreement",
+      "Lease Cosigner Agreement"
+    ],
+    whatIs: "A Co-Signer Agreement is a legal document where a third party (co-signer) agrees to take financial responsibility for a tenant's obligations under a lease if the tenant fails to pay. This draft Co-Signer Agreement from Legalgram includes details of the tenant, landlord, and co-signer, financial obligations and guarantees, rent and payment responsibilities, and terms linked to the main lease agreement. The best format Co-Signer Agreement from Legalgram ensures security for landlords and support for tenants.",
+    whenToUse: [
+      "A tenant has low, poor, or no credit history",
+      "A tenant is unemployed or financially unstable",
+      "A landlord requires additional financial security",
+      "A parent, friend, or guarantor agrees to support the tenant",
+      "You want to strengthen a lease or tenancy agreement"
+    ],
+    faqs: [
+      {
+        q: "Is a Co-Signer Agreement legally binding?",
+        a: "Yes. A properly signed Co-Signer Agreement from Legalgram is enforceable."
+      },
+      {
+        q: "Who can be a co-signer?",
+        a: "A financially stable individual such as a parent, friend, or guarantor."
+      },
+      {
+        q: "What does a co-signer agree to?",
+        a: "They agree to pay rent or other obligations if the tenant fails."
+      },
+      {
+        q: "Can I customize the Co-Signer Agreement?",
+        a: "Yes. You can easily download and customize Co-Signer Agreement from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Provides assurance of rent payments to landlords",
+      "Clearly defines co-signer financial responsibility",
+      "Reduces risk of missed payments",
+      "Strengthens lease agreements with third-party guarantee",
+      "Supports tenants with low or no credit",
+      "Includes legal protection and dispute resolution terms"
+    ],
+    whatYouNeed: [
+      "Landlord, tenant, and co-signer legal names and contact details",
+      "Reference to the main lease or tenancy agreement",
+      "Rent amount, utilities, and payment responsibility terms",
+      "Financial guarantee obligations of the co-signer",
+      "Duration and limits of co-signer liability",
+      "Signature details for landlord and all co-signers"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Condominium Lease Agreement": {
+    title: "Condominium Lease Agreement",
+    otherNames: [
+      "Condo Lease Agreement",
+      "Condominium Rental Agreement",
+      "Condo Tenancy Agreement"
+    ],
+    whatIs: "A Condominium Lease Agreement is a legal contract between a condo owner (landlord) and a tenant that defines the terms of renting a residential condominium. This draft Condominium Lease Agreement from Legalgram includes property details and address, landlord and tenant information, lease duration and tenancy terms, rent amount and payment schedule, and utilities, maintenance, and HOA rules. The best format Condominium Lease Agreement from Legalgram ensures clarity, compliance, and legal protection for both parties.",
+    whenToUse: [
+      "You own a condo and want to rent it out",
+      "You want a formal tenancy agreement with a tenant",
+      "You need to define rent, duration, and conditions",
+      "You want to include HOA rules and restrictions",
+      "You want legal protection for your rental property"
+    ],
+    faqs: [
+      {
+        q: "Is a Condominium Lease Agreement legally binding?",
+        a: "Yes. A properly signed Condominium Lease Agreement from Legalgram is enforceable by law."
+      },
+      {
+        q: "Who should use a Condominium Lease Agreement?",
+        a: "Property owners renting out condos and tenants seeking a formal tenancy agreement."
+      },
+      {
+        q: "What should be included in a Condominium Lease Agreement?",
+        a: "A draft Condominium Lease Agreement should include rent, duration, property details, and rules."
+      },
+      {
+        q: "Can I customize the Condominium Lease Agreement?",
+        a: "Yes. You can easily download and customize Condominium Lease Agreement from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines rental terms and responsibilities",
+      "Ensures timely rent payments",
+      "Protects landlord and tenant rights",
+      "Includes HOA and community rules",
+      "Supports compliance with local rental laws",
+      "Reduces legal disputes and misunderstandings"
+    ],
+    whatYouNeed: [
+      "Landlord and tenant full legal names and contact details",
+      "Condominium property address and unit details",
+      "Lease start date, term, and renewal conditions",
+      "Rent amount, due date, and payment penalties",
+      "HOA rules for pets, guests, parking, and facilities",
+      "Maintenance and utilities responsibilities"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Construction Contract": {
+    title: "Construction Contract",
+    otherNames: [
+      "Construction Agreement",
+      "Contractor Agreement",
+      "Building Contract"
+    ],
+    whatIs: "A Construction Contract is a legal agreement between a contractor and a property owner that defines all aspects of a construction project. This draft Construction Contract from Legalgram includes project scope and specifications, roles and responsibilities of both parties, cost estimates and payment schedule, timeline and milestones, and terms for delays, disputes, and unexpected events. The best format Construction Contract from Legalgram ensures clarity, transparency, and legal protection for all parties involved.",
+    whenToUse: [
+      "You are a contractor handling construction or renovation work",
+      "You are hiring a contractor for a project",
+      "You want to define scope, materials, and timelines",
+      "You need clear payment and milestone terms",
+      "You want legal protection before starting construction"
+    ],
+    faqs: [
+      {
+        q: "Why is a Construction Contract important?",
+        a: "A Construction Contract from Legalgram prevents disputes, defines responsibilities, and ensures timely completion."
+      },
+      {
+        q: "What should a Construction Contract include?",
+        a: "A draft Construction Contract should include scope, cost, timeline, and legal clauses."
+      },
+      {
+        q: "Is a Construction Contract legally binding?",
+        a: "Yes. Once signed, the Construction Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Construction Contract?",
+        a: "Yes. You can easily download and customize Construction Contract from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines work scope and expectations",
+      "Avoids confusion about pricing and payments",
+      "Sets timelines and project milestones",
+      "Protects both contractor and property owner legally",
+      "Manages risks such as delays and material shortages",
+      "Includes dispute resolution and liability terms"
+    ],
+    whatYouNeed: [
+      "Contractor and property owner legal names and contact details",
+      "Project scope, materials, and specifications",
+      "Start date, milestones, and completion date",
+      "Total contract price and payment schedule",
+      "Insurance and liability coverage details",
+      "Dispute resolution terms and unexpected-event clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Construction Management Agreement": {
+    title: "Construction Management Agreement",
+    otherNames: [
+      "Construction Manager Agreement",
+      "Construction Project Management Agreement",
+      "Owner's Representative Agreement"
+    ],
+    whatIs: "A Construction Management Agreement is a legal contract between a property owner and a construction manager that outlines how a construction project will be planned, supervised, and executed. This draft Construction Management Agreement from Legalgram includes project description and scope, roles and responsibilities of the construction manager, timeline and milestones, fees and payment terms, and liability, confidentiality, and dispute clauses. The best format Construction Management Agreement from Legalgram ensures clarity, efficiency, and legal protection for both parties.",
+    whenToUse: [
+      "You are hiring a construction manager for a project",
+      "You are providing construction management services",
+      "You need to oversee large-scale construction work",
+      "You want to define project timelines and supervision roles",
+      "You want legal protection before starting the project"
+    ],
+    faqs: [
+      {
+        q: "Do I need a Construction Management Agreement?",
+        a: "Yes. A Construction Management Agreement from Legalgram helps avoid confusion and ensures smooth project execution."
+      },
+      {
+        q: "What should be included in a Construction Management Agreement?",
+        a: "A draft Construction Management Agreement should include services, timeline, fees, and legal clauses."
+      },
+      {
+        q: "Is a Construction Management Agreement legally binding?",
+        a: "Yes. Once signed, the Construction Management Agreement on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the agreement?",
+        a: "Yes. You can easily download and customize Construction Management Agreement from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines management responsibilities",
+      "Avoids disputes between owner and construction manager",
+      "Establishes project timelines and expectations",
+      "Ensures proper coordination of contractors and resources",
+      "Protects both parties legally",
+      "Includes confidentiality and dispute resolution clauses"
+    ],
+    whatYouNeed: [
+      "Client and construction manager legal names and contact details",
+      "Project description and scope",
+      "Timeline, milestones, and completion schedule",
+      "Fees, payment terms, and compensation structure",
+      "Confidentiality and liability terms",
+      "Dispute resolution and legal remedy clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Drywall Services Agreement": {
+    title: "Drywall Services Agreement",
+    otherNames: [
+      "Drywall Contract",
+      "Drywall Agreement",
+      "Drywall Installation Agreement"
+    ],
+    whatIs: "A Drywall Contract is a legal agreement used when drywall installation, repair, or finishing services are provided. This draft Drywall Contract from Legalgram includes details of the contractor and client, scope of drywall work, project duration and deadlines, fees and payment schedule, and liability and dispute resolution terms. The best format Drywall Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are hiring a drywall contractor for a project",
+      "You are providing drywall services as a contractor",
+      "You want to define work scope and deliverables",
+      "You need clear payment terms and deadlines",
+      "You want legal protection before starting work"
+    ],
+    faqs: [
+      {
+        q: "Should I use a Drywall Contract for small jobs?",
+        a: "Yes. Even for small projects, a Drywall Contract from Legalgram helps avoid misunderstandings."
+      },
+      {
+        q: "What should be included in a Drywall Contract?",
+        a: "A draft Drywall Contract should include scope of work, payment terms, and timelines."
+      },
+      {
+        q: "Is a Drywall Contract legally binding?",
+        a: "Yes. Once signed, the Drywall Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Drywall Contract?",
+        a: "Yes. You can easily download and customize Drywall Contract from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines scope of work and responsibilities",
+      "Avoids confusion about pricing and payment terms",
+      "Sets timelines and project expectations",
+      "Clarifies independent contractor status",
+      "Protects both contractor and client legally",
+      "Provides dispute resolution and liability safeguards"
+    ],
+    whatYouNeed: [
+      "Contractor and client full legal names and contact details",
+      "Detailed scope of drywall work and deliverables",
+      "Project start date, duration, and completion deadline",
+      "Total fee, payment schedule, and payment method",
+      "Independent contractor and liability terms",
+      "Dispute resolution terms and governing law details"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Eviction Notice": {
+    title: "Eviction Notice",
+    otherNames: [
+      "Notice to Quit",
+      "Termination Notice",
+      "Notice of Lease Violation"
+    ],
+    whatIs: "An Eviction Notice is a formal legal notice given by a landlord to a tenant, requiring them to either fix a lease violation or vacate the property. This draft Eviction Notice from Legalgram includes tenant and landlord details, property address and tenancy details, reason for eviction (non-payment, violation, etc.), and notice period and compliance deadline. The best format Eviction Notice from Legalgram ensures legal compliance and proper documentation before court action.",
+    whenToUse: [
+      "A tenant fails to pay rent",
+      "A tenant violates lease or tenancy agreement terms",
+      "You want to terminate a rental agreement",
+      "A tenant refuses to vacate after lease expiry",
+      "You need to initiate legal eviction proceedings"
+    ],
+    faqs: [
+      {
+        q: "Is an Eviction Notice legally binding?",
+        a: "Yes. A properly issued Eviction Notice from Legalgram is legally valid."
+      },
+      {
+        q: "Can an Eviction Notice force a tenant to leave immediately?",
+        a: "No. It is the first step; a court order is required for final eviction."
+      },
+      {
+        q: "How many days notice is required?",
+        a: "It depends on local laws, typically ranging from 3 to 30 days."
+      },
+      {
+        q: "Can I customize the Eviction Notice?",
+        a: "Yes. You can easily download and customize Eviction Notice from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Documents tenant violations formally",
+      "Provides legal notice before eviction proceedings",
+      "Avoids unlawful eviction actions",
+      "Protects landlord rights under tenancy laws",
+      "Ensures proper legal process is followed",
+      "Creates documented evidence for court"
+    ],
+    whatYouNeed: [
+      "Landlord and tenant legal names and contact details",
+      "Property address and tenancy details",
+      "Reason for eviction and supporting facts",
+      "Notice period and compliance deadline",
+      "Compliance instructions and cure/vacate requirements",
+      "Proof of service details"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Flooring Services Agreement": {
+    title: "Flooring Services Agreement",
+    otherNames: [
+      "Flooring Contract",
+      "Flooring Agreement",
+      "Flooring Installation Agreement"
+    ],
+    whatIs: "A Flooring Contract is a legal agreement that defines the terms under which flooring services are provided. This draft Flooring Contract from Legalgram includes details of contractor and client, scope of flooring work (installation, repair, maintenance), materials and specifications, project timeline and deadlines, and cost and payment schedule. The best format Flooring Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are hiring a contractor for flooring installation or repair",
+      "You are providing flooring services to a client",
+      "You want to define materials, scope, and deadlines",
+      "You need clear payment terms and schedules",
+      "You want legal protection before starting work"
+    ],
+    faqs: [
+      {
+        q: "Should I use a Flooring Contract for every project?",
+        a: "Yes. A Flooring Contract from Legalgram ensures clarity and protection for all projects."
+      },
+      {
+        q: "What should be included in a Flooring Contract?",
+        a: "A draft Flooring Contract should include scope, materials, cost, and timeline."
+      },
+      {
+        q: "Is a Flooring Contract legally binding?",
+        a: "Yes. Once signed, the Flooring Contract on Legalgram is enforceable."
+      },
+      {
+        q: "Can I customize the Flooring Contract?",
+        a: "Yes. You can easily download and customize Flooring Contract from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines scope of flooring services",
+      "Avoids disputes over pricing and materials",
+      "Establishes timelines and expectations",
+      "Protects both contractor and client legally",
+      "Ensures smooth project execution",
+      "Includes liability and warranty terms"
+    ],
+    whatYouNeed: [
+      "Contractor and client legal names and contact details",
+      "Scope of flooring work and project specifications",
+      "Materials and quality requirements",
+      "Project timeline and completion deadlines",
+      "Cost, deposit, and payment schedule",
+      "Liability and warranty terms"
+    ],
+    estimatedTime: "10-15 minutes"
   },
 
   // === DEFAULT FALLBACK ===
