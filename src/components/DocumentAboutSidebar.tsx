@@ -876,6 +876,50 @@ export const documentInfoDatabase: Record<string, DocumentInfo> = {
     ],
     estimatedTime: "15-20 minutes"
   },
+  "VacationLeaseForm": {
+    title: "Vacation Rental Agreement",
+    shortDescription: "A short-term tenancy agreement outlining the rights and responsibilities of both the property owner and the renter for stays lasting a few days or weeks.",
+    fullDescription: "A Vacation Rental Agreement is a short-term tenancy agreement that outlines the rights and responsibilities of both the property owner and the renter for stays lasting a few days or weeks. This agreement ensures clarity regarding rental duration, payment terms and deposits, check-in and check-out procedures, and house rules (pets, smoking, noise). Using the best format Vacation Rental Agreement reduces disputes and protects both parties by establishing clear expectations and legal frameworks for short-term vacation rentals.",
+    whenToUse: [
+      "Renting out a vacation home or Airbnb-style property",
+      "Offering short-term rentals (daily, weekly, monthly)",
+      "Renting part of your home to temporary guests",
+      "Managing multiple rental properties",
+      "You want clarity regarding rental terms and guest responsibilities"
+    ],
+    keyTerms: [
+      { term: "Rental Duration", definition: "The specific check-in and check-out dates for the vacation rental period." },
+      { term: "Security Deposit", definition: "Money held to cover damages or breaches, typically refunded after checkout." },
+      { term: "House Rules", definition: "Policies governing guest behavior including pets, smoking, noise, and occupancy limits." },
+      { term: "Check-in/Check-out", definition: "Specific times and procedures for guest arrival and departure." },
+      { term: "Occupancy Limit", definition: "Maximum number of guests allowed at the property." }
+    ],
+    tips: [
+      "Clearly define all rental terms before guests arrive",
+      "Include comprehensive house rules and guest policies",
+      "Specify payment terms, deposits, and cancellation policies",
+      "Detail cleaning responsibilities and maintenance expectations",
+      "List all amenities, furnishings, and utilities included",
+      "Include check-in/check-out procedures and key access details",
+      "Require guest identification and emergency contact information",
+      "Document property condition with photos before each guest arrives"
+    ],
+    warnings: [
+      "A Vacation Rental Agreement is legally binding once accepted by both parties",
+      "Clearly define all fees including deposits, cleaning fees, and late fees",
+      "Include cancellation deadlines with specific refund percentages",
+      "Specify consequences for exceeding occupancy limits or violating house rules",
+      "Include liability waivers for injuries or property damage",
+      "Address what constitutes normal wear vs. damage requiring deposit deductions",
+      "Verify guest age of majority and obtain ID verification",
+      "Include provisions for immediate eviction due to illegal activities"
+    ],
+    relatedDocuments: [
+      { title: "Residential Lease Agreement", id: "lease-agreement" },
+      { title: "Sublease Agreement", id: "sublease" }
+    ],
+    estimatedTime: "20-30 minutes"
+  },
   "offer-to-lease": {
     title: "Offer to Lease Agreement",
     shortDescription: "A preliminary legal document outlining essential terms proposed by a tenant to lease commercial property from a landlord.",

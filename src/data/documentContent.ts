@@ -146,6 +146,82 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "15-20 minutes"
   },
 
+  // === VACATION & SHORT-TERM RENTAL LEASES ===
+  "Vacation Lease Agreement": {
+    title: "Vacation Rental Agreement",
+    otherNames: ["Short-Term Rental Agreement", "Vacation Rental Lease", "Holiday Rental Agreement", "Vacation Property Lease", "Furnished Rental Agreement"],
+    whatIs: "A Vacation Rental Agreement is a legally binding contract between a property owner (landlord) and a guest/tenant who rents furnished residential property for a short-term vacation or temporary stay. Unlike traditional long-term residential leases, this agreement is specifically designed for short-term vacation rentals, typically ranging from a few days to several months.\n\nA properly drafted Vacation Rental Agreement clearly outlines the terms of occupancy including check-in and check-out dates, nightly or weekly rates, house rules, occupancy limits, cancellation policies, and security deposit terms. This agreement protects both the property owner and the guest by establishing clear expectations, preventing disputes, and ensuring compliance with local vacation rental regulations.\n\nWhether you are renting out a vacation home, condo, cottage, or furnished apartment through vacation rental platforms or privately, this Vacation Rental Agreement provides the legal framework needed to protect your property investment while ensuring guests have a clear understanding of their rights and responsibilities.",
+    whenToUse: [
+      "You own a property and want to rent it out for vacation or short-term stays",
+      "You are using vacation rental platforms like Airbnb, VRBO, or similar services",
+      "You need to establish clear house rules and occupancy policies",
+      "You want to protect your property and furnishings from damage",
+      "You want to establish clear cancellation and refund policies",
+      "You want to comply with local vacation rental regulations and licensing requirements"
+    ],
+    faqs: [
+      {
+        q: "What is a Vacation Rental Agreement?",
+        a: "A Vacation Rental Agreement is a legally binding contract between a property owner and a guest renting furnished residential property for a short-term vacation or temporary stay. Unlike traditional leases, this agreement is specifically designed for short-term occupancy, typically ranging from days to several months. It outlines rental terms, rates, house rules, cancellation policies, and security deposit requirements."
+      },
+      {
+        q: "How is a Vacation Rental Agreement different from a traditional lease?",
+        a: "A Vacation Rental Agreement covers short-term stays (typically days to a few months) rather than long-term occupancy. It includes vacation-specific terms such as check-in/check-out times, nightly rates, house rules for short-term guests, occupancy limits, furnishings inventory, and stricter cancellation policies. Vacation rentals also typically require security deposits and may have pet restrictions or additional guest fees."
+      },
+      {
+        q: "What should be included in a Vacation Rental Agreement?",
+        a: "A comprehensive Vacation Rental Agreement should include: property address and description, check-in and check-out dates/times, nightly or weekly rental rate, total rental price and payment terms, security deposit amount and refund conditions, occupancy limits and guest count, house rules and restrictions, cancellation and refund policy, pet policy, damage liability, amenities provided, parking information, and local regulations compliance."
+      },
+      {
+        q: "Can I include strict house rules in a Vacation Rental Agreement?",
+        a: "Yes. House rules are an important part of vacation rental agreements. Common rules include quiet hours, restrictions on parties or loud gatherings, smoking policies, pet restrictions, parking rules, check-in/check-out time requirements, and restrictions on additional guests. These rules help protect your property and ensure a positive experience for all guests."
+      },
+      {
+        q: "What should I do about security deposits?",
+        a: "A security deposit protects you from damage to the property or furnishings. Clearly specify the deposit amount, conditions for full refund, what constitutes damage beyond normal wear and tear, timeline for refund after check-out, and procedures for deducting costs for damages. Some jurisdictions have specific regulations about deposit handling and return timelines."
+      },
+      {
+        q: "How should I handle cancellations?",
+        a: "Define a clear cancellation policy specifying: cancellation deadlines, percentage of refunds for cancellations at different timeframes, non-refundable deposit amounts, and whether you'll attempt to rebook the property. Many vacation rental owners use tiered policies: full refund if canceled 30+ days before, partial refund if canceled 14-29 days before, and no refund if canceled less than 14 days before."
+      },
+      {
+        q: "Do I need to comply with local vacation rental regulations?",
+        a: "Yes. Many cities, counties, and states have specific regulations for vacation rentals including licensing requirements, occupancy limits, parking restrictions, noise ordinances, and tax requirements. Your agreement should state that guests must comply with all local laws and regulations. Always check your local jurisdiction's requirements."
+      },
+      {
+        q: "What liability protection should I include?",
+        a: "Include liability disclaimers stating that the guest assumes all risks, releasing you from liability for personal injury or property damage beyond what's covered by insurance. However, you remain responsible for maintaining the property in safe condition and complying with building codes. Consult with your insurance provider about liability coverage for vacation rentals."
+      }
+    ],
+    keyProtections: [
+      "Clear specification of check-in and check-out dates and times",
+      "Nightly or weekly rental rates with payment terms",
+      "Security deposit amount and refund conditions",
+      "Occupancy limits and guest count restrictions",
+      "Comprehensive house rules and guest conduct expectations",
+      "Cancellation and refund policy details",
+      "Pet policy and any additional pet fees",
+      "Damage liability and normal wear and tear definitions",
+      "Furnishings and amenities inventory",
+      "Local compliance and tax collection obligations"
+    ],
+    whatYouNeed: [
+      "Property address and detailed description",
+      "Bedrooms, bathrooms, and furnishings list",
+      "Check-in and check-out dates and times",
+      "Nightly, weekly, and monthly rental rates",
+      "Security deposit amount",
+      "Maximum occupancy and guest count",
+      "House rules and guest conduct expectations",
+      "Cancellation and refund policy",
+      "Pet policy and any restrictions",
+      "Parking information and restrictions",
+      "Amenities provided (WiFi, AC, parking, etc.)",
+      "Local vacation rental licensing requirements"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
   // === SECURITY & FINANCIAL AGREEMENTS ===
   "Debt Settlement Agreement": {
     title: "Debt Settlement Agreement",
@@ -3189,7 +3265,7 @@ export const documentContent: Record<string, DocumentContent> = {
   },
 
   // === LEGAL SERVICES AGREEMENTS ===
-  "attorneyengagementletter": {
+  "Attorney Engagement Letter": {
     title: "Attorney Engagement Letter",
     otherNames: ["Attorney Engagement Agreement", "Legal Services Agreement", "Engagement Agreement", "Legal Representation Agreement", "Retainer Agreement"],
     whatIs: "An Attorney Engagement Letter is a formal agreement used by lawyers and law firms to confirm the terms under which legal services will be provided to a client. This document clearly explains the scope of legal services, the responsibilities of the attorney and client, billing terms and fee structure, duration of the engagement, termination rights, and legal protections for both parties. This agreement helps establish transparency and protects both sides from disputes or misunderstandings.\nUsing a properly drafted Attorney Engagement Agreement is considered best legal practice. Whether you are a lawyer or a client, this agreement ensures clarity and professionalism.\nDownload a free Attorney Engagement Letter on Legalgram and ensure both attorney and client are aligned on terms, fees, and expectations.",
@@ -3807,7 +3883,7 @@ export const documentContent: Record<string, DocumentContent> = {
   "Business Sale Agreement": {
     title: "Business Sale Agreement",
     otherNames: ["Sale Of Business Contract", "Contract For Sale Of Business", "Business Purchase Agreement", "Business Asset Purchase Agreement"],
-    whatIs: "A Business Sale Agreement is a legally enforceable contract that sets out the complete terms and conditions for the sale of a business. Whether you are selling your business or acquiring one, this agreement protects both the seller and buyer by clearly documenting the transaction structure, purchase price, conditions, and post-closing obligations.\n\nA comprehensive Business Sale Agreement defines what is being sold (assets, stock, or goodwill), how the purchase price is calculated and paid, what representations and warranties each party is making, and what happens if something goes wrong after closing. Professional preparation of this agreement is essential to prevent disputes and ensure a smooth transaction.\n\nBusiness sales can be complex, involving multiple assets, inventory, equipment, contracts, and potentially employees. This agreement provides the legal framework to organize all transaction terms in one enforceable document, protecting both parties' interests and clarifying financial responsibilities.\n\nA properly drafted Business Sale Agreement can be customized for asset sales, stock purchases, or goodwill acquisitions, and includes protective mechanisms like indemnification clauses, escrow arrangements, and earn-out provisions where needed.",
+    whatIs: "A Business Sale Agreement is a legally enforceable contract that sets out the complete terms and conditions for the sale of a business. It formally records the understanding between the buyer and the seller, making the transaction official and ensuring clarity, transparency, and legal certainty.\n\nWhether you are acquiring a new business or planning to sell an existing one, a properly drafted Business Sale Agreement helps both parties agree on all essential elements of the transaction. These typically include the purchase price, payment structure, assets and liabilities being transferred, and closing details. Recording these terms in writing minimizes risk and supports a smooth transfer of ownership.\n\nUsing a professionally prepared draft Business Sale Agreement allows the parties to finalize the sale with confidence. Clear documentation not only simplifies negotiations but also enables the buyer to proceed with running the business efficiently once the transaction is complete.",
     whenToUse: [
       "You are negotiating the purchase or sale of a business",
       "You want to clearly define the key terms and conditions of a business sale in writing",
@@ -3825,7 +3901,7 @@ export const documentContent: Record<string, DocumentContent> = {
       { q: "What should happen to employees and contracts?", a: "The agreement should specify: which employees the buyer intends to hire, whether the buyer or seller remains responsible for severance obligations, assumption or termination of existing contracts, customer notification procedures, and any non-compete or non-solicitation obligations for the seller. Employment liabilities should be clearly allocated." },
       { q: "What are closing conditions?", a: "Closing conditions are requirements that must be satisfied before the sale completes. Common conditions include: obtaining necessary regulatory approvals, no material adverse changes in the business, third-party consents for contract transfers, satisfactory due diligence results, and financing approval (if applicable). Conditions protect the buyer from purchasing a damaged business." },
       { q: "What is transitional support?", a: "Transitional support refers to post-closing assistance the seller provides to help the buyer operate the business. This might include: training on operations and systems, customer and vendor introductions, answering questions about business history, assistance transferring contracts, or consulting services for a defined period. The agreement should specify scope, duration, and any compensation." },
-      { q: "Do I need an accountant or lawyer for a business sale?", a: "Yes, consulting professionals is strongly recommended for business sales. An accountant can review financial statements, evaluate the purchase price, and assess tax implications. A lawyer can draft the agreement, conduct due diligence, identify risks, and represent your interests in negotiations. Professional guidance helps ensure the agreement is comprehensive and protective." },
+      { q: "Do I need an accountant or lawyer for a business sale?", a: "Yes. Consulting professionals is strongly recommended for business sales. An accountant can review financial statements, evaluate the purchase price, and assess tax implications. A lawyer can draft the agreement, conduct due diligence, identify risks, and represent your interests in negotiations. Professional guidance helps ensure the agreement is comprehensive and protective." },
       { q: "Can payments be made over time?", a: "Yes. Many business sales include seller financing or earn-out provisions where the seller receives payments over time rather than a single lump sum. The agreement should specify: payment schedule and amounts, interest rates, security provisions (personal guarantee or asset lien), and consequences of missed payments. Security protections are important when financing is involved." }
     ],
     keyProtections: [
@@ -3955,6 +4031,174 @@ export const documentContent: Record<string, DocumentContent> = {
       "Damage responsibility and liability limits"
     ],
     estimatedTime: "12-15 minutes"
+  },
+
+  // === LEGAL REPORTS & DOCUMENTATION ===
+  "Information for Police Report": {
+    title: "Information for Police Report",
+    otherNames: ["Police Report Form", "Incident Report", "Theft Report", "Crime Report", "Police Statement Form"],
+    whatIs: "Information for a Police Report is an official document used to document and report crimes, thefts, or incidents to law enforcement. This report captures all essential details about an incident, including your personal contact information, a detailed description of what occurred, items that were lost or stolen, and circumstances surrounding the incident.\n\nA properly completed police report creates an official record that can be used for insurance claims, fraud prevention, identity theft protection, and legal proceedings. This document ensures that all relevant information is accurately documented for law enforcement investigation and future reference.",
+    whenToUse: [
+      "You are a victim of theft, identity theft, or burglary",
+      "You need to document a crime or incident for insurance purposes",
+      "You want to file an official report with law enforcement",
+      "You need documentation for fraud or identity protection claims",
+      "You are reporting missing personal identification documents",
+      "You need a record for legal proceedings or dispute resolution"
+    ],
+    faqs: [
+      { q: "What is Information for a Police Report?", a: "Information for a Police Report is an official document that records details about a crime, theft, or incident. It includes your personal information, a description of the incident, location, date, items lost or stolen, and circumstances surrounding the event. This document is filed with law enforcement to create an official record." },
+      { q: "Why Is Filing a Police Report Important?", a: "Filing a police report is important because it creates an official record of the incident that can be used for insurance claims, fraud investigation, identity theft protection, and legal proceedings. It also helps law enforcement track crime patterns and may aid in recovering stolen items or catching perpetrators." },
+      { q: "When Should You File a Police Report?", a: "You should file a police report if you are a victim of theft, identity theft, burglary, or any crime. You should also file one if you need documentation for insurance purposes, fraud claims, or identity protection. The sooner you file, the better for investigation purposes." },
+      { q: "What Information Do I Need to Provide?", a: "You will need to provide: your personal contact information (name, address, phone, email), date of birth and personal details, type of incident, date and time of incident, location where it occurred, detailed description of what happened, list of items lost or stolen with descriptions, and any witness information if available." },
+      { q: "What Should Be Included in the List of Items Stolen?", a: "For each stolen item, include: the item name and description, specific details (serial numbers, ID numbers if applicable), condition of the item, approximate value if known, and any distinguishing marks or characteristics. For identification documents, include the license/document number, issuing state, issue date, and expiration date." },
+      { q: "Should I Get a Copy of My Police Report?", a: "Yes. You should obtain a copy of your filed police report for your records. Keep it in a safe place along with any evidence or documentation related to the incident. You may need this copy for insurance claims, identity theft monitoring, or legal proceedings." },
+      { q: "What Do I Do After Filing the Report?", a: "After filing: Keep a copy of the report for your records in a safe location, Follow up with law enforcement if you have additional information, Monitor your information for signs of fraud or identity theft, File insurance claims if applicable, and Consider placing fraud alerts or credit freezes if identity theft is involved." },
+      { q: "Can I File a Police Report Online?", a: "Many police departments now offer online reporting for certain types of non-emergency incidents like theft or identity theft. Check with your local police department for their specific procedures and acceptance of online reports. Some may still require in-person filing for certain crime types." }
+    ],
+    keyProtections: [
+      "Official documentation of the incident for law enforcement",
+      "Record creation for insurance claim purposes",
+      "Identity theft protection and fraud documentation",
+      "Legal record for civil or criminal proceedings",
+      "Evidence for investigation and case building",
+      "Documentation of stolen item descriptions and values",
+      "Timeline and circumstance details clearly recorded",
+      "Personal information protection requirements",
+      "Report number for tracking and reference",
+      "Foundation for recovery efforts or investigation"
+    ],
+    whatYouNeed: [
+      "Your full legal name and contact information",
+      "Residential address and phone number",
+      "Date of birth and personal identification details",
+      "Type of incident (theft, burglary, identity theft, etc.)",
+      "Exact date and time of the incident (if known)",
+      "Location where the incident occurred",
+      "Detailed description of what happened",
+      "Detailed list of all items lost or stolen",
+      "Item descriptions including serial numbers if applicable",
+      "Approximate value of items lost",
+      "Witness information if available",
+      "Any evidence or documentation of the incident",
+      "Police department contact information",
+      "Your signature and date"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  // === ACCOUNTING & FINANCIAL SERVICES ===
+  "Accounting Contract": {
+    title: "Accounting Contract",
+    otherNames: ["Accounting Services Agreement", "Accounting Agreement", "Accountancy Agreement", "CPA Agreement", "Bookkeeping Services Agreement"],
+    whatIs: "An Accounting Contract, also known as an Accounting Services Agreement, is a legally binding document that governs the professional relationship between an accountant and a client. It clearly defines the scope of services, fee structure, timelines, confidentiality obligations, compliance requirements, and termination terms, ensuring transparency and legal certainty for both parties.\n\nThis draft accounting contract is intended to establish expectations at the outset of the engagement and significantly reduce the risk of disputes. Whether the services include bookkeeping, tax filing, payroll management, financial reporting, or advisory support, a properly drafted agreement ensures that services are delivered strictly in accordance with agreed terms.",
+    whenToUse: [
+      "When an accountant or accounting firm is onboarding a new client and needs to formally define accounting or bookkeeping services",
+      "When an individual hires an accountant for personal accounting or tax matters and requires a written agreement",
+      "When a business engages an accountant or accounting firm to manage specific financial responsibilities",
+      "When you seek legal clarity and compliance for accounting services",
+      "When you need to establish clear expectations regarding fees and service deliverables"
+    ],
+    faqs: [
+      { q: "What is an Accounting Contract?", a: "An Accounting Contract is a legally binding document that governs the professional relationship between an accountant and a client. It clearly defines the scope of services, fee structure, timelines, confidentiality obligations, compliance requirements, and termination terms, ensuring transparency and legal certainty for both parties." },
+      { q: "Why Is an Accounting Contract Important?", a: "Using a properly drafted Accounting Contract establishes clear expectations, reduces the risk of disputes, protects both parties' interests, and ensures that services are delivered in accordance with agreed terms. In the event of disagreement regarding services or payments, the accounting agreement serves as a clear written record of mutual understanding." },
+      { q: "When Should You Use an Accounting Contract?", a: "You should use an Accounting Contract when an accountant or accounting firm is onboarding a new client, when an individual hires an accountant for personal accounting or tax matters, or when a business engages an accountant to manage specific financial responsibilities and seeks legal clarity and compliance." },
+      { q: "What Services Can Be Included?", a: "An Accounting Contract can cover a wide range of services including bookkeeping, tax filing and preparation, payroll management, financial reporting, advisory support, auditing, financial analysis, strategic planning, and compliance with regulatory requirements." },
+      { q: "What Does an Accounting Contract Typically Include?", a: "A comprehensive Accounting Contract typically includes: party details and contact information, description of services to be provided, engagement scope and limitations, fee structure and pricing terms, payment schedule and methods, confidentiality and data protection provisions, professional standards and compliance requirements, termination conditions, and dispute resolution procedures." },
+      { q: "Is an Accounting Contract Legally Binding?", a: "Yes. When properly completed and executed by both parties, an Accounting Contract is legally binding and enforceable. This provides legal protection for both the accountant and the client." },
+      { q: "Can I Get Professional Review of My Contract?", a: "Yes. You can consult with a legal professional to ask questions or request a professional review of the agreement before finalizing it. This provides added assurance that the contract meets your specific needs and complies with applicable laws." },
+      { q: "How Can I Sign the Accounting Contract?", a: "The Accounting Contract can be signed online for free through secure platforms, making the process fast, secure, and convenient. Both parties can sign electronically and immediately receive executed copies for their records." }
+    ],
+    keyProtections: [
+      "Clear definition of scope of accounting services",
+      "Specified fee structure and payment terms",
+      "Transparent pricing with no hidden charges",
+      "Confidentiality and data protection obligations",
+      "Professional standards and compliance requirements",
+      "Termination conditions and notice periods",
+      "Liability limitations and insurance requirements",
+      "Record retention and document management",
+      "Dispute resolution and governing law",
+      "Protection of client financial information"
+    ],
+    whatYouNeed: [
+      "Accountant or accounting firm name and contact information",
+      "Client name and business information",
+      "Detailed description of accounting services required",
+      "Specific areas: bookkeeping, tax, payroll, reporting, advisory, etc.",
+      "Fee structure: hourly rates, flat fees, monthly retainers",
+      "Engagement start date and expected duration",
+      "Payment terms and due dates",
+      "Frequency of financial reporting and statements",
+      "Record retention and document handling procedures",
+      "Confidentiality and data security requirements",
+      "Termination conditions and notice requirements",
+      "Professional credentials and licensing information",
+      "Insurance and liability information",
+      "Compliance standards to be followed"
+    ],
+    estimatedTime: "12-18 minutes"
+  },
+
+  // === WAREHOUSE & COMMERCIAL LEASES ===
+  "Warehouse Lease Agreement": {
+    title: "Warehouse Lease Agreement",
+    otherNames: [
+      "Warehouse Rental Agreement",
+      "Industrial Storage Lease",
+      "Commercial Storage Lease",
+      "Warehouse Tenancy Agreement",
+      "Storage Facility Lease",
+      "Logistics Facility Lease"
+    ],
+    whatIs: "A Warehouse Lease Agreement is a commercial rental contract between a warehouse owner (lessor) and a tenant (lessee) for leasing warehouse or storage space. This agreement clearly establishes expectations regarding lease duration, rent and payment terms, permitted usage of warehouse space, and maintenance and responsibility allocation. A properly drafted Warehouse Lease Agreement protects both landlord and tenant by defining all material terms in writing, preventing disputes, and ensuring legal clarity for the commercial rental arrangement.",
+    whenToUse: [
+      "You are leasing warehouse or industrial storage space",
+      "You are renting out storage units or logistics facilities",
+      "You are managing commercial property rentals",
+      "You are entering into a warehouse rental arrangement",
+      "You need to establish clear terms for commercial storage",
+      "You want to protect your interests with a legally binding agreement"
+    ],
+    faqs: [
+      { q: "What is a Warehouse Lease Agreement?", a: "A Warehouse Lease Agreement is a commercial rental contract between a warehouse owner (lessor) and a tenant (lessee) for leasing warehouse or storage space. It establishes clear expectations regarding lease duration, rent and payment terms, usage of warehouse space, and maintenance and responsibilities." },
+      { q: "Is a warehouse lease legally binding?", a: "Yes. Once signed, a Warehouse Lease Agreement is legally enforceable and becomes a binding contract between the landlord and tenant, providing legal protection for both parties." },
+      { q: "Why Use a Warehouse Lease Agreement?", a: "A professionally drafted Warehouse Lease Agreement ensures legal clarity, prevents disputes, protects both parties' interests, establishes clear rent payment obligations, defines maintenance responsibilities, and provides enforceability in case of breach." },
+      { q: "What should be included in a warehouse lease?", a: "Key provisions include: property description and square footage, lease term and renewal options, rent amount and payment terms, permitted usage restrictions, maintenance and repair responsibilities, insurance and liability requirements, security deposit terms, default and termination conditions, and utilities responsibility." },
+      { q: "Can rent be increased during the lease?", a: "Yes, rent escalation clauses can be included in the agreement specifying conditions and amounts for increases. These should be clearly defined in the lease at the time of signing." },
+      { q: "Who is responsible for maintenance?", a: "Maintenance responsibilities should be clearly defined in the lease. Typically, the landlord handles structural repairs while the tenant maintains the interior and equipment." },
+      { q: "What happens if either party breaches the lease?", a: "The lease should specify default conditions, notice requirements, cure periods, and remedies available to the non-breaching party, which may include lease termination or legal action." },
+      { q: "Can a warehouse lease be terminated early?", a: "Early termination provisions can be included in the lease, typically with advance notice and potentially early termination fees. This should be clearly defined in the agreement." },
+      { q: "What insurance is required?", a: "The lease should specify minimum insurance coverage required from the tenant, including general liability, property damage, and any specialized coverage needed for warehouse operations." },
+      { q: "How is the security deposit handled?", a: "The lease should specify the deposit amount, conditions for deductions, timeline for return after lease termination, and procedures for disputes over deposit amounts." }
+    ],
+    keyProtections: [
+      "Clear property description and space specifications",
+      "Defined lease term with renewal options",
+      "Specified rent amount and payment schedule",
+      "Permitted use and operational restrictions",
+      "Maintenance and repair responsibility allocation",
+      "Insurance and liability coverage requirements",
+      "Security deposit amount and return conditions",
+      "Default provisions and remedies",
+      "Utilities and common area responsibility",
+      "Termination conditions and procedures"
+    ],
+    whatYouNeed: [
+      "Warehouse address and square footage",
+      "Lessor and lessee full legal names and contact information",
+      "Lease commencement and end dates",
+      "Monthly or annual rent amount",
+      "Payment method and due dates",
+      "Permitted business activities and usage restrictions",
+      "Maintenance responsibility allocation",
+      "Insurance requirements and coverage amounts",
+      "Security deposit amount",
+      "Utility and common area responsibility",
+      "Default and termination conditions",
+      "Renewal and rent increase provisions"
+    ],
+    estimatedTime: "15-20 minutes"
   }
 };
 
@@ -3968,19 +4212,10 @@ export function getDocumentContent(title: string): DocumentContent {
     return documentContent[title];
   }
   
-  // Try case-insensitive match
-  const normalizedTitle = title.toLowerCase().replace(/[^a-z0-9]/g, '');
+  // Try case-insensitive exact match
+  const lowerTitle = title.toLowerCase();
   for (const [key, value] of Object.entries(documentContent)) {
-    const normalizedKey = key.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (normalizedKey === normalizedTitle) {
-      return value;
-    }
-  }
-  
-  // Try partial match
-  for (const [key, value] of Object.entries(documentContent)) {
-    if (title.toLowerCase().includes(key.toLowerCase()) || 
-        key.toLowerCase().includes(title.toLowerCase())) {
+    if (key.toLowerCase() === lowerTitle) {
       return value;
     }
   }
