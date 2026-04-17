@@ -79,6 +79,127 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "15-20 minutes"
   },
 
+  "Agreement to Cancel Lease": {
+    title: "Agreement to Cancel Lease",
+    otherNames: [
+      "Early Termination of Lease Agreement",
+      "Lease Termination Agreement",
+      "Cash for Keys Agreement"
+    ],
+    whatIs: "An Agreement to Cancel Lease is a legal agreement that allows both landlord and tenant to mutually terminate a lease before its original end date. This draft Agreement to Cancel Lease from Legalgram includes details of landlord and tenant, address of the rental property, original lease date and termination date, new agreed lease end date, payment terms or penalties (if applicable), and signatures of both parties. The best format Agreement to Cancel Lease from Legalgram ensures clarity, fairness, and legal protection for both parties.",
+    whenToUse: [
+      "Both landlord and tenant agree to end the lease early",
+      "A tenant needs to vacate before lease expiry",
+      "A landlord wants to renovate or sell the property",
+      "You want to avoid eviction through mutual agreement",
+      "You need a written record of lease cancellation"
+    ],
+    faqs: [
+      { q: "Is an Agreement to Cancel Lease legally binding?", a: "Yes. Once signed, the Agreement to Cancel Lease on Legalgram is enforceable." },
+      { q: "Can I use this agreement instead of eviction?", a: "Yes. A draft Agreement to Cancel Lease is often used to avoid eviction through mutual consent." },
+      { q: "What details should be included?", a: "It should include property details, termination date, and payment terms." },
+      { q: "Can I customize the Agreement to Cancel Lease?", a: "Yes. You can easily download and customize Agreement to Cancel Lease from Legalgram." }
+    ],
+    keyProtections: [
+      "Avoid costly and lengthy eviction procedures",
+      "Mutually agree on lease termination terms",
+      "Prevent disputes between landlord and tenant",
+      "Document financial settlements (if any)",
+      "Ensure legal protection for both parties",
+      "Provide clear written record of termination"
+    ],
+    whatYouNeed: [
+      "Landlord and tenant full names and contact information",
+      "Property address and description",
+      "Original lease agreement details and date",
+      "Agreed lease cancellation date",
+      "Payment terms or penalties (if applicable)",
+      "Security deposit settlement terms",
+      "Property condition at time of termination",
+      "Forwarding address for tenant",
+      "Signatory authority and legal representation"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Lease Termination Letter": {
+    title: "Lease Termination Letter",
+    otherNames: ["Lease Termination Notice", "Notice of Lease Termination", "Notice to Vacate"],
+    whatIs: "A Lease Termination Letter is a formal written notice used to inform a tenant or landlord that a lease is ending on a specific date. This document creates a clear record of the termination decision, the move-out deadline, and any remaining obligations tied to the lease. A properly drafted Lease Termination Letter helps prevent misunderstandings and protects both sides by documenting the notice in writing.",
+    whenToUse: [
+      "You need to give formal notice that a lease will end",
+      "A tenant is moving out at the end of the lease term",
+      "A landlord needs to notify the tenant of lease termination",
+      "You want a written record of the move-out deadline",
+      "You need to confirm any final rent, keys, or surrender requirements"
+    ],
+    faqs: [
+      { q: "Is a Lease Termination Letter legally binding?", a: "Yes, when used and delivered according to the lease and applicable law, it serves as formal notice of termination." },
+      { q: "How much notice is required?", a: "Notice requirements vary by state, lease terms, and the reason for termination. Always check the lease and local laws." },
+      { q: "Can I customize the letter?", a: "Yes. You can tailor the dates, names, address, and move-out instructions to match the situation." },
+      { q: "Should I keep a copy?", a: "Yes. Keep a signed or sent copy for your records in case there is a later dispute." }
+    ],
+    keyProtections: [
+      "Documents the lease end date in writing",
+      "Creates a clear move-out deadline",
+      "Helps avoid disputes over notice",
+      "Provides a record of final obligations",
+      "Supports landlord and tenant compliance",
+      "Clarifies return of keys and possession"
+    ],
+    whatYouNeed: [
+      "Tenant and landlord names",
+      "Property address",
+      "Lease end date or termination date",
+      "Notice delivery date",
+      "Move-out instructions",
+      "Final rent or payment details",
+      "Key return requirements",
+      "Forwarding address",
+      "Signature information"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Agreement to Sell": {
+    title: "Agreement to Sell",
+    otherNames: ["Agreement for Sale", "Sale Agreement", "Contract to Sell"],
+    whatIs: "An Agreement to Sell is a legally binding contract in which the seller agrees to sell and the buyer agrees to purchase an asset at a future time, subject to agreed terms and conditions. This draft Agreement to Sell from Legalgram clearly defines details of the buyer and seller, description of the asset (property, goods, or shares), agreed purchase price, payment terms and schedule, and the date of transfer of ownership. The best format Agreement to Sell from Legalgram ensures transparency, legal protection, and clarity for both parties.",
+    whenToUse: [
+      "You are selling property, land, or assets",
+      "Payment will be made in installments or later",
+      "Ownership transfer will occur at a future date",
+      "You want to lock terms before final sale deed",
+      "You want legal security before completing the deal"
+    ],
+    faqs: [
+      { q: "Is an Agreement to Sell legally binding?", a: "Yes. A properly executed Agreement to Sell from Legalgram is legally enforceable." },
+      { q: "What is the difference between Sale and Agreement to Sell?", a: "An Agreement to Sell is a promise of a future sale, while a Sale transfers ownership immediately." },
+      { q: "Can an Agreement to Sell be canceled?", a: "Yes, subject to terms mentioned in the Agreement to Sell draft." },
+      { q: "When should I create an Agreement to Sell?", a: "Before executing the final sale deed. You can download Agreement to Sell anytime from Legalgram." }
+    ],
+    keyProtections: [
+      "Secure rights before final transfer",
+      "Avoid disputes between buyer and seller",
+      "Clearly define payment and delivery terms",
+      "Establish legal proof of intent to sell",
+      "Protect both parties in case of breach",
+      "Clarify future ownership transfer"
+    ],
+    whatYouNeed: [
+      "Buyer and seller names",
+      "Description of the asset",
+      "Agreed purchase price",
+      "Payment terms and schedule",
+      "Transfer date",
+      "Any deposit or advance payment details",
+      "Default or penalty terms",
+      "Property or asset identifiers",
+      "Signatory authority"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
   // === COMMERCIAL PROPERTY LEASES ===
   "Lease Agreement": {
     title: "Offer to Lease Agreement",
@@ -4810,6 +4931,100 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-15 minutes"
   },
 
+  "Security Deposit Return Letter": {
+    title: "Security Deposit Return Letter",
+    otherNames: [
+      "Security Deposit Refund Letter",
+      "Deposit Return Letter",
+      "Tenant Deposit Return Letter"
+    ],
+    whatIs: "A Security Deposit Return Letter is a formal document used by landlords to notify tenants about the return of their security deposit after moving out. The draft Security Deposit Return Letter from Legalgram includes original deposit amount, itemized deductions (if any), final refund amount, date of return, and explanation of damages or charges. Using the best format Security Deposit Return Letter from Legalgram ensures proper documentation and legal clarity.",
+    whenToUse: [
+      "Returning a tenant's security deposit",
+      "Deducting charges for damages or cleaning",
+      "Closing a tenancy or lease",
+      "Creating a formal written record of refund"
+    ],
+    faqs: [
+      {
+        q: "What should be included in a Security Deposit Return Letter?",
+        a: "Deposit amount, deductions, refund amount, and return date."
+      },
+      {
+        q: "Is it legally required?",
+        a: "In some jurisdictions, yes - but it is always recommended."
+      },
+      {
+        q: "Can I customize the letter?",
+        a: "Yes, you can fully edit and download Security Deposit Return Letter from Legalgram."
+      },
+      {
+        q: "Why is this letter important?",
+        a: "It protects landlords from disputes and provides proof of refund."
+      }
+    ],
+    keyProtections: [
+      "Provide a clear breakdown of deductions",
+      "Maintain legal compliance and transparency",
+      "Avoid disputes or future claims",
+      "Create written proof of deposit return",
+      "Communicate professionally with tenants",
+      "Document refund timing and amounts clearly"
+    ],
+    whatYouNeed: [
+      "Tenant and property details",
+      "Original deposit amount",
+      "Itemized deductions and reasons",
+      "Final refund amount",
+      "Return date and payment method",
+      "Supporting notes for damages or charges"
+    ],
+    estimatedTime: "8-12 minutes"
+  },
+
+  "Storage Space Lease Agreement": {
+    title: "Storage Space Lease Agreement",
+    otherNames: [
+      "Storage Lease Agreement",
+      "Storage Rental Agreement",
+      "Self Storage Lease Agreement",
+      "Storage Unit Lease"
+    ],
+    whatIs: "A Storage Space Lease Agreement is a legal contract between a storage owner and a tenant for renting space to store personal or business property. The draft Storage Space Lease Agreement from Legalgram includes lease term and renewal provisions, rental amount and payment schedule, storage unit or area description, usage restrictions and prohibited items, and liability, insurance, and termination clauses. Using the best format Storage Space Lease Agreement from Legalgram helps keep terms clear and legally protected.",
+    whenToUse: [
+      "Renting out a storage unit or storage room",
+      "Leasing garage, shed, basement, or warehouse space",
+      "Closing a rental and documenting terms in writing",
+      "Setting clear occupancy and insurance expectations"
+    ],
+    faqs: [
+      { q: "What should be included in a Storage Space Lease Agreement?", a: "It should include property details, lease term, rent, storage rules, liability clauses, and payment terms." },
+      { q: "Is a storage lease legally binding?", a: "Yes, when signed it becomes a binding agreement between the owner and tenant." },
+      { q: "Can I customize the agreement?", a: "Yes, you can fully edit and download Storage Space Lease Agreement from Legalgram." },
+      { q: "Why is this agreement important?", a: "It clarifies storage rights, responsibilities, payment terms, and risk allocation." }
+    ],
+    keyProtections: [
+      "Define rent and payment responsibilities clearly",
+      "Avoid disputes over storage use and access",
+      "Protect both landlord and tenant rights",
+      "Maintain legal clarity and written records",
+      "Support professional rental documentation",
+      "Document liability, insurance, and termination terms"
+    ],
+    whatYouNeed: [
+      "Lessor and lessee names and contact details",
+      "Storage unit or space address",
+      "Lease start and end dates",
+      "Monthly rental amount",
+      "Security deposit amount",
+      "Payment due date and notice period",
+      "Usage restrictions and prohibited items",
+      "Insurance expectations",
+      "Termination and access terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
   // === DEFAULT FALLBACK ===
   "default": {
     title: "Legal Document",
@@ -5775,6 +5990,131 @@ export const documentContent: Record<string, DocumentContent> = {
       "Renewal and rent increase provisions"
     ],
     estimatedTime: "15-20 minutes"
+  },
+
+  "Sublease Agreement": {
+    title: "Sublease Agreement",
+    otherNames: [
+      "Sublet Agreement",
+      "Rental Sublease Agreement",
+      "Subtenant Agreement"
+    ],
+    whatIs: "A Sublease Agreement is a legally binding rental contract between the original tenant and a subtenant. It allows the original tenant to rent out all or part of the leased property. The draft Sublease Agreement from Legalgram includes details of original tenant and subtenant, lease duration and sublease period, rent amount and payment terms, property description (full unit or partial room), and rights and responsibilities of each party. Using the best format Sublease Agreement from Legalgram ensures legal clarity and proper documentation.",
+    whenToUse: [
+      "You want to sublet your apartment, house, or room",
+      "You are temporarily relocating and need a subtenant",
+      "You want to add a roommate under a formal contract",
+      "You need someone to complete your lease term"
+    ],
+    faqs: [
+      { q: "What is the difference between sublease and sublet?", a: "Both refer to renting property to another tenant, but a Sublease Agreement is the formal legal document." },
+      { q: "Do I need landlord permission?", a: "Yes, in most cases landlord approval is required before subletting." },
+      { q: "Can I customize the agreement?", a: "Yes, you can fully edit and download Sublease Agreement from Legalgram." },
+      { q: "Is a Sublease Agreement enforceable?", a: "Yes, once signed, it is legally binding." }
+    ],
+    keyProtections: [
+      "Clearly define rent and payment responsibilities",
+      "Avoid misunderstandings between tenants and subtenants",
+      "Protect the original tenant from liability risks",
+      "Ensure compliance with lease terms",
+      "Maintain proper legal documentation",
+      "Document landlord approval requirements"
+    ],
+    whatYouNeed: [
+      "Original tenant and subtenant full legal details",
+      "Original lease information",
+      "Lease duration and sublease period",
+      "Rent and payment terms",
+      "Property description (full unit or partial room)",
+      "Security deposit details",
+      "Landlord consent terms",
+      "Rights and responsibilities of each party",
+      "Dispute resolution and liability clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Transcript Request Letter": {
+    title: "Transcript Request Letter",
+    otherNames: [
+      "Academic Transcript Request Letter",
+      "Transcript Request",
+      "College Transcript Request Letter"
+    ],
+    whatIs: "A Transcript Request Letter is a formal document used to request your academic records from a school, college, or university. The draft Transcript Request Letter from Legalgram includes student's full name and identification details, enrollment and graduation information, request for official or unofficial transcripts, recipient details (school, university, or employer), and authorization and signature. Using the best format Transcript Request Letter from Legalgram ensures your request is clear, professional, and accepted.",
+    whenToUse: [
+      "You are applying to a new school, college, or university",
+      "You need transcripts for a job application",
+      "You are transferring academic records",
+      "You want official proof of your educational achievements"
+    ],
+    faqs: [
+      { q: "What should be included in a Transcript Request Letter?", a: "Personal details, enrollment information, transcript type, and recipient details." },
+      { q: "Can I request transcripts for a job application?", a: "Yes, many employers require transcripts as proof of education." },
+      { q: "Is an official transcript necessary?", a: "Yes, especially for universities and formal applications." },
+      { q: "Can I customize the letter?", a: "Yes, you can fully edit and download Transcript Request Letter from Legalgram." }
+    ],
+    keyProtections: [
+      "Request transcripts efficiently and professionally",
+      "Provide complete and accurate student details",
+      "Ensure faster processing by institutions",
+      "Maintain proper written documentation",
+      "Avoid delays or rejections",
+      "Create a clear formal record of your request"
+    ],
+    whatYouNeed: [
+      "Full name, date of birth, and contact details",
+      "School or college name and years of attendance",
+      "Enrollment and graduation information",
+      "Transcript type (official or unofficial)",
+      "Transcript quantity",
+      "Recipient institution or employer details",
+      "Authorization details and signature",
+      "Payment details for transcript fees, if applicable"
+    ],
+    estimatedTime: "8-12 minutes"
+  },
+
+  "Triple Net Lease Agreement": {
+    title: "Triple Net Lease Agreement",
+    otherNames: [
+      "NNN Lease",
+      "Triple Net Lease",
+      "Net Lease Agreement"
+    ],
+    whatIs: "A Triple Net Lease Agreement (NNN Lease) is a commercial lease where the tenant is responsible for property taxes, building insurance, and maintenance and operating expenses. This Triple Net Lease Agreement on Legalgram ensures that all property-related costs are transferred to the tenant, making it a preferred structure for commercial landlords. The best format Triple Net Lease Agreement from Legalgram helps reduce disputes and clearly defines financial obligations.",
+    whenToUse: [
+      "You are leasing a commercial property (retail, office, or industrial)",
+      "You want tenants to cover all property expenses",
+      "You are negotiating net-based rental structures",
+      "You are managing standalone commercial buildings"
+    ],
+    faqs: [
+      { q: "What expenses does a Triple Net Lease cover?", a: "Property taxes, insurance, and maintenance costs." },
+      { q: "Is it suitable for all commercial properties?", a: "Yes, especially for standalone buildings and long-term leases." },
+      { q: "Can rent be negotiated in an NNN Lease?", a: "Yes, tenants often negotiate lower base rent." },
+      { q: "Can I customize the lease?", a: "Yes, you can fully edit and download Triple Net Lease Agreement from Legalgram." }
+    ],
+    keyProtections: [
+      "Clearly allocates expenses between landlord and tenant",
+      "Reduces financial burden on landlords",
+      "Allows negotiation of lower base rent",
+      "Provides transparency in commercial leasing",
+      "Ensures legal protection for both parties",
+      "Transfers property management to tenants"
+    ],
+    whatYouNeed: [
+      "Property description and complete address",
+      "Landlord and tenant names and contact information",
+      "Base rent amount and payment terms",
+      "Lease duration and renewal options",
+      "Expense allocation details (taxes, insurance, maintenance)",
+      "Insurance coverage requirements and minimums",
+      "Maintenance and repair responsibilities",
+      "Default and termination provisions",
+      "Signatory authority and legal representation"
+    ],
+    estimatedTime: "15-20 minutes"
   }
 };
 
@@ -5824,6 +6164,32 @@ export function getDocumentContent(title: string): DocumentContent {
   }
   if (normalizedTitle.includes("roofing contract agreement") || normalizedTitle.includes("roofing contractor agreement") || normalizedTitle.includes("roofing services agreement") || normalizedTitle.includes("roofing contract")) {
     return documentContent["Roofing Contract Agreement"];
+  }
+  if (normalizedTitle.includes("security deposit return letter") || normalizedTitle.includes("security deposit refund letter") || normalizedTitle.includes("deposit return letter")) {
+    return documentContent["Security Deposit Return Letter"];
+  }
+  if (normalizedTitle.includes("storage space lease agreement") || normalizedTitle.includes("storage lease agreement") || normalizedTitle.includes("storage rental agreement") || normalizedTitle.includes("storage unit lease")) {
+    return documentContent["Storage Space Lease Agreement"];
+  }
+  if (normalizedTitle.includes("sublease agreement") || normalizedTitle.includes("sublet agreement") || normalizedTitle.includes("sublease") || normalizedTitle.includes("subtenant agreement")) {
+    return documentContent["Sublease Agreement"];
+  }
+  if (normalizedTitle.includes("transcript request letter") || normalizedTitle.includes("transcript request") || normalizedTitle.includes("academic transcript request") || normalizedTitle.includes("college transcript request")) {
+    return documentContent["Transcript Request Letter"];
+  }
+  if (normalizedTitle.includes("triple net lease agreement") || normalizedTitle.includes("triple net lease") || normalizedTitle.includes("nnn lease") || normalizedTitle.includes("net lease agreement")) {
+    return documentContent["Triple Net Lease Agreement"];
+  }
+  if (normalizedTitle.includes("agreement to sell") || normalizedTitle.includes("sale agreement") || normalizedTitle.includes("contract to sell") || normalizedTitle.includes("agreement for sale")) {
+    return documentContent["Agreement to Sell"];
+  }
+  if (
+    normalizedTitle.includes("agreement to cancel lease") ||
+    normalizedTitle.includes("lease termination agreement") ||
+    normalizedTitle.includes("early termination of lease") ||
+    normalizedTitle.includes("cash for keys")
+  ) {
+    return documentContent["Agreement to Cancel Lease"];
   }
   if (normalizedTitle.includes("office space lease") || normalizedTitle.includes("office rental")) {
     return documentContent["Office Space Lease Agreement"];

@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, FileText, GraduationCap, Clock, CheckCircle, Users, Mail } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, FileText, GraduationCap, CheckCircle, Users, Mail, Shield, Edit3, HelpCircle } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 
 const TranscriptRequestInfo = () => {
@@ -21,230 +21,178 @@ const TranscriptRequestInfo = () => {
               <GraduationCap className="w-6 h-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">Transcript Request</h1>
-              <p className="text-muted-foreground">Official request for academic transcripts and degree documents</p>
+              <h1 className="text-3xl font-bold">Transcript Request Letter</h1>
+              <p className="text-muted-foreground">A formal, professional request for academic records from a school, college, or university.</p>
             </div>
           </div>
         </div>
 
         <div className="grid gap-6">
-          {/* Overview */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <FileText className="w-5 h-5" />
-                What is a Transcript Request?
+                What is a Transcript Request Letter?
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <p>
-                A Transcript Request is a formal letter used to request official academic transcripts, degree certificates, or other educational documents from an educational institution. This document is commonly needed for job applications, further education, visa applications, or professional licensing requirements.
+                A Transcript Request Letter is a formal document used to request your academic records from a school, college, or university.
               </p>
+              <p>The draft Transcript Request Letter from Legalgram includes:</p>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li>• Student's full name and identification details</li>
+                <li>• Enrollment and graduation information</li>
+                <li>• Request for official or unofficial transcripts</li>
+                <li>• Recipient details (school, university, or employer)</li>
+                <li>• Authorization and signature</li>
+              </ul>
               <p>
-                The request serves as an official communication to the registrar's office or academic records department, providing all necessary information to identify the student and facilitate the release of academic documents to authorized representatives when the student cannot collect them personally.
+                Using the best format Transcript Request Letter from Legalgram ensures your request is clear, professional, and accepted.
               </p>
             </CardContent>
           </Card>
 
-          {/* Key Components */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                Key Components of a Transcript Request
+                Why You Need a Transcript Request Letter
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-3">
-                  <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <div>
-                      <h4 className="font-medium">Institution Details</h4>
-                      <p className="text-sm text-muted-foreground">Name and address of the educational institution</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <div>
-                      <h4 className="font-medium">Student Information</h4>
-                      <p className="text-sm text-muted-foreground">Full name, registration and enrollment numbers</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <div>
-                      <h4 className="font-medium">Academic Details</h4>
-                      <p className="text-sm text-muted-foreground">Department, academic year, and course information</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <div>
-                      <h4 className="font-medium">Contact Information</h4>
-                      <p className="text-sm text-muted-foreground">Phone number, email, and current address</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <div>
-                      <h4 className="font-medium">Authorization</h4>
-                      <p className="text-sm text-muted-foreground">Representative details and collection authorization</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                    <div>
-                      <h4 className="font-medium">Signature</h4>
-                      <p className="text-sm text-muted-foreground">Official signature for document authenticity</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <p className="mb-3">A properly drafted Transcript Request Letter is essential for academic and professional purposes. With Legalgram, you can:</p>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li>• Request transcripts efficiently and professionally</li>
+                <li>• Provide complete and accurate student details</li>
+                <li>• Ensure faster processing by institutions</li>
+                <li>• Maintain proper written documentation</li>
+                <li>• Avoid delays or rejections</li>
+              </ul>
+              <p className="mt-3">Free download tenancy agreement and Transcript Request Letter on Legalgram for complete document solutions.</p>
             </CardContent>
           </Card>
 
-          {/* When to Use */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Users className="w-5 h-5" />
-                When to Use a Transcript Request
+                When to Use a Transcript Request Letter
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 md:grid-cols-2">
-                <div>
-                  <h4 className="font-medium mb-2">Common Scenarios:</h4>
-                  <ul className="text-sm space-y-1 text-muted-foreground">
-                    <li>• Job application requirements</li>
-                    <li>• Higher education admissions</li>
-                    <li>• Professional license applications</li>
-                    <li>• Visa and immigration processes</li>
-                    <li>• Professional certification programs</li>
-                    <li>• Employment verification</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium mb-2">Document Types:</h4>
-                  <ul className="text-sm space-y-1 text-muted-foreground">
-                    <li>• Official transcripts</li>
-                    <li>• Degree certificates</li>
-                    <li>• Academic records</li>
-                    <li>• Course completion certificates</li>
-                    <li>• Grade reports</li>
-                    <li>• Enrollment verification</li>
-                  </ul>
-                </div>
-              </div>
+              <p className="mb-3">You should download Transcript Request Letter from Legalgram when:</p>
+              <ul className="text-sm space-y-1 text-muted-foreground">
+                <li>• You are applying to a new school, college, or university</li>
+                <li>• You need transcripts for a job application</li>
+                <li>• You are transferring academic records</li>
+                <li>• You want official proof of your educational achievements</li>
+              </ul>
+              <p className="mt-3">The Transcript Request Letter on Legalgram is ideal for students, graduates, and job applicants.</p>
             </CardContent>
           </Card>
 
-          {/* Process Timeline */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                Request Process Timeline
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm">1</div>
-                  <div>
-                    <h4 className="font-medium">Submit Request</h4>
-                    <p className="text-sm text-muted-foreground">Submit completed transcript request form to registrar's office</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
-                  <div>
-                    <h4 className="font-medium">Verification (2-5 Days)</h4>
-                    <p className="text-sm text-muted-foreground">Institution verifies student identity and academic records</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
-                  <div>
-                    <h4 className="font-medium">Processing (5-10 Days)</h4>
-                    <p className="text-sm text-muted-foreground">Academic office prepares official documents</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-sm">4</div>
-                  <div>
-                    <h4 className="font-medium">Collection/Delivery</h4>
-                    <p className="text-sm text-muted-foreground">Documents ready for collection by authorized representative</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Requirements */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Mail className="w-5 h-5" />
-                Required Information & Documentation
+                Key Features of the Best Transcript Request Letter Format
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="text-sm space-y-2 text-muted-foreground">
+                <li>1. Personal Information: Full name, date of birth, and contact details</li>
+                <li>2. Enrollment Details: School/college name and years of attendance</li>
+                <li>3. Transcript Type: Official or unofficial transcript request</li>
+                <li>4. Recipient Information: Where the transcript should be sent</li>
+                <li>5. Authorization: Signature and identity verification</li>
+                <li>6. Payment Details: If applicable, transcript processing fees</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Shield className="w-5 h-5" />
+                Is a Transcript Request Letter Important?
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div>
-                  <h4 className="font-medium mb-2">Student Information:</h4>
-                  <ul className="text-sm space-y-1 text-muted-foreground">
-                    <li>• Full name as recorded in institution</li>
-                    <li>• Student registration number</li>
-                    <li>• Enrollment number</li>
-                    <li>• Department and course details</li>
-                    <li>• Academic year(s) attended</li>
-                    <li>• Current contact information</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-medium mb-2">Additional Requirements:</h4>
-                  <ul className="text-sm space-y-1 text-muted-foreground">
-                    <li>• Photo identification copy</li>
-                    <li>• Authorization letter (if applicable)</li>
-                    <li>• Processing fees (if required)</li>
-                    <li>• Representative identification</li>
-                    <li>• Purpose of request documentation</li>
-                    <li>• Delivery address confirmation</li>
-                  </ul>
-                </div>
+              <p>
+                Yes. A Transcript Request Letter ensures your academic records are requested formally and processed without delay.
+              </p>
+              <p>
+                Download Transcript Request Letter from Legalgram to make a professional and effective request.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Edit3 className="w-5 h-5" />
+                How to Draft a Transcript Request Letter
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">With Legalgram, you can easily:</p>
+              <ol className="text-sm space-y-1 text-muted-foreground list-decimal list-inside">
+                <li>Enter your personal and academic details</li>
+                <li>Specify transcript type and quantity</li>
+                <li>Add recipient information</li>
+                <li>Include authorization details</li>
+                <li>Download Transcript Request Letter instantly</li>
+              </ol>
+              <p className="mt-3">The draft Transcript Request Letter from Legalgram simplifies the entire process.</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <HelpCircle className="w-5 h-5" />
+                Transcript Request Letter FAQs
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div>
+                <h4 className="font-medium">What should be included in a Transcript Request Letter?</h4>
+                <p className="text-sm text-muted-foreground">Personal details, enrollment information, transcript type, and recipient details.</p>
               </div>
-              <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <p className="text-sm font-medium text-blue-800 mb-1">Processing Note:</p>
-                <p className="text-sm text-blue-700">
-                  Processing times may vary by institution. Contact the registrar's office directly for specific 
-                  requirements, fees, and estimated processing times for your request.
-                </p>
+              <div>
+                <h4 className="font-medium">Can I request transcripts for a job application?</h4>
+                <p className="text-sm text-muted-foreground">Yes, many employers require transcripts as proof of education.</p>
+              </div>
+              <div>
+                <h4 className="font-medium">Is an official transcript necessary?</h4>
+                <p className="text-sm text-muted-foreground">Yes, especially for universities and formal applications.</p>
+              </div>
+              <div>
+                <h4 className="font-medium">Can I customize the letter?</h4>
+                <p className="text-sm text-muted-foreground">Yes, you can fully edit and download Transcript Request Letter from Legalgram.</p>
               </div>
             </CardContent>
           </Card>
 
-          {/* Call to Action */}
           <Card className="bg-primary/5">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <GraduationCap className="w-5 h-5" />
-                Create Your Transcript Request Now
+                Download Transcript Request Letter – Legalgram
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Use our guided form to create a professional transcript request that includes all necessary 
-                information for efficient processing. Our template ensures proper formatting and completeness 
-                for academic institutions.
-              </p>
+              <ul className="text-sm space-y-1 text-muted-foreground mb-4">
+                <li>✔ Professionally drafted format</li>
+                <li>✔ Easy to customize and edit</li>
+                <li>✔ Suitable for academic and job purposes</li>
+                <li>✔ Instant download access</li>
+              </ul>
               <div className="flex gap-3">
                 <Link to="/documents/transcript-request">
                   <Button>
-                    Create Transcript Request Now
+                    Create Transcript Request Letter
                   </Button>
                 </Link>
                 <Link to="/contact-lawyer">

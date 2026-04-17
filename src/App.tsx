@@ -162,6 +162,7 @@ import ConsultingAgreementInfo from "./pages/ConsultingAgreementInfo";
 import DJContractInfo from "./pages/DJContractInfo";
 import WarehouseLeaseInfo from "./pages/WarehouseLeaseInfo";
 import RoofingContractInfo from "./pages/RoofingContractInfo";
+import SecurityDepositeReturnLetterInfo from "./pages/SecurityDepositeReturnLetterInfo";
 
 
 // Loading component
@@ -367,6 +368,8 @@ const App = () => {
                 <Route path="/janitorial-services-agreement-info" element={<JanitorialInfo />} />
                 <Route path="/janitorial-services-agreement-form" element={<Documents />} />
                 <Route path="/security-deposit-return-letter" element={<Documents />} />
+                <Route path="/security-deposit-return-letter-info" element={<SecurityDepositeReturnLetterInfo />} />
+                <Route path="/security-deposite-return-letter-info" element={<SecurityDepositeReturnLetterInfo />} />
                 <Route path="/lease-termination-letter" element={<Documents />} />
                 <Route path="/late-rent-payment-agreement" element={<Documents />} />
                 <Route path="/non-disturbance-agreement" element={<Documents />} />
