@@ -161,6 +161,7 @@ import ConcessionAgreementInfo from "./pages/ConcessionAgreementInfo";
 import ConsultingAgreementInfo from "./pages/ConsultingAgreementInfo";
 import DJContractInfo from "./pages/DJContractInfo";
 import WarehouseLeaseInfo from "./pages/WarehouseLeaseInfo";
+import RoofingContractInfo from "./pages/RoofingContractInfo";
 
 
 // Loading component
@@ -353,6 +354,7 @@ const App = () => {
                 <Route path="/restaurant-lease-info" element={<RestaurantLeaseInfo />} />
                 <Route path="/restaurant-lease-form" element={<Documents />} />
                 <Route path="/warehouse-lease-info" element={<WarehouseLeaseInfo />} />
+                <Route path="/roofing-contract-agreement-info" element={<RoofingContractInfo />} />
                 <Route path="/warehouse-lease-form" element={<Documents />} />
                 <Route path="/gas-lease-info" element={<GasLeaseInfo />} />
                 <Route path="/gas-lease-form" element={<Documents />} />

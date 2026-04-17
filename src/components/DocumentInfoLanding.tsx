@@ -5,7 +5,7 @@ import {
   Lightbulb, Scale, Clipboard, FileSignature, ChevronDown, ChevronUp,
   HelpCircle, ListChecks, BookOpen, BadgeCheck, Timer, Info
 } from 'lucide-react';
-import { getDocumentContent, DocumentContent } from '@/data/documentContent';
+import { documentContent, getDocumentContent, DocumentContent } from '@/data/documentContent';
 
 interface DocumentInfoLandingProps {
   title: string;
@@ -55,7 +55,22 @@ export default function DocumentInfoLanding({
   onStart,
   onBack
 }: DocumentInfoLandingProps) {
-  const docContent: DocumentContent = getDocumentContent(title);
+  const docContent: DocumentContent = (() => {
+    const content = getDocumentContent(title);
+    if (
+      title.toLowerCase().includes('oil lease') &&
+      content.whatIs.startsWith('This is a legal document that formalizes an agreement or declaration between parties')
+    ) {
+      return documentContent['Oil Lease Agreement'];
+    }
+    if (
+      title.toLowerCase().includes('lease amendment') &&
+      content.whatIs.startsWith('This is a legal document that formalizes an agreement or declaration between parties')
+    ) {
+      return documentContent['Lease Amendment Agreement'];
+    }
+    return content;
+  })();
 
   return (
     <div className="max-w-7xl mx-auto">

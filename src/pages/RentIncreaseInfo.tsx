@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, FileText, CheckCircle, AlertTriangle, Users, Calendar } from "lucide-react";
+import { ArrowLeft, FileText, CheckCircle, AlertTriangle, Calendar, Scale } from "lucide-react";
 
 const RentIncreaseInfo = () => {
   const navigate = useNavigate();
@@ -21,9 +21,9 @@ const RentIncreaseInfo = () => {
           
           <div className="text-center mb-8">
             <FileText className="w-16 h-16 mx-auto mb-4 text-blue-600" />
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Rent Increase Agreement</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Rent Increase Letter Information</h1>
             <p className="text-lg text-gray-600">
-              A legal document to formalize rent increases between landlords and tenants
+              A Rent Increase Letter is an essential document for landlords and property managers to formally communicate rent adjustments.
             </p>
           </div>
         </div>
@@ -33,19 +33,21 @@ const RentIncreaseInfo = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <FileText className="w-5 h-5 mr-2 text-blue-600" />
-                What is a Rent Increase Agreement?
+                What is a Rent Increase Letter?
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-gray-700 mb-4">
-                A Rent Increase Agreement is a legal document that formalizes an increase in rent between a landlord 
-                and tenant. This agreement serves as an amendment to the original lease agreement and establishes the 
-                new rental amount, effective date, and payment terms while keeping all other lease terms intact.
+                A Rent Increase Letter is a written notice provided by a landlord to inform tenants about an increase in rent and the date it will take effect.
               </p>
-              <p className="text-gray-700">
-                This document provides legal protection for both parties by clearly documenting the agreed-upon rent 
-                increase and ensuring compliance with local rent control laws and lease requirements.
-              </p>
+              <p className="text-gray-700 mb-2">The draft Rent Increase Letter from Legalgram includes:</p>
+              <ul className="space-y-1 text-gray-700">
+                <li>• Current and revised rent amount</li>
+                <li>• Effective date of rent increase</li>
+                <li>• Payment due date details</li>
+                <li>• Notice period and terms</li>
+                <li>• Legal compliance and documentation</li>
+              </ul>
             </CardContent>
           </Card>
 
@@ -53,63 +55,17 @@ const RentIncreaseInfo = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
-                Key Components
+                Why You Need a Rent Increase Letter
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div>
-                  <h4 className="font-semibold mb-2">Essential Information</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Current lease details and date</li>
-                    <li>• Current rent amount and due date</li>
-                    <li>• New rent amount</li>
-                    <li>• Effective date of increase</li>
-                    <li>• Property address</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Legal Protections</h4>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>• Binding agreement clause</li>
-                    <li>• Governing law specification</li>
-                    <li>• Entire agreement provision</li>
-                    <li>• No other modifications clause</li>
-                    <li>• Signature requirements</li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <Users className="w-5 h-5 mr-2 text-purple-600" />
-                Who Should Use This Agreement?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Landlords</h4>
-                  <p className="text-sm text-gray-700">
-                    Property owners who need to increase rent in accordance with lease terms and local laws
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Property Managers</h4>
-                  <p className="text-sm text-gray-700">
-                    Management companies handling rent adjustments for multiple properties
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <h4 className="font-semibold mb-2">Tenants</h4>
-                  <p className="text-sm text-gray-700">
-                    Renters who want formal documentation of agreed-upon rent increases
-                  </p>
-                </div>
-              </div>
+              <ul className="space-y-2 text-gray-700">
+                <li>• Provide formal written notice to tenants</li>
+                <li>• Maintain legal compliance with rent laws</li>
+                <li>• Avoid misunderstandings regarding rent changes</li>
+                <li>• Keep proper documentation for future reference</li>
+                <li>• Protect landlord-tenant relationships</li>
+              </ul>
             </CardContent>
           </Card>
 
@@ -117,27 +73,33 @@ const RentIncreaseInfo = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Calendar className="w-5 h-5 mr-2 text-orange-600" />
-                When to Use This Agreement
+                When to Use a Rent Increase Letter
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
-                <div className="p-3 bg-yellow-50 border-l-4 border-yellow-400">
-                  <h4 className="font-semibold">Market Rate Adjustments</h4>
-                  <p className="text-sm text-gray-700">When increasing rent to match current market rates</p>
-                </div>
-                <div className="p-3 bg-blue-50 border-l-4 border-blue-400">
-                  <h4 className="font-semibold">Property Improvements</h4>
-                  <p className="text-sm text-gray-700">After making significant improvements or renovations</p>
-                </div>
-                <div className="p-3 bg-green-50 border-l-4 border-green-400">
-                  <h4 className="font-semibold">Operating Cost Increases</h4>
-                  <p className="text-sm text-gray-700">When property taxes, insurance, or maintenance costs rise</p>
-                </div>
-                <div className="p-3 bg-purple-50 border-l-4 border-purple-400">
-                  <h4 className="font-semibold">Lease Renewal</h4>
-                  <p className="text-sm text-gray-700">During lease renewal negotiations</p>
-                </div>
+              <ul className="space-y-2 text-gray-700">
+                <li>• You want to increase monthly rent</li>
+                <li>• You need to notify tenants in writing</li>
+                <li>• You want to maintain a formal record of rent changes</li>
+                <li>• You are renewing or updating lease terms</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Scale className="w-5 h-5 mr-2 text-indigo-600" />
+                Key Features of the Best Rent Increase Letter Format
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-2 gap-4 text-gray-700">
+                <div className="p-3 bg-gray-50 rounded-lg"><strong>1. Current &amp; New Rent Amount</strong><p>Clear comparison of existing and revised rent</p></div>
+                <div className="p-3 bg-gray-50 rounded-lg"><strong>2. Effective Date</strong><p>When the new rent will apply</p></div>
+                <div className="p-3 bg-gray-50 rounded-lg"><strong>3. Payment Terms</strong><p>Due date and payment conditions</p></div>
+                <div className="p-3 bg-gray-50 rounded-lg"><strong>4. Notice Period</strong><p>Advance notice as required by law</p></div>
+                <div className="p-3 bg-gray-50 rounded-lg md:col-span-2"><strong>5. Legal Compliance</strong><p>Ensures adherence to rental regulations</p></div>
               </div>
             </CardContent>
           </Card>
@@ -146,32 +108,46 @@ const RentIncreaseInfo = () => {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <AlertTriangle className="w-5 h-5 mr-2 text-red-600" />
-                Important Legal Considerations
+                Is a Rent Increase Letter Legally Binding?
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                  <h4 className="font-semibold text-red-800 mb-2">Notice Requirements</h4>
-                  <p className="text-red-700 text-sm">
-                    Check your local and state laws for required notice periods before implementing rent increases. 
-                    Some jurisdictions require 30, 60, or even 90 days notice.
-                  </p>
-                </div>
-                <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                  <h4 className="font-semibold text-yellow-800 mb-2">Rent Control Laws</h4>
-                  <p className="text-yellow-700 text-sm">
-                    Some areas have rent control or rent stabilization laws that limit how much and how often 
-                    rent can be increased. Always verify local regulations.
-                  </p>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                  <h4 className="font-semibold text-blue-800 mb-2">Lease Terms</h4>
-                  <p className="text-blue-700 text-sm">
-                    Review the original lease agreement to ensure rent increases are permitted and follow 
-                    any specified procedures or limitations.
-                  </p>
-                </div>
+              <p className="text-gray-700 mb-3">
+                Yes. A properly issued Rent Increase Letter on Legalgram serves as an official legal notice. While it does not itself change the lease terms, it is a required step before implementing rent changes.
+              </p>
+              <p className="text-gray-700">Download Rent Increase Letter from Legalgram to ensure legal compliance and proper documentation.</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <FileText className="w-5 h-5 mr-2 text-blue-600" />
+                How to Draft a Rent Increase Letter
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ol className="space-y-2 text-gray-700 list-decimal list-inside">
+                <li>Enter landlord and tenant details</li>
+                <li>Add current and new rent amounts</li>
+                <li>Specify the effective date</li>
+                <li>Include notice period and terms</li>
+                <li>Download Rent Increase Letter instantly</li>
+              </ol>
+              <p className="text-gray-700 mt-3">The draft Rent Increase Letter from Legalgram simplifies the process and saves time.</p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Rent Increase Letter FAQs</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3 text-gray-700">
+                <div><strong>How much can rent be increased?</strong><p>Typically 3-5%, but it depends on local laws and lease terms.</p></div>
+                <div><strong>Can I notify tenants via email?</strong><p>Usually, written notice (hand-delivered or mailed) is required.</p></div>
+                <div><strong>When can rent be increased?</strong><p>Generally, at the end of a lease term or as allowed by lease terms.</p></div>
+                <div><strong>Can I customize the letter?</strong><p>Yes, you can download and edit Rent Increase Letter from Legalgram easily.</p></div>
               </div>
             </CardContent>
           </Card>
@@ -180,16 +156,15 @@ const RentIncreaseInfo = () => {
         <div className="text-center">
           <Card className="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-200">
             <CardContent className="pt-6">
-              <h3 className="text-xl font-semibold mb-2">Ready to Create Your Rent Increase Agreement?</h3>
+              <h3 className="text-xl font-semibold mb-2">Download Rent Increase Letter - Legalgram</h3>
               <p className="text-gray-600 mb-4">
-                Our guided form will help you create a comprehensive and legally sound rent increase agreement 
-                in just a few minutes.
+                Professionally drafted legal format, easy to customize and edit, suitable for all rental properties, and instant access and download.
               </p>
               <Button 
                 onClick={() => navigate('/make-document/rent-increase')}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-2"
               >
-                Start Creating Your Agreement
+                Start Creating Your Letter
               </Button>
             </CardContent>
           </Card>

@@ -462,6 +462,263 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-20 minutes"
   },
 
+  "Lease Amendment Agreement": {
+    title: "Lease Amendment Agreement",
+    otherNames: [
+      "Lease Addendum",
+      "Lease Amendment Form",
+      "Addendum to Lease Agreement"
+    ],
+    whatIs: "A Lease Amendment Agreement is a legal agreement that allows landlords and tenants to modify certain terms of an existing lease while keeping the rest of the agreement unchanged. This draft Lease Amendment Agreement from Legalgram includes details of landlord and tenant, reference to the original lease agreement, effective date of amendment, specific terms being changed or added, and confirmation that all other lease terms remain valid. The best format Lease Amendment Agreement from Legalgram ensures clarity, accuracy, and legal protection for both parties.",
+    whenToUse: [
+      "You want to change rent amount or payment terms",
+      "You need to extend or shorten the lease duration",
+      "You want to update rules or conditions of tenancy",
+      "Both landlord and tenant agree on modifications",
+      "You need a written record of lease changes"
+    ],
+    faqs: [
+      {
+        q: "Is a Lease Amendment Agreement legally binding?",
+        a: "Yes. Once signed by both parties, a Lease Amendment Agreement is generally enforceable under applicable law."
+      },
+      {
+        q: "Do I need to create a new lease instead?",
+        a: "No. A Lease Amendment Agreement lets you modify only the specific terms you want to change while keeping the original lease in place."
+      },
+      {
+        q: "What changes can be made with a Lease Amendment Agreement?",
+        a: "You can update rent, duration, rules, or any other agreed lease terms through a written amendment."
+      },
+      {
+        q: "Can I customize the Lease Amendment Agreement?",
+        a: "Yes. The amendment can be customized to reflect the exact changes agreed by the landlord and tenant."
+      }
+    ],
+    keyProtections: [
+      "Clearly identifies the original lease being amended",
+      "Documents the exact changes to the agreement",
+      "Keeps all unchanged lease terms in force",
+      "Creates a clear record of mutual consent",
+      "Reduces confusion and future disputes",
+      "Supports enforceability by requiring signatures"
+    ],
+    whatYouNeed: [
+      "Landlord and tenant legal names and contact details",
+      "Reference to the original lease agreement",
+      "Effective date for the amendment",
+      "Specific terms being changed or added",
+      "Confirmation that all other lease terms remain unchanged",
+      "Signature blocks for both parties"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Lease Renewal Agreement": {
+    title: "Lease Renewal Agreement",
+    otherNames: [
+      "Lease Extension Agreement",
+      "Rental Agreement Renewal",
+      "Lease Renewal Form"
+    ],
+    whatIs: "A Lease Renewal Agreement is a legal agreement that allows a landlord and tenant to extend an existing lease beyond its original expiry date, with or without modifications. This draft Lease Renewal Agreement from Legalgram includes details of landlord and tenant, reference to the original lease agreement, renewal term and duration, updated terms (such as rent increase, if any), and rights and responsibilities of both parties. The best format Lease Renewal Agreement from Legalgram ensures clarity, continuity, and legal protection for both parties.",
+    whenToUse: [
+      "Your lease is about to expire and you want to renew it",
+      "You want to extend the tenancy period",
+      "You need to update rent or other lease terms",
+      "Both landlord and tenant agree to continue the lease",
+      "You want a written record of the renewal"
+    ],
+    faqs: [
+      {
+        q: "Is a Lease Renewal Agreement legally binding?",
+        a: "Yes. Once signed, the Lease Renewal Agreement is generally enforceable under applicable law."
+      },
+      {
+        q: "Do I need a new lease instead?",
+        a: "No. A Lease Renewal Agreement lets you extend the existing lease without drafting a fully new lease contract."
+      },
+      {
+        q: "Can I change rent in a Lease Renewal Agreement?",
+        a: "Yes. Rent and other agreed terms can be updated during renewal."
+      },
+      {
+        q: "Can I customize the Lease Renewal Agreement?",
+        a: "Yes. You can customize the renewal term, pricing, and other conditions to match your agreement."
+      }
+    ],
+    keyProtections: [
+      "Extends tenancy with clear legal documentation",
+      "References the original lease for continuity",
+      "Records updated rent and modified terms",
+      "Clarifies rights and obligations of both parties",
+      "Reduces disputes through written renewal terms",
+      "Supports enforceability with signed agreement"
+    ],
+    whatYouNeed: [
+      "Landlord and tenant legal names and contact details",
+      "Reference to the original lease agreement",
+      "Renewal term and new lease duration",
+      "Updated rent and modified terms (if any)",
+      "Rights and responsibilities of both parties",
+      "Signatures and renewal effective date"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Lease Subordination Agreement": {
+    title: "Lease Subordination Agreement",
+    otherNames: [
+      "Lease Subordination",
+      "Non-Disturbance",
+      "Attornment Agreement (SNDA)"
+    ],
+    whatIs: "A Lease Subordination Agreement (SNDA) is a legal agreement that ensures tenants can continue occupying a property even if ownership changes due to sale, foreclosure, or landlord default. This draft Lease Subordination Agreement from Legalgram includes three key components: Subordination Agreement (tenant agrees lender rights take priority), Non-Disturbance Agreement (tenant can remain after foreclosure), and Attornment Agreement (tenant accepts the new owner or lender as landlord). The best format Lease Subordination Agreement from Legalgram ensures security, clarity, and legal protection for landlords, tenants, and lenders.",
+    whenToUse: [
+      "You are leasing a mortgaged property",
+      "You want tenants to remain after property sale or foreclosure",
+      "You need legal protection for tenancy continuity",
+      "You want to define relationships between tenant, landlord, and lender",
+      "You are entering into a long-term commercial or residential lease"
+    ],
+    faqs: [
+      {
+        q: "Is a Lease Subordination Agreement legally binding?",
+        a: "Yes. Once signed, the Lease Subordination Agreement is generally enforceable under applicable law."
+      },
+      {
+        q: "What does Non-Disturbance mean?",
+        a: "It means tenants are protected from eviction and may continue occupancy if foreclosure occurs, subject to agreement terms."
+      },
+      {
+        q: "Who needs a Lease Subordination Agreement?",
+        a: "Landlords, tenants, and lenders involved in leasing mortgaged properties benefit from this agreement."
+      },
+      {
+        q: "Can I customize the Lease Subordination Agreement?",
+        a: "Yes. You can customize clauses to match the property, financing terms, and lease structure."
+      }
+    ],
+    keyProtections: [
+      "Subordination clause prioritizing lender rights",
+      "Non-disturbance clause preserving tenant occupancy",
+      "Attornment clause aligning tenant with successor landlord",
+      "Lease continuation terms during ownership changes",
+      "Defined rights among tenant, landlord, and lender",
+      "Reduced dispute risk in default and foreclosure scenarios"
+    ],
+    whatYouNeed: [
+      "Tenant, landlord, and lender legal names and details",
+      "Reference to the underlying lease",
+      "Mortgage or financing reference information",
+      "Subordination, non-disturbance, and attornment terms",
+      "Lease continuation conditions after ownership change",
+      "Signatures of all required parties"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Office Space Lease Agreement": {
+    title: "Office Space Lease Agreement",
+    otherNames: [
+      "Office Rental Agreement",
+      "Commercial Office Lease",
+      "Office Lease Form"
+    ],
+    whatIs: "An Office Space Lease Agreement (also known as an Office Rental Agreement) is a legal document used to outline the terms of renting commercial office space. This draft Office Space Lease agreement from Legalgram includes property details and office description, lease duration and rental terms, payment structure and due dates, rights and responsibilities of landlord and tenant, and legal clauses for dispute resolution and liability. Using the best format Office Space Lease from Legalgram, you can ensure your commercial leasing process is secure and professional.",
+    whenToUse: [
+      "You own office space and want to lease it",
+      "You are converting property into commercial rental space",
+      "You are renting office space from a landlord",
+      "You need a professional and legally sound lease format"
+    ],
+    faqs: [
+      {
+        q: "Is an Office Rental Agreement legally binding?",
+        a: "Yes. A properly signed Office Space Lease Agreement on Legalgram is legally binding and enforceable. Both landlord and tenant must comply with the terms until the lease expires."
+      },
+      {
+        q: "Can I customize the agreement?",
+        a: "Absolutely. You can download and edit Office Space Lease from Legalgram as needed."
+      },
+      {
+        q: "What happens if I don't use a lease agreement?",
+        a: "You may face issues like unpaid rent, property misuse, or unclear terms."
+      },
+      {
+        q: "Is Legalgram suitable for commercial leases?",
+        a: "Yes. Legalgram provides best format Office Space Lease agreements for professional use."
+      }
+    ],
+    keyProtections: [
+      "Clearly define rent, deposits, and payment terms",
+      "Avoid disputes between landlord and tenant",
+      "Establish lease duration and renewal conditions",
+      "Protect property from misuse or unauthorized use",
+      "Ensure legal compliance with a structured agreement",
+      "Provide legal clauses for dispute resolution and liability"
+    ],
+    whatYouNeed: [
+      "Property details and office description",
+      "Lease duration and rental terms",
+      "Payment structure and due dates",
+      "Rights and responsibilities of landlord and tenant",
+      "Security deposit terms",
+      "Usage terms and liability clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Non-Disturbance Agreement": {
+    title: "Non-Disturbance Agreement",
+    otherNames: [
+      "Subordination and Non-Disturbance Agreement (SNDA)"
+    ],
+    whatIs: "A Non-Disturbance Agreement is a legal agreement between tenant, landlord, and lender that ensures tenants are not evicted if the property is foreclosed due to unpaid mortgage. This draft Non-Disturbance Agreement from Legalgram includes details of tenant, landlord, and lender, confirmation of tenant's right to remain in possession, terms ensuring uninterrupted tenancy, recognition of lender as new landlord if applicable, and legal clauses for protection and enforcement. The best format Non-Disturbance Agreement from Legalgram ensures security, clarity, and legal protection for all parties involved.",
+    whenToUse: [
+      "You are leasing a mortgaged property",
+      "You want protection from eviction due to landlord default",
+      "You are a landlord seeking to assure tenants",
+      "You are a lender securing rental income",
+      "You need legal clarity in a multi-party lease arrangement"
+    ],
+    faqs: [
+      {
+        q: "Is a Non-Disturbance Agreement legally binding?",
+        a: "Yes. Once signed, the Non-Disturbance Agreement on Legalgram is generally enforceable."
+      },
+      {
+        q: "Who needs a Non-Disturbance Agreement?",
+        a: "Tenants, landlords, and lenders involved in mortgaged property benefit from it."
+      },
+      {
+        q: "What happens if the landlord defaults?",
+        a: "The agreement helps ensure tenants can remain in the property, subject to the agreement terms."
+      },
+      {
+        q: "Can I customize the Non-Disturbance Agreement?",
+        a: "Yes. You can customize the agreement to match the property, lender, and lease terms."
+      }
+    ],
+    keyProtections: [
+      "Protects tenants from eviction after foreclosure",
+      "Ensures uninterrupted tenancy",
+      "Protects lender's right to receive rental income",
+      "Clarifies rights among tenant, landlord, and lender",
+      "Avoids disputes after landlord default",
+      "Includes enforcement and dispute resolution clauses"
+    ],
+    whatYouNeed: [
+      "Details of tenant, landlord, and lender",
+      "Confirmation of tenant's right to remain in possession",
+      "Terms ensuring uninterrupted tenancy",
+      "Recognition of lender as new landlord if applicable",
+      "Legal protection and enforcement clauses",
+      "Signatures from required parties"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
   // === SPECIAL POWER OF ATTORNEY ===
   "Special Power of Attorney": {
     title: "Special Power of Attorney",
@@ -1249,6 +1506,53 @@ export const documentContent: Record<string, DocumentContent> = {
       "Drilling, production, and surface-use permissions",
       "Lease term, renewal, and termination conditions",
       "Assignment and default provisions"
+    ],
+    estimatedTime: "15-20 minutes"
+  },
+
+  "Oil Lease Agreement": {
+    title: "Oil Lease Agreement",
+    otherNames: ["Oil and Gas Lease Agreement", "Oil Lease", "Mineral Lease Agreement"],
+    whatIs: "An Oil Lease Agreement is a legally binding contract between a landowner (lessor) and an oil or gas company (lessee), granting rights to explore and extract oil, gas, and minerals from a property. An Oil Lease Agreement is essential for landowners and oil companies to clearly define exploration, extraction, and royalty terms. This draft Oil Lease Agreement from Legalgram includes property and land description, exploration and extraction rights, lease duration and conditions, payment terms and royalties, and legal clauses for liability and dispute resolution. Using the best format Oil Lease Agreement from Legalgram, both parties can avoid misunderstandings and ensure a smooth agreement.",
+    whenToUse: [
+      "You want to lease land for oil or gas exploration",
+      "You are an oil company seeking exploration rights",
+      "You need a legally binding oil and gas lease format",
+      "You want to define royalty and extraction terms clearly"
+    ],
+    faqs: [
+      {
+        q: "Why is an Oil Lease Agreement important?",
+        a: "It ensures clarity on rights, payments, and responsibilities, reducing legal risks."
+      },
+      {
+        q: "What happens if I don't use an agreement?",
+        a: "You may face disputes, unauthorized usage, or unclear royalty terms."
+      },
+      {
+        q: "Can I customize the agreement?",
+        a: "Yes, you can download and edit Oil Lease Agreement from Legalgram easily."
+      },
+      {
+        q: "Does it include royalty clauses?",
+        a: "Yes, the Oil Lease Agreement on Legalgram includes structured royalty provisions."
+      }
+    ],
+    keyProtections: [
+      "Clearly define oil and gas extraction rights",
+      "Establish royalty payments and profit-sharing",
+      "Prevent unauthorized land use",
+      "Avoid disputes through clear legal terms",
+      "Ensure compliance with legal requirements",
+      "Include liability and dispute resolution clauses"
+    ],
+    whatYouNeed: [
+      "Landowner and company legal names and contact details",
+      "Property and land legal description",
+      "Exploration and extraction rights scope",
+      "Lease duration and renewal conditions",
+      "Royalty percentage and payment schedule",
+      "Liability and dispute resolution terms"
     ],
     estimatedTime: "15-20 minutes"
   },
@@ -4045,6 +4349,467 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-15 minutes"
   },
 
+  "Landscaping Services Agreement": {
+    title: "Landscaping Services Agreement",
+    otherNames: [
+      "Landscaping Contract",
+      "Landscape Services Contract",
+      "Garden Maintenance Agreement"
+    ],
+    whatIs: "A Landscaping Contract is a legal agreement that defines how landscaping services will be provided, including tasks, timelines, and payment terms. This draft Landscaping Contract from Legalgram includes details of the landscaper and client, scope of landscaping services (design, maintenance, and installation), project timeline and schedule, cost and payment terms, and liability, confidentiality, and dispute resolution clauses. The best format Landscaping Contract from Legalgram ensures clarity, professionalism, and legal protection for both parties.",
+    whenToUse: [
+      "You are providing landscaping or garden maintenance services",
+      "You are hiring a landscaper for residential or commercial property",
+      "You want to define scope, schedule, and payment terms",
+      "You need a written agreement for ongoing or one-time work",
+      "You want legal protection before starting services"
+    ],
+    faqs: [
+      {
+        q: "Why is a Landscaping Contract important?",
+        a: "A Landscaping Contract helps avoid disputes, defines responsibilities, and supports timely project completion."
+      },
+      {
+        q: "What should be included in a Landscaping Contract?",
+        a: "A landscaping agreement should include the service scope, timeline, cost, payment schedule, materials, and legal clauses."
+      },
+      {
+        q: "Is a Landscaping Contract legally binding?",
+        a: "Yes. Once signed by both parties, a Landscaping Contract is generally enforceable under applicable law."
+      },
+      {
+        q: "Can I customize the Landscaping Contract?",
+        a: "Yes. The template can be customized for project size, service type, and payment structure."
+      }
+    ],
+    keyProtections: [
+      "Clearly defines landscaping services and responsibilities",
+      "Avoids confusion over fees, deposits, and payment deadlines",
+      "Establishes project timeline and service expectations",
+      "Documents materials, equipment, and maintenance obligations",
+      "Includes liability and dispute resolution terms",
+      "Protects both landscaper and client legally"
+    ],
+    whatYouNeed: [
+      "Landscaper and client legal names and contact details",
+      "Property address and service location",
+      "Detailed scope of landscaping work",
+      "Project start date, milestones, and completion date",
+      "Fee structure, deposit amount, and payment schedule",
+      "Liability terms, warranty terms, and dispute resolution terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Late Rent Payment Agreement": {
+    title: "Late Rent Payment Agreement",
+    otherNames: [
+      "Rent Arrears Payment Agreement",
+      "Overdue Rent Repayment Agreement",
+      "Late Rent Settlement Agreement"
+    ],
+    whatIs: "A Late Rent Payment Agreement is a legal agreement that allows tenants to pay overdue rent through a structured plan instead of facing eviction. This draft Late Rent Payment Agreement from Legalgram includes details of landlord and tenant, total outstanding rent amount, payment schedule (lump sum or installments), deadline for full payment, and terms for eviction if payment is not made. The best format Late Rent Payment Agreement from Legalgram ensures clarity, fairness, and legal protection for both parties.",
+    whenToUse: [
+      "A tenant is late in paying rent",
+      "You want to avoid eviction proceedings",
+      "You need a structured repayment plan",
+      "You want legal assurance for overdue payments",
+      "Both landlord and tenant agree on new payment terms"
+    ],
+    faqs: [
+      {
+        q: "Is a Late Rent Payment Agreement legally binding?",
+        a: "Yes. Once signed by both parties, a Late Rent Payment Agreement is generally enforceable under applicable law."
+      },
+      {
+        q: "Can this agreement prevent eviction?",
+        a: "Yes. It can help avoid eviction when the tenant follows the agreed repayment terms and deadlines."
+      },
+      {
+        q: "What happens if the tenant fails to pay?",
+        a: "If the tenant defaults under the agreement, the landlord may proceed with remedies, including eviction, as permitted by the agreement and local law."
+      },
+      {
+        q: "Can I customize the Late Rent Payment Agreement?",
+        a: "Yes. The agreement can be customized for rent amount, payment schedule, due dates, and jurisdiction-specific terms."
+      }
+    ],
+    keyProtections: [
+      "Documents total overdue rent and repayment obligations",
+      "Defines payment schedule with clear due dates",
+      "Reduces dispute risk through written terms",
+      "Supports legal enforcement if default occurs",
+      "Helps preserve landlord-tenant relationships",
+      "Provides a structured alternative to immediate eviction"
+    ],
+    whatYouNeed: [
+      "Landlord and tenant legal names and contact details",
+      "Rental property address and lease reference details",
+      "Total overdue rent amount",
+      "Installment plan or lump-sum repayment terms",
+      "Payment due dates and final repayment deadline",
+      "Default, notice, and dispute resolution terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Painting Services Contract": {
+    title: "Painting Services Contract",
+    otherNames: [
+      "Painting Contract Agreement",
+      "Painter's Contract",
+      "Painting Agreement"
+    ],
+    whatIs: "A Painting Contract Agreement is a legally binding document that outlines the terms and conditions of painting services between a contractor and a client. The draft Painting Agreement from Legalgram includes scope of painting work (interior/exterior), project timeline and deadlines, payment terms and schedule, responsibilities of both parties, and legal clauses for liability and dispute resolution. Using the best format Painting Contract from Legalgram ensures transparency and professionalism in every project.",
+    whenToUse: [
+      "You are hiring a painter for residential or commercial work",
+      "You are a contractor providing painting services",
+      "You want a written agreement for painting jobs",
+      "You need a legally structured contract format"
+    ],
+    faqs: [
+      {
+        q: "Why is a Painting Contract important?",
+        a: "It ensures clarity on work scope, timelines, and payments, reducing disputes."
+      },
+      {
+        q: "What happens if I don't use a contract?",
+        a: "You may face issues like delayed payments, scope changes, or misunderstandings."
+      },
+      {
+        q: "Can I customize the agreement?",
+        a: "Yes, you can download and edit Painting Contract from Legalgram easily."
+      },
+      {
+        q: "Does it cover additional work?",
+        a: "Yes, the Painting Agreement on Legalgram can include extra services and modifications."
+      }
+    ],
+    keyProtections: [
+      "Clearly define project scope and expectations",
+      "Avoid disputes over pricing and timelines",
+      "Establish payment milestones and conditions",
+      "Protect both contractor and client legally",
+      "Ensure smooth project execution",
+      "Include liability and dispute resolution protections"
+    ],
+    whatYouNeed: [
+      "Client and contractor legal names and contact details",
+      "Scope of work including interior and exterior areas",
+      "Project timeline with start and completion dates",
+      "Pricing, installments, and payment due dates",
+      "Responsibilities of both parties",
+      "Additional work and modification clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Construction Performance Bond": {
+    title: "Construction Performance Bond",
+    otherNames: [
+      "Performance Bond",
+      "Contractor Performance Bond",
+      "Construction Surety Bond"
+    ],
+    whatIs: "A Performance Bond is a financial guarantee issued by a surety company that ensures a contractor fulfills their obligations. If the contractor fails, the bond compensates the project owner. This draft Performance Bond from Legalgram includes details of the contractor, project owner, and surety, scope of the project and obligations, bond amount and coverage terms, and conditions for claims and compensation. The best format Performance Bond from Legalgram ensures financial security and legal protection for all parties involved.",
+    whenToUse: [
+      "You are a project owner hiring a contractor",
+      "You want financial security for project completion",
+      "You are a contractor required to provide a guarantee",
+      "You are working on large or high-value construction projects",
+      "You want to minimize financial and performance risks"
+    ],
+    faqs: [
+      {
+        q: "Is a Performance Bond legally binding?",
+        a: "Yes. A properly executed Performance Bond from Legalgram is enforceable."
+      },
+      {
+        q: "Who issues a Performance Bond?",
+        a: "A surety company issues the bond on behalf of the contractor."
+      },
+      {
+        q: "What happens if the contractor fails?",
+        a: "The Performance Bond ensures compensation to the project owner."
+      },
+      {
+        q: "Can I customize the Performance Bond?",
+        a: "Yes. You can easily download and customize Performance Bond from Legalgram."
+      }
+    ],
+    keyProtections: [
+      "Ensure project completion as agreed",
+      "Protect against contractor default or delays",
+      "Secure financial compensation in case of failure",
+      "Build trust between contractor and project owner",
+      "Strengthen your construction contract with financial backing",
+      "Provide enforceable claim and compensation terms"
+    ],
+    whatYouNeed: [
+      "Contractor, project owner, and surety details",
+      "Project scope and contractual obligations",
+      "Bond amount and coverage period",
+      "Liability triggers and default conditions",
+      "Claim procedure and compensation terms",
+      "Governing law and dispute resolution terms"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Property Manager Agreement": {
+    title: "Property Manager Agreement",
+    otherNames: [
+      "Property Management Agreement",
+      "Property Management Contract",
+      "Real Estate Management Agreement"
+    ],
+    whatIs: "A Property Manager Agreement is a legally binding contract between a property owner and a property manager that outlines duties, responsibilities, and payment terms. This draft Property Management Agreement from Legalgram includes property management responsibilities, rent collection and financial handling, maintenance and repair obligations, tenant management and leasing authority, payment structure and commission terms, and legal clauses for liability and dispute resolution. Using the best format Property Manager Agreement from Legalgram, both parties can ensure transparency and avoid disputes.",
+    whenToUse: [
+      "You own rental property and want professional management",
+      "You are a property manager offering services",
+      "You want a written agreement for managing tenants and property",
+      "You need a structured and legally sound contract"
+    ],
+    faqs: [
+      {
+        q: "What does a Property Manager Agreement include?",
+        a: "It includes responsibilities, payment terms, duration, and legal clauses."
+      },
+      {
+        q: "Can a property manager sign leases?",
+        a: "Yes, the Property Manager Agreement on Legalgram can authorize managers to sign leases on behalf of owners."
+      },
+      {
+        q: "How much does a property manager charge?",
+        a: "Typically 5-10% of collected rent, depending on services."
+      },
+      {
+        q: "Can I customize the agreement?",
+        a: "Yes, you can download and edit Property Management Agreement from Legalgram easily."
+      }
+    ],
+    keyProtections: [
+      "Clearly define roles and responsibilities",
+      "Establish rent collection and payment systems",
+      "Avoid disputes between owner and manager",
+      "Ensure proper maintenance and tenant handling",
+      "Protect financial and legal interests",
+      "Include enforceable liability and dispute terms"
+    ],
+    whatYouNeed: [
+      "Property owner and manager legal details",
+      "Property address and managed units",
+      "Management duties and leasing authority scope",
+      "Payment structure and commission percentage",
+      "Duration and termination notice terms",
+      "Insurance, indemnity, and governing law clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Real Estate Development": {
+    title: "Real Estate Development Agreement",
+    otherNames: [
+      "Real Estate Development",
+      "Property Development Agreement",
+      "Real Estate Development Contract"
+    ],
+    whatIs: "A Real Estate Development Agreement is a legally binding contract between a property owner and a developer or contractor for the development of residential or commercial property. This draft Real Estate Development Agreement from Legalgram includes property details and project description, development scope and responsibilities, project timeline and milestones, payment structure and fees, and legal clauses for liability and dispute resolution. Using the best format Property Development Agreement from Legalgram, both parties can align expectations and minimize risks.",
+    whenToUse: [
+      "You own land and want to develop residential or commercial property",
+      "You are a contractor or developer managing a project",
+      "You are involved in government or institutional property development",
+      "You need a structured and legally binding development contract"
+    ],
+    faqs: [
+      {
+        q: "Why is a Property Development Agreement important?",
+        a: "It ensures clarity on responsibilities, timelines, and payments, reducing project risks."
+      },
+      {
+        q: "What happens if I don't use an agreement?",
+        a: "You may face disputes, delays, or unclear financial obligations."
+      },
+      {
+        q: "Can I customize the agreement?",
+        a: "Yes, you can download and edit Real Estate Development Agreement from Legalgram easily."
+      },
+      {
+        q: "Is it suitable for commercial and residential projects?",
+        a: "Yes, the Real Estate Development Agreement on Legalgram works for both."
+      }
+    ],
+    keyProtections: [
+      "Clearly define roles of owner and developer",
+      "Establish payment schedules and financial terms",
+      "Avoid disputes during project execution",
+      "Ensure transparency in responsibilities",
+      "Protect legal and financial interests",
+      "Include enforceable liability and dispute resolution terms"
+    ],
+    whatYouNeed: [
+      "Property and party details",
+      "Project description and development scope",
+      "Timeline, milestones, and completion schedule",
+      "Fees, installments, and financial obligations",
+      "Roles and responsibilities of each party",
+      "Indemnity, governing law, and dispute resolution clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Rent Increase Agreement": {
+    title: "Rent Increase Letter",
+    otherNames: [
+      "Rent Increase Agreement",
+      "Rent Increase Notice",
+      "Letter of Rent Increase"
+    ],
+    whatIs: "A Rent Increase Letter is a written notice provided by a landlord to inform tenants about an increase in rent and the date it will take effect. This draft Rent Increase Letter from Legalgram includes current and revised rent amount, effective date of rent increase, payment due date details, notice period and terms, and legal compliance and documentation. Using the best format Rent Increase Letter from Legalgram, landlords can ensure clear communication and proper record-keeping.",
+    whenToUse: [
+      "You want to increase monthly rent",
+      "You need to notify tenants in writing",
+      "You want to maintain a formal record of rent changes",
+      "You are renewing or updating lease terms"
+    ],
+    faqs: [
+      {
+        q: "How much can rent be increased?",
+        a: "Typically 3-5%, but it depends on local laws and lease terms."
+      },
+      {
+        q: "Can I notify tenants via email?",
+        a: "Usually, written notice (hand-delivered or mailed) is required."
+      },
+      {
+        q: "When can rent be increased?",
+        a: "Generally, at the end of a lease term or as allowed by lease terms."
+      },
+      {
+        q: "Can I customize the letter?",
+        a: "Yes, you can download and edit Rent Increase Letter from Legalgram easily."
+      }
+    ],
+    keyProtections: [
+      "Provide formal written notice to tenants",
+      "Maintain legal compliance with rent laws",
+      "Avoid misunderstandings regarding rent changes",
+      "Keep proper documentation for future reference",
+      "Protect landlord-tenant relationships"
+    ],
+    whatYouNeed: [
+      "Landlord and tenant details",
+      "Current and new rent amounts",
+      "Effective date of the increase",
+      "Payment due date and terms",
+      "Required notice period",
+      "Compliance language for local rental laws"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Restaurant Lease Agreement": {
+    title: "Restaurant Lease Agreement",
+    otherNames: [
+      "Restaurant Rental Agreement",
+      "Commercial Restaurant Lease",
+      "Restaurant Lease"
+    ],
+    whatIs: "A Restaurant Lease Agreement (also known as a Restaurant Rental Agreement) is a legal contract between a commercial landlord and a tenant for renting property to operate a restaurant. The draft Restaurant Lease Agreement from Legalgram includes property details and lease duration, rent amount and payment schedule, maintenance and utility responsibilities, terms for property use as a restaurant, and legal clauses for compliance and dispute resolution. Using the best format Restaurant Lease Agreement from Legalgram ensures both parties have a clear and legally sound understanding.",
+    whenToUse: [
+      "You own commercial property and want to lease it as a restaurant",
+      "You are renting space to start or run a restaurant business",
+      "You need a legally binding commercial lease document",
+      "You want to formalize landlord-tenant terms"
+    ],
+    faqs: [
+      {
+        q: "What should a Restaurant Lease Agreement include?",
+        a: "It should include property details, lease term, rent, utilities, maintenance, and legal clauses."
+      },
+      {
+        q: "Is it necessary to have a written lease?",
+        a: "Yes, a written Restaurant Lease Agreement avoids disputes and ensures legal protection."
+      },
+      {
+        q: "Can I customize the agreement?",
+        a: "Yes, you can fully edit and download Restaurant Lease Agreement from Legalgram."
+      },
+      {
+        q: "Are local laws important?",
+        a: "Yes, local rental laws affect lease terms, so using a compliant format is essential."
+      }
+    ],
+    keyProtections: [
+      "Clearly define rental terms and obligations",
+      "Avoid misunderstandings and legal disputes",
+      "Establish payment schedules and rent details",
+      "Ensure compliance with local rental laws",
+      "Protect commercial investment",
+      "Include legal clauses for damages, termination, and dispute resolution"
+    ],
+    whatYouNeed: [
+      "Landlord and tenant details",
+      "Property description and lease duration",
+      "Rent amount and payment schedule",
+      "Usage terms for restaurant operations",
+      "Maintenance and utility responsibilities",
+      "Compliance and dispute resolution clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
+  "Roofing Contract Agreement": {
+    title: "Roofing Contract Agreement",
+    otherNames: [
+      "Roofing Contract",
+      "Roofing Services Agreement",
+      "Roofing Contractor Agreement"
+    ],
+    whatIs: "A Roofing Contract Agreement is a legally binding document that outlines the terms and conditions between a roofing contractor and a property owner. The draft Roofing Contract Agreement from Legalgram includes scope of roofing work (installation, repair, replacement), project timeline and deadlines, payment terms and cost breakdown, responsibilities of both parties, and warranty and liability clauses. Using the best format Roofing Contract Agreement from Legalgram helps avoid misunderstandings and ensures legal protection.",
+    whenToUse: [
+      "You are a roofing contractor providing services",
+      "You are hiring a roofing contractor",
+      "You want a written and legally binding roofing agreement",
+      "You need to document project details clearly"
+    ],
+    faqs: [
+      {
+        q: "Why is a Roofing Contract Agreement important?",
+        a: "It ensures both parties understand their roles, payment terms, and project timeline."
+      },
+      {
+        q: "What should be included in a Roofing Contract Agreement?",
+        a: "Scope of work, pricing, timeline, warranties, and legal clauses."
+      },
+      {
+        q: "Can I customize the agreement?",
+        a: "Yes, you can fully edit and download Roofing Contract Agreement from Legalgram."
+      },
+      {
+        q: "Do I need a written agreement for small jobs?",
+        a: "Yes, even small roofing jobs benefit from a written Roofing Contract Agreement."
+      }
+    ],
+    keyProtections: [
+      "Clearly define payment terms and schedules",
+      "Avoid disputes over project scope and timelines",
+      "Protect both contractor and property owner rights",
+      "Ensure transparency and accountability",
+      "Maintain professional legal documentation",
+      "Add enforceable warranty, liability, and dispute resolution terms"
+    ],
+    whatYouNeed: [
+      "Contractor and client names and addresses",
+      "Detailed scope of roofing work and materials",
+      "Start date, milestones, and completion timeline",
+      "Cost breakdown and payment schedule",
+      "Warranty coverage and liability terms",
+      "Dispute resolution and governing law clauses"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
   // === DEFAULT FALLBACK ===
   "default": {
     title: "Legal Document",
@@ -5021,6 +5786,47 @@ export function getDocumentContent(title: string): DocumentContent {
   // Try exact match first
   if (documentContent[title]) {
     return documentContent[title];
+  }
+  
+  const normalizedTitle = title.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  if (normalizedTitle.includes("lease amendment")) {
+    return documentContent["Lease Amendment Agreement"];
+  }
+  if (normalizedTitle.includes("lease renewal")) {
+    return documentContent["Lease Renewal Agreement"];
+  }
+  if (normalizedTitle.includes("lease subordination")) {
+    return documentContent["Lease Subordination Agreement"];
+  }
+  if (normalizedTitle.includes("non disturbance") || normalizedTitle.includes("snda")) {
+    return documentContent["Non-Disturbance Agreement"];
+  }
+  if (normalizedTitle.includes("oil lease") || normalizedTitle.includes("oil and gas lease")) {
+    return documentContent["Oil Lease Agreement"];
+  }
+  if (normalizedTitle.includes("painting services contract") || normalizedTitle.includes("painting contract") || normalizedTitle.includes("painting agreement")) {
+    return documentContent["Painting Services Contract"];
+  }
+  if (normalizedTitle.includes("construction performance bond") || normalizedTitle.includes("performance bond")) {
+    return documentContent["Construction Performance Bond"];
+  }
+  if (normalizedTitle.includes("property manager agreement") || normalizedTitle.includes("property management agreement") || normalizedTitle.includes("property management contract")) {
+    return documentContent["Property Manager Agreement"];
+  }
+  if (normalizedTitle.includes("real estate development") || normalizedTitle.includes("property development agreement")) {
+    return documentContent["Real Estate Development"];
+  }
+  if (normalizedTitle.includes("rent increase agreement") || normalizedTitle.includes("rent increase letter") || normalizedTitle.includes("rent increase notice")) {
+    return documentContent["Rent Increase Agreement"];
+  }
+  if (normalizedTitle.includes("restaurant lease agreement") || normalizedTitle.includes("restaurant rental agreement") || normalizedTitle.includes("restaurant lease")) {
+    return documentContent["Restaurant Lease Agreement"];
+  }
+  if (normalizedTitle.includes("roofing contract agreement") || normalizedTitle.includes("roofing contractor agreement") || normalizedTitle.includes("roofing services agreement") || normalizedTitle.includes("roofing contract")) {
+    return documentContent["Roofing Contract Agreement"];
+  }
+  if (normalizedTitle.includes("office space lease") || normalizedTitle.includes("office rental")) {
+    return documentContent["Office Space Lease Agreement"];
   }
   
   // Try case-insensitive exact match
