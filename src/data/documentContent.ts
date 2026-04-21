@@ -624,6 +624,126 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-15 minutes"
   },
 
+  "Affidavit of Residence": {
+    title: "Affidavit of Residence",
+    otherNames: [
+      "Residency Affidavit",
+      "Proof of Residency Affidavit",
+      "Proof of Residence",
+      "Residency Verification"
+    ],
+    whatIs: "An Affidavit of Residence is a formal legal document used to confirm an individual's current residential address or that of a deceased individual. It can also verify the residency of people living with the affiant. This document is commonly required by schools, courts, financial institutions, government agencies, or other entities seeking official proof of residence.",
+    whenToUse: [
+      "You need to verify your residential address for school enrollment or transfers",
+      "A business or court has requested proof of your address",
+      "You are managing the estate of a deceased individual and need to confirm their last residence",
+      "Financial institutions or government agencies require proof of residency",
+      "You need to verify residency for eligibility purposes"
+    ],
+    faqs: [
+      { q: "What information must be included in an Affidavit of Residence?", a: "It should include the affiant's full name and address, the county and state where it's executed, the duration of residence, information about anyone living with the affiant, and for deceased individuals, their name, address at death, and years lived there." },
+      { q: "Is notarization required for an Affidavit of Residence?", a: "Yes. For an Affidavit of Residence to be legally valid, it must be signed in front of a notary public who verifies the affiant's identity." },
+      { q: "Can I use an Affidavit of Residence for a deceased person?", a: "Yes. An Affidavit of Residence can verify the last known address of a deceased individual, commonly used in probate proceedings or to release funds." },
+      { q: "Who can be an affiant for this document?", a: "Anyone with personal knowledge of the person's residence can serve as an affiant, though disinterested parties (those not benefiting from the estate) carry more weight in legal matters." }
+    ],
+    keyProtections: [
+      "Legal declaration under penalty of perjury",
+      "Verification of residential address",
+      "Suitable for school, court, and government purposes",
+      "Notarized confirmation of residency",
+      "Can verify both living persons and deceased individuals"
+    ],
+    whatYouNeed: [
+      "Affiant's full legal name and address",
+      "County and state information",
+      "Duration of residence at current address",
+      "Names of people living with the affiant",
+      "For deceased persons: full name, address at death, years lived there, date of death",
+      "Notary public availability"
+    ],
+    estimatedTime: "7-12 minutes"
+  },
+
+  "Affidavit of Marriage": {
+    title: "Affidavit of Marriage",
+    otherNames: [
+      "Affidavit of Marital Status",
+      "Marriage Affidavit",
+      "Marital Status Affidavit",
+      "Marriage Proof Affidavit Draft"
+    ],
+    whatIs: "An Affidavit of Marriage is a formal sworn legal document used to confirm that a marriage exists, especially when the original marriage certificate is lost, unavailable, or cannot be located. This document is commonly used in legal, immigration, administrative, and official matters where proof of marriage is required.",
+    whenToUse: [
+      "Your marriage certificate is lost",
+      "You need proof of marriage for immigration purposes",
+      "A court requests evidence of marital status",
+      "Government offices require marriage confirmation",
+      "Insurance or banking institutions need marital proof"
+    ],
+    faqs: [
+      { q: "What should an Affidavit of Marriage include?", a: "It should include full names of husband and wife, date of marriage, place of marriage, witness statement confirming the marriage, statement that the marriage is genuine and valid, and sworn oath before a notary public." },
+      { q: "Is notarization required for an Affidavit of Marriage?", a: "Yes. For an Affidavit of Marriage to be legally valid, it must be signed in front of a notary public." },
+      { q: "Can I download an Affidavit of Marriage template from Legalgram?", a: "Yes. Legalgram provides professional, ready-to-use, editable templates with instant download support in Word and PDF formats." },
+      { q: "When would I need an Affidavit of Marriage?", a: "You may need it when your marriage certificate is lost, for immigration purposes, for court proceedings, government verification, or when banking and insurance institutions require proof of marital status." }
+    ],
+    keyProtections: [
+      "Formal sworn legal document under penalty of perjury",
+      "Professional legal draft format",
+      "Suitable for legal, immigration, and administrative purposes",
+      "Notarized verification of marital status",
+      "Evidence of marriage when certificate is unavailable"
+    ],
+    whatYouNeed: [
+      "Full names of both spouses",
+      "Date of marriage",
+      "Place of marriage (city, state, country)",
+      "Affiant's full legal name and contact details",
+      "Relationship to the married couple",
+      "Notary public availability"
+    ],
+    estimatedTime: "8-12 minutes"
+  },
+
+  "Affidavit of Survivorship": {
+    title: "Affidavit of Survivorship",
+    otherNames: [
+      "Survivorship Affidavit",
+      "Joint Ownership Survivorship Affidavit",
+      "Property Transfer Survivorship Affidavit",
+      "Survivorship Affidavit Draft"
+    ],
+    whatIs: "An Affidavit of Survivorship is a legal sworn document used to claim full ownership of jointly owned property after the death of a co-owner. If you owned real estate, bank accounts, or other joint assets with someone who has passed away, this affidavit helps transfer ownership rights to the surviving owner. This affidavit is commonly used when a death certificate alone is not enough and an institution, court, or land records office requires additional legal proof. An Affidavit of Survivorship usually includes the full names of both the surviving and deceased owner, a description of the jointly owned property, the date of death, a statement of joint ownership rights, a claim of survivorship rights, and a signature before a notary public.",
+    whenToUse: [
+      "You jointly owned property with a deceased spouse",
+      "You jointly owned land or home with a family member who died",
+      "A bank requires proof to release joint funds",
+      "Property title needs to be updated after death",
+      "You want to prepare future ownership documents in advance"
+    ],
+    faqs: [
+      { q: "What is an Affidavit of Survivorship?", a: "An Affidavit of Survivorship is a legal sworn document used to claim full ownership of jointly owned property after the death of a co-owner. It helps transfer ownership rights when the death certificate alone is insufficient for institutions, courts, or land records offices that require additional legal proof." },
+      { q: "What information must be included in an Affidavit of Survivorship?", a: "It should include the full names of the surviving and deceased co-owner, a description of the jointly owned property, the date of death, a statement of joint ownership rights, a claim of survivorship rights, and must be signed before a notary public." },
+      { q: "Is notarization required for an Affidavit of Survivorship?", a: "Yes. An Affidavit of Survivorship should usually be signed before a notary public to be legally recognized by most offices and institutions." },
+      { q: "When would I need an Affidavit of Survivorship?", a: "You may need it when transferring ownership of jointly owned real estate, bank accounts, or other joint assets after the death of a co-owner, or when an institution requires proof of survivorship to release joint funds." }
+    ],
+    keyProtections: [
+      "Legal sworn document under penalty of perjury",
+      "Establishes survivorship rights to jointly owned property",
+      "Suitable for property, bank, and institutional purposes",
+      "Notarized verification of ownership transfer",
+      "Evidence of joint ownership and survivorship claim"
+    ],
+    whatYouNeed: [
+      "Full name of surviving co-owner",
+      "Full name of deceased co-owner",
+      "Description of jointly owned property",
+      "Date of death of co-owner",
+      "Proof of joint ownership",
+      "Notary public availability"
+    ],
+    estimatedTime: "8-12 minutes"
+  },
+
   "Lease Amendment Agreement": {
     title: "Lease Amendment Agreement",
     otherNames: [
@@ -6237,6 +6357,15 @@ export function getDocumentContent(title: string): DocumentContent {
   }
   if (normalizedTitle.includes("financial support affidavit") || normalizedTitle.includes("affidavit of financial support") || normalizedTitle.includes("financial affidavit of support")) {
     return documentContent["Affidavit of Financial Support"];
+  }
+  if (normalizedTitle.includes("affidavit of residence") || normalizedTitle.includes("residency affidavit") || normalizedTitle.includes("proof of residency") || normalizedTitle.includes("proof of residence")) {
+    return documentContent["Affidavit of Residence"];
+  }
+  if (normalizedTitle.includes("affidavit of marriage") || normalizedTitle.includes("marriage affidavit") || normalizedTitle.includes("marital status affidavit") || normalizedTitle.includes("marriage proof affidavit")) {
+    return documentContent["Affidavit of Marriage"];
+  }
+  if (normalizedTitle.includes("affidavit of survivorship") || normalizedTitle.includes("survivorship affidavit") || normalizedTitle.includes("joint ownership survivorship") || normalizedTitle.includes("property transfer survivorship")) {
+    return documentContent["Affidavit of Survivorship"];
   }
   
   // Try case-insensitive exact match

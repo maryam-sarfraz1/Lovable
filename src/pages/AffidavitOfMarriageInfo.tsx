@@ -29,25 +29,39 @@ const AffidavitOfMarriageInfo = () => {
         <div className="bg-white rounded-xl shadow-lg p-8 space-y-8">
           {/* Overview Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">Overview</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">What is an Affidavit of Marriage?</h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              An Affidavit of Marriage is a legally sworn statement used to confirm the existence of a marital relationship when a certified Marriage Certificate is unavailable, lost, or never issued. This document serves as an official alternative to prove that a valid marriage took place and is especially useful in legal or administrative matters that require verification under oath.
+              An Affidavit of Marriage is a formal sworn legal document used to confirm that a marriage exists, especially when the original marriage certificate is lost, unavailable, or cannot be located. This document is commonly used in legal, immigration, administrative, and official matters where proof of marriage is required.
             </p>
             
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
-              <h3 className="font-semibold text-blue-900 mb-2">Typically, an Affidavit of Marriage includes:</h3>
+              <h3 className="font-semibold text-blue-900 mb-2">An Affidavit of Marriage usually includes:</h3>
               <ul className="text-blue-800 space-y-1">
-                <li>• The names of both spouses</li>
-                <li>• The date and location of the marriage</li>
-                <li>• A sworn statement made under penalty of perjury</li>
-                <li>• A witness statement (if applicable)</li>
-                <li>• The signature of the affiant in front of a notary public</li>
+                <li>• Full names of husband and wife</li>
+                <li>• Date of marriage</li>
+                <li>• Place of marriage</li>
+                <li>• Witness statement confirming the marriage</li>
+                <li>• Statement that the marriage is genuine and valid</li>
+                <li>• Sworn oath before a notary public</li>
               </ul>
             </div>
 
             <p className="text-gray-700 leading-relaxed">
-              This document is commonly used to verify marriage status for immigration processes, insurance applications, banking needs, or other situations where evidence of marriage is legally required but a certificate is missing.
+              Get your draft Affidavit of Marriage today with Legalgram's professional templates.
             </p>
+          </section>
+
+          {/* Other Names Section */}
+          <section>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Other Names</h2>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <ul className="text-gray-700 space-y-2">
+                <li>• Affidavit of Marital Status</li>
+                <li>• Marriage Affidavit</li>
+                <li>• Marital Status Affidavit</li>
+                <li>• Marriage Proof Affidavit Draft</li>
+              </ul>
+            </div>
           </section>
 
           {/* When to Use Section */}
@@ -56,64 +70,37 @@ const AffidavitOfMarriageInfo = () => {
               <Clock className="w-6 h-6 text-bright-orange-500 mr-2" />
               <h2 className="text-2xl font-bold text-gray-900">When to Use an Affidavit of Marriage</h2>
             </div>
-            <p className="text-gray-700 mb-4">You may need to prepare an Affidavit of Marriage for US legal or administrative purposes in the following scenarios:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <ul className="text-gray-700 space-y-2">
-                  <li>• You are unable to locate your official Marriage Certificate</li>
-                  <li>• You've been asked to verify your marital status under oath</li>
-                  <li>• You are applying for a foreign visa, passport, or spousal benefit that requires marriage proof</li>
-                </ul>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <ul className="text-gray-700 space-y-2">
-                  <li>• You are divorced but need to confirm a previous marriage for legal purposes</li>
-                  <li>• You are opening financial accounts or applying for insurance where proof of marital status is required</li>
-                </ul>
-              </div>
+            <p className="text-gray-700 mb-4">Use this Affidavit of Marriage when:</p>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <ul className="text-gray-700 space-y-2">
+                <li>• Your marriage certificate is lost</li>
+                <li>• You need proof of marriage for immigration purposes</li>
+                <li>• A court requests evidence of marital status</li>
+                <li>• Government offices require marriage confirmation</li>
+                <li>• Insurance or banking institutions need marital proof</li>
+              </ul>
             </div>
           </section>
 
-          {/* Key Requirements Section */}
+          {/* Why Choose Legalgram Section */}
           <section>
             <div className="flex items-center mb-4">
               <Shield className="w-6 h-6 text-bright-orange-500 mr-2" />
-              <h2 className="text-2xl font-bold text-gray-900">Key Requirements for an Affidavit of Marriage</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Why Choose Legalgram?</h2>
             </div>
-            <p className="text-gray-700 mb-6">To ensure that your Affidavit of Marriage is legally valid, it must meet these basic requirements:</p>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">1. Affiant's Information</h3>
-                <p className="text-gray-700 mb-2">The affiant (person swearing to the statement) must provide:</p>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Full name and contact details</li>
-                  <li>• Employment status and job title (if requested)</li>
-                  <li>• Current marital status</li>
-                  <li>• Relationship to the spouse</li>
-                </ul>
-              </div>
-              
-              <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">2. Marriage Details</h3>
-                <p className="text-gray-700 mb-2">Include the:</p>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Full names of both spouses</li>
-                  <li>• Date and place of the marriage ceremony</li>
-                  <li>• City, state, and country where the marriage occurred</li>
-                </ul>
-              </div>
-              
-              <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">3. Statement of Truth</h3>
-                <p className="text-gray-700">The affiant must include a statement affirming the accuracy of the information under penalty of perjury.</p>
-              </div>
-              
-              <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">4. Notarization</h3>
-                <p className="text-gray-700">To be considered a sworn legal document, the Affidavit of Marriage must be signed in front of a notary public. This step verifies the authenticity of the signature and gives the affidavit its legal standing.</p>
-              </div>
+            <p className="text-gray-700 mb-4">At Legalgram, users can get:</p>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <ul className="text-gray-700 space-y-2">
+                <li>• Free download Affidavit of Marriage</li>
+                <li>• Editable Word & PDF format</li>
+                <li>• Professional legal draft</li>
+                <li>• Instant ready-to-use template</li>
+                <li>• Easy online document preparation</li>
+              </ul>
             </div>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              If you need a trusted Affidavit of Marriage, choose the best format this affidavit from Legalgram.
+            </p>
           </section>
 
           {/* How to Create Section */}
@@ -194,32 +181,35 @@ const AffidavitOfMarriageInfo = () => {
             </div>
           </section>
 
-          {/* Final Steps Section */}
+          {/* Download Section */}
           <section>
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">Final Steps After Creating Your Affidavit</h2>
-            <p className="text-gray-700 mb-4">Once your Affidavit of Marriage form is complete:</p>
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <ol className="text-gray-700 space-y-2">
-                <li>1. Print the document and bring it to a licensed notary.</li>
-                <li>2. Sign in front of the notary, who will also sign and stamp the affidavit.</li>
-                <li>3. Distribute copies as needed to relevant agencies, immigration offices, or service providers.</li>
-                <li>4. Store the original in a secure location with your legal documents.</li>
-              </ol>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Download Affidavit of Marriage</h2>
+            <p className="text-gray-700 mb-4">
+              Prepare and download Affidavit of Marriage instantly from Legalgram. Our legal templates are simple, professional, and easy to customize.
+            </p>
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <h3 className="font-semibold text-gray-900 mb-2">Sample Affidavit of Marriage</h3>
+              <p className="text-gray-700">
+                Your document automatically updates based on the information you provide. Thousands of users trust Legalgram for affidavits and legal forms.
+              </p>
             </div>
+            <p className="text-gray-700 font-medium">
+              Download Affidavit of Marriage on Legalgram today.
+            </p>
           </section>
 
           {/* CTA Section */}
           <section className="text-center bg-gradient-to-r from-bright-orange-500 to-bright-orange-600 text-white p-8 rounded-xl">
-            <h2 className="text-3xl font-bold mb-4">Create Your Affidavit of Marriage Now</h2>
-            <p className="text-xl mb-6">Don't let a lost certificate hold up your legal or administrative processes. Our Affidavit of Marriage template for US residents is clear, customizable, and completely free to use.</p>
+            <h2 className="text-3xl font-bold mb-4">Get Your Affidavit of Marriage from Legalgram</h2>
+            <p className="text-xl mb-6">Professional, legally structured, and ready for instant download. Start preparing your Affidavit of Marriage today.</p>
             <Button 
               size="lg" 
               onClick={() => navigate('/documents/affidavit-of-marriage')}
               className="bg-white text-bright-orange-600 hover:bg-gray-100 font-semibold px-8 py-3"
             >
-              Start Your Affidavit of Marriage Today
+              Create Your Affidavit of Marriage
             </Button>
-            <p className="text-bright-orange-100 mt-4">Secure, notarized, and ready for any official requirement.</p>
+            <p className="text-bright-orange-100 mt-4">Easy, affordable, and trusted by thousands.</p>
           </section>
         </div>
       </div>

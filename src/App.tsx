@@ -47,6 +47,7 @@ const BarterAgreementForm = lazy(() => import("@/components/BarterAgreementForm"
 // Direct Imports for Existing Info Pages
 import AffidavitOfMarriageInfo from "./pages/AffidavitOfMarriageInfo";
 import AffidavitOfResidenceInfo from "./pages/AffidavitOfResidenceInfo";
+import AffidavitOfSurvivorshipInfo from "./pages/AffidavitOfSurvivorshipInfo";
 import LLCOperatingAgreementInfo from "./pages/LLCOperatingAgreementInfo";
 import SpecialPowerOfAttorneyInfo from "./pages/SpecialPowerOfAttorneyInfo";
 import GeneralPowerOfAttorneyInfo from "./pages/GeneralPowerOfAttorneyInfo";
@@ -242,6 +243,7 @@ const App = () => {
                 {/* --- EXISTING DOCUMENT ROUTES --- */}
                 <Route path="/affidavit-of-marriage-info" element={<AffidavitOfMarriageInfo />} />
                 <Route path="/affidavit-of-residence-info" element={<AffidavitOfResidenceInfo />} />
+                <Route path="/affidavit-of-survivorship-info" element={<AffidavitOfSurvivorshipInfo />} />
                 <Route path="/llc-operating-agreement-info" element={<LLCOperatingAgreementInfo />} />
                 <Route path="/special-power-of-attorney-info" element={<SpecialPowerOfAttorneyInfo />} />
                 <Route path="/general-power-of-attorney-info" element={<GeneralPowerOfAttorneyInfo />} />
