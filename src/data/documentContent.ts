@@ -744,6 +744,173 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "8-12 minutes"
   },
 
+  "Cell Phone Inquiry Letter": {
+    title: "Cell Phone Inquiry Letter",
+    otherNames: [
+      "Cell Phone Bill Challenge Letter",
+      "Mobile Bill Complaint Letter",
+      "Phone Service Dispute Letter",
+      "Cell Phone Inquiry Letter Draft"
+    ],
+    whatIs: "A Cell Phone Inquiry Letter is a formal complaint letter used to question incorrect charges, billing mistakes, hidden fees, poor network service, or other issues with your mobile phone provider. If you notice unauthorized charges on your bill, poor signal quality, dropped calls, or repeated service problems, a Cell Phone Inquiry Letter helps you communicate your complaint in writing and request correction. This letter can help with incorrect call charges, unexpected fees, poor signal or network service, frequent dropped calls, billing disputes, refund requests, and account correction requests.",
+    whenToUse: [
+      "You want to dispute wrong charges on your mobile bill",
+      "You need refund for billing errors",
+      "Your phone company provides poor service",
+      "Calls drop repeatedly or signal remains weak",
+      "You want written proof of your complaint"
+    ],
+    faqs: [
+      { q: "What is a Cell Phone Inquiry Letter?", a: "A Cell Phone Inquiry Letter is a formal complaint letter used to question incorrect charges, billing mistakes, hidden fees, poor network service, or other issues with your mobile phone provider. It helps communicate complaints in writing and request correction." },
+      { q: "What should I include in the letter?", a: "Include your full name and account number, phone number linked to account, description of the billing or service issue, date of disputed charges, and a request for refund or correction along with your contact information." },
+      { q: "Do I need to send it in writing?", a: "Yes. Written correspondence creates a formal record and is generally more effective for billing disputes and service complaints than verbal communication." },
+      { q: "Can I use this letter for service complaints only?", a: "Yes. You can use the letter to document poor service, dropped calls, weak signal, or any other service-related issues, separate from billing disputes." }
+    ],
+    keyProtections: [
+      "Creates official written record of complaint",
+      "Establishes billing dispute claim",
+      "Documents service issues formally",
+      "Supports refund or credit requests",
+      "Provides evidence for escalation"
+    ],
+    whatYouNeed: [
+      "Full name and account number",
+      "Phone number linked to account",
+      "Description of issue (billing or service)",
+      "Date of disputed charges or service problems",
+      "Details of charges or services in question",
+      "Request for resolution (refund, credit, or correction)"
+    ],
+    estimatedTime: "5-10 minutes"
+  },
+
+  "Change of Beneficiary Letter": {
+    title: "Change of Beneficiary Letter",
+    otherNames: [
+      "Request to Change Policy Beneficiary",
+      "Change Beneficiary Form",
+      "Beneficiary Designation Form",
+      "Beneficiary Update Letter Draft"
+    ],
+    whatIs: "A Change of Beneficiary Letter is a formal document used to request changes to the beneficiary listed on a life insurance policy, retirement plan, pension account, or other financial policy. This letter allows policyholders to add a new beneficiary, remove an existing beneficiary, update beneficiary percentages, or notify the company of a beneficiary name change. The best format Change of Beneficiary Letter from Legalgram ensures clarity, accuracy, and legal recognition for your beneficiary updates.",
+    whenToUse: [
+      "You got married and want to add spouse as beneficiary",
+      "You got divorced and want to remove former spouse",
+      "You had a child and want to add dependents",
+      "You want to update inheritance shares",
+      "A beneficiary changed their legal name",
+      "You want to keep policy records updated"
+    ],
+    faqs: [
+      { q: "What is a Change of Beneficiary Letter?", a: "A Change of Beneficiary Letter is a formal document used to request changes to the beneficiary listed on a life insurance policy, retirement plan, pension account, or other financial policy." },
+      { q: "What should I include in the letter?", a: "Include your policy number, policyholder details, existing beneficiary information, new beneficiary information, requested changes, and your signature and date." },
+      { q: "Do I need to have this notarized?", a: "Usually not. Unless specifically requested by your insurance provider or financial institution, this letter does not need to be notarized or witnessed." },
+      { q: "Can I use this letter for multiple policies?", a: "Yes. You can modify the letter for different policies. Make sure to include the correct policy number and details for each policy you want to update." }
+    ],
+    keyProtections: [
+      "Update life insurance beneficiaries",
+      "Add or remove beneficiaries easily",
+      "Keep financial records accurate",
+      "Avoid future disputes",
+      "Protect your current wishes legally"
+    ],
+    whatYouNeed: [
+      "Policy number",
+      "Policyholder full name",
+      "Existing beneficiary information",
+      "New beneficiary information",
+      "Relationship to policyholder",
+      "Percentage allocation (if multiple beneficiaries)"
+    ],
+    estimatedTime: "5-10 minutes"
+  },
+
+  "Child Care Authorization Form": {
+    title: "Child Care Authorization Form",
+    otherNames: [
+      "Authorization for Childcare",
+      "Child Care Authorization",
+      "Guardian Authorization Form",
+      "Caregiver Authorization Form",
+      "Child Care Authorization Form Draft"
+    ],
+    whatIs: "A Child Care Authorization Form is a legal document that allows a parent or legal guardian to temporarily authorize another trusted person to care for a child or make limited day-to-day decisions for the child. This form is commonly used when parents are traveling, working, unavailable due to emergencies, or when another adult needs permission to pick up the child from school, daycare, or activities.",
+    whenToUse: [
+      "You want another person to pick up your child from school",
+      "A nanny or caregiver needs written permission",
+      "You are traveling temporarily",
+      "You are unavailable due to work or emergency",
+      "Grandparents or relatives are caring for your child",
+      "Daycare requires written authorization"
+    ],
+    faqs: [
+      { q: "What is a Child Care Authorization Form?", a: "A Child Care Authorization Form is a legal document that allows a parent or legal guardian to temporarily authorize another trusted person to care for a child or make limited day-to-day decisions for the child." },
+      { q: "What should I include in the form?", a: "Include parent or guardian details, child's full name and date of birth, authorized caregiver details, specific permissions, authorization duration, emergency contacts, and your signature and date." },
+      { q: "Is this different from Power of Attorney?", a: "Yes. A Child Care Authorization Form is for temporary, limited caregiving responsibilities. A Power of Attorney for Minor Child is needed for major legal or medical decisions over a longer period." },
+      { q: "Do schools require this document?", a: "Many schools and daycare centers accept a Child Care Authorization Form to verify that caregivers are authorized to pick up children. Check with your specific institution for their requirements." }
+    ],
+    keyProtections: [
+      "Authorize temporary child care legally",
+      "Allow school or daycare release to caregiver",
+      "Provide emergency decision authority",
+      "Protect parents and caregivers",
+      "Avoid confusion during absence"
+    ],
+    whatYouNeed: [
+      "Parent details",
+      "Child details",
+      "Authorized caregiver information",
+      "Specific permissions granted",
+      "Duration of authorization",
+      "Emergency contact numbers",
+      "Signature and date"
+    ],
+    estimatedTime: "5-10 minutes"
+  },
+
+  "Complaint Letter to a Company": {
+    title: "Complaint Letter to a Company",
+    otherNames: [
+      "Complaint Letter to a Business",
+      "Letter of Complaint to a Company",
+      "Customer Complaint Letter",
+      "Complaint Letter to a Company Draft"
+    ],
+    whatIs: "A Complaint Letter to a Company is a formal written document used by customers to report poor service, defective products, delayed deliveries, billing issues, refund disputes, or other business-related problems. This letter helps customers clearly explain the issue, request a solution, and keep a professional written record of the complaint. If the matter is not resolved at the branch or local office level, the letter can be sent to the company's head office, customer service department, or senior management.",
+    whenToUse: [
+      "You received poor customer service",
+      "You bought a defective product",
+      "A refund request was ignored",
+      "Delivery was delayed or incomplete",
+      "Billing errors were not corrected",
+      "Local management failed to resolve your issue",
+      "You want to escalate complaint to company headquarters"
+    ],
+    faqs: [
+      { q: "What is a Complaint Letter to a Company?", a: "A Complaint Letter to a Company is a formal written document used by customers to report poor service, defective products, delayed deliveries, billing issues, refund disputes, or other business-related problems." },
+      { q: "What should I include in the letter?", a: "Include your name and address, company details, product or service information, complaint description, desired resolution, order number or invoice details, and your signature and date." },
+      { q: "Should I send it to a specific person?", a: "Address the letter to the company's customer service department or senior management. If you have been in contact with someone specific, address it to them with a copy to the main office." },
+      { q: "Can I use this letter to escalate complaints?", a: "Yes. If local management fails to resolve your issue, you can escalate the letter to company headquarters, corporate offices, or regulatory agencies." }
+    ],
+    keyProtections: [
+      "Present your complaint professionally",
+      "Request refund or replacement clearly",
+      "Keep written evidence of dispute",
+      "Escalate unresolved issues formally",
+      "Improve chances of quick resolution"
+    ],
+    whatYouNeed: [
+      "Your name and address",
+      "Company details",
+      "Product or service information",
+      "Complaint description",
+      "Desired resolution",
+      "Order number or invoice details",
+      "Signature and date"
+    ],
+    estimatedTime: "5-10 minutes"
+  },
+
   "Lease Amendment Agreement": {
     title: "Lease Amendment Agreement",
     otherNames: [
@@ -5186,35 +5353,9 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-15 minutes"
   },
 
-  // === DEFAULT FALLBACK ===
-  "default": {
-    title: "Legal Document",
-    whatIs: "This is a legal document that formalizes an agreement or declaration between parties. Legal documents provide clarity, establish rights and obligations, and serve as evidence in case of disputes. They are designed to protect all parties involved by clearly documenting terms and expectations.",
-    whenToUse: [
-      "You need a formal, written record of an agreement.",
-      "You want legal protection and clarity.",
-      "You need documentation for court or official purposes.",
-      "You're entering into a business or personal arrangement."
-    ],
-    faqs: [
-      { q: "Do I need a lawyer?", a: "Not always required, but consulting an attorney is recommended for complex matters or high-value transactions." },
-      { q: "Is this legally binding?", a: "Yes, when properly executed. Signatures from all parties (and notarization when required) make documents enforceable." },
-      { q: "How long should I keep this document?", a: "Keep important legal documents indefinitely or at least 7 years. Store copies in a safe place." }
-    ],
-    keyProtections: [
-      "Clear documentation of terms",
-      "Defined rights and obligations",
-      "Evidence for potential disputes",
-      "Legal enforceability"
-    ],
-    whatYouNeed: [
-      "Names and information of all parties",
-      "Specific terms of the agreement",
-      "Signatures from all parties",
-      "Witnesses or notarization (if required)"
-    ],
-    estimatedTime: "10-15 minutes"
-  },
+  // === LEGACY FALLBACK (DEPRECATED - no longer used) ===
+  // Generic default entry removed - all documents now have specific entries
+  // If a document doesn't match any entry, getDocumentContent() returns a minimal entry with title + message
 
   // === LEGAL SERVICES AGREEMENTS ===
   "Attorney Engagement Letter": {
@@ -6367,6 +6508,18 @@ export function getDocumentContent(title: string): DocumentContent {
   if (normalizedTitle.includes("affidavit of survivorship") || normalizedTitle.includes("survivorship affidavit") || normalizedTitle.includes("joint ownership survivorship") || normalizedTitle.includes("property transfer survivorship")) {
     return documentContent["Affidavit of Survivorship"];
   }
+  if (normalizedTitle.includes("cell phone inquiry") || normalizedTitle.includes("cell phone bill") || normalizedTitle.includes("mobile bill complaint") || normalizedTitle.includes("phone service dispute")) {
+    return documentContent["Cell Phone Inquiry Letter"];
+  }
+  if (normalizedTitle.includes("change of beneficiary") || normalizedTitle.includes("change beneficiary") || normalizedTitle.includes("beneficiary change") || normalizedTitle.includes("beneficiary designation") || normalizedTitle.includes("information for changing beneficiary")) {
+    return documentContent["Change of Beneficiary Letter"];
+  }
+  if (normalizedTitle.includes("child care authorization") || normalizedTitle.includes("childcare authorization") || normalizedTitle.includes("guardian authorization") || normalizedTitle.includes("caregiver authorization")) {
+    return documentContent["Child Care Authorization Form"];
+  }
+  if (normalizedTitle.includes("complaint letter") || normalizedTitle.includes("complaint to a company") || normalizedTitle.includes("customer complaint") || normalizedTitle.includes("letter of complaint")) {
+    return documentContent["Complaint Letter to a Company"];
+  }
   
   // Try case-insensitive exact match
   const lowerTitle = title.toLowerCase();
@@ -6376,9 +6529,15 @@ export function getDocumentContent(title: string): DocumentContent {
     }
   }
   
-  // Return default
+  // If no match found, return a document with the provided title and minimal content
+  // instead of returning generic default content
   return {
-    ...documentContent["default"],
-    title: title
+    title: title,
+    whatIs: `Information for ${title} is not yet available. Please contact support for more details.`,
+    whenToUse: [],
+    faqs: [],
+    keyProtections: [],
+    whatYouNeed: [],
+    estimatedTime: "Contact support for details"
   };
 }

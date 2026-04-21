@@ -278,7 +278,7 @@ export const familyProtectionDocs = [
   { id: "lastwill", title: "Last Will and Testament", description: "Create a professional last will and testament agreement", icon: FileText, category: "Estate Planning", component: lastwill },
 
   // === CHILD & FAMILY ===
-  { id: "child-care-auth", title: "Child Care Authorization Agreement", description: "Create an authorization agreement for child care arrangements", icon: Users, category: "Child & Family", component: ChildCareAuthForm },
+  { id: "child-care-auth", title: "Child Care Authorization Form", description: "Create a form to authorize another person to care for your child temporarily", icon: Users, category: "Child & Family", component: ChildCareAuthForm },
   { id: "ParentingPlanForm", title: "Parenting Plan Form", description: "Create a comprehensive parenting plan agreement", icon: Baby, category: "Child & Family", component: ParentingPlanForm },
 
   // === MARRIAGE & DIVORCE ===
@@ -294,7 +294,7 @@ export const familyProtectionDocs = [
 
   // === LEGAL REPORTS ===
   { id: "InformationForPoliceReportForm", title: "Information For Police Report", description: "Create a comprehensive information for police report", icon: ShieldAlert, category: "Legal Reports", component: InformationForPoliceReportForm },
-  { id: "change-of-beneficiary-form", title: "Information For changing beneficiary", description: "Create a comprehensive information for beneficiary changing", icon: UserCheck, category: "Legal Reports", component: ChangeOfBeneficiaryForm },
+  { id: "change-of-beneficiary-form", title: "Change of Beneficiary Letter", description: "Create a formal letter to update beneficiaries on life insurance or financial policies", icon: UserCheck, category: "Legal Reports", component: ChangeOfBeneficiaryForm },
   { id: "statement-of-claim-against-estate", title: "Statement Of Claim Against Estate", description: "Create a comprehensive statment against estate", icon: FilePlus, category: "Legal Reports", component: StatementOfClaimAgainstEstateForm },
   { id: "balloon-payment-promissory-note", title: "Balloon Payment Promissory Note", description: "Create a promissory note with installment payments and a final balloon payment", icon: FileText, category: "Legal Reports", component: BalloonPaymentPromissoryNoteForm },
   { id: "due-on-demand-promissory-note", title: "Due on Demand Promissory Note", description: "Create a comprehensive due on demand promissory note contract", icon: Calculator, category: "Legal Reports", component: DueOnDemandPromissoryNoteForm },

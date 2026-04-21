@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, FileText, CheckCircle, Users, Clock, Shield } from "lucide-react";
+import { ArrowLeft, FileText, CheckCircle, Phone, AlertCircle, Shield, Mail } from "lucide-react";
 
 const CellPhoneInquiryLetterInfo = () => {
   const navigate = useNavigate();
@@ -20,9 +20,9 @@ const CellPhoneInquiryLetterInfo = () => {
           </Button>
 
           <div className="text-center mb-8">
-            <FileText className="w-16 h-16 text-bright-orange-500 mx-auto mb-4" />
+            <Mail className="w-16 h-16 text-bright-orange-500 mx-auto mb-4" />
             <h1 className="text-4xl font-bold mb-4">What Is a Cell Phone Inquiry Letter?</h1>
-            <p className="text-xl text-gray-600">A simple guide to questioning and clarifying cellular service billing charges</p>
+            <p className="text-xl text-gray-600">Complete guide to disputing billing errors and service complaints</p>
           </div>
         </div>
 
@@ -53,143 +53,123 @@ const CellPhoneInquiryLetterInfo = () => {
           {/* When to Use Section */}
           <section>
             <div className="flex items-center mb-4">
-              <Clock className="w-6 h-6 text-bright-orange-500 mr-2" />
+              <Phone className="w-6 h-6 text-bright-orange-500 mr-2" />
               <h2 className="text-2xl font-bold text-gray-900">When to Use a Cell Phone Inquiry Letter</h2>
             </div>
-            <p className="text-gray-700 mb-4">You may need to send a Cell Phone Inquiry Letter in the following situations:</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <ul className="text-gray-700 space-y-2">
-                  <li>• Your monthly bill reflects unexpected or higher charges</li>
-                  <li>• Charges do not align with your service contract</li>
-                  <li>• You need written clarification for recordkeeping</li>
-                </ul>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <ul className="text-gray-700 space-y-2">
-                  <li>• You are disputing a specific billing entry</li>
-                  <li>• You are preparing documentation for escalation</li>
-                </ul>
-              </div>
+            <p className="text-gray-700 mb-4">Use this Cell Phone Inquiry Letter when:</p>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <ul className="text-gray-700 space-y-2">
+                <li>• You want to dispute wrong charges on your mobile bill</li>
+                <li>• You need refund for billing errors</li>
+                <li>• Your phone company provides poor service</li>
+                <li>• Calls drop repeatedly or signal remains weak</li>
+                <li>• You want written proof of your complaint</li>
+              </ul>
             </div>
           </section>
 
-          {/* Key Requirements Section */}
+          {/* Why Choose Legalgram Section */}
           <section>
             <div className="flex items-center mb-4">
               <Shield className="w-6 h-6 text-bright-orange-500 mr-2" />
-              <h2 className="text-2xl font-bold text-gray-900">Key Elements of a Cell Phone Inquiry Letter</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Why Choose Legalgram?</h2>
             </div>
-            <p className="text-gray-700 mb-6">For clarity and effectiveness, the letter should contain the following:</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">1. Subscriber Information</h3>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Subscriber name</li>
-                  <li>• Address and contact details</li>
-                  <li>• Account number</li>
-                </ul>
-              </div>
-
-              <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">2. Billing Details</h3>
-                <ul className="text-gray-600 space-y-1">
-                  <li>• Billing date and statement reference</li>
-                  <li>• Amount charged vs. expected charge</li>
-                  <li>• Description of the discrepancy</li>
-                </ul>
-              </div>
-
-              <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">3. Supporting Documents</h3>
-                <p className="text-gray-700">A copy of the relevant billing statement should be enclosed for reference.</p>
-              </div>
-
-              <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">4. Signature & Recordkeeping</h3>
-                <p className="text-gray-700">The letter should be signed by the account holder and retained for future reference.</p>
-              </div>
+            <p className="text-gray-700 mb-4">At Legalgram, users can get:</p>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <ul className="text-gray-700 space-y-2">
+                <li>• Free download Cell Phone Inquiry Letter</li>
+                <li>• Editable Word & PDF format</li>
+                <li>• Professionally drafted complaint template</li>
+                <li>• Instant download document</li>
+                <li>• Easy customization online</li>
+              </ul>
             </div>
+            <p className="text-gray-700 leading-relaxed mt-4">
+              If you need a trusted Cell Phone Inquiry Letter, choose the best format this agreement from Legalgram.
+            </p>
           </section>
 
-          {/* How to Create Section */}
+          {/* Key Benefits Section */}
           <section>
             <div className="flex items-center mb-4">
               <CheckCircle className="w-6 h-6 text-bright-orange-500 mr-2" />
-              <h2 className="text-2xl font-bold text-gray-900">How to Create a Cell Phone Inquiry Letter</h2>
+              <h2 className="text-2xl font-bold text-gray-900">Key Benefits of a Cell Phone Inquiry Letter</h2>
             </div>
-            <p className="text-gray-700 mb-6">You can prepare a Cell Phone Inquiry Letter in just a few steps:</p>
-
+            <p className="text-gray-700 mb-4">A proper Cell Phone Inquiry Letter helps:</p>
             <div className="bg-gradient-to-r from-bright-orange-50 to-bright-orange-100 p-6 rounded-lg">
               <ol className="text-gray-700 space-y-3">
                 <li className="flex items-start">
                   <span className="bg-bright-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">1</span>
-                  <span>Enter subscriber and service provider details.</span>
+                  <span>Record your complaint officially</span>
                 </li>
                 <li className="flex items-start">
                   <span className="bg-bright-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">2</span>
-                  <span>Reference the billing statement and account number.</span>
+                  <span>Request billing corrections</span>
                 </li>
                 <li className="flex items-start">
                   <span className="bg-bright-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">3</span>
-                  <span>Clearly explain the billing discrepancy.</span>
+                  <span>Ask for refunds or credits</span>
                 </li>
                 <li className="flex items-start">
                   <span className="bg-bright-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">4</span>
-                  <span>Attach a copy of the relevant billing statement.</span>
+                  <span>Improve customer service response</span>
                 </li>
                 <li className="flex items-start">
                   <span className="bg-bright-orange-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold mr-3 mt-0.5">5</span>
-                  <span>Sign and send the letter to the service provider.</span>
+                  <span>Keep written evidence for future disputes</span>
                 </li>
               </ol>
-              <p className="text-gray-700 mt-4 font-medium">This approach ensures clear communication and proper documentation of your inquiry.</p>
             </div>
           </section>
 
-          {/* FAQ Section */}
+          {/* What to Include Section */}
           <section>
             <div className="flex items-center mb-4">
-              <Users className="w-6 h-6 text-bright-orange-500 mr-2" />
-              <h2 className="text-2xl font-bold text-gray-900">Frequently Asked Questions</h2>
+              <AlertCircle className="w-6 h-6 text-bright-orange-500 mr-2" />
+              <h2 className="text-2xl font-bold text-gray-900">What to Include in a Cell Phone Inquiry Letter</h2>
             </div>
-
-            <div className="space-y-6">
-              <div className="border-l-4 border-green-500 bg-green-50 p-4">
-                <h3 className="font-semibold text-green-900 mb-2">✅ Do I need to attach my billing statement?</h3>
-                <p className="text-green-800">Yes. Including a copy of the billing statement helps the provider quickly identify and review the charge in question.</p>
-              </div>
-
-              <div className="border-l-4 border-blue-500 bg-blue-50 p-4">
-                <h3 className="font-semibold text-blue-900 mb-2">✅ Is this letter legally binding?</h3>
-                <p className="text-blue-800">While it is not a contract, it serves as a formal written record of your inquiry and request for clarification.</p>
-              </div>
-
-              <div className="border-l-4 border-purple-500 bg-purple-50 p-4">
-                <h3 className="font-semibold text-purple-900 mb-2">✅ Should I keep a copy of the letter?</h3>
-                <p className="text-purple-800">Absolutely. Retaining copies of all correspondence is important for recordkeeping and future reference.</p>
-              </div>
-
-              <div className="border-l-4 border-orange-500 bg-orange-50 p-4">
-                <h3 className="font-semibold text-orange-900 mb-2">✅ Can I reuse this letter?</h3>
-                <p className="text-orange-800">Yes. You may update and reissue the letter to dispute charges on future billing statements.</p>
-              </div>
+            <p className="text-gray-700 mb-4">Your Cell Phone Inquiry Letter should include:</p>
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <ul className="text-gray-700 space-y-2">
+                <li>• Full name and account number</li>
+                <li>• Phone number linked to account</li>
+                <li>• Description of billing or service issue</li>
+                <li>• Date of disputed charges</li>
+                <li>• Request for refund or correction</li>
+                <li>• Contact information</li>
+              </ul>
             </div>
+          </section>
+
+          {/* Download Section */}
+          <section>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Download Cell Phone Inquiry Letter</h2>
+            <p className="text-gray-700 mb-4">
+              Prepare and download Cell Phone Inquiry Letter instantly from Legalgram. Our templates are simple, professional, and effective for billing or service complaints.
+            </p>
+            <div className="bg-gray-50 p-4 rounded-lg mb-4">
+              <h3 className="font-semibold text-gray-900 mb-2">Sample Cell Phone Inquiry Letter</h3>
+              <p className="text-gray-700">
+                Your document updates automatically based on the information you provide. Thousands of users trust Legalgram for legal letters and business templates.
+              </p>
+            </div>
+            <p className="text-gray-700 font-medium">
+              Download Cell Phone Inquiry Letter on Legalgram today.
+            </p>
           </section>
 
           {/* CTA Section */}
           <section className="text-center bg-gradient-to-r from-bright-orange-500 to-bright-orange-600 text-white p-8 rounded-xl">
-            <h2 className="text-3xl font-bold mb-4">Create Your Cell Phone Inquiry Letter Now</h2>
-            <p className="text-xl mb-6">Quickly generate a clear and professional letter to address cellular billing concerns.</p>
-            <Button
-              size="lg"
-              onClick={() => navigate('/documents/cellphone-inquiry-letter')}
+            <h2 className="text-3xl font-bold mb-4">Get Your Cell Phone Inquiry Letter from Legalgram</h2>
+            <p className="text-xl mb-6">Professional, legally structured, and ready for instant download. Start protecting your rights today.</p>
+            <Button 
+              size="lg" 
+              onClick={() => navigate('/documents/CellPhoneInquiryLetterForm')}
               className="bg-white text-bright-orange-600 hover:bg-gray-100 font-semibold px-8 py-3"
             >
-              Start Your Inquiry Letter Today
+              Create Your Cell Phone Inquiry Letter
             </Button>
-            <p className="text-bright-orange-100 mt-4">Clear, professional, and ready to send.</p>
+            <p className="text-bright-orange-100 mt-4">Easy, professional, and trusted by thousands.</p>
           </section>
         </div>
       </div>
