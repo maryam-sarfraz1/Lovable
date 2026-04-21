@@ -583,6 +583,47 @@ export const documentContent: Record<string, DocumentContent> = {
     estimatedTime: "10-20 minutes"
   },
 
+  "Affidavit of Financial Support": {
+    title: "Affidavit of Financial Support",
+    otherNames: [
+      "Financial Support Affidavit",
+      "Financial Affidavit of Support",
+      "Support Affidavit Draft",
+      "Financial Declaration Affidavit"
+    ],
+    whatIs: "An Affidavit of Financial Support is an important legal document used to officially confirm a person's financial condition. If a court, immigration authority, lender, or business requests proof of income, expenses, assets, or debts, this Affidavit of Financial Support helps provide that information in a professional and legally accepted format.",
+    whenToUse: [
+      "A court requests your financial details",
+      "You need to prove income for a legal case",
+      "A business requires financial verification",
+      "Immigration sponsorship requires proof of support",
+      "Loan or financial applications need supporting evidence"
+    ],
+    faqs: [
+      { q: "What details can be included in an Affidavit of Financial Support?", a: "It may include the affiant's full name, employment details and monthly income, additional earnings, salary deductions, household expenses, existing loans or debts, bank balances and owned assets, and efforts to seek employment if unemployed." },
+      { q: "Who usually asks for this affidavit?", a: "Courts, immigration authorities, lenders, and businesses commonly request this affidavit when financial verification is required." },
+      { q: "Can I download this affidavit format from Legalgram?", a: "Yes. Legalgram provides a professional, ready-to-use, editable draft with instant download support." },
+      { q: "Why is this affidavit useful?", a: "It presents financial condition in a legally structured format that can support legal, immigration, and loan-related requirements." }
+    ],
+    keyProtections: [
+      "Professional legal draft in clear format",
+      "Ready-to-use affidavit template",
+      "Suitable for legal and financial verification use",
+      "Helps reduce ambiguity in financial declarations",
+      "Provides structured records of income, expenses, assets, and debts"
+    ],
+    whatYouNeed: [
+      "Affiant full legal name",
+      "Employment details and monthly income",
+      "Additional earnings information",
+      "Salary deductions and household expenses",
+      "Existing loans or debt details",
+      "Bank balances and owned assets",
+      "Job search details if unemployed"
+    ],
+    estimatedTime: "10-15 minutes"
+  },
+
   "Lease Amendment Agreement": {
     title: "Lease Amendment Agreement",
     otherNames: [
@@ -6193,6 +6234,9 @@ export function getDocumentContent(title: string): DocumentContent {
   }
   if (normalizedTitle.includes("office space lease") || normalizedTitle.includes("office rental")) {
     return documentContent["Office Space Lease Agreement"];
+  }
+  if (normalizedTitle.includes("financial support affidavit") || normalizedTitle.includes("affidavit of financial support") || normalizedTitle.includes("financial affidavit of support")) {
+    return documentContent["Affidavit of Financial Support"];
   }
   
   // Try case-insensitive exact match
