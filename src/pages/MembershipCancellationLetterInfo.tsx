@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, FileText, CheckCircle, Users, Clock, Shield } from "lucide-react";
+import { getDocumentContent } from "@/data/documentContent";
 
 const MembershipCancellationLetterInfo = () => {
   const navigate = useNavigate();
+  const doc = getDocumentContent("Membership Cancellation Letter");
 
   return (
     <Layout>
@@ -22,11 +24,20 @@ const MembershipCancellationLetterInfo = () => {
           <div className="text-center mb-8">
             <FileText className="w-16 h-16 text-bright-orange-500 mx-auto mb-4" />
             <h1 className="text-4xl font-bold mb-4">
-              What Is a Membership Cancellation Letter?
+              {doc.title}
             </h1>
             <p className="text-xl text-gray-600">
               A formal notice used to cancel a membership and request a refund
             </p>
+            {doc.otherNames && doc.otherNames.length > 0 && (
+              <div className="flex flex-wrap justify-center gap-2 mt-4">
+                {doc.otherNames.map((name) => (
+                  <span key={name} className="px-3 py-1 bg-bright-orange-50 text-bright-orange-700 rounded-full text-sm">
+                    {name}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import {
   Lightbulb, Scale, Clipboard, FileSignature, ChevronDown, ChevronUp,
   HelpCircle, ListChecks, BookOpen, BadgeCheck, Timer, Info
 } from 'lucide-react';
-import { documentContent, getDocumentContent, DocumentContent } from '@/data/documentContent';
+import { documentContent, getDocumentContent, DocumentContent } from '../data/documentContent';
 
 interface DocumentInfoLandingProps {
   title: string;
@@ -55,7 +55,27 @@ export default function DocumentInfoLanding({
   onStart,
   onBack
 }: DocumentInfoLandingProps) {
-  const docContent: DocumentContent = getDocumentContent(title);
+  const fallbackContent: DocumentContent = {
+    title,
+    whatIs: description || "Document information is currently unavailable.",
+    whenToUse: [],
+    faqs: [],
+    keyProtections: [],
+    whatYouNeed: [],
+    estimatedTime: "10-15 minutes"
+  };
+
+  const resolvedContent = getDocumentContent(title);
+  const docContent: DocumentContent = resolvedContent && typeof resolvedContent === 'object'
+    ? {
+        ...fallbackContent,
+        ...resolvedContent,
+        whenToUse: Array.isArray(resolvedContent.whenToUse) ? resolvedContent.whenToUse : [],
+        faqs: Array.isArray(resolvedContent.faqs) ? resolvedContent.faqs : [],
+        keyProtections: Array.isArray(resolvedContent.keyProtections) ? resolvedContent.keyProtections : [],
+        whatYouNeed: Array.isArray(resolvedContent.whatYouNeed) ? resolvedContent.whatYouNeed : []
+      }
+    : fallbackContent;
 
   return (
     <div className="max-w-7xl mx-auto">

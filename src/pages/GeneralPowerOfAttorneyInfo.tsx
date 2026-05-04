@@ -4,6 +4,7 @@ import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, FileDown, Scale } from "lucide-react";
 import { jsPDF } from "jspdf";
+import { getDocumentContent } from "@/data/documentContent";
 
 interface FieldDef {
   name: string;
@@ -18,6 +19,8 @@ interface StepDef {
   subtitle: string;
   fields: FieldDef[];
 }
+
+const docInfo = getDocumentContent("General Power of Attorney");
 
 const steps: StepDef[] = [
   {
@@ -427,7 +430,7 @@ const generatePDF = (values: Record<string, string>) => {
   // ── Title ─────────────────────────────────────────────────────────────────
   doc.setFont("helvetica", "bold");
   doc.setFontSize(12.8);
-  doc.text("General Power of Attorney", W / 2, y, { align: "center" });
+  doc.text(docInfo.title, W / 2, y, { align: "center" });
   y += 10;
   doc.setFontSize(10.5);
 
@@ -702,8 +705,33 @@ const GeneralPowerOfAttorneyForm = () => {
           </Button>
           <div className="text-center mb-8">
             <Scale className="w-16 h-16 text-bright-orange-500 mx-auto mb-4" />
-            <h1 className="text-4xl font-bold mb-2">General Power of Attorney</h1>
+            <h1 className="text-4xl font-bold mb-2">{docInfo.title}</h1>
             <p className="text-gray-600">Complete each step to generate your document</p>
+          </div>
+          <div className="bg-white rounded-xl shadow-md border border-orange-100 p-6 mb-8 space-y-4">
+            <p className="text-gray-700 leading-relaxed whitespace-pre-line">{docInfo.whatIs}</p>
+            {docInfo.otherNames && docInfo.otherNames.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {docInfo.otherNames.map((name, index) => (
+                  <span key={index} className="px-3 py-1 rounded-full bg-orange-50 text-orange-700 text-sm font-medium">
+                    {name}
+                  </span>
+                ))}
+              </div>
+            )}
+            {docInfo.whenToUse && docInfo.whenToUse.length > 0 && (
+              <div>
+                <h2 className="text-lg font-semibold text-gray-900 mb-2">When to Use</h2>
+                <ul className="space-y-2 text-gray-700">
+                  {docInfo.whenToUse.map((item, index) => (
+                    <li key={index} className="flex gap-2 items-start">
+                      <span className="text-orange-500 mt-0.5">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
         <div className="bg-white rounded-xl shadow-lg p-8">

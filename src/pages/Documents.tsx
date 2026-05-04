@@ -300,7 +300,7 @@ export const familyProtectionDocs = [
   { id: "due-on-demand-promissory-note", title: "Due on Demand Promissory Note", description: "Create a comprehensive due on demand promissory note contract", icon: Calculator, category: "Legal Reports", component: DueOnDemandPromissoryNoteForm },
   { id: "debt-collection-worksheet", title: "Debt collection", description: "Create a comprehensive debt collection worksheet", icon: Calculator, category: "Legal Reports", component: DebtCollectionWorksheetForm },
   { id: "iou", title: "IOU", description: "Create a comprehensive iou agreement acknowledment of debt", icon: Calculator, category: "Legal Reports", component: IOUForm },
-  { id: "note-payable", title: "Note Pyabale", description: "Create a comprehensive agreement for note payable", icon: Calculator, category: "Legal Reports", component: NotePayableForm },
+  { id: "note-payable", title: "Note Payable", description: "Create a comprehensive agreement for note payable", icon: Calculator, category: "Legal Reports", component: NotePayableForm },
   { id: "request-bankcredit-reference", title: "Request Bank Credit Reference", description: "Create a comprehensive reference to request bank credit", icon: Calculator, category: "Legal Reports", component: BankCreditReferenceForm },
   { id: "subordinated-loan-agreement", title: "Subordinated Loan Agreement", description: "Create a comprehensive subordinated loan agreement", icon: Calculator, category:"Legal Reports", component: SubordinatedLoanAgreementForm },
   { id: "secured-promissory-note", title: "Secured Promissory note", description: "Create a comprehensive agreement for secured promissory", icon: Calculator, category: "Legal Reports", component: SecuredPromissoryNoteForm },

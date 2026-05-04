@@ -128,8 +128,9 @@ import SupplierAgreementInfo from "./pages/SupplierAgreementInfo";
 import DemandForDeliveryInfo from "./pages/DemandForDeliveryInfo";
 import DueOnDemandPromissoryNoteInfo from "./pages/DueOnDemandPromissoryNoteInfo";
 import ChangeOfBeneficiaryInfo from "./pages/ChangeOfBeneficiaryInfo";
-import ReservationConfirmationInfo from "./pages/ReservationConfirmationInfo";
-import DebtCollectionWorksheetInfo from "./pages/DebtCollectionWorksheetInfo";
+import ReservationConfirmationInfo from "@/pages/ReservationConfirmationInfo";
+import DebtCollectionWorksheetInfo from "@/pages/DebtCollectionWorksheetInfo";
+import DebtSettlementInfo from "@/pages/DebtSettlementInfo";
 import DirectMailAdvertisingInfo from "./pages/DirectMailAdvertisingInfo";
 import FormalComplaintRefundInfo from "./pages/FormalComplaintRefundInfo";
 import SecuredPromissoryNoteInfo from "./pages/SecuredPromissoryNoteInfo";
@@ -137,6 +138,8 @@ import InstallmentPromissoryNoteInfo from "./pages/InstallmentPromissoryNoteInfo
 import IOUInfo from "./pages/IOUInfo";
 import MembershipCancellationLetterInfo from "./pages/MembershipCancellationLetterInfo";
 import NotePayableInfo from "./pages/NotePayableInfo";
+import ParentingPlanInfo from "./pages/ParentingPlanInfo";
+import PoliceReportInfo from "./pages/PoliceReportInfo";
 import LotteryPoolContractInfo from "./pages/LotteryPoolContractInfo";
 import BankCreditReferenceInfo from "./pages/BankCreditReferenceInfo";
 import RemovePersonalInfoRequestInfo from "./pages/RemovePersonalInfoRequestInfo";
@@ -288,6 +291,10 @@ const App = () => {
                 <Route path="/complaint-letter-info-form" element={<Documents />} />
                 <Route path="/note-payable-info" element={<NotePayableInfo/>} />
                 <Route path="/note-payable-form" element={<Documents />} />
+                <Route path="/parenting-plan-info" element={<ParentingPlanInfo/>} />
+                <Route path="/parenting-plan-form" element={<Documents />} />
+                <Route path="/police-report-worksheet-info" element={<PoliceReportInfo/>} />
+                <Route path="/police-report-worksheet-form" element={<Documents />} />
                 <Route path="/lottery-pool-contract-info" element={<LotteryPoolContractInfo/>} />
                 <Route path="/lottery-pool-contract-form" element={<Documents />} />
                 <Route path="/request-bankcredit-reference-info" element={<BankCreditReferenceInfo/>} />
@@ -352,6 +359,9 @@ const App = () => {
                 <Route path="/complaint-demand-refund-info" element={<FormalComplaintRefundInfo/>}/>
                 <Route path="/reservation-confirmation-form" element={<Documents/>}/>
                 <Route path="/reservation-confirmation-info" element={<ReservationConfirmationInfo/>}/>
+                <Route path="/debt-settlement-info" element={<DebtSettlementInfo/>}/>
+                <Route path="/debt-settlement-agreement-info" element={<DebtSettlementInfo/>}/>
+                <Route path="/debt-settlement-agreement-form" element={<Documents/>}/>
                 <Route path="/office-space-lease-info" element={<OfficeSpaceLeaseInfo />} />
                 <Route path="/office-space-lease-form" element={<Documents />} />
                 <Route path="/storage-space-lease-info" element={<StorageSpaceLeaseInfo />} />

@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, FileText, CheckCircle, Users, Clock, Shield } from "lucide-react";
+import { documentContent, getDocumentContent } from "@/data/documentContent";
 
 const LoanAgreementInfo = () => {
   const navigate = useNavigate();
+  const doc = getDocumentContent("Loan Agreement");
 
   return (
     <Layout>
@@ -21,12 +23,8 @@ const LoanAgreementInfo = () => {
 
           <div className="text-center mb-8">
             <FileText className="w-16 h-16 text-bright-orange-500 mx-auto mb-4" />
-            <h1 className="text-4xl font-bold mb-4">
-              What Is a Loan Agreement?
-            </h1>
-            <p className="text-xl text-gray-600">
-              A formal contract outlining the terms of a loan and repayment
-            </p>
+            <h1 className="text-4xl font-bold mb-4">{doc.title}</h1>
+            <p className="text-xl text-gray-600">{doc.whatIs}</p>
           </div>
         </div>
 
@@ -42,23 +40,15 @@ const LoanAgreementInfo = () => {
             </p>
 
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
-              <h3 className="font-semibold text-blue-900 mb-2">
-                A Loan Agreement typically includes:
-              </h3>
+              <h3 className="font-semibold text-blue-900 mb-2">A Loan Agreement typically includes:</h3>
               <ul className="text-blue-800 space-y-1">
-                <li>• Loan amount and repayment schedule</li>
-                <li>• Interest and late payment terms</li>
-                <li>• Default and acceleration provisions</li>
-                <li>• Assignment and governing law clauses</li>
-                <li>• Signatures of both parties</li>
+                {doc.whatYouNeed?.map((item, idx) => (
+                  <li key={idx}>• {item}</li>
+                ))}
               </ul>
             </div>
 
-            <p className="text-gray-700 leading-relaxed">
-              Loan Agreements are commonly used for personal loans, business
-              financing, and private lending arrangements where clear repayment
-              terms are required.
-            </p>
+            <p className="text-gray-700 leading-relaxed">{doc.whatIs}</p>
           </section>
 
           {/* When to Use Section */}
@@ -73,19 +63,11 @@ const LoanAgreementInfo = () => {
               A Loan Agreement should be used in the following situations:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <ul className="text-gray-700 space-y-2">
-                  <li>• Lending money to an individual or business</li>
-                  <li>• Establishing installment-based repayment terms</li>
-                  <li>• Protecting both parties with clear obligations</li>
-                </ul>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <ul className="text-gray-700 space-y-2">
-                  <li>• Avoiding disputes over payment expectations</li>
-                  <li>• Documenting private or informal loans</li>
-                </ul>
-              </div>
+              {doc.whenToUse?.map((item, idx) => (
+                <div key={idx} className="bg-gray-50 p-4 rounded-lg">
+                  <p className="text-gray-700">• {item}</p>
+                </div>
+              ))}
             </div>
           </section>
 
@@ -103,9 +85,7 @@ const LoanAgreementInfo = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">
-                  1. Repayment Terms
-                </h3>
+                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">1. Repayment Terms</h3>
                 <ul className="text-gray-600 space-y-1">
                   <li>• Installment amount and schedule</li>
                   <li>• Due date and final payment date</li>
@@ -114,33 +94,18 @@ const LoanAgreementInfo = () => {
               </div>
 
               <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">
-                  2. Late Charges & Acceleration
-                </h3>
-                <p className="text-gray-700">
-                  Late fees may apply if payments are missed, and the lender
-                  may accelerate the loan upon default.
-                </p>
+                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">2. Late Charges & Acceleration</h3>
+                <p className="text-gray-700">Late fees may apply if payments are missed, and the lender may accelerate the loan upon default.</p>
               </div>
 
               <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">
-                  3. Default Provisions
-                </h3>
-                <p className="text-gray-700">
-                  Events such as nonpayment, insolvency, or misrepresentation
-                  can trigger immediate repayment.
-                </p>
+                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">3. Default Provisions</h3>
+                <p className="text-gray-700">Events such as nonpayment, insolvency, or misrepresentation can trigger immediate repayment.</p>
               </div>
 
               <div className="border rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">
-                  4. Assignment & Governing Law
-                </h3>
-                <p className="text-gray-700">
-                  The agreement specifies whether it can be assigned and which
-                  jurisdiction’s laws apply.
-                </p>
+                <h3 className="text-lg font-semibold mb-3 text-bright-orange-600">4. Assignment & Governing Law</h3>
+                <p className="text-gray-700">The agreement specifies whether it can be assigned and which jurisdiction’s laws apply.</p>
               </div>
             </div>
           </section>
@@ -192,42 +157,12 @@ const LoanAgreementInfo = () => {
             </div>
 
             <div className="space-y-6">
-              <div className="border-l-4 border-green-500 bg-green-50 p-4">
-                <h3 className="font-semibold text-green-900 mb-2">
-                  ✅ Is a Loan Agreement legally binding?
-                </h3>
-                <p className="text-green-800">
-                  Yes. Once signed by both parties, it is a legally enforceable contract.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-blue-500 bg-blue-50 p-4">
-                <h3 className="font-semibold text-blue-900 mb-2">
-                  ✅ Can the loan be prepaid?
-                </h3>
-                <p className="text-blue-800">
-                  Yes. The borrower may prepay all or part of the loan without penalty,
-                  as long as accrued interest is paid.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-purple-500 bg-purple-50 p-4">
-                <h3 className="font-semibold text-purple-900 mb-2">
-                  ✅ What happens if a payment is late?
-                </h3>
-                <p className="text-purple-800">
-                  A late charge may apply, and repeated late payments can trigger default.
-                </p>
-              </div>
-
-              <div className="border-l-4 border-orange-500 bg-orange-50 p-4">
-                <h3 className="font-semibold text-orange-900 mb-2">
-                  ✅ Can the agreement be assigned?
-                </h3>
-                <p className="text-orange-800">
-                  Yes. The lender may assign the agreement and payment rights to another party.
-                </p>
-              </div>
+              {doc.faqs?.map((faq, idx) => (
+                <div key={idx} className="border-l-4 border-blue-500 bg-blue-50 p-4">
+                  <h3 className="font-semibold text-blue-900 mb-2">{faq.q}</h3>
+                  <p className="text-blue-800">{faq.a}</p>
+                </div>
+              ))}
             </div>
           </section>
 

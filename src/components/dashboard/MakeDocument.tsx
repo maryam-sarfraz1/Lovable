@@ -248,7 +248,7 @@ const MakeDocument = () => {
                },
    
         { id: "note-payable",
-          title: "Note Pyabale", 
+          title: "Note Payable", 
           description:"Note Payable",
           content: "Create a comprehensive agreement for note payable", 
           icon: Calculator,

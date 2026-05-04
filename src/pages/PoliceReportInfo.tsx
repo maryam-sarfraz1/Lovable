@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, FileText, CheckCircle, Users, Clock, Shield } from "lucide-react";
 import { getDocumentContent } from "@/data/documentContent";
 
-const NotePayableInfo = () => {
+const PoliceReportInfo = () => {
   const navigate = useNavigate();
-  const doc = getDocumentContent("Note Payable");
+  const doc = getDocumentContent("Police Report Worksheet");
 
   return (
     <Layout>
@@ -20,7 +20,7 @@ const NotePayableInfo = () => {
           <div className="text-center mb-8">
             <FileText className="w-16 h-16 text-bright-orange-500 mx-auto mb-4" />
             <h1 className="text-4xl font-bold mb-4">{doc.title}</h1>
-            <p className="text-xl text-gray-600">A formal loan document that records repayment terms and legal obligations</p>
+            <p className="text-xl text-gray-600">A structured document to organize facts and details for law enforcement</p>
             {doc.otherNames && doc.otherNames.length > 0 && (
               <div className="flex flex-wrap justify-center gap-2 mt-4">
                 {doc.otherNames.map((name) => (
@@ -35,21 +35,9 @@ const NotePayableInfo = () => {
 
         <div className="bg-white rounded-xl shadow-lg p-8 space-y-8">
           <section>
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">Overview</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">What is a Police Report Worksheet?</h2>
             <p className="text-gray-700 leading-relaxed mb-4">{doc.whatIs}</p>
-
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
-              <h3 className="font-semibold text-blue-900 mb-2">A {doc.title} usually includes:</h3>
-              <ul className="text-blue-800 space-y-1">
-                {doc.whatYouNeed?.slice(0, 5).map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-            </div>
-
-            <p className="text-gray-700 leading-relaxed">
-              This document helps both parties understand the amount borrowed, interest rate, payment schedule, maturity date, and consequences of default.
-            </p>
+            <p className="text-gray-700 leading-relaxed">Get your draft Police Report Worksheet today from Legalgram with ready-to-use professional format.</p>
           </section>
 
           <section>
@@ -98,15 +86,23 @@ const NotePayableInfo = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">Note Payable vs Accounts Payable</h2>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Report Types You Can Document</h2>
             <div className="grid md:grid-cols-2 gap-4">
               <div className="bg-gray-50 p-5 rounded-lg border">
-                <h3 className="text-lg font-semibold mb-2 text-gray-900">Note Payable</h3>
-                <p className="text-gray-700">Formal borrowed debt with written repayment terms.</p>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">Theft or Fraud</h3>
+                <p className="text-gray-700">Document stolen items, dates, and suspicious activity.</p>
               </div>
               <div className="bg-gray-50 p-5 rounded-lg border">
-                <h3 className="text-lg font-semibold mb-2 text-gray-900">Accounts Payable</h3>
-                <p className="text-gray-700">Business money owed to suppliers for goods or services.</p>
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">Harassment</h3>
+                <p className="text-gray-700">Record incidents, dates, names, and witness information.</p>
+              </div>
+              <div className="bg-gray-50 p-5 rounded-lg border">
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">Property Damage</h3>
+                <p className="text-gray-700">Detail damage, evidence, and estimated repair costs.</p>
+              </div>
+              <div className="bg-gray-50 p-5 rounded-lg border">
+                <h3 className="text-lg font-semibold mb-2 text-gray-900">Personal Injury</h3>
+                <p className="text-gray-700">Describe circumstances, injuries, medical treatment, and witnesses.</p>
               </div>
             </div>
           </section>
@@ -134,17 +130,27 @@ const NotePayableInfo = () => {
             </div>
           </section>
 
+          <section className="bg-gray-50 rounded-xl p-6 border">
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Sample Police Report Worksheet</h2>
+            <p className="text-gray-700 leading-relaxed">Your document updates automatically based on the information you provide. Thousands of users trust Legalgram for legal forms, complaint templates, and official documents.</p>
+          </section>
+
+          {doc.legalDisclaimer && (
+            <section className="text-sm text-gray-600 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+              <strong>⚠️ Important Note:</strong> {doc.legalDisclaimer}
+            </section>
+          )}
+
           <section className="text-center bg-gradient-to-r from-bright-orange-500 to-bright-orange-600 text-white p-8 rounded-xl">
-            <h2 className="text-3xl font-bold mb-4">Create Your {doc.title}</h2>
-            <p className="text-xl mb-6">Prepare and download {doc.title} instantly from Legalgram.</p>
+            <h2 className="text-3xl font-bold mb-4">Download Police Report Worksheet</h2>
+            <p className="text-xl mb-6">Prepare and download {doc.title} instantly from Legalgram. Our templates are simple, professional, and suitable for complaints, witness statements, and incident documentation.</p>
             <Button
               size="lg"
-              onClick={() => navigate("/documents/note-payable")}
+              onClick={() => navigate("/police-report-worksheet-form")}
               className="bg-white text-bright-orange-600 hover:bg-gray-100 font-semibold px-8 py-3"
             >
-              Start Your Note Payable
+              Get Your Police Report Worksheet
             </Button>
-            <p className="text-bright-orange-100 mt-4">Clear terms. Legal certainty. Peace of mind.</p>
           </section>
         </div>
       </div>
@@ -152,4 +158,4 @@ const NotePayableInfo = () => {
   );
 };
 
-export default NotePayableInfo;
+export default PoliceReportInfo;
